@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Header from "./components/header";
+import Footer from "./components/footer";
+import localFont from 'next/font/local'// Load fonts and assign CSS variable names
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const Unbounded = localFont({
+  src: '../public/fonts/Unbounded-VariableFont_wght.ttf',
+  variable: '--font-unbounded',
+  display: 'swap',
+  style: 'normal',
+  weight: '400',
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+})
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,11 +25,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="tr" className={"scroll-smooth font-Unbounded"}>
+      <body className="antialiased">
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
