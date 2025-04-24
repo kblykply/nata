@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
 import { Tab } from "@headlessui/react";
 
 export default function ContactQrSection() {
@@ -53,7 +52,7 @@ export default function ContactQrSection() {
 
         {/* Right side - Contact Form */}
         <div className="bg-white rounded-3xl shadow-xl p-12 border border-gray-100">
-          <h3 className="text-3xl font-semibold mb-6 text-gray-900 tracking-tight">Sizi Arayalım<br />VE STATÜYE GÖRE</h3>
+          <h3 className="text-3xl font-semibold mb-6 text-gray-900 tracking-tight">Sizi Arayalım<br />Hemen Ulaşın </h3>
           <p className="text-sm text-gray-600 mb-8">Bir talep bırakın ve tüm sorularınızı cevaplayalım.</p>
           <form className="space-y-6">
             <div>

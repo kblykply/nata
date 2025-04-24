@@ -6,11 +6,11 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const slides = [
   {
-    title: "Ankara'nın Yeni İş ve Yaşam Merkezi",
+    title: "Ankara&apos;nın Yeni İş ve Yaşam Merkezi",
     image: "/Ankara'nın Yeni İş ve Yaşam Merkezi.jpg",
     popup: {
       title: "Prestijli Konumda Modern Ofis ve Ticaret Alanları",
-      text: "Vega Center, iş dünyası ve sosyal yaşamı tek bir noktada buluşturan yeni nesil karma proje anlayışıyla Ankara'nın yükselen değeri oluyor. Modern ofisler, mağazalar ve sosyal alanlarla hem iş hayatınıza prestij katıyor hem de günlük ihtiyaçlarınıza kolay erişim sağlıyor. Şehrin dinamik yapısına uyumlu tasarımıyla, yatırımcılar ve profesyoneller için ideal bir merkez haline geliyor.",
+      text: "Vega Center, iş dünyası ve sosyal yaşamı tek bir noktada buluşturan yeni nesil karma proje anlayışıyla Ankara&apos;nın yükselen değeri oluyor. Modern ofisler, mağazalar ve sosyal alanlarla hem iş hayatınıza prestij katıyor hem de günlük ihtiyaçlarınıza kolay erişim sağlıyor. Şehrin dinamik yapısına uyumlu tasarımıyla, yatırımcılar ve profesyoneller için ideal bir merkez haline geliyor.",
       images: ["/vegacenter-Ankara'nın Yeni İş ve Yaşam Merkezi (2).jpg", "/vegacenter-Ankara'nın Yeni İş ve Yaşam Merkezi.jpg"]
     }
   },
@@ -33,11 +33,11 @@ const slides = [
     }
   },
   {
-    title: "Ankara'nın Yeni İş ve Yaşam Merkezi",
+    title: "Ankara&apos;nın Yeni İş ve Yaşam Merkezi",
     image: "/Ankara'nın Yeni İş ve Yaşam Merkezi.jpg",
     popup: {
       title: "Prestijli Konumda Modern Ofis ve Ticaret Alanları",
-      text: "Vega Center, iş dünyası ve sosyal yaşamı tek bir noktada buluşturan yeni nesil karma proje anlayışıyla Ankara'nın yükselen değeri oluyor. Modern ofisler, mağazalar ve sosyal alanlarla hem iş hayatınıza prestij katıyor hem de günlük ihtiyaçlarınıza kolay erişim sağlıyor. Şehrin dinamik yapısına uyumlu tasarımıyla, yatırımcılar ve profesyoneller için ideal bir merkez haline geliyor.",
+      text: "Vega Center, iş dünyası ve sosyal yaşamı tek bir noktada buluşturan yeni nesil karma proje anlayışıyla Ankara&apos;nın yükselen değeri oluyor. Modern ofisler, mağazalar ve sosyal alanlarla hem iş hayatınıza prestij katıyor hem de günlük ihtiyaçlarınıza kolay erişim sağlıyor. Şehrin dinamik yapısına uyumlu tasarımıyla, yatırımcılar ve profesyoneller için ideal bir merkez haline geliyor.",
       images: ["/vegacenter-Ankara'nın Yeni İş ve Yaşam Merkezi (2).jpg", "/vegacenter-Ankara'nın Yeni İş ve Yaşam Merkezi.jpg"]
     }
   },
@@ -73,12 +73,12 @@ export default function ProjectLifeRhythmSection() {
             const offset = (i - index + totalSlides) % totalSlides;
             const normalized = offset > totalSlides / 2 ? offset - totalSlides : offset;
 
-            let styles = "absolute top-1/2 transform transition-all duration-500 ease-in-out";
+            const styles = "absolute top-1/2 transform transition-all duration-500 ease-in-out";
             let z = 10;
-            let translateX = `${normalized * 320}px`;
+            const translateX = `${normalized * 320}px`;
             let scale = 0.9;
             let opacity = 0.3;
-            let translateY = "-50%";
+            const translateY = "-50%";
 
             if (normalized === 0) {
               z = 30;

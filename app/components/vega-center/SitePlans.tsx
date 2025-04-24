@@ -50,7 +50,7 @@ export default function SidePlans() {
           Yaşam Nerede <br /> Biz Orada.
         </h2>
         <p className="mt-4 text-sm text-gray-700 leading-relaxed">
-          İş dünyasının yeni merkezi VEGA Center'da bir çok prestijli marka karması ile işiniz yeni bir boyut kazanıyor.
+          İş dünyasının yeni merkezi VEGA Center&apos;da bir çok prestijli marka karması ile işiniz yeni bir boyut kazanıyor.
           Açık AVM konsepti, yaşam alanları, ulaşım kolaylığı ile yaşamın bütün olanaklarını ayağınıza getiriyor.
           En değerli sermayeniz olan zamanınız, bu projede kıymetleniyor.
         </p>

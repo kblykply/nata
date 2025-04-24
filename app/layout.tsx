@@ -2,16 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "./components/header";
 import Footer from "./components/footer";
-import localFont from 'next/font/local'// Load fonts and assign CSS variable names
 
-const Unbounded = localFont({
-  src: '../public/fonts/Unbounded-VariableFont_wght.ttf',
-  variable: '--font-unbounded',
-  display: 'swap',
-  style: 'normal',
-  weight: '400',
 
-})
 
 
 export const metadata: Metadata = {
@@ -25,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="tr" className={"scroll-smooth font-Unbounded"}>
+    <html lang="tr" className={"scroll-smooth "}>
       <body className="antialiased">
         <Header />
         {children}

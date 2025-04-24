@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState, useRef } from "react";
+import { useState, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Dialog } from "@headlessui/react";
 
@@ -32,7 +32,7 @@ export default function DesignSection() {
           VEGA Center  <br /> ile Tanışın
           </h2>
           <p className="mt-6 text-sm text-gray-700 leading-relaxed">
-          Bir NATA Yaşam projesi olan VEGA Center, yatay mimarisi ile şehrin silüetine estetik bir değer katan, iş ve premium alışveriş deneyimini en yüksek seviyeye çıkaran bir yaşam merkezidir. Ferah ofisleri ve verimli iş alanları ile yüksek potansiyele sahip olan VEGA Center'ın her noktası hayatı kolaylaştırmak için tasarlandı. 
+          Bir NATA Yaşam projesi olan VEGA Center, yatay mimarisi ile şehrin silüetine estetik bir değer katan, iş ve premium alışveriş deneyimini en yüksek seviyeye çıkaran bir yaşam merkezidir. Ferah ofisleri ve verimli iş alanları ile yüksek potansiyele sahip olan VEGA Center&apos;ın her noktası hayatı kolaylaştırmak için tasarlandı. 
           </p>
           <button
             onClick={() => {

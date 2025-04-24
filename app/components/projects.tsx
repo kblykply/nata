@@ -23,7 +23,9 @@ interface Listing {
     label: string;
   }[];
 }
-const listings = [
+
+
+const listings: Listing[] = [
  
   {
     link: "/dubrovka",

@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-
 export default function OfficeLocationSection() {
   return (
     <section className="bg-white py-20 px-6 md:px-20">
