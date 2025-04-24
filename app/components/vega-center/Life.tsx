@@ -7,11 +7,11 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 const slides = [
   {
     title: "Ankara&apos;nın Yeni İş ve Yaşam Merkezi",
-    image: "/Ankara'nın Yeni İş ve Yaşam Merkezi.jpg",
+    image: "/Ankara nın Yeni İş ve Yaşam Merkezi.jpg",
     popup: {
       title: "Prestijli Konumda Modern Ofis ve Ticaret Alanları",
       text: "Vega Center, iş dünyası ve sosyal yaşamı tek bir noktada buluşturan yeni nesil karma proje anlayışıyla Ankara&apos;nın yükselen değeri oluyor. Modern ofisler, mağazalar ve sosyal alanlarla hem iş hayatınıza prestij katıyor hem de günlük ihtiyaçlarınıza kolay erişim sağlıyor. Şehrin dinamik yapısına uyumlu tasarımıyla, yatırımcılar ve profesyoneller için ideal bir merkez haline geliyor.",
-      images: ["/vegacenter-Ankara'nın Yeni İş ve Yaşam Merkezi (2).jpg", "/vegacenter-Ankara'nın Yeni İş ve Yaşam Merkezi.jpg"]
+      images: ["/vegacenter-Ankara nın Yeni İş ve Yaşam Merkezi (2).jpg", "/vegacenter-Ankara nın Yeni İş ve Yaşam Merkezi.jpg"]
     }
   },
   {
@@ -19,7 +19,7 @@ const slides = [
     image: "/Elektrikli Araçlar İçin Şarj İstasyonları.jpg",
     popup: {
       title: "Geleceğin Enerjisine Uyumlu Akıllı Çözümler",
-      text: "Vega Center'da sürdürülebilir yaşam anlayışıyla elektrikli araç sahipleri için özel şarj istasyonları sunuluyor. Çevre dostu ulaşımı destekleyen bu altyapı sayesinde, aracınızı güvenle ve kolayca şarj edebilir, geleceğin teknolojisine her zaman bir adım önde uyum sağlayabilirsiniz. Modern yaşamın gereksinimlerine cevap veren bu özellik ile konforunuzu ve çevreci yaklaşımınızı bir arada yaşayın.",
+      text: "Vega Center da sürdürülebilir yaşam anlayışıyla elektrikli araç sahipleri için özel şarj istasyonları sunuluyor. Çevre dostu ulaşımı destekleyen bu altyapı sayesinde, aracınızı güvenle ve kolayca şarj edebilir, geleceğin teknolojisine her zaman bir adım önde uyum sağlayabilirsiniz. Modern yaşamın gereksinimlerine cevap veren bu özellik ile konforunuzu ve çevreci yaklaşımınızı bir arada yaşayın.",
       images: ["/vegacenter-şarj istasyonu.jpg", "/vegacenter-şarj istasyonu (2).jpg"]
     }
   },
@@ -34,11 +34,11 @@ const slides = [
   },
   {
     title: "Ankara&apos;nın Yeni İş ve Yaşam Merkezi",
-    image: "/Ankara'nın Yeni İş ve Yaşam Merkezi.jpg",
+    image: "/Ankara nın Yeni İş ve Yaşam Merkezi.jpg",
     popup: {
       title: "Prestijli Konumda Modern Ofis ve Ticaret Alanları",
       text: "Vega Center, iş dünyası ve sosyal yaşamı tek bir noktada buluşturan yeni nesil karma proje anlayışıyla Ankara&apos;nın yükselen değeri oluyor. Modern ofisler, mağazalar ve sosyal alanlarla hem iş hayatınıza prestij katıyor hem de günlük ihtiyaçlarınıza kolay erişim sağlıyor. Şehrin dinamik yapısına uyumlu tasarımıyla, yatırımcılar ve profesyoneller için ideal bir merkez haline geliyor.",
-      images: ["/vegacenter-Ankara'nın Yeni İş ve Yaşam Merkezi (2).jpg", "/vegacenter-Ankara'nın Yeni İş ve Yaşam Merkezi.jpg"]
+      images: ["/vegacenter-Ankara nın Yeni İş ve Yaşam Merkezi (2).jpg", "/vegacenter-Ankara nın Yeni İş ve Yaşam Merkezi.jpg"]
     }
   },
   {
@@ -60,7 +60,7 @@ export default function ProjectLifeRhythmSection() {
   return (
     <section className="relative py-24 px-6 bg-white text-center overflow-hidden">
       <h2 className="text-3xl font-light text-gray-800 uppercase leading-tight">
-        YAŞAM RİTİMİNİZ <br /> VEGA CENTER'DA 
+        YAŞAM RİTİMİNİZ <br /> VEGA CENTER DA 
       </h2>
       <p className="mt-4 text-sm text-gray-600 max-w-xl mx-auto">
         Vega Center, modern yaşamın dinamiklerini ve konforunu bir araya getiriyor. 
