@@ -8,14 +8,14 @@ export default function OfficeLocationSection() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-8 bg-white rounded-xl shadow-md overflow-hidden">
         {/* Left Info Box */}
         <div className="w-full md:w-1/2 p-6 md:p-10">
-          <h2 className="text-xl md:text-2xl font-semibold mb-4">BİZ DAVET EDİYORUZ SATIŞ OFİSİ</h2>
+          <h2 className="text-xl md:text-2xl text-gray-900 font-semibold mb-4">Ofis Bilgileri</h2>
           <div className="mb-4">
             <p className="font-medium text-gray-700">Telefon</p>
-            <p className="text-gray-700">+90 (312) 123 45 67</p>
+            <p className="text-gray-700">444 8 776</p>
           </div>
           <div className="mb-4">
             <p className="font-medium text-gray-700">Adres</p>
-            <p className="text-gray-700">Moskova Cd. No:15, Çankaya / ANKARA</p>
+            <p className="text-gray-700">İnönü Mah, Fatih Sultan Mehmet Blv, No:412 Yenimahalle, ANKARA</p>
           </div>
           <div className="mb-4">
             <p className="font-medium text-gray-700">Çalışma Saatleri</p>
@@ -32,13 +32,13 @@ export default function OfficeLocationSection() {
               href="https://yandex.com.tr/harita/ankara/?ll=32.8597%2C39.9334&z=16&l=map&pt=32.8597,39.9334,pm2rdm"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 bg-gray-400 hover:bg-gray-200 text-black rounded-full text-sm font-medium transition"
+              className="flex items-center  text-gray-700 px-3 py-1.5 rounded-full text-sm bg-gray-500 hover:bg-gray-200 "
             >
               Haritada Aç
             </a>
             <a
               href="#"
-              className="px-6 py-3 bg-gradient-to-r from-[#9F1C33] to-[#ED6230] hover:opacity-90 text-white rounded-full text-sm font-medium transition"
+              className="px-6 py-3 bg-gradient-to-r from-[#9F1C33] to-[#6B0F1A] hover:opacity-90 text-white rounded-full text-sm font-medium transition"
             >
               Toplantı Planlayın
             </a>

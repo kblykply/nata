@@ -15,7 +15,7 @@ export default function ProjectHeroCloudSection() {
           animate={{ x: ["0%", "-50%"] }}
           transition={{ repeat: Infinity, duration: 60, ease: "linear" }}
         >
-          <div className="relative w-2/2 h-full">
+          <div className="relative w-full h-full">
             <Image  
               src="/cloud-2.png"
               alt="Clouds"
@@ -23,7 +23,7 @@ export default function ProjectHeroCloudSection() {
               className="object-cover object-top"
             />
           </div>
-          <div className="relative w-1/2 h-full">
+          <div className="relative  h-full">
             <Image
               src="/cloud-2.png"
               alt="Clouds Repeat"

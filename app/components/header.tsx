@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Bell, Globe } from "lucide-react";
+import { Bell,  } from "lucide-react";
 
 export default function Header() {
   return (

@@ -53,8 +53,8 @@ export default function ContactQrSection() {
 
         {/* Right side - Contact Form */}
         <div className="bg-white rounded-3xl shadow-xl p-12 border border-gray-100">
-          <h3 className="text-3xl font-semibold mb-6 text-gray-900 tracking-tight">RAHATLIK İLE YAŞAMAK<br />VE STATÜYE GÖRE</h3>
-          <p className="text-sm text-gray-600 mb-8">Bir talep bırakın ve yönetici tüm soruları cevaplayacaktır. Bu nesne için veya sizin için başka seçenekler seçilecektir.</p>
+          <h3 className="text-3xl font-semibold mb-6 text-gray-900 tracking-tight">Sizi Arayalım<br />VE STATÜYE GÖRE</h3>
+          <p className="text-sm text-gray-600 mb-8">Bir talep bırakın ve tüm sorularınızı cevaplayalım.</p>
           <form className="space-y-6">
             <div>
               <input
@@ -80,7 +80,7 @@ export default function ContactQrSection() {
               type="submit"
               className="w-full bg-gradient-to-r from-[#9F1C33] to-[#6B0F1A] text-white py-3 rounded-xl font-semibold hover:opacity-90 transition"
             >
-              Onay kodu alın
+Gönder
             </button>
           </form>
         </div>
