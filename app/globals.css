@@ -31,20 +31,33 @@
   }
 }
 
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: 300;
 }
 .font-heading {
-  font-family: var(--font-unbounded), system-ui, sans-serif;
+  font-family: var(--font-heading);
 }
 .font-body {
-  font-family: var(--font-manrope), system-ui, sans-serif;
+  font-family: var(--font-body);
 }
 
 
 body {  
+  font-family: var(--font-body);
+
   background: var(--background);
   color: var(--foreground);
   -webkit-font-smoothing: antialiased;

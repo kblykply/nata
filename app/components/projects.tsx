@@ -190,8 +190,11 @@ export default function ProjectListingSection() {
   };
 
   return (
-    <section className="bg-gray-50 py-16 px-6">
+    <section className="bg-white py-16 px-6">
+       <h2 className="text-2xl  text-center    font-semibold mb-10">Devam Eden<span className="text-[#ab1e3b]"> Projeler</span></h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-screen-xl mx-auto relative">
+
+        
         {listings.map((item, index) => {
           const isHovered = hoveredIndex === index;
           const imgSrc = isHovered && showAltImage && item.imageAlt ? item.imageAlt : item.image;
