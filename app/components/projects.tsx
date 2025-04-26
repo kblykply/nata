@@ -203,7 +203,7 @@
           {listings.map((item, index) => {
             const isHovered = hoveredIndex === index;
             const imgSrc = isHovered && showAltImage && item.imageAlt ? item.imageAlt : item.image;
-
+            console.log(imgSrc);
             return (
               <Link href={item.link} key={index} className="block h-full">
                 <div
