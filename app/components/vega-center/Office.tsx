@@ -30,13 +30,13 @@ export default function OfficeLocationSection() {
               href="https://yandex.com.tr/harita/ankara/?ll=32.8597%2C39.9334&z=16&l=map&pt=32.8597,39.9334,pm2rdm"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center  text-gray-700 px-3 py-1.5 rounded-full text-sm bg-gray-500 hover:bg-gray-200 "
+              className="mt-6 bg-gray-800 text-white text-sm px-5 py-2 rounded-full "
             >
               Haritada Aç
             </a>
             <a
               href="#"
-              className="px-6 py-3 bg-gradient-to-r from-[#9F1C33] to-[#6B0F1A] hover:opacity-90 text-white rounded-full text-sm font-medium transition"
+              className="mt-6 bg-[#ab1e3b]  text-white text-sm px-5 py-2 rounded-full"
             >
               Toplantı Planlayın
             </a>

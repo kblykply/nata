@@ -52,12 +52,20 @@ export default function Header() {
 
         {/* Right Side */}
         <div className="flex items-center space-x-4">
-          <button className="flex items-center px-3 py-1.5 rounded-full text-sm bg-gray-100 hover:bg-gray-200">
-            <span className="text-red-600 font-bold mr-1">🇹🇷</span> TR
-          </button>
+        
+<button className="flex items-center px-3 py-1.5 rounded-full text-sm bg-gray-100 hover:bg-gray-200">
+  <Image
+    src="/turkish-flag.png"   // Make sure this path matches your uploaded file
+    alt="Turkish Flag"
+    width={20}
+    height={20}
+    className="mr-2"
+  />
+  TR
+</button>
 
           <button
-  className="bg-gradient-to-r from-[#9F1C33] to-[#6B0F1A] text-white px-4 py-1 text-xs rounded-lg relative
+  className="bg-[#ab1e3b] text-white px-4 py-1 text-xs rounded-lg relative
              md:px-4 md:py-1.5 md:text-sm md:rounded-xl"
   style={{ fontFamily: "var(--font-heading)" }}
 >

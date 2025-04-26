@@ -145,7 +145,7 @@ export default function HeroSlider() {
         <h2 className="text-lg font-semibold">Vega Center</h2>
         <p className="text-sm">Ankara&apos;nın kalbinde yeni yaşam alanları.</p>
       </div>
-      <div className="absolute right-10 bottom-10 bg-gradient-to-r from-[#9F1C33] to-[#ED6230] rounded-xl w-[300px] h-[60px] px-4 py-2 text-white font-semibold flex items-center z-20">
+      <div className="absolute right-10 bottom-10 bg-[#ab1e3b] rounded-xl w-[300px] h-[60px] px-4 py-2 text-white font-semibold flex items-center z-20">
         <div>
           <h2 className="text-lg">Kampanya Dönemi</h2>
           <p className="text-sm">Avantajları kaçırmayın.</p>

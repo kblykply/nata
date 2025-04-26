@@ -42,6 +42,8 @@ const unitTypes = [
   },
 ];
 
+
+
 export default function UnitTypesSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeUnit = unitTypes[activeIndex];
@@ -81,7 +83,7 @@ export default function UnitTypesSection() {
           aria-label="Para Birimi Seçici"
           className="flex items-center px-4 py-2 rounded-full border border-gray-300 text-sm text-gray-700"
         >
-          360 <span className="ml-1 text-xs text-gray-400">Linki</span>
+          Daire <span className="ml-1 text-xs text-gray-400">Tipleri</span>
         </button>
       </div>
 

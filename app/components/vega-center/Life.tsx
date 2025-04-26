@@ -6,8 +6,8 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const slides = [
   {
-    title: "Ankara&apos;nın Yeni İş ve Yaşam Merkezi",
-    image: "/Ankara nın Yeni İş ve Yaşam Merkezi.jpg",
+    title: "Ankara nın Yeni İş ve Yaşam Merkezi",
+    image: "/vegacenter-dergi.jpg",
     popup: {
       title: "Prestijli Konumda Modern Ofis ve Ticaret Alanları",
       text: "Vega Center, iş dünyası ve sosyal yaşamı tek bir noktada buluşturan yeni nesil karma proje anlayışıyla Ankara&apos;nın yükselen değeri oluyor. Modern ofisler, mağazalar ve sosyal alanlarla hem iş hayatınıza prestij katıyor hem de günlük ihtiyaçlarınıza kolay erişim sağlıyor. Şehrin dinamik yapısına uyumlu tasarımıyla, yatırımcılar ve profesyoneller için ideal bir merkez haline geliyor.",
@@ -33,7 +33,7 @@ const slides = [
     }
   },
   {
-    title: "Ankara&apos;nın Yeni İş ve Yaşam Merkezi",
+    title: "Ankara nın Yeni İş ve Yaşam Merkezi",
     image: "/Ankara nın Yeni İş ve Yaşam Merkezi.jpg",
     popup: {
       title: "Prestijli Konumda Modern Ofis ve Ticaret Alanları",
@@ -114,13 +114,26 @@ export default function ProjectLifeRhythmSection() {
                     {slide.title}
                   </div>
                   {index === i && (
-                    <button
-                      onClick={() => setPopupIndex(i)}
-                      className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-sm text-gray-700 px-5 py-2 rounded-full shadow"
-                    >
-                      Sunuma Git
-                    </button>
-                  )}
+  <>
+    {i === 0 ? (
+      // If it's the first slide, render a link
+      <a
+        href="/vega-center"   // <-- Change this URL to your target link
+        className="absolute   left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-black text-sm text-gray-700 px-5 py-2 rounded-full shadow"
+      >
+        Sunuma Git
+      </a>
+    ) : (
+      // For other slides, open popup
+      <button
+        onClick={() => setPopupIndex(i)}
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-sm text-gray-700 px-5 py-2 rounded-full shadow"
+      >
+        Ayrıntılı Bilgi
+      </button>
+    )}
+  </>
+)}
                 </div>
               </div>
             );

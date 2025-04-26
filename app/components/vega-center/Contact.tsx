@@ -1,87 +1,107 @@
 "use client";
 
 import Image from "next/image";
-import { Tab } from "@headlessui/react";
+import { useState } from "react";
 
 export default function ContactQrSection() {
+  const [selectedTab, setSelectedTab] = useState("whatsapp");
+
   const qrTabs = [
-    { name: "WhatsApp", qr: "/qr.png", icon: "/whatsapp.png" },
-    { name: "Instagram", qr: "/qr.png", icon: "/instagram.png" },
-    { name: "Facebook", qr: "/qr.png", icon: "/facebook.png" }
+    { id: "whatsapp", icon: "/face-insta-wp-01.png", qr: "/nata-telefo-qr.png" },
+    { id: "facebook", icon: "/face-insta-wp-02.png", qr: "/nata-facebook-qr.png" },
+    { id: "instagram", icon: "/face-insta-wp-01.png", qr: "/nata-instagram-qr.png" },
   ];
 
+  const activeQr = qrTabs.find(tab => tab.id === selectedTab)?.qr || "/default-qr.png";
+
   return (
-    <section className="py-24 px-6 text-gray-800 bg-white">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        {/* Left side - QR with Tabs */}
-        <div className="relative">
-          <Tab.Group>
-            <Tab.List className="flex space-x-4 mb-6 justify-center">
-              {qrTabs.map((tab) => (
-                <Tab
-                  key={tab.name}
-                  className={({ selected }) =>
-                    `flex items-center justify-center w-12 h-12 rounded-full transition shadow-md ${
-                      selected ? "bg-gradient-to-r from-[#9F1C33] to-[#6B0F1A]" : "bg-gray-500 hover:bg-gray-200"
-                    }`
-                  }
-                  title={tab.name}
-                >
-                  <Image src={tab.icon} alt={`${tab.name} icon`} width={24} height={24} />
-                </Tab>
-              ))}
-            </Tab.List>
-            <Tab.Panels className="relative h-[260px]">
-              {qrTabs.map((tab, index) => (
-                <Tab.Panel
-                  key={index}
-                  className="absolute inset-0 flex justify-center items-center transition-opacity duration-500 ease-in-out opacity-0 data-[headlessui-state=selected]:opacity-100"
-                >
-                  <Image
-                    src={tab.qr}
-                    alt={`${tab.name} QR`}
-                    width={240}
-                    height={240}
-                    className="rounded-xl object-contain drop-shadow-xl transform transition-transform duration-500 hover:scale-105"
-                  />
-                </Tab.Panel>
-              ))}
-            </Tab.Panels>
-          </Tab.Group>
+    <section className="py-20 px-6 bg-white">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+        {/* Left Side */}
+        <div className="bg-gradient-to-b from-[#3d313f] to-[#2b2230] rounded-3xl p-6 flex flex-col items-center text-white relative w-full max-w-sm mx-auto">
+          {/* Social Icons */}
+          <div className="flex space-x-4 mb-4">
+            {qrTabs.map((tab) => (
+              <button
+                key={tab.id}
+                aria-label={`Switch to ${tab.id}`}
+                onClick={() => setSelectedTab(tab.id)}
+                className={`w-12 h-12 flex items-center justify-center rounded-full ${
+                  selectedTab === tab.id
+                    ? "bg-white text-[#3d313f]"
+                    : "bg-[#4b3b4e] hover:bg-[#5d4b5e]"
+                }`}
+              >
+                <Image src={tab.icon} alt={tab.id} width={24} height={24} />
+              </button>
+            ))}
+          </div>
+
+          {/* Info Text */}
+          <p className="text-center text-xs mb-4 leading-tight">
+            Kamerayı QR koduna takın,<br />
+            Bir akıllı telefondan bir haberi açmak için
+          </p>
+
+          {/* Phone Mockup */}
+          <div className="relative w-64 h-96">
+            <Image
+              src="/telefongorseli.png"
+              alt="Phone"
+              fill
+              className="object-contain"
+            />
+            <div className="absolute top-[42%] left-1/2 transform -translate-x-1/2 transition-all duration-300">
+              <Image
+                src={activeQr}
+                alt={`${selectedTab} QR Code`}
+                width={100}
+                height={100}
+                className="rounded-lg"
+              />
+            </div>
+          </div>
         </div>
 
-        {/* Right side - Contact Form */}
-        <div className="bg-white rounded-3xl shadow-xl p-12 border border-gray-100">
-          <h3 className="text-3xl font-semibold mb-6 text-gray-900 tracking-tight">Sizi Arayalım<br />Hemen Ulaşın </h3>
-          <p className="text-sm text-gray-600 mb-8">Bir talep bırakın ve tüm sorularınızı cevaplayalım.</p>
-          <form className="space-y-6">
-            <div>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Adınız"
-                className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#9F1C33] bg-gray-50 placeholder-gray-500"
-                required
-              />
-            </div>
-            <div>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                placeholder="(5xx) xxx xx xx"
-                className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#9F1C33] bg-gray-50 placeholder-gray-500"
-                required
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-gradient-to-r from-[#9F1C33] to-[#6B0F1A] text-white py-3 rounded-xl font-semibold hover:opacity-90 transition"
-            >
-Gönder
+        {/* Right Side - Form */}
+        <div className="w-full">
+          <h2 className="text-3xl font-semibold text-gray-800 text-center mb-4 leading-snug">
+            TUM SORULARINIZ IÇIN <br />BURADAYIZ
+          </h2>
+          <p className="text-sm text-gray-600 text-center mb-8">
+            Bir çağrı talebinde bulunun.<br />
+            Aklınızdaki sorular için buradayız.
+          </p>
+
+          {/* Toggle Buttons */}
+       
+
+          {/* Inputs */}
+          <div className="flex flex-col md:flex-row gap-4 justify-center mb-4">
+            <input
+              type="text"
+              placeholder="Adınız ve Soyadınız"
+              className="px-6 py-4 bg-gray-50 border text-gray-800 border-gray-300 rounded-full w-full md:w-1/2"
+            />
+            <input
+              type="tel"
+              placeholder="+90 (5__) ___ __ __"
+              className="px-6 py-4 bg-gray-50 border text-gray-800 border-gray-300 rounded-full w-full md:w-1/2"
+            />
+          </div>
+
+          {/* Privacy Note */}
+          <p className="text-[11px] text-gray-500 text-center mb-6 leading-snug max-w-md mx-auto">
+            Formu gönderdiğiniz takdirde <br />
+            <span className="font-semibold">Gizlilik Politikalarımızı onaylamış bulunuyorsunuz</span>
+          </p>
+
+          {/* Submit Button */}
+          <div className="flex justify-center">
+            <button className="px-10 py-4 bg-[#c2b8be] text-white rounded-full text-sm hover:opacity-90 transition">
+              Gönder
             </button>
-          </form>
+          </div>
         </div>
       </div>
     </section>

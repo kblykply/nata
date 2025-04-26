@@ -44,7 +44,7 @@ export default function InfoSection() {
         <p className="text-sm leading-snug max-w-[80%]">
           Herhangi bir soruda <span className="text-red-500 font-semibold">5 dakika</span> içinde cevap
         </p>
-        <img src="/kutu5.png" alt="Person" className="absolute bottom-2 right-2 w-30 object-contain" />
+        <img src="/kutu5.png" alt="Person" className="absolute bottom-2 right-2 w-35 object-contain" />
       </div>
 
     </section>

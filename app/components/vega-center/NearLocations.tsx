@@ -1,5 +1,5 @@
 "use client";
-
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import {
   YMaps,
@@ -164,7 +164,7 @@ const projectLocation = {
 export default function NearbyMap() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [selectedSwitch, setSelectedSwitch] = useState<"konum" | "altyapi">("konum");
+  const [selectedSwitch, setSelectedSwitch] = useState<"altyapi" | "konum">("altyapi");
 
   const filteredPlaces =
     selectedCategory === "all"
@@ -176,20 +176,11 @@ export default function NearbyMap() {
   };
 
   return (
-    <div className="w-full h-screen flex flex-col relative">
+    <div className="w-full h-screen flex bg-white flex-col relative">
       {/* Global Switcher */}
       <div className="w-full flex justify-center py-6 bg-white  z-30">
         <div className="bg-gray-100 p-1 rounded-full flex shadow-md">
-          <button
-            onClick={() => setSelectedSwitch("konum")}
-            className={`px-6 py-2 text-sm rounded-full transition ${
-              selectedSwitch === "konum"
-                ? "bg-[#4B3B4E] text-white"
-                : "text-gray-700"
-            }`}
-          >
-            Konum
-          </button>
+     
           <button
             onClick={() => setSelectedSwitch("altyapi")}
             className={`px-6 py-2 text-sm rounded-full transition ${
@@ -200,12 +191,33 @@ export default function NearbyMap() {
           >
             Altyapı
           </button>
+
+          <button
+            onClick={() => setSelectedSwitch("konum")}
+            className={`px-6 py-2 text-sm rounded-full transition ${
+              selectedSwitch === "konum"
+                ? "bg-[#4B3B4E] text-white"
+                : "text-gray-700"
+            }`}
+          >
+            Konum
+          </button>
         </div>
       </div>
 
       {/* Main Content */}
-      {selectedSwitch === "konum" ? (
-        <section className="flex flex-col md:flex-row flex-1 relative">
+
+      <AnimatePresence mode="wait">
+  {selectedSwitch === "konum" && (
+    <motion.section
+      key="konum"
+      initial={{ opacity: 0, x: 50 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: -50 }}
+      transition={{ duration: 0.4 }}
+      className="flex flex-col md:flex-row flex-1 relative"
+    >
+       <section className="flex flex-col md:flex-row flex-1 relative">
           {/* Sidebar */}
           <aside
             className={`fixed md:static ${
@@ -253,7 +265,7 @@ export default function NearbyMap() {
                 <Placemark
                   geometry={projectLocation.coords}
                   properties={{
-                    balloonContentHeader: `<strong>${projectLocation.name}</strong>`,
+                    balloonContentHeader: `<h4>${projectLocation.name}</h4>`,
                     balloonContentBody: `
                       <div style='display:flex;align-items:center;gap:10px;'>
                         <img src='${projectLocation.image}' style='width:40px;height:40px;border-radius:50%;object-fit:cover;' />
@@ -282,7 +294,7 @@ export default function NearbyMap() {
                       key={place.id}
                       geometry={place.coords}
                       properties={{
-                        balloonContentHeader: `<strong>${place.name}</strong>`,
+                        balloonContentHeader: `<h4 className=" font-thin">${place.name}</h4>`,
                         balloonContentBody: place.description,
                       }}
                       options={{
@@ -299,19 +311,38 @@ export default function NearbyMap() {
             </YMaps>
           </div>
         </section>
-      ) : (
-        // Altyapı Section - Full Page
-        <section className="flex items-center justify-center flex-1 bg-white text-center p-10">
-          <div>
-          
-            <img 
-              src="/vegacenter.jpg" 
-              alt="Altyapı Görseli" 
-              className="mx-auto rounded  w-3/3"
-            />
-          </div>
-        </section>
-      )}
+      ... 
+    </motion.section>
+  )}
+
+  {selectedSwitch === "altyapi" && (
+    <motion.section
+      key="altyapi"
+      initial={{ opacity: 0, x: -50 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: 50 }}
+      transition={{ duration: 0.4 }}
+      className="flex items-center justify-center flex-1 bg-white text-center p-10"
+    >
+      <div>
+        <img 
+          src="/vegacenter.jpg" 
+          alt="Altyapı Görseli" 
+          className="mx-auto rounded w-3/3"
+        />
+      </div>
+    </motion.section>
+  )}
+</AnimatePresence>
+
+
+
+
+
+
+
+
+      )
     </div>
   );
 }
