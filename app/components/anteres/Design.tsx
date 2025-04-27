@@ -33,7 +33,7 @@ export default function DesignSection() {
           <p className="mt-6 text-sm text-gray-700 leading-relaxed">
           Geniş peyzaj alanı, yürüyüş yolları, çocuk bahçesi, su oyunlu süs havuzları
 
-10.000 m 'si yeşil alana ayrılmış parkın içinde günün her saati yürüyüş yapabilecek, çocuklarınız parkta güven içinde oynarken, siz de sevdiklerinizle süs havuzlarının bulunduğu ortak alanda keyifli vakit geçirebileceksiniz.
+10.000 m &apos; si yeşil alana ayrılmış parkın içinde günün her saati yürüyüş yapabilecek, çocuklarınız parkta güven içinde oynarken, siz de sevdiklerinizle süs havuzlarının bulunduğu ortak alanda keyifli vakit geçirebileceksiniz.
  
           </p>
           <button
