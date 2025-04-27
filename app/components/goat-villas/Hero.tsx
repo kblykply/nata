@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { GiFootsteps } from "react-icons/gi";
 import { FaMapMarkerAlt } from "react-icons/fa";
 
 export default function ProjectHeroCloudSection() {
