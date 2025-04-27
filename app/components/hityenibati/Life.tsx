@@ -59,7 +59,7 @@ export default function ProjectLifeRhythmSection() {
   const totalSlides = slides.length;
 
   return (
-    <section className="relative py-24 px-6 bg-white text-center overflow-hidden">
+    <section id="olanak" className="relative py-24 px-6 bg-white text-center overflow-hidden">
       <h2 className="text-3xl font-light text-gray-800 uppercase leading-tight">
       Ankara'nın yükselen değeri<br /> HITYENIBATI
       </h2>

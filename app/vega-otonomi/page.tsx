@@ -8,7 +8,7 @@ import Contact from "../components/Contact"; // Ensure Contact is in components 
 import Office from "../components/Office"; // Ensure Office is in components folder
 import UnitTypes from "../components/vega-otonomi/unit-types"; // Ensure UnitTypes is in components folder
 import Boxes from "../components/vega-otonomi/boxes"; // Ensure Boxes is in components folder
-import Navigator from "../components/vega-center/Navigator"; // Ensure Navigator is in components folder
+import Navigator from "../components/Navigator"; // Ensure Navigator is in components folder
 const Page: React.FC = () => {
   return (
     <main className="min-h-screen bg-gray-900 text-white">
@@ -18,7 +18,7 @@ const Page: React.FC = () => {
         <Life /> 
         <NearLocations /> 
 
-    
+
         <SitePlans /> 
         <UnitTypes />
         <Design /> 
