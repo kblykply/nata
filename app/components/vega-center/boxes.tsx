@@ -7,31 +7,31 @@ const cards = [
     id: 1,
     type: "image",
     title: "Haberleri öğrenin",
-    highlight: "ve projenin olayları",
+    highlight: "Proje Hakkında Tüm Bilgiler",
     background: "/vega-center-03.jpg",
     wide: true,   // Mark this card as wide
   },
   {
     id: 2,
     type: "icon",
-    title: "Şuna bak",
-    highlight: "Tüm proje Belgeler",
+    title: "Belgeleri İndirin",
+    highlight: "Nata Yaşam Projeleri",
     icon: "/vegacenter-klasor.png",
   },
   {
     id: 3,
     type: "image",
     title: "Ziyaret Edin",
-    highlight: "Projenin yeri",
-    background: "/vegacenter-2.jpg",
+    highlight: "Projenin Lokasyonunu Görün",
+    background: "/vega-center-02.jpg",
   },
   {
     id: 4,
     type: "icon",
-    title: "Cevap Ver",
+    title: "Sorularınızı Cevaplıyoruz",
     highlight: "5 dakika içinde",
     icon: "/vegacenter-canli-destek.png",
-    subtitle: "Herhangi bir soru üzerine",
+    subtitle: "Projesyonel Ekibimizle",
   },
 ];
 

@@ -28,7 +28,7 @@
   const listings: Listing[] = [
   
     {
-      link: "/vega-center",
+      link: "/rams-garden",
       type: "standard",
       price: "RAMS GARDEN",
       label: "Hemen Teslim",
@@ -58,7 +58,7 @@
     },
 
     {
-      link: "/dubrovka",
+      link: "/goat-villas",
       type: "standard",
       price: "GOAT VILLAS\nBilkent",
       metro: "Bahçe Konutları",
@@ -75,7 +75,7 @@
 
    
     {
-      link: "/vega-center",
+      link: "/vega-otonomi",
       type: "standard",
       price: "VEGA OTONOMI",
       label: "Hemen Teslim",
@@ -90,7 +90,7 @@
     
 
     {
-      link: "/vega-center",
+      link: "/mega-1453",
       type: "featured",
       price: "MEGA 1453",
       metro: "Hastane Metro,  ",
@@ -110,7 +110,7 @@
     },
 
     {
-      link: "/dubrovka",
+      link: "/anteres",
       type: "standard",
       price: "ANTARES KONUTLARI\n",
       metro: "Yenimahalle Metro",
@@ -133,7 +133,7 @@
 
     
     {
-      link: "/dubrovka",
+      link: "/hityenibati",
       type: "standard",
       price: "HİTYENİBATI\n",
       metro: "İstanbul Yolu Metro",
@@ -149,7 +149,7 @@
       
     },
     {
-      link: "/vega-center",
+      link: "/mega-sasmaz",
       type: "featured",
       price: "MEGA ŞAŞMAZ",
       label: "Hemen Teslim",

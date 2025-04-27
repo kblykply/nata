@@ -1,0 +1,119 @@
+"use client";
+
+import Image from "next/image";
+import { useState, useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { Dialog } from "@headlessui/react";
+
+export default function DesignSection() {
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] });
+  const y = useTransform(scrollYProgress, [0, 1], [0, -200]);
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [galleryIndex, setGalleryIndex] = useState(0);
+  const gallery = [
+    "/new-mega1453-6.jpg",
+    "/new-mega1453-7.jpg",
+    "/new-mega1453-8.jpg",
+    "/new-mega1453-9.jpg",
+    
+
+  ];
+
+  return (
+    <section
+      ref={sectionRef}
+      className="relative min-h-[100vh] py-32 px-6 flex items-center justify-between overflow-hidden bg-white"
+    >
+      <div className="max-w-screen-xl mx-auto w-full flex items-center justify-between gap-10 relative z-10">
+        {/* Left Text Content */}
+        <div className="w-full max-w-xl">
+          <h2 className="text-3xl font-semibold text-gray-900 leading-tight">
+          Mega 1453  <br /> Karma Yaşam Projesi
+          </h2>
+          <p className="mt-6 text-sm text-gray-700 leading-relaxed">
+            Özgün mimarisi ve eşsiz konumuyla Mega 1453, hayalinizdeki yaşam alanını sunuyor.
+          </p>
+          <button
+            onClick={() => {
+              setGalleryIndex(0);
+              setIsOpen(true);
+            }}
+            className="mt-6 bg-gray-800 text-white text-sm px-5 py-2 rounded-full"
+          >
+            Proje Galerisini Gör
+          </button>
+        </div>
+
+        {/* Right Background Image */}
+        <div className="relative h-[600px] w-1/2">
+          <Image
+            src="/new-mega1453-9.jpg"
+            alt="Design"
+            fill
+            className="object-cover object-right rounded-lg"
+          />
+        </div>
+      </div>
+
+      {/* Floating Ball Image - inside section and scrolls within it */}
+      <motion.div
+        style={{ y }}
+        className="absolute top-[50%] left-1/2 z-20 -translate-x-1/2 -translate-y-1/2"
+      >
+        <Image
+          src="/ball.png"
+          alt="Floating Ball"
+          width={160}
+          height={160}
+        />
+      </motion.div>
+
+      {/* Lightbox Modal */}
+      <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="relative z-50">
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center">
+          <div className="fixed inset-0" onClick={() => setIsOpen(false)} />
+          <Dialog.Panel className="relative w-full h-full max-w-7xl mx-auto flex items-center justify-center z-50">
+            {/* Close Button */}
+            <button
+              onClick={() => setIsOpen(false)}
+              className="absolute top-6 right-6 text-white text-3xl z-50"
+            >
+              ×
+            </button>
+
+            {/* Image Navigation */}
+            <div className="w-full h-full flex items-center justify-center relative">
+              <img
+                src={gallery[galleryIndex]}
+                alt={`Image ${galleryIndex + 1}`}
+                className="max-h-[90vh] max-w-[90vw] object-contain rounded-lg"
+              />
+
+              {/* Previous */}
+              {galleryIndex > 0 && (
+                <button
+                  onClick={() => setGalleryIndex(galleryIndex - 1)}
+                  className="absolute left-6 text-white text-4xl z-50"
+                >
+                  ‹
+                </button>
+              )}
+
+              {/* Next */}
+              {galleryIndex < gallery.length - 1 && (
+                <button
+                  onClick={() => setGalleryIndex(galleryIndex + 1)}
+                  className="absolute right-6 text-white text-4xl z-50"
+                >
+                  ›
+                </button>
+              )}
+            </div>
+          </Dialog.Panel>
+        </div>
+      </Dialog>
+    </section>
+  );
+}

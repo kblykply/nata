@@ -4,8 +4,8 @@ import Life from "../components/vega-center/Life"; // Ensure Life is in componen
 import NearLocations from "../components/vega-center/NearLocations"; // Ensure NearLocations is in components folder
 import SitePlans from "../components/vega-center/SitePlans"; // Ensure SitePlans is in components folder
 import Design from "../components/vega-center/Design"; // Ensure Design is in components folder
-import Contact from "../components/vega-center/Contact"; // Ensure Contact is in components folder
-import Office from "../components/vega-center/Office"; // Ensure Office is in components folder
+import Contact from "../components/Contact"; // Ensure Contact is in components folder
+import Office from "../components/Office"; // Ensure Office is in components folder
 import UnitTypes from "../components/vega-center/unit-types"; // Ensure UnitTypes is in components folder
 import Boxes from "../components/vega-center/boxes"; // Ensure Boxes is in components folder
 import Navigator from "../components/vega-center/Navigator"; // Ensure Navigator is in components folder
