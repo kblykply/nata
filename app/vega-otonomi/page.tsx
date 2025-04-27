@@ -18,7 +18,7 @@ const Page: React.FC = () => {
         <Life /> 
         <NearLocations /> 
 
-
+    
         <SitePlans /> 
         <UnitTypes />
         <Design /> 
