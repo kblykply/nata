@@ -6,40 +6,71 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const unitTypes = [
   {
-    id: "C",
-    image: "/MEGA1453-KATPLANI-01.png",
+    id: "1",
+    image: "/megas╠ºas╠ºmazkatplan-01.png",
     details: {
-      "Toplam Alan": "38.91 m²",
-      "Brüt Alan": "42.00 m²",
-      "Balkon": "4.20 m²",
+      "Kat": "1",
+ 
     },
   },
   {
-    id: "1+1",
-    image: "/MEGA1453-KATPLANI-02.png",
+    id: "2",
+    image: "/megas╠ºas╠ºmazkatplan-02.png",
     details: {
-      "Toplam Alan": "45.50 m²",
-      "Brüt Alan": "50.00 m²",
-      "Balkon": "5.00 m²",
+      "Kat": "2",
+ 
     },
   },
   {
-    id: "2+1",
-    image: "/MEGA1453-KATPLANI-03.png",
+    id: "3",
+    image: "/megas╠ºas╠ºmazkatplan-03.png",
     details: {
-      "Toplam Alan": "55.30 m²",
-      "Brüt Alan": "61.00 m²",
-      "Teras": "8.00 m²",
+      "Kat": "3",
+ 
     },
   },
   {
-    id: "3+1",
-    image: "/plans/plan-4.png",
+    id: "4",
+    image: "/megas╠ºas╠ºmazkatplan-04.png",
     details: {
-      "Toplam Alan": "68.75 m²",
-      "Brüt Alan": "75.00 m²",
+      "Kat": "4",
+ 
     },
   },
+  {
+    id: "5",
+    image: "/megas╠ºas╠ºmazkatplan-05.png",
+    details: {
+      "Kat": "5",
+ 
+    },
+  },
+  {
+    id: "6",
+    image: "/megas╠ºas╠ºmazkatplan-06.png",
+    details: {
+      "Kat": "6",
+ 
+    },
+  },
+  {
+    id: "7",
+    image: "/megas╠ºas╠ºmazkatplan-07.png",
+    details: {
+      "Kat": "7",
+ 
+    },
+  },
+  {
+    id: "8",
+    image: "/megas╠ºas╠ºmazkatplan-08.png",
+    details: {
+      "Kat": "8",
+ 
+    },
+  },
+
+  
 ];
 
 

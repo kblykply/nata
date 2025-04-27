@@ -7,7 +7,7 @@ import Image from "next/image";
 const slides = [
   {
     title: "Yaşam Nerede Biz Orada.",
-    description: "Ticari alanlarda sınırlı sayıda fırsat! Kampanya dönemine özel avantajlarla şimdi Vega Center&apos;da yerinizi ayırtın.",
+    description: "Ticari alanlarda sınırlı sayıda fırsat! Kampanya dönemine özel avantajlarla şimdi Vega Center'da yerinizi ayırtın.",
     backgroundImage: "/vega-center-03.jpg",
     overlayStats: [
       { number: "339", label: "Ofis" },
@@ -21,20 +21,37 @@ const slides = [
     },
   },
   {
-    title: "Hayalinizdeki Proje Burada.",
-    description: "Ankara&apos;nın kalbinde yeni yaşam alanları. Şimdi yerinizi ayırtın, avantajları kaçırmayın.",
-    backgroundImage: "/goat-villas-bilkent-4.jpg",
+    title: "Mega 1453",
+    description: "116.000 m² alan üzerinde yükselen RAMS Garden, İstanbul'un merkezinde doğa ile şehri buluşturan benzersiz bir yaşam vadediyor.",
+    backgroundImage: "/new-mega1453-6.jpg",
     overlayStats: [
-      { number: "120", label: "Daire" },
-      { number: "40", label: "Dükkan" },
-      { number: "900", label: "Otopark" },
+      { number: "796  ", label: "Konut" },
+      { number: "8.815 m", label: " Peyzaj" },
+      { number: "42.300 m²", label: " Alan" },
     ],
+
     promoCard: {
-      title: "Modern ve Konforlu Yaşam",
-      features: ["Doğayla iç içe mimari", "Yüksek güvenlik", "Sosyal alanlar"],
-      image: "/Nature.png",
+      title: "Zamansız Şıklık",
+      features: ["Yüksek yaya trafiği", "Kurumsal markalar", "Ofis + mağaza + yaşam konsepti"],
+      image: "/slider/2.png",
     },
   },
+  {
+    title: "RAMS Garden Bahçelievler",
+    description: "70.000 m² alanda yükselen Mega 1453, Ankara’nın merkezinde doğayla iç içe, prestijli ve yüksek standartlı bir yaşam sunuyor.",
+    backgroundImage: "/rams-garden-bahcelievler-5.jpg",
+    overlayStats: [
+      { number: "715 ", label: "Konut" },
+      { number: "36.000 m²", label: " Peyzaj" },
+      { number: "70.000 m²", label: " Alan" },
+    ],
+    promoCard: {
+      title: "Zamansız Şıklık",
+      features: ["Yüksek yaya trafiği", "Kurumsal markalar", "Ofis + mağaza + yaşam konsepti"],
+      image: "/slider/3.png",
+    },
+  },
+  
 ];
 
 export default function HeroSlider() {
@@ -110,10 +127,10 @@ export default function HeroSlider() {
             fill
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-black/30" />
+          <div className="absolute inset-0 " />
           <div className="absolute top-4 left-4 right-4 text-white z-10">
-            <h2 className="text-lg font-semibold mb-2">{slides[currentIndex].promoCard.title}</h2>
-            <ul className="text-sm mb-2 space-y-1">
+            <h2 className="text-lg text-gray-800   font-semibold mb-2">{slides[currentIndex].promoCard.title}</h2>
+            <ul className="text-sm  text-gray-800 mb-2 space-y-1">
               {slides[currentIndex].promoCard.features.map((item, idx) => (
                 <li key={idx}>{item}</li>
               ))}
@@ -141,16 +158,37 @@ export default function HeroSlider() {
       </div>
 
       {/* Bottom Right Cards */}
-      <div className="absolute right-10 bottom-28 bg-white rounded-xl shadow-lg w-[300px] h-[150px] px-4 py-3 text-black z-20">
-        <h2 className="text-lg font-semibold">Vega Center</h2>
-        <p className="text-sm">Ankara&apos;nın kalbinde yeni yaşam alanları.</p>
-      </div>
-      <div className="absolute right-10 bottom-10 bg-[#ab1e3b] rounded-xl w-[300px] h-[60px] px-4 py-2 text-white font-semibold flex items-center z-20">
-        <div>
-          <h2 className="text-lg">Kampanya Dönemi</h2>
-          <p className="text-sm">Avantajları kaçırmayın.</p>
-        </div>
-      </div>
+     {/* First Card */}
+<div className="absolute right-10 bottom-28 bg-white rounded-xl shadow-lg w-[300px] h-[150px] px-4 py-3 text-black z-20 flex">
+  <div className="flex-1">
+    <h2 className="text-base font-semibold">Hemen Yerinizi Alın!</h2>
+    <p className="text-xs mt-1">Estetik ve fonksiyonla, geleceğin iş ve yaşam alanları.</p>
+  </div>
+  <div className="w-25 h-50 relative">
+    <Image
+      src="/anahtarev.png"
+      alt="Key and Home"
+      fill
+      className="object-contain"
+    />
+  </div>
+</div>
+
+{/* Second Card */}
+<div className="absolute right-10 bottom-10 bg-[#ab1e3b] rounded-xl w-[300px] h-[60px] px-4 py-2 text-white font-semibold flex items-center justify-between z-20">
+  <div>
+    <h2 className="text-sm">Doğru adres,</h2>
+    <p className="text-sm">doğru yatırım.</p>
+  </div>
+  <div className="w-22 h-32 relative">
+    <Image
+      src="/evhome.png"
+      alt="Hand with House"
+      fill
+      className="object-contain"
+    />
+  </div>
+</div>
     </section>
   );
 }

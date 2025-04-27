@@ -6,40 +6,46 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const unitTypes = [
   {
-    id: "C",
-    image: "/MEGA1453-KATPLANI-01.png",
+    id: "1",
+    image: "/hityenikatplangorsel-01.png",
     details: {
-      "Toplam Alan": "38.91 m²",
-      "Brüt Alan": "42.00 m²",
-      "Balkon": "4.20 m²",
+      "Daire Tipi": "1",
+      
     },
   },
   {
-    id: "1+1",
-    image: "/MEGA1453-KATPLANI-02.png",
+    id: "2",
+    image: "/hityenikatplangorsel-02.png",
     details: {
-      "Toplam Alan": "45.50 m²",
-      "Brüt Alan": "50.00 m²",
-      "Balkon": "5.00 m²",
+      "Daire Tipi": "2",
+      
     },
   },
   {
-    id: "2+1",
-    image: "/MEGA1453-KATPLANI-03.png",
+    id: "3",
+    image: "/hityenikatplangorsel-03.png",
     details: {
-      "Toplam Alan": "55.30 m²",
-      "Brüt Alan": "61.00 m²",
-      "Teras": "8.00 m²",
+      "Daire Tipi": "3",
+      
     },
   },
   {
-    id: "3+1",
-    image: "/plans/plan-4.png",
+    id: "4",
+    image: "/hityenikatplangorsel-04.png",
     details: {
-      "Toplam Alan": "68.75 m²",
-      "Brüt Alan": "75.00 m²",
+      "Daire Tipi": "4",
+      
     },
   },
+  {
+    id: "5",
+    image: "/hityenikatplangorsel-05.png",
+    details: {
+      "Daire Tipi": "5",
+      
+    },
+  },
+
 ];
 
 

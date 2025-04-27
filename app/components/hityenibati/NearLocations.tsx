@@ -18,147 +18,127 @@ const categories = [
   { id: "markets", name: "Marketler", count: 18, pin: "/shop.png" },
 ];
 
-const places = [ 
+const places = [
+  // Alışveriş Merkezleri
   {
-    id: 1,
+    id: 52,
     category: "malls",
-    coords: [39.9101632, 32.7757069],
-    name: "CEPA Alışveriş Merkezi",
-    description: "4 dk, 1.5 km"
+    coords: [39.99024, 32.64823],
+    name: "Göksu Alışveriş Merkezi",
+    description: "5 dk, 2.4 km"
   },
   {
-    id: 2,
+    id: 53,
     category: "malls",
-    coords: [39.9112, 32.7583],
-    name: "Tepe Prime Alışveriş Merkezi",
-    description: "4 dk, 1.5 km"
+    coords: [39.96864, 32.71713],
+    name: "Atlantis Alışveriş ve Eğlence Merkezi",
+    description: "15 dk, 7 km"
   },
   {
-    id: 3,
+    id: 54,
     category: "malls",
-    coords: [39.9093, 32.7647],
-    name: "Maidan AVM",
-    description: "3 dk, 850 m"
+    coords: [39.9645, 32.6189],
+    name: "Metromall Alışveriş Merkezi",
+    description: "11 dk, 6 km"
   },
   {
-    id: 4,
+    id: 55,
     category: "malls",
-    coords: [39.9103, 32.7658],
-    name: "Kentpark Alışveriş Merkezi",
-    description: "3 dk, 1.3 km"
+    coords: [39.96864, 32.71713],
+    name: "Meydan Batıkent AVM",
+    description: "13 dk, 7 km"
   },
+
+  // Okullar
   {
-    id: 5,
+    id: 56,
     category: "schools",
-    coords: [39.9126, 32.7622],
-    name: "Ankara Özel Tevfik Fikret Okulları",
-    description: "2 dk, 800 m"
+    coords: [39.95191, 32.76914],
+    name: "ACAR OKULLARI",
+    description: "5 dk, 4.3 km"
   },
   {
-    id: 6,
+    id: 57,
     category: "schools",
-    coords: [39.9131, 32.7630],
-    name: "Yasemin Karakaya Ortaokulu",
-    description: "2 dk, 700 m"
+    coords: [39.95191, 32.76914],
+    name: "Müjgan Karaçalı İlkokulu",
+    description: "8 dk, 8.3 km"
   },
   {
-    id: 7,
+    id: 58,
     category: "schools",
-    coords: [39.9017, 32.7617],
-    name: "ODTÜ Geliştirme Vakfı Ankara Okulları",
-    description: "8 dk, 4.5 km"
+    coords: [39.95191, 32.76914],
+    name: "Meltem Ayhan Okulları",
+    description: "7 dk, 5 km"
   },
+
+  // Hastaneler
   {
-    id: 8,
-    category: "schools",
-    coords: [39.9128, 32.7599],
-    name: "Ankara Sınav Koleji",
-    description: "7 dk, 3.5 km"
-  },
-  {
-    id: 9,
+    id: 59,
     category: "hospitals",
-    coords: [39.9017, 32.7617],
-    name: "Ankara Bilkent Şehir Hastanesi",
-    description: "6 dk, 3 km"
+    coords: [39.95191, 32.76914],
+    name: "Yıldırım Beyazıt Üniversitesi Yenimahalle Eğitim ve Araştırma Hastanesi",
+    description: "10 dk, 5.8 km"
   },
   {
-    id: 10,
+    id: 60,
     category: "hospitals",
-    coords: [39.9109, 32.8540],
-    name: "Ankara Eğitim ve Araştırma Hastanesi",
-    description: "7 dk, 3 km"
+    coords: [39.96656, 32.7095],
+    name: "Medical Park Ankara Hastanesi",
+    description: "11 dk, 6.8 km"
   },
   {
-    id: 11,
+    id: 61,
     category: "hospitals",
-    coords: [39.9095, 32.7650],
-    name: "Medicana Ankara Hastanesi",
-    description: "7 dk, 3.5 km"
+    coords: [39.95191, 32.76914],
+    name: "Özel Eryaman Hastanesi",
+    description: "7 dk, 4.2 km"
   },
   {
-    id: 12,
+    id: 62,
     category: "hospitals",
-    coords: [39.8907, 32.7103],
-    name: "Medisun Hastanesi",
-    description: "10 dk, 7.3 km"
+    coords: [39.95191, 32.76914],
+    name: "Etimesgut Şehit Sait Ertürk Devlet Hastanesi",
+    description: "10 dk, 8.3 km"
+  },
+
+  // Marketler
+  {
+    id: 63,
+    category: "markets",
+    coords: [39.95191, 32.76914],
+    name: "File Market",
+    description: "6 dk, 4.3 km"
   },
   {
-    id: 13,
+    id: 64,
     category: "markets",
-    coords: [39.9100, 32.7650],
-    name: "Migros Market",
-    description: "4 dk, 1.5 km"
-  },
-  {
-    id: 14,
-    category: "markets",
-    coords: [39.9128, 32.7599],
-    name: "Barış Market",
-    description: "3 dk, 1.4 km"
-  },
-  {
-    id: 15,
-    category: "markets",
-    coords: [39.9136, 32.7635],
-    name: "Yaşam Market",
-    description: "1 dk, 300 m"
-  },
-  {
-    id: 16,
-    category: "markets",
-    coords: [39.9136, 32.7635],
-    name: "Eğinli Market",
-    description: "1 dk, 300 m"
-  },
-  {
-    id: 17,
-    category: "markets",
-    coords: [39.9136, 32.7635],
+    coords: [39.97341, 32.79081],
     name: "Şok Market",
-    description: "1 dk, 300 m"
+    description: "8 dk, 5 km"
   },
   {
-    id: 18,
+    id: 65,
     category: "markets",
-    coords: [39.9110, 32.7640],
-    name: "Çağdaş Market",
-    description: "3 dk, 1.2 km"
+    coords: [39.97341, 32.79081],
+    name: "Batıkent Şok Market",
+    description: "10 dk, 6 km"
   },
   {
-    id: 19,
+    id: 66,
     category: "markets",
-    coords: [39.9105, 32.7660],
-    name: "CarrefourSA",
-    description: "4 dk, 2 km"
-  },
+    coords: [39.95191, 32.76914],
+    name: "Öz Market",
+    description: "5 dk, 4 km"
+  }
 ];
 
+
 const projectLocation = {
-  coords: [39.913899, 32.767134],
-  name: "VEGA CENTER",
-  description: "İş dünyasının yeni merkezi VEGA Center",
-  image: "/vega-center-03.jpg",
+  coords: [39.98404, 32.65877],
+  name: "HITYENIBATI",
+  description: "Yeni Batı Mahallesi, sıradışı ve prestijli konut projesi",
+  image: "/HİTYENİBATI-ON.jpg",
 };
 
 export default function NearbyMap() {
@@ -255,7 +235,7 @@ export default function NearbyMap() {
           <div className="flex-1">
             <YMaps query={{ lang: "tr_TR" }}>
               <Map
-                defaultState={{ center: [39.913899, 32.767134], zoom: 15 }}
+                defaultState={{ center: [39.98404, 32.65877], zoom: 15 }}
                 width="100%"
                 height="100%"
                 modules={["templateLayoutFactory", "layout.ImageWithContent", "balloon"]}
@@ -326,7 +306,7 @@ export default function NearbyMap() {
     >
       <div>
         <img 
-          src="/vegacenter.jpg" 
+          src="/hityenibati-lokasyon.jpg" 
           alt="Altyapı Görseli" 
           className="mx-auto rounded w-3/3"
         />

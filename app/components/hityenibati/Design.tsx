@@ -13,10 +13,11 @@ export default function DesignSection() {
   const [isOpen, setIsOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
   const gallery = [
-    "/vega-site.jpg",
-    "/vega-center-02.jpg",
-    "/vega-center-03.jpg",
-    "/vega-center-07.jpg",
+    "/hityenibati-5.jpg",
+    "/hityenibati-6.jpg",
+    "/hityenibati-7.jpg",
+    "/hityenibati-8.jpg",
+  
 
   ];
 
@@ -29,10 +30,10 @@ export default function DesignSection() {
         {/* Left Text Content */}
         <div className="w-full max-w-xl">
           <h2 className="text-3xl font-semibold text-gray-900 leading-tight">
-          VEGA Center  <br /> ile Tanışın
+          HİTYENİBATI  <br /> ile Tanışın
           </h2>
           <p className="mt-6 text-sm text-gray-700 leading-relaxed">
-          Bir NATA Yaşam projesi olan VEGA Center, yatay mimarisi ile şehrin silüetine estetik bir değer katan, iş ve premium alışveriş deneyimini en yüksek seviyeye çıkaran bir yaşam merkezidir. Ferah ofisleri ve verimli iş alanları ile yüksek potansiyele sahip olan VEGA Center&apos;ın her noktası hayatı kolaylaştırmak için tasarlandı. 
+          Modern yaşamın ihtiyaçlarını en ince detayına kadar düşünerek tasarlanmış olan HİTYENİBATI, sadece bir konut projesi değil, aynı zamanda hayatınızı kolaylaştıracak birçok özelliği bünyesinde barındırıyor. Metro, toplu taşıma ve otoyol erişim noktalarına olan yakınlığı sayesinde ulaşımın keyfini çıkarırken, trafikte değil sevdiklerinizle geçireceğiniz zamanın tadını çıkaracaksınız.
           </p>
           <button
             onClick={() => {
@@ -48,7 +49,7 @@ export default function DesignSection() {
         {/* Right Background Image */}
         <div className="relative h-[600px] w-1/2">
           <Image
-            src="/vega-center-03.jpg"
+            src="/hityenibati-7.jpg"
             alt="Design"
             fill
             className="object-cover object-right rounded-lg"

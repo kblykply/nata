@@ -6,48 +6,66 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const slides = [
   {
-    title: "Ankara nın Yeni İş ve Yaşam Merkezi",
-    image: "/vegacenter-dergi.jpg",
+    title: "Dergiyi Keşfedin",
+    image: "/megaşaşmaz-dergi.jpg",
     popup: {
-      title: "Prestijli Konumda Modern Ofis ve Ticaret Alanları",
-      text: "Vega Center, iş dünyası ve sosyal yaşamı tek bir noktada buluşturan yeni nesil karma proje anlayışıyla Ankara&apos;nın yükselen değeri oluyor. Modern ofisler, mağazalar ve sosyal alanlarla hem iş hayatınıza prestij katıyor hem de günlük ihtiyaçlarınıza kolay erişim sağlıyor. Şehrin dinamik yapısına uyumlu tasarımıyla, yatırımcılar ve profesyoneller için ideal bir merkez haline geliyor.",
-      images: ["/vegacenter-Ankara nın Yeni İş ve Yaşam Merkezi (2).jpg", "/vegacenter-Ankara nın Yeni İş ve Yaşam Merkezi.jpg"]
+      title: "Müşterileriniz İçin Erişim Kolaylığı",
+      text: "Ankara'nın en işlek noktalarından birinde konumlanan Mega Şaşmaz, ulaşım kolaylığı ve geniş otopark alanlarıyla hem işletmelere hem de ziyaretçilere büyük avantaj sağlıyor.",
+      images: ["/megaşaşmaz-Kolay Ulaşım ve Geniş Otopark İmkanları (2).jpg", "/megaşaşmaz-Kolay Ulaşım ve Geniş Otopark İmkanları.jpg"]
     }
   },
   {
-    title: "Elektrikli Araçlar İçin Şarj İstasyonları",
-    image: "/Elektrikli Araçlar İçin Şarj İstasyonları.jpg",
+    title: "Yeni Nesil Oto Sanayi Deneyimi",
+    image: "/megaşaşmaz Yeni.jpg",
     popup: {
-      title: "Geleceğin Enerjisine Uyumlu Akıllı Çözümler",
-      text: "Vega Center da sürdürülebilir yaşam anlayışıyla elektrikli araç sahipleri için özel şarj istasyonları sunuluyor. Çevre dostu ulaşımı destekleyen bu altyapı sayesinde, aracınızı güvenle ve kolayca şarj edebilir, geleceğin teknolojisine her zaman bir adım önde uyum sağlayabilirsiniz. Modern yaşamın gereksinimlerine cevap veren bu özellik ile konforunuzu ve çevreci yaklaşımınızı bir arada yaşayın.",
-      images: ["/vegacenter-şarj istasyonu.jpg", "/vegacenter-şarj istasyonu (2).jpg"]
+      title: "Modern Altyapıyla Yenilenen Sanayi Kültürü",
+      text: "Mega Şaşmaz, klasik oto sanayi anlayışını geride bırakarak, teknolojik altyapısı ve düzenli yapısıyla yeni nesil bir sanayi deneyimi sunuyor. Hem işletmeler hem de müşteriler için konforlu ve verimli bir ortam sağlıyor.",
+      images: ["/megaşaşmaz- Yeni Nesil Oto Sanayi Deneyimi (2).jpg", "/megaşaşmaz- Yeni Nesil Oto Sanayi Deneyimi.jpg"]
     }
   },
   {
-    title: "Merkezi Konum, Kolay Ulaşım",
-    image: "/Merkezi Konum, Kolay Ulaşım.jpg",
+    title: "Alışveriş ve Sosyal Yaşamın Yeni Adresi",
+    image: "/megaşaşmaz Sosyal.jpg",
     popup: {
-      title: "Şehrin Kalbinde, Her Yere Bir Adım Uzaklıkta",
-      text: "Vega Center, Ankara’nın en stratejik noktalarından birinde konumlanarak size zamandan tasarruf etme ayrıcalığı sunuyor. Metro, ana arterler ve önemli ticaret merkezlerine yakınlığı sayesinde hem iş hem de sosyal yaşamınızda ulaşımı sorun olmaktan çıkarıyor. Merkezi konum avantajıyla, iş dünyasının dinamizmiyle şehrin olanaklarını en verimli şekilde değerlendirin.",
-      images: ["/vegacenter-merkezi konum.jpg", "/vegacenter-merkezi konum (2).jpg"]
+      title: "İşinizi Yaparken Sosyal Hayatı Yakalayın",
+      text: "Sadece ticaret değil, aynı zamanda yaşam alanı sunan Mega Şaşmaz, alışveriş ve sosyal alanlarıyla ziyaretçilerine keyifli vakit geçirme imkanı sağlıyor. Kafeler, restoranlar ve mağazalarla dolu modern bir ortam sizi bekliyor.",
+      images: ["/megaşaşmaz-Alışveriş ve Sosyal Yaşamın Yeni Adresi (2).jpg", "/megaşaşmaz-Alışveriş ve Sosyal Yaşamın Yeni Adresi.jpg"]
     }
   },
   {
-    title: "Ankara nın Yeni İş ve Yaşam Merkezi",
-    image: "/Ankara nın Yeni İş ve Yaşam Merkezi.jpg",
+    title: "Modern Mimari ve Fonksiyonel Tasarım",
+    image: "/megaşaşmaz Modern.jpg",
     popup: {
-      title: "Prestijli Konumda Modern Ofis ve Ticaret Alanları",
-      text: "Vega Center, iş dünyası ve sosyal yaşamı tek bir noktada buluşturan yeni nesil karma proje anlayışıyla Ankara&apos;nın yükselen değeri oluyor. Modern ofisler, mağazalar ve sosyal alanlarla hem iş hayatınıza prestij katıyor hem de günlük ihtiyaçlarınıza kolay erişim sağlıyor. Şehrin dinamik yapısına uyumlu tasarımıyla, yatırımcılar ve profesyoneller için ideal bir merkez haline geliyor.",
-      images: ["/vegacenter-Ankara nın Yeni İş ve Yaşam Merkezi (2).jpg", "/vegacenter-Ankara nın Yeni İş ve Yaşam Merkezi.jpg"]
+      title: "Estetik ve Kullanışlılık Bir Arada",
+      text: "Geniş cepheler, ferah iç alanlar ve çağdaş mimari detaylarla Mega Şaşmaz, iş yerlerinize prestij katıyor. Fonksiyonelliği ön planda tutan tasarımıyla her metrekareyi verimli kullanın.",
+      images: ["/megaşaşmaz-Modern Mimari ve Fonksiyonel Tasarım (2).jpg", "/megaşaşmaz-Modern Mimari ve Fonksiyonel Tasarım.jpg"]
     }
   },
   {
-    title: "Teraslı Ofislerle Doğayla İç İçe Çalışma",
-    image: "/Teraslı Ofislerle Doğayla İç İçe Çalışma.jpg",
+    title: "Kolay Ulaşım ve Geniş Otopark İmkanları",
+    image: "/megaşaşmaz Ulaşım.jpg",
     popup: {
-      title: "Verimliliği Doğanın Huzuruyla Buluşturan Ofisler",
-      text: "Modern iş hayatını, ferah teraslı ofislerle doğanın sakinleştirici etkisiyle yeniden tanımlayın. Açık hava alanlarıyla motivasyonunuzu artıran bu özel çalışma ortamı, yeşilin enerjisiyle daha üretken ve keyifli bir iş deneyimi sunuyor. Şehrin kalabalığından uzak, doğayla iç içe ofis konseptiyle hem konforu hem de prestiji bir arada yaşayın.",
-      images: ["/vega-teraslı ofis.jpg", "/vega-teraslıofis.jpg"]
+      title: "Müşterileriniz İçin Erişim Kolaylığı",
+      text: "Ankara'nın en işlek noktalarından birinde konumlanan Mega Şaşmaz, ulaşım kolaylığı ve geniş otopark alanlarıyla hem işletmelere hem de ziyaretçilere büyük avantaj sağlıyor.",
+      images: ["/megaşaşmaz-Kolay Ulaşım ve Geniş Otopark İmkanları (2).jpg", "/megaşaşmaz-Kolay Ulaşım ve Geniş Otopark İmkanları.jpg"]
+    }
+  },
+  {
+    title: "Geniş Araç ve Yükleme Alanları",
+    image: "/megaşaşmaz Geniş.jpg",
+    popup: {
+      title: "Lojistikte Maksimum Verimlilik",
+      text: "Yüksek tavanlı depo ve mağaza alanları sayesinde hem depolama kapasitenizi artırın hem de ürünlerinizi şık bir şekilde sergileyin. Mega Şaşmaz, işletmenize alan avantajı sunuyor.",
+      images: ["/megaşaşmaz-Geniş Araç ve Yükleme Alanları (2).jpg", "/megaşaşmaz-Geniş Araç ve Yükleme Alanları.jpg"]
+    }
+  },
+  {
+    title: "Yüksek Tavanlı Depo ve Mağaza Alanları  ",
+    image: "/megaşaşmaz Yüksek.jpg",
+    popup: {
+      title: "Depolama ve Teşhirde Esnek Çözümler",
+      text: "Yüksek tavanlı depo ve mağaza alanları sayesinde hem depolama kapasitenizi artırın hem de ürünlerinizi şık bir şekilde sergileyin. Mega Şaşmaz, işletmenize alan avantajı sunuyor.",
+      images: ["/megaşaşmaz- Yüksek Tavanlı Depo ve Mağaza Alanları (2).jpg", "/megaşaşmaz- Yüksek Tavanlı Depo ve Mağaza Alanları.jpg"]
     }
   },
 ];
@@ -63,8 +81,7 @@ export default function ProjectLifeRhythmSection() {
         YAŞAM RİTİMİNİZ <br /> VEGA CENTER DA 
       </h2>
       <p className="mt-4 text-sm text-gray-600 max-w-xl mx-auto">
-        Vega Center, modern yaşamın dinamiklerini ve konforunu bir araya getiriyor. 
-        Her bir alan, yaşam kalitenizi artırmak için tasarlandı.
+      Ankara Şaşmaz'da 700 bağımsız bölümden oluşan, 2 bodrum katı, alt zemin kat, üst zemin kat ve 7 ofis katı ile geniş depolama hacimlerine sahip MEGA Şaşmaz, toplam 160.000 m2 kapalı alana sahiptir. 
       </p>
 
       <div className="relative mt-12 w-full max-w-7xl mx-auto h-[500px]">

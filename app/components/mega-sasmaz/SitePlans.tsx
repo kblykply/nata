@@ -6,35 +6,11 @@ import { useState } from "react";
 const hotspots = [
   {
     id: 1,
-    label: "A Blok",
-    text: "Göz Alıcı Manzara, Kaliteli Yaşam",
-    image: "/vega-a-blok.png",
-    info: "Zemin + 8 Kat, 26.925,87 m², Ofis Sayısı 100",
-    position: { top: "50%", left: "75%" },
-  },
-  {
-    id: 2,
-    label: "B Blok",
-    text: "Şehirde Modernlik, Peyzajda Doğallık",
-    image: "/vega-b-blok.png",
-    info: "Zemin + 10 Kat, 38.450,94 m², Ofis Sayısı 152",
+    label: "MEGA ŞAŞMAZ",
+    text: "Yaşamın Merkezi",
+    image: "/mega-hover-1.png",
+    info: "Yaşamın Merkezi MEGA ŞAŞMAZ",
     position: { top: "40%", left: "45%" },
-  },
-  {
-    id: 3,
-    label: "C Blok",
-    text: "Ulaşımda Kolaylık, Yaşamda Konfor",
-    image: "/vega-c-blok.png",
-    info: "Zemin + 11 Kat, 21.639,35 m², Ofis Sayısı 87",
-    position: { top: "40%", left: "25%" },
-  },
-  {
-    id: 4,
-    label: "D Blok",
-    text: "Vega Merkez",
-    image: "/vega-d-blok.png",
-    info: "87 Ticari Alan",
-    position: { top: "60%", left: "35%" },
   },
 ];
 
@@ -47,19 +23,17 @@ export default function SidePlans() {
       {/* Top Text */}
       <div className="text-center max-w-4xl mx-auto py-16 z-20 relative px-4">
         <h2 className="text-3xl font-semibold tracking-wide text-gray-900">
-          Yaşam Nerede <br /> Biz Orada.
+        MEGA ŞAŞMAZ <br />  Ankara Şaşmaz'da
         </h2>
         <p className="mt-4 text-sm text-gray-700 leading-relaxed">
-          İş dünyasının yeni merkezi VEGA Center&apos;da bir çok prestijli marka karması ile işiniz yeni bir boyut kazanıyor.
-          Açık AVM konsepti, yaşam alanları, ulaşım kolaylığı ile yaşamın bütün olanaklarını ayağınıza getiriyor.
-          En değerli sermayeniz olan zamanınız, bu projede kıymetleniyor.
+        Ankara Şaşmaz'da 700 bağımsız bölümden oluşan, 2 bodrum katı, alt zemin kat, üst zemin kat ve 7 ofis katı ile geniş depolama hacimlerine sahip MEGA Şaşmaz, toplam 160.000 m2 kapalı alana sahiptir. 
         </p>
       </div>
 
       {/* Image Container */}
       <div className="relative w-full max-w-6xl h-[70vh] mx-auto">
         <Image
-          src="/vega-site.jpg"
+          src="/mega-sasmaz-vaziyet.jpeg"
           alt="Plan Image"
           fill
           className="object-contain z-0"
