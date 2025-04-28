@@ -43,13 +43,12 @@ export default function Header() {
           </Link>
 
           <nav className="hidden md:flex space-x-6 text-xs" style={{ fontFamily: 'Unbounded, sans-serif' }}>
-  <Link href="#">Ana Sayfa</Link>
-  <Link href="#">Projeler</Link>
-  <Link href="#">Hakkımızda</Link>
-  <Link href="#">Kampanyalar</Link>
-  <Link href="#">N-Bülten</Link>
-  <Link href="#">Nata Holding</Link>
-  <Link href="#">İletişim</Link>
+  <Link href="/">Ana Sayfa</Link>
+  <Link href="/about-us">Hakkımızda</Link>
+  <Link href="/kampanya">Kampanyalar</Link>
+  <Link href="/n-bulten">N-Bülten</Link>
+  <Link href="https://www.nataholding.com/">Nata Holding</Link>
+  <Link href="/contact-us">İletişim</Link>
 </nav>
 
         </div>

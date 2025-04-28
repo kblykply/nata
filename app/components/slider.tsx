@@ -25,9 +25,9 @@ const slides = [
     description: "116.000 m² alan üzerinde yükselen RAMS Garden, İstanbul'un merkezinde doğa ile şehri buluşturan benzersiz bir yaşam vadediyor.",
     backgroundImage: "/new-mega1453-6.jpg",
     overlayStats: [
-      { number: "796  ", label: "Konut" },
-      { number: "8.815 m", label: " Peyzaj" },
-      { number: "42.300 m²", label: " Alan" },
+      { number: "715   ", label: "Konut" },
+      { number: "70.000 m²", label: " Kapalı Alan" },
+      { number: "36.000 m²", label: " Alan" },
     ],
 
     promoCard: {
@@ -38,12 +38,12 @@ const slides = [
   },
   {
     title: "RAMS Garden Bahçelievler",
-    description: "70.000 m² alanda yükselen Mega 1453, Ankara’nın merkezinde doğayla iç içe, prestijli ve yüksek standartlı bir yaşam sunuyor.",
+    description: "116.000 m² alan üzerinde yükselen RAMS Garden, İstanbul’un merkezinde doğa ile şehri buluşturan benzersiz bir yaşam vadediyor.",
     backgroundImage: "/rams-garden-bahcelievler-5.jpg",
     overlayStats: [
-      { number: "715 ", label: "Konut" },
-      { number: "36.000 m²", label: " Peyzaj" },
-      { number: "70.000 m²", label: " Alan" },
+      { number: "796", label: "Konut" },
+      { number: "8.815  m²", label: " Ticari Alan" },
+      { number: "33.000 m²", label: " Peyzaj" },
     ],
     promoCard: {
       title: "Zamansız Şıklık",
@@ -140,7 +140,7 @@ export default function HeroSlider() {
       </div>
 
       {/* Left Side Text */}
-      <div className="absolute left-10 bottom-10 z-20 max-w-xl">
+      <div className="absolute left-10 bottom-10 z-20 max-w-2xl">
         <h1 className="text-4xl md:text-5xl font-bold leading-tight">
           {slides[currentIndex].title}
         </h1>
