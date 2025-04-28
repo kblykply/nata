@@ -6,7 +6,7 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 
 export default function ProjectHeroCloudSection() {
   return (
-    <section id="proje" className="relative w-full h-[150vh] overflow-hidden bg-gradient-to-b from-[#006d9d] to-[#e6f3fd]">
+    <section className="relative w-full h-[150vh] overflow-hidden bg-gradient-to-b from-[#006d9d] to-[#e6f3fd]">
       {/* Looping clouds (seamless illusion) */}
       <div className="absolute top-60 left-0 w-full h-full z-10 overflow-hidden">
         <motion.div
@@ -60,7 +60,7 @@ export default function ProjectHeroCloudSection() {
       <div className="flex justify-center my-10">
       <div className="w-90 md:w-150">
         <Image
-          src="/goat-villas-logo2.png"
+          src="/antereslogo.png"
           alt="Antares Logo ve maddeler Eksik"
           width={0}
           height={0}
@@ -72,20 +72,15 @@ export default function ProjectHeroCloudSection() {
 
 <div className="flex flex-wrap justify-center gap-3 max-w-xl mx-auto mt-6 font-semibold">
   <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm">
-  Şehir merkezine 10 dk
-  </div>
+  500+ Konut ve Ticari Alan  </div>
   <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm">
-    <FaMapMarkerAlt />  Ankara – Bilkent
+    <FaMapMarkerAlt />  Ankara – Yenimahalle
   </div>
   <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center">
-  9 Villa
-  </div>
+  Yatırım Değeri Yüksek Proje  </div>
   <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center">
-  3. Çeyrek 2025
-  </div>
-  <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center">
-  Premium Hayat
-  </div>
+  Sosyal ve Ticari Merkez  </div>
+  
 </div>
 
 

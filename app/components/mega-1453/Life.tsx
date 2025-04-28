@@ -103,7 +103,7 @@ export default function ProjectLifeRhythmSection() {
   const totalSlides = slides.length;
 
   return (
-    <section id="olanak" className="relative py-24 px-6 bg-white text-center overflow-hidden">
+    <section  className="relative py-24 px-6 bg-white text-center overflow-hidden">
       <h2 className="text-3xl font-light text-gray-800 uppercase leading-tight">
       MEGA 1453  <br /> Yeni Bir Çağ Başlıyor
       </h2>
@@ -163,7 +163,7 @@ export default function ProjectLifeRhythmSection() {
       // If it's the first slide, render a link
       <a
         href="/vega-center"   // <-- Change this URL to your target link
-        className="absolute   left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-black text-sm text-gray-700 px-5 py-2 rounded-full shadow"
+        className="absolute   left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-black text-sm text-white px-5 py-2 rounded-full shadow"
       >
         Sunuma Git
       </a>

@@ -42,12 +42,16 @@ export default function Header() {
             <Image src="/navbarLogo.png" alt="Nata Yaşam Logo" width={160} height={0} />
           </Link>
 
-          <nav className="hidden md:flex space-x-6 font-medium text-sm">
-            <Link href="#">Ana Sayfa</Link>
-            <Link href="#">Projeler</Link>
-            <Link href="#">Hakkımızda</Link>
-            <Link href="#">İletişim</Link>
-          </nav>
+          <nav className="hidden md:flex space-x-6 text-xs" style={{ fontFamily: 'Unbounded, sans-serif' }}>
+  <Link href="#">Ana Sayfa</Link>
+  <Link href="#">Projeler</Link>
+  <Link href="#">Hakkımızda</Link>
+  <Link href="#">Kampanyalar</Link>
+  <Link href="#">N-Bülten</Link>
+  <Link href="#">Nata Holding</Link>
+  <Link href="#">İletişim</Link>
+</nav>
+
         </div>
 
         {/* Right Side */}

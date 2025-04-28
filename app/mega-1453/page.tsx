@@ -8,27 +8,49 @@ import Contact from "../components/Contact"; // Ensure Contact is in components 
 import Office from "../components/Office"; // Ensure Office is in components folder
 import UnitTypes from "../components/mega-1453/unit-types"; // Ensure UnitTypes is in components folder
 import Boxes from "../components/mega-1453/boxes"; // Ensure Boxes is in components folder
-import Navigator from "../components/mega-1453/Navigator"; // Ensure Navigator is in components folder
+import Navigator from "../components/Navigator"; // Ensure Navigator is in components folder
 const Page: React.FC = () => {
-  return (
-    <main className="min-h-screen bg-gray-900 text-white">
-       
-
-        <Hero /> 
-        <Life /> 
-        <NearLocations /> 
-
-
-        <SitePlans /> 
-        <UnitTypes />
-        <Design /> 
-
-        <Contact /> 
-        <Office /> 
-        <Boxes /> 
-        <Navigator />
-    </main>
-  );
+   return (
+         <main className="scroll-smooth a-color-white ">
+         <section id="hero" className="scroll-mt-24">
+           <Hero />
+         </section>
+     
+         <section id="life" className="scroll-mt-24">
+           <Life />
+         </section>
+     
+         <section id="near-locations" className="scroll-mt-24">
+           <NearLocations />
+         </section>
+     
+         <section id="site-plans" className="scroll-mt-24">
+           <SitePlans />
+         </section>
+     
+         <section id="unit-types" className="scroll-mt-24">
+           <UnitTypes />
+         </section>
+     
+         <section id="design" className="scroll-mt-24">
+           <Design />
+         </section>
+     
+         <section id="contact">
+           <Contact />
+         </section>
+     
+         <section id="office" className="scroll-mt-24">
+           <Office />
+         </section>
+     
+         <section id="boxes" className="scroll-mt-24">
+           <Boxes />
+         </section>
+     
+         <Navigator />
+       </main>
+       );
 };
 
 export default Page;

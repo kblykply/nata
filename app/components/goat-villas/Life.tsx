@@ -69,7 +69,7 @@ export default function ProjectLifeRhythmSection() {
   const totalSlides = slides.length;
 
   return (
-    <section id="olanak" className="relative py-24 px-6 bg-white text-center overflow-hidden">
+    <section  className="relative py-24 px-6 bg-white text-center overflow-hidden">
       <h2 className="text-3xl font-light text-gray-800 uppercase leading-tight">
         YAŞAM RİTİMİNİZ <br /> VEGA CENTER DA 
       </h2>
@@ -132,7 +132,7 @@ export default function ProjectLifeRhythmSection() {
   href="https://katalog.goatvillasbilkent.com.tr/"
   target="_blank"
   rel="noopener noreferrer"
-  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-black text-sm text-gray-700 px-5 py-2 rounded-full shadow"
+  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-black text-sm text-white px-5 py-2 rounded-full shadow"
 >
   Sunuma Git
 </a>

@@ -11,7 +11,7 @@ import Boxes from "../components/anteres/boxes"; // Ensure Boxes is in component
 import Navigator from "../components/Navigator"; // Ensure Navigator is in components folder
 const Page: React.FC = () => {
    return (
-      <main className="scroll-smooth a-color-white ">
+      <main className="scroll-smooth  ">
       <section id="hero" className="scroll-mt-24">
         <Hero />
       </section>
