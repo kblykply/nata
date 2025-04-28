@@ -18,6 +18,7 @@ export default function OfficeLocationSection() {
           <div className="mb-4">
             <p className="font-medium text-gray-700">Çalışma Saatleri</p>
             <p className="text-gray-700">09:00 - 21:00</p>
+            
           </div>
           <div className="mb-6">
             <p className="font-medium text-gray-700">Ofise Ulaşım</p>
