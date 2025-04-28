@@ -47,7 +47,13 @@ export default function Header() {
   <Link href="/about-us">Hakkımızda</Link>
   <Link href="/kampanya">Kampanyalar</Link>
   <Link href="/n-bulten">N-Bülten</Link>
-  <Link href="https://www.nataholding.com/">Nata Holding</Link>
+  <Link 
+  href="https://www.nataholding.com/" 
+  target="_blank" 
+  rel="noopener noreferrer"
+>
+  Nata Holding
+</Link>
   <Link href="/contact-us">İletişim</Link>
 </nav>
 

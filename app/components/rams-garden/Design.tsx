@@ -64,7 +64,7 @@ export default function DesignSection() {
         className="absolute top-[50%] left-1/2 z-20 -translate-x-1/2 -translate-y-1/2"
       >
         <Image
-          src="/ball.png"
+          src="/balll.png"
           alt="Floating Ball"
           width={160}
           height={160}

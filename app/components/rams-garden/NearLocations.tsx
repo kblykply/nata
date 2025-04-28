@@ -11,11 +11,11 @@ import {
 
 // Categories (only for Konum view)
   const categories = [
-    { id: "all", name: "Tümü", count: 270, pin: "/pin.png" },
-    { id: "malls", name: "AVM'ler", count: 30, pin: "/mall.png" },
-    { id: "schools", name: "Okullar", count: 44, pin: "/scool.png" },
-    { id: "hospitals", name: "Hastaneler", count: 12, pin: "/hospital.png" },
-    { id: "markets", name: "Marketler", count: 18, pin: "/shop.png" },
+    { id: "all", name: "Tümü", count: 16, pin: "/pin.png" },
+    { id: "malls", name: "AVM'ler", count: 4, pin: "/mall.png" },
+    { id: "schools", name: "Okullar", count: 4, pin: "/scool.png" },
+    { id: "hospitals", name: "Hastaneler", count: 4, pin: "/hospital.png" },
+    { id: "markets", name: "Marketler", count: 4, pin: "/shop.png" },
   ];
 
   const places = [ 

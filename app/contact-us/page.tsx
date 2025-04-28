@@ -13,24 +13,30 @@ const ContactSection = () => {
 
       {/* Grid Layout */}
       <div className="grid md:grid-cols-2 gap-12 relative z-10 items-start">
-        {/* Left: Contact Info Box */}
-        <div className="bg-white rounded-2xl p-8 max-w-sm mx-auto shadow-xl" style={{ boxShadow: '0px 20px 50px rgba(255,0,0,0.1)' }}>
-          <h3 className="font-semibold text-base mb-1">Bizimle İletişime Geçin</h3>
-          <p className="text-xs text-gray-500 mb-6">VEGA CENTER TANITIM OFİSİ</p>
+      <div className="bg-white/70 backdrop-blur-md rounded-2xl p-6 w-72 mx-auto relative shadow-lg">
+  {/* Title */}
+  <h3 className="font-semibold text-sm mb-1">Bizimle İletişime Geçin</h3>
+  <p className="text-xs text-gray-500 mb-6">VEGA CENTER TANITIM OFİSİ</p>
 
-          <div className="flex items-center gap-3 mb-4">
-            <Image src="/contact-phone.png" alt="Phone" width={20} height={20} />
-            <p className="text-sm">444 8 018</p>
-          </div>
+  {/* Phone */}
+  <div className="flex items-center gap-3 mb-4">
+    <Image src="/contact-phone.png" alt="Phone" width={20} height={20} />
+    <p className="text-sm font-medium">444 8 018</p>
+  </div>
 
-          <div className="flex items-start gap-3">
-            <Image src="/contact-pin.png" alt="Location" width={20} height={20} />
-            <p className="text-sm leading-snug">
-              Mustafa Kemal Mah. 2127 Cad. No:21<br />
-              Çankaya · ANKARA
-            </p>
-          </div>
-        </div>
+  {/* Location */}
+  <div className="flex items-start gap-3">
+    <Image src="/contact-pin.png" alt="Location" width={20} height={20} />
+    <p className="text-xs leading-snug text-gray-700">
+      Mustafa Kemal Mah. 2127 Cad. No:21<br />
+      Çankaya · ANKARA
+    </p>
+  </div>
+
+  {/* Glow Effect */}
+  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-6 w-40 h-6 bg-pink-300 opacity-30 rounded-full blur-2xl"></div>
+</div>
+
 
         {/* Right: Contact Form */}
         <form className="flex flex-col gap-4 w-full max-w-lg">

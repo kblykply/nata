@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 const NBultenSection = () => {
   return (
@@ -12,28 +13,45 @@ const NBultenSection = () => {
       </p>
 
       {/* Magazine Issues */}
-      <div className="flex flex-wrap justify-center gap-10">
-        {/* Issue 1 */}
-        <div className="flex flex-col items-center">
-          <Image src="/sayi1.png" alt="1. Sayı" width={250} height={220} />
-          <p className="mt-3 text-sm font-semibold text-[#ab1e3b]">1. Sayı</p>
-          <p className="text-xs text-gray-500">Nisan - Mayıs - Haziran 24</p>
-        </div>
 
-        {/* Issue 2 */}
-        <div className="flex flex-col items-center">
-          <Image src="/sayi2.png" alt="2. Sayı" width={250} height={220} />
-          <p className="mt-3 text-sm font-semibold text-[#ab1e3b]">2. Sayı</p>
-          <p className="text-xs text-gray-500">Temmuz - Ağustos - Eylül 24</p>
-        </div>
+<div className="flex flex-wrap justify-center gap-10">
+  {/* Issue 1 */}
+  <Link 
+    href="https://nbulten.natayasam.com/issue-1.html" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="flex flex-col items-center cursor-pointer"
+  >
+    <Image src="/sayi1.png" alt="1. Sayı" width={250} height={220} />
+    <p className="mt-3 text-sm font-semibold text-[#ab1e3b]">1. Sayı</p>
+    <p className="text-xs text-gray-500">Nisan - Mayıs - Haziran 24</p>
+  </Link>
 
-        {/* Issue 3 */}
-        <div className="flex flex-col items-center">
-          <Image src="/sayi3.png" alt="3. Sayı" width={250} height={220} />
-          <p className="mt-3 text-sm font-semibold text-[#ab1e3b]">3. Sayı</p>
-          <p className="text-xs text-gray-500">Ekim - Kasım - Aralık 24</p>
-        </div>
-      </div>
+  {/* Issue 2 */}
+  <Link 
+    href="https://nbulten.natayasam.com/issue-2.html" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="flex flex-col items-center cursor-pointer"
+  >
+    <Image src="/sayi2.png" alt="2. Sayı" width={250} height={220} />
+    <p className="mt-3 text-sm font-semibold text-[#ab1e3b]">2. Sayı</p>
+    <p className="text-xs text-gray-500">Temmuz - Ağustos - Eylül 24</p>
+  </Link>
+
+  {/* Issue 3 */}
+  <Link 
+    href="https://nbulten.natayasam.com/issue-3.html" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="flex flex-col items-center cursor-pointer"
+  >
+    <Image src="/sayi3.png" alt="3. Sayı" width={250} height={220} />
+    <p className="mt-3 text-sm font-semibold text-[#ab1e3b]">3. Sayı</p>
+    <p className="text-xs text-gray-500">Ekim - Kasım - Aralık 24</p>
+  </Link>
+</div>
+
     </div>
   );
 };

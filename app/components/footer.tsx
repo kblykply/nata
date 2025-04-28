@@ -57,14 +57,14 @@ export default function Footer() {
             <h5 className="font-semibold mb-2">Devam Eden Projeler</h5>
             <ul className="flex flex-wrap gap-2">
   {[
-    { name: "VEGA CENTER", url: "/projeler/vega-center" },
-    { name: "GOAT VILLAS BILKENT", url: "/projeler/goat-villas-bilkent" },
-    { name: "MEGA 1453", url: "/projeler/mega-1453" },
-    { name: "RAMS GARDEN BAHÇELİEVLER", url: "/projeler/rams-garden-bahcelievler" },
-    { name: "ANTARES KONUTLARI", url: "/projeler/antares-konutlari" },
-    { name: "VEGA OTONOMİ", url: "/projeler/vega-otonomi" },
-    { name: "MEGA ŞAŞMAZ", url: "/projeler/mega-sasmaz" },
-    { name: "HİTYENİBATI", url: "/projeler/hityenibati" },
+    { name: "VEGA CENTER", url: "/vega-center" },
+    { name: "GOAT VILLAS BILKENT", url: "/goat-villas" },
+    { name: "MEGA 1453", url: "/mega-1453" },
+    { name: "RAMS GARDEN BAHÇELİEVLER", url: "/rams-garden" },
+    { name: "ANTARES KONUTLARI", url: "/anteres" },
+    { name: "VEGA OTONOMİ", url: "/vega-otonomi" },
+    { name: "MEGA ŞAŞMAZ", url: "/mega-sasmaz" },
+    { name: "HİTYENİBATI", url: "/hityenibati" },
   ].map((item, idx) => (
     <li key={idx}>
       <Link
@@ -82,18 +82,20 @@ export default function Footer() {
             <h5 className="font-semibold mb-2">Gelecek Projeler</h5>
             <ul className="flex flex-wrap gap-2">
   {[
-    { name: "NATA DELTA", url: "/gelecek-projeler/nata-delta" },
-    { name: "YALIKAVAK", url: "/gelecek-projeler/yalikavak" },
-    { name: "MİLAS KIYIKIŞLACIK", url: "/gelecek-projeler/milas-kiyikislacik" },
+    { name: "NATA DELTA", url: "/" },
+    { name: "YALIKAVAK", url: "/" },
+    { name: "MİLAS KIYIKIŞLACIK", url: "/" },
   ].map((item, idx) => (
     <li key={idx}>
-      <Link
-        href={item.url}
-        className="text-sm hover:text-red-600 transition"
-      >
-        {item.name}
-      </Link>
-    </li>
+  <Link
+    href={item.url}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-sm hover:text-red-600 transition"
+  >
+    {item.name}
+  </Link>
+</li>
   ))}
 </ul>
 
@@ -101,15 +103,17 @@ export default function Footer() {
             <h5 className="font-semibold mt-4 mb-2">Tamamlanmış Projeler</h5>
             <ul className="flex flex-wrap gap-2">
   {[
-    { name: "ANTARES KONUTLARI 1. ETAP", url: "/tamamlanmis-projeler/antares-1-etap" },
-    { name: "VEGA CADDE", url: "/tamamlanmis-projeler/vega-cadde" },
-    { name: "TEMPOINT KONUTLARI", url: "/tamamlanmis-projeler/tempoint-konutlari" },
-    { name: "NATA İNCEK KONUTLARI", url: "/tamamlanmis-projeler/nata-incek" },
-    { name: "NATA VEGA KONUT KULELERİ", url: "/tamamlanmis-projeler/vega-kuleleri" },
+    { name: "ANTARES KONUTLARI 1. ETAP", url: "https://natayasam.com/projects/antares-konutlari.html" },
+    { name: "VEGA CADDE", url: "https://natayasam.com/projects/vega-cadde.html" },
+    { name: "TEMPOINT KONUTLARI", url: "https://natayasam.com/projects/tempoint-konutlari.html" },
+    { name: "NATA İNCEK KONUTLARI", url: "https://natayasam.com/projects/nata-incek-konutlari.html" },
+    { name: "NATA VEGA KONUT KULELERİ", url: "https://natayasam.com/projects/nata-vega-konut-kuleleri.html" },
   ].map((item, idx) => (
     <li key={idx}>
       <Link
         href={item.url}
+            target="_blank"
+    rel="noopener noreferrer"
         className="text-sm hover:text-red-600 transition"
       >
         {item.name}
@@ -125,8 +129,10 @@ export default function Footer() {
             <ul className="space-y-1">
   {[
     { name: "Ana Sayfa", url: "/" },
-    { name: "Hakkımızda", url: "/hakkimizda" },
-    { name: "İletişim", url: "/iletisim" },
+    { name: "Hakkımızda", url: "/about-us" },
+    { name: "Kampanyalar", url: "/kampanya" },
+    { name: "N-Bülten", url: "/n-bulten" },
+    { name: "İletişim", url: "/contact-us" },
    
   ].map((item, i) => (
     <li key={i}>
@@ -139,15 +145,22 @@ export default function Footer() {
           </div>
 
           <div>
-            <h5 className="font-semibold mb-2">Diğer Nata Siteleri</h5>
-            <ul className="space-y-1">
-              {["Nata Holding", "Nata İnşaat", "Nata AVM"].map((item, i) => (
-                <li key={i}>
-                  <Link href="#" className="hover:text-red-600">{item}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+  <h5 className="font-semibold mb-2">Diğer Nata Siteleri</h5>
+  <ul className="space-y-1">
+    {[
+      { name: "Nata Holding", url: "https://www.nataholding.com/" },
+      { name: "Vega AVM", url: "https://vegaavm.com.tr/" },
+
+     
+    ].map((item, i) => (
+      <li key={i}>
+        <Link href={item.url} className="text-sm hover:text-red-600 transition-colors">
+          {item.name}
+        </Link>
+      </li>
+    ))}
+  </ul>
+</div>
         </div>
       </div>
 
