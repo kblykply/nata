@@ -8,6 +8,7 @@ import { useState } from "react";
 interface HeaderProps {
   setIsNewProjectsOpen: (open: boolean) => void;
   setIsContactPopupOpen: (open: boolean) => void;
+  setIsKampanyalarOpen: (open: boolean) => void;
 }
 
 type NotificationType = "info" | "success" | "alert";
@@ -20,10 +21,11 @@ interface Notification {
   time: string;
 }
 
-export default function Header({ setIsNewProjectsOpen, setIsContactPopupOpen }: HeaderProps) {
+export default function Header({ setIsNewProjectsOpen, setIsContactPopupOpen ,setIsKampanyalarOpen}: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showNotifications, setShowNotifications] = useState(false);
   const [isContactOpen, setIsContactOpen] = useState(false);
+
 
   const notifications: Notification[] = [
     { id: 1, type: "info", message: "Yeni proje eklendi: Vega Center", time: "2dk önce" },
@@ -62,7 +64,16 @@ export default function Header({ setIsNewProjectsOpen, setIsContactPopupOpen }: 
 
   <Link href="/">Ana Sayfa</Link>
   <Link href="/about-us">Hakkımızda</Link>
-  <Link href="/kampanya">Kampanyalar</Link>
+
+
+  <button
+  onClick={() => setIsKampanyalarOpen(true)}
+  className="text-xs font-medium focus:outline-none"
+>
+  Kampanyalar
+</button>
+
+
   <Link href="/n-bulten">N-Bülten</Link>
   <Link href="https://www.nataholding.com/" target="_blank" rel="noopener noreferrer">Nata Holding</Link>
 
