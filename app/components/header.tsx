@@ -5,9 +5,12 @@ import Link from "next/link";
 import { Bell, Menu, X, Info, CheckCircle, AlertCircle } from "lucide-react";
 import { useState } from "react";
 
+interface HeaderProps {
+  setIsNewProjectsOpen: (open: boolean) => void;
+  setIsContactPopupOpen: (open: boolean) => void;
+}
 
 type NotificationType = "info" | "success" | "alert";
-
 
 
 interface Notification {
@@ -17,9 +20,10 @@ interface Notification {
   time: string;
 }
 
-export default function Header() {
+export default function Header({ setIsNewProjectsOpen, setIsContactPopupOpen }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showNotifications, setShowNotifications] = useState(false);
+  const [isContactOpen, setIsContactOpen] = useState(false);
 
   const notifications: Notification[] = [
     { id: 1, type: "info", message: "Yeni proje eklendi: Vega Center", time: "2dk önce" },
@@ -34,8 +38,8 @@ export default function Header() {
   };
 
   return (
-    <header className="w-full px-10 py-5 bg-white shadow-sm sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
+    <header className="fixed  w-full px-10 py-5 bg-white shadow-sm sticky top-0 z-[100]">
+      <div className="max-w-7xl mx-auto flex justify-between items-center ">
         {/* Left - Logo & Menu */}
         <div className="flex items-center space-x-9 space-y-2">
           <Link href="/">
@@ -43,19 +47,35 @@ export default function Header() {
           </Link>
 
           <nav className="hidden md:flex space-x-6 text-xs" style={{ fontFamily: 'Unbounded, sans-serif' }}>
+
+
+
+          <button
+    onClick={() => setIsNewProjectsOpen(true)}
+    className="text-xs font-medium focus:outline-none"
+  >
+    Yeni Projeler
+  </button>
+
+
+
+
   <Link href="/">Ana Sayfa</Link>
   <Link href="/about-us">Hakkımızda</Link>
   <Link href="/kampanya">Kampanyalar</Link>
   <Link href="/n-bulten">N-Bülten</Link>
-  <Link 
-  href="https://www.nataholding.com/" 
-  target="_blank" 
-  rel="noopener noreferrer"
->
-  Nata Holding
-</Link>
-  <Link href="/contact-us">İletişim</Link>
+  <Link href="https://www.nataholding.com/" target="_blank" rel="noopener noreferrer">Nata Holding</Link>
+
+  <button onClick={() => setIsContactPopupOpen(true)} className="font-medium">
+          İletişim
+        </button>
+
+
+  
 </nav>
+
+
+
 
         </div>
 
@@ -130,7 +150,26 @@ export default function Header() {
           <Link href="#" className="block">Hakkımızda</Link>
           <Link href="#" className="block">İletişim</Link>
         </div>
+        
+
+
+
+
       )}
+
+
+
+
+
+
     </header>
+
+
+
+
   );
+
+
+
+  
 }

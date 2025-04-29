@@ -119,7 +119,7 @@ export default function HeroSlider() {
       <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black to-transparent z-10" />
 
       {/* Promo Card */}
-      <div className="absolute right-10 top-10 bg-white rounded-xl overflow-hidden w-[300px] shadow-lg z-20 flex flex-col items-start">
+      <div className="absolute right-10 bottom-68 bg-white rounded-xl overflow-hidden w-[300px] shadow-lg z-20 flex flex-col items-start">
         <div className="relative w-full h-[380px]">
           <Image
             src={slides[currentIndex].promoCard.image}
