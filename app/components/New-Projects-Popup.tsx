@@ -47,45 +47,38 @@ interface NewProjectsProps {
 
       {/* Popup - ABOVE Overlay but BELOW Header */}
       <div className="fixed top-30 left-1/2 -translate-x-1/2 w-[900px] bg-white rounded-3xl shadow-2xl  z-[95] overflow-hidden animate-fade-in">
-        {/* Header Section */}
-        <div className="flex justify-between items-center px-6 pt-6">
-          {/* Search Bar */}
-          {/* Search Bar */}
-      <div className="flex items-center bg-gray-100 rounded-lg px-4 py-2 w-full">
-        <svg className="w-4 h-4 text-gray-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-4.35-4.35M10.5 17a6.5 6.5 0 1 0 0-13a6.5 6.5 0 0 0 0 13z" />
-        </svg>
+{/* Header Section with search */}
+<div className="relative px-6 pt-6">
+  <div className="flex items-center bg-gray-100 rounded-lg px-4 py-2 w-full">
+    <svg className="w-4 h-4 text-gray-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-4.35-4.35M10.5 17a6.5 6.5 0 1 0 0-13a6.5 6.5 0 0 0 0 13z" />
+    </svg>
 
-        <input
-          type="text"
-          placeholder="Lokasyon, teslim yılı veya segment seçin"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          className="w-full bg-transparent text-sm outline-none"
-        />
+    <input
+      type="text"
+      placeholder="Lokasyon, teslim yılı veya segment seçin"
+      value={query}
+      onChange={(e) => setQuery(e.target.value)}
+      className="w-full bg-transparent text-sm outline-none"
+    />
 
-        <svg className="w-4 h-4 text-gray-500 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-        </svg>
-      </div>
+    <svg className="w-4 h-4 text-gray-500 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </div>
 
-      {/* Search Results */}
-      {filteredResults.length > 0 && (
-        <ul className="absolute z-50 mt-30 w-full bg-white shadow-lg rounded-lg overflow-hidden">
-          {filteredResults.map((item) => (
-            <li key={item.name}>
-              <Link
-                href={item.href}
-                className="block px-4 py-2 text-sm hover:bg-gray-100"
-              >
-                {item.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      )}
-          
-        </div>
+  {filteredResults.length > 0 && (
+    <ul className="absolute left-6 right-6 top-[100%] mt-2 bg-white shadow-lg rounded-lg z-50">
+      {filteredResults.map((item) => (
+        <li key={item.name}>
+          <Link href={item.href} className="block px-4 py-2 text-sm hover:bg-gray-100">
+            {item.name}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  )}
+</div>
 
         {/* Main Content */}
         <div className="flex px-6 py-6 gap-6">

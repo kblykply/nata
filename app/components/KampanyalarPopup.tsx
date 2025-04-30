@@ -37,6 +37,8 @@ export default function KampanyalarPopup({ onClose }: KampanyalarPopupProps) {
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-gray-500 hover:text-black"
+          title="Close popup"
+          aria-label="Close popup"
         >
           <X size={20} />
         </button>
@@ -55,6 +57,8 @@ export default function KampanyalarPopup({ onClose }: KampanyalarPopupProps) {
               <button
                 key={i}
                 onClick={() => setCurrent(i)}
+                title={`Go to slide ${i + 1}`}
+                aria-label={`Go to slide ${i + 1}`}
                 className={`transition-all duration-300 rounded-full bg-gray-300 ${
                   i === current ? "w-10 h-3" : "w-3 h-3"
                 }`}

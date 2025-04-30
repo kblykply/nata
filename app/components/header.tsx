@@ -3,9 +3,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Bell, Menu, X, Info, CheckCircle, AlertCircle } from "lucide-react";
-import { useState } from "react";
+import { useState, useRef } from "react"; 
+
+
+
 
 interface HeaderProps {
+  isKampanyalarOpen: boolean;
   setIsNewProjectsOpen: (open: boolean) => void;
   setIsContactPopupOpen: (open: boolean) => void;
   setIsKampanyalarOpen: (open: boolean) => void;
@@ -21,11 +25,19 @@ interface Notification {
   time: string;
 }
 
-export default function Header({ setIsNewProjectsOpen, setIsContactPopupOpen ,setIsKampanyalarOpen}: HeaderProps) {
+export default function Header({
+  isKampanyalarOpen,
+  setIsNewProjectsOpen,
+  setIsContactPopupOpen,
+  setIsKampanyalarOpen,
+}: HeaderProps) {
+
   const [menuOpen, setMenuOpen] = useState(false);
   const [showNotifications, setShowNotifications] = useState(false);
   const [isContactOpen, setIsContactOpen] = useState(false);
 
+  const hoverTimeout = useRef<NodeJS.Timeout | null>(null); // ✅ moved inside function
+  const isHoveringPopup = useRef(false); // ✅ track popup hover
 
   const notifications: Notification[] = [
     { id: 1, type: "info", message: "Yeni proje eklendi: Vega Center", time: "2dk önce" },
@@ -39,8 +51,40 @@ export default function Header({ setIsNewProjectsOpen, setIsContactPopupOpen ,se
     alert: <AlertCircle size={16} className="text-red-500" />,
   };
 
+
+
+  const handleMenuEnter = () => {
+    if (hoverTimeout.current) clearTimeout(hoverTimeout.current);
+    setIsKampanyalarOpen(true);
+  };
+  
+  const handleMenuLeave = () => {
+    hoverTimeout.current = setTimeout(() => {
+      if (!isHoveringPopup.current) {
+        setIsKampanyalarOpen(false);
+      }
+    }, 200); // delay closing to allow popup hover detection
+  };
+  
+  const handlePopupEnter = () => {
+    isHoveringPopup.current = true;
+    if (hoverTimeout.current) clearTimeout(hoverTimeout.current);
+  };
+  
+  const handlePopupLeave = () => {
+    isHoveringPopup.current = false;
+    hoverTimeout.current = setTimeout(() => {
+      setIsKampanyalarOpen(false);
+    }, 200);
+  };
+
+
+
   return (
     <header className="fixed  w-full px-10 py-5 bg-white shadow-sm sticky top-0 z-[100]">
+
+
+      
       <div className="max-w-7xl mx-auto flex justify-between items-center ">
         {/* Left - Logo & Menu */}
         <div className="flex items-center space-x-9 space-y-2">
@@ -48,41 +92,65 @@ export default function Header({ setIsNewProjectsOpen, setIsContactPopupOpen ,se
             <Image src="/navbarLogo.png" alt="Nata Yaşam Logo" width={160} height={0} />
           </Link>
 
-          <nav className="hidden md:flex space-x-6 text-xs" style={{ fontFamily: 'Unbounded, sans-serif' }}>
+<nav className="hidden md:flex space-x-6 text-xs" style={{ fontFamily: 'Unbounded, sans-serif' }}>
 
 
 
-          <button
-    onClick={() => setIsNewProjectsOpen(true)}
-    className="text-xs font-medium focus:outline-none"
-  >
-    Yeni Projeler
-  </button>
-
-
-
+  
+<div
+  onMouseEnter={() => {
+    clearTimeout(window.yeniProjeTimeout ?? undefined);
+    setIsNewProjectsOpen(true);
+  }}
+  onMouseLeave={() => {
+    window.yeniProjeTimeout = setTimeout(() => {
+      setIsNewProjectsOpen(false);
+    }, 200);
+  }}
+  className="relative"
+>
+  <span className="cursor-pointer text-xs font-medium">Yeni Projeler</span>
+</div>
 
   <Link href="/">Ana Sayfa</Link>
   <Link href="/about-us">Hakkımızda</Link>
 
+  <div
+ onMouseEnter={() => {
+  if (typeof window !== "undefined" && window.kampanyaTimeout !== null) {
+    clearTimeout(window.kampanyaTimeout);
+  }
+  setIsKampanyalarOpen(true);
+}}
 
-  <button
-  onClick={() => setIsKampanyalarOpen(true)}
-  className="text-xs font-medium focus:outline-none"
+
+  onMouseLeave={() => {
+    window.kampanyaTimeout = setTimeout(() => {
+      setIsKampanyalarOpen(false);
+    }, 200);
+  }}
+  className="relative"
 >
-  Kampanyalar
-</button>
-
+  <span className="cursor-pointer text-xs font-medium">Kampanyalar</span>
+</div>
 
   <Link href="/n-bulten">N-Bülten</Link>
   <Link href="https://www.nataholding.com/" target="_blank" rel="noopener noreferrer">Nata Holding</Link>
 
-  <button onClick={() => setIsContactPopupOpen(true)} className="font-medium">
-          İletişim
-        </button>
-
-
-  
+  <div
+  onMouseEnter={() => {
+    clearTimeout(window.iletisimTimeout ?? undefined);
+    setIsContactPopupOpen(true);
+  }}
+  onMouseLeave={() => {
+    window.iletisimTimeout = setTimeout(() => {
+      setIsContactPopupOpen(false);
+    }, 200);
+  }}
+  className="relative"
+>
+  <span className="cursor-pointer font-medium">İletişim</span>
+</div>
 </nav>
 
 
