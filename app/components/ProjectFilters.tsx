@@ -3,6 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { ChevronDown, SlidersHorizontal } from "lucide-react";
 import Projects from "./projects"
+import Ikıncı from "./ikinciel"
 export default function NewProjectsFilterSection() {
   const [activeTab, setActiveTab] = useState<"yeni" | "ikinci">("yeni");
 
@@ -41,51 +42,7 @@ export default function NewProjectsFilterSection() {
         </button>
       </div>
 
-      {/* Filter Pills */}
-      <div className="flex flex-wrap items-center gap-3 text-sm">
-        {["Lokasyon", "Daire Tipi", "m² Alanı", "Fiyat"].map((item) => (
-          <button
-            key={item}
-            className="flex items-center bg-gray-100 px-4 py-2 rounded-full text-gray-700"
-          >
-            {item}
-            <ChevronDown className="w-4 h-4 ml-1" />
-          </button>
-        ))}
-
-        <button className="flex items-center px-4 py-2 rounded-full bg-gray-100 text-[#ab1e3b] font-medium">
-          <SlidersHorizontal className="w-4 h-4 mr-2" />
-          Tüm Filtreler
-        </button>
-      </div>
-
      
-
-      {/* Bottom Controls */}
-      <div className="flex justify-between items-center text-sm mt-2">
-        <button className="text-gray-500 hover:underline">
-          Tüm filtreleri temizle
-        </button>
-
-        <div className="flex items-center gap-4">
-          <button className="flex items-center px-4 py-2 rounded-full bg-gray-100">
-            <Image
-              src="/pin.png"
-              alt="Haritada Gör"
-              width={20}
-              height={20}
-              className="mr-2"
-            />
-            Haritada Gör
-          </button>
-
-          <button className="flex items-center text-gray-500">
-            Varsayılan Olarak
-            <ChevronDown className="w-4 h-4 ml-1" />
-          </button>
-        </div>
-      </div>
-
       {/* 🔁 Dynamic Content Slot */}
       <div className="mt-4">
         {activeTab === "yeni" ? (
@@ -95,7 +52,11 @@ export default function NewProjectsFilterSection() {
           
           </div>
         ) : (
-          <div>{/* 👉 Insert İkinci El content here */}</div>
+          <div>{/* 👉 Insert İkinci El content here */}
+          <Ikıncı/>
+          
+          
+          </div>
         )}
       </div>
     </div>
