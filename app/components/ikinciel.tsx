@@ -16,6 +16,18 @@ interface SimpleListing {
   imageAlt: string;
 }
 
+interface SimpleListing {
+  title: string;
+  price: string;
+  currency: string;
+  location: string;
+  type: string;
+  specs: string[];
+  image: string;
+  imageAlt: string;
+  link: string;
+}
+
 const listings: SimpleListing[] = [
     {
       title: "Koru Konfor",
@@ -24,8 +36,9 @@ const listings: SimpleListing[] = [
       location: "Etimesgut/Ankara",
       type: "Rezidans",
       specs: ["2+1", "117 m²", "1. Kat"],
-      image: "/floorplans/koru-konfor-1-plan.png",
-      imageAlt: "/floorplans/koru-konfor-1-map.png",
+      image: "/KORU KONFOR 5+1.png",
+      imageAlt: "/koru-map.png",
+      link: "/koru-konfor-20"
     },
     {
       title: "Natura İncek",
@@ -34,8 +47,9 @@ const listings: SimpleListing[] = [
       location: "Gölbaşı/Ankara",
       type: "Ofis",
       specs: ["2+1 Flat", "80 m²", "1. Bodrum Kat"],
-      image: "/floorplans/natura-incek-1-plan.png",
-      imageAlt: "/floorplans/natura-incek-1-map.png",
+      image: "/NATURA I╠çNCEK 2+1.png",
+      imageAlt: "/natura-map.png",
+      link: "/natura-incek"
     },
     {
       title: "Prime Oran",
@@ -44,8 +58,9 @@ const listings: SimpleListing[] = [
       location: "Çankaya/Ankara",
       type: "Rezidans",
       specs: ["2+1", "117 m²", "31. Kat"],
-      image: "/floorplans/prime-oran-plan.png",
-      imageAlt: "/floorplans/prime-oran-map.png",
+      image: "/PRIME ORAN 2+1 TI╠çPC16-D1_D2 BLOK.png",
+      imageAlt: "/prime-map.png",
+      link: "/prime-oran"
     },
     {
       title: "Koru Konfor",
@@ -54,8 +69,9 @@ const listings: SimpleListing[] = [
       location: "Etimesgut/Ankara",
       type: "Rezidans",
       specs: ["2+1", "80 m²", "1. Kat"],
-      image: "/floorplans/koru-konfor-2-plan.png",
-      imageAlt: "/floorplans/koru-konfor-2-map.png",
+      image: "/KORU KONFOR 5+1.png",
+      imageAlt: "/koru-map.png",
+      link: "/koru-konfor-20"
     },
     {
       title: "Natura İncek",
@@ -64,8 +80,9 @@ const listings: SimpleListing[] = [
       location: "Gölbaşı/Ankara",
       type: "Ofis",
       specs: ["3+1", "144 m²", "3. Kat"],
-      image: "/floorplans/natura-incek-2-plan.png",
-      imageAlt: "/floorplans/natura-incek-2-map.png",
+      image: "/NATURA I╠çNCEK 2+1.png",
+      imageAlt: "/natura-map.png",
+      link: "/natura-incek"
     },
     {
       title: "Koru Konfor",
@@ -74,8 +91,9 @@ const listings: SimpleListing[] = [
       location: "Etimesgut/Ankara",
       type: "Rezidans",
       specs: ["3+1", "144 m²", "3. Kat"],
-      image: "/floorplans/koru-konfor-3-plan.png",
-      imageAlt: "/floorplans/koru-konfor-3-map.png",
+      image: "/KORU KONFOR- 4+1.png",
+      imageAlt: "/koru-map.png",
+      link: "/koru-konfor-20"
     },
     {
       title: "Natura İncek",
@@ -84,8 +102,9 @@ const listings: SimpleListing[] = [
       location: "Gölbaşı/Ankara",
       type: "Ofis",
       specs: ["4+1", "154 m²", "4. Kat"],
-      image: "/floorplans/natura-incek-3-plan.png",
-      imageAlt: "/floorplans/natura-incek-3-map.png",
+      image: "/NATURA I╠çNCEK 2+1.png",
+      imageAlt: "/natura-map.png",
+      link: "/natura-incek"
     },
     {
       title: "Prime Oran",
@@ -94,11 +113,11 @@ const listings: SimpleListing[] = [
       location: "Çankaya/Ankara",
       type: "Rezidans",
       specs: ["3+1", "140 m²", "14. Kat"],
-      image: "/floorplans/prime-oran-2-plan.png",
-      imageAlt: "/floorplans/prime-oran-2-map.png",
-    },
+      image: "/PRIME ORAN 3+1 TI╠çPB2B-A1 BLOK.png",
+      imageAlt: "/prime-map.png",
+      link: "/prime-oran"
+    }
   ];
-
 
 const locations = ["Tümü", "Etimesgut/Ankara", "Gölbaşı/Ankara", "Çankaya/Ankara"];
 const roomTypes = ["Tümü", "2+1", "3+1", "4+1"];
@@ -302,9 +321,7 @@ export default function FilteredListingCards() {
           const isHovered = hoveredIndex === index;
 
           return (
-            <div
-              key={index}
-              onMouseEnter={() => setHoveredIndex(index)}
+            <a href={item.link} key={index} onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
               className="bg-white shadow-md rounded-xl overflow-hidden relative transition duration-300"
             >
@@ -334,7 +351,7 @@ export default function FilteredListingCards() {
                 </div>
               </div>
 
-              <div className="w-full h-48 relative">
+              <div className="w-full h-70 relative">
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -358,8 +375,7 @@ export default function FilteredListingCards() {
                   ♥
                 </div>
               </div>
-            </div>
-          );
+            </a> );
         })}
       </div>
     </section>
