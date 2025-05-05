@@ -59,16 +59,7 @@ export default function NewProjectsFilterSection() {
         </button>
       </div>
 
-      {/* Icon Pills */}
-      <div className="flex flex-wrap items-center gap-3 text-sm text-gray-700">
-        <span className="bg-gray-100 px-4 py-2 rounded-full">🔥 Özel Teklifler</span>
-        <span className="bg-gray-100 px-4 py-2 rounded-full">🎯 Lansman Fiyatları</span>
-        <span className="bg-gray-100 px-4 py-2 rounded-full">💼 Business Class</span>
-        <span className="bg-gray-100 px-4 py-2 rounded-full">🔑 Anahtar Teslim</span>
-        <span className="bg-gray-100 px-4 py-2 rounded-full">🏢 Yeni Ofisler</span>
-        <span className="bg-gray-100 px-4 py-2 rounded-full">🏖️ Sosyal Olanaklar</span>
-        <span className="bg-gray-100 px-4 py-2 rounded-full">🏡 Villalar</span>
-      </div>
+     
 
       {/* Bottom Controls */}
       <div className="flex justify-between items-center text-sm mt-2">
@@ -79,7 +70,7 @@ export default function NewProjectsFilterSection() {
         <div className="flex items-center gap-4">
           <button className="flex items-center px-4 py-2 rounded-full bg-gray-100">
             <Image
-              src="/map-icon.png"
+              src="/pin.png"
               alt="Haritada Gör"
               width={20}
               height={20}

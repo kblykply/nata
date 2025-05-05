@@ -17,7 +17,6 @@ const categories = [
   { id: "hospitals", name: "Hastaneler", count: 4, pin: "/hospital.png" },
   { id: "markets", name: "Marketler", count: 4, pin: "/shop.png" },
 ];
-
 const places = [
   // Alışveriş Merkezleri
   {
@@ -155,6 +154,7 @@ const projectLocation = {
   image: "/MEGA 1453 - ON.jpg",
 };
 
+
 export default function NearbyMap() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -249,7 +249,7 @@ export default function NearbyMap() {
           <div className="flex-1">
             <YMaps query={{ lang: "tr_TR" }}>
               <Map
-                defaultState={{ center: [39.94721, 32.77306], zoom: 15 }}
+                defaultState={{ center: [39.913899, 32.767134], zoom: 15 }}
                 width="100%"
                 height="100%"
                 modules={["templateLayoutFactory", "layout.ImageWithContent", "balloon"]}
@@ -320,7 +320,7 @@ export default function NearbyMap() {
     >
       <div>
         <img 
-          src="/mega1453.jpg" 
+          src="/antareskonutlari.jpg" 
           alt="Altyapı Görseli" 
           className="mx-auto rounded w-3/3"
         />

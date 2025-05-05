@@ -31,7 +31,6 @@ const hotspots = [
 
   
 ];
-
 export default function SidePlans() {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
   const hoveredImage = hotspots.find((h) => h.id === hoveredId)?.image || null;
@@ -39,58 +38,65 @@ export default function SidePlans() {
   return (
     <section className="relative w-full bg-white">
       {/* Top Text */}
-      <div className="text-center max-w-4xl mx-auto py-16 z-20 relative px-4">
-        <h2 className="text-3xl font-semibold tracking-wide text-gray-900">
+      <div className="text-center max-w-4xl mx-auto py-12 md:py-16 px-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-wide text-gray-900">
           Yaşam Nerede <br /> Biz Orada.
         </h2>
-        <p className="mt-4 text-sm text-gray-700 leading-relaxed">
-        Ankara’nın merkezi Bilkent 3’te, tüm şehri gören muhteşem bir noktada yer alan 4 katlı, açık peyzajlı ve 3 tip villa seçenekli bu proje; eşsiz tasarımı, yüksek kaliteli malzemeleri ve benzersiz mimarisi ile kendinizi tamamen özel hissedeceğiniz bir yaşam tarzı sunmak üzere tasarlandı. 
+        <p className="mt-4 text-sm md:text-base text-gray-700 leading-relaxed">
+          Mega 1453, Ankara’nın kalbinde, Yenimahalle Orman Çiftliği Mahallesi’nde
+          şehrin ritmini yeniden tanımlayan eşsiz bir yaşam deneyimi sunuyor.
+          Toplamda 70.000 m²’lik geniş arsa alanında yükselen bu prestijli proje,
+          başkentin dokusuna doğa ile harmanlanmış bir soluk getiriyor. Özgün
+          mimarisi ve yaklaşık 36.000m² toplam peyzaj alanıyla modern yaşamı yeniden
+          tasarlayan Mega 1453, her biri yüksek yaşam standartlarına sahip toplam 715
+          konuttan (1.etap) oluşuyor.
         </p>
       </div>
 
       {/* Image Container */}
-      <div className="relative w-full max-w-6xl h-[70vh] mx-auto">
-        <Image
-          src="/goat-villas-bloklar.jpeg"
-          alt="Plan Image"
-          fill
-          className="object-contain z-0"
-        />
-
-        {hoveredImage && (
+      <div className="relative w-full max-w-6xl mx-auto px-4">
+        <div className="relative w-full aspect-[16/9] sm:aspect-[3/2] md:aspect-[2/1]">
+          {/* Base Image */}
           <Image
-            src={hoveredImage}
-            alt="Highlight"
+            src="/goat-villas-bloklar.jpeg"
+            alt="Plan Image"
             fill
-            className="object-contain z-10 pointer-events-none transition-opacity duration-300"
+            className="object-contain z-0"
           />
-        )}
 
-        {hotspots.map((spot) => (
-          <div
-            key={spot.id}
-            className="absolute z-20"
-            style={{ ...spot.position, transform: "translate(-50%, -50%)" }}
-            onMouseEnter={() => setHoveredId(spot.id)}
-            onMouseLeave={() => setHoveredId(null)}
-          >
-            {/* Hotspot Button */}
-            <div className="bg-white px-4 py-2 rounded-full shadow text-sm font-medium text-gray-800 border border-gray-200 whitespace-nowrap cursor-pointer hover:bg-gray-50 transition">
-              {spot.label}
-            </div>
+          {/* Hovered Overlay */}
+          {hoveredImage && (
+            <Image
+              src={hoveredImage}
+              alt="Highlight"
+              fill
+              className="object-contain z-10 pointer-events-none transition-opacity duration-300"
+            />
+          )}
 
-            {/* Info Box */}
-            {hoveredId === spot.id && (
-              <div className="absolute top-full top-1/2 transform -translate-y-1/2 ml-4 w-48 bg-white border border-gray-200 shadow-lg rounded-lg p-3 text-xs text-gray-700 z-30">
-                {spot.info.split("\n").map((line, i) => (
-                  <p key={i} className="mb-1">
-                    {line}
-                  </p>
-                ))}
+          {/* Hotspots */}
+          {hotspots.map((spot) => (
+            <div
+              key={spot.id}
+              className="absolute z-20"
+              style={{ ...spot.position, transform: "translate(-50%, -50%)" }}
+              onMouseEnter={() => setHoveredId(spot.id)}
+              onMouseLeave={() => setHoveredId(null)}
+            >
+              <div className="bg-white px-3 py-1 sm:px-4 sm:py-2 rounded-full shadow text-xs sm:text-sm font-medium text-gray-800 border border-gray-200 whitespace-nowrap cursor-pointer hover:bg-gray-50 transition">
+                {spot.label}
               </div>
-            )}
-          </div>
-        ))}
+
+              {hoveredId === spot.id && (
+                <div className="absolute left-1/2 top-full mt-2 transform -translate-x-1/2 w-40 sm:w-48 bg-white border border-gray-200 shadow-lg rounded-lg p-2 sm:p-3 text-[10px] sm:text-xs text-gray-700 z-30">
+                  {spot.info.split("\n").map((line, i) => (
+                    <p key={i} className="mb-1">{line}</p>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

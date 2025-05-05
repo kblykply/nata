@@ -1,7 +1,9 @@
+// pages/_app.tsx
 import type { Metadata } from "next";
 import "./globals.css";
 import ClientLayout from "./components/ClientLayout";
 import Script from 'next/script'
+
 
 
 
@@ -45,7 +47,6 @@ export default function RootLayout({
 <ClientLayout>
 
 {children}
-
 
 </ClientLayout>
         

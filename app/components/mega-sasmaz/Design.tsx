@@ -71,7 +71,7 @@ export default function DesignSection() {
       </motion.div>
 
       {/* Lightbox Modal */}
-      <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="relative z-50">
+      <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="relative z-150">
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center">
           <div className="fixed inset-0" onClick={() => setIsOpen(false)} />
           <Dialog.Panel className="relative w-full h-full max-w-7xl mx-auto flex items-center justify-center z-50">
