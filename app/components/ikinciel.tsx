@@ -49,7 +49,7 @@ const listings: SimpleListing[] = [
       specs: ["2+1 Flat", "80 m²", "1. Bodrum Kat"],
       image: "/NATURA I╠çNCEK 2+1.png",
       imageAlt: "/natura-map.png",
-      link: "/natura-incek"
+      link: "/natura-20"
     },
     {
       title: "Prime Oran",
@@ -60,7 +60,7 @@ const listings: SimpleListing[] = [
       specs: ["2+1", "117 m²", "31. Kat"],
       image: "/PRIME ORAN 2+1 TI╠çPC16-D1_D2 BLOK.png",
       imageAlt: "/prime-map.png",
-      link: "/prime-oran"
+      link: "/prime-oran-20"
     },
     {
       title: "Koru Konfor",
@@ -82,7 +82,7 @@ const listings: SimpleListing[] = [
       specs: ["3+1", "144 m²", "3. Kat"],
       image: "/NATURA I╠çNCEK 2+1.png",
       imageAlt: "/natura-map.png",
-      link: "/natura-incek"
+      link: "/natura-20"
     },
     {
       title: "Koru Konfor",
@@ -104,7 +104,7 @@ const listings: SimpleListing[] = [
       specs: ["4+1", "154 m²", "4. Kat"],
       image: "/NATURA I╠çNCEK 2+1.png",
       imageAlt: "/natura-map.png",
-      link: "/natura-incek"
+      link: "/natura-20"
     },
     {
       title: "Prime Oran",
@@ -115,7 +115,7 @@ const listings: SimpleListing[] = [
       specs: ["3+1", "140 m²", "14. Kat"],
       image: "/PRIME ORAN 3+1 TI╠çPB2B-A1 BLOK.png",
       imageAlt: "/prime-map.png",
-      link: "/prime-oran"
+      link: "/prime-oran-20"
     }
   ];
 

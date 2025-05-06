@@ -1,8 +1,8 @@
 import React from "react";
-import Koru from "../components/koru-konfor-hero"; // Ensure Hero is in components folder
-import Koru20 from "../components/koru-konfor-20"; // Ensure Hero is in components folder
-import KoruBoxes from "../components/koru-boxes";
-import Benzer from "../components/benzerprojeler";
+import Koru from "../components/koru-konfor-20/koru-konfor-hero"; // Ensure Hero is in components folder
+import Koru20 from "../components/koru-konfor-20/koru-konfor-20"; // Ensure Hero is in components folder
+import KoruBoxes from "../components/koru-konfor-20/koru-boxes";
+import Benzer from "../components/koru-konfor-20/benzerprojeler";
 
 
 

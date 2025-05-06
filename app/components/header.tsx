@@ -112,8 +112,9 @@ export default function Header({
   <span className="cursor-pointer text-xs font-medium">Yeni Projeler</span>
 </div>
 
-  <Link href="/">Ana Sayfa</Link>
   <Link href="/about-us">Hakkımızda</Link>
+  <Link href="/blog">Blog</Link>
+
 
   <div
  onMouseEnter={() => {
