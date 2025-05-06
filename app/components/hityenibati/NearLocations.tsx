@@ -19,119 +19,155 @@ const categories = [
 ];
 
 const places = [
-  // Alışveriş Merkezleri
   {
-    id: 52,
+    id: 113,
     category: "malls",
-    coords: [39.99024, 32.64823],
-    name: "Göksu Alışveriş Merkezi",
+    coords: [39.9804886, 32.6457981],
+    name: "Eryaman 1-2 Metrosu",
+    description: "5 dk, 3 km"
+  },
+  {
+    id: 114,
+    category: "markets",
+    coords: [39.9943566, 32.6514887],
+    name: "Göksu Parkı",
+    description: "3 dk, 2 km"
+  },
+  {
+    id: 115,
+    category: "schools",
+    coords: [39.9944631, 32.5716633],
+    name: "Yıldırım Beyazıt Üniversitesi",
+    description: "23 dk, 26.1 km"
+  },
+  {
+    id: 116,
+    category: "markets",
+    coords: [39.9858507, 32.6726096],
+    name: "AOÇ 75. Yıl Maliye Ormanı",
     description: "5 dk, 2.4 km"
   },
   {
-    id: 53,
+    id: 117,
     category: "malls",
-    coords: [39.96864, 32.71713],
-    name: "Atlantis Alışveriş ve Eğlence Merkezi",
-    description: "15 dk, 7 km"
+    coords: [39.9858858, 32.654585],
+    name: "Kaşmir Center",
+    description: "5 dk, 2.6 km"
   },
   {
-    id: 54,
+    id: 118,
     category: "malls",
-    coords: [39.9645, 32.6189],
-    name: "Metromall Alışveriş Merkezi",
-    description: "11 dk, 6 km"
+    coords: [39.9656386, 32.6289346],
+    name: "Ankara Optimum AVM",
+    description: "9 dk, 5.6 km"
   },
   {
-    id: 55,
-    category: "malls",
-    coords: [39.96864, 32.71713],
-    name: "Meydan Batıkent AVM",
-    description: "13 dk, 7 km"
-  },
-
-  // Okullar
-  {
-    id: 56,
-    category: "schools",
-    coords: [39.95191, 32.76914],
-    name: "ACAR OKULLARI",
-    description: "5 dk, 4.3 km"
+    id: 119,
+    category: "markets",
+    coords: [39.9450578, 32.6861386],
+    name: "Türkkuşu Genel Müdürlüğü",
+    description: "11 dk, 10.4 km"
   },
   {
-    id: 57,
-    category: "schools",
-    coords: [39.95191, 32.76914],
-    name: "Müjgan Karaçalı İlkokulu",
-    description: "8 dk, 8.3 km"
+    id: 120,
+    category: "markets",
+    coords: [39.947554, 32.7018799],
+    name: "Türk Hava Kuvvetleri Müzesi",
+    description: "9 dk, 8.7 km"
   },
   {
-    id: 58,
-    category: "schools",
-    coords: [39.95191, 32.76914],
-    name: "Meltem Ayhan Okulları",
-    description: "7 dk, 5 km"
-  },
-
-  // Hastaneler
-  {
-    id: 59,
+    id: 121,
     category: "hospitals",
-    coords: [39.95191, 32.76914],
-    name: "Yıldırım Beyazıt Üniversitesi Yenimahalle Eğitim ve Araştırma Hastanesi",
-    description: "10 dk, 5.8 km"
-  },
-  {
-    id: 60,
-    category: "hospitals",
-    coords: [39.96656, 32.7095],
+    coords: [39.9664515, 32.7069807],
     name: "Medical Park Ankara Hastanesi",
     description: "11 dk, 6.8 km"
   },
   {
-    id: 61,
+    id: 122,
+    category: "malls",
+    coords: [39.9701064, 32.7124749],
+    name: "Atlantis Alışveriş ve Yaşam Merkezi",
+    description: "12 dk, 7.2 km"
+  },
+  {
+    id: 123,
+    category: "markets",
+    coords: [39.9817587, 32.6402444],
+    name: "Göktürk Aile Yaşam ve Eğitim Merkezi",
+    description: "5 dk, 3.4 km"
+  },
+  {
+    id: 124,
+    category: "markets",
+    coords: [39.9692178, 32.6477629],
+    name: "Sporcu Eğitim ve Performans Merkezi",
+    description: "7 dk, 4.4 km"
+  },
+  {
+    id: 125,
+    category: "schools",
+    coords: [40.0002018, 32.6243216],
+    name: "Ankara Eryaman Okyanus Koleji",
+    description: "9 dk, 5.3 km"
+  },
+  {
+    id: 126,
+    category: "malls",
+    coords: [39.979708, 32.6559872],
+    name: "İstanbul Yolu Metrosu",
+    description: "11 dk, 7.6 km"
+  },
+  {
+    id: 127,
+    category: "schools",
+    coords: [39.9801258, 32.6621162],
+    name: "Batı Koleji Yenibatı Kampüsü",
+    description: "3 dk, 1.1 km"
+  },
+  {
+    id: 128,
+    category: "markets",
+    coords: [39.9880319, 32.6591358],
+    name: "La Wings Wedding Ankara Düğün Salonu",
+    description: "3 dk, 1 km"
+  },
+  {
+    id: 129,
+    category: "schools",
+    coords: [39.9678951, 32.6569161],
+    name: "T.C. MEB Eryaman Sanat Akademi",
+    description: "7 dk, 5.3 km"
+  },
+  {
+    id: 130,
+    category: "schools",
+    coords: [39.9679152, 32.6491913],
+    name: "Eryaman Odtülüler Kurs",
+    description: "6 dk, 4.7 km"
+  },
+  {
+    id: 131,
     category: "hospitals",
-    coords: [39.95191, 32.76914],
-    name: "Özel Eryaman Hastanesi",
-    description: "7 dk, 4.2 km"
+    coords: [39.9679471, 32.6491913],
+    name: "Eryaman Diş Polikliniği",
+    description: "6 dk, 5.2 km"
   },
   {
-    id: 62,
-    category: "hospitals",
-    coords: [39.95191, 32.76914],
-    name: "Etimesgut Şehit Sait Ertürk Devlet Hastanesi",
-    description: "10 dk, 8.3 km"
-  },
-
-  // Marketler
-  {
-    id: 63,
+    id: 132,
     category: "markets",
-    coords: [39.95191, 32.76914],
-    name: "File Market",
-    description: "6 dk, 4.3 km"
+    coords: [39.9704711, 32.6740322],
+    name: "Ankara 75. Yıl Hipodromu",
+    description: "6 dk, 5.9 km"
   },
   {
-    id: 64,
-    category: "markets",
-    coords: [39.97341, 32.79081],
-    name: "Şok Market",
-    description: "8 dk, 5 km"
-  },
-  {
-    id: 65,
-    category: "markets",
-    coords: [39.97341, 32.79081],
-    name: "Batıkent Şok Market",
-    description: "10 dk, 6 km"
-  },
-  {
-    id: 66,
-    category: "markets",
-    coords: [39.95191, 32.76914],
-    name: "Öz Market",
-    description: "5 dk, 4 km"
+    id: 133,
+    category: "malls",
+    coords: [39.9724471, 32.5961901],
+    name: "Vega Otonomi",
+    description: "13 dk, 9.2 km"
   }
 ];
+
 
 
 const projectLocation = {

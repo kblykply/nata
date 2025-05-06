@@ -18,133 +18,267 @@ const categories = [
   { id: "markets", name: "Marketler", count: 4, pin: "/shop.png" },
 ];
 const places = [
-  // Alışveriş Merkezleri
   {
-    id: 18,
-    category: "malls",
-    coords: [39.9616, 32.7690],
-    name: "Podium AVM Ankara",
-    description: "4 dk, 2.5 km"
+    id: 57,
+    category: "markets",
+    coords: [39.9583527, 32.7655802],
+    name: "İller Bankası Sosyal Tesisleri",
+    description: "2 dk, 1 km"
   },
   {
-    id: 19,
+    id: 58,
+    category: "markets",
+    coords: [39.9551074, 32.7676138],
+    name: "T.C. Ankara Büyükşehir Belediyesi Halk Ekmek",
+    description: "5 dk, 2.4 km"
+  },
+  {
+    id: 59,
+    category: "markets",
+    coords: [39.9500649, 32.7702425],
+    name: "TİMKO",
+    description: "1 dk, 250 metre"
+  },
+  {
+    id: 60,
     category: "malls",
-    coords: [39.9536, 32.7528],
+    coords: [39.9465565, 32.7647371],
+    name: "Gimart Outlet",
+    description: "4 dk, 1.7 km"
+  },
+  {
+    id: 61,
+    category: "malls",
+    coords: [39.9463264, 32.7595615],
     name: "Acity Alışveriş Merkezi",
-    description: "4 dk, 2.2 km"
+    description: "5 dk, 2.2 km"
   },
   {
-    id: 20,
-    category: "malls",
-    coords: [39.9123, 32.8106],
-    name: "Armada Alışveriş ve İş Merkezi",
-    description: "12 dk, 8 km"
-  },
-  {
-    id: 21,
-    category: "malls",
-    coords: [39.9511, 32.8317],
-    name: "ANKAmall Alışveriş Merkezi",
-    description: "10 dk, 7.4 km"
-  },
-
-  // Okullar
-  {
-    id: 22,
-    category: "schools",
-    coords: [39.9590, 32.7670],
-    name: "Mehmet Emin Yurdakul Ortaokulu",
-    description: "5 dk, 2.4 km"
-  },
-  {
-    id: 23,
-    category: "schools",
-    coords: [39.9600, 32.7700],
-    name: "Harzemşahlar İlkokulu",
-    description: "5 dk, 2.3 km"
-  },
-  {
-    id: 24,
-    category: "schools",
-    coords: [39.9610, 32.7720],
-    name: "Şehit Hakan Ünver İmam Hatip Ortaokulu",
-    description: "7 dk, 3 km"
-  },
-  {
-    id: 25,
-    category: "schools",
-    coords: [39.9620, 32.7750],
-    name: "Açı Koleji - Yenimahalle",
-    description: "5 dk, 2.6 km"
-  },
-
-  // Hastaneler
-  {
-    id: 26,
-    category: "hospitals",
-    coords: [39.9630, 32.7780],
-    name: "Servet Ünsal Tıp Merkezi",
-    description: "7 dk, 3 km"
-  },
-  {
-    id: 27,
-    category: "hospitals",
-    coords: [39.9640, 32.7800],
-    name: "Özel Ortadoğu Hastanesi",
-    description: "9 dk, 4.4 km"
-  },
-  {
-    id: 28,
-    category: "hospitals",
-    coords: [39.9200, 32.8000],
-    name: "Beştepe Devlet Hastanesi",
-    description: "10 dk, 8.3 km"
-  },
-  {
-    id: 29,
-    category: "hospitals",
-    coords: [39.9650, 32.7820],
-    name: "Özel Tepe Tıp Merkezi",
-    description: "8 dk, 4.5 km"
-  },
-
-  // Marketler
-  {
-    id: 30,
+    id: 62,
     category: "markets",
-    coords: [39.9660, 32.7840],
-    name: "Başkent Market",
-    description: "5 dk, 2.4 km"
+    coords: [39.9468409, 32.7656291],
+    name: "Crowne Plaza Ankara",
+    description: "4 dk, 1.7 km"
   },
   {
-    id: 31,
+    id: 63,
     category: "markets",
-    coords: [39.9670, 32.7860],
-    name: "Şok Market",
+    coords: [39.95569, 32.7698944],
+    name: "İklim Değişikliği Başkanlığı",
+    description: "3 dk, 1.4 km"
+  },
+  {
+    id: 64,
+    category: "markets",
+    coords: [39.9593768, 32.7693687],
+    name: "Hilton Garden Inn Ankara Gimat",
+    description: "3 dk, 1.4 km"
+  },
+  {
+    id: 65,
+    category: "markets",
+    coords: [39.9591168, 32.7704835],
+    name: "Vakıfbank Operasyon Merkezi",
+    description: "3 dk, 1.4 km"
+  },
+  {
+    id: 66,
+    category: "markets",
+    coords: [39.960785, 32.7680755],
+    name: "Gimat Otel",
+    description: "6 dk, 3.3 km"
+  },
+  {
+    id: 67,
+    category: "malls",
+    coords: [39.9623191, 32.7668342],
+    name: "Podium AVM",
     description: "5 dk, 2.5 km"
   },
   {
-    id: 32,
+    id: 68,
+    category: "schools",
+    coords: [39.9635647, 32.7699825],
+    name: "Özel Çılgın Çınar Anaokulu",
+    description: "4 dk, 2.1 km"
+  },
+  {
+    id: 69,
     category: "markets",
-    coords: [39.9680, 32.7880],
-    name: "Funda Market",
+    coords: [39.9638633, 32.7689172],
+    name: "Ankara Alegria Business Hotel",
+    description: "11 dk, 3.4 km"
+  },
+  {
+    id: 70,
+    category: "schools",
+    coords: [39.9638714, 32.7689172],
+    name: "Özel Çağlayan Kız Fen ve Anadolu Lisesi",
     description: "4 dk, 2.4 km"
   },
   {
-    id: 33,
+    id: 71,
+    category: "schools",
+    coords: [39.9660016, 32.770608],
+    name: "Mustafa Azmi Doğan Anadolu Lisesi",
+    description: "4 dk, 2.4 km"
+  },
+  {
+    id: 72,
+    category: "schools",
+    coords: [39.9706051, 32.7688471],
+    name: "Orhan Cemal Fersoy Ortaokulu",
+    description: "5 dk, 2.9 km"
+  },
+  {
+    id: 73,
+    category: "schools",
+    coords: [39.9645224, 32.7745617],
+    name: "Adalet Çocuk Anaokulu",
+    description: "6 dk, 2.8 km"
+  },
+  {
+    id: 74,
+    category: "schools",
+    coords: [39.9614782, 32.7738761],
+    name: "Açı Koleji",
+    description: "5 dk, 2.7 km"
+  },
+  {
+    id: 75,
     category: "markets",
-    coords: [39.9690, 32.7900],
-    name: "İşler Güçler Market",
+    coords: [39.9614863, 32.7738761],
+    name: "Nazım Hikmet Kültür Merkezi",
+    description: "5 dk, 2.5 km"
+  },
+  {
+    id: 76,
+    category: "schools",
+    coords: [39.9664599, 32.7729496],
+    name: "Özel Çağlayan Erkek Fen ve Anadolu Lisesi",
+    description: "5 dk, 2.7 km"
+  },
+  {
+    id: 77,
+    category: "hospitals",
+    coords: [39.9663737, 32.7733637],
+    name: "Onkoloji Hastanesi Poliklinik",
+    description: "5 dk, 2.8 km"
+  },
+  {
+    id: 78,
+    category: "schools",
+    coords: [39.966087, 32.7762582],
+    name: "Özel Pınar Eğitim Kurumları",
     description: "5 dk, 2.6 km"
   },
   {
-    id: 34,
+    id: 79,
+    category: "schools",
+    coords: [39.9664318, 32.7763057],
+    name: "Şevket Raşit Hatipoğlu Anadolu Lisesi",
+    description: "6 dk, 2.9 km"
+  },
+  {
+    id: 80,
     category: "markets",
-    coords: [39.9700, 32.7920],
-    name: "Şekerciler Market",
+    coords: [39.9669237, 32.7693735],
+    name: "Cevahir Wedding & Event",
+    description: "4 dk, 2.4 km"
+  },
+  {
+    id: 81,
+    category: "markets",
+    coords: [39.9669588, 32.7513489],
+    name: "Mehmet Akif Ersoy Camii",
+    description: "9 dk, 4.3 km"
+  },
+  {
+    id: 82,
+    category: "markets",
+    coords: [39.9464041, 32.7747073],
+    name: "Emniyet Genel Müdürlüğü – Basımevi Şubesi Müdürlüğü",
+    description: "6 dk, 3.3 km"
+  },
+  {
+    id: 83,
+    category: "markets",
+    coords: [39.9508307, 32.7808352],
+    name: "Polis Akademisi Çamlıca Yerleşkesi",
+    description: "4 dk, 2.4 km"
+  },
+  {
+    id: 84,
+    category: "markets",
+    coords: [39.9558275, 32.7801875],
+    name: "EGM Bakım Onarım Şube Müdürlüğü",
     description: "3 dk, 1.6 km"
+  },
+  {
+    id: 85,
+    category: "markets",
+    coords: [39.9727796, 32.7532529],
+    name: "Fatih Sultan Mehmet Camii",
+    description: "3 dk, 1.2 km"
+  },
+  {
+    id: 86,
+    category: "markets",
+    coords: [39.9424678, 32.7701837],
+    name: "TCDD Açıkhava Tren Müzesi",
+    description: "7 dk, 3.1 km"
+  },
+  {
+    id: 87,
+    category: "markets",
+    coords: [39.942243, 32.770822],
+    name: "Ankara Demirspor Stadı",
+    description: "7 dk, 3.1 km"
+  },
+  {
+    id: 88,
+    category: "markets",
+    coords: [39.9656069, 32.7617624],
+    name: "ASELSAN Genel Müdürlük",
+    description: "8 dk, 3.4 km"
+  },
+  {
+    id: 89,
+    category: "malls",
+    coords: [39.9718253, 32.7638539],
+    name: "Macunköy Metrosu",
+    description: "11 dk, 3.2 km"
+  },
+  {
+    id: 90,
+    category: "malls",
+    coords: [39.9691035, 32.7811706],
+    name: "Hastane Metrosu",
+    description: "8 dk, 3.7 km"
+  },
+  {
+    id: 91,
+    category: "malls",
+    coords: [39.9654003, 32.7914461],
+    name: "Demetevler Metrosu",
+    description: "9 dk, 3.9 km"
+  },
+  {
+    id: 92,
+    category: "markets",
+    coords: [39.9538082, 32.7835251],
+    name: "TZOB Otel",
+    description: "4 dk, 2.1 km"
+  },
+  {
+    id: 93,
+    category: "schools",
+    coords: [39.9539147, 32.7036996],
+    name: "Orhangazi İlkokulu",
+    description: "18 dk, 15.3 km"
   }
 ];
+
 
 
 const projectLocation = {

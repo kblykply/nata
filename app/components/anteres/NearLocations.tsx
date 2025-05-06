@@ -19,133 +19,163 @@ const categories = [
 ];
 
 const places = [
-  // Alışveriş Merkezleri
+  // Market
   {
-    id: 35,
-    category: "malls",
-    coords: [39.97034, 32.81943],
-    name: "Antares AVM",
-    description: "1 dk, 100 m"
-  },
-  {
-    id: 36,
-    category: "malls",
-    coords: [39.95111, 32.83167],
-    name: "ANKAmall Alışveriş Merkezi",
-    description: "10 dk, 5.2 km"
-  },
-  {
-    id: 37,
-    category: "malls",
-    coords: [40.01722, 32.82333],
-    name: "Forum Ankara Alışveriş Merkezi",
-    description: "10 dk, 5.8 km"
-  },
-  {
-    id: 38,
-    category: "malls",
-    coords: [39.91234, 32.81065],
-    name: "Armada Alışveriş ve İş Merkezi",
-    description: "14 dk, 8.5 km"
-  },
-
-  // Okullar
-  {
-    id: 39,
-    category: "schools",
-    coords: [39.9610, 32.7700],
-    name: "Yunus Emre İlkokulu",
-    description: "4 dk, 1.7 km"
-  },
-  {
-    id: 40,
-    category: "schools",
-    coords: [39.9610, 32.7720],
-    name: "Satuk Buğra İlkokulu",
-    description: "5 dk, 2 km"
-  },
-  {
-    id: 41,
-    category: "schools",
-    coords: [39.9610, 32.7740],
-    name: "Şehit Hakan Kabil İlkokulu",
+    id: 1,
+    category: "markets",
+    coords: [39.9708901, 32.8218806],
+    name: "Metro Market",
     description: "3 dk, 1 km"
   },
+
+  // Hospitals
   {
-    id: 42,
-    category: "schools",
-    coords: [39.9620, 32.7750],
-    name: "Hayat Koleji",
+    id: 2,
+    category: "hospitals",
+    coords: [39.9650327, 32.823202],
+    name: "Etlik Şehir Hastanesi",
+    description: "5 dk, 2.1 km"
+  },
+  {
+    id: 3,
+    category: "hospitals",
+    coords: [39.9650528, 32.8154772],
+    name: "Gülhane Eğitim ve Araştırma Hastanesi",
+    description: "10 dk, 3.8 km"
+  },
+  {
+    id: 4,
+    category: "hospitals",
+    coords: [39.9571953, 32.7964194],
+    name: "Lokman Hekim Hastanesi",
+    description: "6 dk, 2.2 km"
+  },
+  {
+    id: 5,
+    category: "hospitals",
+    coords: [39.9668514, 32.8185862],
+    name: "Ankara İl Sağlık Müdürlüğü",
+    description: "4 dk, 1.6 km"
+  },
+  {
+    id: 6,
+    category: "hospitals",
+    coords: [39.9645544, 32.8375413],
+    name: "Etlik Zübeyde Hanım Kadın Hastalıkları Hastanesi",
+    description: "6 dk, 2.8 km"
+  },
+  {
+    id: 7,
+    category: "hospitals",
+    coords: [39.9801437, 32.8196276],
+    name: "Özel Deva Tıp Merkezi",
     description: "4 dk, 1.4 km"
   },
-  {
-    id: 43,
-    category: "schools",
-    coords: [39.9630, 32.7760],
-    name: "Büyük Değişim Koleji",
-    description: "2 dk, 600 m"
-  },
 
-  // Hastaneler
+  // Schools
   {
-    id: 44,
-    category: "hospitals",
-    coords: [39.9700, 32.8190],
-    name: "Ankara Etlik Şehir Hastanesi",
-    description: "6 dk, 2.3 km"
+    id: 8,
+    category: "schools",
+    coords: [39.9668715, 32.8108614],
+    name: "Yıldırım Beyazıt Üniversitesi",
+    description: "2 dk, 700 metre"
   },
   {
-    id: 45,
-    category: "hospitals",
-    coords: [39.9650, 32.7820],
-    name: "Özel Deva Tıp Merkezi",
+    id: 9,
+    category: "schools",
+    coords: [39.9712396, 32.8251716],
+    name: "Hacı Mustafa Tarman Ortaokulu",
+    description: "4 dk, 1.2 km"
+  },
+  {
+    id: 10,
+    category: "schools",
+    coords: [39.9640278, 32.8159989],
+    name: "Yenimahalle Atatürk Ortaokulu",
+    description: "6 dk, 2 km"
+  },
+  {
+    id: 11,
+    category: "schools",
+    coords: [39.9583352, 32.8271719],
+    name: "Ziya Gökalp İlkokulu ve Ortaokulu",
+    description: "7 dk, 3 km"
+  },
+  {
+    id: 12,
+    category: "schools",
+    coords: [39.9651268, 32.8150667],
+    name: "Neşe Dolu Yarınlar Kreş ve Anaokulu",
+    description: "6 dk, 2.2 km"
+  },
+  {
+    id: 13,
+    category: "schools",
+    coords: [39.9704858, 32.8057949],
+    name: "Şehit Öğretmen Mehmet Ali Durak Ortaokulu",
     description: "4 dk, 1.5 km"
   },
+
+  // Transportation
   {
-    id: 46,
-    category: "hospitals",
-    coords: [40.0000, 32.8670],
-    name: "Gülhane Eğitim ve Araştırma Hastanesi",
-    description: "8 dk, 3.6 km"
-  },
-  {
-    id: 47,
-    category: "hospitals",
-    coords: [39.9400, 32.8500],
-    name: "Ankara Magnet Hastanesi",
-    description: "11 dk, 7 km"
+    id: 14,
+    category: "malls",
+    coords: [39.9571602, 32.814444],
+    name: "İvedik Metrosu",
+    description: "7 dk, 3 km"
   },
 
-  // Marketler
+  // Sports / Recreation
   {
-    id: 48,
-    category: "markets",
-    coords: [39.9660, 32.7840],
-    name: "Kaymakçı Market",
-    description: "3 dk, 1 km"
+    id: 15,
+    category: "schools",
+    coords: [39.9744496, 32.8129301],
+    name: "Gençlerbirliği Hasan Polat Futbol Okulu",
+    description: "2 dk, 650 metre"
   },
   {
-    id: 49,
+    id: 16,
     category: "markets",
-    coords: [39.9670, 32.7860],
-    name: "Estergon Market",
-    description: "4 dk, 2 km"
+    coords: [39.979889, 32.8185545],
+    name: "Ayvalı Gross",
+    description: "3 dk, 1.2 km"
+  },
+
+  // Government
+  {
+    id: 17,
+    category: "hospitals",
+    coords: [39.959601, 32.8360217],
+    name: "Ankara Valiliği İl Nüfus ve Vatandaşlık Müdürlüğü",
+    description: "8 dk, 3.5 km"
   },
   {
-    id: 50,
-    category: "markets",
-    coords: [39.9680, 32.7880],
-    name: "Şok Market",
-    description: "6 dk, 2.5 km"
+    id: 18,
+    category: "hospitals",
+    coords: [39.9264301, 32.8535368],
+    name: "Ankara Valiliği",
+    description: "15 dk, 10 km"
   },
+
+  // Utility
   {
-    id: 51,
+    id: 19,
     category: "markets",
-    coords: [39.9690, 32.7900],
-    name: "BİM Market",
-    description: "3 dk, 1 km"
+    coords: [39.9559996, 32.8188581],
+    name: "Başkent Elektrik Dağıtım A.Ş.",
+    description: "8 dk, 3.3 km"
+  },
+
+  // Recreation
+  {
+    id: 20,
+    category: "schools",
+    coords: [39.971393, 32.8235362],
+    name: "Etlik Olimpik Yüzme Havuzu",
+    description: "4 dk, 1.2 km"
   }
 ];
+
 
 const projectLocation = {
   coords: [39.97090, 32.81910],

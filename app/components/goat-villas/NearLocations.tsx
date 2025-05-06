@@ -18,120 +18,114 @@ const categories = [
   { id: "markets", name: "Marketler", count: 4, pin: "/shop.png" },
 ];
 
-const places = [ 
+const places = [
   {
-    id: 1,
+    id: 42,
     category: "malls",
-    coords: [39.860838, 32.741212],
-    name: "Beytepe Alışveriş Merkezi",
-    description: "4 dk, 3.9 km"
+    coords: [39.8837375, 32.7558713],
+    name: "Bilkent Center",
+    description: "7 dk, 4.9 km"
   },
   {
-    id: 2,
+    id: 43,
     category: "malls",
-    coords: [39.800, 32.700],
-    name: "İncek AVM",
-    description: "13 Dk, 8.4 Km"
+    coords: [39.8833115, 32.7598378],
+    name: "Sports International Bilkent",
+    description: "6 dk, 4.2 km"
   },
   {
-    id: 3,
+    id: 44,
     category: "malls",
-    coords: [39.880, 32.740],
-    name: "Arcadium AVM",
-    description: "16 Dk, 9.5 Km"
+    coords: [39.8755266, 32.7498524],
+    name: "Bilkent Odeon",
+    description: "8 dk, 4.5 km"
   },
   {
-    id: 4,
+    id: 45,
+    category: "schools",
+    coords: [39.8680208, 32.7473168],
+    name: "Bilkent Üniversitesi",
+    description: "9 dk, 4.3 km"
+  },
+  {
+    id: 46,
+    category: "schools",
+    coords: [39.8708471, 32.715328],
+    name: "Hacettepe Üniversitesi",
+    description: "7 dk, 3.9 km"
+  },
+  {
+    id: 47,
+    category: "schools",
+    coords: [39.8739231, 32.717308],
+    name: "Ankara Güzel Sanatlar Lisesi",
+    description: "10 dk, 5.2 km"
+  },
+  {
+    id: 48,
     category: "malls",
-    coords: [39.870, 32.750],
-    name: "Turkuaz Alışveriş Merkezi",
-    description: "14 Dk, 8.3 Km"
+    coords: [39.8817081, 32.730835],
+    name: "Beytepe Kongre ve Kültür Merkezi",
+    description: "11 dk, 6 km"
   },
   {
-    id: 5,
-    category: "schools",
-    coords: [39.805, 32.695],
-    name: "Tam Okulları",
-    description: "16 Dk, 10 Km"
+    id: 49,
+    category: "markets",
+    coords: [39.8466763, 32.7543154],
+    name: "Jandarma ve Sahil Güvenlik Akademi Camisi",
+    description: "4 dk, 1.2 km"
   },
   {
-    id: 6,
-    category: "schools",
-    coords: [39.860, 32.740],
-    name: "Beytepe İlkokulu",
-    description: "6 Dk, 3.2 Km"
+    id: 50,
+    category: "markets",
+    coords: [39.863031, 32.7383194],
+    name: "Hacettepe Teknokent A.Ş.",
+    description: "4 dk, 2.3 km"
   },
   {
-    id: 7,
-    category: "schools",
-    coords: [39.850, 32.735],
-    name: "Tsk Mehmetçik Vakfı Hafize İhsan Payaza İlk/Ortaokulu",
-    description: "13 Dk, 7.4 Km"
+    id: 51,
+    category: "markets",
+    coords: [39.8700534, 32.7432054],
+    name: "Bilkent Cyberpark",
+    description: "7 dk, 4.1 km"
   },
   {
-    id: 8,
+    id: 52,
     category: "schools",
-    coords: [39.875275, 32.748524],
+    coords: [39.8700886, 32.7251808],
+    name: "Ortadoğu Teknik Üniversitesi",
+    description: "17 dk, 11.9 km"
+  },
+  {
+    id: 53,
+    category: "hospitals",
+    coords: [39.9000471, 32.7547861],
+    name: "Bilkent Şehir Hastanesi",
+    description: "13 dk, 9.4 km"
+  },
+  {
+    id: 54,
+    category: "malls",
+    coords: [39.8749888, 32.7605247],
+    name: "Bilkent Otel ve Konferans Merkezi",
+    description: "6 dk, 4.7 km"
+  },
+  {
+    id: 55,
+    category: "schools",
+    coords: [39.8720301, 32.7593591],
     name: "İDV Özel Bilkent İlk ve Ortaokulu",
-    description: "7 Dk, 5 Km"
+    description: "7 dk, 5 km"
   },
   {
-    id: 9,
+    id: 56,
     category: "hospitals",
-    coords: [39.860838, 32.741212],
-    name: "Beytepe Şehit Murat Erdi Eker Devlet Hastanesi",
-    description: "14 Dk, 8 Km"
-  },
-  {
-    id: 10,
-    category: "hospitals",
-    coords: [39.86784, 32.73365],
-    name: "Beytepe Gün Hastanesi",
-    description: "6 Dk, 3.5 Km"
-  },
-  {
-    id: 11,
-    category: "hospitals",
-    coords: [39.800, 32.700],
-    name: "Medical Park Ankara İncek Hastanesi",
-    description: "13 Dk, 8 Km"
-  },
-  {
-    id: 12,
-    category: "hospitals",
-    coords: [39.89082, 32.71051],
-    name: "Medisun Hastanesi",
-    description: "15 Dk, 9 Km"
-  },
-  {
-    id: 13,
-    category: "markets",
-    coords: [39.9207759, 32.8540497],
-    name: "CarrefourSA",
-    description: "4 Dk, 2 Km"
-  },
-  {
-    id: 14,
-    category: "markets",
-    coords: [39.892, 32.850],
-    name: "Şok Market",
-    description: "6 Dk, 3 Km"
-  },
-  {
-    id: 15,
-    category: "markets",
-    coords: [39.600, 28.783],
-    name: "Çınar Market",
-    description: "16 Dk, 10 Km"
-  },
-  {
-    id: 16,
-    category: "markets",
-    coords: [39.850, 32.740],
-    name: "Angora Market",
-    description: "8 Dk, 5 Km"
+    coords: [39.8923352, 32.7498897],
+    name: "Gaziler Fizik Tedavi ve Rehabilitasyon Eğitim ve Araştırma Hastanesi",
+    description: "8 dk, 6.2 km"
   }
 ];
+
 
 const projectLocation = {
   coords: [39.85250, 32.75718],

@@ -18,130 +18,198 @@ import {
     { id: "markets", name: "Marketler", count: 4, pin: "/shop.png" },
   ];
 
-  const places = [ 
+  const places = [
     {
-      id: 1,
+      id: 134,
       category: "malls",
-      coords: [40.9946, 28.8645],
-      name: "MetroPort AVM",
-      description: "7 Dk, 3.7 Km"
-    },
-    {
-      id: 2,
-      category: "malls",
-      coords: [40.9920, 28.8535],
-      name: "Ömür Plaza Alışveriş Merkezi",
-      description: "9 Dk, 3.6 Km"
-    },
-    {
-      id: 3,
-      category: "malls",
-      coords: [40.9935, 28.8942],
-      name: "Marmara Forum Alışveriş Merkezi",
-      description: "7 Dk, 2.4 Km"
-    },
-    {
-      id: 4,
-      category: "malls",
-      coords: [41.0361, 28.8241],
+      coords: [41.0156233, 28.8755488],
       name: "Kale Outlet Center",
-      description: "4 dk, 1.9 Km"
-    },
-  
-    {
-      id: 5,
-      category: "schools",
-      coords: [40.9972, 28.8605],
-      name: "Mevlana İlkokulu",
-      description: "5 Dk, 2.5 Km"
+      description: "7 dk, 1.9 km"
     },
     {
-      id: 6,
-      category: "schools",
-      coords: [40.9993, 28.8554],
-      name: "Fikret Yüzatlı İlkokulu",
-      description: "8 Dk, 3.4 Km"
+      id: 135,
+      category: "malls",
+      coords: [41.0094253, 28.8844663],
+      name: "Merter AVM",
+      description: "12 dk, 2.8 km"
     },
     {
-      id: 7,
-      category: "schools",
-      coords: [41.0008, 28.8547],
-      name: "Bahçelievler Kumport Ortaokulu",
-      description: "8 Dk, 3.4 Km"
+      id: 136,
+      category: "markets",
+      coords: [41.0023469, 28.8777836],
+      name: "İBB Bahçelievler Spor Kompleksi",
+      description: "8 dk, 2.4 km"
     },
     {
-      id: 8,
-      category: "schools",
-      coords: [40.9985, 28.8499],
-      name: "Bahçelievler Okyanus Koleji",
-      description: "6 Dk, 2.1 Km"
-    },
-    {
-      id: 9,
-      category: "schools",
-      coords: [40.9943, 28.8490],
-      name: "Bahçelievler Özel Şafak Okulları",
-      description: "8 Dk, 2.4 Km"
-    },
-  
-    {
-      id: 10,
+      id: 137,
       category: "hospitals",
-      coords: [40.9930, 28.8601],
-      name: "Memorial Bahçelievler Hastanesi",
-      description: "11 Dk, 4.5 Km"
-    },
-    {
-      id: 11,
-      category: "hospitals",
-      coords: [40.9936, 28.8567],
+      coords: [41.0063523, 28.8675715],
       name: "Medicana Bahçelievler Hastanesi",
-      description: "9 Dk, 3.3 Km"
+      description: "12 dk, 3.3 km"
     },
     {
-      id: 12,
+      id: 138,
+      category: "malls",
+      coords: [41.0083776, 28.8633514],
+      name: "Haznedar Metro İstasyonu",
+      description: "10 dk, 2.7 km"
+    },
+    {
+      id: 139,
+      category: "markets",
+      coords: [41.0056495, 28.8679028],
+      name: "Violet Bahçelievler Düğün Salonu",
+      description: "12 dk, 3.2 km"
+    },
+    {
+      id: 140,
+      category: "schools",
+      coords: [41.0196429, 28.8868589],
+      name: "YTÜ Yıldız Teknopark",
+      description: "12 dk, 4 km"
+    },
+    {
+      id: 141,
+      category: "schools",
+      coords: [41.0196627, 28.8791341],
+      name: "Yıldız Teknik Üniversitesi",
+      description: "16 dk, 4.9 km"
+    },
+    {
+      id: 142,
+      category: "markets",
+      coords: [41.0097308, 28.8967032],
+      name: "Radisson Hotel İstanbul Merter",
+      description: "14 dk, 3.6 km"
+    },
+    {
+      id: 143,
+      category: "malls",
+      coords: [40.9968115, 28.8844236],
+      name: "Marmara Forum",
+      description: "7 dk, 2.4 km"
+    },
+    {
+      id: 144,
+      category: "markets",
+      coords: [40.997759, 28.8796491],
+      name: "Bakırköy Tenis Kulübü Atatürk Spor ve Yaşam Köyü",
+      description: "11 dk, 3.3 km"
+    },
+    {
+      id: 145,
+      category: "malls",
+      coords: [40.9966169, 28.8727322],
+      name: "İncirli Metro İstasyonu",
+      description: "12 dk, 3.5 km"
+    },
+    {
+      id: 146,
+      category: "markets",
+      coords: [41.0049242, 28.8808618],
+      name: "The Green Park Hotel Merter",
+      description: "7 dk, 1.7 km"
+    },
+    {
+      id: 147,
       category: "hospitals",
-      coords: [40.9981, 28.8512],
-      name: "Aktif International Hastanesi Bahçelievler",
-      description: "9 Dk, 3.3 Km"
+      coords: [40.9975841, 28.8646301],
+      name: "Özel Aile Hastanesi",
+      description: "10 dk, 3.7 km"
     },
     {
-      id: 13,
+      id: 148,
+      category: "malls",
+      coords: [40.9957055, 28.8601054],
+      name: "MetroPort AVM",
+      description: "10 dk, 3.7 km"
+    },
+    {
+      id: 149,
       category: "hospitals",
-      coords: [40.9949, 28.8540],
-      name: "Medical Park Bahçelievler Hastanesi",
-      description: "9 Dk, 3.8 Km"
-    },
-  
-    {
-      id: 14,
-      category: "markets",
-      coords: [41.0023, 28.8587],
-      name: "Gelişim Market",
-      description: "8 Dk, 2.4 Km"
+      coords: [40.9933612, 28.9063733],
+      name: "İstanbul İl Sağlık Müdürlüğü",
+      description: "32 dk, 15 km"
     },
     {
-      id: 15,
+      id: 150,
       category: "markets",
-      coords: [40.9929, 28.8475],
-      name: "Çağrı Market Haznedar",
-      description: "8 Dk, 2.3 Km"
+      coords: [40.9904438, 28.8497435],
+      name: "İstanbul Gençlik ve Spor İl Müdürlüğü",
+      description: "14 dk, 6.2 km"
     },
     {
-      id: 16,
-      category: "markets",
-      coords: [40.9957, 28.8599],
-      name: "Şok Market",
-      description: "10 Dk, 4.4 Km"
+      id: 151,
+      category: "schools",
+      coords: [41.004353, 28.8456295],
+      name: "Bahçelievler Atatürk İlkokulu",
+      description: "16 dk, 4.9 km"
     },
     {
-      id: 17,
+      id: 152,
+      category: "hospitals",
+      coords: [41.0058494, 28.8420557],
+      name: "Bahçelievler Devlet Hastanesi",
+      description: "18 dk, 5 km"
+    },
+    {
+      id: 153,
+      category: "schools",
+      coords: [41.0070717, 28.8707339],
+      name: "Bahçelievler Gökkuşağı İlkokulu",
+      description: "7 dk, 2.3 km"
+    },
+    {
+      id: 154,
+      category: "malls",
+      coords: [40.9987354, 28.8711848],
+      name: "Ömür Plaza Alışveriş Merkezi",
+      description: "8 dk, 2.7 km"
+    },
+    {
+      id: 155,
+      category: "schools",
+      coords: [41.0097977, 28.8732544],
+      name: "Emlak Konut İlköğretim Okulu",
+      description: "8 dk, 1.9 km"
+    },
+    {
+      id: 156,
       category: "markets",
-      coords: [40.9968, 28.8621],
-      name: "Yazıcı Market",
-      description: "10 Dk, 4.7 Km"
+      coords: [41.010481, 28.8721637],
+      name: "Güngören Belediyesi",
+      description: "9 dk, 2 km"
+    },
+    {
+      id: 157,
+      category: "markets",
+      coords: [41.0105007, 28.8644389],
+      name: "MMM Migros",
+      description: "11 dk, 2.6 km"
+    },
+    {
+      id: 158,
+      category: "markets",
+      coords: [41.0105739, 28.8335391],
+      name: "Ramada Hotel & Suites by Wyndham",
+      description: "7 dk, 2 km"
+    },
+    {
+      id: 159,
+      category: "markets",
+      coords: [41.0064445, 28.8702712],
+      name: "M Migros",
+      description: "7 dk, 2 km"
+    },
+    {
+      id: 160,
+      category: "markets",
+      coords: [41.0065177, 28.8393715],
+      name: "Metro Market İstanbul",
+      description: "6 dk, 2 km"
     }
   ];
+  
   
 
 const projectLocation = {

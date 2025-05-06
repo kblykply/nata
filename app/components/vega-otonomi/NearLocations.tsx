@@ -19,133 +19,141 @@ const categories = [
 ];
 
 const places = [
-  // Alışveriş Merkezleri
   {
-    id: 1,
-    category: "malls",
-    coords: [39.9645, 32.6189],
-    name: "Metromall Alışveriş Merkezi",
-    description: "7 dk, 3 km"
+    id: 94,
+    category: "markets",
+    coords: [39.9783608, 32.5793143],
+    name: "Harikalar Diyarı Lunapark",
+    description: "3 dk, 1.7 km"
   },
   {
-    id: 2,
-    category: "malls",
-    coords: [39.9765, 32.6094],
-    name: "Eryaman Port AVM",
-    description: "4 dk, 1.4 km"
+    id: 95,
+    category: "markets",
+    coords: [39.9769439, 32.5777674],
+    name: "ASKİ Sincan Şube Müdürlüğü",
+    description: "4 dk, 2.5 km"
   },
   {
-    id: 3,
-    category: "malls",
-    coords: [39.9792, 32.6174],
-    name: "Dolphin Alışveriş Merkezi",
-    description: "6 dk, 2.6 km"
+    id: 96,
+    category: "markets",
+    coords: [39.9764631, 32.5799421],
+    name: "Sincan Termal Aqua Park",
+    description: "3 dk, 1.5 km"
   },
   {
-    id: 4,
-    category: "malls",
-    coords: [39.9902, 32.6482],
-    name: "Göksu Alışveriş Merkezi",
-    description: "10 dk, 6.1 km"
-  },
-
-  // Okullar
-  {
-    id: 5,
-    category: "schools",
-    coords: [39.9350, 32.8570],
-    name: "Kavram Okulları",
-    description: "3 dk, 1.3 km"
+    id: 97,
+    category: "markets",
+    coords: [39.9767441, 32.577113],
+    name: "Sincan İtfaiye Müdürlüğü",
+    description: "4 dk, 2.6 km"
   },
   {
-    id: 6,
-    category: "schools",
-    coords: [39.9782, 32.5874],
-    name: "Sincan Akşemsettin İlkokulu",
-    description: "3 dk, 1 km"
+    id: 98,
+    category: "markets",
+    coords: [39.9796258, 32.5768058],
+    name: "Fatih Stadyumu",
+    description: "6 dk, 3.4 km"
   },
   {
-    id: 7,
-    category: "schools",
-    coords: [39.9760, 32.5900],
-    name: "Şehit Tufan Kansuva İlkokulu",
-    description: "3 dk, 1 km"
-  },
-  {
-    id: 8,
-    category: "schools",
-    coords: [39.9810, 32.6200],
-    name: "Muradiye Eryaman Sevgi Okulları",
-    description: "2 dk, 1 km"
-  },
-  {
-    id: 9,
-    category: "schools",
-    coords: [39.9750, 32.6000],
-    name: "Elvankent Sınav Koleji",
-    description: "4 dk, 1.5 km"
-  },
-
-  // Hastaneler
-  {
-    id: 10,
+    id: 99,
     category: "hospitals",
-    coords: [39.9651, 32.5874],
+    coords: [39.9832515, 32.5682975],
+    name: "Sincan Ağız ve Diş Sağlığı Hastanesi",
+    description: "5 dk, 3.3 km"
+  },
+  {
+    id: 100,
+    category: "hospitals",
+    coords: [39.9651111, 32.5849341],
     name: "Koru Sincan Hastanesi",
-    description: "4 dk, 1.5 km"
+    description: "5 dk, 1.5 km"
   },
   {
-    id: 11,
+    id: 101,
+    category: "schools",
+    coords: [39.9660228, 32.611598],
+    name: "Etimesgut Özkent Akbilek Fen Lisesi",
+    description: "3 dk, 1.9 km"
+  },
+  {
+    id: 102,
+    category: "malls",
+    coords: [39.9779324, 32.6151408],
+    name: "Akcenter Outlet AVM",
+    description: "6 dk, 2.5 km"
+  },
+  {
+    id: 103,
+    category: "schools",
+    coords: [39.9777495, 32.5969094],
+    name: "Selahattin Akbilek Anadolu Lisesi",
+    description: "4 dk, 1.2 km"
+  },
+  {
+    id: 104,
+    category: "schools",
+    coords: [39.9681192, 32.5724885],
+    name: "Sincan Anadolu Lisesi",
+    description: "7 dk, 2.7 km"
+  },
+  {
+    id: 105,
+    category: "markets",
+    coords: [39.947554, 32.7018799],
+    name: "Türk Hava Kuvvetleri Müzesi",
+    description: "10 dk, 10 km"
+  },
+  {
+    id: 106,
+    category: "malls",
+    coords: [39.9656386, 32.6289346],
+    name: "Optimum Outlet",
+    description: "4 dk, 3.1 km"
+  },
+  {
+    id: 107,
+    category: "malls",
+    coords: [39.9701426, 32.6185951],
+    name: "AVM Eryaman",
+    description: "5 dk, 3 km"
+  },
+  {
+    id: 108,
+    category: "markets",
+    coords: [39.9701777, 32.6005705],
+    name: "Ankara Şeker Fabrikası",
+    description: "8 dk, 6.2 km"
+  },
+  {
+    id: 109,
+    category: "malls",
+    coords: [39.9650644, 32.5765167],
+    name: "Milpark AVM Sincan",
+    description: "8 dk, 2.7 km"
+  },
+  {
+    id: 110,
+    category: "markets",
+    coords: [39.96034, 32.5837963],
+    name: "2XL Gym Fitness",
+    description: "7 dk, 2.6 km"
+  },
+  {
+    id: 111,
+    category: "schools",
+    coords: [39.9136752, 32.7859479],
+    name: "Lokman Hekim Üniversitesi",
+    description: "22 dk, 20.1 km"
+  },
+  {
+    id: 112,
     category: "hospitals",
-    coords: [39.9800, 32.5800],
-    name: "Lokman Hekim Üniversitesi Ankara Hastanesi",
-    description: "9 dk, 2.7 km"
-  },
-  {
-    id: 12,
-    category: "hospitals",
-    coords: [39.9820, 32.5900],
-    name: "Sincan Eğitim ve Araştırma Hastanesi",
-    description: "5 dk, 3.2 km"
-  },
-  {
-    id: 13,
-    category: "hospitals",
-    coords: [39.9899, 32.5794],
-    name: "Dr. Nafiz Körez Sincan Devlet Hastanesi",
-    description: "5 dk, 4.4 km"
-  },
-
-  // Marketler
-  {
-    id: 14,
-    category: "markets",
-    coords: [39.9734, 32.7908],
-    name: "Şok Market",
-    description: "2 dk, 500 m"
-  },
-  {
-    id: 15,
-    category: "markets",
-    coords: [39.9750, 32.6100],
-    name: "Aynaslar Market",
-    description: "3 dk, 700 m"
-  },
-  {
-    id: 16,
-    category: "markets",
-    coords: [39.9760, 32.6120],
-    name: "Koçak Market",
-    description: "3 dk, 600 m"
-  },
-  {
-    id: 17,
-    category: "markets",
-    coords: [39.9770, 32.6150],
-    name: "Çağlayan Market",
-    description: "5 dk, 1 km"
+    coords: [39.9603643, 32.5959536],
+    name: "Lale Ağız ve Diş Sağlığı Polikliniği",
+    description: "2.3 dk, 6 km"
   }
 ];
+
 
 
 const projectLocation = {
