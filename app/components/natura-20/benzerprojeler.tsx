@@ -5,7 +5,8 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import { useState } from "react";
 
 
-const listings: SimpleListing[] = [
+
+const listings = [
 
   {
     title: "Natura İncek",
