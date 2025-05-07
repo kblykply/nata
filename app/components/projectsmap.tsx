@@ -207,7 +207,7 @@ export default function MapWithProjects() {
     tag ? (
       <span
         key={i}
-        className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium ${tag === listing.label ? 'bg-red-100 text-red-600' : 'border border-blue-600 text-blue-600'}`}
+        className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium ${tag === listing.label ? 'bg-red-100 text-red-600' : 'border border-[#ab1e3b] text-[#ab1e3b]'}`}
       >
         {tag === listing.label && <FaFire />} {tag}
       </span>
@@ -222,7 +222,7 @@ export default function MapWithProjects() {
       ) : (
         <aside className="w-[30rem] overflow-y-auto bg-white p-6 border-r border-gray-200 shadow-xl">
           <button
-            className="text-sm text-blue-600 mb-4 underline"
+            className="text-sm text-gray-400 mb-4 underline"
             onClick={() => setSelectedListing(null)}
           >
             ← Geri dön
@@ -235,7 +235,7 @@ export default function MapWithProjects() {
           </div>
           <div className="flex items-center gap-2 flex-wrap text-xs mb-4">
             {selectedListing.highlight && (
-              <span className="text-blue-700 border border-blue-700 px-2 py-0.5 rounded-full font-semibold">
+              <span className="text-[#ab1e3b] border border-[#ab1e3b] px-2 py-0.5 rounded-full font-semibold">
                 {selectedListing.highlight}
               </span>
             )}
@@ -273,10 +273,11 @@ export default function MapWithProjects() {
             {listings.map((listing) =>
               listing.coords ? (
                 <Placemark
-                  key={listing.link}
-                  geometry={listing.coords}
-                  onClick={() => handleSelectListing(listing)}
-                />
+                key={listing.link}
+                geometry={listing.coords}
+                onClick={() => handleSelectListing(listing)}
+                options={{ preset: 'islands#redIcon' }}
+              />
               ) : null
             )}
           </Map>
