@@ -19,112 +19,29 @@ const categories = [
 ];
 
 const places = [
-  // Alışveriş Merkezleri
   {
-    id: 67,
-    category: "malls",
-    coords: [39.95111, 32.83167],
-    name: "ANKAmall Alışveriş Merkezi",
-    description: "15 dk, 13 km"
-  },
-  {
-    id: 68,
-    category: "malls",
-    coords: [39.91234, 32.81065],
-    name: "Armada Alışveriş ve İş Merkezi",
-    description: "17 dk, 13 km"
-  },
-  {
-    id: 69,
-    category: "malls",
-    coords: [39.9112, 32.7583],
-    name: "Kentpark Alışveriş Merkezi",
-    description: "15 dk, 10 km"
-  },
-  {
-    id: 70,
-    category: "malls",
-    coords: [39.88278, 32.68573],
-    name: "Arcadium Alışveriş Merkezi",
-    description: "12 dk, 8 km"
-  },
-
-  // Okullar
-  {
-    id: 71,
-    category: "schools",
-    coords: [39.95191, 32.76914],
-    name: "ATAEL KOLEJİ ORTAOKULU, FEN ve ANADOLU LİSESİ",
-    description: "8 dk, 3.5 km"
-  },
-  {
-    id: 72,
-    category: "schools",
-    coords: [39.95191, 32.76914],
-    name: "Yönder Okulları Batıkent 100.Yıl Kampüsü",
-    description: "16 dk, 7.7 km"
-  },
-  {
-    id: 73,
-    category: "schools",
-    coords: [39.95191, 32.76914],
-    name: "ÇANKAYA ULUBATLI HASAN İLKOKULU",
-    description: "23 dk, 15 km"
-  },
-
-  // Hastaneler
-  {
-    id: 74,
-    category: "hospitals",
-    coords: [39.95191, 32.76914],
-    name: "Yıldırım Beyazıt Üniversitesi Yenimahalle Eğitim ve Araştırma Hastanesi",
-    description: "16 dk, 6.5 km"
-  },
-  {
-    id: 75,
-    category: "hospitals",
-    coords: [39.96656, 32.7095],
-    name: "Medical Park Ankara Hastanesi",
-    description: "14 dk, 5.5 km"
-  },
-  {
-    id: 76,
-    category: "hospitals",
-    coords: [39.90083, 32.75694],
-    name: "Ankara Bilkent Şehir Hastanesi",
-    description: "15 dk, 9 km"
-  },
-  {
-    id: 77,
-    category: "hospitals",
-    coords: [39.95191, 32.76914],
-    name: "Medisun Hastanesi",
-    description: "13 dk, 6.6 km"
-  },
-
-  // Marketler
-  {
-    id: 78,
+    id: 161,
     category: "markets",
-    coords: [39.95191, 32.76914],
-    name: "CarrefourSA",
-    description: "11 dk, 8.6 km"
+    coords: [40.4523392, 29.5492109],
+    name: "Hava Lojistik Komutanlığı",
+    description: "8 dk, 5 km"
   },
   {
-    id: 79,
+    id: 162,
     category: "markets",
-    coords: [39.95191, 32.76914],
-    name: "Çağdaş Market",
-    description: "11 dk, 5 km"
+    coords: [39.9450578, 32.6861386],
+    name: "Türkkuşu Genel Müdürlüğü",
+    description: "9 dk, 4 km"
   },
   {
-    id: 80,
-    category: "markets",
-    coords: [39.95191, 32.76914],
-    name: "File Market",
-    description: "17 dk, 8.4 km"
+    id: 163,
+    category: "malls",
+    coords: [39.9459869, 32.7128983],
+    name: "Vega Cadde AVM",
+    description: "10 dk, 4.2 km"
   }
 ];
+
 
 
 const projectLocation = {

@@ -114,6 +114,8 @@ export default function Header({
 
   <Link href="/about-us">Hakkımızda</Link>
   <Link href="/blog">Blog</Link>
+  <Link href="/projects">Harita</Link>
+
 
 
   <div
@@ -225,8 +227,8 @@ export default function Header({
       {/* Mobile Nav */}
       {menuOpen && (
         <div className="md:hidden mt-4 space-y-3 text-sm">
-          <Link href="#" className="block">Ana Sayfa</Link>
-          <Link href="#" className="block">Projeler</Link>
+          <Link href="/" className="block">Ana Sayfa</Link>
+          <Link href="/" className="block">Projeler</Link>
           <Link href="#" className="block">Hakkımızda</Link>
           <Link href="#" className="block">İletişim</Link>
         </div>
