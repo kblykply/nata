@@ -1,8 +1,8 @@
 'use client';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
-import { Swiper as SwiperType } from 'swiper';
+import { Pagination, Autoplay } from 'swiper/modules'; // ⬅️ Add Autoplay
+// import { Swiper as SwiperType } from 'swiper';
 import Image from 'next/image';
 import { useRef, useState } from 'react';
 import 'swiper/css';
@@ -75,8 +75,9 @@ export default function HeroSlider() {
   return (
     <div className="relative w-full h-screen">
       <Swiper
-        modules={[Pagination]}
-        onSwiper={(swiper) => (swiperRef.current = swiper)}
+  modules={[Pagination, Autoplay]} // ⬅️ Include Autoplay
+  autoplay={{ delay: 5000, disableOnInteraction: false }} // ⬅️ Auto-slide every 5 seconds
+          onSwiper={(swiper) => (swiperRef.current = swiper)}
         onSlideChange={(swiper) => setCurrentIndex(swiper.activeIndex)}
         className="w-full h-screen"
       >
