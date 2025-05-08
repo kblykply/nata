@@ -71,8 +71,7 @@ const slides: SlideData[] = [
 
 export default function HeroSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const swiperRef = useRef<SwiperType>();
-
+  const swiperRef = useRef<SwiperType | null>(null);
   return (
     <div className="relative w-full h-screen">
       <Swiper
