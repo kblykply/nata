@@ -22,7 +22,7 @@ export default function NaturaHero() {
 
           {/* Bottom Content */}
           <div>
-            <p className="text-gray-800 mt-6 max-w-xl leading-relaxed text-justify font-bold">
+            <p className="text-gray-800 mt-6 max-w-xl leading-relaxed text-justify font-bold  ">
               Natura İncek, adını aldığı doğallığı, modern mimariyle buluşturan özel bir konut projesidir. Geniş peyzaj
               alanları, düşük katlı yatay mimarisi ve sosyal donatılarıyla sakin, konforlu ve kaliteli bir yaşam sunar.
               Şehirden uzaklaşmadan doğayla baş başa yaşamak isteyenler için ideal bir tercih.

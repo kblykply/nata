@@ -7,7 +7,7 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 
 export default function ProjectHeroCloudSection() {
   return (
-    <section id="proje" className="relative w-full h-[150vh] overflow-hidden bg-gradient-to-b from-[#006d9d] to-[#e6f3fd]">
+    <section  className="relative w-full h-[150vh] overflow-hidden bg-gradient-to-b from-[#006d9d] to-[#e6f3fd]">
       {/* Looping clouds (seamless illusion) */}
       <div className="absolute top-60 left-0 w-full h-full z-10 overflow-hidden">
         <motion.div

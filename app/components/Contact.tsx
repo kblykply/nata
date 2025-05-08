@@ -6,6 +6,13 @@ import { useState } from "react";
 export default function ContactQrSection() {
   const [selectedTab, setSelectedTab] = useState("whatsapp");
 
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState("");
+
   const qrTabs = [
     { id: "whatsapp", icon: "/face-insta-wp-01.png", qr: "/nata-telefo-qr.png" },
     { id: "facebook", icon: "/face-insta-wp-02.png", qr: "/nata-facebook-qr.png" },
@@ -14,12 +21,40 @@ export default function ContactQrSection() {
 
   const activeQr = qrTabs.find(tab => tab.id === selectedTab)?.qr || "/default-qr.png";
 
+  const handleSubmit = async () => {
+    setLoading(true);
+    setError("");
+    setSuccess(false);
+
+    try {
+      const res = await fetch("https://www.salihkaankoc.net/nata-core/form-data", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, phone, message: message || "Web form mesajı" }),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setSuccess(true);
+        setName("");
+        setPhone("");
+        setMessage("");
+      } else {
+        setError("Gönderim başarısız oldu.");
+      }
+    } catch (err) {
+      setError("Sunucu hatası, lütfen tekrar deneyin.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section className="py-20 px-6 bg-white">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-        {/* Left Side */}
+        {/* LEFT SIDE */}
         <div className="bg-gradient-to-b from-[#3d313f] to-[#2b2230] rounded-3xl p-6 flex flex-col items-center text-white relative w-full max-w-sm mx-auto">
-          {/* Social Icons */}
           <div className="flex space-x-4 mb-4">
             {qrTabs.map((tab) => (
               <button
@@ -36,14 +71,10 @@ export default function ContactQrSection() {
               </button>
             ))}
           </div>
-
-          {/* Info Text */}
           <p className="text-center text-xs mb-4 leading-tight">
             Kamerayla QR Kodu Okutun,<br />
-            Telefonunuz üzerinden iletişim kurabilirsiniz.<br />
+            Telefonunuz üzerinden iletişim kurabilirsiniz.
           </p>
-
-          {/* Phone Mockup */}
           <div className="relative w-64 h-96">
             <Image
               src="/telefongorseli.png"
@@ -63,7 +94,7 @@ export default function ContactQrSection() {
           </div>
         </div>
 
-        {/* Right Side - Form */}
+        {/* RIGHT SIDE - FORM */}
         <div className="w-full">
           <h2 className="text-3xl font-semibold text-gray-800 text-center mb-4 leading-snug">
             TUM SORULARINIZ IÇIN <br />BURADAYIZ
@@ -73,35 +104,59 @@ export default function ContactQrSection() {
             Aklınızdaki sorular için buradayız.
           </p>
 
-          {/* Toggle Buttons */}
-       
-
-          {/* Inputs */}
+          {/* FORM INPUTS */}
           <div className="flex flex-col md:flex-row gap-4 justify-center mb-4">
             <input
               type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               placeholder="Adınız ve Soyadınız"
               className="px-6 py-4 bg-gray-50 border text-gray-800 border-gray-300 rounded-full w-full md:w-1/2"
             />
             <input
               type="tel"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
               placeholder="+90 (5__) ___ __ __"
               className="px-6 py-4 bg-gray-50 border text-gray-800 border-gray-300 rounded-full w-full md:w-1/2"
             />
           </div>
 
-          {/* Privacy Note */}
+          <textarea
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            placeholder="Mesajınız (isteğe bağlı)"
+            className="w-full p-4 bg-gray-50 border border-gray-300 rounded-xl mb-4 text-gray-800"
+            rows={4}
+          />
+
           <p className="text-[11px] text-gray-500 text-center mb-6 leading-snug max-w-md mx-auto">
             Formu gönderdiğiniz takdirde <br />
             <span className="font-semibold">Gizlilik Politikalarımızı onaylamış bulunuyorsunuz</span>
           </p>
 
-          {/* Submit Button */}
+          {/* SUBMIT */}
           <div className="flex justify-center">
-            <button className="px-10 py-4 bg-[#c2b8be] text-white rounded-full text-sm hover:opacity-90 transition">
-              Gönder
+            <button
+              onClick={handleSubmit}
+              disabled={loading}
+              className="px-10 py-4 bg-[#c2b8be] text-white rounded-full text-sm hover:opacity-90 transition disabled:opacity-50"
+            >
+              {loading ? "Gönderiliyor..." : "Gönder"}
             </button>
           </div>
+
+          {/* RESULT MESSAGE */}
+          {success && (
+            <p className="text-green-600 text-center mt-4">
+              Form başarıyla gönderildi!
+            </p>
+          )}
+          {error && (
+            <p className="text-red-500 text-center mt-4">
+              {error}
+            </p>
+          )}
         </div>
       </div>
     </section>

@@ -4,6 +4,9 @@ import Image from "next/image";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { useState } from "react";
 
+
+
+
 const listings = [
   {
     title: "Koru Konfor",
