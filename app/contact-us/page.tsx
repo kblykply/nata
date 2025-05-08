@@ -15,26 +15,27 @@ const ContactSection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
+  
     if (!accepted) {
       setError('Lütfen KVKK koşullarını kabul ediniz.');
       return;
     }
-
+  
     setLoading(true);
     setError('');
     setSuccess(false);
-
+  
     try {
-      const res = await fetch('https://www.salihkaankoc.net/nata-core/form-data/second', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, phone, message }),
       });
-
+  
       const data = await res.json();
-
-      if (data.success) {
+  
+     
+     if (data && data.success && data.data) {
         setSuccess(true);
         setName('');
         setEmail('');
@@ -42,9 +43,10 @@ const ContactSection = () => {
         setMessage('');
         setAccepted(false);
       } else {
-        setError('Form gönderilemedi.');
+        setError('Form gönderilemedi. Lütfen tekrar deneyin.');
       }
-    } catch {
+    } catch (error) {
+      console.error('Form submission error:', error);
       setError('Sunucu hatası, lütfen tekrar deneyin.');
     } finally {
       setLoading(false);

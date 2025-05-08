@@ -30,9 +30,9 @@ export default function ContactMapPopup({ onClose }: ContactMapPopupProps) {
     setSuccess(false);
 
     try {
-      const res = await fetch("https://www.salihkaankoc.net/nata-core/form-data/second", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, phone, message }),
       });
 

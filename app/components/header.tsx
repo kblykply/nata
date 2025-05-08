@@ -228,9 +228,14 @@ export default function Header({
       {menuOpen && (
         <div className="md:hidden mt-4 space-y-3 text-sm">
           <Link href="/" className="block">Ana Sayfa</Link>
-          <Link href="/" className="block">Projeler</Link>
-          <Link href="#" className="block">Hakkımızda</Link>
-          <Link href="#" className="block">İletişim</Link>
+          <Link href="/projects" className="block">Projeler</Link>
+          <Link href="/about-us" className="block">Hakkımızda</Link>
+          <Link href="/contact-us" className="block">İletişim</Link>
+          <Link href="/n-bulten" className="block">N Bülten</Link>
+          <Link href="/blog" className="block">Blog</Link>
+
+
+          
         </div>
         
 

@@ -27,7 +27,7 @@ export default function ContactQrSection() {
     setSuccess(false);
 
     try {
-      const res = await fetch("https://www.salihkaankoc.net/nata-core/form-data", {
+      const res = await fetch('/api/contact', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, phone, message: message || "Web form mesajı" }),
