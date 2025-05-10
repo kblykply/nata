@@ -29,7 +29,7 @@ const listings: Listing[] = [
 
   
   {
-    link: "https://natayasam.com/projects/antares-konutlari.html",
+    link: "/anteres",
     type: "featured",
     price: "ANTARES KONUTLARI 1. ETAP",
     highlight : "Tamamlandı",
@@ -46,7 +46,7 @@ const listings: Listing[] = [
     ],
   },
   {
-    link: "https://natayasam.com/projects/vega-cadde.html",
+    link: "/vega-cadde",
     type: "featured",
     price: "VEGA CADDE",
     highlight : "Tamamlandı",
@@ -63,7 +63,7 @@ const listings: Listing[] = [
     ],
   },
   {
-    link: "https://natayasam.com/projects/tempoint-konutlari.html",
+    link: "/tempoint",
     type: "featured",
     price: "TEMPOINT KONUTLARI",
     highlight : "Tamamlandı",
@@ -80,7 +80,7 @@ const listings: Listing[] = [
     ],
   },
   {
-    link: "https://natayasam.com/projects/nata-incek-konutlari.html",
+    link: "/incek",
     type: "featured",
     price: "NATA İNCEK KONUTLARI",
     highlight : "Tamamlandı",
@@ -97,7 +97,7 @@ const listings: Listing[] = [
     ],
   },
   {
-    link: "https://natayasam.com/projects/nata-vega-konut-kuleleri.html",
+    link: "/vega-konut-kuleleri",
     type: "featured",
     price: "NATA VEGA KONUT KULELERİ",
     highlight : "Tamamlandı",

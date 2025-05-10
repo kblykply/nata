@@ -20,50 +20,50 @@ const slides: SlideData[] = [
   // same as your slides array...
   {
     id: 1,
-    title: 'Yeni Bir Yaşamı Büyütüyorsunuz',
-    subtitle: 'Doğanın kalbinde, her gününüzü güzelleştirecek bir yaşam sizi bekliyor.',
+    title: 'Sadece Eşyalarınızı Değil, Anılarınızı da Yerleştirin.',
+    subtitle: 'Yeni anılar biriktireceğiniz, geçmişinize değer katacağınız yepyeni bir başlangıçtır. Doğayla iç içe peyzaj alanları, sosyal yaşamı destekleyen donatılar, çocuklar için güvenli oyun alanları ve modern mimarisiyle; sizi yalnızca yeni bir eve değil, hayalini kurduğunuz yaşama davet ediyor.',
     background: '/images/slide1.jpg',
     textColor: 'black',
   },
   {
     id: 2,
-    title: 'İşte Orası, Sizin Geleceğiniz.',
-    subtitle: 'Hayalini kurduğunuz yaşam, şimdi bir adım uzağınızda..',
+    title: 'Hayalinizdeki Eve Konmak Bu Kadar Kolay!',
+    subtitle: 'Nata Yaşam’da ev sahibi olmak artık bir hayal değil. Doğayla iç içe, sosyal yaşam alanlarıyla zenginleşmiş yeni bir yaşam biçimi, anahtarıyla birlikte size geliyor. Siz sadece karar verin, yeni hayatınız size doğru gelsin.',
     background: '/images/slide2.jpg',
-    textColor: 'white',
+    textColor: 'black',
   },
   {
     id: 3,
-    title: 'Hayat Burada Başlıyor',
-    subtitle: 'İlk adımlar burada atılır.',
+    title: 'Yeni Bir Yaşamı Büyütüyorsunuz',
+    subtitle: 'Doğanın kalbinde, her gününüzü güzelleştirecek bir yaşam sizi bekliyor. Nata Yaşam, yalnızca bir konut değil; sizi, huzurun, sürdürülebilir mimarinin ve sosyal olanakların merkezine alan yeni bir hayat tarzıdır.',
     background: '/images/slide3.jpg',
     textColor: 'black',
   },
   {
     id: 4,
-    title: 'Hayat Evinizin Dışında da Devam Ediyor',
-    subtitle: 'Nata Yaşam’da sosyalleşmek, dinlenmek ve kendinize zaman ayırmak için her şey elinizin altında.',
+    title: 'Işığını İçinden Alan Bir Yaşam',
+    subtitle: 'Nata Yaşam, ışığını dışarıdan değil; içindeki sevgi, güven ve vizyondan alan bir yaşam anlayışı sunar. Modern mimarisi, doğayla uyumlu sosyal alanları ve yüksek güvenlik standartlarıyla; bugünü aydınlatan, yarına yön veren bir fikirle inşa edildi.',
     background: '/images/slide4.jpg',
     textColor: 'black',
   },
   {
     id: 5,
-    title: 'Gücünüzü Burada Toplayın',
-    subtitle: 'Sağlıklı yaşam alanlarıyla her gününüz daha enerjik.',
+    title: 'Hayat Evinizin Dışında da Devam Ediyor',
+    subtitle: 'Nata Yaşam’da sosyalleşmek, dinlenmek ve kendinize zaman ayırmak için her şey elinizin altında.',
     background: '/images/slide5.jpg',
-    textColor: 'white',
+    textColor: 'black',
   },
   {
     id: 6,
-    title: 'Sadece Eşyalarınızı Değil, Anılarınızı da Yerleştirin.',
-    subtitle: 'Nata Yaşam’da taşınmak bir işlem değil, bir dönüşümdür.',
+    title: 'Güvence Altında Bir Yaşam',
+    subtitle: 'Hayatınızı şekillendireceğiniz yuvanız, hem size hem geleceğinize güven verecek şekilde tasarlandı. Nata Yaşam, deprem yönetmeliğine uygun yapısı, site içi güvenlik sistemleri ve doğayla uyumlu mimarisiyle size sadece bir ev değil, huzur dolu bir yaşam sunuyor.',
     background: '/images/slide6.jpg',
     textColor: 'black',
   },
   {
     id: 7,
-    title: 'Yeni Fırsatlarla Tanışın',
-    subtitle: 'Hayalinizdeki yaşama ulaşmak için en doğru zaman şimdi.',
+    title: 'Hayatın Ritmiyle Uyumlan',
+    subtitle: 'Nata Yaşam’da yaşam temposu sizin ritminize ayarlanır. İster huzurlu yürüyüş yollarında dinginliği, ister sosyal alanlarda dinamizmi arayın; bu yaşam alanı size uyum sağlar.  Çünkü Nata Yaşam, hayatı sizin hızınıza göre planlar.',
     background: '/images/slide7.jpg',
     textColor: 'black',
   },
@@ -121,7 +121,7 @@ export default function HeroSlider() {
                   {/* Middle Card - Kazanırsın */}
                   <div
                     className="rounded-xl bg-no-repeat bg-cover bg-center shadow-md w-full h-[120px] px-6 py-4 flex items-start"
-                    style={{ backgroundImage: "url('/images/hearts.png')" }}
+                    style={{ backgroundImage: "url('/images/kutu-2.png')" }}
                   >
                     <div className="text-sm leading-tight">
                       <p className="text-black font-medium">Paylaştıkça</p>
@@ -147,7 +147,7 @@ export default function HeroSlider() {
             key={i}
             onClick={() => swiperRef.current?.slideTo(i)}
             className={`transition-all duration-300 rounded-full ${
-              i === currentIndex ? "w-10 h-3 bg-white" : "w-3 h-3 bg-white/60"
+              i === currentIndex ? "w-10 h-3 bg-gray-700" : "w-3 h-3 bg-gray-300"
             }`}
             aria-label={`Go to slide ${i + 1}`}
             title={`Slide ${i + 1}`}

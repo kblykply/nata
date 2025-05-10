@@ -49,13 +49,7 @@ export default function SidePlans() {
           Yaşam Nerede <br /> Biz Orada.
         </h2>
         <p className="mt-4 text-sm md:text-base text-gray-700 leading-relaxed">
-          Mega 1453, Ankara’nın kalbinde, Yenimahalle Orman Çiftliği Mahallesi’nde
-          şehrin ritmini yeniden tanımlayan eşsiz bir yaşam deneyimi sunuyor.
-          Toplamda 70.000 m²’lik geniş arsa alanında yükselen bu prestijli proje,
-          başkentin dokusuna doğa ile harmanlanmış bir soluk getiriyor. Özgün
-          mimarisi ve yaklaşık 36.000m² toplam peyzaj alanıyla modern yaşamı yeniden
-          tasarlayan Mega 1453, her biri yüksek yaşam standartlarına sahip toplam 715
-          konuttan (1.etap) oluşuyor.
+          Bir NATA Yaşam projesi olan VEGA Center, yatay mimarisi ile şehrin silüetine estetik bir değer katan, iş ve premium alışveriş deneyimini en yüksek seviyeye çıkaran bir yaşam merkezidir. Ferah ofisleri ve verimli iş alanları ile yüksek potansiyele sahip olan VEGA Center'ın her noktası hayatı kolaylaştırmak için tasarlandı. 
         </p>
       </div>
 
