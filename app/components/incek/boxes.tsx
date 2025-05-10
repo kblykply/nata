@@ -8,7 +8,7 @@ const cards = [
     type: "image",
     title: "Haberleri öğrenin",
     highlight: "Proje Hakkında Tüm Bilgiler",
-    background:     "/new-mega1453-6.jpg",
+    background:     "/incek-galeri/nataincek2.jpg",
 
     wide: true,   // Mark this card as wide
   },
@@ -24,7 +24,7 @@ const cards = [
     type: "image",
     title: "Ziyaret Edin",
     highlight: "Projenin Lokasyonunu Görün",
-    background:    "/new-mega1453-8.jpg",
+    background:    "/incek-galeri/nataincek5.jpg",
 
   },
   {

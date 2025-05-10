@@ -7,23 +7,37 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 const unitTypes = [
   {
     id: "1+1",
-    image: "/MEGA1453-KATPLANI-01.png",
+    image: "/tempoint-kat/1+1_71 m┬▓.png",
     details: {
       "Kat Planı ": "1",
     },
   },
   {
     id: "2+1",
-    image: "/MEGA1453-KATPLANI-02.png",
+    image: "/tempoint-kat/2+1_101 m┬▓.png",
     details: {
       "Kat Planı ": "2",
     },
   },
-  {
-    id: "3+1",
-    image: "/MEGA1453-KATPLANI-03.png",
+   {
+    id: "2+1-a",
+    image: "/tempoint-kat/2+1_115 m┬▓.png",
     details: {
       "Kat Planı ": "3",
+    },
+  },
+  {
+    id: "3+1",
+    image: "/tempoint-kat/3+1_169 m┬▓.png",
+    details: {
+      "Kat Planı ": "4",
+    },
+  },
+  {
+    id: "4+1",
+    image: "/tempoint-kat/4+1_202 m┬▓.png",
+    details: {
+      "Kat Planı ": "4",
     },
   },
   

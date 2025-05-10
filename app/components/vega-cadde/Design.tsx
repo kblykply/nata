@@ -13,10 +13,9 @@ export default function DesignSection() {
   const [isOpen, setIsOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
   const gallery = [
-    "/new-mega1453-6.jpg",
-    "/new-mega1453-7.jpg",
-    "/new-mega1453-8.jpg",
-    "/new-mega1453-9.jpg",
+    "/cadde-galeri/vegacadde1.jpg",
+    "/cadde-galeri/vegacadde4.jpg",
+    "/cadde-galeri/vegacadde5.jpg",
     
 
   ];
@@ -30,11 +29,10 @@ export default function DesignSection() {
         {/* Left Text Content */}
         <div className="w-full max-w-xl">
           <h2 className="text-3xl font-semibold text-gray-900 leading-tight">
-          Mega 1453  <br /> Karma Yaşam Projesi
+          Vega Cadde  
           </h2>
           <p className="mt-6 text-sm text-gray-700 leading-relaxed">
-            Özgün mimarisi ve eşsiz konumuyla Mega 1453, hayalinizdeki yaşam alanını sunuyor.
-          </p>
+ Modern mimarisi ve alışveriş imkanlarıyla Vega Cadde, şehri yaşamanız için sizi bekliyor.          </p>
           <button
             onClick={() => {
               setGalleryIndex(0);
@@ -49,7 +47,7 @@ export default function DesignSection() {
         {/* Right Background Image */}
         <div className="relative h-[600px] w-1/2">
           <Image
-            src="/new-mega1453-9.jpg"
+            src="/cadde-galeri/vegacadde2.png"
             alt="Design"
             fill
             className="object-cover object-right rounded-lg"
