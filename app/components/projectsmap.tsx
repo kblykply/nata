@@ -276,8 +276,12 @@ export default function MapWithProjects() {
                 key={listing.link}
                 geometry={listing.coords}
                 onClick={() => handleSelectListing(listing)}
-                options={{ preset: 'islands#redIcon' }}
-              />
+options={{
+  iconLayout: 'default#image',
+  iconImageHref: '/pin-red.png', // your PNG path
+  iconImageSize: [32, 32], // size of the PNG in px
+  iconImageOffset: [-15, -42], // adjust so point of pin aligns
+}}              />
               ) : null
             )}
           </Map>

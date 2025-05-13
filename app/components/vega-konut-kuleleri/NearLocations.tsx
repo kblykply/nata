@@ -404,18 +404,21 @@ export default function NearbyMap() {
                     `,
                   }}
                   options={{
-                    preset: "islands#redDotIcon",
-                    balloonCloseButton: true,
-                    openBalloonOnClick: true,
-                  }}
+  iconLayout: 'default#image',
+  iconImageHref: '/pin-red.png', // your PNG path
+  iconImageSize: [32, 32], // size of the PNG in px
+  iconImageOffset: [-15, -42], // adjust so point of pin aligns
+}}
                   modules={["geoObject.addon.balloon"]}
                 />
 
                 <Clusterer
-                  options={{
-                    preset: "islands#invertedRedClusterIcons",
-                    groupByCoordinates: false,
-                  }}
+                 options={{
+  iconLayout: 'default#image',
+  iconImageHref: '/pin-red.png', // your PNG path
+  iconImageSize: [32, 32], // size of the PNG in px
+  iconImageOffset: [-15, -42], // adjust so point of pin aligns
+}}
                 >
                   {filteredPlaces.map((place) => (
                     <Placemark
