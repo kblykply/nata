@@ -302,11 +302,13 @@ export default function NearbyMap() {
   const [selectedSwitch, setSelectedSwitch] = useState("altyapi");
   const [activeMarker, setActiveMarker] = useState(null);
 
-  const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
-  });
+  if (!process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY) {
+  throw new Error("Google Maps API key is missing in environment variables");
+}
 
-  if (!isLoaded) return <div>Harita yükleniyor...</div>;
+const { isLoaded } = useJsApiLoader({
+  googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
+});
 
   const filteredPlaces =
     selectedCategory === "all"

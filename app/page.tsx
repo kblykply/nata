@@ -15,9 +15,11 @@ const Page: React.FC = () => {
       <Boxes />
       <ProjectFilters />
       <FeaturedProjects />
+      <FinishedProjects />
       
       {/* ✅ Pass the blogPosts to Blogs component */}
       <Blogs posts={blogPosts} />
+      
 
     </main>
   );

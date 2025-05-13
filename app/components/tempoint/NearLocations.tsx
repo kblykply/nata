@@ -1,15 +1,15 @@
 "use client";
+
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import {
-  YMaps,
-  Map,
-  Placemark,
-  ZoomControl,
-  Clusterer,
-} from "@pbe/react-yandex-maps";
+  GoogleMap,
+  Marker,
+  InfoWindow,
+  useJsApiLoader,
+  MarkerClusterer,
+} from "@react-google-maps/api";
 
-// Categories (only for Konum view)
 const categories = [
   { id: "all", name: "Tümü", count: 16, pin: "/pin.png" },
   { id: "malls", name: "AVM'ler", count: 4, pin: "/mall.png" },
@@ -17,6 +17,7 @@ const categories = [
   { id: "hospitals", name: "Hastaneler", count: 4, pin: "/hospital.png" },
   { id: "markets", name: "Marketler", count: 4, pin: "/shop.png" },
 ];
+
 const places = [
   {
     id: 57,
@@ -289,43 +290,53 @@ const projectLocation = {
 };
 
 
+const containerStyle = {
+  width: "100%",
+  height: "100%",
+};
+
+const center = {
+  lat: projectLocation.coords[0],
+  lng: projectLocation.coords[1],
+};
+
 export default function NearbyMap() {
   const [selectedCategory, setSelectedCategory] = useState("all");
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [selectedSwitch, setSelectedSwitch] = useState<"altyapi" | "konum">("altyapi");
+  const [selectedSwitch, setSelectedSwitch] = useState("altyapi");
+  const [activeMarker, setActiveMarker] = useState(null);
+
+  if (!process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY) {
+  throw new Error("Google Maps API key is missing in environment variables");
+}
+
+const { isLoaded } = useJsApiLoader({
+  googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
+});
 
   const filteredPlaces =
     selectedCategory === "all"
       ? places
-      : places.filter((place) => place.category === selectedCategory);
+      : places.filter((p) => p.category === selectedCategory);
 
-  const getCategoryPinUrl = (categoryId: string) => {
-    return categories.find((cat) => cat.id === categoryId)?.pin || "/icons/default.png";
-  };
+  const getCategoryPinUrl = (categoryId) =>
+    categories.find((cat) => cat.id === categoryId)?.pin || "/icons/default.png";
 
   return (
     <div className="w-full h-screen flex bg-white flex-col relative">
-      {/* Global Switcher */}
-      <div className="w-full flex justify-center py-6 bg-white  z-30">
+      <div className="w-full flex justify-center py-6 bg-white z-30">
         <div className="bg-gray-100 p-1 rounded-full flex shadow-md">
-     
           <button
             onClick={() => setSelectedSwitch("altyapi")}
             className={`px-6 py-2 text-sm rounded-full transition ${
-              selectedSwitch === "altyapi"
-                ? "bg-[#4B3B4E] text-white"
-                : "text-gray-700"
+              selectedSwitch === "altyapi" ? "bg-[#4B3B4E] text-white" : "text-gray-700"
             }`}
           >
             Altyapı
           </button>
-
           <button
             onClick={() => setSelectedSwitch("konum")}
             className={`px-6 py-2 text-sm rounded-full transition ${
-              selectedSwitch === "konum"
-                ? "bg-[#4B3B4E] text-white"
-                : "text-gray-700"
+              selectedSwitch === "konum" ? "bg-[#4B3B4E] text-white" : "text-gray-700"
             }`}
           >
             Konum
@@ -333,147 +344,281 @@ export default function NearbyMap() {
         </div>
       </div>
 
-      {/* Main Content */}
-
       <AnimatePresence mode="wait">
-  {selectedSwitch === "konum" && (
-    <motion.section
-      key="konum"
-      initial={{ opacity: 0, x: 50 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -50 }}
-      transition={{ duration: 0.4 }}
-      className="flex flex-col md:flex-row flex-1 relative"
-    >
-       <section className="flex flex-col md:flex-row flex-1 relative">
-          {/* Sidebar */}
-          <aside
-            className={`fixed md:static ${
-              isSidebarOpen ? "left-0" : "-left-80"
-            } transition-all duration-300 w-[250px] bg-white shadow-md p-4 h-full overflow-y-auto z-10`}
+        {selectedSwitch === "konum" && (
+          <motion.section
+            key="konum"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -50 }}
+            transition={{ duration: 0.4 }}
+            className="flex flex-col md:flex-row flex-1 relative"
           >
-            <h3 className="font-semibold text-gray-800 mb-4 text-sm">
-              Yakındaki popüler yerler
-            </h3>
-            <ul className="space-y-2">
-              {categories.map((cat) => (
-                <li
-                  key={cat.id}
-                  onClick={() => {
-                    setSelectedCategory(cat.id);
-                    setIsSidebarOpen(false);
-                  }}
-                  className={`flex justify-between items-center p-2 cursor-pointer rounded-lg hover:bg-gray-100 ${
-                    selectedCategory === cat.id ? "bg-gray-100" : ""
-                  }`}
-                >
-                  <div className="flex items-center gap-2">
-                    <div className="bg-white rounded-full p-1 shadow">
-                      <img src={cat.pin} alt={cat.name} className="w-5 h-5" />
-                    </div>
-                    <span className="text-sm text-gray-800">{cat.name}</span>
-                  </div>
-                  <span className="text-xs text-gray-500">{cat.count}</span>
-                </li>
-              ))}
-            </ul>
-          </aside>
-
-          {/* Map */}
-          <div className="flex-1">
-            <YMaps query={{ lang: "tr_TR" }}>
-              <Map
-                defaultState={{ center: [39.913899, 32.767134], zoom: 15 }}
-                width="100%"
-                height="100%"
-                modules={["templateLayoutFactory", "layout.ImageWithContent", "balloon"]}
-              >
-                <ZoomControl options={{ position: { right: 10, top: 10 } }} />
-
-                <Placemark
-                  geometry={projectLocation.coords}
-                  properties={{
-                    balloonContentHeader: `<h4>${projectLocation.name}</h4>`,
-                    balloonContentBody: `
-                      <div style='display:flex;align-items:center;gap:10px;'>
-                        <img src='${projectLocation.image}' style='width:40px;height:40px;border-radius:50%;object-fit:cover;' />
-                        <div>
-                          <span style='font-size:12px;'>${projectLocation.description}</span>
-                        </div>
+            <aside className="fixed md:static w-[250px] bg-white shadow-md p-4 h-full overflow-y-auto z-10">
+              <h3 className="font-semibold text-gray-800 mb-4 text-sm">
+                Yakındaki popüler yerler
+              </h3>
+              <ul className="space-y-2">
+                {categories.map((cat) => (
+                  <li
+                    key={cat.id}
+                    onClick={() => setSelectedCategory(cat.id)}
+                    className={`flex justify-between items-center p-2 cursor-pointer rounded-lg hover:bg-gray-100 ${
+                      selectedCategory === cat.id ? "bg-gray-100" : ""
+                    }`}
+                  >
+                    <div className="flex items-center gap-2">
+                      <div className="bg-white rounded-full p-1 shadow">
+                        <img src={cat.pin} alt={cat.name} className="w-5 h-5" />
                       </div>
-                    `,
-                  }}
-                   options={{
-  iconLayout: 'default#image',
-  iconImageHref: '/pin-red.png', // your PNG path
-  iconImageSize: [32, 32], // size of the PNG in px
-  iconImageOffset: [-15, -42], // adjust so point of pin aligns
-}}
-                  modules={["geoObject.addon.balloon"]}
+                      <span className="text-sm text-gray-800">{cat.name}</span>
+                    </div>
+                    <span className="text-xs text-gray-500">{cat.count}</span>
+                  </li>
+                ))}
+              </ul>
+            </aside>
+
+            <div className="flex-1">
+              <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={14} options={{ styles: [
+    {
+      featureType: "all",
+      elementType: "labels.text.fill",
+      stylers: [
+        { saturation: 36 },
+        { color: "#333333" },
+        { lightness: 40 }
+      ]
+    },
+    {
+      featureType: "all",
+      elementType: "labels.text.stroke",
+      stylers: [
+        { visibility: "on" },
+        { color: "#ffffff" },
+        { lightness: 16 }
+      ]
+    },
+    {
+      featureType: "all",
+      elementType: "labels.icon",
+      stylers: [
+        { visibility: "off" }
+      ]
+    },
+    {
+      featureType: "administrative",
+      elementType: "geometry.fill",
+      stylers: [
+        { color: "#fefefe" },
+        { lightness: 20 }
+      ]
+    },
+    {
+      featureType: "administrative",
+      elementType: "geometry.stroke",
+      stylers: [
+        { color: "#fefefe" },
+        { lightness: 17 },
+        { weight: 1.2 }
+      ]
+    },
+    {
+      featureType: "administrative.locality",
+      elementType: "labels.text.fill",
+      stylers: [
+        { color: "#aa1e3a" }
+      ]
+    },
+    {
+      featureType: "landscape",
+      elementType: "geometry",
+      stylers: [
+        { color: "#f5f5f5" },
+        { lightness: 20 }
+      ]
+    },
+    {
+      featureType: "poi",
+      elementType: "geometry",
+      stylers: [
+        { color: "#f5f5f5" },
+        { lightness: 21 }
+      ]
+    },
+    {
+      featureType: "poi.park",
+      elementType: "geometry",
+      stylers: [
+        { color: "#dedede" },
+        { lightness: 21 }
+      ]
+    },
+    {
+      featureType: "road.highway",
+      elementType: "geometry.fill",
+      stylers: [
+        { color: "#ffffff" },
+        { lightness: 17 }
+      ]
+    },
+    {
+      featureType: "road.highway",
+      elementType: "geometry.stroke",
+      stylers: [
+        { color: "#ffffff" },
+        { lightness: 29 },
+        { weight: 0.2 }
+      ]
+    },
+    {
+      featureType: "road.arterial",
+      elementType: "geometry",
+      stylers: [
+        { color: "#ffffff" },
+        { lightness: 18 }
+      ]
+    },
+    {
+      featureType: "road.local",
+      elementType: "geometry",
+      stylers: [
+        { color: "#ffffff" },
+        { lightness: 16 }
+      ]
+    },
+    {
+      featureType: "transit",
+      elementType: "geometry",
+      stylers: [
+        { color: "#f2f2f2" },
+        { lightness: 19 }
+      ]
+    },
+    {
+      featureType: "water",
+      elementType: "geometry",
+      stylers: [
+        { color: "#e9e9e9" },
+        { lightness: 17 }
+      ]
+    }
+] }}>
+                <Marker
+                  position={{ lat: projectLocation.coords[0], lng: projectLocation.coords[1] }}
+                  icon={{ url: "/pin-red.png", scaledSize: new window.google.maps.Size(32, 32) }}
+                  onClick={() => setActiveMarker("project")}
                 />
+                {activeMarker === "project" && (
+                  <InfoWindow
+                    position={{ lat: projectLocation.coords[0], lng: projectLocation.coords[1] }}
+                    onCloseClick={() => setActiveMarker(null)}
+                    options={{ pixelOffset: new window.google.maps.Size(0, -10) }}
+                  >
+                    <div className="bg-white rounded-xl shadow-xl p-3 w-72 flex items-center gap-4">
+                      <img
+                        src={projectLocation.image}
+                        alt={projectLocation.name}
+                        className="w-16 h-16 object-cover rounded-lg border"
+                      />
+                      <div className="flex flex-col">
+                        <h4 className="text-base font-bold text-gray-900">
+                          {projectLocation.name}
+                        </h4>
+                        <p className="text-sm text-gray-600">
+                          {projectLocation.description}
+                        </p>
+                      </div>
+                    </div>
+                  </InfoWindow>
+                )}
 
-                <Clusterer
-                   options={{
-  iconLayout: 'default#image',
-  iconImageHref: '/pin-red.png', // your PNG path
-  iconImageSize: [32, 32], // size of the PNG in px
-  iconImageOffset: [-15, -42], // adjust so point of pin aligns
+                <MarkerClusterer
+ options={{
+  imagePath: "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
+  styles: [
+    {
+      url: "/clusters/red.png",
+      height: 40,
+      width: 40,
+      textColor: "white",
+      textSize: 14,
+    },
+    {
+      url: "/clusters/red.png",
+      height: 50,
+      width: 50,
+      textColor: "white",
+      textSize: 14,
+    },
+    {
+      url: "/clusters/red.png",
+      height: 60,
+      width: 60,
+      textColor: "white",
+      textSize: 14,
+    },
+  ]
 }}
-                >
-                  {filteredPlaces.map((place) => (
-                    <Placemark
-                      key={place.id}
-                      geometry={place.coords}
-                      properties={{
-                        balloonContentHeader: `<h4 className=" font-thin">${place.name}</h4>`,
-                        balloonContentBody: place.description,
-                      }}
-                      options={{
-                        iconLayout: "default#imageWithContent",
-                        iconImageHref: getCategoryPinUrl(place.category),
-                        iconImageSize: [42, 42],
-                        iconImageOffset: [-21, -42],
-                      }}
-                      modules={["geoObject.addon.balloon"]}
-                    />
-                  ))}
-                </Clusterer>
-              </Map>
-            </YMaps>
-          </div>
-        </section>
-      ... 
-    </motion.section>
-  )}
 
-  {selectedSwitch === "altyapi" && (
-    <motion.section
-      key="altyapi"
-      initial={{ opacity: 0, x: -50 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: 50 }}
-      transition={{ duration: 0.4 }}
-      className="flex items-center justify-center flex-1 bg-white text-center p-10"
-    >
-      <div>
-        <img 
-          src="/tempo─▒nt-altyap─▒.jpg" 
-          alt="Altyapı Görseli" 
-          className="mx-auto rounded w-3/3"
-        />
-      </div>
-    </motion.section>
-  )}
-</AnimatePresence>
+>
+                  {(clusterer) => (
+                    <>
+                      {filteredPlaces.map((place) => (
+                        <Marker
+                          key={place.id}
+                          position={{ lat: place.coords[0], lng: place.coords[1] }}
+                          icon={{
+                            url: getCategoryPinUrl(place.category),
+                            scaledSize: new window.google.maps.Size(42, 42),
+                          }}
+                          clusterer={clusterer}
+                          onClick={() => setActiveMarker(place.id)}
+                        />
+                      ))}
+                    </>
+                  )}
+                </MarkerClusterer>
 
+                {filteredPlaces.map(
+                  (place) =>
+                    activeMarker === place.id && (
+                      <InfoWindow
+                        key={`info-${place.id}`}
+                        position={{ lat: place.coords[0], lng: place.coords[1] }}
+                        onCloseClick={() => setActiveMarker(null)}
+                      >
+                        <div className="text-sm">
+                          <h4 className="font-semibold">{place.name}</h4>
+                          <p>{place.description}</p>
+                        </div>
+                      </InfoWindow>
+                    )
+                )}
+              </GoogleMap>
+            </div>
+          </motion.section>
+        )}
 
-
-
-
-
-
-
-      )
+        {selectedSwitch === "altyapi" && (
+          <motion.section
+            key="altyapi"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 50 }}
+            transition={{ duration: 0.4 }}
+            className="flex items-center justify-center flex-1 bg-white text-center p-10"
+          >
+            <div>
+              <img
+                src="/tempo─▒nt-altyap─▒.jpg"
+                alt="Altyapı Görseli"
+                className="mx-auto rounded w-3/3"
+              />
+            </div>
+          </motion.section>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
