@@ -2,6 +2,7 @@
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules'; // ⬅️ Add Autoplay
+import { Swiper as SwiperType } from 'swiper';
 // import { Swiper as SwiperType } from 'swiper';
 import Image from 'next/image';
 import { useRef, useState } from 'react';
