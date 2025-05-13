@@ -18,6 +18,7 @@ const categories = [
   { id: "markets", name: "Marketler", count: 4, pin: "/shop.png" },
 ];
 
+
 const places = [
   {
     id: 57,
@@ -300,15 +301,20 @@ const center = {
 export default function NearbyMap() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedSwitch, setSelectedSwitch] = useState("altyapi");
-  const [activeMarker, setActiveMarker] = useState(null);
 
-  if (!process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY) {
+
+const [activeMarker, setActiveMarker] = useState<string | number | null>(null as string | number | null);
+
+
+ if (!process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY) {
   throw new Error("Google Maps API key is missing in environment variables");
 }
 
 const { isLoaded } = useJsApiLoader({
   googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
 });
+
+
 
   const filteredPlaces =
     selectedCategory === "all"
