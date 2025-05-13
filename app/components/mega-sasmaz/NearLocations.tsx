@@ -80,8 +80,8 @@ const { isLoaded } = useJsApiLoader({
       ? places
       : places.filter((p) => p.category === selectedCategory);
 
-  const getCategoryPinUrl = (categoryId) =>
-    categories.find((cat) => cat.id === categoryId)?.pin || "/icons/default.png";
+const getCategoryPinUrl = (categoryId: string): string =>
+  categories.find((cat) => cat.id === categoryId)?.pin ?? "/icons/default.png";
 
   return (
     <div className="w-full h-screen flex bg-white flex-col relative">

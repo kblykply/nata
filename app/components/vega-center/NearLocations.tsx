@@ -326,9 +326,9 @@ export default function NearbyMap() {
       ? places
       : places.filter((place) => place.category === selectedCategory);
 
-  const getCategoryPinUrl = (categoryId: string) => {
-    return categories.find((cat) => cat.id === categoryId)?.pin || "/icons/default.png";
-  };
+const getCategoryPinUrl = (categoryId: string): string =>
+  categories.find((cat) => cat.id === categoryId)?.pin ?? "/icons/default.png";
+
 
   return (
     <div className="w-full h-screen flex bg-white flex-col relative">
