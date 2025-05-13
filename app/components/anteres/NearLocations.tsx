@@ -198,7 +198,9 @@ const center = {
 export default function NearbyMap() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedSwitch, setSelectedSwitch] = useState("altyapi");
-  const [activeMarker, setActiveMarker] = useState(null);
+
+  
+const [activeMarker, setActiveMarker] = useState<string | number | null>(null);
 
  if (!process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY) {
   throw new Error("Google Maps API key is missing in environment variables");
