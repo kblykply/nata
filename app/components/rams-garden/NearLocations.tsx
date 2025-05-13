@@ -238,8 +238,10 @@ export default function NearbyMap() {
 const [activeMarker, setActiveMarker] = useState<string | number | null>(null as string | number | null);
 
 
- if (!process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY) {
-  throw new Error("Google Maps API key is missing in environment variables");
+if (typeof window !== 'undefined') {
+  if (!process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY) {
+    throw new Error("Google Maps API key is missing in environment variables");
+  }
 }
 
 const { isLoaded } = useJsApiLoader({
