@@ -1,7 +1,12 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { Map, Placemark, YMaps } from "@pbe/react-yandex-maps";
+import {
+  GoogleMap,
+  Marker,
+  InfoWindow,
+  useJsApiLoader,
+} from "@react-google-maps/api";
 import { FaFire, FaTrain } from "react-icons/fa";
 
 interface Listing {
@@ -161,19 +166,25 @@ const listings: Listing[] = [
     coords: [39.9379, 32.7075],
   },
 ];
+const containerStyle = {
+  width: "100%",
+  height: "100%",
+};
 
 export default function MapWithProjects() {
   const [selectedListing, setSelectedListing] = useState<Listing | null>(null);
-  const mapRef = useRef<any>(null);
+  const [activeMarker, setActiveMarker] = useState<string | null>(null);
 
-  const handleSelectListing = (listing: Listing) => {
-    setSelectedListing(listing);
-    if (mapRef.current && listing.coords) {
-      mapRef.current.setCenter(listing.coords, 15, {
-        duration: 500,
-      });
-    }
+  const center = {
+    lat: 39.9208,
+    lng: 32.8541,
   };
+
+  const { isLoaded } = useJsApiLoader({
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
+  });
+
+  if (!isLoaded) return <div>Harita yükleniyor...</div>;
 
   return (
     <div className="flex h-screen">
@@ -184,14 +195,14 @@ export default function MapWithProjects() {
             {listings.map((listing) => (
               <div
                 key={listing.link}
-                onClick={() => handleSelectListing(listing)}
+                onClick={() => setSelectedListing(listing)}
                 className="group cursor-pointer flex items-center gap-4 rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition bg-white"
               >
                 <img
-  src={listing.image}
-  alt={listing.price}
-  className="w-32 h-28 object-cover aspect-video rounded-l-xl"
-/>
+                  src={listing.image}
+                  alt={listing.price}
+                  className="w-32 h-28 object-cover aspect-video rounded-l-xl"
+                />
                 <div className="flex flex-col py-2 pr-3">
                   <h3 className="text-base font-semibold text-gray-800">
                     {listing.price}
@@ -203,17 +214,21 @@ export default function MapWithProjects() {
                     <p className="text-xs text-gray-500">📍 {listing.footer}</p>
                   )}
                   <div className="flex items-center gap-2 mt-2">
-  {[...new Set([listing.label, listing.highlight])].map((tag, i) => (
-    tag ? (
-      <span
-        key={i}
-        className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium ${tag === listing.label ? 'bg-red-100 text-red-600' : 'border border-[#ab1e3b] text-[#ab1e3b]'}`}
-      >
-        {tag === listing.label && <FaFire />} {tag}
-      </span>
-    ) : null
-  ))}
-</div>
+                    {[...new Set([listing.label, listing.highlight])].map((tag, i) =>
+                      tag ? (
+                        <span
+                          key={i}
+                          className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium ${
+                            tag === listing.label
+                              ? "bg-red-100 text-red-600"
+                              : "border border-[#ab1e3b] text-[#ab1e3b]"
+                          }`}
+                        >
+                          {tag === listing.label && <FaFire />} {tag}
+                        </span>
+                      ) : null
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
@@ -254,38 +269,167 @@ export default function MapWithProjects() {
             className="rounded-xl mb-4 w-full h-52 object-cover"
           />
           <a
-  href={selectedListing.link}
-  className="w-full block text-center py-3 mt-4 bg-[#ab1e3b] hover:bg-red-700 text-white rounded-xl text-sm font-semibold"
->
-  Projeyi Gör
-</a>
+            href={selectedListing.link}
+            className="w-full block text-center py-3 mt-4 bg-[#ab1e3b] hover:bg-red-700 text-white rounded-xl text-sm font-semibold"
+          >
+            Projeyi Gör
+          </a>
         </aside>
       )}
 
       <main className="flex-1">
-        <YMaps>
-          <Map
-            defaultState={{ center: [39.9208, 32.8541], zoom: 10 }}
-            width="100%"
-            height="100%"
-            instanceRef={(ref) => (mapRef.current = ref)}
-          >
-            {listings.map((listing) =>
-              listing.coords ? (
-                <Placemark
-                key={listing.link}
-                geometry={listing.coords}
-                onClick={() => handleSelectListing(listing)}
-options={{
-  iconLayout: 'default#image',
-  iconImageHref: '/pin-red.png', // your PNG path
-  iconImageSize: [32, 32], // size of the PNG in px
-  iconImageOffset: [-15, -42], // adjust so point of pin aligns
-}}              />
-              ) : null
-            )}
-          </Map>
-        </YMaps>
+        <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={14} options={{ styles: [
+    {
+      featureType: "all",
+      elementType: "labels.text.fill",
+      stylers: [
+        { saturation: 36 },
+        { color: "#333333" },
+        { lightness: 40 }
+      ]
+    },
+    {
+      featureType: "all",
+      elementType: "labels.text.stroke",
+      stylers: [
+        { visibility: "on" },
+        { color: "#ffffff" },
+        { lightness: 16 }
+      ]
+    },
+    {
+      featureType: "all",
+      elementType: "labels.icon",
+      stylers: [
+        { visibility: "off" }
+      ]
+    },
+    {
+      featureType: "administrative",
+      elementType: "geometry.fill",
+      stylers: [
+        { color: "#fefefe" },
+        { lightness: 20 }
+      ]
+    },
+    {
+      featureType: "administrative",
+      elementType: "geometry.stroke",
+      stylers: [
+        { color: "#fefefe" },
+        { lightness: 17 },
+        { weight: 1.2 }
+      ]
+    },
+    {
+      featureType: "administrative.locality",
+      elementType: "labels.text.fill",
+      stylers: [
+        { color: "#aa1e3a" }
+      ]
+    },
+    {
+      featureType: "landscape",
+      elementType: "geometry",
+      stylers: [
+        { color: "#f5f5f5" },
+        { lightness: 20 }
+      ]
+    },
+    {
+      featureType: "poi",
+      elementType: "geometry",
+      stylers: [
+        { color: "#f5f5f5" },
+        { lightness: 21 }
+      ]
+    },
+    {
+      featureType: "poi.park",
+      elementType: "geometry",
+      stylers: [
+        { color: "#dedede" },
+        { lightness: 21 }
+      ]
+    },
+    {
+      featureType: "road.highway",
+      elementType: "geometry.fill",
+      stylers: [
+        { color: "#ffffff" },
+        { lightness: 17 }
+      ]
+    },
+    {
+      featureType: "road.highway",
+      elementType: "geometry.stroke",
+      stylers: [
+        { color: "#ffffff" },
+        { lightness: 29 },
+        { weight: 0.2 }
+      ]
+    },
+    {
+      featureType: "road.arterial",
+      elementType: "geometry",
+      stylers: [
+        { color: "#ffffff" },
+        { lightness: 18 }
+      ]
+    },
+    {
+      featureType: "road.local",
+      elementType: "geometry",
+      stylers: [
+        { color: "#ffffff" },
+        { lightness: 16 }
+      ]
+    },
+    {
+      featureType: "transit",
+      elementType: "geometry",
+      stylers: [
+        { color: "#f2f2f2" },
+        { lightness: 19 }
+      ]
+    },
+    {
+      featureType: "water",
+      elementType: "geometry",
+      stylers: [
+        { color: "#e9e9e9" },
+        { lightness: 17 }
+      ]
+    }
+  ] }}
+        >
+          {listings.map(
+            (listing) =>
+              listing.coords && (
+                <Marker
+                  key={listing.link}
+                  position={{ lat: listing.coords[0], lng: listing.coords[1] }}
+                  icon={{ url: "/pin-red.png", scaledSize: new window.google.maps.Size(32, 32) }}
+                  onClick={() => {
+                    setSelectedListing(listing);
+                    setActiveMarker(listing.link);
+                  }}
+                />
+              )
+          )}
+
+          {selectedListing && selectedListing.coords && (
+            <InfoWindow
+              position={{ lat: selectedListing.coords[0], lng: selectedListing.coords[1] }}
+              onCloseClick={() => setSelectedListing(null)}
+            >
+              <div className="text-sm">
+                <h4 className="font-semibold">{selectedListing.price}</h4>
+                <p>{selectedListing.metro} — {selectedListing.time}</p>
+              </div>
+            </InfoWindow>
+          )}
+        </GoogleMap>
       </main>
     </div>
   );
