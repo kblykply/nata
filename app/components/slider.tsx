@@ -8,6 +8,7 @@ import Image from 'next/image';
 import { useRef, useState } from 'react';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import Link from 'next/link';
 
 interface SlideData {
   id: number;
@@ -131,9 +132,12 @@ export default function HeroSlider() {
                   </div>
 
                   {/* Bottom Button */}
-                  <button className="bg-gradient-to-r from-red-600 to-orange-400 text-white py-2 rounded shadow-md text-sm font-medium">
-                    +6 daha
-                  </button>
+                
+<Link href="/kampanya">
+  <button className="bg-gradient-to-r from-red-600 to-orange-400 text-white py-2 px-4 rounded shadow-md text-sm font-medium">
+    +6 daha
+  </button>
+</Link>
                 </div>
               </div>
             </div>
