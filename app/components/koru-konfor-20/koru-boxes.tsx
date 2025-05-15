@@ -155,12 +155,14 @@ export default function Gallery() {
               )
             ) : (
               <>
-                <Image
-                  src={item.src}
-                  alt={item.label}
-                  fill
-                  className="object-cover"
-                />
+              {item.src && (
+  <Image
+    src={item.src}
+    alt={item.label}
+    fill
+    className="object-cover"
+  />
+)}
                 {item.label && (
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent p-3 flex items-end">
                     <p className="text-white text-sm font-semibold">
