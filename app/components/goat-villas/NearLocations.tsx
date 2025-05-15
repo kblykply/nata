@@ -231,130 +231,72 @@ const getCategoryPinUrl = (categoryId: string): string =>
             </aside>
 
             <div className="flex-1">
-              <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={14} options={{ styles: [
-    {
-      featureType: "all",
-      elementType: "labels.text.fill",
-      stylers: [
-        { saturation: 36 },
-        { color: "#333333" },
-        { lightness: 40 }
-      ]
-    },
-    {
-      featureType: "all",
-      elementType: "labels.text.stroke",
-      stylers: [
-        { visibility: "on" },
-        { color: "#ffffff" },
-        { lightness: 16 }
-      ]
-    },
-    {
-      featureType: "all",
-      elementType: "labels.icon",
-      stylers: [
-        { visibility: "off" }
-      ]
-    },
-    {
-      featureType: "administrative",
-      elementType: "geometry.fill",
-      stylers: [
-        { color: "#fefefe" },
-        { lightness: 20 }
-      ]
-    },
-    {
-      featureType: "administrative",
-      elementType: "geometry.stroke",
-      stylers: [
-        { color: "#fefefe" },
-        { lightness: 17 },
-        { weight: 1.2 }
-      ]
-    },
-    {
-      featureType: "administrative.locality",
-      elementType: "labels.text.fill",
-      stylers: [
-        { color: "#aa1e3a" }
-      ]
-    },
-    {
-      featureType: "landscape",
-      elementType: "geometry",
-      stylers: [
-        { color: "#f5f5f5" },
-        { lightness: 20 }
-      ]
-    },
-    {
-      featureType: "poi",
-      elementType: "geometry",
-      stylers: [
-        { color: "#f5f5f5" },
-        { lightness: 21 }
-      ]
-    },
-    {
-      featureType: "poi.park",
-      elementType: "geometry",
-      stylers: [
-        { color: "#dedede" },
-        { lightness: 21 }
-      ]
-    },
-    {
-      featureType: "road.highway",
-      elementType: "geometry.fill",
-      stylers: [
-        { color: "#ffffff" },
-        { lightness: 17 }
-      ]
-    },
-    {
-      featureType: "road.highway",
-      elementType: "geometry.stroke",
-      stylers: [
-        { color: "#ffffff" },
-        { lightness: 29 },
-        { weight: 0.2 }
-      ]
-    },
-    {
-      featureType: "road.arterial",
-      elementType: "geometry",
-      stylers: [
-        { color: "#ffffff" },
-        { lightness: 18 }
-      ]
-    },
-    {
-      featureType: "road.local",
-      elementType: "geometry",
-      stylers: [
-        { color: "#ffffff" },
-        { lightness: 16 }
-      ]
-    },
-    {
-      featureType: "transit",
-      elementType: "geometry",
-      stylers: [
-        { color: "#f2f2f2" },
-        { lightness: 19 }
-      ]
-    },
-    {
-      featureType: "water",
-      elementType: "geometry",
-      stylers: [
-        { color: "#e9e9e9" },
-        { lightness: 17 }
-      ]
-    }
-] }}>
+              <GoogleMap
+  mapContainerStyle={containerStyle}
+  center={center}
+  zoom={14}
+  options={{
+    styles: [
+      {
+        featureType: "landscape.man_made",
+        elementType: "all",
+        stylers: [
+          { color: "#faf5ed" },
+          { lightness: 0 },
+          { gamma: 1 },
+        ],
+      },
+      {
+        featureType: "poi.park",
+        elementType: "geometry.fill",
+        stylers: [
+          { color: "#bae5a6" },
+        ],
+      },
+      {
+        featureType: "road",
+        elementType: "all",
+        stylers: [
+          { weight: 1.0 },
+          { gamma: 1.8 },
+          { saturation: 0 },
+        ],
+      },
+      {
+        featureType: "road",
+        elementType: "geometry.fill",
+        stylers: [
+          { hue: "#ffb200" },
+        ],
+      },
+      {
+        featureType: "road.arterial",
+        elementType: "geometry.fill",
+        stylers: [
+          { lightness: 0 },
+          { gamma: 1 },
+        ],
+      },
+      {
+        featureType: "transit.station.airport",
+        elementType: "all",
+        stylers: [
+          { hue: "#b000ff" },
+          { saturation: 23 },
+          { lightness: -4 },
+          { gamma: 0.8 },
+        ],
+      },
+      {
+        featureType: "water",
+        elementType: "all",
+        stylers: [
+          { color: "#a0daf2" },
+        ],
+      },
+    ],
+  }}
+>
                 <Marker
                   position={{ lat: projectLocation.coords[0], lng: projectLocation.coords[1] }}
                   icon={{ url: "/pin-red.png", scaledSize: new window.google.maps.Size(32, 32) }}

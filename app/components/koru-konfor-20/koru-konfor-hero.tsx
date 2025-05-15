@@ -5,17 +5,17 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 
 export default function HeroKoruKonforSection() {
   return (
-    <section className="w-full  bg-white py-12 px-4 md:px-12 lg:px-24 ">
-      <div className="max-w-screen-xl h-[100vh] mx-auto flex flex-col lg:flex-row items-center justify-between gap-8">
+    <section className="w-full bg-white py-12 px-4 md:px-12 lg:px-24">
+      <div className=" h-[110vh] max-w-screen-xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
         {/* Left Content */}
-        <div className="flex-1 space-y-6">
+        <div className="flex-1 space-y-6 text-center lg:text-left">
           <h1 className="text-4xl md:text-5xl font-bold leading-tight text-gray-900">
             Koru Konfor
           </h1>
           <h2 className="text-2xl md:text-3xl font-semibold text-gray-700">
             Şehrin İçinde Sessiz ve Konforlu Bir Yaşam
           </h2>
-          <p className="text-gray-600 max-w-xl">
+          <p className="text-gray-600 max-w-xl mx-auto lg:mx-0">
             Koru Konfor, doğayla iç içe huzurlu bir yaşam arayanlar için tasarlandı.
             Geniş balkonlu daireleri, peyzajla bütünleşen mimarisi ve merkezi konumuyla hem aile
             yaşamına hem de yatırımcılara hitap ediyor. Şehir hayatının karmaşasından uzak konforlu
@@ -27,7 +27,7 @@ export default function HeroKoruKonforSection() {
         </div>
 
         {/* Center Image */}
-        <div className="flex-1 relative w-full max-w-md h-[340px] lg:h-[420px]">
+        <div className="flex-1 relative w-full h-[300px] sm:h-[380px] md:h-[400px] lg:h-[420px]">
           <Image
             src="/koru-anasayfa.png"
             alt="Koru Konfor Görseli"
@@ -38,7 +38,7 @@ export default function HeroKoruKonforSection() {
         </div>
 
         {/* Right Card */}
-        <div className="flex-1 w-full max-w-sm bg-[#9b3a35] text-white p-6 rounded-xl space-y-4">
+        <div className="flex-1 w-full max-w-sm bg-[#9b3a35] text-white p-6 rounded-xl space-y-4 text-center lg:text-left">
           <h3 className="text-lg font-semibold">Doğanın Kalbinde Konforlu Yaşam</h3>
           <p className="text-sm">
             Şehrin merkezine yakın yeşil alanlarla çevrili ferah daireler ile hem huzurlu hem de modernliği bir arada yaşayın.
@@ -48,7 +48,7 @@ export default function HeroKoruKonforSection() {
           </button>
 
           {/* Info Pills */}
-          <div className="flex flex-wrap gap-2 text-sm mt-4">
+          <div className="flex flex-wrap justify-center lg:justify-start gap-2 text-sm mt-4">
             <span className="bg-white text-[#9b3a35] px-3 py-1 rounded-full">117 m²</span>
             <span className="bg-white text-[#9b3a35] px-3 py-1 rounded-full">16.800.000 TL</span>
             <span className="bg-white text-[#9b3a35] px-3 py-1 rounded-full">2+1</span>

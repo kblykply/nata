@@ -23,7 +23,7 @@ const promotions = [
     title: "Kişiye özel ödeme planları ile",
     highlight: "esnek ödeme imkanı",
     description: "Nata Vega Konutları",
-    bg: "/Kampanya/4.png",
+    bg: "/kampanya/4.png",
   },
   {
     title: "1 yıl ödemesiz dönem ve 120 ay",
