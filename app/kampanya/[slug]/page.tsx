@@ -1,6 +1,21 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
+interface ContentSection {
+  title: string;
+  text: string | string[];
+}
+
+interface Promotion {
+  slug: string;
+  title: string;
+  highlight: string;
+  description: string;
+  bg: string;
+  image: string;
+  content: ContentSection[];
+}
+
 interface PageProps {
   params: {
     slug: string;
