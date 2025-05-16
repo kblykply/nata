@@ -33,7 +33,7 @@ const promotions = [
 type Params = Promise<{ slug: string }>;
 
 export default async function PromoDetailPage({ params }: { params: { slug: string } }) {
-  const promo = promotions.find((p) => p.slug === params.slug);
+      const promo = promotions.find((p) => p.slug === params.slug);
 
   if (!promo) return notFound();
 
