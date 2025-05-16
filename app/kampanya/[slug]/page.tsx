@@ -1,8 +1,6 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-
-
 interface PageProps {
   params: {
     slug: string;
@@ -203,7 +201,6 @@ interface PageProps {
   ]
 },
 ];
-
 
 export default async function PromoDetailPage({ params }: PageProps) {
   const promo = promotions.find((p) => p.slug === params.slug);
