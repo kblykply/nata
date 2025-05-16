@@ -3,11 +3,7 @@ import { notFound } from "next/navigation";
 
 
 
-interface PageProps {
-  params: {
-    slug: string;
-  };
-}
+
 
     const promotions = [
   {
@@ -205,8 +201,7 @@ interface PageProps {
 ];
 
 
-
- export default async function PromoDetailPage({ params }: PageProps) {
+export default async function PromoDetailPage({ params }: PageProps) {
   const promo = promotions.find((p) => p.slug === params.slug);
 
   if (!promo) return notFound();
