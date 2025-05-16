@@ -87,14 +87,23 @@ interface NewProjectsProps {
   {/* Top Part */}
   <div className="space-y-4">
     <h3 className="text-lg font-semibold">NATALife Business</h3>
-    <p className="text-sm text-gray-700">Aktif Satışta Olan Projeler</p>
-    <p className="text-sm text-gray-700">Çok Yakında Satışta</p>
+   <Link href="#aktif-projeler" scroll={true}>
+  <p className="text-sm text-gray-700 hover:underline cursor-pointer">Aktif Satışta Olan Projeler</p>
+</Link>
+
+<Link href="#yakinda-projeler" scroll={true}>
+  <p className="text-sm text-gray-700 hover:underline cursor-pointer">Çok Yakında Satışta</p>
+</Link>
   </div>
 
   {/* Bottom Part (Button) */}
-  <button className="w-fit flex items-center gap-2 px-4 py-2 border rounded-xl text-[#6F1D1B] border-gray-300 font-semibold text-sm hover:bg-gray-100 transition">    <Image src="/redpin.png" alt="Map" width={16} height={16} />
-  Haritadan Proje Seç
-</button>
+
+<Link href="/projects">
+  <button className="w-fit flex items-center gap-2 px-4 py-2 border rounded-xl text-[#6F1D1B] border-gray-300 font-semibold text-sm hover:bg-gray-100 transition">
+    <Image src="/redpin.png" alt="Map" width={16} height={16} />
+    Haritadan Proje Seç
+  </button>
+</Link>
 </div>
 
 

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { ChevronDown, SlidersHorizontal, X } from "lucide-react";
+import Link from "next/link";
 
 interface SimpleListing {
   title: string;
@@ -302,16 +303,18 @@ export default function FilteredListingCards() {
         </button>
 
         <div className="flex items-center gap-4">
-          <button className="flex items-center px-4 py-2 rounded-full bg-gray-100">
-            <Image
-              src="/pin.png"
-              alt="Haritada Gör"
-              width={20}
-              height={20}
-              className="mr-2"
-            />
-            Haritada Gör
-          </button>
+      <Link href="/ikinci_el_harita">
+  <button className="flex items-center px-4 py-2 rounded-full bg-gray-100">
+    <Image
+      src="/pin-red.png"
+      alt="Haritada Gör"
+      width={20}
+      height={20}
+      className="mr-2"
+    />
+    Haritada Gör
+  </button>
+</Link>
         </div>
       </div>
 

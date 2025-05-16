@@ -29,7 +29,7 @@ const projects = [
 
 export default function FeaturedProjects() {
   return (
-    <section className="py-16 text-center">
+    <section id="yakinda-projeler" className="py-16 text-center">
        <h2 className="text-2xl  text-center    font-semibold mb-10">Planlanan<span className="text-[#ab1e3b]"> Projeler</span></h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">

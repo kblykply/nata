@@ -195,7 +195,7 @@
     };
 
     return (
-      <section className="bg-white py-16 px-6">
+      <section id="aktif-projeler" className="bg-white py-16 px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-screen-xl mx-auto relative">
 
           
