@@ -202,7 +202,9 @@ interface PageProps {
 },
 ];
 
-export default async function PromoDetailPage({ params }: PageProps) {
+
+export default async function PromoDetailPage(props: PageProps) {
+  const { params } = props;
   const promo = promotions.find((p) => p.slug === params.slug);
 
   if (!promo) return notFound();
