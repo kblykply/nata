@@ -1,6 +1,14 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
+
+
+interface PageProps {
+  params: {
+    slug: string;
+  };
+}
+
     const promotions = [
   {
   slug: "guvenli-yasam",
@@ -198,25 +206,21 @@ import { notFound } from "next/navigation";
 
 
 
- export default function PromoDetailPage({ params }: { params: { slug: string } }) {
+ export default async function PromoDetailPage({ params }: PageProps) {
   const promo = promotions.find((p) => p.slug === params.slug);
 
   if (!promo) return notFound();
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header Section */}
       <div className="relative min-h-[50vh] flex flex-col md:flex-row items-center justify-between px-6 md:px-20 py-12 bg-gray-100">
-        {/* Left Text */}
         <div className="max-w-2xl space-y-2 z-10">
           <h1 className="text-3xl font-semibold text-gray-800 leading-snug">
-            {promo.title}
-            <br />
+            {promo.title}<br />
             <span className="text-red-600">{promo.highlight}</span>
           </h1>
         </div>
 
-        {/* Right Image Positioned Bottom-Right */}
         <div className="absolute bottom-0 right-0">
           <Image
             src={promo.image}
@@ -228,13 +232,12 @@ import { notFound } from "next/navigation";
         </div>
       </div>
 
-      {/* Content Section */}
       <div className="max-w-5xl mx-auto px-6 py-12 space-y-10">
         {promo.content.map((section, index) => (
           <div key={index}>
-            <h2 className="text-4xl font-semibold text-gray-800">{section.title}</h2>
+            <h2 className="text-3xl font-semibold text-gray-800">{section.title}</h2>
             {Array.isArray(section.text) ? (
-              <ul className="text-5xl list-disc pl-6 space-y-2 text-sm text-gray-700 mt-2">
+              <ul className="text-2xl list-disc pl-6 space-y-2 text-sm text-gray-700 mt-2">
                 {section.text.map((item, i) => (
                   <li key={i}>{item}</li>
                 ))}
