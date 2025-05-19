@@ -13,11 +13,11 @@ export default function DesignSection() {
   const [isOpen, setIsOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
   const gallery = [
-    "/konutkule-galeri/natavegakonutkule1.webp",
-    "/konutkule-galeri/natavegakonutkule2.jpeg",
-    "/konutkule-galeri/natavegakonutkule4.jpg",
-    "/konutkule-galeri/natavegakonutkule5.jpeg",
-        "/konutkule-galeri/natavegakonutkule6.png",
+    "/proje-galeri/vega1.jpg",
+    "/proje-galeri/vega2.jpg",
+    "/proje-galeri/vega3.jpg",
+    "/proje-galeri/vega4.jpg",
+    "/proje-galeri/vega5.jpg",
 
     
 

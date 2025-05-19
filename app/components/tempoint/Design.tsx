@@ -13,14 +13,14 @@ export default function DesignSection() {
   const [isOpen, setIsOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
   const gallery = [
-    "/tem-galeri/tempoint1.jpg",
-        "/tem-galeri/tempoint2.jpg",
+    "/proje-galeri/tempoint1.jpg",
+    "/proje-galeri/tempoint2.jpg",
 
-            "/tem-galeri/tempoint3.jpg",
+    "/proje-galeri/tempoint3.jpg",
 
-                "/tem-galeri/tempoint4.jpg",
+    "/proje-galeri/tempoint4.jpg",
 
-                    "/tem-galeri/tempoint5.jpg",
+    "/proje-galeri/tempoint5.jpg",
 
 
     

@@ -13,11 +13,11 @@ export default function DesignSection() {
   const [isOpen, setIsOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
   const gallery = [
-    "/proje-galeri/nata incek/1.jpg",
-    "/proje-galeri/nata incek/2.jpg",
-    "/proje-galeri/nata incek/3.jpg",
-    "/proje-galeri/nata incek/4.jpg",
-    "/proje-galeri/nata incek/5.jpg",
+    "/proje-galeri/incek1.jpg",
+    "/proje-galeri/incek2.jpg",
+    "/proje-galeri/incek3.jpg",
+    "/proje-galeri/incek4.jpg",
+    "/proje-galeri/incek5.jpg",
 
 
   ];

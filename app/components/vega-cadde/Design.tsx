@@ -13,10 +13,12 @@ export default function DesignSection() {
   const [isOpen, setIsOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
   const gallery = [
-    "/cadde-galeri/vegacadde1.jpg",
-    "/cadde-galeri/vegacadde4.jpg",
-    "/cadde-galeri/vegacadde5.jpg",
-    
+    "/proje-galeri/vegacadde1.jpg",
+    "/proje-galeri/vegacadde2.jpg",
+    "/proje-galeri/vegacadde3.jpg",
+        "/proje-galeri/vegacadde4.jpg",
+
+    "/proje-galeri/vegacadde5.jpg",
 
   ];
 

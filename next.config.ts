@@ -4,6 +4,14 @@ const nextConfig: NextConfig = {
   optimizeFonts: true,
   experimental: {
   },
+    images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+      },
+    ],
+  },
   headers: async () => {
     return [
       {
@@ -18,5 +26,7 @@ const nextConfig: NextConfig = {
     ];
   }
 };
+
+
 
 export default nextConfig;

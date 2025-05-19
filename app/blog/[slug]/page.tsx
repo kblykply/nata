@@ -1,13 +1,34 @@
-'use client';
-
-import { blogPosts } from '@/data/blogPosts';
 import { notFound } from 'next/navigation';
-import { use } from 'react';
 import Image from 'next/image';
+import { Metadata } from 'next';
 
-export default function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = use(params);
-  const post = blogPosts.find((p) => p.slug === slug);
+interface BlogPost {
+  id: number;
+  title: string;
+  slug: string;
+  image: string;
+  excerpt: string;
+  content: string;
+  published_at: string;
+}
+
+// Optional: dynamic metadata
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const res = await fetch('https://www.salihkaankoc.net/nata-core/blog');
+  const json = await res.json();
+  const post = json.data.find((p: BlogPost) => p.slug === params.slug);
+
+  return {
+    title: post?.title || 'Blog',
+    description: post?.excerpt || '',
+  };
+}
+
+export default async function BlogPostPage({ params }: { params: { slug: string } }) {
+  const res = await fetch('https://www.salihkaankoc.net/nata-core/blog');
+  const json = await res.json();
+
+  const post: BlogPost | undefined = json.data.find((p: BlogPost) => p.slug === params.slug);
 
   if (!post) return notFound();
 
@@ -26,7 +47,7 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
         <div className="absolute bottom-6 left-6 text-white">
           <h1 className="text-3xl md:text-4xl font-bold drop-shadow-md">{post.title}</h1>
           <p className="text-sm text-gray-200 mt-1">
-            {new Date(post.date).toLocaleDateString('tr-TR', {
+            {new Date(post.published_at).toLocaleDateString('tr-TR', {
               day: '2-digit',
               month: 'long',
               year: 'numeric',

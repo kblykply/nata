@@ -38,8 +38,8 @@ export default function NaturaHero() {
       </div>
 
       {/* Right Info Box */}
-      <div className="w-full md:w-auto md:max-w-sm bg-[#98463c] text-white p-6 rounded-none md:rounded-lg z-10 md:self-center">
-        <h3 className="text-lg font-semibold mb-2">Modern Yaşamın Sessiz Yansıması</h3>
+<div className="absolute right-10 top-1/2 transform -translate-y-1/2 md:max-w-sm bg-[#98463c] text-white p-6 rounded-lg z-10">   
+     <h3 className="text-lg font-semibold mb-2">Modern Yaşamın Sessiz Yansıması</h3>
         <p className="text-sm mb-4">
           İncek’in doğal dokusuyla uyumlu, fonksiyonel tasarımı ve konforun bir arada sunulduğu seçkin bir yaşam alanı.
         </p>

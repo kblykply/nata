@@ -70,8 +70,8 @@ export default function ExpandableNavigator() {
                 className={`flex items-center px-3 py-1 rounded-full transition-all duration-200
                   ${
                     activeSection === section.id
-                      ? "bg-white  text-black font-semibold"
-                      : "hover:bg-white hover:text-gray-900   hover:font-semibold"
+                      ? "bg-white  text-black "
+                      : "hover:bg-white hover:text-gray-900 "
                   }`}
               >
                 {section.label}
