@@ -361,27 +361,25 @@ export default function MapWithProjects() {
 >
 <MarkerClusterer>
   {(clusterer) =>
-    listings.map(
-      (listing) =>
-        listing.coords && (
-          <Marker
-            key={listing.link}
-            position={{ lat: listing.coords[0], lng: listing.coords[1] }}
-            clusterer={clusterer}
-            icon={{
-              url: "/pin-red.png",
-              scaledSize: new window.google.maps.Size(32, 32),
-            }}
-            onClick={() => {
-              setSelectedListing(listing);
-              setActiveMarker(listing.link);
-            }}
-          />
-        )
-    )
+    listings
+      .filter((listing) => listing.coords) // <-- Ensure only listings with coords
+      .map((listing) => (
+        <Marker
+          key={listing.link}
+          position={{ lat: listing.coords![0], lng: listing.coords![1] }}
+          clusterer={clusterer}
+          icon={{
+            url: "/pin-red.png",
+            scaledSize: new window.google.maps.Size(32, 32),
+          }}
+          onClick={() => {
+            setSelectedListing(listing);
+            setActiveMarker(listing.link);
+          }}
+        />
+      ))
   }
 </MarkerClusterer>
-
 
   {selectedListing && selectedListing.coords && (
     <InfoWindow
