@@ -2,7 +2,6 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { Metadata } from 'next';
 
-// Define your blog post structure
 interface BlogPost {
   id: number;
   title: string;
@@ -13,17 +12,18 @@ interface BlogPost {
   published_at: string;
 }
 
-// SEO metadata for the page
+type Params = Promise<{ slug: string }>;
+
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Params;
 }): Promise<Metadata> {
+  const { slug } = await params;
+
   const res = await fetch('https://www.salihkaankoc.net/nata-core/blog');
   const json = await res.json();
-  const post: BlogPost | undefined = json.data.find(
-    (p: BlogPost) => p.slug === params.slug
-  );
+  const post = json.data.find((p: BlogPost) => p.slug === slug);
 
   return {
     title: post?.title || 'Blog',
@@ -31,13 +31,12 @@ export async function generateMetadata({
   };
 }
 
-// Actual page component
 export default async function BlogPostPage({
   params,
 }: {
-  params: { slug: string };
+  params: Params;
 }) {
-  const { slug } = params;
+  const { slug } = await params;
 
   const res = await fetch('https://www.salihkaankoc.net/nata-core/blog');
   const json = await res.json();
@@ -49,7 +48,6 @@ export default async function BlogPostPage({
 
   return (
     <article className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12 py-16">
-      {/* Header Image Section */}
       <div className="relative w-full h-[350px] md:h-[450px] rounded-3xl overflow-hidden shadow-lg mb-12">
         <Image
           src={post.image}
@@ -71,7 +69,6 @@ export default async function BlogPostPage({
         </div>
       </div>
 
-      {/* Blog HTML Content */}
       <div
         className="prose prose-lg max-w-none text-gray-800 leading-relaxed [&_h2]:mt-10 [&_ul]:pl-6 [&_ul]:list-disc [&_li]:mt-2"
         dangerouslySetInnerHTML={{ __html: post.content }}
@@ -79,4 +76,3 @@ export default async function BlogPostPage({
     </article>
   );
 }
-  
