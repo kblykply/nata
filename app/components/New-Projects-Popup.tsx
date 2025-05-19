@@ -69,13 +69,18 @@ interface NewProjectsProps {
 
   {filteredResults.length > 0 && (
     <ul className="absolute left-6 right-6 top-[100%] mt-2 bg-white shadow-lg rounded-lg z-50">
-      {filteredResults.map((item) => (
-        <li key={item.name}>
-          <Link href={item.href} className="block px-4 py-2 text-sm hover:bg-gray-100">
-            {item.name}
-          </Link>
-        </li>
-      ))}
+     <ul className="absolute left-6 right-6 top-[100%] mt-2 bg-white shadow-lg rounded-lg z-50">
+  {filteredResults.map((item) => (
+    <li key={item.name}>
+      <div
+        onClick={onClose}
+        className="block px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer"
+      >
+        <Link href={item.href}>{item.name}</Link>
+      </div>
+    </li>
+  ))}
+</ul>
     </ul>
   )}
 </div>
@@ -87,23 +92,37 @@ interface NewProjectsProps {
   {/* Top Part */}
   <div className="space-y-4">
     <h3 className="text-lg font-semibold">NATALife Business</h3>
-   <Link href="#aktif-projeler" scroll={true}>
-  <p className="text-sm text-gray-700 hover:underline cursor-pointer">Aktif Satışta Olan Projeler</p>
-</Link>
+ <div onClick={onClose}>
+  <Link href="/#aktif-projeler" scroll={true}>
+    <p className="text-sm text-gray-700 hover:underline cursor-pointer">Aktif Satışta Olan Projeler
+      <sup className="text-red-600 text-xs ml-1">8</sup>
 
-<Link href="#yakinda-projeler" scroll={true}>
-  <p className="text-sm text-gray-700 hover:underline cursor-pointer">Çok Yakında Satışta</p>
+    </p>
+  </Link>
+</div>
+ <div onClick={onClose}>
+
+<Link href="/#yakinda-projeler" scroll={true}>
+  <p className="text-sm text-gray-700 hover:underline cursor-pointer">Çok Yakında Satışta
+          <sup className="text-red-600 text-xs ml-1">3</sup>
+
+  </p>
+  
 </Link>
+</div>
+
   </div>
 
   {/* Bottom Part (Button) */}
-
+ <div onClick={onClose}>
 <Link href="/projects">
   <button className="w-fit flex items-center gap-2 px-4 py-2 border rounded-xl text-[#6F1D1B] border-gray-300 font-semibold text-sm hover:bg-gray-100 transition">
     <Image src="/redpin.png" alt="Map" width={16} height={16} />
     Haritadan Proje Seç
   </button>
 </Link>
+</div>
+
 </div>
 
 

@@ -338,6 +338,21 @@ const getCategoryPinUrl = (categoryId: string): string =>
           { color: "#a0daf2" },
         ],
       },
+      {
+  featureType: "poi",
+  elementType: "labels.icon",
+  stylers: [{ visibility: "off" }],
+},
+{
+  featureType: "poi.business",
+  elementType: "labels",
+  stylers: [{ visibility: "off" }],
+},
+{
+  featureType: "poi.park",
+  elementType: "labels",
+  stylers: [{ visibility: "off" }],
+}
     ],
   }}
 >

@@ -8,7 +8,7 @@ import {
   useJsApiLoader,
 } from "@react-google-maps/api";
 import { FaFire, FaTrain } from "react-icons/fa";
-
+import { MarkerClusterer } from "@react-google-maps/api";
 interface Listing {
   link: string;
   type: "standard" | "featured";
@@ -340,26 +340,48 @@ export default function MapWithProjects() {
           { color: "#a0daf2" },
         ],
       },
+      {
+  featureType: "poi",
+  elementType: "labels.icon",
+  stylers: [{ visibility: "off" }],
+},
+{
+  featureType: "poi.business",
+  elementType: "labels",
+  stylers: [{ visibility: "off" }],
+},
+{
+  featureType: "poi.park",
+  elementType: "labels",
+  stylers: [{ visibility: "off" }],
+}
     ],
+    
   }}
 >
-  {listings.map(
-    (listing) =>
-      listing.coords && (
-        <Marker
-          key={listing.link}
-          position={{ lat: listing.coords[0], lng: listing.coords[1] }}
-          icon={{
-            url: "/pin-red.png",
-            scaledSize: new window.google.maps.Size(32, 32),
-          }}
-          onClick={() => {
-            setSelectedListing(listing);
-            setActiveMarker(listing.link);
-          }}
-        />
-      )
-  )}
+<MarkerClusterer>
+  {(clusterer) =>
+    listings.map(
+      (listing) =>
+        listing.coords && (
+          <Marker
+            key={listing.link}
+            position={{ lat: listing.coords[0], lng: listing.coords[1] }}
+            clusterer={clusterer}
+            icon={{
+              url: "/pin-red.png",
+              scaledSize: new window.google.maps.Size(32, 32),
+            }}
+            onClick={() => {
+              setSelectedListing(listing);
+              setActiveMarker(listing.link);
+            }}
+          />
+        )
+    )
+  }
+</MarkerClusterer>
+
 
   {selectedListing && selectedListing.coords && (
     <InfoWindow

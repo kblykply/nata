@@ -88,11 +88,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
       clearTimeout(window.iletisimTimeout ?? undefined);
       setIsContactPopupOpen(true);
     }}
-    onMouseLeave={() => {
-      window.iletisimTimeout = setTimeout(() => {
-        setIsContactPopupOpen(false);
-      }, 200);
-    }}
+
   >
     <ContactPopup onClose={() => setIsContactPopupOpen(false)} />
   </div>

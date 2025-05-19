@@ -1,53 +1,62 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useRef } from "react";
+import Image from "next/image";
+import ReCAPTCHA from "react-google-recaptcha";
 
-const ContactSection = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [message, setMessage] = useState('');
+interface ContactMapPopupProps {
+  onClose?: () => void;
+}
+
+export default function ContactMapPopup({ onClose }: ContactMapPopupProps) {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
   const [accepted, setAccepted] = useState(false);
+  const [recaptchaToken, setRecaptchaToken] = useState("");
+
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-  
-    if (!accepted) {
-      setError('Lütfen KVKK koşullarını kabul ediniz.');
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  const handleSubmit = async () => {
+    if (!recaptchaToken) {
+      setError("Lütfen reCAPTCHA doğrulamasını tamamlayın.");
       return;
     }
-  
+    if (!accepted) {
+      setError("Lütfen KVKK koşullarını kabul ediniz.");
+      return;
+    }
+
     setLoading(true);
-    setError('');
+    setError("");
     setSuccess(false);
-  
+
     try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, phone, message }),
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, phone, message, recaptchaToken }),
       });
-  
+
       const data = await res.json();
-  
-     
-     if (data && data.success && data.data) {
+
+      if (data.success) {
         setSuccess(true);
-        setName('');
-        setEmail('');
-        setPhone('');
-        setMessage('');
+        setName("");
+        setEmail("");
+        setPhone("");
+        setMessage("");
         setAccepted(false);
       } else {
-        setError('Form gönderilemedi. Lütfen tekrar deneyin.');
+        setError("Gönderim başarısız.");
       }
-    } catch (error) {
-      console.error('Form submission error:', error);
-      setError('Sunucu hatası, lütfen tekrar deneyin.');
+    } catch {
+      setError("Sunucu hatası, lütfen tekrar deneyin.");
     } finally {
       setLoading(false);
     }
@@ -84,56 +93,71 @@ const ContactSection = () => {
         </div>
 
         {/* Right: Contact Form */}
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full max-w-lg">
+        <div className="space-y-4">
           <input
             type="text"
             placeholder="İsim Soyisim"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="bg-gray-100 p-3 rounded-md w-full focus:outline-none"
+            className="w-full bg-gray-100 rounded-sm px-4 py-2 text-sm placeholder:text-gray-500"
           />
           <input
             type="email"
             placeholder="E-mail"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="bg-gray-100 p-3 rounded-md w-full focus:outline-none"
+            className="w-full bg-gray-100 rounded-sm px-4 py-2 text-sm placeholder:text-gray-500"
           />
           <input
             type="tel"
             placeholder="Telefon"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            className="bg-gray-100 p-3 rounded-md w-full focus:outline-none"
+            className="w-full bg-gray-100 rounded-sm px-4 py-2 text-sm placeholder:text-gray-500"
           />
           <textarea
             placeholder="Mesajınız"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            rows={4}
-            className="bg-gray-100 p-3 rounded-md w-full focus:outline-none resize-none"
+            className="w-full bg-gray-100 rounded-sm px-4 py-2 text-sm h-24 placeholder:text-gray-500"
           />
-          <div className="flex items-center gap-2 text-xs text-gray-700">
+
+          <div className="flex items-start gap-2 text-sm">
             <input
               type="checkbox"
-              id="kvkk"
+              className="mt-1"
+              id="kvkkCheckbox"
               checked={accepted}
               onChange={() => setAccepted(!accepted)}
             />
-            <label htmlFor="kvkk">KVKK koşullarını kabul ediyorum.</label>
+            <label htmlFor="kvkkCheckbox" className="text-xs text-gray-800">
+              KVKK koşullarını kabul ediyorum.
+            </label>
           </div>
+
+          <ReCAPTCHA
+            sitekey="6LeDBj8rAAAAAITpieFy0OTWktxwblgStiQHc9iv"
+            onChange={(token) => setRecaptchaToken(token || "")}
+            className="mt-2"
+          />
+
           <button
-            type="submit"
+            onClick={handleSubmit}
             disabled={loading}
-            className="bg-gray-100 py-3 rounded-md font-medium text-sm hover:bg-gray-200 transition w-full disabled:opacity-50"
+            className="w-full bg-gray-100 text-sm font-semibold py-2 rounded-sm hover:bg-gray-200 transition disabled:opacity-50"
           >
             {loading ? "Gönderiliyor..." : "GÖNDER"}
           </button>
 
-          {/* Feedback Messages */}
-          {success && <p className="text-green-600 text-sm">Form başarıyla gönderildi!</p>}
-          {error && <p className="text-red-500 text-sm">{error}</p>}
-        </form>
+          {success && <p className="text-green-600 text-sm mt-2">Form başarıyla gönderildi!</p>}
+          {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+
+          <div className="mt-8 text-sm text-black space-y-1">
+            <button className="mt-4 px-4 py-2 border border-gray-300 rounded-xl font-medium text-sm hover:bg-gray-50 transition">
+              Satış ofisiyle görüşme planlayın
+            </button>
+          </div>
+        </div>
       </div>
 
       {/* Decorative Phone Image */}
@@ -142,6 +166,4 @@ const ContactSection = () => {
       </div>
     </div>
   );
-};
-
-export default ContactSection;
+}

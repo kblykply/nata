@@ -3,6 +3,8 @@
 import { X } from "lucide-react";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import Link from "next/link";
+
 
 interface KampanyalarPopupProps {
   onClose: () => void;
@@ -66,10 +68,17 @@ export default function KampanyalarPopup({ onClose }: KampanyalarPopupProps) {
             ))}
           </div>
 
+
           {/* Button */}
+          
+<div onClick={onClose}>
+  <Link href="/kampanya">
           <button className="absolute bottom-4 right-6 bg-white px-4 py-1 rounded-xl text-sm font-medium shadow hover:bg-gray-100 transition">
             Kampanyalara git
           </button>
+
+            </Link>
+</div>
         </div>
       </div>
     </>
