@@ -1,14 +1,10 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import ReCAPTCHA from "react-google-recaptcha";
 
-interface ContactMapPopupProps {
-  onClose?: () => void;
-}
-
-export default function ContactMapPopup({ onClose }: ContactMapPopupProps) {
+export default function ContactMapPopup() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -19,8 +15,6 @@ export default function ContactMapPopup({ onClose }: ContactMapPopupProps) {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
-
-  const modalRef = useRef<HTMLDivElement>(null);
 
   const handleSubmit = async () => {
     if (!recaptchaToken) {
@@ -52,6 +46,7 @@ export default function ContactMapPopup({ onClose }: ContactMapPopupProps) {
         setPhone("");
         setMessage("");
         setAccepted(false);
+        setRecaptchaToken("");
       } else {
         setError("Gönderim başarısız.");
       }
@@ -68,7 +63,7 @@ export default function ContactMapPopup({ onClose }: ContactMapPopupProps) {
       <div className="text-center mb-12">
         <h2 className="text-2xl font-semibold mb-4">Bizimle İletişime Geçin</h2>
         <p className="text-sm max-w-2xl mx-auto text-gray-700 leading-relaxed">
-          Projeler hakkında detaylı bilgi almak, kampanyalar, lansman fırsatlarını öğrenmek ve Konut - Villa - Ofis - Ticari Alan taleplerinde bulunmak için bizimle iletişime geçebilirsiniz
+          Projeler hakkında detaylı bilgi almak, kampanyalar, lansman fırsatlarını öğrenmek ve Konut - Villa - Ofis - Ticari Alan taleplerinde bulunmak için bizimle iletişime geçebilirsiniz.
         </p>
       </div>
 
