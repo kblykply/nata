@@ -23,8 +23,13 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     description: post?.excerpt || '',
   };
 }
+type Props = {
+  params: {
+    slug: string;
+  };
+};
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
+export default async function BlogPostPage({ params }: Props) {
   const res = await fetch('https://www.salihkaankoc.net/nata-core/blog');
   const json = await res.json();
 
