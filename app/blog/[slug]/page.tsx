@@ -12,7 +12,6 @@ interface BlogPost {
   published_at: string;
 }
 
-// Optional: dynamic metadata
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const res = await fetch('https://www.salihkaankoc.net/nata-core/blog');
   const json = await res.json();
@@ -23,13 +22,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     description: post?.excerpt || '',
   };
 }
-type Props = {
-  params: {
-    slug: string;
-  };
-};
 
-export default async function BlogPostPage({ params }: Props) {
+export default async function BlogPostPage({ params }: { params: { slug: string } }) {
   const res = await fetch('https://www.salihkaankoc.net/nata-core/blog');
   const json = await res.json();
 
@@ -39,7 +33,6 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <article className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12 py-16">
-      {/* Feature Image */}
       <div className="relative w-full h-[350px] md:h-[450px] rounded-3xl overflow-hidden shadow-lg mb-12">
         <Image
           src={post.image}
@@ -61,7 +54,6 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
       </div>
 
-      {/* Blog Content */}
       <div
         className="prose prose-lg max-w-none text-gray-800 leading-relaxed [&_h2]:mt-10 [&_ul]:pl-6 [&_ul]:list-disc [&_li]:mt-2"
         dangerouslySetInnerHTML={{ __html: post.content }}
