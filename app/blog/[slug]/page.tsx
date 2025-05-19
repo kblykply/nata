@@ -12,7 +12,11 @@ interface BlogPost {
   published_at: string;
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
   const res = await fetch('https://www.salihkaankoc.net/nata-core/blog');
   const json = await res.json();
   const post = json.data.find((p: BlogPost) => p.slug === params.slug);
@@ -23,11 +27,16 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
+export default async function BlogPostPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const res = await fetch('https://www.salihkaankoc.net/nata-core/blog');
   const json = await res.json();
-
-  const post: BlogPost | undefined = json.data.find((p: BlogPost) => p.slug === params.slug);
+  const post: BlogPost | undefined = json.data.find(
+    (p: BlogPost) => p.slug === params.slug
+  );
 
   if (!post) return notFound();
 
