@@ -12,7 +12,7 @@ export interface BlogPost {
   slug: string;
   image: string;
   excerpt: string;
-  published_at: string;
+  created_at: string;
   date: string;
 }
 
