@@ -9,7 +9,7 @@ export interface BlogPost {
   slug: string;
   image: string;
   excerpt: string;
-  date: string;
+  created_at: string;
 }
 
 interface BlogsProps {
@@ -56,7 +56,7 @@ export default function Blogs({ posts }: BlogsProps) {
               <div className="md:w-1/3 z-20">
                 <h3 className="text-lg font-semibold text-gray-900">{post.title}</h3>
                 <span className="inline-block mt-2 text-xs px-4 py-1 bg-white rounded-full text-gray-700">
-                  {new Date(post.date).toLocaleDateString("tr-TR", {
+                  {new Date(post.created_at).toLocaleDateString("tr-TR", {
                     day: '2-digit',
                     month: 'long',
                     year: 'numeric',
