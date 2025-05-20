@@ -21,28 +21,28 @@
   const slides: SlideData[] = [
     // same as your slides array...
       {
-      id: 12,
+      id: 1,
       title: ' ',
       subtitle: ' ',
       background: '/slider/slider/banner1.jpg',
       textColor: 'black',
     },
         {
-      id: 13,
+      id: 2,
       title: '',
       subtitle: '',
       background: '/slider/slider/banner2.jpg',
       textColor: 'black',
     },
     {
-      id: 1,
+      id: 12,
       title: 'Sadece Eşyalarınızı Değil, Anılarınızı da Yerleştirin.',
       subtitle: 'Yeni anılar biriktireceğiniz, geçmişinize değer katacağınız yepyeni bir başlangıçtır. Doğayla iç içe peyzaj alanları, sosyal yaşamı destekleyen donatılar, çocuklar için güvenli oyun alanları ve modern mimarisiyle; sizi yalnızca yeni bir eve değil, hayalini kurduğunuz yaşama davet ediyor.',
       background: '/images/slide1.jpg',
       textColor: 'black',
     },
     {
-      id: 2,
+      id: 13,
       title: 'Hayalinizdeki Eve Konmak Bu Kadar Kolay!',
       subtitle: 'Nata Yaşam’da ev sahibi olmak artık bir hayal değil. Doğayla iç içe, sosyal yaşam alanlarıyla zenginleşmiş yeni bir yaşam biçimi, anahtarıyla birlikte size geliyor. Siz sadece karar verin, yeni hayatınız size doğru gelsin.',
       background: '/images/slide2.jpg',
