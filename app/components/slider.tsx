@@ -22,8 +22,8 @@
     // same as your slides array...
       {
       id: 12,
-      title: '',
-      subtitle: '',
+      title: ' ',
+      subtitle: ' ',
       background: '/slider/slider/banner1.jpg',
       textColor: 'black',
     },
