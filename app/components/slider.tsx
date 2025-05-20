@@ -22,16 +22,16 @@
     // same as your slides array...
       {
       id: 1,
-      title: 'adfadf',
-      subtitle: 'asfasf',
-      background: '/slider/slider/banner1.jpg',
+      title: '',
+      subtitle: '',
+      background: '/slider/slider/Banner1.jpg',
       textColor: 'black',
     },
         {
       id: 2,
       title: '',
       subtitle: '',
-      background: '/slider/slider/banner2.jpg',
+      background: '/slider/slider/Banner2.jpg',
       textColor: 'black',
     },
     {
