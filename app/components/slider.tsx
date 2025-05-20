@@ -20,6 +20,20 @@
 
   const slides: SlideData[] = [
     // same as your slides array...
+      {
+      id: 12,
+      title: '',
+      subtitle: '',
+      background: '/slider/slider/banner1.jpg',
+      textColor: 'black',
+    },
+        {
+      id: 13,
+      title: '',
+      subtitle: '',
+      background: '/slider/slider/banner2.jpg',
+      textColor: 'black',
+    },
     {
       id: 1,
       title: 'Sadece Eşyalarınızı Değil, Anılarınızı da Yerleştirin.',
@@ -112,16 +126,10 @@
   <div className="absolute top-20 right-6 md:right-16 z-20 hidden md:flex flex-col gap-4 w-[280px] md:w-[320px]">
     <div
       className="rounded-xl overflow-hidden shadow-md bg-cover bg-center relative h-[360px] w-full p-4 flex flex-col justify-start"
-      style={{ backgroundImage: "url('/images/leaves.png')" }}
+      style={{ backgroundImage: "url('/slider/slider/sagkutu.png')" }}
     >
       <div className="z-10 text-black">
-        <h3 className="text-md font-semibold leading-tight">
-          Yaşamın Yeni Tanımı:<br />Nata Yaşam
-        </h3>
-        <p className="text-xs mt-1 leading-snug text-black/80">
-          Doğayla iç içe, sosyal olanaklarla zenginleştirilmiş<br />
-          Nata Yaşam; sizi merkeze alan bir yaşam biçimidir.
-        </p>
+       
       </div>
     </div>
 
