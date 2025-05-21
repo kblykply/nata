@@ -1,8 +1,6 @@
-
-
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import {
   GoogleMap,
   Marker,
@@ -11,8 +9,6 @@ import {
 } from "@react-google-maps/api";
 import { FaFire, FaTrain } from "react-icons/fa";
 import { MarkerClusterer } from "@react-google-maps/api";
-
-
 interface Listing {
   link: string;
   type: "standard" | "featured";
@@ -31,8 +27,6 @@ interface Listing {
   }[];
   coords?: [number, number];
 }
-
-
 
 const listings: Listing[] = [
   {
@@ -172,15 +166,14 @@ const listings: Listing[] = [
     coords: [39.9379, 32.7075],
   },
 ];
-
 const containerStyle = {
   width: "100%",
   height: "100%",
 };
 
 export default function MapWithProjects() {
-  const [selectedListing, setSelectedListing] = useState(null);
-  const [activeMarker, setActiveMarker] = useState(null);
+  const [selectedListing, setSelectedListing] = useState<Listing | null>(null);
+  const [activeMarker, setActiveMarker] = useState<string | null>(null);
 
   const center = {
     lat: 39.9208,
@@ -188,27 +181,25 @@ export default function MapWithProjects() {
   };
 
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
   });
 
   if (!isLoaded) return <div>Harita yükleniyor...</div>;
 
   return (
-    <div className="flex flex-col md:flex-row h-screen">
-      {/* Sidebar List */}
+    <div className="flex h-screen">
       {!selectedListing ? (
-        <aside className="w-full md:w-[26rem] max-h-[50vh] md:max-h-none overflow-y-auto p-4 md:p-6 bg-white border-b md:border-r border-gray-200 shadow-lg">
-          <div className="space-y-6">
+<aside className="hidden md:block w-[26rem] overflow-y-auto p-6 bg-white border-r border-gray-200 shadow-lg">          <div className="space-y-6">
             {listings.map((listing) => (
               <div
                 key={listing.link}
                 onClick={() => setSelectedListing(listing)}
-                className="group cursor-pointer flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition bg-white"
+                className="group cursor-pointer flex items-center gap-4 rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition bg-white"
               >
                 <img
                   src={listing.image}
                   alt={listing.price}
-                  className="w-full sm:w-32 h-40 sm:h-28 object-cover aspect-video sm:rounded-l-xl"
+                  className="w-32 h-28 object-cover aspect-video rounded-l-xl"
                 />
                 <div className="flex flex-col py-2 pr-3">
                   <h3 className="text-base font-semibold text-gray-800">
@@ -242,7 +233,7 @@ export default function MapWithProjects() {
           </div>
         </aside>
       ) : (
-        <aside className="w-full md:w-[30rem] max-h-[50vh] md:max-h-none overflow-y-auto bg-white p-4 md:p-6 border-b md:border-r border-gray-200 shadow-xl">
+        <aside className="w-[30rem] overflow-y-auto bg-white p-6 border-r border-gray-200 shadow-xl">
           <button
             className="text-sm text-gray-400 mb-4 underline"
             onClick={() => setSelectedListing(null)}
@@ -284,68 +275,131 @@ export default function MapWithProjects() {
         </aside>
       )}
 
-      {/* Map */}
-      <main className="flex-1 h-[50vh] md:h-auto">
-        <GoogleMap
-          mapContainerStyle={{ width: "100%", height: "100%" }}
-          center={center}
-          zoom={14}
-          options={{
-            styles: [
-              { featureType: "landscape.man_made", elementType: "all", stylers: [{ color: "#faf5ed" }, { lightness: 0 }, { gamma: 1 }] },
-              { featureType: "poi.park", elementType: "geometry.fill", stylers: [{ color: "#bae5a6" }] },
-              { featureType: "road", elementType: "all", stylers: [{ weight: 1.0 }, { gamma: 1.8 }, { saturation: 0 }] },
-              { featureType: "road", elementType: "geometry.fill", stylers: [{ hue: "#ffb200" }] },
-              { featureType: "road.arterial", elementType: "geometry.fill", stylers: [{ lightness: 0 }, { gamma: 1 }] },
-              { featureType: "transit.station.airport", elementType: "all", stylers: [{ hue: "#b000ff" }, { saturation: 23 }, { lightness: -4 }, { gamma: 0.8 }] },
-              { featureType: "water", elementType: "all", stylers: [{ color: "#a0daf2" }] },
-              { featureType: "poi", elementType: "labels.icon", stylers: [{ visibility: "off" }] },
-              { featureType: "poi.business", elementType: "labels", stylers: [{ visibility: "off" }] },
-              { featureType: "poi.park", elementType: "labels", stylers: [{ visibility: "off" }] },
-            ],
-          }}
-        >
-          <MarkerClusterer>
-            {(clusterer) => (
-              <>
-                {listings
-                  .filter((l) => l.coords)
-                  .map((listing) => (
-                    <Marker
-                      key={listing.link}
-                      position={{ lat: listing.coords[0], lng: listing.coords[1] }}
-                      clusterer={clusterer}
-                      icon={{
-                        url: "/pin-red.png",
-                        scaledSize: new window.google.maps.Size(32, 32),
-                      }}
-                      onClick={() => {
-                        setSelectedListing(listing);
-                        setActiveMarker(listing.link);
-                      }}
-                    />
-                  ))}
-              </>
-            )}
-          </MarkerClusterer>
+      <main className="flex-1">
+       <GoogleMap
+  mapContainerStyle={containerStyle}
+  center={center}
+  zoom={14}
+  options={{
+    styles: [
+      {
+        featureType: "landscape.man_made",
+        elementType: "all",
+        stylers: [
+          { color: "#faf5ed" },
+          { lightness: 0 },
+          { gamma: 1 },
+        ],
+      },
+      {
+        featureType: "poi.park",
+        elementType: "geometry.fill",
+        stylers: [
+          { color: "#bae5a6" },
+        ],
+      },
+      {
+        featureType: "road",
+        elementType: "all",
+        stylers: [
+          { weight: 1.0 },
+          { gamma: 1.8 },
+          { saturation: 0 },
+        ],
+      },
+      {
+        featureType: "road",
+        elementType: "geometry.fill",
+        stylers: [
+          { hue: "#ffb200" },
+        ],
+      },
+      {
+        featureType: "road.arterial",
+        elementType: "geometry.fill",
+        stylers: [
+          { lightness: 0 },
+          { gamma: 1 },
+        ],
+      },
+      {
+        featureType: "transit.station.airport",
+        elementType: "all",
+        stylers: [
+          { hue: "#b000ff" },
+          { saturation: 23 },
+          { lightness: -4 },
+          { gamma: 0.8 },
+        ],
+      },
+      {
+        featureType: "water",
+        elementType: "all",
+        stylers: [
+          { color: "#a0daf2" },
+        ],
+      },
+      {
+  featureType: "poi",
+  elementType: "labels.icon",
+  stylers: [{ visibility: "off" }],
+},
+{
+  featureType: "poi.business",
+  elementType: "labels",
+  stylers: [{ visibility: "off" }],
+},
+{
+  featureType: "poi.park",
+  elementType: "labels",
+  stylers: [{ visibility: "off" }],
+}
+    ],
+    
+  }}
+>
+<MarkerClusterer>
+  {(clusterer) => (
+    <>
+      {listings
+        .filter((listing) => listing.coords)
+        .map((listing) => (
+          <Marker
+            key={listing.link}
+            position={{ lat: listing.coords![0], lng: listing.coords![1] }}
+            clusterer={clusterer}
+            icon={{
+              url: "/pin-red.png",
+              scaledSize: new window.google.maps.Size(32, 32),
+            }}
+            onClick={() => {
+              setSelectedListing(listing);
+              setActiveMarker(listing.link);
+            }}
+          />
+        ))}
+    </>
+  )}
+</MarkerClusterer>
 
-          {selectedListing?.coords && (
-            <InfoWindow
-              position={{
-                lat: selectedListing.coords[0],
-                lng: selectedListing.coords[1],
-              }}
-              onCloseClick={() => setSelectedListing(null)}
-            >
-              <div className="text-sm">
-                <h4 className="font-semibold">{selectedListing.price}</h4>
-                <p>
-                  {selectedListing.metro} — {selectedListing.time}
-                </p>
-              </div>
-            </InfoWindow>
-          )}
-        </GoogleMap>
+
+  {selectedListing && selectedListing.coords && (
+    <InfoWindow
+      position={{
+        lat: selectedListing.coords[0],
+        lng: selectedListing.coords[1],
+      }}
+      onCloseClick={() => setSelectedListing(null)}
+    >
+      <div className="text-sm">
+        <h4 className="font-semibold">{selectedListing.price}</h4>
+        <p>
+          {selectedListing.metro} — {selectedListing.time}
+        </p>
+      </div>
+    </InfoWindow>
+  )}
+</GoogleMap>
       </main>
     </div>
   );
