@@ -12,6 +12,28 @@ import {
 import { FaFire, FaTrain } from "react-icons/fa";
 import { MarkerClusterer } from "@react-google-maps/api";
 
+
+interface Listing {
+  link: string;
+  type: "standard" | "featured";
+  price: string;
+  label?: string;
+  metro: string;
+  time: string;
+  stats?: string[];
+  footer?: string;
+  image: string;
+  imageAlt?: string;
+  highlight?: string;
+  extra?: {
+    icon: string;
+    label: string;
+  }[];
+  coords?: [number, number];
+}
+
+
+
 const listings: Listing[] = [
   {
     link: "/rams-garden",
