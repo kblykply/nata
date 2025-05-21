@@ -89,8 +89,14 @@
           {/* Left - Logo & Menu */}
           <div className="flex items-center space-x-9 space-y-2">
             <Link href="/">
-              <Image src="/navbarLogo.png" alt="Nata Yaşam Logo" width={160} height={0} />
-            </Link>
+<Image
+  src="/navbarLogo.png"
+  alt="Nata Yaşam Logo"
+  width={0}
+  height={0}
+  sizes="(max-width: 768px) 140px, 180px"
+  className="w-36 sm:w-40 md:w-[160px] h-auto"
+/>            </Link>
 
   <nav className="hidden md:flex space-x-6 text-xs" style={{ fontFamily: 'Unbounded, sans-serif' }}>
 
@@ -166,7 +172,7 @@
           {/* Right Side */}
           <div className="flex items-center space-x-4">
           
-  <button className="flex items-center px-3 py-1.5 rounded-full text-sm bg-gray-100 hover:bg-gray-200">
+  <button className="flex items-center px-3 py-3 rounded-full text-sm bg-gray-100 hover:bg-gray-200">
     <Image
       src="/turkish-flag.png"   // Make sure this path matches your uploaded file
       alt="Turkish Flag"
@@ -177,22 +183,15 @@
     TR
   </button>
 
-            <button
-    className="bg-[#ab1e3b] text-white px-4 py-1 text-xs rounded-lg relative
-              md:px-4 md:py-1.5 md:text-sm md:rounded-xl"
-    style={{ fontFamily: "var(--font-heading)" }}
-  >
-    NAT-AI
-  </button>
-
+           
             {/* Notification */}
             <div className="relative">
               <button
                 aria-label="Bildirimler"
                 onClick={() => setShowNotifications(!showNotifications)}
-                className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center relative"
+                className="w-10 h-10 rounded-full bg-[#ab1e3b] hover:bg-gray-200 flex items-center justify-center relative"
               >
-                <Bell size={18} className="text-gray-700" />
+                <Bell size={18} className="text-white" />
                 <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
               </button>
 

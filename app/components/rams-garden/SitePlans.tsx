@@ -7,9 +7,9 @@ const hotspots = [
   {
     id: 1,
     label: "A Blok",
-    text: "Göz Alıcı Manzara, Kaliteli Yaşam",
+    text: "A Blok",
     image: "/RAMS- A BLOK.png",
-    info: "Göz Alıcı Manzara, Kaliteli Yaşam",
+    info: "A Blok",
     position: { top: "22%", left: "19%" },
   },
   {
@@ -17,7 +17,7 @@ const hotspots = [
     label: "B Blok",
     text: "Modern Mimari, Konforlu Yaşam",
     image: "/RAMS- B BLOK.png",
-    info: "Modern Mimari, Konforlu Yaşam",
+    info: "B Blok",
     position: { top: "38%", left: "20%" },
   },
   {
@@ -25,7 +25,7 @@ const hotspots = [
     label: "C Blok",
     text: "Doğayla İç İçe, Huzurlu Yaşam",
     image: "/RAMS- C BLOK.png",
-    info: "Doğayla İç İçe, Huzurlu Yaşam",
+    info: "C Blok",
     position: { top: "49%", left: "28%" },
   },
   {
@@ -33,7 +33,7 @@ const hotspots = [
     label: "D Blok",
     text: "Şehrin Kalbinde, Sakin Bir Yaşam",
     image: "/RAMS- D BLOK.png",
-    info: "Şehrin Kalbinde, Sakin Bir Yaşam",
+    info: "D Blok",
     position: { top: "60%", left: "40%" },
   },
   {
@@ -41,7 +41,7 @@ const hotspots = [
     label: "E Blok",
     text: "Geniş Alanlar, Ferah Yaşam",
     image: "/RAMS- E BLOK.png",
-    info: "Geniş Alanlar, Ferah Yaşam",
+    info: "E Blok",
     position: { top: "65%", left: "52%" },
   },
   {
@@ -49,7 +49,7 @@ const hotspots = [
     label: "F Blok",
     text: "Estetik Tasarım, Konforlu Yaşam",
     image: "/RAMS- F BLOK.png",
-    info: "Estetik Tasarım, Konforlu Yaşam",
+    info: "F Blok",
     position: { top: "66%", left: "68%" },
   },
   
@@ -57,7 +57,7 @@ const hotspots = [
     label: "G Blok",
     text: "Modern Mimari, Konforlu Yaşam",
     image: "/RAMS- G BLOK.png",
-    info: "Modern Mimari, Konforlu Yaşam",
+    info: "G Blok",
     position: { top: "50%", left: "74%" },
   },
   {
@@ -65,7 +65,7 @@ const hotspots = [
     label: "H Blok",
     text: "Şehrin Kalbinde, Sakin Bir Yaşam",
     image: "/RAMS- H BLOK.png",
-    info: "Şehrin Kalbinde, Sakin Bir Yaşam",
+    info: "H Blok",
     position: { top: "46%", left: "62%" },
   },
   {
@@ -73,7 +73,7 @@ const hotspots = [
     label: "I Blok",
     text: "Göz Alıcı Manzara, Kaliteli Yaşam",
     image: "/RAMS- I BLOK.png",
-    info: "Göz Alıcı Manzara, Kaliteli Yaşam",
+    info: "I Blok",
     position: { top: "39%", left: "51%" },
   },
   {
@@ -81,7 +81,7 @@ const hotspots = [
     label: "J Blok",
     text: "Doğayla İç İçe, Huzurlu Yaşam",
     image: "/RAMS- J BLOK.png",
-    info: "Doğayla İç İçe, Huzurlu Yaşam",
+    info: "J Blok",
     position: { top: "30%", left: "40%" },
   },
   {
@@ -89,7 +89,7 @@ const hotspots = [
     label: "K Blok",
     text: "Geniş Alanlar, Ferah Yaşam",
     image: "/RAMS-K BLOK.png",
-    info: "Geniş Alanlar, Ferah Yaşam",
+    info: "K Blok",
     position: { top: "20%", left: "30%" },
   },
   
@@ -98,30 +98,40 @@ const hotspots = [
   
 ];
 export default function SidePlans() {
-  const [hoveredId, setHoveredId] = useState<number | null>(null);
-  const hoveredImage = hotspots.find((h) => h.id === hoveredId)?.image || null;
+  const [hovered, setHovered] = useState<{ id: number; x: number; y: number } | null>(null);
+  const [hoveredImage, setHoveredImage] = useState<string | null>(null);
+
+  const handleMouseEnter = (e: React.MouseEvent, spot: Hotspot) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setHovered({
+      id: spot.id,
+      x: rect.left + rect.width / 2,
+      y: rect.top,
+    });
+    setHoveredImage(spot.image);
+  };
+
+  const handleMouseLeave = () => {
+    setHovered(null);
+    setHoveredImage(null);
+  };
 
   return (
     <section className="relative w-full bg-white">
-      {/* Top Text */}
+      {/* Header */}
       <div className="text-center max-w-4xl mx-auto py-12 md:py-16 px-4">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-wide text-gray-900">
           Yaşam Nerede <br /> Biz Orada.
         </h2>
         <p className="mt-4 text-sm md:text-base text-gray-700 leading-relaxed">
           Mega 1453, Ankara’nın kalbinde, Yenimahalle Orman Çiftliği Mahallesi’nde
-          şehrin ritmini yeniden tanımlayan eşsiz bir yaşam deneyimi sunuyor.
-          Toplamda 70.000 m²’lik geniş arsa alanında yükselen bu prestijli proje,
-          başkentin dokusuna doğa ile harmanlanmış bir soluk getiriyor. Özgün
-          mimarisi ve yaklaşık 36.000m² toplam peyzaj alanıyla modern yaşamı yeniden
-          tasarlayan Mega 1453, her biri yüksek yaşam standartlarına sahip toplam 715
-          konuttan (1.etap) oluşuyor.
+          şehrin ritmini yeniden tanımlayan eşsiz bir yaşam deneyimi sunuyor...
         </p>
       </div>
 
       {/* Image Container */}
       <div className="relative w-full max-w-6xl mx-auto px-4">
-        <div className="relative w-full aspect-[16/9] sm:aspect-[3/2] md:aspect-[2/1]">
+        <div className="relative w-full aspect-[563/358]">
           {/* Base Image */}
           <Image
             src="/rams-garden-bloklar.jpeg"
@@ -130,7 +140,7 @@ export default function SidePlans() {
             className="object-contain z-0"
           />
 
-          {/* Hovered Overlay */}
+          {/* Overlay Image on Hover */}
           {hoveredImage && (
             <Image
               src={hoveredImage}
@@ -140,30 +150,38 @@ export default function SidePlans() {
             />
           )}
 
-          {/* Hotspots */}
+          {/* Red Dots */}
           {hotspots.map((spot) => (
             <div
               key={spot.id}
-              className="absolute z-20"
-              style={{ ...spot.position, transform: "translate(-50%, -50%)" }}
-              onMouseEnter={() => setHoveredId(spot.id)}
-              onMouseLeave={() => setHoveredId(null)}
+              className="absolute z-30"
+              style={{
+                top: spot.position.top,
+                left: spot.position.left,
+                transform: "translate(-50%, -50%)",
+              }}
+              onMouseEnter={(e) => handleMouseEnter(e, spot)}
+              onMouseLeave={handleMouseLeave}
             >
-              <div className="bg-white px-3 py-1 sm:px-4 sm:py-2 rounded-full shadow text-xs sm:text-sm font-medium text-gray-800 border border-gray-200 whitespace-nowrap cursor-pointer hover:bg-gray-50 transition">
-                {spot.label}
-              </div>
-
-              {hoveredId === spot.id && (
-                <div className="absolute left-1/2 top-full mt-2 transform -translate-x-1/2 w-40 sm:w-48 bg-white border border-gray-200 shadow-lg rounded-lg p-2 sm:p-3 text-[10px] sm:text-xs text-gray-700 z-30">
-                  {spot.info.split("\n").map((line, i) => (
-                    <p key={i} className="mb-1">{line}</p>
-                  ))}
-                </div>
-              )}
+              <div className="w-3 h-3 sm:w-4 sm:h-4 bg-red-600 rounded-full border-2 border-white shadow hover:scale-125 transition-transform cursor-pointer" />
             </div>
           ))}
         </div>
       </div>
+
+      {/* Tooltip (fixed on screen) */}
+      {hovered && (
+        <div
+          className="fixed z-50 w-40 sm:w-48 bg-white border border-gray-300 shadow-2xl rounded-lg p-2 sm:p-3 text-[10px] sm:text-xs text-gray-800 pointer-events-none transition-opacity duration-300"
+          style={{
+            top: hovered.y - 48,
+            left: hovered.x,
+            transform: "translate(-50%, -100%)",
+          }}
+        >
+          {hotspots.find((h) => h.id === hovered.id)?.info}
+        </div>
+      )}
     </section>
   );
 }

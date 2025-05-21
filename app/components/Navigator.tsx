@@ -43,11 +43,11 @@ export default function ExpandableNavigator() {
   }, []);
 
   return (
-    <div
-      className={`fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 ease-in-out ${
-        isOpen ? "w-[90%] max-w-7xl" : "w-72"
-      }`}
-    >
+  <div
+  className={`fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 ease-in-out ${
+    isOpen ? "w-[90%] max-w-7xl" : "w-72"
+  } hidden sm:block`}
+>
       <div
         className={`flex items-center bg-gray-700 rounded-full shadow-lg transition-all duration-300 ease-in-out px-4 py-2`}
       >

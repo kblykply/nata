@@ -16,7 +16,7 @@ const listings = [
     specs: ["2+1", "117 m²", "31. Kat"],
     image: "/PRIME ORAN 2+1 TI╠çPC16-D1_D2 BLOK.png",
     imageAlt: "/prime-map.png",
-    link: "/prime-oran"
+    link: "/prime-oran-20"
   },
  
   
@@ -29,7 +29,7 @@ const listings = [
     specs: ["3+1", "140 m²", "14. Kat"],
     image: "/PRIME ORAN 3+1 TI╠çPB2B-A1 BLOK.png",
     imageAlt: "/prime-map.png",
-    link: "/prime-oran"
+    link: "/prime-oran-20"
   }
 ];
 

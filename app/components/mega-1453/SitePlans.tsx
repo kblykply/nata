@@ -1,11 +1,21 @@
 "use client";
 
+
 import Image from "next/image";
-import { useState } from "react";
+import { useRef, useState, useEffect } from "react";
+
+interface Hotspot {
+  id: number;
+  label: string;
+  info: string;
+  image: string;
+  position: { top: string; left: string };
+}
+
 
 
 const hotspots = [
-  { id: 0, label: "A Blok", text: "A Blok", image: "/mega-blok-0.png", info: "Mega 1454 A Blok", position: { top: "87%", left: "70%" } },
+  { id: 0, label: "A Blok", text: "A Blok", image: "/mega-blok-0.png", info: "Mega 1454 A Blok", position: { top: "70%", left: "70%" } },
   { id: 1, label: "B Blok", text: "B Blok", image: "/mega-blok-1.png", info: "Mega 1454 B Blok", position: { top: "55%", left: "79%" } },
   { id: 2, label: "C Blok", text: "C Blok", image: "/mega-blok-2.png", info: "Mega 1454 C Blok", position: { top: "28%", left: "73%" } },
   { id: 3, label: "D Blok", text: "D Blok", image: "/mega-blok-3.png", info: "Mega 1454 D Blok", position: { top: "72%", left: "47%" } },
@@ -20,41 +30,50 @@ const hotspots = [
   { id: 12, label: "M Blok", text: "M Blok", image: "/mega-blok-12.png", info: "Mega 1454 M Blok", position: { top: "27%", left: "45%" } },
   { id: 13, label: "N Blok", text: "N Blok", image: "/mega-blok-13.png", info: "Mega 1454 N Blok", position: { top: "32%", left: "10%" } },
   { id: 14, label: "O Blok", text: "O Blok", image: "/mega-blok-14.png", info: "Mega 1454 O Blok", position: { top: "29%", left: "25%" } },
-  { id: 15, label: "P Blok", text: "P Blok", image: "/mega-blok-15.png", info: "Mega 1454 P Blok", position: { top: "20%", left: "41%" } },
-  { id: 16, label: "Q Blok", text: "Q Blok", image: "/mega-blok-16.png", info: "Mega 1454 Q Blok", position: { top: "15%", left: "49%" } },
+  { id: 15, label: "P Blok", text: "P Blok", image: "/mega-blok-15.png", info: "Mega 1454 P Blok", position: { top: "25%", left: "41%" } },
+  { id: 16, label: "Q Blok", text: "Q Blok", image: "/mega-blok-16.png", info: "Mega 1454 Q Blok", position: { top: "20%", left: "49%" } },
   { id: 17, label: "R Blok", text: "R Blok", image: "/mega-blok-17.png", info: "Mega 1454 R Blok", position: { top: "23%", left: "15%" } },
-  { id: 18, label: "S Blok", text: "S Blok", image: "/mega-blok-18.png", info: "Mega 1454 S Blok", position: { top: "16%", left: "29%" } },
-  { id: 19, label: "T Blok", text: "T Blok", image: "/mega-blok-19.png", info: "Mega 1454 T Blok", position: { top: "12%", left: "42%" } },
+  { id: 18, label: "S Blok", text: "S Blok", image: "/mega-blok-18.png", info: "Mega 1454 S Blok", position: { top: "20%", left: "29%" } },
+  { id: 19, label: "T Blok", text: "T Blok", image: "/mega-blok-19.png", info: "Mega 1454 T Blok", position: { top: "20%", left: "42%" } },
 ];
 
 
   
-
 export default function SidePlans() {
-  const [hoveredId, setHoveredId] = useState<number | null>(null);
-  const hoveredImage = hotspots.find((h) => h.id === hoveredId)?.image || null;
+  const [hovered, setHovered] = useState<{ id: number; x: number; y: number } | null>(null);
+  const [hoveredImage, setHoveredImage] = useState<string | null>(null);
+
+  const handleMouseEnter = (e: React.MouseEvent, spot: Hotspot) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setHovered({
+      id: spot.id,
+      x: rect.left + rect.width / 2,
+      y: rect.top,
+    });
+    setHoveredImage(spot.image);
+  };
+
+  const handleMouseLeave = () => {
+    setHovered(null);
+    setHoveredImage(null);
+  };
 
   return (
     <section className="relative w-full bg-white">
-      {/* Top Text */}
+      {/* Header */}
       <div className="text-center max-w-4xl mx-auto py-12 md:py-16 px-4">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-wide text-gray-900">
           Yaşam Nerede <br /> Biz Orada.
         </h2>
         <p className="mt-4 text-sm md:text-base text-gray-700 leading-relaxed">
           Mega 1453, Ankara’nın kalbinde, Yenimahalle Orman Çiftliği Mahallesi’nde
-          şehrin ritmini yeniden tanımlayan eşsiz bir yaşam deneyimi sunuyor.
-          Toplamda 70.000 m²’lik geniş arsa alanında yükselen bu prestijli proje,
-          başkentin dokusuna doğa ile harmanlanmış bir soluk getiriyor. Özgün
-          mimarisi ve yaklaşık 36.000m² toplam peyzaj alanıyla modern yaşamı yeniden
-          tasarlayan Mega 1453, her biri yüksek yaşam standartlarına sahip toplam 715
-          konuttan (1.etap) oluşuyor.
+          şehrin ritmini yeniden tanımlayan eşsiz bir yaşam deneyimi sunuyor...
         </p>
       </div>
 
       {/* Image Container */}
       <div className="relative w-full max-w-6xl mx-auto px-4">
-        <div className="relative w-full aspect-[16/9] sm:aspect-[3/2] md:aspect-[2/1]">
+        <div className="relative w-full aspect-[563/358]">
           {/* Base Image */}
           <Image
             src="/mega-bloklar.jpeg"
@@ -63,7 +82,7 @@ export default function SidePlans() {
             className="object-contain z-0"
           />
 
-          {/* Hovered Overlay */}
+          {/* Overlay Image on Hover */}
           {hoveredImage && (
             <Image
               src={hoveredImage}
@@ -73,30 +92,38 @@ export default function SidePlans() {
             />
           )}
 
-          {/* Hotspots */}
+          {/* Red Dots */}
           {hotspots.map((spot) => (
             <div
               key={spot.id}
-              className="absolute z-20"
-              style={{ ...spot.position, transform: "translate(-50%, -50%)" }}
-              onMouseEnter={() => setHoveredId(spot.id)}
-              onMouseLeave={() => setHoveredId(null)}
+              className="absolute z-30"
+              style={{
+                top: spot.position.top,
+                left: spot.position.left,
+                transform: "translate(-50%, -50%)",
+              }}
+              onMouseEnter={(e) => handleMouseEnter(e, spot)}
+              onMouseLeave={handleMouseLeave}
             >
-              <div className="bg-white px-3 py-1 sm:px-4 sm:py-2 rounded-full shadow text-xs sm:text-sm font-medium text-gray-800 border border-gray-200 whitespace-nowrap cursor-pointer hover:bg-gray-50 transition">
-                {spot.label}
-              </div>
-
-              {hoveredId === spot.id && (
-                <div className="absolute left-1/2 top-full mt-2 transform -translate-x-1/2 w-40 sm:w-48 bg-white border border-gray-200 shadow-lg rounded-lg p-2 sm:p-3 text-[10px] sm:text-xs text-gray-700 z-30">
-                  {spot.info.split("\n").map((line, i) => (
-                    <p key={i} className="mb-1">{line}</p>
-                  ))}
-                </div>
-              )}
+              <div className="w-3 h-3 sm:w-4 sm:h-4 bg-red-600 rounded-full border-2 border-white shadow hover:scale-125 transition-transform cursor-pointer" />
             </div>
           ))}
         </div>
       </div>
+
+      {/* Tooltip (fixed on screen) */}
+      {hovered && (
+        <div
+          className="fixed z-50 w-40 sm:w-48 bg-white border border-gray-300 shadow-2xl rounded-lg p-2 sm:p-3 text-[10px] sm:text-xs text-gray-800 pointer-events-none transition-opacity duration-300"
+          style={{
+            top: hovered.y - 48,
+            left: hovered.x,
+            transform: "translate(-50%, -100%)",
+          }}
+        >
+          {hotspots.find((h) => h.id === hovered.id)?.info}
+        </div>
+      )}
     </section>
   );
 }

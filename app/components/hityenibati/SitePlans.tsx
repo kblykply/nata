@@ -70,14 +70,13 @@ export default function SidePlans() {
               <div className="bg-white px-3 py-1 sm:px-4 sm:py-2 rounded-full shadow text-xs sm:text-sm font-medium text-gray-800 border border-gray-200 whitespace-nowrap cursor-pointer hover:bg-gray-50 transition">
                 {spot.label}
               </div>
-
-              {hoveredId === spot.id && (
-                <div className="absolute left-1/2 top-full mt-2 transform -translate-x-1/2 w-40 sm:w-48 bg-white border border-gray-200 shadow-lg rounded-lg p-2 sm:p-3 text-[10px] sm:text-xs text-gray-700 z-30">
-                  {spot.info.split("\n").map((line, i) => (
-                    <p key={i} className="mb-1">{line}</p>
-                  ))}
-                </div>
-              )}
+        {hoveredId === spot.id && (
+  <div className="absolute left-1/2 bottom-full mb-2 transform -translate-x-1/2 w-40 sm:w-48 bg-white border border-gray-200 shadow-lg rounded-lg p-2 sm:p-3 text-[10px] sm:text-xs text-gray-700 z-30">
+    {spot.info.split("\n").map((line, i) => (
+      <p key={i} className="mb-1">{line}</p>
+    ))}
+  </div>
+)}
             </div>
           ))}
         </div>

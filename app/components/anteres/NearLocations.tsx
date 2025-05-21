@@ -458,22 +458,24 @@ const getCategoryPinUrl = (categoryId: string): string =>
         )}
 
         {selectedSwitch === "altyapi" && (
-          <motion.section
-            key="altyapi"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 50 }}
-            transition={{ duration: 0.4 }}
-            className="flex items-center justify-center flex-1 bg-white text-center p-10"
-          >
-            <div>
-              <img
-                src="/antareskonutlari.jpg"
-                alt="Altyapı Görseli"
-                className="mx-auto rounded w-3/3"
-              />
-            </div>
-          </motion.section>
+       <motion.section
+  key="altyapi"
+  initial={{ opacity: 0, x: -50 }}
+  animate={{ opacity: 1, x: 0 }}
+  exit={{ opacity: 0, x: 50 }}
+  transition={{ duration: 0.4 }}
+  className="flex items-center justify-center flex-1 bg-white text-center p-0"
+>
+  <div className="overflow-x-auto md:overflow-visible">
+    <div className="w-[200%] md:w-auto"> {/* Zoomed width for mobile */}
+      <img
+        src="/antareskonutlari.jpg"
+        alt="Altyapı Görseli"
+        className="mx-auto rounded w-full"
+      />
+    </div>
+  </div>
+</motion.section>
         )}
       </AnimatePresence>
     </div>

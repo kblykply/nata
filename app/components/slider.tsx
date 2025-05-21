@@ -32,7 +32,7 @@ const slides: SlideData[] = [
     title: '',
     subtitle: '',
     background: '/slider/slider/Banner2.jpg',
-    mobileBackground: '/slider/slider/BannerMobil.jpg',
+    mobileBackground: '/slider/slider/mobil2.jpg',
     textColor: 'black',
   },
 

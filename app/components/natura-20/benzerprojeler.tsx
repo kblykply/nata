@@ -17,7 +17,7 @@ const listings = [
     specs: ["2+1 Flat", "80 m²", "1. Bodrum Kat"],
     image: "/NATURA I╠çNCEK 2+1.png",
     imageAlt: "/natura-map.png",
-    link: "/natura-incek"
+    link: "/natura-20"
   },
 
  
@@ -30,7 +30,7 @@ const listings = [
     specs: ["3+1", "144 m²", "3. Kat"],
     image: "/NATURA I╠çNCEK 2+1.png",
     imageAlt: "/natura-map.png",
-    link: "/natura-incek"
+    link: "/natura-20"
   },
   
   {
@@ -42,7 +42,7 @@ const listings = [
     specs: ["4+1", "154 m²", "4. Kat"],
     image: "/NATURA I╠çNCEK 2+1.png",
     imageAlt: "/natura-map.png",
-    link: "/natura-incek"
+    link: "/natura-20"
   }
 ];
 

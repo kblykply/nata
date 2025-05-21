@@ -34,7 +34,6 @@ const cards = [
     subtitle: "Projesyonel Ekibimizle",
   },
 ];
-
 export default function InfoCardsSection() {
   return (
     <section className="w-full bg-white py-12 px-4">
@@ -42,9 +41,9 @@ export default function InfoCardsSection() {
         {cards.map((card) => (
           <div
             key={card.id}
-            className={`relative ${
-              card.wide ? "w-115" : "w-59"
-            } h-52 rounded-lg overflow-hidden shadow-sm ${
+            className={`relative w-full ${
+              card.wide ? "md:w-115" : "md:w-59"
+            } h-60 md:h-52 rounded-lg overflow-hidden shadow-sm ${
               card.type === "icon" ? "bg-gray-50 flex flex-col justify-between p-4" : ""
             }`}
           >
@@ -72,7 +71,7 @@ export default function InfoCardsSection() {
                     <p className="text-xs text-gray-400 mt-1">{card.subtitle}</p>
                   )}
                 </div>
-                <div className="w-25 h-25 mx-auto">
+                <div className="w-20 h-20 mx-auto">
                   <Image
                     src={card.icon}
                     alt="Icon"

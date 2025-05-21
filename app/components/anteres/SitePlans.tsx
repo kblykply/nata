@@ -111,13 +111,14 @@ export default function SidePlans() {
                 {spot.label}
               </div>
 
-              {hoveredId === spot.id && (
-                <div className="absolute left-1/2 top-full mt-2 transform -translate-x-1/2 w-40 sm:w-48 bg-white border border-gray-200 shadow-lg rounded-lg p-2 sm:p-3 text-[10px] sm:text-xs text-gray-700 z-30">
-                  {spot.info.split("\n").map((line, i) => (
-                    <p key={i} className="mb-1">{line}</p>
-                  ))}
-                </div>
-              )}
+           {hoveredId === spot.id && (
+  <div className="absolute left-1/2 bottom-full mb-2 transform -translate-x-1/2 w-40 sm:w-48 bg-white border border-gray-200 shadow-lg rounded-lg p-2 sm:p-3 text-[10px] sm:text-xs text-gray-700 z-30">
+    {spot.info.split("\n").map((line, i) => (
+      <p key={i} className="mb-1">{line}</p>
+    ))}
+  </div>
+)}
+
             </div>
           ))}
         </div>

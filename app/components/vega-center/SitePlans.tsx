@@ -37,6 +37,7 @@ const hotspots = [
     position: { top: "60%", left: "35%" },
   },
 ];
+
 export default function SidePlans() {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
   const hoveredImage = hotspots.find((h) => h.id === hoveredId)?.image || null;
@@ -74,7 +75,7 @@ export default function SidePlans() {
             />
           )}
 
-          {/* Hotspots */}
+          {/* Buttons */}
           {hotspots.map((spot) => (
             <div
               key={spot.id}
@@ -83,12 +84,14 @@ export default function SidePlans() {
               onMouseEnter={() => setHoveredId(spot.id)}
               onMouseLeave={() => setHoveredId(null)}
             >
-              <div className="bg-white px-3 py-1 sm:px-4 sm:py-2 rounded-full shadow text-xs sm:text-sm font-medium text-gray-800 border border-gray-200 whitespace-nowrap cursor-pointer hover:bg-gray-50 transition">
+              {/* Label Button */}
+              <div className="bg-white px-3 py-1 sm:px-4 sm:py-2 rounded-full shadow text-xs sm:text-sm font-medium text-gray-800 border border-gray-200 whitespace-nowrap cursor-pointer hover:bg-gray-100 transition">
                 {spot.label}
               </div>
 
+              {/* Info Box */}
               {hoveredId === spot.id && (
-                <div className="absolute left-1/2 top-full mt-2 transform -translate-x-1/2 w-40 sm:w-48 bg-white border border-gray-200 shadow-lg rounded-lg p-2 sm:p-3 text-[10px] sm:text-xs text-gray-700 z-30">
+                <div className="absolute left-1/2 bottom-full mb-2 transform -translate-x-1/2 w-40 sm:w-48 bg-white border border-gray-200 shadow-xl rounded-lg p-2 sm:p-3 text-[10px] sm:text-xs text-gray-700 z-30">
                   {spot.info.split("\n").map((line, i) => (
                     <p key={i} className="mb-1">{line}</p>
                   ))}

@@ -15,8 +15,8 @@ export default function ContactQrSection() {
 
   const qrTabs = [
     { id: "whatsapp", icon: "/face-insta-wp-01.png", qr: "/nata-telefo-qr.png" },
-    { id: "facebook", icon: "/face-insta-wp-02.png", qr: "/nata-facebook-qr.png" },
-    { id: "instagram", icon: "/face-insta-wp-01.png", qr: "/nata-instagram-qr.png" },
+    { id: "facebook", icon: "/face-insta-wp-03.png", qr: "/nata-facebook-qr.png" },
+    { id: "instagram", icon: "/face-insta-wp-02.png", qr: "/nata-instagram-qr.png" },
   ];
 
   const activeQr = qrTabs.find(tab => tab.id === selectedTab)?.qr || "/default-qr.png";
