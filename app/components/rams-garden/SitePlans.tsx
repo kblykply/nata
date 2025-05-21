@@ -2,6 +2,17 @@
 
 import Image from "next/image";
 import { useState } from "react";
+type Hotspot = {
+  id: number;
+  label: string;
+  text: string;
+  image: string;
+  info: string;
+  position: {
+    top: string;
+    left: string;
+  };
+};
 
 const hotspots = [
   {
