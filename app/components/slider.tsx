@@ -24,7 +24,7 @@ const slides: SlideData[] = [
     title: '',
     subtitle: '',
     background: '/slider/slider/Banner1.jpg',
-    mobileBackground: '/slider/slider/BannerMobil.jpg',
+    mobileBackground: '/slider/slider/m1.jpg',
     textColor: 'black',
   },
   {
@@ -32,7 +32,7 @@ const slides: SlideData[] = [
     title: '',
     subtitle: '',
     background: '/slider/slider/Banner2.jpg',
-    mobileBackground: '/slider/slider/mobil2.jpg',
+    mobileBackground: '/slider/slider/BannerMobil.jpg',
     textColor: 'black',
   },
 
@@ -51,9 +51,9 @@ export default function HeroSlider() {
   }, []);
 
   return (
-    <div className="flex flex-col md:flex-row w-full h-screen">
+    <div className={`${isMobile ? "flex flex-col h-[600px]" : "flex flex-col md:flex-row w-full h-screen"}`}>
       {/* Swiper - full width on mobile, 78% on desktop */}
-      <div className="w-full md:w-[78%] h-full relative">
+      <div className={`${isMobile ? "h-[600px]" : "w-full md:w-[78%] h-full relative"}`}>
         <Swiper
           modules={[Pagination, Autoplay]}
           autoplay={{ delay: 5000, disableOnInteraction: false }}
@@ -63,7 +63,7 @@ export default function HeroSlider() {
         >
           {slides.map((slide) => (
             <SwiperSlide key={slide.id}>
-              <div className="relative w-full h-full">
+              <div className={`${isMobile ? "flex relative h-[550px]" : "relative  w-full h-full"}`}>
                 <Image
                   src={
                     isMobile && slide.mobileBackground
@@ -72,10 +72,10 @@ export default function HeroSlider() {
                   }
                   alt={slide.title}
                   fill
-                  className="object-cover object-center"
+                  className={`${isMobile ? 'object-contain object-top bg-transparent' : 'object-cover'} object-center ${!isMobile ? 'bg-transparent' : ''}`}
                   priority
                 />
-                <div className="relative z-10 h-full w-full flex items-start pt-20 px-4 sm:px-6 md:px-12 lg:px-16">
+                <div className='relative z-10 h-full  w-full flex items-start pt-20  px-4 sm:px-6 md:px-12 lg:px-16'>
                   <div
                     className={`max-w-xl space-y-6 ${
                       slide.textColor === 'white' ? 'text-white' : 'text-black'
@@ -91,7 +91,7 @@ export default function HeroSlider() {
         </Swiper>
 
         {/* Dots */}
-        <div className="absolute bottom-6 left-4 flex items-center gap-2 z-20">
+        <div className={`${isMobile ? "absolute bottom-42 left-4 gap-2 z-20 flex items-center" : "absolute bottom-6 left-4 flex items-center gap-2 z-20"}`}>
           {slides.map((_, i) => (
             <button
               key={i}
