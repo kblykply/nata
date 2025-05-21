@@ -10,8 +10,8 @@ export default function NaturaHero() {
     >
       {/* Left Content */}
       <div className="flex-1 relative z-10 h-full flex items-center">
-        <div className="w-full px-6 md:px-20 py-12 backdrop-brightness-100 ">
-          <div className="max-w-3xl mx-auto flex flex-col justify-between h-full">
+        <div className="w-full px-4 md:px-10 py-12 backdrop-brightness-100">
+          <div className="max-w-3xl ml-0 md:ml-0 flex flex-col justify-between h-full text-left items-start">
             {/* Top Titles */}
             <div>
               <h1 className="text-4xl md:text-6xl font-semibold text-gray-900">Natura İncek</h1>
@@ -38,8 +38,8 @@ export default function NaturaHero() {
       </div>
 
       {/* Right Info Box */}
-<div className="absolute right-10 top-1/2 transform -translate-y-1/2 md:max-w-sm bg-[#98463c] text-white p-6 rounded-lg z-10">   
-     <h3 className="text-lg font-semibold mb-2">Modern Yaşamın Sessiz Yansıması</h3>
+      <div className="relative md:absolute md:right-5 md:top-1/2 md:transform md:-translate-y-1/2 w-full md:max-w-sm bg-[#98463c] text-white p-6 rounded-none md:rounded-lg z-10 mt-8 md:mt-0">
+        <h3 className="text-lg font-semibold mb-2">Modern Yaşamın Sessiz Yansıması</h3>
         <p className="text-sm mb-4">
           İncek’in doğal dokusuyla uyumlu, fonksiyonel tasarımı ve konforun bir arada sunulduğu seçkin bir yaşam alanı.
         </p>
