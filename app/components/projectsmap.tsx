@@ -42,7 +42,7 @@ const listings: Listing[] = [
     imageAlt: "/RAMS GARDEN - ARKA.jpg",
     highlight: "",
     extra: [],
-    coords: [40.9934, 28.8648],
+    coords: [41.00792, 28.88038],
   },
   {
     link: "/vega-center",
@@ -61,7 +61,7 @@ const listings: Listing[] = [
       { icon: "", label: "Açık Avm Konsepti" },
       { icon: "", label: "Business Class" },
     ],
-    coords: [39.9097, 32.8604],
+    coords: [39.91392, 32.76720],
   },
   {
     link: "/goat-villas",
@@ -76,7 +76,7 @@ const listings: Listing[] = [
     imageAlt: "/GOAT VILLAS BİLKENT-ARKA.jpg",
     highlight: "",
     extra: [],
-    coords: [39.8636, 32.7491],
+    coords: [39.85248, 32.75719],
   },
   {
     link: "/vega-otonomi",
@@ -91,7 +91,7 @@ const listings: Listing[] = [
     imageAlt: "/OTONOMI - ARKA.jpg",
     highlight: "",
     extra: [],
-    coords: [39.9482, 32.8533],
+    coords: [39.97231, 32.59874],
   },
   {
     link: "/mega-1453",
@@ -110,7 +110,7 @@ const listings: Listing[] = [
       { icon: "", label: "Rezidans Projesi" },
       { icon: "", label: "Ulaşım Imkanları" },
     ],
-    coords: [39.9750, 32.7545],
+    coords: [39.94720, 32.77310],
   },
   {
     link: "/anteres",
@@ -129,7 +129,7 @@ const listings: Listing[] = [
       { icon: "", label: "52.515 ₺ / ay" },
       { icon: "", label: "İş & Yaşam" },
     ],
-    coords: [39.9811, 32.7532],
+    coords: [39.97105, 32.81907],
   },
   {
     link: "/hityenibati",
@@ -144,7 +144,7 @@ const listings: Listing[] = [
     imageAlt: "/HİTYENİBATI-ARKA.jpg",
     highlight: "",
     extra: [],
-    coords: [39.9685, 32.7349],
+    coords: [39.98404, 32.65880],
   },
   {
     link: "/mega-sasmaz",
@@ -163,7 +163,7 @@ const listings: Listing[] = [
       { icon: "", label: "Sanayi Bölgesi" },
       { icon: "", label: "Business Class" },
     ],
-    coords: [39.9379, 32.7075],
+    coords: [39.92855, 32.71991],
   },
 ];
 const containerStyle = {
