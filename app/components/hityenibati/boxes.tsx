@@ -17,7 +17,7 @@ const cards = [
     type: "icon",
     title: "Belgeleri İndirin",
     highlight: "Nata Yaşam Projeleri",
-    icon: "/vegacenter-klasor.png",
+    icon: "/x.png",
   },
   {
     id: 3,
@@ -74,12 +74,12 @@ export default function InfoCardsSection() {
                     <p className="text-xs text-gray-400 mt-1">{card.subtitle}</p>
                   )}
                 </div>
-                <div className="w-20 h-20 mx-auto">
+                <div className="w-24 h-24 mx-auto">
                   <Image
                     src={card.icon}
                     alt="Icon"
-                    width={100}
-                    height={100}
+                    width={200}
+                    height={200}
                     className="object-contain"
                   />
                 </div>

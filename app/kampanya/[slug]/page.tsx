@@ -41,23 +41,71 @@ export default function KampanyaDetailPage({ params }: { params: Promise<{ slug:
         )}
       </div>
 
-      {/* Content Sections */}
-      <div className="max-w-5xl mx-auto px-6 py-12 space-y-10">
-        {kampanya.content?.map((section, index) => (
-          <div key={index}>
-            <h2 className="text-3xl font-semibold text-gray-800">{section.title}</h2>
-            {Array.isArray(section.text) ? (
-              <ul className="text-2xl list-disc pl-6 space-y-2 text-sm text-gray-700 mt-2">
-                {section.text.map((item, i) => (
-                  <li key={i}>{item}</li>
-                ))}
-              </ul>
-            ) : (
-              <p className="text-2xl text-gray-600 mt-2">{section.text}</p>
-            )}
+      {/* First One Section - Sadece varsa göster */}
+      {kampanya.firstOne && (
+        <div className='w-full flex items-center justify-center'>
+          <div className='max-w-5xl w-full px-6 flex items-center py-10'>
+            <p className='text-sm font-medium'>{kampanya.firstOne}</p>
           </div>
-        ))}
-      </div>
+        </div>
+      )}
+
+      {/* Gray Text Section - Sadece varsa göster */}
+      {kampanya.grayText && (
+        <div className='w-full flex mb-10 items-center justify-center'>
+          <div className='w-full md:w-8/12 h-auto md:h-[150px] text-center bg-gray-200 flex items-center justify-center p-6 md:p-0'>
+            <p className='text-base md:text-lg w-full md:w-full font-semibold text-black whitespace-pre-line'>{kampanya.grayText}</p>
+          </div>
+        </div>
+      )}
+      {/* Content Sections */}
+      {kampanya.content && kampanya.content.length > 0 && (
+        <div className="max-w-5xl mx-auto px-6 py-12 space-y-10">
+          {kampanya.content.map((section, index) => (
+            <div key={index}>
+              <h2 className="text-3xl font-semibold text-gray-800">{section.title}</h2>
+              {Array.isArray(section.text) ? (
+                <ol className="text-2xl py-2 space-y-2 text-sm text-gray-700 mt-2">
+                  {section.text.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ol>
+              ) : (
+                <p className="text-2xl text-gray-600 mt-2">{section.text}</p>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+
+      {kampanya.secondText && (
+        <div className='w-full flex items-center justify-center'>
+          <div className='max-w-5xl w-full px-6 flex items-center py-10'>
+            <p className='text-sm font-medium' dangerouslySetInnerHTML={{ __html: kampanya.secondText }} />
+          </div>
+        </div>
+      )}
+
+
+      {/* Next Content Section - Sadece varsa göster */}
+      {kampanya.nextContent && kampanya.nextContent.length > 0 && (
+        <div className="max-w-5xl mx-auto px-6 py-12 space-y-10">
+          {kampanya.nextContent.map((section, index) => (
+            <div key={index}>
+              <h2 className="text-3xl font-semibold text-gray-800">{section.title}</h2>
+              {Array.isArray(section.text) ? (
+                <ol className="text-2xl py-2 space-y-2 text-sm text-gray-700 mt-2">
+                  {section.text.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ol>
+              ) : (
+                <p className="text-2xl text-gray-600 mt-2">{section.text}</p>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
