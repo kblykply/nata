@@ -94,6 +94,17 @@ export default function Header({
     }, 200);
   };
 
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('tr-TR', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+  };
+
   return (
     <header className="fixed w-full px-10 py-5 bg-white shadow-sm sticky top-0 z-[100]">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -222,7 +233,7 @@ export default function Header({
                       <div>
                         <p className="text-sm text-gray-700">{note.message}</p>
                         <span className="text-xs text-gray-400">
-                          {note.time}
+                          {formatDate(note.time)}
                         </span>
                       </div>
                     </li>

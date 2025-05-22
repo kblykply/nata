@@ -13,6 +13,13 @@ export default function ContactQrSection() {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
 
+  const isFormValid = () => {
+    if (!name.trim() || !phone.trim()) return false;
+    const cleanPhone = phone.replace(/\D/g, '');
+    const phoneRegex = /^(0|90)?[0-9]{10}$/;
+    return phoneRegex.test(cleanPhone);
+  };
+
   const qrTabs = [
     { id: "whatsapp", icon: "/face-insta-wp-01.png", qr: "/nata-telefo-qr.png" },
     { id: "facebook", icon: "/face-insta-wp-03.png", qr: "/nata-facebook-qr.png" },
@@ -21,16 +28,44 @@ export default function ContactQrSection() {
 
   const activeQr = qrTabs.find(tab => tab.id === selectedTab)?.qr || "/default-qr.png";
 
+  const validateForm = () => {
+    if (!name.trim()) {
+      setError("Lütfen adınızı ve soyadınızı giriniz.");
+      return false;
+    }
+    if (!phone.trim()) {
+      setError("Lütfen telefon numaranızı giriniz.");
+      return false;
+    }
+    // Telefon numarası validasyonu - 0 veya +90 ile başlayan 10 haneli numaralar
+    const cleanPhone = phone.replace(/\D/g, '');
+    const phoneRegex = /^(0|90)?[0-9]{10}$/;
+    if (!phoneRegex.test(cleanPhone)) {
+      setError("Lütfen geçerli bir telefon numarası giriniz. Örnek: 05520295752");
+      return false;
+    }
+    return true;
+  };
+
   const handleSubmit = async () => {
-    setLoading(true);
     setError("");
     setSuccess(false);
+
+    if (!validateForm()) {
+      return;
+    }
+
+    setLoading(true);
 
     try {
       const res = await fetch('/api/contact', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, phone, message: message || "Web form mesajı" }),
+        body: JSON.stringify({ 
+          name, 
+          phone, 
+          message: message || "Web form mesajı" 
+        }),
       });
 
       const data = await res.json();
@@ -41,10 +76,10 @@ export default function ContactQrSection() {
         setPhone("");
         setMessage("");
       } else {
-        setError("Gönderim başarısız oldu.");
+        setError(data.error || "Gönderim başarısız oldu. Lütfen tekrar deneyin.");
       }
     } catch (err) {
-      setError("Sunucu hatası, lütfen tekrar deneyin.");
+      setError("Sunucu hatası, lütfen daha sonra tekrar deneyin.");
     } finally {
       setLoading(false);
     }
@@ -140,7 +175,9 @@ export default function ContactQrSection() {
             <button
               onClick={handleSubmit}
               disabled={loading}
-              className="px-10 py-4 bg-[#c2b8be] text-white rounded-full text-sm hover:opacity-90 transition disabled:opacity-50"
+              className={`px-10 py-4 text-white rounded-full text-sm hover:opacity-90 transition disabled:opacity-50 ${
+                isFormValid() ? 'bg-[#ab1e3b]' : 'bg-[#c2b8be]'
+              }`}
             >
               {loading ? "Gönderiliyor..." : "Gönder"}
             </button>
