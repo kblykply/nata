@@ -129,7 +129,7 @@ buluşuyor.      </p>
     {i === 0 ? (
       // If it's the first slide, render a link
       <a
-        href="/vega-center"   // <-- Change this URL to your target link
+        href="#"   // <-- Change this URL to your target link
         className="absolute   left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-black text-sm text-white px-5 py-2 rounded-full shadow"
       >
         Sunuma Git

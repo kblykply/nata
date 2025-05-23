@@ -29,7 +29,7 @@ const AboutContentSection = () => {
             Nata Holding güvencesiyle hayata geçirilen Nata Yaşam, sadece konut projeleri geliştiren bir marka olmanın ötesine geçerek, yaşamın her alanına dokunan; modern ve sürdürülebilir projelere imza atmaktadır. Türkiye’nin dört bir yanında; konut, villa, alışveriş merkezi, turizm, sağlık ve sosyal yaşam alanlarını bir araya getiren çok yönlü projelerimizle, geleceğin şehircilik anlayışını bugünden sunuyoruz.
           </p>
 
-          <div className="flex flex-wrap md:flex-nowrap justify-center gap-10">
+          <div className="flex flex-wrap md:flex-nowrap justify-start gap-10">
       {/* Icon 1 */}
       <div className="flex flex-col items-center">
         <div className="bg-gray-100 p-6 rounded-2xl flex items-center justify-center w-[100px] h-[100px]">
