@@ -8,8 +8,8 @@ import { FaFire, FaTrain } from "react-icons/fa";
 import { FiPlus } from "react-icons/fi";
 
 interface Listing {
-  id?: string;
-  title?: string;
+  id: string; 
+    title?: string;
   price: string;
   currency?: string;
   location?: string;
@@ -207,16 +207,16 @@ export default function ProjectListingSection() {
                   <button
                     onClick={(e) => {
                       e.preventDefault();
-                      toggleFavorite(item.link);
+                      toggleFavorite(item.id);
                     }}
                     className={`w-7 h-7 text-sm rounded-full flex items-center justify-center border transition ${
-                      isFavorite(item.link)
+                      isFavorite(item.id)
                         ? "text-red-500 border-red-400 bg-white"
                         : "text-gray-500 border-gray-300 bg-white"
                     }`}
                     title="Favorilere ekle"
                   >
-                    {isFavorite(item.link) ? "❤️" : "🤍"}
+                    {isFavorite(item.id) ? "❤️" : "🤍"}
                   </button>
                 </div>
 
