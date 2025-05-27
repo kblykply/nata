@@ -11,7 +11,6 @@ import "swiper/css/pagination";
 
 export default function ContactQrSection() {
   const [selectedTab, setSelectedTab] = useState("whatsapp");
-
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
@@ -20,7 +19,7 @@ export default function ContactQrSection() {
   const [error, setError] = useState("");
   const [recaptchaToken, setRecaptchaToken] = useState("");
   const recaptchaRef = useRef<ReCAPTCHA>(null);
-  const swiperRef = useRef<SwiperCore>();
+  const swiperRef = useRef<SwiperCore | null>(null); // ✅ Fix: provide initial value
 
   const qrTabs = [
     { id: "whatsapp", icon: "/face-insta-wp-01.png", qr: "/nata-telefo-qr.png" },
