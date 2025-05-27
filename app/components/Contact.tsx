@@ -1,7 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import SwiperCore from "swiper";
+import "swiper/css";
+import "swiper/css/pagination";
 
 export default function ContactQrSection() {
   const [selectedTab, setSelectedTab] = useState("whatsapp");
@@ -12,21 +18,15 @@ export default function ContactQrSection() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
-
-  const isFormValid = () => {
-    if (!name.trim() || !phone.trim()) return false;
-    const cleanPhone = phone.replace(/\D/g, '');
-    const phoneRegex = /^(0|90)?[0-9]{10}$/;
-    return phoneRegex.test(cleanPhone);
-  };
+  const [recaptchaToken, setRecaptchaToken] = useState("");
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const swiperRef = useRef<SwiperCore>();
 
   const qrTabs = [
     { id: "whatsapp", icon: "/face-insta-wp-01.png", qr: "/nata-telefo-qr.png" },
-    { id: "facebook", icon: "/face-insta-wp-03.png", qr: "/nata-facebook-qr.png" },
     { id: "instagram", icon: "/face-insta-wp-02.png", qr: "/nata-instagram-qr.png" },
+    { id: "facebook", icon: "/face-insta-wp-03.png", qr: "/nata-facebook-qr.png" },
   ];
-
-  const activeQr = qrTabs.find(tab => tab.id === selectedTab)?.qr || "/default-qr.png";
 
   const validateForm = () => {
     if (!name.trim()) {
@@ -37,11 +37,14 @@ export default function ContactQrSection() {
       setError("Lütfen telefon numaranızı giriniz.");
       return false;
     }
-    // Telefon numarası validasyonu - 0 veya +90 ile başlayan 10 haneli numaralar
-    const cleanPhone = phone.replace(/\D/g, '');
+    const cleanPhone = phone.replace(/\D/g, "");
     const phoneRegex = /^(0|90)?[0-9]{10}$/;
     if (!phoneRegex.test(cleanPhone)) {
       setError("Lütfen geçerli bir telefon numarası giriniz. Örnek: 05520295752");
+      return false;
+    }
+    if (!recaptchaToken) {
+      setError("Lütfen reCAPTCHA doğrulamasını tamamlayın.");
       return false;
     }
     return true;
@@ -51,20 +54,19 @@ export default function ContactQrSection() {
     setError("");
     setSuccess(false);
 
-    if (!validateForm()) {
-      return;
-    }
+    if (!validateForm()) return;
 
     setLoading(true);
 
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ 
-          name, 
-          phone, 
-          message: message || "Web form mesajı" 
+        body: JSON.stringify({
+          name,
+          phone,
+          message: message || "Web form mesajı",
+          recaptchaToken,
         }),
       });
 
@@ -75,10 +77,12 @@ export default function ContactQrSection() {
         setName("");
         setPhone("");
         setMessage("");
+        setRecaptchaToken("");
+        recaptchaRef.current?.reset();
       } else {
         setError(data.error || "Gönderim başarısız oldu. Lütfen tekrar deneyin.");
       }
-    } catch (err) {
+    } catch {
       setError("Sunucu hatası, lütfen daha sonra tekrar deneyin.");
     } finally {
       setLoading(false);
@@ -91,11 +95,13 @@ export default function ContactQrSection() {
         {/* LEFT SIDE */}
         <div className="bg-gradient-to-b from-[#3d313f] to-[#2b2230] rounded-3xl p-6 flex flex-col items-center text-white relative w-full max-w-sm mx-auto">
           <div className="flex space-x-4 mb-4">
-            {qrTabs.map((tab) => (
+            {qrTabs.map((tab, index) => (
               <button
                 key={tab.id}
-                aria-label={`Switch to ${tab.id}`}
-                onClick={() => setSelectedTab(tab.id)}
+                onClick={() => {
+                  setSelectedTab(tab.id);
+                  swiperRef.current?.slideTo(index);
+                }}
                 className={`w-12 h-12 flex items-center justify-center rounded-full ${
                   selectedTab === tab.id
                     ? "bg-white text-[#3d313f]"
@@ -106,10 +112,12 @@ export default function ContactQrSection() {
               </button>
             ))}
           </div>
+
           <p className="text-center text-xs mb-4 leading-tight">
             Kamerayla QR Kodu Okutun,<br />
             Telefonunuz üzerinden iletişim kurabilirsiniz.
           </p>
+
           <div className="relative w-64 h-96">
             <Image
               src="/telefongorseli.png"
@@ -117,29 +125,50 @@ export default function ContactQrSection() {
               fill
               className="object-contain"
             />
-            <div className="absolute top-[42%] left-1/2 transform -translate-x-1/2 transition-all duration-300">
-              <Image
-                src={activeQr}
-                alt={`${selectedTab} QR Code`}
-                width={100}
-                height={100}
-                className="rounded-lg"
-              />
+            <div className="absolute top-[42%] left-1/2 transform -translate-x-1/2">
+              <Swiper
+                modules={[Pagination]}
+                slidesPerView={1}
+                pagination={{
+                  clickable: true,
+                  el: ".custom-swiper-pagination",
+                }}
+                onSwiper={(swiper) => (swiperRef.current = swiper)}
+                onSlideChange={(swiper) =>
+                  setSelectedTab(qrTabs[swiper.activeIndex].id)
+                }
+                initialSlide={qrTabs.findIndex((tab) => tab.id === selectedTab)}
+                className="w-[100px] h-[100px]"
+              >
+                {qrTabs.map((tab) => (
+                  <SwiperSlide key={tab.id}>
+                    <Image
+                      src={tab.qr}
+                      alt={`${tab.id} QR`}
+                      width={100}
+                      height={100}
+                      className="rounded-lg"
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
           </div>
+
+          {/* Custom pagination below the phone */}
+          <div className="mt-6 custom-swiper-pagination flex justify-center" />
         </div>
 
         {/* RIGHT SIDE - FORM */}
         <div className="w-full">
           <h2 className="text-3xl font-semibold text-gray-800 text-center mb-4 leading-snug">
-            TUM SORULARINIZ IÇIN <br />BURADAYIZ
+            TÜM SORULARINIZ İÇİN <br />BURADAYIZ
           </h2>
           <p className="text-sm text-gray-600 text-center mb-8">
             Bir çağrı talebinde bulunun.<br />
             Aklınızdaki sorular için buradayız.
           </p>
 
-          {/* FORM INPUTS */}
           <div className="flex flex-col md:flex-row gap-4 justify-center mb-4">
             <input
               type="text"
@@ -165,34 +194,38 @@ export default function ContactQrSection() {
             rows={4}
           />
 
+          <div className="flex justify-center my-4">
+            <ReCAPTCHA
+              ref={recaptchaRef}
+              sitekey="6LeDBj8rAAAAAITpieFy0OTWktxwblgStiQHc9iv"
+              onChange={(token) => setRecaptchaToken(token || "")}
+            />
+          </div>
+
           <p className="text-[11px] text-gray-500 text-center mb-6 leading-snug max-w-md mx-auto">
             Formu gönderdiğiniz takdirde <br />
             <span className="font-semibold">Gizlilik Politikalarımızı onaylamış bulunuyorsunuz</span>
           </p>
 
-          {/* SUBMIT */}
           <div className="flex justify-center">
             <button
               onClick={handleSubmit}
               disabled={loading}
               className={`px-10 py-4 text-white rounded-full text-sm hover:opacity-90 transition disabled:opacity-50 ${
-                isFormValid() ? 'bg-[#ab1e3b]' : 'bg-[#c2b8be]'
+                name && phone ? "bg-[#ab1e3b]" : "bg-[#c2b8be]"
               }`}
             >
               {loading ? "Gönderiliyor..." : "Gönder"}
             </button>
           </div>
 
-          {/* RESULT MESSAGE */}
           {success && (
             <p className="text-green-600 text-center mt-4">
               Form başarıyla gönderildi!
             </p>
           )}
           {error && (
-            <p className="text-red-500 text-center mt-4">
-              {error}
-            </p>
+            <p className="text-red-500 text-center mt-4">{error}</p>
           )}
         </div>
       </div>
