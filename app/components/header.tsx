@@ -247,6 +247,13 @@ export default function Header({
               </div>
             )}
           </div>
+  <Link
+    href="/favorites"
+    className="w-10 h-10 rounded-full bg-gray-200 hover:bg-gray-100 flex items-center justify-center"
+    title="Favorilerim"
+  >
+    <span className="text-white text-lg">❤️</span>
+  </Link>
 
           {/* Mobile Menu Toggle */}
           <button

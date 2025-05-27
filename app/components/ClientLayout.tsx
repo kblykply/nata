@@ -6,7 +6,7 @@ import Footer from "../components/footer";
 import NewProjects from "../components/New-Projects-Popup";
 import ContactPopup from "../components/ContactPopup";
 import KampanyalarPopup from "../components/KampanyalarPopup";
-
+import { FavoritesProvider } from "@/app/contexts/FavoritesContext"; // ✅ Import
 
 declare global {
   interface Window {
@@ -97,7 +97,9 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
 
 
       {/* Main Content */}
+            <FavoritesProvider>
       <main className="min-h-screen pt-0">{children}</main>
+      </FavoritesProvider>
 
       <Footer />
 

@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import ClientLayout from "./components/ClientLayout";
 import Script from 'next/script'
-  
 
 
 
@@ -47,13 +46,12 @@ export default function RootLayout({
 
       <body className="antialiased">
 
-
 <ClientLayout>
 
 {children}
 
 </ClientLayout>
-        
+
       </body>
     </html>
   );

@@ -5,19 +5,12 @@ import Image from "next/image";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { ChevronDown, SlidersHorizontal, X } from "lucide-react";
 import Link from "next/link";
+import { useFavorites } from "@/app/contexts/FavoritesContext";
+
+
 
 interface SimpleListing {
-  title: string;
-  price: string;
-  currency: string;
-  location: string;
-  type: string;
-  specs: string[];
-  image: string;
-  imageAlt: string;
-}
-
-interface SimpleListing {
+    id: string;
   title: string;
   price: string;
   currency: string;
@@ -31,6 +24,7 @@ interface SimpleListing {
 
 const listings: SimpleListing[] = [
     {
+       id: "1",
       title: "Koru Konfor",
       price: "10 Milyon",
       currency: "USD",
@@ -42,6 +36,8 @@ const listings: SimpleListing[] = [
       link: "/koru-konfor-20"
     },
     {
+             id: "2",
+
       title: "Natura İncek",
       price: "7.75 Milyon",
       currency: "TL",
@@ -53,6 +49,8 @@ const listings: SimpleListing[] = [
       link: "/natura-20"
     },
     {
+             id: "3",
+
       title: "Prime Oran",
       price: "16.8 Milyon",
       currency: "TL",
@@ -64,6 +62,8 @@ const listings: SimpleListing[] = [
       link: "/prime-oran-20"
     },
     {
+             id: "4",
+
       title: "Koru Konfor",
       price: "7.75 Milyon",
       currency: "TL",
@@ -75,6 +75,8 @@ const listings: SimpleListing[] = [
       link: "/koru-konfor-20"
     },
     {
+             id: "5",
+
       title: "Natura İncek",
       price: "10 Milyon",
       currency: "USD",
@@ -86,6 +88,8 @@ const listings: SimpleListing[] = [
       link: "/natura-20"
     },
     {
+             id: "6",
+
       title: "Koru Konfor",
       price: "10 Milyon",
       currency: "USD",
@@ -97,6 +101,8 @@ const listings: SimpleListing[] = [
       link: "/koru-konfor-20"
     },
     {
+             id: "7",
+
       title: "Natura İncek",
       price: "10 Milyon",
       currency: "USD",
@@ -108,6 +114,8 @@ const listings: SimpleListing[] = [
       link: "/natura-20"
     },
     {
+             id: "8",
+
       title: "Prime Oran",
       price: "14.2 Milyon",
       currency: "TL",
@@ -132,6 +140,8 @@ export default function FilteredListingCards() {
   const [selectedArea, setSelectedArea] = useState("Tümü");
   const [selectedPrice, setSelectedPrice] = useState("Tümü");
   const [showAllFilters, setShowAllFilters] = useState(false);
+  const { toggleFavorite, isFavorite } = useFavorites();
+
 
   const resetFilters = () => {
     setSelectedLocation("Tümü");
@@ -374,9 +384,21 @@ export default function FilteredListingCards() {
               </div>
 
               <div className="absolute bottom-3 right-3 z-20">
-                <div className="w-6 h-6 rounded-full border border-gray-400 flex items-center justify-center text-gray-500 text-sm">
-                  ♥
-                </div>
+       <button
+  onClick={(e) => {
+    e.preventDefault(); // prevent link navigation
+    toggleFavorite(item.id);
+  }}
+  className={`w-6 h-6 rounded-full border flex items-center justify-center text-sm transition ${
+    isFavorite(item.id)
+      ? "text-red-500 border-red-400"
+      : "text-gray-500 border-gray-400"
+  }`}
+  title="Favorilere ekle"
+>
+  {isFavorite(item.id) ? "❤️" : "🤍"}
+</button>
+
               </div>
             </a> );
         })}
