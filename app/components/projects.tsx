@@ -203,22 +203,31 @@ export default function ProjectListingSection() {
                 }`}
               >
                 {/* Favorite Button */}
-                <div className="absolute bottom-4 right-4 z-30">
-                  <button
-                    onClick={(e) => {
-                      e.preventDefault();
-                      toggleFavorite(item.id);
-                    }}
-                    className={`w-7 h-7 text-sm rounded-full flex items-center justify-center border transition ${
-                      isFavorite(item.id)
-                        ? "text-red-500 border-red-400 bg-white"
-                        : "text-gray-500 border-gray-300 bg-white"
-                    }`}
-                    title="Favorilere ekle"
-                  >
-                    {isFavorite(item.id) ? "❤️" : "🤍"}
-                  </button>
-                </div>
+              <div className="absolute bottom-4 right-4 z-30">
+  <button
+    onClick={(e) => {
+      e.preventDefault();
+      toggleFavorite(item.id);
+    }}
+    className="w-11 h-11 bg-gray-100 rounded-full flex items-center justify-center relative"
+    title="Favorilere ekle"
+  >
+    {/* Ping animation */}
+    {isFavorite(item.id) && (
+      <span className="absolute inline-flex h-6 w-6 rounded-full bg-red-400 opacity-75 animate-ping"></span>
+    )}
+
+    {/* Icon */}
+    <Image
+      src="/favori icon.png"
+      alt="Favori"
+      width={20}
+      height={20}
+      className="z-10"
+    />
+  </button>
+</div>
+
 
                 {/* Image */}
                 {item.type === "featured" ? (

@@ -384,22 +384,30 @@ export default function FilteredListingCards() {
               </div>
 
               <div className="absolute bottom-3 right-3 z-20">
-       <button
-  onClick={(e) => {
-    e.preventDefault(); // prevent link navigation
-    toggleFavorite(item.id);
-  }}
-  className={`w-6 h-6 rounded-full border flex items-center justify-center text-sm transition ${
-    isFavorite(item.id)
-      ? "text-red-500 border-red-400"
-      : "text-gray-500 border-gray-400"
-  }`}
-  title="Favorilere ekle"
->
-  {isFavorite(item.id) ? "❤️" : "🤍"}
-</button>
+  <button
+    onClick={(e) => {
+      e.preventDefault();
+      toggleFavorite(item.id);
+    }}
+    className="w-11 h-11 bg-gray-100 rounded-full flex items-center justify-center relative"
+    title="Favorilere ekle"
+  >
+    {/* Ping animation */}
+    {isFavorite(item.id) && (
+      <span className="absolute inline-flex h-6 w-6 rounded-full bg-red-400 opacity-75 animate-ping"></span>
+    )}
 
-              </div>
+    {/* Icon */}
+    <Image
+      src="/favori icon.png"
+      alt="Favori"
+      width={20}
+      height={20}
+      className="z-10"
+    />
+  </button>
+</div>
+
             </a> );
         })}
       </div>

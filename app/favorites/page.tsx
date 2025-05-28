@@ -400,19 +400,28 @@ export default function FavoritesPage() {
 
                 <div className="absolute bottom-3 right-3 z-20">
                   <button
-                    onClick={(e) => {
-                      e.preventDefault();
-                      toggleFavorite(item.id);
-                    }}
-                    className={`w-6 h-6 rounded-full border flex items-center justify-center text-sm transition ${
-                      isFavorite(item.id)
-                        ? "text-red-500 border-red-400"
-                        : "text-gray-500 border-gray-400"
-                    }`}
-                    title="Favorilere ekle"
-                  >
-                    {isFavorite(item.id) ? "❤️" : "🤍"}
-                  </button>
+  onClick={(e) => {
+    e.preventDefault();
+    toggleFavorite(item.id);
+  }}
+  className="w-11 h-11 bg-gray-100 rounded-full flex items-center justify-center relative shadow"
+  title={isFavorite(item.id) ? "Favorilerden kaldır" : "Favorilere ekle"}
+>
+  {/* Ping animation */}
+  {isFavorite(item.id) && (
+    <span className="absolute inline-flex h-6 w-6 rounded-full bg-red-400 opacity-75 animate-ping"></span>
+  )}
+
+  {/* Icon */}
+  <Image
+    src="/favori icon.png"
+    alt="Favori"
+    width={20}
+    height={20}
+    className="z-10"
+  />
+</button>
+
                 </div>
               </a>
             ) : (
@@ -456,23 +465,36 @@ export default function FavoritesPage() {
                     )}
                   </div>
 
-                  <div className="relative z-20 p-4 flex flex-col justify-between flex-grow">
+                  <div className="relative z-20 p-4 h-60 flex bg-white text-gray-900 flex-col justify-between flex-grow">
                     <div className="flex justify-between items-start">
                       <h3 className="text-lg font-semibold">{item.price}</h3>
-                      <button
-                        onClick={(e) => {
-                          e.preventDefault();
-                          toggleFavorite(item.id);
-                        }}
-                        className="text-red-500 bg-white rounded-full p-1 text-sm shadow"
-                        title="Favorilerden kaldır"
-                      >
-                        {isFavorite(item.id) ? "❤️" : "🤍"}
-                      </button>
+                    <button
+  onClick={(e) => {
+    e.preventDefault();
+    toggleFavorite(item.id);
+  }}
+  className="w-11 h-11 bg-gray-100 rounded-full flex items-center justify-center relative shadow"
+  title={isFavorite(item.id) ? "Favorilerden kaldır" : "Favorilere ekle"}
+>
+  {/* Ping animation */}
+  {isFavorite(item.id) && (
+    <span className="absolute inline-flex h-6 w-6 rounded-full bg-red-400 opacity-75 animate-ping"></span>
+  )}
+
+  {/* Icon */}
+  <Image
+    src="/favori icon.png"
+    alt="Favori"
+    width={20}
+    height={20}
+    className="z-10"
+  />
+</button>
+
                     </div>
 
                     {item.label && (
-                      <span className="text-xs bg-[#ab1e3b] text-white px-3 py-1 rounded-full inline-block mt-2">
+                      <span className="text-xs bg-[#ab1e3b] text-white px-3 py-1 rounded-full inline-block mt-2 w-30">
                         {item.label}
                       </span>
                     )}

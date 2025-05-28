@@ -108,7 +108,7 @@ export default function HeroSlider() {
 
       {/* Right: Floating Card Section */}
       {!isMobile && (
-        <div className="absolute top-0 right-0 h-full w-[320px] p-4 flex flex-col justify-end bg-white/10 z-20 rounded-bl-2xl shadow-lg">
+        <div className="absolute top-0 right-0 h-full w-[320px] p-4 flex flex-col justify-end bg-white/0 z-20 rounded-bl-2xl shadow-lg">
           <div className="rounded-xl overflow-hidden w-full flex items-center justify-center">
             <Image
               src="/slider/slider/sagkutu.png"

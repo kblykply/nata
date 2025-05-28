@@ -11,7 +11,7 @@ import {
   AlertCircle,
 } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
-
+import FavoriteButton from './FavoriteButton';
 interface HeaderProps {
   isKampanyalarOpen: boolean;
   setIsNewProjectsOpen: (open: boolean) => void;
@@ -74,6 +74,8 @@ export default function Header({
     setIsKampanyalarOpen(true);
   };
 
+  
+
   const handleMenuLeave = () => {
     hoverTimeout.current = setTimeout(() => {
       if (!isHoveringPopup.current) {
@@ -104,6 +106,11 @@ export default function Header({
       minute: '2-digit'
     });
   };
+
+
+
+
+  
 
   return (
     <header className="fixed w-full px-10 py-5 bg-white shadow-sm sticky top-0 z-[100]">
@@ -247,13 +254,7 @@ export default function Header({
               </div>
             )}
           </div>
-  <Link
-    href="/favorites"
-    className="w-10 h-10 rounded-full bg-gray-200 hover:bg-gray-100 flex items-center justify-center"
-    title="Favorilerim"
-  >
-    <span className="text-white text-lg">❤️</span>
-  </Link>
+  <FavoriteButton />
 
           {/* Mobile Menu Toggle */}
           <button
