@@ -39,32 +39,32 @@ const slides: SlideData[] = [
     id: 3,
     title: '',
     subtitle: '',
-    background: '/slider/slider/nata_web_slider_1.jpg',
-    mobileBackground: '/slider/slider/nata_mobil_slider_1.jpg',
+    background: '/slider/slider/NATA-HOLDI╠çNG-WEB1.jpg',
+    mobileBackground: '/slider/slider/NATA-HOLDI╠çNG-MOBI╠çL1.jpg',
     textColor: 'black',
   },
-    {
+   {
     id: 4,
     title: '',
     subtitle: '',
-    background: '/slider/slider/nata_web_slider_2.jpg',
-    mobileBackground: '/slider/slider/nata_mobil_slider_2.jpg',
+    background: '/slider/slider/NATA-HOLDI╠çNG-WEB2.jpg',
+    mobileBackground: '/slider/slider/NATA-HOLDI╠çNG-MOBI╠çL2.jpg',
     textColor: 'black',
   },
-    {
+   {
     id: 5,
     title: '',
     subtitle: '',
-    background: '/slider/slider/nata_web_slider_3.jpg',
-    mobileBackground: '/slider/slider/nata_mobil_slider_3.jpg',
+    background: '/slider/slider/NATA-HOLDI╠çNG-WEB3.jpg',
+    mobileBackground: '/slider/slider/NATA-HOLDI╠çNG-MOBI╠çL3.jpg',
     textColor: 'black',
   },
-    {
+   {
     id: 6,
     title: '',
     subtitle: '',
-    background: '/slider/slider/nata_web_slider_4.jpg',
-    mobileBackground: '/slider/slider/nata_mobil_slider_4.jpg',
+    background: '/slider/slider/NATA-HOLDI╠çNG-WEB4.jpg',
+    mobileBackground: '/slider/slider/NATA-HOLDI╠çNG-MOBI╠çL4.jpg',
     textColor: 'black',
   },
 ];
@@ -82,7 +82,7 @@ export default function HeroSlider() {
   }, []);
 
   return (
-    <div className="relative w-full h-screen">
+    <div className="relative w-full h-[110vh]">
       {/* Swiper Fullscreen */}
       <Swiper
         modules={[Pagination, Autoplay]}
