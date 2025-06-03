@@ -55,7 +55,7 @@ export default function Footer() {
         <div className="col-span-3 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
           <div>
             <h5 className="font-semibold mb-2">Devam Eden Projeler</h5>
-            <ul className="flex flex-wrap gap-2">
+          <ul className="flex flex-col gap-2">
   {[
     { name: "VEGA CENTER", url: "/vega-center" },
     { name: "GOAT VILLAS BILKENT", url: "/goat-villas" },
@@ -67,15 +67,13 @@ export default function Footer() {
     { name: "HİTYENİBATI", url: "/hityenibati" },
   ].map((item, idx) => (
     <li key={idx}>
-      <Link
-        href={item.url}
-        className="hover:text-red-600"
-      >
+      <Link href={item.url} className="hover:text-red-600">
         {item.name}
       </Link>
     </li>
   ))}
 </ul>
+
           </div>
 
           <div>
