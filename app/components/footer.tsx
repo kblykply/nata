@@ -26,8 +26,16 @@ export default function Footer() {
 
           <h3 className="text-2xl font-bold text-gray-900">444 8 776</h3>
           <div className="flex flex-wrap gap-3">
-            <button className="px-4 py-2 bg-[#ab1e3b] text-white rounded-full">Bir çağrı talep edin </button>
+<a href="/rezervation">
+  <button className="px-4 py-2 bg-[#ab1e3b] text-white rounded-full">
+    Bir çağrı talep edin
+  </button>
+</a>
+<a href="/contact-us">
+
             <button className="px-4 py-2 border rounded-full">Bize yazın</button>
+            </a>
+
           </div>
           <div>
             <h4 className="font-semibold">Merkezi Satış Ofisi</h4>
@@ -80,9 +88,8 @@ export default function Footer() {
             <h5 className="font-semibold mb-2">Gelecek Projeler</h5>
             <ul className="flex flex-wrap gap-2">
   {[
-    { name: "NATA DELTA", url: "/" },
-    { name: "YALIKAVAK", url: "/" },
-    { name: "MİLAS KIYIKIŞLACIK", url: "/" },
+    { name: "NATA DELTA", url: "https://www.google.com/maps/place/37%C2%B008'18.0%22N+27%C2%B019'06.2%22E/@37.1383333,27.3183889,669m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d37.1383333!4d27.3183889?entry=ttu&g_ep=EgoyMDI1MDYwNC4wIKXMDSoASAFQAw%3D%3D" },
+    { name: "MİLAS KIYIKIŞLACIK", url: "https://www.google.com/maps/place/K%C4%B1y%C4%B1k%C4%B1%C5%9Flac%C4%B1k,+48200+Milas%2FMu%C4%9Fla/@37.2725837,27.6177563,667m/data=!3m2!1e3!4b1!4m6!3m5!1s0x14bef5bf2b757283:0x7d86dea5fbe1f934!8m2!3d37.2725837!4d27.6177563!16s%2Fg%2F11p61vs7xc?hl=tr-TR&entry=ttu&g_ep=EgoyMDI1MDYwNC4wIKXMDSoASAFQAw%3D%3D" },
   ].map((item, idx) => (
     <li key={idx}>
   <Link
@@ -101,11 +108,11 @@ export default function Footer() {
             <h5 className="font-semibold mt-4 mb-2">Tamamlanmış Projeler</h5>
             <ul className="flex flex-wrap gap-2">
   {[
-    { name: "ANTARES KONUTLARI 1. ETAP", url: "https://natayasam.com/projects/antares-konutlari.html" },
-    { name: "VEGA CADDE", url: "https://natayasam.com/projects/vega-cadde.html" },
-    { name: "TEMPOINT KONUTLARI", url: "https://natayasam.com/projects/tempoint-konutlari.html" },
-    { name: "NATA İNCEK KONUTLARI", url: "https://natayasam.com/projects/nata-incek-konutlari.html" },
-    { name: "NATA VEGA KONUT KULELERİ", url: "https://natayasam.com/projects/nata-vega-konut-kuleleri.html" },
+    { name: "ANTARES KONUTLARI 1. ETAP", url: "/anteres" },
+    { name: "VEGA CADDE", url: "/vega-cadde" },
+    { name: "TEMPOINT KONUTLARI", url: "/tempoint" },
+    { name: "NATA İNCEK KONUTLARI", url: "/incek" },
+    { name: "NATA VEGA KONUT KULELERİ", url: "/vega-konut-kuleleri" },
   ].map((item, idx) => (
     <li key={idx}>
       <Link
@@ -151,11 +158,13 @@ export default function Footer() {
 
      
     ].map((item, i) => (
-      <li key={i}>
-        <Link href={item.url} className="text-sm hover:text-red-600 transition-colors">
-          {item.name}
-        </Link>
-      </li>
+   <li key={i}>
+  <Link href={item.url} passHref legacyBehavior>
+    <a target="_blank" rel="noopener noreferrer" className="text-sm hover:text-red-600 transition-colors">
+      {item.name}
+    </a>
+  </Link>
+</li>
     ))}
   </ul>
 </div>

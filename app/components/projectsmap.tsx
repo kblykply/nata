@@ -176,9 +176,10 @@ export default function MapWithProjects() {
   const [activeMarker, setActiveMarker] = useState<string | null>(null);
 
   const center = {
-    lat: 39.9208,
-    lng: 32.8541,
+    lat: 39.94720,
+    lng: 32.77310,
   };
+
 
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
@@ -279,7 +280,7 @@ export default function MapWithProjects() {
        <GoogleMap
   mapContainerStyle={containerStyle}
   center={center}
-  zoom={14}
+  zoom={12}
   options={{
     styles: [
       {

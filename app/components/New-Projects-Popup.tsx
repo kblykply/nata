@@ -109,6 +109,17 @@ interface NewProjectsProps {
   </p>
   
 </Link>
+
+</div>
+
+
+ <div onClick={onClose}>
+  <Link href="/#tamamlanan-projeler" scroll={true}>
+    <p className="text-sm text-gray-700 hover:underline cursor-pointer">Tamamlanan Projeler
+      <sup className="text-red-600 text-xs ml-1">5</sup>
+
+    </p>
+  </Link>
 </div>
 
   </div>
