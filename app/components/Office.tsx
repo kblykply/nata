@@ -1,6 +1,24 @@
 "use client";
 
+import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
+
+const containerStyle = {
+  width: "100%",
+  height: "100%",
+  minHeight: "400px",
+  borderRadius: "0 1rem 1rem 0",
+};
+
+const center = {
+  lat: 39.9334, // Ankara
+  lng: 32.8597,
+};
+
 export default function OfficeLocationSection() {
+  const { isLoaded } = useJsApiLoader({
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
+  });
+
   return (
     <section className="bg-white py-20 px-6 md:px-20">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-8 bg-white rounded-xl shadow-md overflow-hidden">
@@ -13,12 +31,13 @@ export default function OfficeLocationSection() {
           </div>
           <div className="mb-4">
             <p className="font-medium text-gray-700">Adres</p>
-            <p className="text-gray-700">İnönü Mah, Fatih Sultan Mehmet Blv, No:412 Yenimahalle, ANKARA</p>
+            <p className="text-gray-700">
+              İnönü Mah, Fatih Sultan Mehmet Blv, No:412 Yenimahalle, ANKARA
+            </p>
           </div>
           <div className="mb-4">
             <p className="font-medium text-gray-700">Çalışma Saatleri</p>
             <p className="text-gray-700">09:00 - 21:00</p>
-            
           </div>
           <div className="mb-6">
             <p className="font-medium text-gray-700">Ofise Ulaşım</p>
@@ -28,32 +47,37 @@ export default function OfficeLocationSection() {
           </div>
           <div className="flex gap-4">
             <a
-              href="https://yandex.com.tr/harita/ankara/?ll=32.8597%2C39.9334&z=16&l=map&pt=32.8597,39.9334,pm2rdm"
+              href="https://www.google.com/maps?q=39.9334,32.8597"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 bg-gray-800 text-white hover:underline visited:text-white active:text-white text-sm px-5 py-2 rounded-full "
+              className="mt-6 bg-gray-800 text-white hover:underline text-sm px-5 py-2 rounded-full"
             >
               Haritada Aç
             </a>
             <a
-              href="#"
-              className="mt-6 bg-[#ab1e3b]  text-white hover:underline visited:text-white active:text-white text-sm px-5 py-2 rounded-full"
+              href="/rezervation"
+              className="mt-6 bg-[#ab1e3b] text-white hover:underline text-sm px-5 py-2 rounded-full"
             >
               Toplantı Planlayın
             </a>
           </div>
         </div>
 
-        {/* Map Box */}
+        {/* Google Map */}
         <div className="w-full md:w-1/2 relative">
-          <iframe
-            src="https://yandex.com.tr/map-widget/v1/?ll=32.8597%2C39.9334&z=16&pt=32.8597,39.9334,pm2rdm"
-            width="100%"
-            height="100%"
-            className="min-h-[400px] w-full rounded-r-xl"
-            allowFullScreen
-            loading="lazy"
-          ></iframe>
+          {isLoaded ? (
+            <GoogleMap
+              mapContainerStyle={containerStyle}
+              center={center}
+              zoom={16}
+            >
+              <Marker position={center} />
+            </GoogleMap>
+          ) : (
+            <div className="h-[400px] flex items-center justify-center text-gray-500">
+              Harita yükleniyor...
+            </div>
+          )}
         </div>
       </div>
     </section>
