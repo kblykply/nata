@@ -113,10 +113,10 @@ export default function Header({
   
 
   return (
-    <header className="fixed w-full px-10 py-5 bg-white shadow-sm sticky top-0 z-[100]">
+    <header className="fixed w-full px-6 py-5 bg-white shadow-sm sticky top-0 z-[100]">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo and desktop nav */}
-        <div className="flex items-center space-x-9 space-y-2">
+        <div className="flex items-center space-x-2 space-y-2">
           <Link href="/">
             <Image
               src="/navbarLogo.png"
@@ -124,8 +124,7 @@ export default function Header({
               width={50}
               height={50}
               sizes="(max-width: 768px) 140px, 180px"
-              className="w-36 sm:w-40 md:w-[160px] h-auto"
-            />
+className="w-44 sm:w-48 md:w-[160px] h-auto"            />
           </Link>
 
           <nav
