@@ -24,131 +24,130 @@ const places = [
   {
     id: 101,
     category: "malls",
-    coords: [39.8910, 32.9335],
+    coords: [39.9531, 32.8994],
     name: "Nata Vega Outlet AVM",
-    description: "1 dk, 100 metre"
+    description: "18 dk, 15.3 km"
   },
   {
     id: 102,
     category: "malls",
-    coords: [39.9200, 32.8500],
-    name: "Armada AVM",
-    description: "20 dk, 12.5 km"
+    coords: [39.9933, 32.8574],
+    name: "Vega AVM Subayevleri",
+    description: "28 dk, 23.4 km"
   },
   {
     id: 103,
     category: "malls",
-    coords: [39.9500, 32.8500],
-    name: "ANKAmall",
-    description: "25 dk, 15.0 km"
+    coords: [39.9686, 32.9084],
+    name: "Anatolium Ankara",
+    description: "30 dk, 25.1 km"
   },
   {
     id: 104,
     category: "malls",
-    coords: [39.9300, 32.8700],
-    name: "Forum Ankara Outlet",
-    description: "15 dk, 8.0 km"
+    coords: [39.9175, 32.8072],
+    name: "Armada AVM",
+    description: "24 dk, 20.3 km"
   },
 
   // 🏫 Schools
   {
     id: 201,
     category: "schools",
-    coords: [39.8920, 32.9350],
-    name: "Akşemsettin İlkokulu",
-    description: "2 dk, 200 metre"
+    coords: [39.8192, 32.7661],
+    name: "TED Ankara Koleji",
+    description: "3 dk, 0.8 km"
   },
   {
     id: 202,
     category: "schools",
-    coords: [39.8935, 32.9365],
-    name: "Mamak Anadolu Lisesi",
-    description: "3 dk, 300 metre"
+    coords: [39.8145, 32.7628],
+    name: "Okyanus Koleji İncek Kampüsü",
+    description: "4 dk, 1.2 km"
   },
   {
     id: 203,
     category: "schools",
-    coords: [39.8950, 32.9380],
-    name: "Yükselen Koleji",
-    description: "5 dk, 500 metre"
+    coords: [39.8139, 32.7703],
+    name: "Doğa Koleji İncek",
+    description: "2 dk, 0.6 km"
   },
   {
     id: 204,
     category: "schools",
-    coords: [39.8965, 32.9395],
-    name: "Doğa Koleji Mamak Kampüsü",
-    description: "6 dk, 600 metre"
+    coords: [39.8215, 32.7654],
+    name: "Mektebim Koleji İncek Kampüsü",
+    description: "3 dk, 1.0 km"
   },
 
   // 🏥 Hospitals
   {
     id: 301,
     category: "hospitals",
-    coords: [39.8930, 32.9345],
-    name: "Mamak Devlet Hastanesi",
-    description: "2 dk, 150 metre"
+    coords: [39.8194, 32.7648],
+    name: "İncek Fizik Tedavi ve Rehabilitasyon Hastanesi",
+    description: "3 dk, 1.0 km"
   },
   {
     id: 302,
     category: "hospitals",
-    coords: [39.8945, 32.9360],
-    name: "Özel Mamak Hastanesi",
-    description: "3 dk, 250 metre"
+    coords: [39.9028, 32.8598],
+    name: "Güven Hastanesi",
+    description: "20 dk, 17.2 km"
   },
   {
     id: 303,
     category: "hospitals",
-    coords: [39.8960, 32.9375],
+    coords: [39.9199, 32.8036],
     name: "Memorial Ankara Hastanesi",
-    description: "5 dk, 400 metre"
+    description: "24 dk, 19.3 km"
   },
   {
     id: 304,
     category: "hospitals",
-    coords: [39.8975, 32.9390],
-    name: "Acıbadem Ankara Hastanesi",
-    description: "6 dk, 550 metre"
+    coords: [39.9176, 32.7874],
+    name: "Medicana International Ankara",
+    description: "22 dk, 18.1 km"
   },
 
   // 🛒 Markets
   {
     id: 401,
     category: "markets",
-    coords: [39.8905, 32.9340],
-    name: "Migros Mamak Şubesi",
-    description: "1 dk, 50 metre"
+    coords: [39.8200, 32.7730],
+    name: "Migros İncek",
+    description: "1 dk, 300 metre"
   },
   {
     id: 402,
     category: "markets",
-    coords: [39.8915, 32.9350],
-    name: "Şok Market Akşemsettin",
-    description: "2 dk, 150 metre"
+    coords: [39.8197, 32.7741],
+    name: "Şok Market İncek",
+    description: "2 dk, 400 metre"
   },
   {
     id: 403,
     category: "markets",
-    coords: [39.8925, 32.9360],
-    name: "A101 Mamak Şubesi",
-    description: "3 dk, 250 metre"
+    coords: [39.8189, 32.7720],
+    name: "A101 İncek",
+    description: "2 dk, 350 metre"
   },
   {
     id: 404,
     category: "markets",
-    coords: [39.8935, 32.9370],
-    name: "BİM Mamak Şubesi",
-    description: "4 dk, 350 metre"
+    coords: [39.8210, 32.7715],
+    name: "BİM İncek",
+    description: "2 dk, 300 metre"
   }
 ];
 
 
 
-
 const projectLocation = {
-  coords: [39.97090, 32.81910],
-  name: "Nata Vega Konut Kuleleri",
-  description: "Yükselerde bir yaşam.",
-  image: "/ANTARES KONUTLARI-ON.jpg",
+  coords: [39.82029, 32.77247],
+  name: "Incek Konutları",
+  description: "Gölbaşı İncek'te, doğayla iç içe bir yaşam alanı.",
+  image: "/proje-galeri/incek4.jpg",
 };
 
 const containerStyle = {

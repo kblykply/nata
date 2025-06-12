@@ -27,13 +27,7 @@ export default function SidePlans() {
           Yaşam Nerede <br /> Biz Orada.
         </h2>
         <p className="mt-4 text-sm md:text-base text-gray-700 leading-relaxed">
-          Mega 1453, Ankara’nın kalbinde, Yenimahalle Orman Çiftliği Mahallesi’nde
-          şehrin ritmini yeniden tanımlayan eşsiz bir yaşam deneyimi sunuyor.
-          Toplamda 70.000 m²’lik geniş arsa alanında yükselen bu prestijli proje,
-          başkentin dokusuna doğa ile harmanlanmış bir soluk getiriyor. Özgün
-          mimarisi ve yaklaşık 36.000m² toplam peyzaj alanıyla modern yaşamı yeniden
-          tasarlayan Mega 1453, her biri yüksek yaşam standartlarına sahip toplam 715
-          konuttan (1.etap) oluşuyor.
+          Hit Yeni Batı, modern yaşamın tüm olanaklarını sunan bir proje. Tek Bloktan oluşan bu proje, geniş açık alanları, estetik mimarisi ve konforlu yaşam alanlarıyla dikkat çekiyor. Her detayın özenle düşünüldüğü Hit Yeni Batı, ailenizle birlikte huzurlu ve keyifli bir yaşam sunuyor.
         </p>
       </div>
 

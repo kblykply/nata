@@ -74,8 +74,7 @@ export default function SidePlans() {
           Yaşam Nerede <br /> Biz Orada.
         </h2>
         <p className="mt-4 text-sm md:text-base text-gray-700 leading-relaxed">
-          Mega 1453, Ankara’nın kalbinde, Yenimahalle Orman Çiftliği Mahallesi’nde
-          şehrin ritmini yeniden tanımlayan eşsiz bir yaşam deneyimi sunuyor...
+          Vega Otonomi sanayinin en yeni ve en gelişmiş teknolojileri ile donatılmış, yatay mimarisi ile şehrin silüetine estetik bir değer katan, iş ve premium alışveriş deneyimini en yüksek seviyeye çıkaran bir yaşam merkezidir. Ferah ofisleri ve verimli iş alanları ile yüksek potansiyele sahip olan Vega Otonomi&apos;nin her noktası hayatı kolaylaştırmak için tasarlandı.
         </p>
       </div>
 

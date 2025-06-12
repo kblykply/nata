@@ -159,9 +159,9 @@ const places = [
 
 const projectLocation = {
   coords: [39.97218, 32.59886],
-  name: "VEGA CENTER",
-  description: "İş dünyasının yeni merkezi VEGA Center",
-  image: "/vega-center-03.jpg",
+  name: "VEGA OTONOMİ",
+  description: "İş dünyasının yeni merkezi VEGA OTONOMI",
+  image: "/otonomi-1.jpg",
 };
 
 

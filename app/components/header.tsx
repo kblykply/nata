@@ -121,8 +121,8 @@ export default function Header({
             <Image
               src="/navbarLogo.png"
               alt="Nata Yaşam Logo"
-              width={0}
-              height={0}
+              width={50}
+              height={50}
               sizes="(max-width: 768px) 140px, 180px"
               className="w-36 sm:w-40 md:w-[160px] h-auto"
             />

@@ -74,7 +74,7 @@ export default function ProjectHeroCloudSection() {
   <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm">
 Metroya 10 Dk Uzaklıkta  </div>
   <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm">
-    <FaMapMarkerAlt />  Yenimahalle / Ankara
+    <FaMapMarkerAlt />  Sultangazi / İstanbul
   </div>
   <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center">
   468 Konut  & 444 Rezidans & 270 Mağaza

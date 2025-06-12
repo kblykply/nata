@@ -21,7 +21,7 @@ const hotspots = [
     text: "A Blok",
     image: "/RAMS- A BLOK.png",
     info: "A Blok",
-    position: { top: "22%", left: "19%" },
+    position: { top: "32%", left: "19%" },
   },
   {
     id: 2,
@@ -29,7 +29,7 @@ const hotspots = [
     text: "Modern Mimari, Konforlu Yaşam",
     image: "/RAMS- B BLOK.png",
     info: "B Blok",
-    position: { top: "38%", left: "20%" },
+    position: { top: "43%", left: "20%" },
   },
   {
     id: 3,
@@ -61,7 +61,7 @@ const hotspots = [
     text: "Estetik Tasarım, Konforlu Yaşam",
     image: "/RAMS- F BLOK.png",
     info: "F Blok",
-    position: { top: "66%", left: "68%" },
+    position: { top: "55%", left: "68%" },
   },
   
    { id: 7,
@@ -85,7 +85,7 @@ const hotspots = [
     text: "Göz Alıcı Manzara, Kaliteli Yaşam",
     image: "/RAMS- I BLOK.png",
     info: "I Blok",
-    position: { top: "39%", left: "51%" },
+    position: { top: "43%", left: "51%" },
   },
   {
     id: 10,
@@ -93,7 +93,7 @@ const hotspots = [
     text: "Doğayla İç İçe, Huzurlu Yaşam",
     image: "/RAMS- J BLOK.png",
     info: "J Blok",
-    position: { top: "30%", left: "40%" },
+    position: { top: "39%", left: "40%" },
   },
   {
     id: 11,
@@ -101,7 +101,7 @@ const hotspots = [
     text: "Geniş Alanlar, Ferah Yaşam",
     image: "/RAMS-K BLOK.png",
     info: "K Blok",
-    position: { top: "20%", left: "30%" },
+    position: { top: "28%", left: "30%" },
   },
   
 
@@ -135,7 +135,7 @@ export default function SidePlans() {
           Yaşam Nerede <br /> Biz Orada.
         </h2>
         <p className="mt-4 text-sm md:text-base text-gray-700 leading-relaxed">
-          Mega 1453, Ankara’nın kalbinde, Yenimahalle Orman Çiftliği Mahallesi’nde
+          RAMS GARDEN, İstanbul’un kalbinde, Yenimahalle Orman Çiftliği Mahallesi’nde
           şehrin ritmini yeniden tanımlayan eşsiz bir yaşam deneyimi sunuyor...
         </p>
       </div>
@@ -185,7 +185,7 @@ export default function SidePlans() {
         <div
           className="fixed z-50 w-40 sm:w-48 bg-white border border-gray-300 shadow-2xl rounded-lg p-2 sm:p-3 text-[10px] sm:text-xs text-gray-800 pointer-events-none transition-opacity duration-300"
           style={{
-            top: hovered.y - 48,
+            top: hovered.y - 12,
             left: hovered.x,
             transform: "translate(-50%, -100%)",
           }}
