@@ -66,7 +66,7 @@ export default function PlanDetailsWithGallery() {
       <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-start gap-10">
         {/* Left Details */}
         <div className="flex-1 space-y-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Prime Oran</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Koru Konfor</h2>
           <h3 className="text-xl font-medium text-gray-700">3+1 TİP B2B - {current.label}</h3>
 
           <div className="bg-white  rounded-xl shadow p-6 w-full max-w-md text-sm text-gray-700">
@@ -99,25 +99,48 @@ export default function PlanDetailsWithGallery() {
         </div>
 
         {/* Right Navigation */}
-        <div className="hidden lg:flex flex-col gap-4">
-          {gallery.map((item, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrentIndex(i)}
-              className={`w-[60px] h-[60px] border-2 rounded-lg transition ${
-                i === currentIndex ? "border-[#ab1e3b]" : "border-gray-300"
-              }`}
-            >
-              <Image
-                src={item.image}
-                alt={item.label}
-                width={60}
-                height={60}
-                className="object-contain rounded"
-              />
-            </button>
-          ))}
-        </div>
+       {/* Desktop: vertical thumbnail selector */}
+<div className="hidden lg:flex flex-col gap-4">
+  {gallery.map((item, i) => (
+    <button
+      key={i}
+      onClick={() => setCurrentIndex(i)}
+      className={`w-[60px] h-[60px] border-2 rounded-lg transition ${
+        i === currentIndex ? "border-[#ab1e3b]" : "border-gray-300"
+      }`}
+    >
+      <Image
+        src={item.image}
+        alt={item.label}
+        width={60}
+        height={60}
+        className="object-contain rounded"
+      />
+    </button>
+  ))}
+</div>
+
+{/* Mobile: horizontal scrollable thumbnails */}
+<div className="flex lg:hidden gap-3 mt-6 overflow-x-auto">
+  {gallery.map((item, i) => (
+    <button
+      key={i}
+      onClick={() => setCurrentIndex(i)}
+      className={`min-w-[60px] h-[60px] border-2 rounded-lg flex-shrink-0 transition ${
+        i === currentIndex ? "border-[#ab1e3b]" : "border-gray-300"
+      }`}
+    >
+      <Image
+        src={item.image}
+        alt={item.label}
+        width={60}
+        height={60}
+        className="object-contain rounded"
+      />
+    </button>
+  ))}
+</div>
+
       </div>
     </section>
   );

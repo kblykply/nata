@@ -100,25 +100,48 @@ export default function PlanDetailsWithGallery() {
         </div>
 
         {/* Right Navigation */}
-        <div className="hidden lg:flex flex-col gap-4">
-          {gallery.map((item, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrentIndex(i)}
-              className={`w-[60px] h-[60px] border-2 rounded-lg transition ${
-                i === currentIndex ? "border-[#ab1e3b]" : "border-gray-300"
-              }`}
-            >
-              <Image
-                src={item.image}
-                alt={item.label}
-                width={60}
-                height={60}
-                className="object-contain rounded"
-              />
-            </button>
-          ))}
-        </div>
+       {/* Desktop: vertical thumbnail selector */}
+<div className="hidden lg:flex flex-col gap-4">
+  {gallery.map((item, i) => (
+    <button
+      key={i}
+      onClick={() => setCurrentIndex(i)}
+      className={`w-[60px] h-[60px] border-2 rounded-lg transition ${
+        i === currentIndex ? "border-[#ab1e3b]" : "border-gray-300"
+      }`}
+    >
+      <Image
+        src={item.image}
+        alt={item.label}
+        width={60}
+        height={60}
+        className="object-contain rounded"
+      />
+    </button>
+  ))}
+</div>
+
+{/* Mobile: horizontal scrollable thumbnails */}
+<div className="flex lg:hidden gap-3 mt-6 overflow-x-auto">
+  {gallery.map((item, i) => (
+    <button
+      key={i}
+      onClick={() => setCurrentIndex(i)}
+      className={`min-w-[60px] h-[60px] border-2 rounded-lg flex-shrink-0 transition ${
+        i === currentIndex ? "border-[#ab1e3b]" : "border-gray-300"
+      }`}
+    >
+      <Image
+        src={item.image}
+        alt={item.label}
+        width={60}
+        height={60}
+        className="object-contain rounded"
+      />
+    </button>
+  ))}
+</div>
+
       </div>
     </section>
   );

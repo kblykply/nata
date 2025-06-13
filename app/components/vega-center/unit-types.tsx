@@ -34,7 +34,7 @@ const unitTypes = [
   },
   {
     id: "3+1",
-    image: "/plans/plan-4.png",
+    image: "/MEGA1453-KATPLANI-03.png",
     details: {
       "Toplam Alan": "68.75 m²",
       "Brüt Alan": "75.00 m²",
