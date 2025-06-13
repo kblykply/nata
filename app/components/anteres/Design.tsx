@@ -56,7 +56,7 @@ export default function DesignSection() {
       {/* Floating Ball Image */}
       <motion.div
         style={{ y }}
-        className="absolute top-[50%] left-1/2 z-20 -translate-x-1/2 -translate-y-1/2"
+        className="absolute top-[50%] left-1/2 z-0 md:z-20 -translate-x-1/2 -translate-y-1/2"
       >
         <Image
           src="/balll.png"

@@ -71,11 +71,10 @@ export default function ProjectLifeRhythmSection() {
   return (
     <section  className="relative py-24 px-6 bg-white text-center overflow-hidden">
       <h2 className="text-3xl font-light text-gray-800 uppercase leading-tight">
-        YAŞAM RİTİMİNİZ <br /> VEGA CENTER DA 
+        GREATEST OF  <br /> ANKARA TIME
       </h2>
       <p className="mt-4 text-sm text-gray-600 max-w-xl mx-auto">
-        Vega Center, modern yaşamın dinamiklerini ve konforunu bir araya getiriyor. 
-        Her bir alan, yaşam kalitenizi artırmak için tasarlandı.
+        Ankara'nın merkezinde, Bilkent 3'te, tüm şehri gören muhteşem bir noktada yer alan projemiz, modern yaşamın tüm gereksinimlerini karşılamak için tasarlandı. Akıllı ev sistemleri, sürdürülebilir malzemeler ve doğayla iç içe bir yaşam alanı sunuyoruz. Her ayrıntı, konforunuzu ve güvenliğinizi ön planda tutarak düşünüldü.
       </p>
 
       <div className="relative mt-12 w-full max-w-7xl mx-auto h-[500px]">
