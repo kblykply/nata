@@ -10,13 +10,7 @@ import {
   MarkerClusterer,
 } from "@react-google-maps/api";
 
-const categories = [
-  { id: "all", name: "Tümü", count: 16, pin: "/pin.png" },
-  { id: "malls", name: "AVM'ler", count: 4, pin: "/mall.png" },
-  { id: "schools", name: "Okullar", count: 4, pin: "/scool.png" },
-  { id: "hospitals", name: "Hastaneler", count: 4, pin: "/hospital.png" },
-  { id: "markets", name: "Marketler", count: 4, pin: "/shop.png" },
-];
+
 
 
 const places = [
@@ -169,6 +163,16 @@ const places = [
   }
 ];
 
+const categories = [
+  { id: "all", name: "Tümü", pin: "/pin.png" },
+  { id: "malls", name: "AVM'ler", pin: "/mall.png" },
+  { id: "schools", name: "Okullar", pin: "/scool.png" },
+  { id: "hospitals", name: "Hastaneler", pin: "/hospital.png" },
+  { id: "markets", name: "Marketler", pin: "/shop.png" },
+].map((cat) => ({
+  ...cat,
+  count: cat.id === "all" ? places.length : places.filter(p => p.category === cat.id).length,
+}));
 
 
 const projectLocation = {
