@@ -51,22 +51,35 @@ export default function FeaturedProjects() {
               </div>
               <p className="mt-4 font-semibold whitespace-pre-line">{project.title}</p>
               <p className="text-sm text-gray-500 whitespace-pre-line">{project.subtitle}</p>
-              <div className="flex gap-3 mt-3">
-                <a
-                  href={project.locationLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-gray-100 text-sm px-4 py-1 rounded-full hover:bg-gray-200 transition"
-                >
-                  Lokasyon
-                </a>
-                <button
-                  onClick={() => setShowContactPopup(true)}
-                  className="bg-gray-100 text-sm px-4 py-1 rounded-full hover:bg-gray-200 transition"
-                >
-                  Ön Talep Oluştur
-                </button>
-              </div>
+            <div className="flex gap-3 mt-3">
+  <a
+    href={project.locationLink}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="bg-gray-100 text-sm px-4 py-1 rounded-full hover:bg-gray-200 transition"
+  >
+    Lokasyon
+  </a>
+
+  <>
+    {/* Desktop & Tablet: Open popup */}
+    <button
+      onClick={() => setShowContactPopup(true)}
+      className="hidden md:inline-block bg-gray-100 text-sm px-4 py-1 rounded-full hover:bg-gray-200 transition"
+    >
+      Ön Talep Oluştur
+    </button>
+
+    {/* Mobile: Go to /contact-us */}
+    <a
+      href="/contact-us"
+      className="inline-block md:hidden bg-gray-100 text-sm px-4 py-1 rounded-full hover:bg-gray-200 transition"
+    >
+      Ön Talep Oluştur
+    </a>
+  </>
+</div>
+
             </div>
           ))}
         </div>

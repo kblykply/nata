@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import ReCAPTCHA from "react-google-recaptcha";
+import Link from "next/link";
 
 export default function ContactMapPopup() {
   const [name, setName] = useState("");
@@ -148,9 +149,12 @@ export default function ContactMapPopup() {
           {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
 
           <div className="mt-8 text-sm text-black space-y-1">
-            <button className="mt-4 px-4 py-2 border border-gray-300 rounded-xl font-medium text-sm hover:bg-gray-50 transition">
-              Satış ofisiyle görüşme planlayın
-            </button>
+        
+<Link href="/rezervation">
+  <button className="mt-4 px-4 py-2 border border-gray-300 rounded-xl font-medium text-sm hover:bg-gray-50 transition">
+    Satış ofisiyle görüşme planlayın
+  </button>
+</Link>
           </div>
         </div>
       </div>
@@ -162,3 +166,4 @@ export default function ContactMapPopup() {
     </div>
   );
 }
+      

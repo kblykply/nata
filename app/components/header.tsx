@@ -225,8 +225,7 @@ className="w-44 sm:w-48 md:w-[160px] h-auto"            />
             </button>
 
             {showNotifications && (
-              <div className="absolute right-0 mt-3 w-80 bg-white rounded-xl shadow-2xl animate-fade-in z-50">
-                <div className="p-4 font-semibold text-gray-800">
+<div className="absolute top-full mt-3 w-[90vw] max-w-sm left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-0 bg-white rounded-xl shadow-2xl animate-fade-in z-50">                <div className="p-4 font-semibold text-gray-800">
                   Bildirimler
                 </div>
                 <ul className="max-h-60 overflow-y-auto">
