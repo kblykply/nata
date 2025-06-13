@@ -29,39 +29,42 @@ const AboutContentSection = () => {
             Nata Holding güvencesiyle hayata geçirilen Nata Yaşam, sadece konut projeleri geliştiren bir marka olmanın ötesine geçerek, yaşamın her alanına dokunan; modern ve sürdürülebilir projelere imza atmaktadır. Türkiye’nin dört bir yanında; konut, villa, alışveriş merkezi, turizm, sağlık ve sosyal yaşam alanlarını bir araya getiren çok yönlü projelerimizle, geleceğin şehircilik anlayışını bugünden sunuyoruz.
           </p>
 
-          <div className="flex flex-wrap md:flex-nowrap justify-start  gap-10">
-      {/* Icon 1 */}
-      <div className="flex flex-col items-center">
-        <div className="bg-gray-100 p-6 rounded-2xl flex items-center justify-center w-[100px] h-[100px]">
-          <Image src="/tecrübe.png" alt="Tecrübe" width={40} height={40} />
-        </div>
-        <p className="text-sm mt-3 text-center w-36">40+ Yıllık Tecrübe</p>
+       <div className="w-full">
+  <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6">
+    {/* Icon 1 */}
+    <div className="flex flex-col items-center text-center">
+      <div className="bg-gray-100 p-6 rounded-2xl flex items-center justify-center w-[100px] h-[100px]">
+        <Image src="/tecrübe.png" alt="Tecrübe" width={40} height={40} />
       </div>
-
-      {/* Icon 2 */}
-      <div className="flex flex-col items-center">
-        <div className="bg-gray-100 p-6 rounded-2xl flex items-center justify-center w-[100px] h-[100px]">
-          <Image src="/tamamlananproje.png" alt="Tamamlanan Proje" width={40} height={40} />
-        </div>
-        <p className="text-sm mt-3 text-center w-36">30+ Tamamlanan Proje</p>
-      </div>
-
-      {/* Icon 3 */}
-      <div className="flex flex-col items-center">
-        <div className="bg-gray-100 p-6 rounded-2xl flex items-center justify-center w-[100px] h-[100px]">
-          <Image src="/devamedenproje.png" alt="Devam Eden Proje" width={40} height={40} />
-        </div>
-        <p className="text-sm mt-3 text-center w-36">20+ Devam Eden & Proje</p>
-      </div>
-
-      {/* Icon 4 */}
-      <div className="flex flex-col items-center">
-        <div className="bg-gray-100 p-6 rounded-2xl flex items-center justify-center w-[100px] h-[100px]">
-          <Image src="/teslimedilenproje.png" alt="Teslim Edilen" width={40} height={40} />
-        </div>
-        <p className="text-sm mt-3 text-center w-36">10.000+ Teslim Edilen ve Ticari Alan</p>
-      </div>
+      <p className="text-sm mt-3 w-36">40+ Yıllık Tecrübe</p>
     </div>
+
+    {/* Icon 2 */}
+    <div className="flex flex-col items-center text-center">
+      <div className="bg-gray-100 p-6 rounded-2xl flex items-center justify-center w-[100px] h-[100px]">
+        <Image src="/tamamlananproje.png" alt="Tamamlanan Proje" width={40} height={40} />
+      </div>
+      <p className="text-sm mt-3 w-36">30+ Tamamlanan Proje</p>
+    </div>
+
+    {/* Icon 3 */}
+    <div className="flex flex-col items-center text-center">
+      <div className="bg-gray-100 p-6 rounded-2xl flex items-center justify-center w-[100px] h-[100px]">
+        <Image src="/devamedenproje.png" alt="Devam Eden Proje" width={40} height={40} />
+      </div>
+      <p className="text-sm mt-3 w-36">20+ Devam Eden Proje</p>
+    </div>
+
+    {/* Icon 4 */}
+    <div className="flex flex-col items-center text-center">
+      <div className="bg-gray-100 p-6 rounded-2xl flex items-center justify-center w-[100px] h-[100px]">
+        <Image src="/teslimedilenproje.png" alt="Teslim Edilen" width={40} height={40} />
+      </div>
+      <p className="text-sm mt-3 w-36">10.000+ Teslim Edilen Ticari Alan</p>
+    </div>
+  </div>
+</div>
+
 
         </div>
       </div>
