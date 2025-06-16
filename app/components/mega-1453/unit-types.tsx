@@ -9,21 +9,21 @@ const unitTypes = [
     id: "1+1",
     image: "/MEGA1453-KATPLANI-01.png",
     details: {
-      "Kat Planı ": "1",
+      "1+1 NET ALAN": "41.36 m²",
     },
   },
   {
     id: "2+1",
     image: "/MEGA1453-KATPLANI-02.png",
     details: {
-      "Kat Planı ": "2",
+      "2+1 NET ALAN": "62 m²",
     },
   },
   {
     id: "3+1",
     image: "/MEGA1453-KATPLANI-03.png",
     details: {
-      "Kat Planı ": "3",
+      "3+1 NET ALAN": "124 m²",
     },
   },
   

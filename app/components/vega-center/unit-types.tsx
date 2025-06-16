@@ -6,40 +6,33 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const unitTypes = [
   {
-    id: "C",
-    image: "/MEGA1453-KATPLANI-01.png",
+    id: "M",
+    image: "/vega-center/MAĞAZA.png",
     details: {
-      "Toplam Alan": "38.91 m²",
-      "Brüt Alan": "42.00 m²",
-      "Balkon": "4.20 m²",
+      "Magaza": "",
+      "Brüt Alan": "8.266 m²",
+      "Bahçe": "0.870 m²",
     },
   },
   {
-    id: "1+1",
-    image: "/MEGA1453-KATPLANI-02.png",
+    id: "O",
+    image: "/vega-center/OFİS.png",
     details: {
-      "Toplam Alan": "45.50 m²",
-      "Brüt Alan": "50.00 m²",
-      "Balkon": "5.00 m²",
+      "Ofis": "",
+        "Brüt Alan": "8.266 m²",
+      "Bahçe": "0.870 m²",
     },
   },
   {
-    id: "2+1",
-    image: "/MEGA1453-KATPLANI-03.png",
+    id: "Y",
+    image: "/vega-center/YOGA.png",
     details: {
-      "Toplam Alan": "55.30 m²",
-      "Brüt Alan": "61.00 m²",
-      "Teras": "8.00 m²",
+      "Yoga": "",
+         "Brüt Alan": "8.266 m²",
+      "Bahçe": "0.870 m²",
     },
   },
-  {
-    id: "3+1",
-    image: "/MEGA1453-KATPLANI-03.png",
-    details: {
-      "Toplam Alan": "68.75 m²",
-      "Brüt Alan": "75.00 m²",
-    },
-  },
+
 ];
 
 

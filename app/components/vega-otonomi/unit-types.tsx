@@ -9,7 +9,7 @@ const unitTypes = [
     id: "C",
     image: "/vegaotonomikat-1.png", 
     details: {
-      "Vega Otonomi": "Kat 1",
+      "OTO GALERİ GÜNEY GİRİŞİ": "",
       
     },
   },
@@ -17,7 +17,7 @@ const unitTypes = [
     id: "D",
     image: "/vegaotonomikat-2.png", 
     details: {
-      "Vega Otonomi": "Kat 2",
+      "1. KAT PLANI & 2. KAT PLANI": "",
       
     },
   },
@@ -25,7 +25,7 @@ const unitTypes = [
     id: "E",
     image: "/vegaotonomikat-3.png", 
     details: {
-      "Vega Otonomi": "Kat 3",
+      "ZEMİN KAT PLANI": "",
       
     },
   },

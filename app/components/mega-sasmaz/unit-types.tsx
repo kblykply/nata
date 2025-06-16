@@ -9,7 +9,7 @@ const unitTypes = [
     id: "1",
     image: "/megas╠ºas╠ºmazkatplan-01.png",
     details: {
-      "Kat": "1",
+      "Kat": "1. BODRUM KAT",
  
     },
   },
@@ -17,7 +17,7 @@ const unitTypes = [
     id: "2",
     image: "/megas╠ºas╠ºmazkatplan-02.png",
     details: {
-      "Kat": "2",
+      "Kat": "1. KAT PLANI",
  
     },
   },
@@ -25,7 +25,7 @@ const unitTypes = [
     id: "3",
     image: "/megas╠ºas╠ºmazkatplan-03.png",
     details: {
-      "Kat": "3",
+      "Kat": "2. BODRUM KAT",
  
     },
   },
@@ -33,7 +33,7 @@ const unitTypes = [
     id: "4",
     image: "/megas╠ºas╠ºmazkatplan-04.png",
     details: {
-      "Kat": "4",
+      "Kat": "2. KAT PLANI",
  
     },
   },
@@ -41,7 +41,7 @@ const unitTypes = [
     id: "5",
     image: "/megas╠ºas╠ºmazkatplan-05.png",
     details: {
-      "Kat": "5",
+      "Kat": "3. BODRUM KAT",
  
     },
   },
@@ -49,7 +49,7 @@ const unitTypes = [
     id: "6",
     image: "/megas╠ºas╠ºmazkatplan-06.png",
     details: {
-      "Kat": "6",
+      "Kat": "3. KAT PLANI",
  
     },
   },
@@ -57,7 +57,7 @@ const unitTypes = [
     id: "7",
     image: "/megas╠ºas╠ºmazkatplan-07.png",
     details: {
-      "Kat": "7",
+      "Kat": "ASMA KAT PLANI",
  
     },
   },
@@ -65,7 +65,7 @@ const unitTypes = [
     id: "8",
     image: "/megas╠ºas╠ºmazkatplan-08.png",
     details: {
-      "Kat": "8",
+      "Kat": "ZEMİN KAT PLANI",
  
     },
   },

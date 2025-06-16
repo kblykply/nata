@@ -40,7 +40,7 @@ const slides: SlideData[] = [
     title: '',
     subtitle: '',
     background: '/slider/slider/NATA-HOLDI╠çNG-WEB1.jpg',
-    mobileBackground: '/slider/slider/NATA-HOLDI╠çNG-MOBI╠çL1.jpg',
+    mobileBackground: '/slider/slider/son/mobil-8.jpg',
     textColor: 'black',
   },
    {
@@ -56,7 +56,7 @@ const slides: SlideData[] = [
     title: '',
     subtitle: '',
     background: '/slider/slider/NATA-HOLDI╠çNG-WEB3.jpg',
-    mobileBackground: '/slider/slider/NATA-HOLDI╠çNG-MOBI╠çL3.jpg',
+    mobileBackground: '/slider/slider/son/mobil-6.jpg',
     textColor: 'black',
   },
    {
@@ -64,7 +64,7 @@ const slides: SlideData[] = [
     title: '',
     subtitle: '',
     background: '/slider/slider/NATA-HOLDI╠çNG-WEB4.jpg',
-    mobileBackground: '/slider/slider/NATA-HOLDI╠çNG-MOBI╠çL4.jpg',
+    mobileBackground: '/slider/slider/son/mobil-7.jpg',
     textColor: 'black',
   },
 ];

@@ -9,7 +9,7 @@ const unitTypes = [
     id: "1",
     image: "/hityenikatplangorsel-01.png",
     details: {
-      "Daire Tipi": "1",
+      " Net alan": "46.01 m²",
       
     },
   },
@@ -17,7 +17,7 @@ const unitTypes = [
     id: "2",
     image: "/hityenikatplangorsel-02.png",
     details: {
-      "Daire Tipi": "2",
+      " Net alan": "103.05 m²",
       
     },
   },
@@ -25,7 +25,7 @@ const unitTypes = [
     id: "3",
     image: "/hityenikatplangorsel-03.png",
     details: {
-      "Daire Tipi": "3",
+      " Net alan": "46.01 m²",
       
     },
   },
@@ -33,7 +33,7 @@ const unitTypes = [
     id: "4",
     image: "/hityenikatplangorsel-04.png",
     details: {
-      "Daire Tipi": "4",
+      " Net alan": "99.23 m²",
       
     },
   },
@@ -41,7 +41,7 @@ const unitTypes = [
     id: "5",
     image: "/hityenikatplangorsel-05.png",
     details: {
-      "Daire Tipi": "5",
+      " Net alan": "102.71 m²",
       
     },
   },
