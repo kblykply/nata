@@ -3,14 +3,7 @@ import { useState } from "react";
 import ContactPopup from "./ContactPopup";
 
 const projects = [
-  {
-    title: "NATA DELTA",
-    subtitle: "Konut & Avm",
-    image: "/nata-delta.jpg",
-    blur: true,
-    locationLink: "https://www.google.com/maps/place/%C4%B0stanbul+Yolu,+Ankara/@39.9530369,32.6976986,17z/data=!3m1!4b1!4m6!3m5!1s0x14d337c03f8b679b:0xefcf5f62cd2142c!8m2!3d39.9530369!4d32.6976986!16s%2Fg%2F1232c84w?entry=ttu",
-    demandLink: "/on-talep/nata-delta",
-  },
+
   {
     title: "YALIKAVAK",
     subtitle: "Exclusive Villa",
@@ -39,7 +32,7 @@ export default function FeaturedProjects() {
           Planlanan <span className="text-[#ab1e3b]">Projeler</span>
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {projects.map((project, idx) => (
             <div key={idx} className="flex flex-col items-center">
               <div className="relative w-60 h-60 rounded-xl overflow-hidden">

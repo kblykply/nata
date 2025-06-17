@@ -24,7 +24,7 @@ export default function Footer() {
             <Image src="/navbarLogo.png" alt="Logo" width={150} height={50} />
           </div>
 
-          <h3 className="text-2xl font-bold text-gray-900">444 8 776</h3>
+          <h3 className="text-2xl font-bold text-gray-900">444 80 18</h3>
           <div className="flex flex-wrap gap-3">
 <a href="/rezervation">
   <button className="px-4 py-2 bg-[#ab1e3b] text-white rounded-full">
@@ -88,7 +88,7 @@ export default function Footer() {
             <h5 className="font-semibold mb-2">Gelecek Projeler</h5>
             <ul className="flex flex-wrap gap-2">
   {[
-    { name: "NATA DELTA", url: "https://www.google.com/maps/place/37%C2%B008'18.0%22N+27%C2%B019'06.2%22E/@37.1383333,27.3183889,669m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d37.1383333!4d27.3183889?entry=ttu&g_ep=EgoyMDI1MDYwNC4wIKXMDSoASAFQAw%3D%3D" },
+    { name: "YALIKAVAK", url: "https://www.google.com/maps/place/37%C2%B008'18.0%22N+27%C2%B019'06.2%22E/@37.1385557,27.3174448,669m/data=!3m1!1e3!4m4!3m3!8m2!3d37.1383333!4d27.3183889?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D" },
     { name: "MİLAS KIYIKIŞLACIK", url: "https://www.google.com/maps/place/K%C4%B1y%C4%B1k%C4%B1%C5%9Flac%C4%B1k,+48200+Milas%2FMu%C4%9Fla/@37.2725837,27.6177563,667m/data=!3m2!1e3!4b1!4m6!3m5!1s0x14bef5bf2b757283:0x7d86dea5fbe1f934!8m2!3d37.2725837!4d27.6177563!16s%2Fg%2F11p61vs7xc?hl=tr-TR&entry=ttu&g_ep=EgoyMDI1MDYwNC4wIKXMDSoASAFQAw%3D%3D" },
   ].map((item, idx) => (
     <li key={idx}>
