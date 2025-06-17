@@ -42,7 +42,7 @@ export default function Footer() {
             <p>
 İnönü Mah, Fatih Sultan Mehmet Blv, No:412 Yenimahalle, ANKARA
 </p>
-            <p>9:00 ile 21:00 saatleri arasında çalışıyoruz.</p>
+            <p>9:00 ile 18:30 saatleri arasında çalışıyoruz.</p>
           </div>
           <div>
             <p className="font-semibold mt-4">Sosyal Medya</p>

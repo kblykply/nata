@@ -192,7 +192,7 @@ className="w-44 sm:w-48 md:w-[160px] h-auto"            />
                 }}
                 className="relative"
               >
-                <span className="cursor-pointer font-medium">İletişim</span>
+                <span className="cursor-pointer font-medium">Bize Ulaşın</span>
               </div>
             </Link>
           </nav>
