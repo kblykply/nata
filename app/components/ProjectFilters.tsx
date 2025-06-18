@@ -62,7 +62,7 @@ const [showCityMenu, setShowCityMenu] = useState(false);
             : "bg-gray-100 text-gray-700"
         }`}
       >
-        3287 Yeni Proje
+        8 Yeni Proje
       </button>
       <button
         onClick={() => setActiveTab("ikinci")}
@@ -72,7 +72,7 @@ const [showCityMenu, setShowCityMenu] = useState(false);
             : "bg-gray-100 text-gray-700"
         }`}
       >
-        452 İkinci El
+        8 İkinci El
       </button>
     </div>
 

@@ -7,11 +7,9 @@ const sections = [
   { id: "hero", label: "Proje Hakkında" },
   { id: "life", label: "Yaşam" },
   { id: "near-locations", label: "Konum" },
-  { id: "site-plans", label: "Site Planları" },
   { id: "unit-types", label: "Daire Tipleri" },
   { id: "design", label: "Tasarım" },
   { id: "contact", label: "İletişim" },
-  { id: "office", label: "Ofis" },
   { id: "boxes", label: "Daha Fazla" },
 ];
 
