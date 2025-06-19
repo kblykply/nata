@@ -11,62 +11,49 @@ import Link from 'next/link';
 
 interface SlideData {
   id: number;
-  title: string;
-  subtitle: string;
   background: string;
-  mobileBackground?: string;
   textColor: 'white' | 'black';
+  logoImage?: string;
+  logoPosition?: string;
+  titleImage?: string;
+  titlePosition?: string;
 }
 
 const slides: SlideData[] = [
   {
     id: 1,
-    title: '',
-    subtitle: '',
-    background: '/slider/slider/Banner1.jpg',
-    mobileBackground: '/slider/slider/m1.jpg',  
+    background: '/sliderson/image1.jpg',
     textColor: 'black',
+    logoImage: '/sliderson/logo.png',
+    logoPosition: 'top-6 left-6',
+    titleImage: '/sliderson/title1.png',
+  titlePosition: 'top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2',  },
+    {
+    id: 7,
+    background: '/sliderson/image2.jpg',
+    textColor: 'black',
+    logoImage: '/sliderson/logo.png',
+logoPosition: 'bottom-6 left-6',
+      titleImage: '/sliderson/title2.png',
+  titlePosition: 'top-6 left-6',
   },
   {
-    id: 2,
-    title: '',
-    subtitle: '',
-    background: '/slider/slider/Banner2.jpg',
-    mobileBackground: '/slider/slider/BannerMobil.jpg',
+    id: 8,
+    background: '/sliderson/image3.jpg',
     textColor: 'black',
-  },
-  {
-    id: 3,
-    title: '',
-    subtitle: '',
-    background: '/slider/slider/NATA-HOLDI╠çNG-WEB1.jpg',
-    mobileBackground: '/nata-mobil/aynıbayrak.jpg',
+    logoImage: '/sliderson/logo.png',
+logoPosition: 'top-6 left-6',
+      titleImage: '/sliderson/title3.png',
+titlePosition: 'bottom-6 left-1/2 -translate-x-1/2'  },
+{
+    id: 8,
+    background: '/sliderson/image4.jpg',
     textColor: 'black',
-  },
-   {
-    id: 4,
-    title: '',
-    subtitle: '',
-    background: '/slider/slider/NATA-HOLDI╠çNG-WEB2.jpg',
-    mobileBackground: '/nata-mobil/vega.jpg',
-    textColor: 'black',
-  },
-   {
-    id: 5,
-    title: '',
-    subtitle: '',
-    background: '/slider/slider/NATA-HOLDI╠çNG-WEB3.jpg',
-    mobileBackground: '/nata-mobil/okyanus.jpg',
-    textColor: 'black',
-  },
-   {
-    id: 6,
-    title: '',
-    subtitle: '',
-    background: '/slider/slider/NATA-HOLDI╠çNG-WEB4.jpg',
-    mobileBackground: '/nata-mobil/heraninda.jpg',
-    textColor: 'black',
-  },
+    logoImage: '/sliderson/logo.png',
+logoPosition: 'top-6 left-6',
+      titleImage: '/sliderson/title4.png',
+titlePosition: 'bottom-6 left-1/2 -translate-x-1/2'  },
+ 
 ];
 
 export default function HeroSlider() {
@@ -82,8 +69,7 @@ export default function HeroSlider() {
   }, []);
 
   return (
-    <div className="relative w-full h-[110vh]">
-      {/* Swiper Fullscreen */}
+    <div className="relative w-full h-[85vh]">
       <Swiper
         modules={[Pagination, Autoplay]}
         autoplay={{ delay: 5000, disableOnInteraction: false }}
@@ -95,35 +81,53 @@ export default function HeroSlider() {
           <SwiperSlide key={slide.id}>
             <div className="relative w-full h-full">
               <Image
-                src={
-                  isMobile && slide.mobileBackground
-                    ? slide.mobileBackground
-                    : slide.background
-                }
-                alt={slide.title}
+                src={slide.background}
+                alt={`Slide ${slide.id}`}
                 fill
                 className="object-cover object-left pointer-events-none"
                 priority
               />
-              {/* Text Overlay */}
-              <div className="absolute inset-0 z-10 w-full h-full flex items-start px-4 sm:px-6 md:px-12 lg:px-16 pt-20 pointer-events-none">
-                <div
-                  className={`max-w-xl space-y-6 ${
-                    slide.textColor === 'white' ? 'text-white' : 'text-black'
-                  } pointer-events-auto`}
-                >
-                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-                    {slide.title}
-                  </h2>
-                  <p className="text-base sm:text-lg">{slide.subtitle}</p>
-                </div>
+
+              {/* Overlay */}
+              <div className="absolute inset-0 z-10 w-full h-full pointer-events-none">
+                {slide.logoImage && (
+                  <div
+                    className={`absolute pointer-events-auto ${
+                      slide.logoPosition || 'top-4 left-4 sm:top-6 sm:left-6'
+                    }`}
+                  >
+                    <Image
+                      src={slide.logoImage}
+                      alt="Logo"
+                      width={160}
+                      height={80}
+                      className="w-auto h-20 sm:h-22 md:h-26"
+                    />
+                  </div>
+                )}
+                {slide.titleImage && (
+                  <div
+                    className={`absolute pointer-events-auto ${
+                      slide.titlePosition ||
+                      'top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'
+                    }`}
+                  >
+                    <Image
+                      src={slide.titleImage}
+                      alt="Title"
+                      width={400}
+                      height={400}
+                      className="w-auto max-w-[80vw] h-30 sm:h-32 md:h-39"
+                    />
+                  </div>
+                )}
               </div>
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
 
-      {/* Navigation Dots */}
+      {/* Pagination Dots */}
       <div className="absolute bottom-4 left-4 flex items-center gap-2 z-30">
         {slides.map((_, i) => (
           <button
@@ -138,34 +142,34 @@ export default function HeroSlider() {
         ))}
       </div>
 
-      {/* Right: Floating Card Section */}
+      {/* Right Floating Card (Desktop Only) */}
       {!isMobile && (
         <div className="absolute top-0 right-0 h-full w-[320px] p-4 flex flex-col justify-end bg-white/0 z-20 rounded-bl-2xl shadow-lg">
-<Swiper
-  modules={[Autoplay]}
-  autoplay={{ delay: 4000, disableOnInteraction: false }}
-  loop
-  className="rounded-xl overflow-hidden w-full flex items-center justify-center"
->
-  <SwiperSlide>
-    <Image
-      src="/slider/slider/sagkutu.png"
-      alt="Mega 1453"
-      width={300}
-      height={500}
-      className="w-full h-auto object-contain"
-    />
-  </SwiperSlide>
-  <SwiperSlide>
-    <Image
-      src="/slider/slider/sagkutu2.png" // replace with your new image
-      alt="Mega 1453 Slide 2"
-      width={300}
-      height={500}
-      className="w-full h-auto object-contain"
-    />
-  </SwiperSlide>
-</Swiper>
+          <Swiper
+            modules={[Autoplay]}
+            autoplay={{ delay: 4000, disableOnInteraction: false }}
+            loop
+            className="rounded-xl overflow-hidden w-full flex items-center justify-center"
+          >
+            <SwiperSlide>
+              <Image
+                src="/slider/slider/sagkutu.png"
+                alt="Mega 1453"
+                width={300}
+                height={500}
+                className="w-full h-auto object-contain"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Image
+                src="/slider/slider/sagkutu2.png"
+                alt="Mega 1453 Slide 2"
+                width={300}
+                height={500}
+                className="w-full h-auto object-contain"
+              />
+            </SwiperSlide>
+          </Swiper>
 
           <div
             className="rounded-xl bg-no-repeat bg-cover bg-center shadow-md h-[120px] mt-4 px-6 py-4 flex items-start w-full"
@@ -176,6 +180,7 @@ export default function HeroSlider() {
               <p className="text-red-600 font-semibold">Kazanırsın</p>
             </div>
           </div>
+
           <Link href="/kampanya" className="w-full">
             <button className="mt-4 bg-gradient-to-r from-red-600 to-orange-400 text-white py-4 px-4 rounded shadow-md text-sm font-medium w-full">
               +6 daha
