@@ -46,7 +46,7 @@ logoPosition: 'top-6 left-6',
       titleImage: '/sliderson/title3.png',
 titlePosition: 'bottom-6 left-1/2 -translate-x-1/2'  },
 {
-    id: 8,
+    id: 9,
     background: '/sliderson/image4.jpg',
     textColor: 'black',
     logoImage: '/sliderson/logo.png',
@@ -117,7 +117,7 @@ export default function HeroSlider() {
                       alt="Title"
                       width={400}
                       height={400}
-                      className="w-auto max-w-[80vw] h-20 sm:h-32 md:h-39"
+className="w-auto max-w-[80vw] h-30 sm:h-32 md:h-39"
                     />
                   </div>
                 )}
