@@ -27,33 +27,35 @@ const slides: SlideData[] = [
     logoImage: '/sliderson/logo.png',
     logoPosition: 'top-6 left-6',
     titleImage: '/sliderson/title1.png',
-  titlePosition: 'top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2',  },
-    {
+    titlePosition: 'top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2',
+  },
+  {
     id: 7,
     background: '/sliderson/image2.jpg',
     textColor: 'black',
     logoImage: '/sliderson/logo.png',
-logoPosition: 'bottom-6 left-6',
-      titleImage: '/sliderson/title2.png',
-  titlePosition: 'top-6 left-6',
+    logoPosition: 'bottom-6 left-6',
+    titleImage: '/sliderson/title2.png',
+    titlePosition: 'top-6 left-6',
   },
   {
     id: 8,
     background: '/sliderson/image3.jpg',
     textColor: 'black',
     logoImage: '/sliderson/logo.png',
-logoPosition: 'top-6 left-6',
-      titleImage: '/sliderson/title3.png',
-titlePosition: 'bottom-6 left-1/2 -translate-x-1/2'  },
-{
+    logoPosition: 'top-6 left-6',
+    titleImage: '/sliderson/title3.png',
+    titlePosition: 'bottom-6 left-1/2 -translate-x-1/2',
+  },
+  {
     id: 9,
     background: '/sliderson/image4.jpg',
     textColor: 'black',
     logoImage: '/sliderson/logo.png',
-logoPosition: 'top-6 left-6',
-      titleImage: '/sliderson/title4.png',
-titlePosition: 'bottom-6 left-1/2 -translate-x-1/2'  },
- 
+    logoPosition: 'top-6 left-6',
+    titleImage: '/sliderson/title4.png',
+    titlePosition: 'bottom-6 left-1/2 -translate-x-1/2',
+  },
 ];
 
 export default function HeroSlider() {
@@ -115,9 +117,9 @@ export default function HeroSlider() {
                     <Image
                       src={slide.titleImage}
                       alt="Title"
-                      width={400}
+                      width={1000}
                       height={400}
-className="w-auto max-w-[80vw] h-30 sm:h-32 md:h-39"
+className="w-full max-w-[400px] sm:max-w-[400px] md:max-w-[500px] h-auto"
                     />
                   </div>
                 )}
