@@ -84,7 +84,7 @@ export default function HeroSlider() {
                 src={slide.background}
                 alt={`Slide ${slide.id}`}
                 fill
-                className="object-cover object-left pointer-events-none"
+                className="object-cover object-center pointer-events-none"
                 priority
               />
 
