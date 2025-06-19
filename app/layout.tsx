@@ -2,7 +2,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import ClientLayout from "./components/ClientLayout";
-import Script from 'next/script'
+import Script from 'next/script';
+import Preloader from "./components/Preloader";
 
 
 
@@ -45,6 +46,8 @@ export default function RootLayout({
 
 
       <body className="antialiased">
+
+                <Preloader />
 
 <ClientLayout>
 

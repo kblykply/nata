@@ -205,7 +205,7 @@ interface Listing {
     time: "4 dakika mesafede",
     stats: ["490m² ye kadar", "207 bölüm"],
     footer: "Plevne",
-    image: "/OTONOMI - ON.jpg",
+    image: "/otonomiMainRender2.jpg",
     imageAlt: "/OTONOMI - ARKA.jpg",
   },
   {
