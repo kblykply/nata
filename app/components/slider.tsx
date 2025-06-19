@@ -24,7 +24,7 @@ const slides: SlideData[] = [
     title: '',
     subtitle: '',
     background: '/slider/slider/Banner1.jpg',
-    mobileBackground: '/slider/slider/m1.jpg',
+    mobileBackground: '/slider/slider/m1.jpg',  
     textColor: 'black',
   },
   {
@@ -40,7 +40,7 @@ const slides: SlideData[] = [
     title: '',
     subtitle: '',
     background: '/slider/slider/NATA-HOLDI╠çNG-WEB1.jpg',
-    mobileBackground: '/slider/slider/son/mobil-8.jpg',
+    mobileBackground: '/nata-mobil/aynıbayrak.jpg',
     textColor: 'black',
   },
    {
@@ -48,7 +48,7 @@ const slides: SlideData[] = [
     title: '',
     subtitle: '',
     background: '/slider/slider/NATA-HOLDI╠çNG-WEB2.jpg',
-    mobileBackground: '/slider/slider/NATA-HOLDI╠çNG-MOBI╠çL2.jpg',
+    mobileBackground: '/nata-mobil/vega.jpg',
     textColor: 'black',
   },
    {
@@ -56,7 +56,7 @@ const slides: SlideData[] = [
     title: '',
     subtitle: '',
     background: '/slider/slider/NATA-HOLDI╠çNG-WEB3.jpg',
-    mobileBackground: '/slider/slider/son/mobil-6.jpg',
+    mobileBackground: '/nata-mobil/okyanus.jpg',
     textColor: 'black',
   },
    {
@@ -64,7 +64,7 @@ const slides: SlideData[] = [
     title: '',
     subtitle: '',
     background: '/slider/slider/NATA-HOLDI╠çNG-WEB4.jpg',
-    mobileBackground: '/slider/slider/son/mobil-7.jpg',
+    mobileBackground: '/nata-mobil/heraninda.jpg',
     textColor: 'black',
   },
 ];
