@@ -45,7 +45,7 @@ export default function UnitTypesSection() {
   };
 
   return (
-    <section className="w-full bg-white py-12">
+    <section className="w-full bg-white py-12 pt-40">
       {/* Tabs & Currency Selector */}
       <div className="flex justify-center items-center space-x-4 mb-6">
         {unitTypes.map((unit, index) => (

@@ -165,7 +165,7 @@
           {/* RIGHT SIDE */}
           <div className="w-1/2 relative p-4">
             <Image
-              src="/map-image.png"
+              src="/merkezi-satis.png"
               alt="Map"
               fill
               className="object-cover"

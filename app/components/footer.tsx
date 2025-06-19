@@ -40,7 +40,7 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold">Merkezi Satış Ofisi</h4>
             <p>
-İnönü Mah, Fatih Sultan Mehmet Blv, No:412 Yenimahalle, ANKARA
+Mustafa Kemal, 2127. Cd No:21, 06530 Çankaya/Ankara
 </p>
             <p>9:00 ile 18:30 saatleri arasında çalışıyoruz.</p>
           </div>

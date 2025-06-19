@@ -53,7 +53,7 @@ export default async function BlogPostPage({
           src={post.image}
           alt={post.title}
           fill
-          className="object-cover object-center"
+className="object-contain object-top"
           priority
         />
         <div className="absolute inset-0 bg-black/30" />

@@ -141,15 +141,32 @@ export default function HeroSlider() {
       {/* Right: Floating Card Section */}
       {!isMobile && (
         <div className="absolute top-0 right-0 h-full w-[320px] p-4 flex flex-col justify-end bg-white/0 z-20 rounded-bl-2xl shadow-lg">
-          <div className="rounded-xl overflow-hidden w-full flex items-center justify-center">
-            <Image
-              src="/slider/slider/sagkutu.png"
-              alt="Mega 1453"
-              width={300}
-              height={500}
-              className="w-full h-auto object-contain"
-            />
-          </div>
+<Swiper
+  modules={[Autoplay]}
+  autoplay={{ delay: 4000, disableOnInteraction: false }}
+  loop
+  className="rounded-xl overflow-hidden w-full flex items-center justify-center"
+>
+  <SwiperSlide>
+    <Image
+      src="/slider/slider/sagkutu.png"
+      alt="Mega 1453"
+      width={300}
+      height={500}
+      className="w-full h-auto object-contain"
+    />
+  </SwiperSlide>
+  <SwiperSlide>
+    <Image
+      src="/slider/slider/sagkutu2.png" // replace with your new image
+      alt="Mega 1453 Slide 2"
+      width={300}
+      height={500}
+      className="w-full h-auto object-contain"
+    />
+  </SwiperSlide>
+</Swiper>
+
           <div
             className="rounded-xl bg-no-repeat bg-cover bg-center shadow-md h-[120px] mt-4 px-6 py-4 flex items-start w-full"
             style={{ backgroundImage: "url('/images/kutu-2.png')" }}

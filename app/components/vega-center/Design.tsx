@@ -20,6 +20,14 @@ export default function DesignSection() {
     "/vega-center-02.jpg",
     "/vega-center-03.jpg",
     "/vega-center-07.jpg",
+        "/new-vega/1.jpeg",
+                "/new-vega/2.jpeg",
+
+                        "/new-vega/3.jpeg",
+
+                                "/new-vega/4.jpeg",
+
+
   ];
 
   return (

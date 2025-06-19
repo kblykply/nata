@@ -8,7 +8,7 @@ const sections = [
   { id: "life", label: "Yaşam" },
   { id: "near-locations", label: "Konum" },
   { id: "unit-types", label: "Daire Tipleri" },
-  { id: "design", label: "Tasarım" },
+  { id: "design", label: "Galeri" },
   { id: "contact", label: "İletişim" },
   { id: "boxes", label: "Daha Fazla" },
 ];
@@ -79,11 +79,15 @@ export default function ExpandableNavigator() {
         )}
 
         {/* Center Text Pill */}
-        <div
-          className={`bg-[#5D4B5E] text-white text-sm px-4 py-2 rounded-full whitespace-nowrap overflow-hidden text-ellipsis ml-4 max-w-[140px]`}
-        >
-          Ankaranın en gözde projesi Vega Center 2025 yılında tamamlanıyor.
-        </div>
+       <div
+  className={`bg-[#5D4B5E] text-white text-sm px-4 py-2 rounded-full ml-4 transition-all duration-300 ${
+    isOpen
+      ? 'max-w-none whitespace-normal'
+      : 'max-w-[140px] whitespace-nowrap overflow-hidden text-ellipsis'
+  }`}
+>
+  Nata Yaşam, yaşamın kalbinde, konforun zirvesinde.
+</div>
 
         {/* Right Action Button */}
         <div className="relative ml-4">

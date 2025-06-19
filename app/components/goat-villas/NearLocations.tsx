@@ -420,10 +420,10 @@ const getCategoryPinUrl = (categoryId: string): string =>
   animate={{ opacity: 1, x: 0 }}
   exit={{ opacity: 0, x: 50 }}
   transition={{ duration: 0.4 }}
-  className="flex items-center justify-center flex-1 bg-white text-center p-0"
+  className="flex items-center justify-center flex-1 bg-white text-center p-0 "
 >
   <div className="overflow-x-auto md:overflow-visible">
-    <div className="w-[200%] md:w-auto"> {/* Zoomed width for mobile */}
+    <div className="w-[250%] md:w-auto"> {/* Zoomed width for mobile */}
       <img
         src="/altyapilar/goatvillas.jpg"
         alt="Altyapı Görseli"

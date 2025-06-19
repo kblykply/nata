@@ -23,10 +23,7 @@ const Page: React.FC = () => {
          <section id="near-locations" className="scroll-mt-24">
            <NearLocations />
          </section>
-     
-         <section id="site-plans" className="scroll-mt-24">
-           <SitePlans />
-         </section>
+
      
          <section id="unit-types" className="scroll-mt-24">
            <UnitTypes />
@@ -40,10 +37,7 @@ const Page: React.FC = () => {
            <Contact />
          </section>
      
-         <section id="office" className="scroll-mt-24">
-           <Office />
-         </section>
-     
+   
          <section id="boxes" className="scroll-mt-24">
            <Boxes />
          </section>
