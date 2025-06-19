@@ -117,7 +117,7 @@ export default function HeroSlider() {
                       alt="Title"
                       width={400}
                       height={400}
-                      className="w-auto max-w-[80vw] h-30 sm:h-32 md:h-39"
+                      className="w-auto max-w-[80vw] h-20 sm:h-32 md:h-39"
                     />
                   </div>
                 )}
