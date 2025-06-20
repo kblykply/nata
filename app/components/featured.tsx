@@ -27,20 +27,20 @@ export default function FeaturedProjects() {
 
   return (
     <>
-      <section id="yakinda-projeler" className="py-16 text-center">
-        <h2 className="text-2xl font-semibold mb-25">
-          Planlanan <span className="text-[#ab1e3b]">Projeler</span>
+<section id="yakinda-projeler" className="py-10 px-4 sm:px-6 text-center">
+  <h2 className="text-xl sm:text-2xl font-semibold mb-10">
+              Planlanan <span className="text-[#ab1e3b]">Projeler</span>
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-screen-xl mx-auto">
-          {projects.map((project, idx) => (
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-screen-xl mx-auto">
+              {projects.map((project, idx) => (
             <div key={idx} className="flex flex-col items-center">
-              <div className="relative w-100 h-100 rounded-xl overflow-hidden">
-                <img
+<div className="relative w-full h-[220px] sm:h-[280px] md:h-[320px] rounded-xl overflow-hidden">
+                  <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover"
-                />
+    className="w-full h-full object-cover"
+                    />
               </div>
               <p className="mt-4 font-semibold whitespace-pre-line">{project.title}</p>
               <p className="text-sm text-gray-500 whitespace-pre-line">{project.subtitle}</p>

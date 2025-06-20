@@ -72,7 +72,7 @@ export default async function BlogPostPage({
 
   {/* Text Content - stays on top */}
   <div className="absolute bottom-6 left-6 right-6 text-white z-30">
-    <h1 className="text-3xl md:text-4xl font-bold drop-shadow-md">{post.title}</h1>
+    <h1 className="font-bold drop-shadow-md text-white text-[clamp(1.2rem,5vw,2.5rem)] leading-snug text-balance">{post.title}</h1>
     <p className="text-sm text-gray-200 mt-1">
       {new Date(post.created_at).toLocaleDateString('tr-TR', {
         day: '2-digit',
