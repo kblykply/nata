@@ -119,7 +119,7 @@
                         alt="Title"
                         width={1000}
                         height={400}
-  className="w-full max-w-[400  px] sm:max-w-[400px] md:max-w-[500px] h-auto"
+  className="w-full max-w-[400px] sm:max-w-[400px] md:max-w-[500px] h-auto"
                       />
                     </div>
                   )}

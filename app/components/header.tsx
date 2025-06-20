@@ -47,29 +47,59 @@ export default function Header({
   const isHoveringPopup = useRef(false);
   const pathname = usePathname();
 const isHomepage = pathname === "/";
+const notificationRef = useRef<HTMLDivElement | null>(null);
 
   // Fetch notifications
-  useEffect(() => {
-    const fetchNotifications = async () => {
-      try {
-        const res = await fetch("https://www.salihkaankoc.net/nata-core/web-notifications");
-        const json = await res.json();
-        if (Array.isArray(json.data)) {
-          const mapped: Notification[] = json.data.map((item: any, index: number) => ({
-            id: item.id || index,
-            type: item.type || "info",
-            message: item.message || item.title || "Yeni bildirim",
-            time: item.time || "Az önce",
-          }));
-          setNotifications(mapped);
-        }
-      } catch (error) {
-        console.error("Bildirimler alınamadı:", error);
-      }
-    };
+      useEffect(() => {
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      notificationRef.current &&
+      !notificationRef.current.contains(event.target as Node)
+    ) {
+      setShowNotifications(false);
+    }
+  };
 
-    fetchNotifications();
-  }, []);
+  const handleScroll = () => {
+    setShowNotifications(false);
+  };
+
+  document.addEventListener("mousedown", handleClickOutside);
+  window.addEventListener("scroll", handleScroll);
+
+  return () => {
+    document.removeEventListener("mousedown", handleClickOutside);
+    window.removeEventListener("scroll", handleScroll);
+  };
+}, []);
+
+
+
+    // Fetch notifications from the API 
+   // Fetch notifications function
+const fetchNotifications = async () => {
+  try {
+    const res = await fetch("https://www.salihkaankoc.net/nata-core/web-notifications");
+    const json = await res.json();
+    if (Array.isArray(json.data)) {
+      const mapped: Notification[] = json.data.map((item: any, index: number) => ({
+        id: item.id || index,
+        type: item.type || "info",
+        message: item.message || item.title || "Yeni bildirim",
+        time: item.time || "Az önce",
+      }));
+      setNotifications(mapped);
+    }
+  } catch (error) {
+    console.error("Bildirimler alınamadı:", error);
+  }
+};
+
+// Call it in a top-level useEffect
+useEffect(() => {
+  fetchNotifications();
+}, []);
+
 
   const iconMap = {
     info: <Info size={16} className="text-blue-500" />,
@@ -121,8 +151,8 @@ const isHomepage = pathname === "/";
   
 
   return (
-<header className={`fixed top-0 z-[100] w-full shadow-sm transition-all duration-300 backdrop-blur-lg   py-3 md:py-3  
-  ${isHomepage ? " bg-white/98 min-h-[72px] " : "fixed w-full  bg-white shadow-sm sticky top-0 z-[100] bg-white/95"}
+<header className={`fixed top-0 z-[100] w-full shadow-sm transition-all duration-300 backdrop-blur   py-3 md:py-3  
+  ${isHomepage ? " bg-white/98  " : "fixed w-full  bg-white shadow-sm sticky top-0 z-[100] bg-white/95"}
 `}>
   <div className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6  ">
 
@@ -213,7 +243,7 @@ const isHomepage = pathname === "/";
   </nav>
 
   {/* Right: Buttons */}
-  <div className="flex items-center space-x-4 flex-shrink-0">
+  <div className="flex items-center space-x-2  flex-shrink-0">
     {/* Language */}
     <button className="flex items-center px-3 py-3 rounded-full text-sm bg-gray-100 hover:bg-gray-200">
       <Image
@@ -227,45 +257,44 @@ const isHomepage = pathname === "/";
     </button>
 
     {/* Notifications */}
-    <div className="relative">
-      <button
-        aria-label="Bildirimler"
-        onClick={() => setShowNotifications(!showNotifications)}
-        className="w-10 h-10 rounded-full bg-[#ab1e3b] hover:bg-gray-200 flex items-center justify-center relative"
-      >
-        <Bell size={18} className="text-white" />
-        {notifications.length > 0 && (
-          <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
-        )}
-      </button>
+  <div className="relative" ref={notificationRef}>
+  <button
+    aria-label="Bildirimler"
+    onClick={() => setShowNotifications(!showNotifications)}
+    className="w-10 h-10 rounded-full bg-[#ab1e3b] hover:bg-gray-200 flex items-center justify-center relative"
+  >
+    <Bell size={18} className="text-white" />
+    {notifications.length > 0 && (
+      <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+    )}
+  </button>
 
-      {showNotifications && (
-        <div className="absolute top-full mt-3 w-[90vw] max-w-sm left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-0 bg-white rounded-xl shadow-2xl animate-fade-in z-50">
-          <div className="p-4 font-semibold text-gray-800">Bildirimler</div>
-          <ul className="max-h-60 overflow-y-auto">
-            {notifications.map((note) => (
-              <li
-                key={note.id}
-                className="flex items-start gap-3 px-4 py-3 hover:bg-gray-50 transition"
-              >
-                {iconMap[note.type]}
-                <div>
-                  <p className="text-sm text-gray-700">{note.message}</p>
-                  <span className="text-xs text-gray-400">
-                    {formatDate(note.time)}
-                  </span>
-                </div>
-              </li>
-            ))}
-            {notifications.length === 0 && (
-              <li className="px-4 py-3 text-sm text-gray-500">
-                Henüz bildirim yok.
-              </li>
-            )}
-          </ul>
-        </div>
-      )}
+  {showNotifications && (
+    <div className="backdrop-blur bg-white/96 md:mt-5 absolute top-full mt-3 w-[90vw] max-w-sm left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-0 bg-white rounded-xl shadow-2xl animate-fade-in z-50">
+      <div className="p-4 font-semibold text-gray-800">Bildirimler</div>
+      <ul className="max-h-60 overflow-y-auto">
+        {notifications.map((note) => (
+          <li
+            key={note.id}
+            className="flex items-start gap-3 px-4 py-3 hover:bg-gray-50 transition"
+          >
+            {iconMap[note.type]}
+            <div>
+              <p className="text-sm text-gray-700">{note.message}</p>
+              <span className="text-xs text-gray-400">
+                {formatDate(note.time)}
+              </span>
+            </div>
+          </li>
+        ))}
+        {notifications.length === 0 && (
+          <li className="px-4 py-3 text-sm text-gray-500">Henüz bildirim yok.</li>
+        )}
+      </ul>
     </div>
+  )}
+</div>
+
 
     {/* Favorites */}
     <FavoriteButton />
@@ -283,7 +312,7 @@ const isHomepage = pathname === "/";
 
       {/* Mobile Menu */}
  {menuOpen && (
-  <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-xl z-50 px-6 py-6 space-y-4 rounded-b-2xl animate-slide-down">
+  <div className="backdrop-blur bg-white/97 md:hidden absolute top-full left-0 w-full bg-white shadow-xl z-50 px-6 py-6 space-y-4 rounded-b-2xl animate-slide-down ">
     <Link href="/" className="block font-medium" onClick={() => setMenuOpen(false)}>Ana Sayfa</Link>
     <Link href="/projects" className="block font-medium" onClick={() => setMenuOpen(false)}>Projeler</Link>
     <Link href="/about-us" className="block font-medium" onClick={() => setMenuOpen(false)}>Hakkımızda</Link>
