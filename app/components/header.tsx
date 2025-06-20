@@ -121,8 +121,8 @@ const isHomepage = pathname === "/";
   
 
   return (
-<header className={`fixed top-0 z-[100] w-full shadow-sm transition-all duration-300 backdrop-blur-lg    
-  ${isHomepage ? " bg-white/98 min-h-[72px] py-4 md:py-5" : "fixed w-full px-6 py-5 bg-white shadow-sm sticky top-0 z-[100] bg-white/95"}
+<header className={`fixed top-0 z-[100] w-full shadow-sm transition-all duration-300 backdrop-blur-lg   py-3 md:py-3  
+  ${isHomepage ? " bg-white/98 min-h-[72px] " : "fixed w-full  bg-white shadow-sm sticky top-0 z-[100] bg-white/95"}
 `}>
   <div className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 ">
 
