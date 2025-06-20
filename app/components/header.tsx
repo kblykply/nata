@@ -113,7 +113,7 @@ export default function Header({
   
 
   return (
-    <header className="fixed w-full px-6 py-5 bg-white shadow-sm sticky top-0 z-[100]">
+    <header className="fixed  w-full px-6 py-5 bg-white shadow-sm sticky top-0 z-[100]">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
   {/* Left: Logo */}
   <div className="flex-shrink-0">

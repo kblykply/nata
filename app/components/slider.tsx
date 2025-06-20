@@ -71,7 +71,7 @@ export default function HeroSlider() {
   }, []);
 
   return (
-    <div className="relative w-full h-[85vh]">
+    <div className="relative w-full h-[90vh]">
       <Swiper
         modules={[Pagination, Autoplay]}
         autoplay={{ delay: 5000, disableOnInteraction: false }}
