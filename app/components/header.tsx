@@ -113,9 +113,9 @@ export default function Header({
   
 
   return (
-    <header className="fixed h-[10vh] w-full px-6 py-5 bg-white shadow-sm sticky top-0 z-[100]">
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
-  {/* Left: Logo */}
+<header className="fixed top-0 z-[100] w-full bg-white shadow-sm">
+  <div className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 py-4 md:py-5 min-h-[72px]">
+      {/* Left: Logo */}
   <div className="flex-shrink-0">
     <Link href="/">
       <Image
