@@ -119,7 +119,7 @@ export default function HeroSlider() {
                       alt="Title"
                       width={1000}
                       height={400}
-className="w-full max-w-[400px] sm:max-w-[400px] md:max-w-[500px] h-auto"
+className="w-full max-w-[400  px] sm:max-w-[400px] md:max-w-[500px] h-auto"
                     />
                   </div>
                 )}
@@ -175,7 +175,7 @@ className="w-full max-w-[400px] sm:max-w-[400px] md:max-w-[500px] h-auto"
 
           <div
             className="rounded-xl bg-no-repeat bg-cover bg-center shadow-md h-[120px] mt-4 px-6 py-4 flex items-start w-full"
-            style={{ backgroundImage: "url('/images/kutu-2.png')" }}
+            style={{ backgroundImage: "url('/natakalp.png')" }}
           >
             <div className="text-sm leading-tight">
               <p className="text-black font-medium">Paylaştıkça</p>
