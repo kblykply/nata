@@ -282,18 +282,20 @@ const isHomepage = pathname === "/";
 
 
       {/* Mobile Menu */}
-    {menuOpen && (
+ {menuOpen && (
   <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-xl z-50 px-6 py-6 space-y-4 rounded-b-2xl animate-slide-down">
-    <Link href="/" className="block font-medium">Ana Sayfa</Link>
-    <Link href="/projects" className="block font-medium">Projeler</Link>
-    <Link href="/about-us" className="block font-medium">Hakkımızda</Link>
-    <Link href="/contact-us" className="block font-medium">İletişim</Link>
-    <Link href="/n-bulten" className="block font-medium">N Bülten</Link>
-    <Link href="/blog" className="block font-medium">Blog</Link>
+    <Link href="/" className="block font-medium" onClick={() => setMenuOpen(false)}>Ana Sayfa</Link>
+    <Link href="/projects" className="block font-medium" onClick={() => setMenuOpen(false)}>Projeler</Link>
+    <Link href="/about-us" className="block font-medium" onClick={() => setMenuOpen(false)}>Hakkımızda</Link>
+    <Link href="/contact-us" className="block font-medium" onClick={() => setMenuOpen(false)}>İletişim</Link>
+    <Link href="/n-bulten" className="block font-medium" onClick={() => setMenuOpen(false)}>N Bülten</Link>
+    <Link href="/blog" className="block font-medium" onClick={() => setMenuOpen(false)}>Blog</Link>
   </div>
+)}
 
 
-      )}
+
+      
     </header>
   );
 }
