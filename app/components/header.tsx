@@ -114,155 +114,161 @@ export default function Header({
 
   return (
     <header className="fixed w-full px-6 py-5 bg-white shadow-sm sticky top-0 z-[100]">
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
-        {/* Logo and desktop nav */}
-        <div className="flex items-center space-x-4 space-y-3">
-          <Link href="/">
-            <Image
-              src="/navbarLogo.png"
-              alt="Nata Yaşam Logo"
-              width={50}
-              height={50}
-              sizes="(max-width: 768px) 140px, 180px"
-className="w-44 sm:w-48 md:w-[160px] h-auto"            />
-          </Link>
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
+  {/* Left: Logo */}
+  <div className="flex-shrink-0">
+    <Link href="/">
+      <Image
+        src="/navbarLogo.png"
+        alt="Nata Yaşam Logo"
+        width={50}
+        height={50}
+        sizes="(max-width: 768px) 140px, 180px"
+        className="w-44 sm:w-48 md:w-[160px] h-auto"
+      />
+    </Link>
+  </div>
 
-          <nav
-            className="hidden md:flex space-x-6 text-xs"
-            style={{ fontFamily: "Unbounded, sans-serif" }}
-          >
-            <div
-              onMouseEnter={() => {
-                clearTimeout(window.yeniProjeTimeout ?? undefined);
-                setIsNewProjectsOpen(true);
-              }}
-              onMouseLeave={() => {
-                window.yeniProjeTimeout = setTimeout(() => {
-                  setIsNewProjectsOpen(false);
-                }, 200);
-              }}
-              className="relative"
-            >
-              <span className="cursor-pointer text-xs font-medium">
-                Yeni Projeler
-              </span>
-            </div>
+  {/* Center: Navigation */}
+  <nav
+    className="hidden md:flex flex-1 justify-center space-x-6 text-xs"
+    style={{ fontFamily: "Unbounded, sans-serif" }}
+  >
+    {/* nav items here, unchanged */}
+    <div
+      onMouseEnter={() => {
+        clearTimeout(window.yeniProjeTimeout ?? undefined);
+        setIsNewProjectsOpen(true);
+      }}
+      onMouseLeave={() => {
+        window.yeniProjeTimeout = setTimeout(() => {
+          setIsNewProjectsOpen(false);
+        }, 200);
+      }}
+      className="relative"
+    >
+      <span className="cursor-pointer text-xs font-medium">
+        Yeni Projeler
+      </span>
+    </div>
 
-            <Link href="/about-us">Hakkımızda</Link>
+    <Link href="/about-us">Hakkımızda</Link>
 
-            <Link href="/kampanya">
-              <div
-                onMouseEnter={() => {
-                  clearTimeout(window.kampanyaTimeout ?? undefined);
-                  setIsKampanyalarOpen(true);
-                }}
-                onMouseLeave={() => {
-                  window.kampanyaTimeout = setTimeout(() => {
-                    setIsKampanyalarOpen(false);
-                  }, 200);
-                }}
-                className="relative"
-              >
-                <span className="cursor-pointer text-xs font-medium">
-                  Kampanyalar
-                </span>
-              </div>
-            </Link>
-
-            <Link href="/n-bulten">N-Bülten</Link>
-
-            <Link
-              href="https://www.nataholding.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Nata Holding
-            </Link>
-
-            <Link href="/contact-us">
-              <div
-                onMouseEnter={() => {
-                  clearTimeout(window.iletisimTimeout ?? undefined);
-                  setIsContactPopupOpen(true);
-                }}
-                onMouseLeave={() => {
-                  window.iletisimTimeout = setTimeout(() => {
-                    setIsContactPopupOpen(false);
-                  }, 200);
-                }}
-                className="relative"
-              >
-                <span className="cursor-pointer font-medium">Bize Ulaşın</span>
-              </div>
-            </Link>
-          </nav>
-        </div>
-
-        {/* Right Side */}
-        <div className="flex items-center space-x-4">
-          <button className="flex items-center px-3 py-3 rounded-full text-sm bg-gray-100 hover:bg-gray-200">
-            <Image
-              src="/turkish-flag.png"
-              alt="Turkish Flag"
-              width={20}
-              height={20}
-              className="mr-2"
-            />
-            TR
-          </button>
-
-          {/* Notification */}
-          <div className="relative">
-            <button
-              aria-label="Bildirimler"
-              onClick={() => setShowNotifications(!showNotifications)}
-              className="w-10 h-10 rounded-full bg-[#ab1e3b] hover:bg-gray-200 flex items-center justify-center relative"
-            >
-              <Bell size={18} className="text-white" />
-              {notifications.length > 0 && (
-                <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
-              )}
-            </button>
-
-            {showNotifications && (
-<div className="absolute top-full mt-3 w-[90vw] max-w-sm left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-0 bg-white rounded-xl shadow-2xl animate-fade-in z-50">                <div className="p-4 font-semibold text-gray-800">
-                  Bildirimler
-                </div>
-                <ul className="max-h-60 overflow-y-auto">
-                  {notifications.map((note) => (
-                    <li
-                      key={note.id}
-                      className="flex items-start gap-3 px-4 py-3 hover:bg-gray-50 transition"
-                    >
-                      {iconMap[note.type]}
-                      <div>
-                        <p className="text-sm text-gray-700">{note.message}</p>
-                        <span className="text-xs text-gray-400">
-                          {formatDate(note.time)}
-                        </span>
-                      </div>
-                    </li>
-                  ))}
-                  {notifications.length === 0 && (
-                    <li className="px-4 py-3 text-sm text-gray-500">
-                      Henüz bildirim yok.
-                    </li>
-                  )}
-                </ul>
-              </div>
-            )}
-          </div>
-  <FavoriteButton />
-
-          {/* Mobile Menu Toggle */}
-          <button
-            className="md:hidden w-9 h-9 flex items-center justify-center bg-gray-100 rounded-full"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            {menuOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
-        </div>
+    <Link href="/kampanya">
+      <div
+        onMouseEnter={() => {
+          clearTimeout(window.kampanyaTimeout ?? undefined);
+          setIsKampanyalarOpen(true);
+        }}
+        onMouseLeave={() => {
+          window.kampanyaTimeout = setTimeout(() => {
+            setIsKampanyalarOpen(false);
+          }, 200);
+        }}
+        className="relative"
+      >
+        <span className="cursor-pointer text-xs font-medium">
+          Kampanyalar
+        </span>
       </div>
+    </Link>
+
+    <Link href="/n-bulten">N-Bülten</Link>
+
+    <Link
+      href="https://www.nataholding.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Nata Holding
+    </Link>
+
+    <Link href="/contact-us">
+      <div
+        onMouseEnter={() => {
+          clearTimeout(window.iletisimTimeout ?? undefined);
+          setIsContactPopupOpen(true);
+        }}
+        onMouseLeave={() => {
+          window.iletisimTimeout = setTimeout(() => {
+            setIsContactPopupOpen(false);
+          }, 200);
+        }}
+        className="relative"
+      >
+        <span className="cursor-pointer font-medium">Bize Ulaşın</span>
+      </div>
+    </Link>
+  </nav>
+
+  {/* Right: Buttons */}
+  <div className="flex items-center space-x-4 flex-shrink-0">
+    {/* Language */}
+    <button className="flex items-center px-3 py-3 rounded-full text-sm bg-gray-100 hover:bg-gray-200">
+      <Image
+        src="/turkish-flag.png"
+        alt="Turkish Flag"
+        width={20}
+        height={20}
+        className="mr-2"
+      />
+      TR
+    </button>
+
+    {/* Notifications */}
+    <div className="relative">
+      <button
+        aria-label="Bildirimler"
+        onClick={() => setShowNotifications(!showNotifications)}
+        className="w-10 h-10 rounded-full bg-[#ab1e3b] hover:bg-gray-200 flex items-center justify-center relative"
+      >
+        <Bell size={18} className="text-white" />
+        {notifications.length > 0 && (
+          <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+        )}
+      </button>
+
+      {showNotifications && (
+        <div className="absolute top-full mt-3 w-[90vw] max-w-sm left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-0 bg-white rounded-xl shadow-2xl animate-fade-in z-50">
+          <div className="p-4 font-semibold text-gray-800">Bildirimler</div>
+          <ul className="max-h-60 overflow-y-auto">
+            {notifications.map((note) => (
+              <li
+                key={note.id}
+                className="flex items-start gap-3 px-4 py-3 hover:bg-gray-50 transition"
+              >
+                {iconMap[note.type]}
+                <div>
+                  <p className="text-sm text-gray-700">{note.message}</p>
+                  <span className="text-xs text-gray-400">
+                    {formatDate(note.time)}
+                  </span>
+                </div>
+              </li>
+            ))}
+            {notifications.length === 0 && (
+              <li className="px-4 py-3 text-sm text-gray-500">
+                Henüz bildirim yok.
+              </li>
+            )}
+          </ul>
+        </div>
+      )}
+    </div>
+
+    {/* Favorites */}
+    <FavoriteButton />
+
+    {/* Mobile Menu */}
+    <button
+      className="md:hidden w-9 h-9 flex items-center justify-center bg-gray-100 rounded-full"
+      onClick={() => setMenuOpen(!menuOpen)}
+    >
+      {menuOpen ? <X size={20} /> : <Menu size={20} />}
+    </button>
+  </div>
+</div>
+
 
       {/* Mobile Menu */}
       {menuOpen && (
