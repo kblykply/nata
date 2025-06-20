@@ -54,7 +54,7 @@ const allListings: Listing[] = [
     time: "5 dakika mesafede",
     stats: ["Merkezi Lokasyon", "Açık Avm Konsepti"],
     footer: "Çankaya",
-    image: "/new-vega/4.jpeg",
+    image: "/vegacenter-dikey.png",
     imageAlt: "/VEGA CENTER - MAP.jpg",
     extra: [
       { icon: "", label: "Merkezi Lokasyon" },
