@@ -124,7 +124,7 @@ const isHomepage = pathname === "/";
 <header className={`fixed top-0 z-[100] w-full shadow-sm transition-all duration-300 backdrop-blur-lg   py-3 md:py-3  
   ${isHomepage ? " bg-white/98 min-h-[72px] " : "fixed w-full  bg-white shadow-sm sticky top-0 z-[100] bg-white/95"}
 `}>
-  <div className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 ">
+  <div className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6  ">
 
       {/* Left: Logo */}
   <div className="flex-shrink-0">
@@ -135,7 +135,7 @@ const isHomepage = pathname === "/";
         width={50}
         height={50}
         sizes="(max-width: 768px) 140px, 180px"
-        className="w-44 sm:w-48 md:w-[160px] h-auto pb-2"
+        className="w-25 sm:w-48 md:w-[160px] h-auto pb-2"
       />
     </Link>
   </div>
@@ -282,15 +282,17 @@ const isHomepage = pathname === "/";
 
 
       {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="md:hidden mt-4 space-y-3 text-sm">
-          <Link href="/" className="block">Ana Sayfa</Link>
-          <Link href="/projects" className="block">Projeler</Link>
-          <Link href="/about-us" className="block">Hakkımızda</Link>
-          <Link href="/contact-us" className="block">İletişim</Link>
-          <Link href="/n-bulten" className="block">N Bülten</Link>
-          <Link href="/blog" className="block">Blog</Link>
-        </div>
+    {menuOpen && (
+  <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-xl z-50 px-6 py-6 space-y-4 rounded-b-2xl animate-slide-down">
+    <Link href="/" className="block font-medium">Ana Sayfa</Link>
+    <Link href="/projects" className="block font-medium">Projeler</Link>
+    <Link href="/about-us" className="block font-medium">Hakkımızda</Link>
+    <Link href="/contact-us" className="block font-medium">İletişim</Link>
+    <Link href="/n-bulten" className="block font-medium">N Bülten</Link>
+    <Link href="/blog" className="block font-medium">Blog</Link>
+  </div>
+
+
       )}
     </header>
   );
