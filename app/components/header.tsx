@@ -12,6 +12,12 @@ import {
 } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import FavoriteButton from './FavoriteButton';
+import { usePathname } from "next/navigation";
+
+
+
+
+
 interface HeaderProps {
   isKampanyalarOpen: boolean;
   setIsNewProjectsOpen: (open: boolean) => void;
@@ -39,6 +45,8 @@ export default function Header({
   const [notifications, setNotifications] = useState<Notification[]>([]);
   const hoverTimeout = useRef<NodeJS.Timeout | null>(null);
   const isHoveringPopup = useRef(false);
+  const pathname = usePathname();
+const isHomepage = pathname === "/";
 
   // Fetch notifications
   useEffect(() => {
@@ -113,8 +121,11 @@ export default function Header({
   
 
   return (
-<header className="fixed top-0 z-[100] w-full bg-white shadow-sm">
-  <div className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 py-4 md:py-5 min-h-[72px]">
+<header className={`fixed top-0 z-[100] w-full shadow-sm transition-all duration-300 backdrop-blur-lg    
+  ${isHomepage ? " bg-white/98 min-h-[72px] py-4 md:py-5" : "fixed w-full px-6 py-5 bg-white shadow-sm sticky top-0 z-[100] bg-white/95"}
+`}>
+  <div className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 ">
+
       {/* Left: Logo */}
   <div className="flex-shrink-0">
     <Link href="/">
@@ -124,7 +135,7 @@ export default function Header({
         width={50}
         height={50}
         sizes="(max-width: 768px) 140px, 180px"
-        className="w-44 sm:w-48 md:w-[160px] h-auto"
+        className="w-44 sm:w-48 md:w-[160px] h-auto pb-2"
       />
     </Link>
   </div>
