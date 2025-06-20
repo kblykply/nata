@@ -35,7 +35,7 @@ export default function FeaturedProjects() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-screen-xl mx-auto">
           {projects.map((project, idx) => (
             <div key={idx} className="flex flex-col items-center">
-              <div className="relative w-120 h-120 rounded-xl overflow-hidden">
+              <div className="relative w-100 h-100 rounded-xl overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
