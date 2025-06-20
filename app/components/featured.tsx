@@ -28,14 +28,14 @@ export default function FeaturedProjects() {
   return (
     <>
       <section id="yakinda-projeler" className="py-16 text-center">
-        <h2 className="text-2xl font-semibold mb-10">
+        <h2 className="text-2xl font-semibold mb-25">
           Planlanan <span className="text-[#ab1e3b]">Projeler</span>
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-screen-xl mx-auto">
           {projects.map((project, idx) => (
             <div key={idx} className="flex flex-col items-center">
-              <div className="relative w-60 h-60 rounded-xl overflow-hidden">
+              <div className="relative w-120 h-120 rounded-xl overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}

@@ -12,9 +12,9 @@
 const [showCityMenu, setShowCityMenu] = useState(false);
 
     return (
-<div className="relative max-w-screen-xl mx-auto px-6 py-6 bg-white rounded-2xl space-y-5 font-sans">
+<div className="relative max-w-screen-xl mx-auto px-0 py-6 bg-white rounded-2xl space-y-5 font-sans">
         {/* Heading */}
-       <h2 className="text-3xl font-semibold text-gray-800">
+       <h2 className="text-3xl px-6 font-semibold text-gray-800">
   Yeni projelerimiz{" "}
   <div className="relative inline-block">
     <span
@@ -53,7 +53,7 @@ const [showCityMenu, setShowCityMenu] = useState(false);
         {selectedCity === "Ankara" ? (
   <>
     {/* Tab Switcher */}
-    <div className="flex items-center space-x-2">
+    <div className="px-6 flex items-center space-x-2">
       <button
         onClick={() => setActiveTab("yeni")}
         className={`px-6 py-2.5 rounded-full text-sm font-semibold transition ${
