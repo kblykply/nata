@@ -146,7 +146,7 @@
 
         {/* Right Floating Card (Desktop Only) */}
         {!isMobile && (
-          <div className="absolute top-0 right-0 h-full w-[320px] p-4 flex flex-col justify-end bg-white/0 z-20 rounded-bl-2xl shadow-lg">
+          <div className="absolute top-0 right-0 h-full w-[320px] p-4 flex flex-col justify-end bg-white/0 z-20 rounded-bl-2xl ">
             <Swiper
               modules={[Autoplay]}
               autoplay={{ delay: 4000, disableOnInteraction: false }}
