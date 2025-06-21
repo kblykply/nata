@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { FiChevronLeft, FiChevronRight, FiX } from "react-icons/fi";
 
 const unitTypes = [
   {
@@ -53,6 +53,8 @@ const unitTypes = [
 export default function UnitTypesSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeUnit = unitTypes[activeIndex];
+  const [showLightbox, setShowLightbox] = useState(false);
+
 
   const handlePrev = () => {
     setActiveIndex((prev) => (prev === 0 ? unitTypes.length - 1 : prev - 1));
@@ -64,6 +66,39 @@ export default function UnitTypesSection() {
 
   return (
     <section className="w-full bg-white py-12 pt-40">
+
+
+{showLightbox && (
+  <div
+    className="fixed inset-0 z-[100] bg-black/30 backdrop-blur-sm flex items-center justify-center transition-opacity duration-300"
+    onClick={() => setShowLightbox(false)}
+  >
+    <div
+      className="relative w-[90vw] max-w-5xl max-h-[90vh] bg-white rounded-lg overflow-hidden shadow-lg"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <button
+        onClick={() => setShowLightbox(false)}
+        className="absolute top-3 right-3 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-1 transition"
+        aria-label="Kapat"
+      >
+        <FiX size={24} />
+      </button>
+
+      <div className="relative w-full h-[70vh]">
+        <Image
+          src={unitTypes[activeIndex].image}
+          alt={`Büyütülmüş Ünite Planı ${unitTypes[activeIndex].id}`}
+          fill
+          className="object-contain"
+        />
+      </div>
+    </div>
+  </div>
+)}
+
+
+
       {/* Tabs & Currency Selector */}
       <div className="flex justify-center items-center space-x-4 mb-6">
         {unitTypes.map((unit, index) => (
@@ -114,14 +149,19 @@ export default function UnitTypesSection() {
         </button>
 
         {/* Plan Image */}
-        <div className="relative w-200 h-100">
-          <Image
-            src={activeUnit.image}
-            alt={`Ünite Planı ${activeUnit.id}`}
-            fill
-            className="object-contain"
-          />
-        </div>
+       <button
+  onClick={() => setShowLightbox(true)}
+  className="relative w-[300px] md:w-[500px] aspect-[4/3] rounded overflow-hidden focus:outline-none"
+  aria-label="Kat planını büyüt"
+>
+  <Image
+    src={activeUnit.image}
+    alt={`Ünite Planı ${activeUnit.id}`}
+    fill
+    className="object-contain"
+  />
+</button>
+
 
         {/* Right Arrow */}
         <button
