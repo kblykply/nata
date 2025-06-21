@@ -10,7 +10,7 @@ const slides = [
     image: "/hityenibatı-dergi.jpg",
     popup: {
       title: "Estetik ve Fonksiyonelliğin Buluşma Noktası",
-      text: "Alışılmışın dışında mimari detaylar ile tasarlanan Nata Yaşam, modern çizgileri ve yenilikçi yapısıyla fark yaratıyor. Her metrekaresinde şıklığı ve kullanım kolaylığını hissedeceksiniz.",
+      text: "Alışılmışın dışında mimari detaylar ile tasarlanan NATA Yaşam, modern çizgileri ve yenilikçi yapısıyla fark yaratıyor. Her metrekaresinde şıklığı ve kullanım kolaylığını hissedeceksiniz.",
       images: ["/hit-Sıradışı Mimari, Modern Tasarım (2).jpg", "/hit-Sıradışı Mimari, Modern Tasarım.jpg"]
     }
   },
@@ -19,7 +19,7 @@ const slides = [
     image: "/HİTYENİBATI -yıldız.jpg",
     popup: {
       title: "Ankara'nın Gözde Lokasyonunda Yeni Bir Başlangıç",
-      text: "Nata Yaşam, Yeni Batı bölgesinin en prestijli projelerinden biri olarak yatırımcılarına ve sakinlerine değer kazandırıyor. Modern altyapısı ve merkezi konumuyla yaşam kalitesini zirveye taşıyor.",
+      text: "NATA Yaşam, Yeni Batı bölgesinin en prestijli projelerinden biri olarak yatırımcılarına ve sakinlerine değer kazandırıyor. Modern altyapısı ve merkezi konumuyla yaşam kalitesini zirveye taşıyor.",
       images: ["/hit-Yeni Batı'nın Yükselen Yıldızı (2).jpg", "/hit-Yeni Batı'nın Yükselen Yıldızı.jpg"]
     }
   },
@@ -28,7 +28,7 @@ const slides = [
     image: "/HİTYENİBATI -mimari.jpg",
     popup: {
       title: "Estetik ve Fonksiyonelliğin Buluşma Noktası",
-      text: "Alışılmışın dışında mimari detaylar ile tasarlanan Nata Yaşam, modern çizgileri ve yenilikçi yapısıyla fark yaratıyor. Her metrekaresinde şıklığı ve kullanım kolaylığını hissedeceksiniz.",
+      text: "Alışılmışın dışında mimari detaylar ile tasarlanan NATA Yaşam, modern çizgileri ve yenilikçi yapısıyla fark yaratıyor. Her metrekaresinde şıklığı ve kullanım kolaylığını hissedeceksiniz.",
       images: ["/hit-Sıradışı Mimari, Modern Tasarım (2).jpg", "/hit-Sıradışı Mimari, Modern Tasarım.jpg"]
     }
   },
@@ -37,7 +37,7 @@ const slides = [
     image: "/HİTYENİBATI daire.jpg",
     popup: {
       title: "Her İhtiyaca Uygun Yaşam Alanları",
-      text: "Farklı yaşam tarzlarına hitap eden 1+1 ve 2,5+1 daire seçenekleriyle Nata Yaşam, hem yatırım hem de konforlu yaşam için ideal çözümler sunuyor. Ferah iç mekanlar ve fonksiyonel planlamalar sizi bekliyor.",
+      text: "Farklı yaşam tarzlarına hitap eden 1+1 ve 2,5+1 daire seçenekleriyle NATA Yaşam, hem yatırım hem de konforlu yaşam için ideal çözümler sunuyor. Ferah iç mekanlar ve fonksiyonel planlamalar sizi bekliyor.",
       images: ["/hit- 1+1 ve 2,5+1 Daire Seçenekleri.jpg", "/hit- 1+1 ve 2,5+1 Daire Seçenekleri (2).jpg"]
     }
   },
@@ -46,7 +46,7 @@ const slides = [
     image: "/HİTYENİBATI güven.jpg",
     popup: {
       title: "Huzur ve Rahatlık Bir Arada",
-      text: "7/24 güvenlik hizmetleri ve modern site yönetimi ile Nata Yaşam’da ailenizle birlikte güven içinde yaşayın. Konforlu sosyal alanlar ve geniş peyzaj düzenlemesiyle günlük yaşamınız daha keyifli hale geliyor.",
+      text: "7/24 güvenlik hizmetleri ve modern site yönetimi ile NATA Yaşam’da ailenizle birlikte güven içinde yaşayın. Konforlu sosyal alanlar ve geniş peyzaj düzenlemesiyle günlük yaşamınız daha keyifli hale geliyor.",
       images: ["/hit-Güvenli ve Konforlu Yaşam Alanları (2).jpg", "/hit-Güvenli ve Konforlu Yaşam Alanları.jpg"]
     }
   },

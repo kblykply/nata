@@ -8,7 +8,7 @@ import Preloader from "./components/Preloader";
 
 
 export const metadata: Metadata = {
-  title: "Nata Yaşam",
+  title: "NATA Yaşam",
   description: "Ankaranın Konut Markası Nata",
    icons: {
     icon: '/favicon.ico', 

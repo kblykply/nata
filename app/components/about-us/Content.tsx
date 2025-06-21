@@ -26,7 +26,7 @@ const AboutContentSection = () => {
         {/* Right Side */}
         <div>
           <p className="text-sm text-gray-700 mb-8 leading-relaxed">
-            Nata Holding güvencesiyle hayata geçirilen Nata Yaşam, sadece konut projeleri geliştiren bir marka olmanın ötesine geçerek, yaşamın her alanına dokunan; modern ve sürdürülebilir projelere imza atmaktadır. Türkiye’nin dört bir yanında; konut, villa, alışveriş merkezi, turizm, sağlık ve sosyal yaşam alanlarını bir araya getiren çok yönlü projelerimizle, geleceğin şehircilik anlayışını bugünden sunuyoruz.
+            Nata Holding güvencesiyle hayata geçirilen NATA Yaşam, sadece konut projeleri geliştiren bir marka olmanın ötesine geçerek, yaşamın her alanına dokunan; modern ve sürdürülebilir projelere imza atmaktadır. Türkiye’nin dört bir yanında; konut, villa, alışveriş merkezi, turizm, sağlık ve sosyal yaşam alanlarını bir araya getiren çok yönlü projelerimizle, geleceğin şehircilik anlayışını bugünden sunuyoruz.
           </p>
 
        <div className="w-full">

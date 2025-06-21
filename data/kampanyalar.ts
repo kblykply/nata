@@ -3,17 +3,17 @@
     slug: "guvenli-yasam",
     title: "Modern Tasarım,",
     highlight: "Güvenli Yaşam",
-    description: "Nata Yaşam semtlerinde",
+    description: "NATA Yaşam semtlerinde",
     bg: "/kampanya/1.png",
     image: "/kampanya/icons/1.png",
-    firstOne: "Nata Yaşam, sadece bir konut değil; modern hayatı kolaylaştıran, estetikle işlevselliği bir araya getiren bir yaşam tarzı sunar. Her detayda kaliteyi ve çağdaş çizgileri hissedeceğiniz projelerimizde, mimari tasarımlar zamansız bir anlayışla şekilleniyor. Işık, renk, doku ve doğayla uyumlu malzeme seçimleri sayesinde kendinizi her gün özel hissedeceğiniz bir ortam sizi bekliyor.",
-    grayText: `Nata Yaşam, her ihtiyaca uygun yaşam çözümleri\nve ödeme kolaylıkları sunar.`,
+    firstOne: "NATA Yaşam, sadece bir konut değil; modern hayatı kolaylaştıran, estetikle işlevselliği bir araya getiren bir yaşam tarzı sunar. Her detayda kaliteyi ve çağdaş çizgileri hissedeceğiniz projelerimizde, mimari tasarımlar zamansız bir anlayışla şekilleniyor. Işık, renk, doku ve doğayla uyumlu malzeme seçimleri sayesinde kendinizi her gün özel hissedeceğiniz bir ortam sizi bekliyor.",
+    grayText: `NATA Yaşam, her ihtiyaca uygun yaşam çözümleri\nve ödeme kolaylıkları sunar.`,
     content: [
       {
         title: "Avantajları",
         text: [
-          "1. Nata Yaşam projeleri, modern mimarisiyle sadece bir ev değil, çağdaş bir yaşam tarzı sunar. Her detay, estetik, konfor ve fonksiyon düşünülerek tasarlanır.",
-          "2. 7/24 güvenlik, kartlı giriş sistemleri ve gelişmiş izleme altyapısıyla aileniz güvende. Nata Yaşam\'da huzur her zaman önceliklidir.",
+          "1. NATA Yaşam projeleri, modern mimarisiyle sadece bir ev değil, çağdaş bir yaşam tarzı sunar. Her detay, estetik, konfor ve fonksiyon düşünülerek tasarlanır.",
+          "2. 7/24 güvenlik, kartlı giriş sistemleri ve gelişmiş izleme altyapısıyla aileniz güvende. NATA Yaşam\'da huzur her zaman önceliklidir.",
           "3. Aydınlatma, ısıtma ve güvenlik artık telefonunuzla kontrolünüzde. Akıllı sistemler hem zaman kazandırır hem konforu artırır.",
           "4. Yürüyüş yolları, çocuk parkları, spor salonları ve yeşil alanlarla dolu sosyal yaşam sizi bekliyor. Hem aktif hem huzurlu bir çevre sunar.",
           "5. Depreme dayanıklı ve sürdürülebilir malzemelerle inşa edilen yapılar, geleceğe güvenle bakmanızı sağlar."
@@ -39,7 +39,7 @@
   description: "",
   bg: "/kampanya/2.png",
   image: "/kampanya/icons/2.png",
-  firstOne: "Nata Yaşam deneyimini sevdiklerinle paylaşarak hem onların güvenli bir yaşama adım atmasını sağla hem de sen kazançlı çık. Her yeni yönlendirme için seni özel fırsatlar ve sürpriz hediyeler bekliyor.",
+  firstOne: "NATA Yaşam deneyimini sevdiklerinle paylaşarak hem onların güvenli bir yaşama adım atmasını sağla hem de sen kazançlı çık. Her yeni yönlendirme için seni özel fırsatlar ve sürpriz hediyeler bekliyor.",
   content: [
     {
       title: "Seninle Büyüyen Avantajlar",
@@ -61,7 +61,7 @@
   description: "Temmuz'a özel fırsatlar",
   bg: "/kampanya/3.png",
   image: "/kampanya/icons/3.png",
-  firstOne: "Nata Yaşam projelerinde peşin ödeme yapanlara özel %20\'ye varan indirim avantajı seni bekliyor. Üstelik hemen sahip olabilir, dilediğin gibi değerlendirebilirsin. Modern yaşamla birlikte kazancı da bugünden garantile!",
+  firstOne: "NATA Yaşam projelerinde peşin ödeme yapanlara özel %20\'ye varan indirim avantajı seni bekliyor. Üstelik hemen sahip olabilir, dilediğin gibi değerlendirebilirsin. Modern yaşamla birlikte kazancı da bugünden garantile!",
   content: [
     {
       title: "Neden Şimdi?",
@@ -82,7 +82,7 @@
   description: "Nata Vega Konutları",
   bg: "/kampanya/4.png",
   image: "/kampanya/icons/4.png",
-  firstOne: "Nata Yaşam\'da ev sahibi olmak, artık herkes için mümkün. Aylık gelirine, yatırım planına ve tercihlerine göre sana en uygun ödeme modelini birlikte oluşturuyoruz. Peşin alıma gerek kalmadan, esnek taksit seçenekleriyle hayalindeki yaşama adım atabilirsin.",
+  firstOne: "NATA Yaşam\'da ev sahibi olmak, artık herkes için mümkün. Aylık gelirine, yatırım planına ve tercihlerine göre sana en uygun ödeme modelini birlikte oluşturuyoruz. Peşin alıma gerek kalmadan, esnek taksit seçenekleriyle hayalindeki yaşama adım atabilirsin.",
   grayText: `Senin için en uygun ödeme planı burada seni bekliyor`,
 
   content: [
@@ -105,7 +105,7 @@
   description: "Nata Vega Konut Kuleleri",
   bg: "/kampanya/5.png",
   image: "/kampanya/icons/5.png",
-  firstOne: "Nata Yaşam\'da ev sahibi olmanın şimdi tam zamanı. Yeni kampanyamızla birlikte, ilk yıl hiçbir ödeme yapmadan konut sahibi olabilir, 120 aya kadar vade imkanıyla faiz ödemeden yeni yaşamına rahatça adım atabilirsin. Bu özel fırsat sayesinde bütçeni zorlamadan yatırım yapabilir, dilediğin gibi planlama yapabilirsin.",
+  firstOne: "NATA Yaşam\'da ev sahibi olmanın şimdi tam zamanı. Yeni kampanyamızla birlikte, ilk yıl hiçbir ödeme yapmadan konut sahibi olabilir, 120 aya kadar vade imkanıyla faiz ödemeden yeni yaşamına rahatça adım atabilirsin. Bu özel fırsat sayesinde bütçeni zorlamadan yatırım yapabilir, dilediğin gibi planlama yapabilirsin.",
   content: [
     {
       title: "Avantajlar Neler?",
@@ -127,7 +127,7 @@
   description: "Temmuz'a özel fırsatlar",
   bg: "/kampanya/6.png",
   image: "/kampanya/icons/6.png",
-  firstOne: "Nata Yaşam projelerinde şimdi %5 gibi düşük bir peşinatla ev sahibi olabilir, kalan ödemeni 36 ay boyunca sıfır faizle yapabilirsin. Bankaya gitmeden, ek masraf çıkmadan, bütçeni sarsmadan ev sahibi olmak için seni bekliyoruz.",
+  firstOne: "NATA Yaşam projelerinde şimdi %5 gibi düşük bir peşinatla ev sahibi olabilir, kalan ödemeni 36 ay boyunca sıfır faizle yapabilirsin. Bankaya gitmeden, ek masraf çıkmadan, bütçeni sarsmadan ev sahibi olmak için seni bekliyoruz.",
   content: [
    
     {
@@ -152,7 +152,7 @@
   description: "Vega Cadde",
   bg: "/kampanya/7.png",
   image: "/kampanya/icons/7.png",
-  firstOne: "Nata Yaşam projelerinde artık hayalindeki eve ulaşmak için aylarca beklemenize gerek yok. Tapunuzu anında teslim alabilir, dairenize hemen yerleşebilirsiniz. Bürokratik gecikmeler yok, teslim tarihi beklemek yok. Hazır projeler, hazır yaşamlar için seni bekliyor.",
+  firstOne: "NATA Yaşam projelerinde artık hayalindeki eve ulaşmak için aylarca beklemenize gerek yok. Tapunuzu anında teslim alabilir, dairenize hemen yerleşebilirsiniz. Bürokratik gecikmeler yok, teslim tarihi beklemek yok. Hazır projeler, hazır yaşamlar için seni bekliyor.",
   content: [
     {
       title: "Bu Avantajla Neler Kazanırsın?",
@@ -165,7 +165,7 @@
       ]
     }
   ],
-  secondText: "Nata Yaşam\'da her detay, ev sahibi olma sürecini kolaylaştırmak ve hızlandırmak için titizlikle planlandı. Tapunuzu almak için haftalarca beklemenize gerek yok; işlemler hızlı, net ve güvenli bir şekilde ilerler. Satın aldığınız daireye aynı gün içinde sahip olabilir, anahtarınızı teslim alarak hemen yeni hayatınıza başlayabilirsiniz. Bürokratik gecikmeler, belirsiz teslim tarihleri ya da fazladan masraflar olmadan, tam anlamıyla hazır bir yaşama adım atın. Detaylı bilgi almak, tapu ve teslim sürecini yakından öğrenmek için bizimle hemen iletişime geçin. Size en yakın satış ofisimiz ya da online danışmanlarımız bir telefon kadar yakın."
+  secondText: "NATA Yaşam\'da her detay, ev sahibi olma sürecini kolaylaştırmak ve hızlandırmak için titizlikle planlandı. Tapunuzu almak için haftalarca beklemenize gerek yok; işlemler hızlı, net ve güvenli bir şekilde ilerler. Satın aldığınız daireye aynı gün içinde sahip olabilir, anahtarınızı teslim alarak hemen yeni hayatınıza başlayabilirsiniz. Bürokratik gecikmeler, belirsiz teslim tarihleri ya da fazladan masraflar olmadan, tam anlamıyla hazır bir yaşama adım atın. Detaylı bilgi almak, tapu ve teslim sürecini yakından öğrenmek için bizimle hemen iletişime geçin. Size en yakın satış ofisimiz ya da online danışmanlarımız bir telefon kadar yakın."
 },
   {
   slug: "otuz-pesinat-24-ay",
@@ -174,7 +174,7 @@
   description: "Vega Cadde",
   bg: "/kampanya/8.png",
   image: "/kampanya/icons/8.png",
-  firstOne: "Nata Yaşam, yatırım yapmak veya yeni bir hayata başlamak isteyenler için esnek ve avantajlı bir ödeme fırsatı sunuyor. Sadece %30 peşinatla dilediğin daireye sahip olabilir, kalan tutarı 24 ay boyunca sıfır faizle, sabit taksitlerle ödeyebilirsin. Bu sistem, hem birikimini korumanı sağlar hem de faiz yüküne girmeden mülk sahibi olmanın en rahat yolunu sunar.",
+  firstOne: "NATA Yaşam, yatırım yapmak veya yeni bir hayata başlamak isteyenler için esnek ve avantajlı bir ödeme fırsatı sunuyor. Sadece %30 peşinatla dilediğin daireye sahip olabilir, kalan tutarı 24 ay boyunca sıfır faizle, sabit taksitlerle ödeyebilirsin. Bu sistem, hem birikimini korumanı sağlar hem de faiz yüküne girmeden mülk sahibi olmanın en rahat yolunu sunar.",
   grayText: `Faizsiz ödeme, net fiyat, sabit plan. Karmaşa yok, sürpriz yok!`,
   content: [
     {

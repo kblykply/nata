@@ -161,7 +161,7 @@ useEffect(() => {
     <Link href="/">
       <Image
         src="/navbarLogo.png"
-        alt="Nata Yaşam Logo"
+        alt="NATA Yaşam Logo"
         width={50}
         height={50}
         sizes="(max-width: 768px) 140px, 180px"

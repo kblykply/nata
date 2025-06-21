@@ -46,7 +46,7 @@ const ApproachSection = () => {
               Sürdürülebilir ve Yenilikçi Yaklaşım
             </h3>
             <p className="text-sm text-gray-700 leading-relaxed">
-            Nata Yaşam, geleceğe değer katacak projeler üretirken, çevresel ve toplumsal sorumluluklarını da göz önünde bulundurur. Doğayla uyumlu, enerji verimliliği yüksek yapılarımızla sürdürülebilir bir yaşamın kapılarını aralıyoruz.            </p>
+            NATA Yaşam, geleceğe değer katacak projeler üretirken, çevresel ve toplumsal sorumluluklarını da göz önünde bulundurur. Doğayla uyumlu, enerji verimliliği yüksek yapılarımızla sürdürülebilir bir yaşamın kapılarını aralıyoruz.            </p>
           </div>
         </div>
       </div>

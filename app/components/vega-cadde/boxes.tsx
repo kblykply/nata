@@ -16,7 +16,7 @@ const cards = [
     id: 2,
     type: "icon",
     title: "Belgeleri İndirin",
-    highlight: "Nata Yaşam Projeleri",
+    highlight: "NATA Yaşam Projeleri",
     icon: "/x.png",
   },
   {

@@ -43,7 +43,7 @@ export default function Blogs({ posts }: BlogsProps) {
           href="/blog"
           className="border border-gray-300 text-sm px-5 py-2 rounded-full hover:bg-gray-100 transition whitespace-nowrap"
         >
-          Her Şeyi Görün
+          Tüm Yazıları Gör
         </Link>
       </div>
 
@@ -109,7 +109,7 @@ export default function Blogs({ posts }: BlogsProps) {
               onClick={handleLoadMore}
               className="bg-[#aa1e3a] text-white text-sm font-medium px-6 py-3 rounded-full shadow hover:opacity-90 transition"
             >
-              +3 daha gör
+              Daha Fazla Yükle
             </button>
           )}
         </div>

@@ -46,7 +46,7 @@ export default function ProjectHeroCloudSection() {
 
       <div className="py-4 ">
   <div className="text-white text-sm md:text-base flex justify-center gap-2 top-10   ">
-    <span>Natayaşam</span>
+    <span>NATAYaşam</span>
     <span>/</span>
     <span>yeni projeler</span>
     <span>/</span>

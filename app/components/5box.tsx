@@ -7,12 +7,12 @@ import { Dialog, Transition } from "@headlessui/react";
 
 const popupContent = [
   {
-    title: "Ev Almanın En Kolay Yolu: Nata Yaşam’da Başlar!",
-    text: `Hayalindeki eve ulaşmak artık zahmetli bir süreç değil. Nata Yaşam, dijital platformları ve kullanıcı dostu arayüzüyle ev arama deneyimini baştan sona değiştiriyor. İster akıllı filtrelerle arama yap, ister lokasyon bazlı keşfe çık — sana en uygun projeyi saniyeler içinde bulabilirsin. Üstelik satış danışmanlarımız da her adımda senin yanında.`
+    title: "Ev Almanın En Kolay Yolu: NATA Yaşam’da Başlar!",
+    text: `Hayalindeki eve ulaşmak artık zahmetli bir süreç değil. NATA Yaşam, dijital platformları ve kullanıcı dostu arayüzüyle ev arama deneyimini baştan sona değiştiriyor. İster akıllı filtrelerle arama yap, ister lokasyon bazlı keşfe çık — sana en uygun projeyi saniyeler içinde bulabilirsin. Üstelik satış danışmanlarımız da her adımda senin yanında.`
   },
   {
     title: "Akıllı Teknolojiyle Donatılmış Yaşam Alanlarıyla Hayatını Kolaylaştır!",
-    text: `Günümüzün hızlı temposuna ayak uydurmak için sadece güzel bir ev değil, aynı zamanda fonksiyonel ve teknolojik çözümler sunan bir yaşam alanına ihtiyaç var. Nata Yaşam projeleri; uzaktan kontrol edilebilen akıllı sistemleri, enerji verimliliği, sosyal donatı alanları ve merkezi lokasyonlarıyla sana zaman kazandırır, yaşam kaliteni artırır.
+    text: `Günümüzün hızlı temposuna ayak uydurmak için sadece güzel bir ev değil, aynı zamanda fonksiyonel ve teknolojik çözümler sunan bir yaşam alanına ihtiyaç var. NATA Yaşam projeleri; uzaktan kontrol edilebilen akıllı sistemleri, enerji verimliliği, sosyal donatı alanları ve merkezi lokasyonlarıyla sana zaman kazandırır, yaşam kaliteni artırır.
 
 • Akıllı ev sistemleri
 • Güvenli ve sürdürülebilir altyapı
@@ -30,7 +30,7 @@ const popupContent = [
   },
   {
     title: "Ankara’da Yaşamın Yeni Tanımı: Prestij, Konfor ve Değer!",
-    text: `Ankara’nın yükselen bölgelerinde, vizyoner mimarilerle şekillenen Nata Yaşam projeleri; yatırımcılara uzun vadeli kazanç, sakinlerine ise ayrıcalıklı bir yaşam vaat ediyor. Şehrin merkezine sadece dakikalar mesafede, geniş balkonlu dairelerden manzaralı rezidanslara kadar farklı alternatiflerle lüksü ulaşılabilir kılıyoruz.
+    text: `Ankara’nın yükselen bölgelerinde, vizyoner mimarilerle şekillenen NATA Yaşam projeleri; yatırımcılara uzun vadeli kazanç, sakinlerine ise ayrıcalıklı bir yaşam vaat ediyor. Şehrin merkezine sadece dakikalar mesafede, geniş balkonlu dairelerden manzaralı rezidanslara kadar farklı alternatiflerle lüksü ulaşılabilir kılıyoruz.
 
 • Panoramik şehir manzarası
 • Uluslararası ödüllü projeler
