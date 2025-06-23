@@ -22,9 +22,9 @@ export default function ContactQrSection() {
   const swiperRef = useRef<SwiperCore | null>(null); // ✅ Fix: provide initial value
 
   const qrTabs = [
-    { id: "whatsapp", icon: "/face-insta-wp-01.png", qr: "/nata-telefo-qr.png" },
-    { id: "instagram", icon: "/face-insta-wp-02.png", qr: "/nata-instagram-qr.png" },
-    { id: "facebook", icon: "/face-insta-wp-03.png", qr: "/nata-facebook-qr.png" },
+    { id: "whatsapp", icon: "/qr/phoneicon.png", qr: "/qr/telefonnata.png" },
+    { id: "instagram", icon: "/face-insta-wp-02.png", qr: "/qr/instagramnata.png" },
+    { id: "facebook", icon: "/face-insta-wp-03.png", qr: "/qr/facebooknata.png" },
   ];
 
   const validateForm = () => {
