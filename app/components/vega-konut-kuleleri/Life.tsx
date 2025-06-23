@@ -105,11 +105,10 @@ const handlePointerUp = () => {
 
       
       <h2 className="text-3xl font-light text-gray-800 uppercase leading-tight">
-      ANTARES KONUTLARI  <br />Etlik'in kalbinde
+      NATA VEGA <br />KONUT KULELERİ
       </h2>
       <p className="mt-4 text-sm text-gray-600 max-w-xl mx-auto">
-      Dolunay iştiraki olan Antares Konutları merkezi konumu, sosyal olanaklarıyla keyifli ve konforlu bir yaşam Antares Konutları ile buluşuyor.
-      </p>
+NATA VEGA Konut Kuleleri, yanbaşında bulunan NATA VEGA Outlet ve devasa AQUAVEGA Akvaryum ile herkesi düşünerek tasarlandı. Merkezi lokasyon avantajı, kusursuz mimarisi ve konforlu yaşam alanları NATA VEGA Konut Kuleleri'nde sizlerle buluşuyor.      </p>
 
       <div className="relative mt-12 w-full max-w-7xl mx-auto h-[500px]">
       <div className="relative flex items-center justify-center h-full">
