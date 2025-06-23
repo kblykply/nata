@@ -51,7 +51,7 @@ const popupContent = [
 
 const images = [
   "/qr/evalmakcokkolaygorsel.png",
-  "/slider/slider/alt2.jpg",
+  "/qr/hayatkolay.png",
   "/slider/slider/alt3.jpg",
   "/slider/slider/alt4.jpg",
   "/slider/slider/alt5.jpg"
