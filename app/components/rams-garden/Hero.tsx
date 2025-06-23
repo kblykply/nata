@@ -60,7 +60,7 @@ export default function ProjectHeroCloudSection() {
       <div className="flex justify-center my-10">
       <div className="w-90 md:w-150">
         <Image
-          src="/rams-garden-logo.png"
+          src="/qr/ramsgardenbahcelievleryazı.png"
           alt="Vega Center Logo"
           width={0}
           height={0}

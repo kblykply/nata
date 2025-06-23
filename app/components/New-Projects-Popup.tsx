@@ -104,7 +104,7 @@ interface NewProjectsProps {
 
 <Link href="/#yakinda-projeler" scroll={true}>
   <p className="text-sm text-gray-700 hover:underline cursor-pointer">Çok Yakında Satışta
-          <sup className="text-red-600 text-xs ml-1">3</sup>
+          <sup className="text-red-600 text-xs ml-1">2</sup>
 
   </p>
   
