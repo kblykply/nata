@@ -42,7 +42,7 @@ export default function Footer() {
             <p>
 Mustafa Kemal, 2127. Cd No:21, 06530 Çankaya/Ankara
 </p>
-            <p>9:00 ile 18:30 saatleri arasında çalışıyoruz.</p>
+            <p>9:30 ile 18:30 saatleri arasında çalışıyoruz.</p>
           </div>
           <div>
             <p className="font-semibold mt-4">Sosyal Medya</p>
