@@ -15,7 +15,7 @@ const [showCityMenu, setShowCityMenu] = useState(false);
 <div className="relative max-w-screen-xl mx-auto px-0 py-6 bg-white rounded-2xl space-y-5 font-sans">
         {/* Heading */}
        <h2 className="text-3xl px-6 font-semibold text-gray-800">
-  Yeni projelerimiz{" "}
+  Yeni Projelerimiz{" "}
   <div className="relative inline-block">
     <span
       className="text-[#ab1e3b] inline-flex items-center cursor-pointer"

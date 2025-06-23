@@ -65,21 +65,54 @@ export default function ProjectLifeRhythmSection() {
   const [index, setIndex] = useState(0);
   const [popupIndex, setPopupIndex] = useState<number | null>(null);
   const totalSlides = slides.length;
+  const [dragStartX, setDragStartX] = useState<number | null>(null);
+const [dragDeltaX, setDragDeltaX] = useState(0);
+
+
+
+
+const handlePointerDown = (e: React.PointerEvent) => {
+  setDragStartX(e.clientX);
+};
+
+const handlePointerMove = (e: React.PointerEvent) => {
+  if (dragStartX !== null) {
+    setDragDeltaX(e.clientX - dragStartX);
+  }
+};
+
+const handlePointerUp = () => {
+  if (dragDeltaX > 50) {
+    setIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
+  } else if (dragDeltaX < -50) {
+    setIndex((prev) => (prev + 1) % totalSlides);
+  }
+
+  // ✅ Add a slight delay to allow animation to complete before reset
+  setTimeout(() => {
+    setDragDeltaX(0);
+    setDragStartX(null);
+  }, 200); // 200ms matches your CSS transition
+};
+
+
 
   return (
-    <section className="relative py-24 px-6 bg-white text-center overflow-hidden">
-      <h2 className="text-3xl font-light text-gray-800 uppercase leading-tight">
-        
+    <section className="select-none scroll-smooth relative py-24 px-6 bg-white text-center overflow-hidden">
 
-VEGA OTONOMİ
- <br /> Oto Galeri ve Ofis avantajları
+
+
+      
+      <h2 className="text-3xl font-light text-gray-800 uppercase leading-tight">
+      ANTARES KONUTLARI  <br />Etlik'in kalbinde
       </h2>
       <p className="mt-4 text-sm text-gray-600 max-w-xl mx-auto">
-      Vega Otonomi, geniş ulaşım imkanı, merkezi konumu ve 490m²’ye kadar 207 adet Oto Galeri ve Ofis avantajları ile şehrin otonomi kültürüne yeni bir soluk kazandırıyor. VEGA Otonomi Ofis & Galeri seçenekleri ile sizlerle buluşuyor.
+      Dolunay iştiraki olan Antares Konutları merkezi konumu, sosyal olanaklarıyla keyifli ve konforlu bir yaşam Antares Konutları ile buluşuyor.
       </p>
 
       <div className="relative mt-12 w-full max-w-7xl mx-auto h-[500px]">
-        <div className="relative flex items-center justify-center h-full">
+      <div className="relative flex items-center justify-center h-full">
+
           {slides.map((slide, i) => {
             const offset = (i - index + totalSlides) % totalSlides;
             const normalized = offset > totalSlides / 2 ? offset - totalSlides : offset;
@@ -110,11 +143,25 @@ VEGA OTONOMİ
                 style={{
                   left: `calc(50% - 150px)`,
                   transform: `translateX(${translateX}) translateY(${translateY}) scale(${scale})`,
-                  zIndex: z,
+                                    zIndex: z,
                   opacity
                 }}
               >
-                <div className="relative w-full h-full">
+
+                
+<div className="relative w-full h-full">
+  {normalized === 0 && (
+    <div
+      className="absolute inset-0 z-10"
+      onPointerDown={handlePointerDown}
+      onPointerMove={handlePointerMove}
+      onPointerUp={handlePointerUp}
+      onPointerLeave={handlePointerUp}
+    />
+  )}
+
+
+  
                   <Image
                     src={slide.image}
                     alt={slide.title}
@@ -129,19 +176,16 @@ VEGA OTONOMİ
     {i === 0 ? (
       // If it's the first slide, render a link
       <a
-  href="https://www.vegaotonomi.com/img/otonomiKatalog.pdf"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-black text-sm text-white px-5 py-2 rounded-full shadow"
->
-  Sunuma Git
-</a>
-
+        href="#"   // <-- Change this URL to your target link
+        className="z-100 absolute    left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-black text-sm text-white  px-5 py-2 rounded-full shadow"
+      >
+        Sunuma Git
+      </a>
     ) : (
       // For other slides, open popup
       <button
         onClick={() => setPopupIndex(i)}
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-sm text-gray-700 px-5 py-2 rounded-full shadow"
+        className="z-100 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-sm text-gray-700 px-5 py-2 rounded-full shadow"
       >
         Ayrıntılı Bilgi
       </button>

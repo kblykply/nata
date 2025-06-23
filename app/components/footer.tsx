@@ -49,7 +49,7 @@ Mustafa Kemal, 2127. Cd No:21, 06530 Çankaya/Ankara
             <div className="flex space-x-4 mt-2">
   {socials.map(({ icon: Icon, name, url }, idx) => (
     <Link href={url} key={idx} aria-label={name} target="_blank" rel="noopener noreferrer">
-      <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center border hover:bg-[#ab1e3b] transition">
+      <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center border hover:bg-[#F1D2D6] transition">
         <Icon className="text-xl text-gray-700" />
       </div>
     </Link>

@@ -46,9 +46,9 @@ export default function ProjectHeroCloudSection() {
 
       <div className="py-4 ">
   <div className="text-white text-sm md:text-base flex justify-center gap-2 top-10   ">
-    <span>NATAYaşam</span>
+    <span>NATA Yaşam</span>
     <span>/</span>
-    <span>yeni projeler</span>
+    <span>Yeni Projeler</span>
     <span>/</span>
     <span className="font-bold">Goat Villas</span>
   </div>
