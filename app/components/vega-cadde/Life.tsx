@@ -106,11 +106,12 @@ const handlePointerUp = () => {
 
       
       <h2 className="text-3xl font-light text-gray-800 uppercase leading-tight">
-      ANTARES KONUTLARI  <br />Etlik'in kalbinde
+      VEGA CADDE
+
+  <br />Yaşamın kalbinden
       </h2>
       <p className="mt-4 text-sm text-gray-600 max-w-xl mx-auto">
-      Dolunay iştiraki olan Antares Konutları merkezi konumu, sosyal olanaklarıyla keyifli ve konforlu bir yaşam Antares Konutları ile buluşuyor.
-      </p>
+Yaşamın kalbinden kurumsal dünyaya açılan, boyutlandırılabilir 161 adet OFİS kompleksi, 1+1 ve 2+1 seçenekleri ile şıklığı ve konforu bir araya getiren KONUT konsepti ile VEGA CADDE'de tek bir noktada toplanıyor, başkente yeni bir soluk kazandırıyor.      </p>
 
       <div className="relative mt-12 w-full max-w-7xl mx-auto h-[500px]">
       <div className="relative flex items-center justify-center h-full">

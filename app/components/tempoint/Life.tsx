@@ -106,10 +106,11 @@ const handlePointerUp = () => {
 
       
       <h2 className="text-3xl font-light text-gray-800 uppercase leading-tight">
-      ANTARES KONUTLARI  <br />Etlik'in kalbinde
+     TEMPOINT KONUTLARI  <br />Yaşam Merkezi
       </h2>
       <p className="mt-4 text-sm text-gray-600 max-w-xl mx-auto">
-      Dolunay iştiraki olan Antares Konutları merkezi konumu, sosyal olanaklarıyla keyifli ve konforlu bir yaşam Antares Konutları ile buluşuyor.
+Sultangazi, İstanbul'da TEM Otoyolu üzerinde bulunan Tempoint Konutları açık ve yetişkin çocuk havuzu, koşu parkurları, Playstation odası, yemyeşil alanları, çocuk parkları ve hemen yanıbaşında yer alan VEGA İstanbul Alışveriş ve Yaşam Merkezi ile can alıcı bir lokasyonda yer almaktadır.
+
       </p>
 
       <div className="relative mt-12 w-full max-w-7xl mx-auto h-[500px]">
