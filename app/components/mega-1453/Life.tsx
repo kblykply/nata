@@ -140,10 +140,11 @@ const handlePointerUp = () => {
 
       
       <h2 className="text-3xl font-light text-gray-800 uppercase leading-tight">
-      ANTARES KONUTLARI  <br />Etlik'in kalbinde
+      MEGA 1453  <br />ANKARA'nın kalbinde
       </h2>
       <p className="mt-4 text-sm text-gray-600 max-w-xl mx-auto">
-      Dolunay iştiraki olan Antares Konutları merkezi konumu, sosyal olanaklarıyla keyifli ve konforlu bir yaşam Antares Konutları ile buluşuyor.
+Toplamda 70.000 m²’lik geniş arsa alanında yükselen bu prestijli proje, başkentin dokusuna doğa ile harmanlanmış bir soluk getiriyor. Özgün mimarisi ve 36.000 m² peyzaj alanıyla modern yaşamı yeniden tasarlayan MEGA 1453, her biri yüksek yaşam standartlarına sahip toplam 715 konut ve ticari alanları ile oluşuyor.
+
       </p>
 
       <div className="relative mt-12 w-full max-w-7xl mx-auto h-[500px]">

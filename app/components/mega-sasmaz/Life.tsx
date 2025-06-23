@@ -113,11 +113,10 @@ const handlePointerUp = () => {
 
       
       <h2 className="text-3xl font-light text-gray-800 uppercase leading-tight">
-      ANTARES KONUTLARI  <br />Etlik'in kalbinde
+      MEGA ŞAŞMAZ  <br />Ankara Şaşmaz'da 
       </h2>
       <p className="mt-4 text-sm text-gray-600 max-w-xl mx-auto">
-      Dolunay iştiraki olan Antares Konutları merkezi konumu, sosyal olanaklarıyla keyifli ve konforlu bir yaşam Antares Konutları ile buluşuyor.
-      </p>
+Ankara Şaşmaz'da 700 bağımsız bölümden oluşan, 2 bodrum katı, alt zemin kat, üst zemin kat ve 7 ofis katı ile geniş depolama hacimlerine sahip MEGA Şaşmaz, toplam 160.000 m2 kapalı alana sahiptir.      </p>
 
       <div className="relative mt-12 w-full max-w-7xl mx-auto h-[500px]">
       <div className="relative flex items-center justify-center h-full">

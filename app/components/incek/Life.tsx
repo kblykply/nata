@@ -105,10 +105,11 @@ const handlePointerUp = () => {
 
       
       <h2 className="text-3xl font-light text-gray-800 uppercase leading-tight">
-      ANTARES KONUTLARI  <br />Etlik'in kalbinde
+      NATA  <br />İNCEK KONUTLARI
       </h2>
       <p className="mt-4 text-sm text-gray-600 max-w-xl mx-auto">
-      Dolunay iştiraki olan Antares Konutları merkezi konumu, sosyal olanaklarıyla keyifli ve konforlu bir yaşam Antares Konutları ile buluşuyor.
+NATA İncek Konutları'da her aşama sizi düşünerek tasarlandı. Mogan Gölü’nün manzarası ile doğayla iç içe, 12.000 m² yeşil alan, hayatınızı kolaylaştıracak ferah, şık ve kullanışlı yaşam alanları NATA İncek Konutları'nda sizlerle buluşuyor.
+
       </p>
 
       <div className="relative mt-12 w-full max-w-7xl mx-auto h-[500px]">

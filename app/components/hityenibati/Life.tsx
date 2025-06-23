@@ -96,10 +96,11 @@ const handlePointerUp = () => {
 
       
       <h2 className="text-3xl font-light text-gray-800 uppercase leading-tight">
-      ANTARES KONUTLARI  <br />Etlik'in kalbinde
+      HİTYENİBATI  <br />Ankara'nın yükselen değeri
       </h2>
       <p className="mt-4 text-sm text-gray-600 max-w-xl mx-auto">
-      Dolunay iştiraki olan Antares Konutları merkezi konumu, sosyal olanaklarıyla keyifli ve konforlu bir yaşam Antares Konutları ile buluşuyor.
+Ankara'nın yükselen değeri, son zamanların en gözde konut ve yatırım bölgesi olan Yeni Batı Mahallesi, sıradışı ve prestijli konut projesi HİTYENİBATI ile yeni bir soluk kazanıyor. Bu eşsiz proje, sıradışı mimarisiyle şehrin kalbinde sizlere nefes alacak yeni bir yaşam alanı sunuyor.
+
       </p>
 
       <div className="relative mt-12 w-full max-w-7xl mx-auto h-[500px]">

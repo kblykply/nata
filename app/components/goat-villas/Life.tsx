@@ -106,11 +106,10 @@ const handlePointerUp = () => {
 
       
       <h2 className="text-3xl font-light text-gray-800 uppercase leading-tight">
-      ANTARES KONUTLARI  <br />Etlik'in kalbinde
+      GOAT VILLAS  <br />BİLKENT
       </h2>
       <p className="mt-4 text-sm text-gray-600 max-w-xl mx-auto">
-      Dolunay iştiraki olan Antares Konutları merkezi konumu, sosyal olanaklarıyla keyifli ve konforlu bir yaşam Antares Konutları ile buluşuyor.
-      </p>
+Ankara’nın merkezi Bilkent 3’te, tüm şehri gören muhteşem bir noktada yer alan 4 katlı, açık peyzajlı ve 3 tip villa seçenekli bu proje; eşsiz tasarımı, yüksek kaliteli malzemeleri ve benzersiz mimarisi ile kendinizi tamamen özel hissedeceğiniz bir yaşam tarzı sunmak üzere tasarlandı.      </p>
 
       <div className="relative mt-12 w-full max-w-7xl mx-auto h-[500px]">
       <div className="relative flex items-center justify-center h-full">
