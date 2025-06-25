@@ -55,7 +55,7 @@ export default function ProjectHeroCloudSection() {
     <span className="cursor-pointer hover:underline">Yeni Projeler</span>
   </Link>
     <span>/</span>
-    <span className="font-bold">Goat Villas</span>
+    <span className="font-bold">GOAT Villas</span>
   </div>
 </div>
 
