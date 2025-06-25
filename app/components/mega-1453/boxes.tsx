@@ -52,12 +52,13 @@ export default function InfoCardsSection() {
           >
             {card.type === "image" && card.background && (
               <>
-                <Image
+                   <Image
                   src={card.background}
                   alt={card.highlight}
                   fill
                   className="object-cover"
-                />
+                />     <div className="absolute inset-0 bg-black/30 z-0" />
+
                 <div className="absolute top-4 left-4 text-white text-sm leading-snug">
                   <p>{card.title}</p>
                   <p className="font-semibold">{card.highlight}</p>
@@ -74,7 +75,7 @@ export default function InfoCardsSection() {
                     <p className="text-xs text-gray-400 mt-1">{card.subtitle}</p>
                   )}
                 </div>
-                <div className="w-24 h-24 mx-auto">
+                <div className="w-30 h-30 mx-auto">
                   <Image
                     src={card.icon}
                     alt="Icon"

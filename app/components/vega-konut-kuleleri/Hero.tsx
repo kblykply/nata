@@ -7,7 +7,7 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 
 export default function ProjectHeroCloudSection() {
   return (
-    <section className="relative w-full h-[90vh] md:h-[150vh] overflow-hidden bg-gradient-to-b from-[#006d9d] to-[#e6f3fd]">
+    <section className="relative w-full h-[90vh] md:h-[160vh] overflow-hidden bg-gradient-to-b from-[#006d9d] to-[#e6f3fd]">
       {/* Looping clouds (seamless illusion) */}
       <div className="absolute top-60 left-0 w-full h-full z-10 overflow-hidden pointer-events-none">
         <motion.div
@@ -83,7 +83,7 @@ export default function ProjectHeroCloudSection() {
 
 
 
-<div className="flex flex-wrap justify-center gap-3 max-w-xl mx-auto mt-6 font-semibold">
+<div className="flex flex-wrap justify-center gap-3 max-w-xl mx-auto mt-6 font-semibold z-100 ">
   <Link href="#near-locations">
     <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm cursor-pointer">
   Otobüs Durağına 2 dk
