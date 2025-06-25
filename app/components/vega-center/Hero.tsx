@@ -9,6 +9,29 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 export default function ProjectHeroCloudSection() {
   return (
     <section  className="relative w-full h-[90vh] md:h-[150vh] overflow-hidden bg-gradient-to-b from-[#006d9d] to-[#e6f3fd]">
+<a
+  href="https://nataholding.com/360/vega-center/" // ← Replace with your actual link
+  target="_blank"
+  rel="noopener noreferrer"
+  className="absolute z-30 text-white text-sm font-semibold bg-white/20 px-4 py-2 rounded-xl inline-flex items-center gap-2 backdrop-blur-sm shadow-sm w-fit h-auto max-h-[40px]
+             right-6 top-auto bottom-6 left-6 
+             md:top-6 md:bottom-auto md:left-auto"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="w-4 h-4"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12h18M3 6h18M3 18h18" />
+  </svg>
+  360° Görünüm
+</a>
+
+
+
+
       {/* Looping clouds (seamless illusion) */}
       <div className="absolute top-60 left-0 w-full h-full z-10 overflow-hidden pointer-events-none">
         <motion.div
