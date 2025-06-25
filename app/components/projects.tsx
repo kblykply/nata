@@ -41,7 +41,7 @@ const allListings: Listing[] = [
     time: "9 dakika mesafede",
     stats: ["8.815 m²", "796 daire"],
     footer: "Bahçelievler",
-    image: "/RAMS GARDEN - ON.jpg",
+    image: "/rams-garden-bahcelievler-5.jpg",
     imageAlt: "/RAMS GARDEN - ARKA.jpg",
   },
   {

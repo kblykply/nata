@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { FaMapMarkerAlt } from "react-icons/fa";
 
@@ -8,7 +9,7 @@ export default function ProjectHeroCloudSection() {
   return (
     <section  className="relative w-full h-[90vh] md:h-[150vh] overflow-hidden bg-gradient-to-b from-[#006d9d] to-[#e6f3fd]">
       {/* Looping clouds (seamless illusion) */}
-      <div className="absolute top-60 left-0 w-full h-full z-10 overflow-hidden">
+      <div className="absolute top-60 left-0 w-full h-full z-10 overflow-hidden pointer-events-none">
         <motion.div
           className="flex h-full w-[200%]"
           animate={{ x: ["0%", "-50%"] }}
@@ -34,7 +35,7 @@ export default function ProjectHeroCloudSection() {
       </div>
 
       {/* Building image */}
-      <div className="absolute bottom-0 left-0 w-full h-[140vh] z-20">
+      <div className="absolute bottom-0 left-0 w-full h-[140vh] z-20 pointer-events-none">
         <Image
           src="/mega-sasmaz-main.png"
           alt="Building"
@@ -46,9 +47,13 @@ export default function ProjectHeroCloudSection() {
 
       <div className="py-4 ">
   <div className="text-white text-sm md:text-base flex justify-center gap-2 top-10   ">
-    <span>NATA Yaşam</span>
-    <span>/</span>
-    <span>Yeni Projeler</span>
+       <Link href="/" passHref>
+    <span className="cursor-pointer hover:underline">NATA Yaşam</span>
+  </Link>
+  <span>/</span>
+  <Link href="/#aktif-projeler" passHref>
+    <span className="cursor-pointer hover:underline">Yeni Projeler</span>
+  </Link>
     <span>/</span>
     <span className="font-bold">Mega Şaşmaz</span>
   </div>
@@ -70,21 +75,42 @@ export default function ProjectHeroCloudSection() {
       </div>
     </div>
 
-<div className="flex flex-wrap justify-center gap-3 max-w-xl mx-auto mt-6 font-semibold">
-  <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm">
-  Oto sanayi bölgesinde
-  </div>
-  <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm">
-    <FaMapMarkerAlt />   Ankara — Şaşmaz
-  </div>
-  <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center">
-  700 Bağımsız
-  </div>
-  <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center">
-  3. Çeyrek 2025
-  </div>
 
+
+
+
+
+<div className="flex flex-wrap justify-center gap-3 max-w-xl mx-auto mt-6 font-semibold">
+  <Link href="#near-locations">
+    <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm cursor-pointer">
+  Oto sanayi bölgesinde
+    </div>
+  </Link>
+
+  <Link href="#near-locations">
+    <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm cursor-pointer">
+      <FaMapMarkerAlt /> Ankara — Şaşmaz
+    </div>
+  </Link>
+
+  <Link href="#unit-types">
+    <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
+700 Bağımsız    </div>
+  </Link>
+
+  <Link href="#contact">
+    <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
+  3. Çeyrek 2025
+    </div>
+  </Link>
+
+  <Link href="#life">
+    <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
+      Premium Hayat
+    </div>
+  </Link>
 </div>
+
 
 
     </section>

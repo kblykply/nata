@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { FaMapMarkerAlt } from "react-icons/fa";
 
@@ -8,7 +9,7 @@ export default function ProjectHeroCloudSection() {
   return (
     <section className="relative w-full h-[90vh] md:h-[150vh] overflow-hidden bg-gradient-to-b from-[#006d9d] to-[#e6f3fd]">
       {/* Looping clouds (seamless illusion) */}
-      <div className="absolute top-60 left-0 w-full h-full z-10 overflow-hidden">
+      <div className="absolute top-60 left-0 w-full h-full z-10 overflow-hidden pointer-events-none">
         <motion.div
           className="flex h-full w-[200%]"
           animate={{ x: ["0%", "-50%"] }}
@@ -34,7 +35,7 @@ export default function ProjectHeroCloudSection() {
       </div>
 
       {/* Building image */}
-      <div className="absolute bottom-0 left-0 w-full h-[200vh] z-20">
+      <div className="absolute bottom-0 left-0 w-full h-[130vh] z-20 pointer-events-none">
         <Image
           src="/new-buildings/incek.png"
           alt="Building"
@@ -44,11 +45,15 @@ export default function ProjectHeroCloudSection() {
       </div>
 
 
-      <div className="py-4 ">
-  <div className="text-white text-sm md:text-base flex justify-center gap-2 top-10   z-25">
-    <span>NATA Yaşam</span>
-    <span>/</span>
-    <span>Tamamlanmış Projeler</span>
+      <div className="py-4   ">
+  <div className="text-white text-sm md:text-base flex justify-center gap-2 top-10  ">   
+        <Link href="/" passHref>
+    <span className="cursor-pointer hover:underline">NATA Yaşam</span>
+  </Link>
+  <span>/</span>
+  <Link href="/#tamamlanan-projeler" passHref>
+    <span className="cursor-pointer hover:underline">Tamamlanmış Projeler</span>
+  </Link>
     <span>/</span>
     <span className="font-bold">Nata İncek Konutları</span>
   </div>
@@ -57,7 +62,7 @@ export default function ProjectHeroCloudSection() {
 
 
       {/* Content goes here */}
-      <div className="flex justify-center my-10">
+      <div className="flex justify-center my-20">
       <div className="w-90 md:w-150">
         <Image
           src="/NATA I╠çNCEK KONUTLARI-LOGO.png"
@@ -70,22 +75,43 @@ export default function ProjectHeroCloudSection() {
       </div>
     </div>
 
-<div className="flex flex-wrap justify-center gap-3 max-w-xl mx-auto mt-6 font-semibold  z-25">
-  <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm  z-25">
- Otobüs Durağına 1 dk
-  </div>
-  <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm  z-25">
-    <FaMapMarkerAlt />   İncek Mahallesi / Ankara
-  </div>
-  <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center  z-25">
-  196 Konut
-  </div>
-  <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center  z-25">
+
+
+
+
+
+
+  <div className="flex flex-wrap justify-center gap-3 max-w-xl mx-auto mt-6 font-semibold">
+  <Link href="#near-locations">
+    <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm cursor-pointer">
+   Otobüs Durağına 1 dk
+
+    </div>
+  </Link>
+
+  <Link href="#near-locations">
+    <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm cursor-pointer">
+      <FaMapMarkerAlt /> İncek Mahallesi / Ankara
+    </div>
+  </Link>
+
+  <Link href="#unit-types">
+    <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
+ 196 Konut
+    </div>
+  </Link>
+
+  <Link href="#contact">
+    <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
   Hemen Teslim
-  </div>
-  <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center  z-25">
-  Ferah, Şık ve Kullanışlı
-  </div>
+    </div>
+  </Link>
+
+  <Link href="#life">
+    <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
+    Ferah, Şık ve Kullanışlı
+    </div>
+  </Link>
 </div>
 
 

@@ -153,6 +153,15 @@
               loop
               className="rounded-xl overflow-hidden w-full flex items-center justify-center"
             >
+                 <SwiperSlide>
+                <Image
+                  src="/slider/slider/sagkutu2.png"
+                  alt="Mega 1453 Slide 2"
+                  width={300}
+                  height={500}
+                  className="w-full h-auto object-contain"
+                />
+              </SwiperSlide>
               <SwiperSlide>
                 <Image
                   src="/slider/slider/sagkutu.png"
@@ -162,15 +171,7 @@
                   className="w-full h-auto object-contain"
                 />
               </SwiperSlide>
-              <SwiperSlide>
-                <Image
-                  src="/slider/slider/sagkutu2.png"
-                  alt="Mega 1453 Slide 2"
-                  width={300}
-                  height={500}
-                  className="w-full h-auto object-contain"
-                />
-              </SwiperSlide>
+           
             </Swiper>
 
             <div
