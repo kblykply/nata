@@ -75,22 +75,7 @@ export default function ProjectHeroCloudSection() {
       </div>
     </div>
 
-<div className="flex flex-wrap justify-center gap-3 max-w-xl mx-auto mt-6 font-semibold">
-  <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm">
-Metroya 10 Dk Uzaklıkta  </div>
-  <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm">
-    <FaMapMarkerAlt />  Sultangazi / İstanbul
-  </div>
-  <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center">
-  468 Konut  & 444 Rezidans & 270 Mağaza
-  </div>
-  <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center">
- Hemen Teslim
-  </div>
-  <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center">
- Can Alıcı Lokasyon
-  </div>
-</div>
+
 
 
 
@@ -106,7 +91,7 @@ Metroya 10 Dk Uzaklıkta     </div>
     </div>
   </Link>
 
-  <Link href="#unit-types">
+  <Link href="#contact">
     <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
   468 Konut  & 444 Rezidans & 270 Mağaza
     </div>

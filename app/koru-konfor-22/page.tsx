@@ -28,9 +28,7 @@ const Page: React.FC = () => {
            <SitePlans />
          </section>
      
-         <section id="unit-types" className="scroll-mt-24">
-           <UnitTypes />
-         </section>
+         
      
          <section id="design" className="scroll-mt-24">
            <Design />

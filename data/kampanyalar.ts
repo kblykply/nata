@@ -123,7 +123,7 @@
   {
   slug: "bes-pesin-36-ay",
   title: "%5 peşinatla",
-  highlight: "36 ay sıfır faizli ödeme planı",
+  highlight: "36 ay 0 faizli ödeme planı",
   description: "Temmuz'a özel fırsatlar",
   bg: "/kampanya/6.png",
   image: "/kampanya/icons/6.png",
@@ -141,7 +141,7 @@
       ]
     }
   ],
-  secondText: "Detaylı ödeme planı için satış danışmanlarımızla <span class='text-red-600'>hemen iletişimne geç</span>. Ertelemek yerine şimdi harekte geç, konut sahibi olmanın en kolay yolunu kaçırma!"
+  secondText: "Detaylı ödeme planı için satış danışmanlarımızla <span class='text-red-600'>hemen iletişime geç</span>. Ertelemek yerine şimdi harekte geç, konut sahibi olmanın en kolay yolunu kaçırma!"
 
 }
 ,

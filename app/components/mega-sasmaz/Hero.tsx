@@ -93,7 +93,7 @@ export default function ProjectHeroCloudSection() {
     </div>
   </Link>
 
-  <Link href="#unit-types">
+  <Link href="#contact">
     <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
 700 Bağımsız    </div>
   </Link>
@@ -101,7 +101,7 @@ export default function ProjectHeroCloudSection() {
   <Link href="#contact">
     <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
   3. Çeyrek 2025
-    </div>
+    </div>  
   </Link>
 
   <Link href="#life">

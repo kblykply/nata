@@ -26,7 +26,7 @@ export default function DesignSection() {
     >
       <div className="max-w-screen-xl mx-auto w-full flex flex-col lg:flex-row items-center justify-between gap-10 relative z-10">
         {/* Left Text Content */}
-        <div className="w-full max-w-xl">
+        <div className="w-full max-w-xl z-25">
           <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 leading-tight">
             HİTYENİBATI <br /> ile Tanışın
           </h2>

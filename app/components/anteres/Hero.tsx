@@ -56,7 +56,7 @@ export default function ProjectHeroCloudSection() {
   </Link>
   <span>/</span>
   <Link href="#" passHref>
-    <span className="cursor-pointer font-bold hover:underline">Antares</span>
+    <span className="cursor-pointer font-bold hover:underline">Antares Konutları</span>
   </Link>
 </div>
 </div>
@@ -78,7 +78,7 @@ export default function ProjectHeroCloudSection() {
     </div>
 
 <div className="flex flex-wrap justify-center gap-3 max-w-xl mx-auto mt-6 font-semibold z-10">
-  <Link href="/anteres#unit-types">
+  <Link href="/anteres#contact">
     <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm cursor-pointer">
       500+ Konut ve Ticari Alan
     </div>
