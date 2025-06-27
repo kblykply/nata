@@ -45,19 +45,20 @@ export default function ProjectHeroCloudSection() {
       </div>
 
 
-      <div className="py-4 ">
-  <div className="text-white text-sm md:text-base flex justify-center gap-2 top-10   ">
+  <div className="py-4">
+  <div className="text-white text-sm md:text-base flex flex-wrap justify-center items-center gap-2 text-center px-4">
     <Link href="/" passHref>
-    <span className="cursor-pointer hover:underline">NATA Yaşam</span>
-  </Link>
-  <span>/</span>
-  <Link href="/#aktif-projeler" passHref>
-    <span className="cursor-pointer hover:underline">Yeni Projeler</span>
-  </Link>
+      <span className="cursor-pointer hover:underline whitespace-nowrap">NATA Yaşam</span>
+    </Link>
     <span>/</span>
-    <span className="font-bold">Rams Garden Bahçelievler</span>
+    <Link href="/#aktif-projeler" passHref>
+      <span className="cursor-pointer hover:underline whitespace-nowrap">Yeni Projeler</span>
+    </Link>
+    <span>/</span>
+    <span className="font-bold whitespace-nowrap">Rams Garden Bahçelievler</span>
   </div>
 </div>
+
 
 
 
