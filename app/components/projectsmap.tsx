@@ -385,45 +385,56 @@ export default function MapWithProjects() {
 
 
   {selectedListing && selectedListing.coords && (
-  <InfoWindow
-    position={{
-      lat: selectedListing.coords[0],
-      lng: selectedListing.coords[1],
-    }}
-    onCloseClick={() => setSelectedListing(null)}
-  >
-    <div className="w-64 text-gray-800">
-      <img
-        src={selectedListing.image}
-        alt={selectedListing.price}
-        className="w-full h-28 object-cover rounded-md mb-2"
-      />
-      <h4 className="text-md font-bold mb-1">{selectedListing.price}</h4>
-      <p className="text-sm text-gray-600 flex items-center gap-1 mb-1">
-        <FaTrain className="text-gray-500" /> {selectedListing.metro} — {selectedListing.time}
-      </p>
-
-      <div className="flex flex-wrap gap-1 mb-2">
-        {selectedListing.label && (
-          <span className="text-xs px-2 py-0.5 bg-red-100 text-red-600 rounded-full">
-            {selectedListing.label}
-          </span>
-        )}
-        {selectedListing.highlight && (
-          <span className="text-xs px-2 py-0.5 border border-[#ab1e3b] text-[#ab1e3b] rounded-full">
-            {selectedListing.highlight}
-          </span>
-        )}
+<InfoWindow
+  position={{
+    lat: selectedListing.coords[0],
+    lng: selectedListing.coords[1],
+  }}
+  onCloseClick={() => setSelectedListing(null)}
+>
+  <div className="w-64 h-40 relative rounded-lg overflow-hidden shadow-xl text-white">
+    <img
+      src={selectedListing.image}
+      alt={selectedListing.price}
+      className="absolute inset-0 w-full h-full object-cover"
+    />
+    <div className="absolute inset-0 bg-black/70 flex flex-col justify-between p-3">
+      <div>
+        <h4 className="text-base font-semibold mb-1">{selectedListing.price}</h4>
+        <p className="text-xs flex items-center gap-1 text-gray-300">
+          <FaTrain className="text-gray-400" />
+          {selectedListing.metro} — {selectedListing.time}
+        </p>
       </div>
 
-      <a
-        href={selectedListing.link}
-        className="block w-full text-center py-1.5 mt-2 text-white bg-[#ab1e3b] hover:bg-red-700 rounded-md text-sm font-medium"
-      >
-        Detayları Gör
-      </a>
+      <div>
+        <div className="flex flex-wrap gap-1 mb-2">
+          {selectedListing.label && (
+            <span className="text-[10px] px-2 py-0.5 bg-red-100 text-red-600 rounded-full">
+              {selectedListing.label}
+            </span>
+          )}
+          {selectedListing.highlight && (
+            <span className="text-[10px] px-2 py-0.5 border border-[#ab1e3b] text-[#ab1e3b] rounded-full">
+              {selectedListing.highlight}
+            </span>
+          )}
+        </div>
+        <a
+          href={selectedListing.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block w-full text-center py-1.5 bg-[#ab1e3b] hover:bg-red-700 rounded-md text-xs font-semibold"
+        >
+          Detayları Gör
+        </a>
+      </div>
     </div>
-  </InfoWindow>
+  </div>
+</InfoWindow>
+
+
+
 )}
 
 </GoogleMap>
