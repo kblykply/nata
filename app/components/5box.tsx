@@ -50,10 +50,10 @@ const popupContent = [
 ];
 
 const images = [
-  "/slider/slider/alt1.jpg",
-  "/slider/slider/alt2.jpg",
+  "/nata_web_gorsel_haziran1.jpg",
+  "/nata_web_gorsel_haziran2.jpg",
   "/slider/slider/alt3.jpg",
-  "/slider/slider/alt4.jpg",
+  "/nata_web_mobil_3.jpg",
   "/slider/slider/alt5.jpg"
 ];
 
