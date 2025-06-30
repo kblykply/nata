@@ -31,7 +31,7 @@ const listings: SimpleListing[] = [
       location: "Etimesgut/Ankara",
       type: "Villa",
       specs: ["2+1", "117 m²", "1. Kat"],
-      image: "/KORU KONFOR 5+1.png",
+      image: "/korubirincikat.jpg",
       imageAlt: "/koru-map.png",
       link: "/koru-konfor-20"
     },
@@ -69,7 +69,7 @@ const listings: SimpleListing[] = [
       location: "Etimesgut/Ankara",
       type: "Villa",
       specs: ["2+1", "80 m²", "1. Kat"],
-      image: "/KORU KONFOR 5+1.png",
+      image: "/korubirincikat.jpg",
       imageAlt: "/koru-map.png",
       link: "/koru-konfor-20"
     },
@@ -86,19 +86,7 @@ const listings: SimpleListing[] = [
       imageAlt: "/natura-map.png",
       link: "/natura-20"
     },
-    {
-             id: "6",
-
-      title: "Koru Konfor",
-      price: "Etimesgut'ta 3+1 Daire",
-      currency: "",
-      location: "Etimesgut/Ankara",
-      type: "Villa",
-      specs: ["3+1", "144 m²", "3. Kat"],
-      image: "/KORU KONFOR- 4+1.png",
-      imageAlt: "/koru-map.png",
-      link: "/koru-konfor-20"
-    },
+    
     {
              id: "7",
 
