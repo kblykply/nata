@@ -61,7 +61,7 @@ export default function Blogs({ posts }: BlogsProps) {
               <Link href={`/blog/${post.slug}`} className="block">
                 <div className="relative group flex flex-col md:flex-row justify-between items-start gap-6 bg-gray-50 p-6 rounded-xl transition hover:shadow-md">
                   {/* Hover Image */}
-               <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-70 group-hover:opacity-100 transition duration-300 pointer-events-none z-10">
+<div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 md:opacity-70 md:group-hover:opacity-100 transition duration-300 pointer-events-none z-10">
   <div className="w-[200px] h-[140px] rounded-xl overflow-hidden shadow-xl relative">
     
     {/* Blurred background fill */}
