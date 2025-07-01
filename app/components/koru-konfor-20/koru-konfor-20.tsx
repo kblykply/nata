@@ -7,7 +7,7 @@ const gallery = [
   {
   label: "Bodrum Kat",
   image: "/korubodrum.jpg", // replace with the actual image path if available
-  price: "1.0 Milyon TL", // optional, update if needed
+  price: "1.000.000$", // optional, update if needed
   location: "Çankaya/Ankara", // optional, update if needed
   details: [
     ["Hol", "7.20 m²"],
@@ -20,7 +20,7 @@ const gallery = [
 {
   label: "Zemin Kat",
   image: "/koruzemin.jpg", // replace with actual image path if needed
-  price: "",
+  price: "1.000.000$",
   location: "Çankaya/Ankara", // optional
   details: [
     ["Antre", "12.00 m²"],
@@ -39,7 +39,7 @@ const gallery = [
   {
   label: "1. Kat",
   image: "/korubirincikat.jpg", // update this with the actual image path if needed
-  price: "1.0 Milyon TL", // optional, update if needed
+  price: "1.000.000$", // optional, update if needed
   location: "Çankaya/Ankara", // optional or editable
   details: [
     ["Hol", "6.70 m²"],
@@ -66,11 +66,11 @@ export default function PlanDetailsWithGallery() {
         {/* Left Details */}
         <div className="flex-1 space-y-6">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Koru Konfor</h2>
-          <h3 className="text-xl font-medium text-gray-700">3+1 TİP B2B - {current.label}</h3>
+          <h3 className="text-xl font-medium text-gray-700">Villa Tipi - {current.label}</h3>
 
           <div className="bg-white  rounded-xl shadow p-6 w-full max-w-md text-sm text-gray-700">
             <p className="font-semibold mb-4 text-base text-black">
-              {current.price}’den başlayan fiyatlarla
+              {current.price}’dan başlayan fiyatlarla
             </p>
             <div className="space-y-1">
               <div className="flex justify-between">

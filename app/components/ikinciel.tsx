@@ -26,11 +26,11 @@ const listings: SimpleListing[] = [
     {
        id: "1",
       title: "Koru Konfor",
-      price: "Etimesgut'ta 2+1 Daire",
+      price: "Etimesgut'ta Villa",
       currency: " ",
       location: "Etimesgut/Ankara",
       type: "Villa",
-      specs: ["2+1", "117 m²", "1. Kat"],
+      specs: ["Villa", "350 m²", "3 Katlı"],
       image: "/korubirincikat.jpg",
       imageAlt: "/koru-map.png",
       link: "/koru-konfor-20"
@@ -60,15 +60,14 @@ const listings: SimpleListing[] = [
       imageAlt: "/prime-map.png",
       link: "/prime-oran-20"
     },
-    {
-             id: "4",
-
+      {
+       id: "4",
       title: "Koru Konfor",
-      price: "Etimesgut'ta 2+1 Daire",
-      currency: "",
+      price: "Etimesgut'ta Villa",
+      currency: " ",
       location: "Etimesgut/Ankara",
       type: "Villa",
-      specs: ["2+1", "80 m²", "1. Kat"],
+      specs: ["Villa", "350 m²", "3 Katlı"],
       image: "/korubirincikat.jpg",
       imageAlt: "/koru-map.png",
       link: "/koru-konfor-20"
