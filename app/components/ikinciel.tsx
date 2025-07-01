@@ -70,7 +70,7 @@ const listings: SimpleListing[] = [
       specs: ["Villa", "350 m²", "3 Katlı"],
       image: "/korubirincikat.jpg",
       imageAlt: "/koru-map.png",
-      link: "/koru-konfor-20"
+      link: "/koru-konfor-21"
     },
     {
              id: "5",

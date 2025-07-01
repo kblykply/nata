@@ -79,7 +79,7 @@ export default function ProjectHeroCloudSection() {
     <span className="cursor-pointer hover:underline">Yeni Projeler</span>
   </Link>
     <span>/</span>
-    <span className="font-bold">VEGA center</span>
+    <span className="font-bold">VEGA Center</span>
   </div>
 </div>
 
