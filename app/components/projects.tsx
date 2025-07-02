@@ -33,7 +33,7 @@ interface Listing {
 const allListings: Listing[] = [
    {
     id: "9",
-    link: "/rams-garden",
+    link: "/hityenibatiplus",
     type: "standard",
     price: "YENİ BATI PLUS",
     label: "Temmuz 2025",
