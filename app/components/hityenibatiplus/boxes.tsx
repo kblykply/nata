@@ -8,7 +8,7 @@ const cards = [
     type: "image",
     title: "Haberleri öğrenin",
     highlight: "Proje Hakkında Tüm Bilgiler",
-    background:     "/hityenibati-7.jpg",
+    background:     "/yenibatıplus/1.jpeg",
 
     wide: true,   // Mark this card as wide
   },
@@ -24,7 +24,7 @@ const cards = [
     type: "image",
     title: "Ziyaret Edin",
     highlight: "Projenin Lokasyonunu Görün",
-    background:    "/hityenibati-6.jpg",
+    background:    "/yenibatıplus/3.jpeg",
 
   },
   {
