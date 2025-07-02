@@ -28,17 +28,18 @@
   const listings: Listing[] = [
   
     {
-      link: "/rams-garden",
-      type: "standard",
-      price: "RAMS GARDEN",
-      label: "Hemen Teslim",
-      metro: "Haznedar Metro,  ",
-      time: "9 dakika mesafede",
-      stats: ["8.815 m²", " 796 daire"],
-      footer: "Bahçelievler",
-      image: "/RAMS GARDEN - ON.jpg",
-      imageAlt: "/RAMS GARDEN - ARKA.jpg",
-    },
+   
+    link: "/rams-garden",
+    type: "standard",
+    price: "RAMS GARDEN",
+    label: "Hemen Teslim",
+    metro: "Haznedar Metro",
+    time: "9 dakika mesafede",
+    stats: ["8.815 m²", "796 daire"],
+    footer: "Bahçelievler",
+    image: "/rams-garden-bahcelievler-5.jpg",
+    imageAlt: "/RAMS GARDEN - ARKA.jpg",
+  },
 
     
     
