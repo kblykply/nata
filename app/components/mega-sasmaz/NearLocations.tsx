@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+ import { OverlayView } from "@react-google-maps/api";
 import {
   GoogleMap,
   Marker,
@@ -12,8 +13,90 @@ import {
 
 
 
+ const vegaAvms = [
+  {
+    id: "aquavega",
+    name: "AquaVega Aquarium",
+    coords: [39.88782, 32.93512], // Located inside Nata Vega Outlet, near IKEA
+    icon: "/icons/aquavega.png",
+    url: "https://www.aquavega.com.tr/", // fallback to social
+    size: [70, 70],
+  },
+  {
+    id: "eskisehir",
+    name: "Vega Outlet Eskişehir",
+    coords: [39.781511220709724, 30.479342593309756],
+    icon: "/icons/Eskis╠ºehir.png",
+    url: "https://www.vegaoutlet.com.tr/", // instagram page
+    size: [70, 70],
+  },
+  {
+    id: "istanbul",
+    name: "Vega İstanbul",
+    coords: [41.092422986394176, 28.903546427307614],
+    icon: "/icons/istanbul.png",
+    url: "https://www.vegaavmistanbul.com/", // instagram
+    size: [70, 70],
+  },
+  {
+    id: "natavegaoutlet",
+    name: "Nata Vega Outlet",
+    coords: [39.88748717217052, 32.93447179046967],
+    icon: "/icons/natavegaoutlet.png",
+    url: "https://www.natavega.com.tr/",
+    size: [70, 70],
+  },
+  {
+    id: "silivri",
+    name: "Vega Silivri",
+    coords: [41.077699686463525, 28.251653183796208],
+    icon: "/icons/silivri.png",
+    url: "https://vegaavmsilivri.com/", // fallback IG
+    size: [70, 70],
+  },
+  {
+    id: "subayevleri",
+    name: "Vega Subayevleri",
+    coords: [39.97569121868903, 32.88370383957994],
+    icon: "/icons/subayevleri.png",
+    url: "https://vegaavmsubayevleri.com/", // fallback IG
+    size: [70, 70],
+  },
+  {
+    id: "vegacadde",
+    name: "Vega Cadde",
+    coords: [39.9461513892066, 32.71575214629393], // based on Instagram location listing :contentReference[oaicite:1]{index=1}
+    icon: "/icons/vegacadde.png",
+    url: "https://vegacadde.com/", 
+    size: [70, 70],
+  },
+  {
+    id: "vegacenter",
+    name: "Vega Center",
+    coords: [39.91747353620304, 32.78111696961037], // central Ankara approximate :contentReference[oaicite:3]{index=3}
+    icon: "/icons/vegacenter.png",
+    url: "https://vegacenter.com.tr/", // fallback IG
+    size: [70, 70],
+  },
+  {
+    id: "vegamaxi",
+    name: "Vega Maxi",
+    coords: [41.08268667628786, 28.20442451024029],
+    icon: "/icons/vegamaxi.png",
+    url: "https://vegamaxiavm.com/", // fallback IG
+    size: [70, 70],
+  },
+  {
+    id: "yalova",
+    name: "Vega Yalova",
+    coords: [40.65320226567596, 29.255007708375175],
+    icon: "/icons/yalova.png",
+    url: "https://www.vegaavmyalova.com/", // fallback IG
+    size: [70, 70],
+  },
+];
 
-const places = [
+const places  = [
   {
     id: 161,
     category: "markets",
@@ -310,7 +393,36 @@ const getCategoryPinUrl = (categoryId: string): string =>
                     </>
                   )}
                 </MarkerClusterer>
-
+{vegaAvms.map((avm) => (
+  <OverlayView
+    key={avm.id}
+    position={{ lat: avm.coords[0], lng: avm.coords[1] }}
+    mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
+  >
+    <div
+      onClick={() => window.open(avm.url, "_blank")}
+      className="bg-white rounded-full p-1 shadow-lg border border-gray-200 cursor-pointer transition-transform hover:scale-105"
+      style={{
+        width: `${avm.size[0]}px`,
+        height: `${avm.size[1]}px`,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        boxSizing: "border-box",
+      }}
+    >
+      <img
+        src={avm.icon}
+        alt={avm.name}
+        style={{
+          maxWidth: "100%",
+          maxHeight: "100%",
+          objectFit: "contain",
+        }}
+      />
+    </div>
+  </OverlayView>
+))}
                 {filteredPlaces.map(
                   (place) =>
                     activeMarker === place.id && (

@@ -47,25 +47,24 @@ export default function ProjectHeroCloudSection() {
 
       <div className="py-4 ">
  <div className="text-white text-sm md:text-base flex justify-center gap-2 top-10">
-  <Link href="/" passHref>
-    <span className="cursor-pointer hover:underline">NATA Yaşam</span>
-  </Link>
+ <Link href="/" className="cursor-pointer hover:underline">NATA Yaşam</Link>
+
   <span>/</span>
-  <Link href="/#aktif-projeler" passHref>
-    <span className="cursor-pointer hover:underline">Yeni Projeler</span>
-  </Link>
+ <Link href="/#aktif-projeler" className="cursor-pointer hover:underline">
+  Yeni Projeler
+</Link>
   <span>/</span>
-  <Link  passHref>
-    <span className="cursor-pointer font-bold hover:underline">Antares Konutları</span>
-  </Link>
+  <Link href="/anteres" className="cursor-pointer font-bold hover:underline">
+  Antares Konutları
+</Link>
 </div>
 </div>
 
 
 
       {/* Content goes here */}
-      <div className="flex justify-center my-10">
-      <div className="w-90 md:w-150">
+      <div className="flex justify-center my-10 ">
+      <div className="w-90 md:w-200">
         <Image
           src="/antereslogo.png"
           alt="Antares Logo ve maddeler Eksik"
