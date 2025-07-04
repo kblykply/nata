@@ -44,8 +44,8 @@ const popupContent = [
 ];
 
 const images = [
-  "/nata_web_gorsel_haziran1.jpg",
-  "/nata_web_gorsel_haziran2.jpg",
+  "/nata_web_rams_garden.jpg",
+  "/nata_web_goat_villas.jpg",
   "/şehrinmerkezi.jpg",
   "/nataslideralt4.jpg",
   "/slideralt5.jpg",
