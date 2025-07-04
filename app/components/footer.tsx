@@ -62,7 +62,7 @@ Mustafa Kemal, 2127. Cd No:21, 06530 Çankaya/Ankara
         {/* Middle Columns */}
         <div className="col-span-3 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
           <div>
-            <h5 className="font-semibold mb-2">Devam Eden Projeler</h5>
+            <h5 className="font-semibold mb-2">Satışı Devam Eden Projeler</h5>
           <ul className="flex flex-col gap-2">
   {[
     { name: "VEGA CENTER", url: "/vega-center" },

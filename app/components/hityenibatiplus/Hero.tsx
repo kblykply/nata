@@ -65,7 +65,7 @@ export default function ProjectHeroCloudSection() {
       <div className="flex justify-center my-10">
       <div className="w-90 md:w-150">
         <Image
-          src="/hityenibati.png"
+          src="/yenibatıplus/yenibatılogo.png"
           alt="Vega Center Logo"
           width={0}
           height={0}
@@ -86,19 +86,18 @@ Metroya 14 dk uzaklıkta
 
   <Link href="#near-locations">
     <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm cursor-pointer">
-      <FaMapMarkerAlt /> Ankara/Yenimahalle
+      <FaMapMarkerAlt /> Ankara – Yeni Batı
     </div>
   </Link>
 
   <Link href="#contact">
     <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
-  190 Daire
-    </div>
+405 Konut + 5 Ticari Alan    </div>
   </Link>
 
   <Link href="#contact">
     <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
-  Hemen Teslim
+  Temmuz 2025
     </div>
   </Link>
 
