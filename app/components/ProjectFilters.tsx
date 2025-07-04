@@ -72,7 +72,7 @@ const [showCityMenu, setShowCityMenu] = useState(false);
             : "bg-gray-100 text-gray-700"
         }`}
       >
-        8 İkinci El
+        7 İkinci El
       </button>
     </div>
 
