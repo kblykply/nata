@@ -56,6 +56,51 @@
       titleImage: '/sliderson/title4.png',
       titlePosition: 'bottom-15 left-1/2 -translate-x-1/2',
     },
+    {
+      id: 10,
+      background: '/sliderplus/ramsgarden/ramsgardenimage.jpg',
+      textColor: 'black',
+      logoImage: '/sliderson/logo.png',
+      logoPosition: 'top-30 left-6',
+      titleImage: '/sliderplus/ramsgarden/ramsgardenyaz─▒─▒.png',
+      titlePosition: 'bottom-5 left-1/2 -translate-x-1/2 -translate-y-1/2',
+    },
+    {
+      id: 11,
+      background: '/sliderplus/vegaotonomi/vegaotonomiimage.jpg',
+      textColor: 'black',
+      logoImage: '/sliderson/logo.png',
+      logoPosition: 'bottom-6 left-6',
+      titleImage: '/sliderplus/vegaotonomi/vegaotoyaz─▒.png',
+      titlePosition: 'top-30 left-6',
+    },
+    {
+      id: 12,
+      background: '/sliderplus/mega1453/mega1453image.jpg',
+      textColor: 'black',
+      logoImage: '/sliderson/logo.png',
+      logoPosition: 'bottom-6 left-6',
+      titleImage: '/sliderplus/mega1453/mega1453yaz─▒beyaz.png',
+      titlePosition: 'top-30 left-6',
+    },
+    {
+      id: 13,
+      background: '/sliderplus/koru konfor/korukonforimage.jpg',
+      textColor: 'black',
+      logoImage: '/sliderson/logo.png',
+      logoPosition: 'bottom-5 right-6',
+      titleImage: '/sliderplus/koru konfor/korukonforyaz─▒─▒.png',
+      titlePosition: 'bottom-5 left-6',
+    }, {
+      id: 14,
+      background: '/sliderplus/goat/goatimage.jpg',
+      textColor: 'black',
+      logoImage: '/sliderson/logo.png',
+      logoPosition: 'bottom-6 left-6',
+      titleImage: '/sliderplus/goat/goatvillayaz─▒.png',
+      titlePosition: 'top-30 left-6',
+    }
+
   ];
 
   export default function HeroSlider() {
