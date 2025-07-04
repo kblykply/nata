@@ -55,7 +55,7 @@ export default function ProjectHeroCloudSection() {
     <span className="cursor-pointer hover:underline">Yeni Projeler</span>
   </Link>
   <span>/</span>
-  <Link href="#" passHref>
+  <Link  passHref>
     <span className="cursor-pointer font-bold hover:underline">Antares Konutları</span>
   </Link>
 </div>

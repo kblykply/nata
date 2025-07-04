@@ -37,8 +37,8 @@ const slides = [
     image: "/Ankara nın Yeni İş ve Yaşam Merkezi.jpg",
     popup: {
       title: "Prestijli Konumda Modern Ofis ve Ticaret Alanları",
-      text: "Vega Center, iş dünyası ve sosyal yaşamı tek bir noktada buluşturan yeni nesil karma proje anlayışıyla Ankara&apos;nın yükselen değeri oluyor. Modern ofisler, mağazalar ve sosyal alanlarla hem iş hayatınıza prestij katıyor hem de günlük ihtiyaçlarınıza kolay erişim sağlıyor. Şehrin dinamik yapısına uyumlu tasarımıyla, yatırımcılar ve profesyoneller için ideal bir merkez haline geliyor.",
-      images: ["/vegacenter-Ankara nın Yeni İş ve Yaşam Merkezi (2).jpg", "/vegacenter-Ankara nın Yeni İş ve Yaşam Merkezi.jpg"]
+      text: "Vega Center, iş dünyası ve sosyal yaşamı tek bir noktada buluşturan yeni nesil karma proje anlayışıyla Ankara'nın yükselen değeri oluyor. Modern ofisler, mağazalar ve sosyal alanlarla hem iş hayatınıza prestij katıyor hem de günlük ihtiyaçlarınıza kolay erişim sağlıyor. Şehrin dinamik yapısına uyumlu tasarımıyla, yatırımcılar ve profesyoneller için ideal bir merkez haline geliyor.",
+      images: ["/yenibatıplus/ofis.png", "/vegacenter-Ankara nın Yeni İş ve Yaşam Merkezi.jpg"]
     }
   },
   {
@@ -168,7 +168,7 @@ Ankara'nın en gözde lokasyonu üzerinde bulunan VEGA Center, modern mimarisiyl
     {i === 0 ? (
       // If it's the first slide, render a link
       <a
-        href="#"   // <-- Change this URL to your target link
+           // <-- Change this URL to your target link
         className="z-100 absolute    left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-black text-sm text-white  px-5 py-2 rounded-full shadow"
       >
         Sunuma Git

@@ -70,9 +70,13 @@ Mustafa Kemal, 2127. Cd No:21, 06530 Çankaya/Ankara
     { name: "MEGA 1453", url: "/mega-1453" },
     { name: "RAMS GARDEN BAHÇELİEVLER", url: "/rams-garden" },
     { name: "ANTARES KONUTLARI", url: "/anteres" },
+    { name: "YENİ BATI PLUS", url: "/hityenibatiplus" },
+
     { name: "VEGA OTONOMİ", url: "/vega-otonomi" },
     { name: "MEGA ŞAŞMAZ", url: "/mega-sasmaz" },
     { name: "HİTYENİBATI", url: "/hityenibati" },
+        { name: "VEGA CADDE", url: "/vega-cadde" },
+
   ].map((item, idx) => (
     <li key={idx}>
       <Link href={item.url} className="hover:text-red-600">
