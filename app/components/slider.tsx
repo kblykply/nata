@@ -33,7 +33,7 @@
       id: 7,
       background: '/sliderson/image2.jpg',
       textColor: 'black',
-      logoImage: '/sliderson/logo.png',
+      logoImage: '/outstandinglondon-logo.png',
       logoPosition: 'bottom-6 left-6',
       titleImage: '/sliderson/title2.png',
       titlePosition: 'top-30 left-6',
