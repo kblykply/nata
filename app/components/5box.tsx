@@ -19,14 +19,8 @@ const popupContent = [
 • Modern mimari tasarımlar`
   },
   {
-    title: "56 Yıldır Aynı Değerlerle, Aynı Tutkuyla İnşa Ediyoruz!",
-    text: `Bir ev sadece beton ve duvardan ibaret değildir. İçinde büyüyen çocuklar, kutlanan başarılar, yaşanan anılarla hayat bulur. 56 yıldır binlerce aileye yuva sunan Nata Holding olarak, Türkiye’nin kalbinde kök salmış projelerimizle gurur duyuyoruz. Bugün Milli Takımımızın ana sponsoru olarak sadece ev değil, aynı zamanda umut da inşa ediyoruz.
-
-• Gücünü köklerinden alan bir marka
-• Türkiye'nin gurur ortaklığı
-• Her detayı düşünülmüş yaşam projeleri
-
-#GururDuyuyoruz`
+    title: "Modern Yaşamın Yeni Tanımı: NATA Yaşam ile Geleceğe Hazır Ol!",
+    text: `Günümüzde konfor, estetik ve teknolojiyi bir arada sunan yaşam alanlarına olan ihtiyaç her geçen gün artıyor. NATA Yaşam projeleri, sadece barınma ihtiyacını değil, aynı zamanda güvenlik, sürdürülebilirlik ve akıllı yaşam çözümleriyle modern bir hayatı mümkün kılıyor. Enerji tasarruflu sistemlerden, sosyal yaşamı destekleyen donatılara kadar her detay düşünülerek tasarlanan bu projeler, merkezi konumları sayesinde ulaşımı kolaylaştırırken, sana zaman kazandırarak yaşam kaliteni yükseltiyor.`
   },
   {
     title: "Ankara’da Yaşamın Yeni Tanımı: Prestij, Konfor ve Değer!",
@@ -38,7 +32,7 @@ const popupContent = [
   },
   {
     title: "Hayallerimiz Ortak: Bu Forma, Hepimizin Umudu!",
-    text: `Küçük bir çocuğun odasında başlayan büyük bir hayalin sembolü: Ay-yıldızlı forma. Nata Holding olarak, sporun birleştirici gücüne inanıyor ve çocukların hayallerine ortak oluyoruz. Milli Takımımıza destek verirken, geleceğin yıldızlarına da ilham veriyoruz. Katılacağın çekilişle 1 kişiye imzalı forma, 10 kişiye ise maç bileti hediye ediyoruz!
+    text: `Küçük bir çocuğun odasında başlayan büyük bir hayalin sembolü: Ay-yıldızlı forma. Nata Holding olarak, sporun birleştirici gücüne inanıyor ve çocukların hayallerine ortak oluyoruz. Milli Takımımıza destek verirken, geleceğin yıldızlarına da ilham veriyoruz. Katılacağın çekilişle 1 kişiye imzalı forma,5 kişiye normal forma ve 10 maç bileti (Türkiye - Gürcistan / Türkiye - Bulgaristan) hediye ediyoruz!
 
 • Hayalin kıyısında bir forma
 • Çekilişe katıl, kazanma şansını yakala
@@ -52,9 +46,9 @@ const popupContent = [
 const images = [
   "/nata_web_gorsel_haziran1.jpg",
   "/nata_web_gorsel_haziran2.jpg",
-  "/slider/slider/alt3.jpg",
-  "/nata_web_mobil_3.jpg",
-  "/slider/slider/alt5.jpg"
+  "/şehrinmerkezi.jpg",
+  "/nataslideralt4.jpg",
+  "/slideralt5.jpg",
 ];
 
 export default function InfoSection() {

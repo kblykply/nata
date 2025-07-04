@@ -88,7 +88,7 @@
       background: '/sliderplus/koru konfor/korukonforimage.jpg',
       textColor: 'black',
       logoImage: '/sliderson/logo.png',
-      logoPosition: 'bottom-5 right-6',
+      logoPosition: 'top-30 left-6',
       titleImage: '/sliderplus/koru konfor/korukonforyaz─▒─▒.png',
       titlePosition: 'bottom-5 left-6',
     }, {
