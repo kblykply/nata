@@ -20,33 +20,17 @@
   }
 
   const slides: SlideData[] = [
-    {
-      id: 1,
-      background: '/sliderson/image1.jpg',
-      textColor: 'black',
-      logoImage: '/sliderson/logo.png',
-      logoPosition: 'top-30 left-6',
-      titleImage: '/sliderson/title1.png',
-      titlePosition: 'top-70 left-1/2 -translate-x-1/2 -translate-y-1/2',
-    },
+
     {
       id: 7,
       background: '/sliderson/image2.jpg',
       textColor: 'black',
       logoImage: '/outstandinglondon-logo.png',
-      logoPosition: 'bottom-6 left-6',
+      logoPosition: 'top-26 right-6',
       titleImage: '/sliderson/title2.png',
       titlePosition: 'top-30 left-6',
     },
-    {
-      id: 8,
-      background: '/sliderson/image3.jpg',
-      textColor: 'black',
-      logoImage: '/sliderson/logo.png',
-      logoPosition: 'top-30 left-6',
-      titleImage: '/sliderson/title3.png',
-      titlePosition: 'bottom-6 left-1/2 -translate-x-1/2',
-    },
+   
     {
       id: 9,
       background: '/sliderson/image4.jpg',
