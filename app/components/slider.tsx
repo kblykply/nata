@@ -46,7 +46,7 @@
       textColor: 'black',
       logoImage: '/sliderson/logo.png',
       logoPosition: 'top-30 left-6',
-      titleImage: '/sliderplus/ramsgarden/ramsgardenyaz─▒─▒.png',
+      titleImage: '/yaşam/ramsgardentext.png',
       titlePosition: 'bottom-5 left-1/2 -translate-x-1/2 -translate-y-1/2',
     },
     {
@@ -55,7 +55,7 @@
       textColor: 'black',
       logoImage: '/sliderson/logo.png',
       logoPosition: 'bottom-6 left-6',
-      titleImage: '/sliderplus/vegaotonomi/vegaotoyaz─▒.png',
+      titleImage: '/yaşam/vegaotonomitext.png',
       titlePosition: 'top-30 left-6',
     },
     {
@@ -64,7 +64,7 @@
       textColor: 'black',
       logoImage: '/sliderson/logo.png',
       logoPosition: 'bottom-6 left-6',
-      titleImage: '/sliderplus/mega1453/mega1453yaz─▒beyaz.png',
+      titleImage: '/yaşam/mega1453text.png',
       titlePosition: 'top-30 left-6',
     },
     {
@@ -73,7 +73,7 @@
       textColor: 'black',
       logoImage: '/sliderson/logo.png',
       logoPosition: 'top-30 left-6',
-      titleImage: '/sliderplus/koru konfor/korukonforyaz─▒─▒.png',
+      titleImage: '/yaşam/korukonfortext.png',
       titlePosition: 'bottom-5 left-6',
     }, {
       id: 14,
@@ -81,7 +81,7 @@
       textColor: 'black',
       logoImage: '/sliderson/logo.png',
       logoPosition: 'bottom-6 left-6',
-      titleImage: '/sliderplus/goat/goatvillayaz─▒.png',
+      titleImage: '/yaşam/goatvillastext.png',
       titlePosition: 'top-30 left-6',
     }
 

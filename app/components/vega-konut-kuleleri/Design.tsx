@@ -16,7 +16,6 @@ export default function DesignSection() {
   const [isOpen, setIsOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
   const gallery = [
-    "/proje-galeri/vega1.jpg",
     "/proje-galeri/vega2.jpg",
     "/proje-galeri/vega3.jpg",
     "/proje-galeri/vega4.jpg",
