@@ -47,7 +47,7 @@ export default function DesignSection() {
         {/* Right Image */}
         <div className="relative w-full lg:w-1/2 h-[300px] sm:h-[400px] lg:h-[600px]">
           <Image
-            src="/hityenibati-7.jpg"
+            src="/hityenibati-vaziyet.jpeg"
             alt="Design"
             fill
             className="object-cover object-center rounded-lg"

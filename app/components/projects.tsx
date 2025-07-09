@@ -31,25 +31,23 @@ interface Listing {
 }
 
 const allListings: Listing[] = [
-     {
-    id: "14",
-    link: "/anteres",
+    
+  
+  {
+       id: "22",
+
+    link: "/rams-garden",
     type: "standard",
-    price: "ANTARES KONUTLARI",
-    metro: "Yenimahalle Metro",
-    time: "11 dakika mesafede",
-    image: "/ANTARES KONUTLARI-ON.jpg",
-    footer: "Bilkent",
-    imageAlt: "/ANTARES KONUTLARI-ARKA.jpg",
-    highlight: "Hemen Teslim",
+    price: "RAMS GARDEN",
     label: "Hemen Teslim",
-    extra: [
-      { icon: "", label: "90 Konut" },
-      { icon: "", label: "52.515 ₺ / ay" },
-      { icon: "", label: "İş & Yaşam" },
-    ],
-    stats: ["3. Çeyrek 2025", "Villa Projesi"],
+    metro: "Haznedar Metro",
+    time: "9 dakika mesafede",
+    stats: ["8.815 m²", "796 daire"],
+    footer: "Bahçelievler",
+    image: "/rams-garden-bahcelievler-5.jpg",
+    imageAlt: "/RAMS GARDEN - ARKA.jpg",
   },
+  
   {
     id: "10",
     link: "/vega-center",
@@ -157,7 +155,25 @@ const allListings: Listing[] = [
       { icon: "", label: "Sanayi Bölgesi" },
       { icon: "", label: "Business Class" },
     ],
-  }
+  },  {
+    id: "14",
+    link: "/anteres",
+    type: "standard",
+    price: "ANTARES KONUTLARI",
+    metro: "Yenimahalle Metro",
+    time: "11 dakika mesafede",
+    image: "/ANTARES KONUTLARI-ON.jpg",
+    footer: "Bilkent",
+    imageAlt: "/ANTARES KONUTLARI-ARKA.jpg",
+    highlight: "Hemen Teslim",
+    label: "Hemen Teslim",
+    extra: [
+      { icon: "", label: "90 Konut" },
+      { icon: "", label: "52.515 ₺ / ay" },
+      { icon: "", label: "İş & Yaşam" },
+    ],
+    stats: ["3. Çeyrek 2025", "Villa Projesi"],
+  },
     
     
     
