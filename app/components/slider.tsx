@@ -27,7 +27,7 @@
       textColor: 'black',
       logoImage: '/outstandinglondon-logo.png',
       logoPosition: 'top-26 right-6',
-      titleImage: '/sliderson/title2.png',
+      titleImage: '/yaşam/vegacentertext.png',
       titlePosition: 'top-30 left-6',
     },
    
