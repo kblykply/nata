@@ -142,7 +142,7 @@ export default function ProjectListingSection() {
 
   return (
     <section id="tamamlanan-projeler" className="bg-white py-16 px-6">
-      <h2 className="text-2xl  text-center    font-semibold mb-10">Tamamlanan<span className="text-[#ab1e3b]"> Projeler</span></h2>
+      <h2 className="text-2xl  text-center    font-semibold mb-10">İnşaatı Tamamlanan<span className="text-[#ab1e3b]"> Projeler</span></h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-screen-xl mx-auto relative">
 
         
