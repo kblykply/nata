@@ -1326,7 +1326,7 @@ const getCategoryPinUrl = (categoryId: string): string =>
           <div className="overflow-x-auto md:overflow-visible">
             <div className="w-[200%] md:w-auto"> {/* Zoomed width for mobile */}
               <img
-                src="/altyapilar/vegacenter.jpg"
+                src="/alt/vegacenter.jpg"
                 alt="Altyapı Görseli"
                 className="mx-auto rounded w-full"
               />
