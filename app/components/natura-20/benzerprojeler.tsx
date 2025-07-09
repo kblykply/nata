@@ -7,43 +7,49 @@ import { useState } from "react";
 
 
 const listings = [
-
-  {
-    title: "Natura İncek",
-    price: "7.75 Milyon",
-    currency: "TL",
-    location: "Gölbaşı/Ankara",
-    type: "Ofis",
-    specs: ["2+1 Flat", "80 m²", "1. Bodrum Kat"],
-    image: "/NATURA I╠çNCEK 2+1.png",
-    imageAlt: "/natura-map.png",
-    link: "/natura-20"
-  },
-
  
-  {
-    title: "Natura İncek",
-    price: "10 Milyon",
-    currency: "USD",
-    location: "Gölbaşı/Ankara",
-    type: "Ofis",
-    specs: ["3+1", "144 m²", "3. Kat"],
-    image: "/NATURA I╠çNCEK 2+1.png",
-    imageAlt: "/natura-map.png",
-    link: "/natura-20"
-  },
+    {
+             id: "2",
+
+      title: "Natura İncek",
+      price: "Ankara Gölbaşı'nda 2+1 Daire",
+      currency: "",
+      location: "Gölbaşı/Ankara",
+      type: "Ofis",
+      specs: ["2+1 Flat", "80 m²", "1. Bodrum Kat"],
+      image: "/NATURA I╠çNCEK 2+1.png",
+      imageAlt: "/natura-map.png",
+      link: "/natura-20"
+    },
+   
+    {
+             id: "5",
+
+      title: "Natura İncek",
+      price: "Gölbaşı'nda 3+1 Daire",
+      currency: "",
+      location: "Gölbaşı/Ankara",
+      type: "Ofis",
+      specs: ["3+1", "144 m²", "3. Kat"],
+      image: "/NATURA I╠çNCEK 2+1.png",
+      imageAlt: "/natura-map.png",
+      link: "/natura-20"
+    },
+    
+    {
+             id: "7",
+
+      title: "Natura İncek",
+      price: "Gölbaşı'nda 4+1 Daire",
+      currency: "",
+      location: "Gölbaşı/Ankara",
+      type: "Ofis",
+      specs: ["4+1", "154 m²", "4. Kat"],
+      image: "/NATURA I╠çNCEK 2+1.png",
+      imageAlt: "/natura-map.png",
+      link: "/natura-20"
+    },
   
-  {
-    title: "Natura İncek",
-    price: "10 Milyon",
-    currency: "USD",
-    location: "Gölbaşı/Ankara",
-    type: "Ofis",
-    specs: ["4+1", "154 m²", "4. Kat"],
-    image: "/NATURA I╠çNCEK 2+1.png",
-    imageAlt: "/natura-map.png",
-    link: "/natura-20"
-  }
 ];
 
 export default function KoruKonforListings() {

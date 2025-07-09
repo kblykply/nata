@@ -8,39 +8,36 @@ import { useState } from "react";
 
 
 const listings = [
+
+  
   {
-    title: "Koru Konfor",
-    price: "10 Milyon",
-    currency: "USD",
-    location: "Etimesgut/Ankara",
-    type: "Rezidans",
-    specs: ["2+1", "117 m²", "1. Kat"],
-    image: "/KORU KONFOR 5+1.png",
-    imageAlt: "/koru-map.png",
-    link: "/koru-konfor-20",
-  },
-  {
-    title: "Koru Konfor",
-    price: "7.75 Milyon",
-    currency: "TL",
-    location: "Etimesgut/Ankara",
-    type: "Rezidans",
-    specs: ["2+1", "80 m²", "1. Kat"],
-    image: "/KORU KONFOR 5+1.png",
-    imageAlt: "/koru-map.png",
-    link: "/koru-konfor-20",
-  },
-  {
-    title: "Koru Konfor",
-    price: "10 Milyon",
-    currency: "USD",
-    location: "Etimesgut/Ankara",
-    type: "Rezidans",
-    specs: ["3+1", "144 m²", "3. Kat"],
-    image: "/KORU KONFOR- 4+1.png",
-    imageAlt: "/koru-map.png",
-    link: "/koru-konfor-20",
-  },
+       id: "1",
+      title: "Koru Konfor",
+      price: "Etimesgut'ta Villa",
+      currency: " ",
+      location: "Etimesgut/Ankara",
+      type: "Villa",
+      specs: ["Villa", "350 m²", "3 Katlı"],
+      image: "/korubirincikat.jpg",
+      imageAlt: "/koru-map.png",
+      link: "/koru-konfor-20"
+    },
+   
+      {
+       id: "4",
+      title: "Koru Konfor",
+      price: "Etimesgut'ta Villa",
+      currency: " ",
+      location: "Etimesgut/Ankara",
+      type: "Villa",
+      specs: ["Villa", "350 m²", "3 Katlı"],
+      image: "/korubirincikat.jpg",
+      imageAlt: "/koru-map.png",
+      link: "/koru-konfor-21"
+    },
+
+   
+    
 ];
 
 export default function KoruKonforListings() {
