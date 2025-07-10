@@ -16,10 +16,12 @@ export default function DesignSection() {
   const [isOpen, setIsOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
   const gallery = [
-    "/proje-galeri/vega2.jpg",
-    "/proje-galeri/vega3.jpg",
-    "/proje-galeri/vega4.jpg",
-    "/proje-galeri/vega5.jpg",
+    "/proje-galeri/vegakonut-1.jpeg",
+    "/proje-galeri/vegakonut-2.jpeg",
+    "/proje-galeri/vegakonut-3.jpeg",
+    "/proje-galeri/vegakonut-4.jpeg",
+        "/proje-galeri/vegakonut-5.jpeg",
+
   ];
 
   return (
@@ -50,7 +52,7 @@ export default function DesignSection() {
         {/* Right Image */}
         <div className="relative w-full lg:w-1/2 h-[300px] sm:h-[400px] lg:h-[600px]">
           <Image
-            src="/konutkule-galeri/natavegakonutkule5.jpeg"
+            src="/proje-galeri/natavegakonutimage.jpg"
             alt="Design"
             fill
             className="object-cover object-center rounded-lg"

@@ -13,11 +13,13 @@ export default function DesignSection() {
   const [isOpen, setIsOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
   const gallery = [
-    "/proje-galeri/incek1.jpg",
-    "/proje-galeri/incek2.jpg",
-    "/proje-galeri/incek3.jpg",
-    "/proje-galeri/incek4.jpg",
-    "/proje-galeri/incek5.jpg",
+    "/proje-galeri/nataincek-1.jpeg",
+    "/proje-galeri/nataincek-2.jpeg",
+    "/proje-galeri/nataincek-3.jpeg",
+    "/proje-galeri/nataincek-4.jpeg",
+    "/proje-galeri/nataincek-5.jpeg",
+        "/proje-galeri/nataincek-6.jpeg",
+
   ];
 
   return (
@@ -48,7 +50,7 @@ export default function DesignSection() {
         {/* Right Background Image */}
         <div className="relative w-full lg:w-1/2 h-[300px] sm:h-[400px] lg:h-[600px]">
           <Image
-            src="/incek-galeri/nataincek2.jpg"
+            src="/konutkule-galeri/natavegakonutkule5.jpeg"
             alt="Design"
             fill
             className="object-cover object-center rounded-lg"

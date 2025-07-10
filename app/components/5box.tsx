@@ -46,8 +46,8 @@ const popupContent = [
 const images = [
   "/nata_web_rams_garden.jpg",
   "/nata_web_goat_villas.jpg",
-  "/şehrinmerkezi.jpg",
-  "/nataslideralt4.jpg",
+  "/sehrin-merkezinde-hayatın-yeni-noktası.jpg",
+  "/türkiyenin-en-prestijli-projeleri.jpg",
   "/slideralt5.jpg",
 ];
 

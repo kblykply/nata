@@ -106,7 +106,7 @@ const listings: Listing[] = [
     stats: ["Merkezi Lokasyon", "Açık Avm Konsepti"],
     footer: "Çankaya",
     image: "/nata-vega-konut-kuleleri.jpg",
-    imageAlt: "/nata-incek-konutları-pin.jpeg",
+    imageAlt: "/natavegakonutkulemap.png",
     extra: [
       { icon: "", label: "Nata Vega Outlet" },
       { icon: "", label: "Aquavega Akvaryum" },
