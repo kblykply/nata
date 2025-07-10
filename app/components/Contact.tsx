@@ -23,8 +23,8 @@ export default function ContactQrSection() {
 
   const qrTabs = [
     { id: "whatsapp", icon: "/qr/phoneicon.png", qr: "/qr/telefonnata.png" },
-    { id: "instagram", icon: "/face-insta-wp-02.png", qr: "/qr/instagramnata.png" },
-    { id: "facebook", icon: "/face-insta-wp-03.png", qr: "/qr/facebooknata.png" },
+    { id: "instagram", icon: "/face-insta-wp-02.png", qr: "/instagramnata.png" },
+    { id: "facebook", icon: "/face-insta-wp-03.png", qr: "/facebooknata.png" },
   ];
 
   const validateForm = () => {
