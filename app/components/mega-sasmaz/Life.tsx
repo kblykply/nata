@@ -105,7 +105,7 @@ const handlePointerUp = () => {
 
 
   return (
-    <section  className="relative py-24 px-6 bg-white text-center overflow-hidden">
+    <section className="select-none scroll-smooth relative py-24 px-6 bg-white text-center overflow-hidden">
       <h2 className="text-3xl font-light text-gray-800 uppercase leading-tight">
         YAŞAM RİTİMİNİZ <br /> MEGA SASMAZDA  
       </h2>
