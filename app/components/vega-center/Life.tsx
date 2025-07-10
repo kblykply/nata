@@ -168,7 +168,9 @@ Ankara'nın en gözde lokasyonu üzerinde bulunan VEGA Center, modern mimarisiyl
     {i === 0 ? (
       // If it's the first slide, render a link
       <a
-           // <-- Change this URL to your target link
+           href="https://vegacenter.com.tr/img/VEGA-Center-Katalog.pdf"
+    target="_blank"
+    rel="noopener noreferrer" // <-- Change this URL to your target link
         className="z-100 absolute    left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-black text-sm text-white  px-5 py-2 rounded-full shadow"
       >
         Sunuma Git
