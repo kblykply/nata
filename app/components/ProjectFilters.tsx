@@ -25,7 +25,7 @@ export default function NewProjectsFilterSection() {
               : "bg-gray-100 text-gray-700"
           }`}
         >
-           Yeni Proje
+           Yeni Projeler
         </button>
         <button
           onClick={() => setActiveTab("ikinci")}
@@ -35,7 +35,7 @@ export default function NewProjectsFilterSection() {
               : "bg-gray-100 text-gray-700"
           }`}
         >
-           İkinci El
+           Diğer Projeler
         </button>
       </div>
 

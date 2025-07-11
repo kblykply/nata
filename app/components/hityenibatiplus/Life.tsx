@@ -10,7 +10,7 @@ const slides = [
     image: "/yenibatıplus/yenibatıbroşür.jpeg",
      popup: {
       title: "Spor Tutkunları İçin Ayrıcalıklı Alanı",
-      text: "YenibatıPlus, basketbol severlere özel tasarlanmış saha ile hem eğlenme hem de spor yapma imkanı sunarak sağlıklı bir yaşam tarzını destekler.",
+      text: "Yeni Batı Plus, basketbol severlere özel tasarlanmış saha ile hem eğlenme hem de spor yapma imkanı sunarak sağlıklı bir yaşam tarzını destekler.",
       images: ["/yenibatıplus/basketbolsahası1.jpeg", "/yenibatıplus/basketbolsahası2.jpeg"]
     }
   },
@@ -37,7 +37,7 @@ const slides = [
     image: "/yenibatıplus/basketbol.jpeg",
     popup: {
       title: "Spor Tutkunları İçin Ayrıcalıklı Alanı",
-      text: "YenibatıPlus, basketbol severlere özel tasarlanmış saha ile hem eğlenme hem de spor yapma imkanı sunarak sağlıklı bir yaşam tarzını destekler.",
+      text: "Yeni Batı Plus, basketbol severlere özel tasarlanmış saha ile hem eğlenme hem de spor yapma imkanı sunarak sağlıklı bir yaşam tarzını destekler.",
       images: ["/yenibatıplus/basketbolsahası1.jpeg", "/yenibatıplus/basketbolsahası2.jpeg"]
     }
   },
@@ -55,7 +55,7 @@ const slides = [
     image: "/yenibatıplus/oyunalanı.jpeg",
     popup: {
       title: "Çocukların Hayal Dünyası Burada Genişliyor",
-      text: "YenibatıPlus, çocuklara özel güvenli ve modern oyun alanlarıyla onların enerjilerini keyifle atabilecekleri, yeni arkadaşlıklar kurabilecekleri renkli bir ortam sunar.",
+      text: "Yeni Batı Plus, çocuklara özel güvenli ve modern oyun alanlarıyla onların enerjilerini keyifle atabilecekleri, yeni arkadaşlıklar kurabilecekleri renkli bir ortam sunar.",
       images: ["/yenibatıplus/oyunalanı1.jpeg", "/yenibatıplus/oyunalanı2.jpeg"]
     }
   },

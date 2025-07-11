@@ -83,7 +83,7 @@ const allListings: Listing[] = [
     id: "12",
     link: "/vega-otonomi",
     type: "standard",
-    price: "VEGA OTONOMI",
+    price: "VEGA OTONOMİ",
     label: "Hemen Teslim",
     metro: "Fatih Metro",
     time: "4 dakika mesafede",

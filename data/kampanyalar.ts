@@ -98,53 +98,8 @@
     }
   ]
 },
-  {
-  slug: "sifir-faizli-kredi",
-  title: "1 yıl ödemesiz dönem ve 120 ay",
-  highlight: "sıfır faizli kredi seçeneği",
-  description: "Nata Vega Konut Kuleleri",
-  bg: "/kampanya/5.png",
-  image: "/kampanya/icons/5.png",
-  firstOne: "NATA Yaşam\'da ev sahibi olmanın şimdi tam zamanı. Yeni kampanyamızla birlikte, ilk yıl hiçbir ödeme yapmadan konut sahibi olabilir, 120 aya kadar vade imkanıyla faiz ödemeden yeni yaşamına rahatça adım atabilirsin. Bu özel fırsat sayesinde bütçeni zorlamadan yatırım yapabilir, dilediğin gibi planlama yapabilirsin.",
-  content: [
-    {
-      title: "Avantajlar Neler?",
-      text: [
-        "1. 12 ay boyunca ödeme yapmadan konut sahibi olma imkanı",
-        "2. 120 aya kadar sıfır faizli kredi seçeneği",
-        "3. Kira öder gibi ödeme planı",
-        "4. Hemen sahip ol, ödemeye sen karar ver",
-        "5. Sınırlı kontenjan, avantajlı ödeme dönemi"
-      ]
-    }
-  ],
-  secondText: "Kampanya hakkında <span class='text-red-600'>detaylı bilgi ve başvuru için hemen bizimle iletişime geç</span>. Bu fırsat, hayalindeki eve giden en kolay yoldur. Ödemeye başlaman için beklemen gereken tek şey: 1 yıl."
-},
-  {
-  slug: "bes-pesin-36-ay",
-  title: "%5 peşinatla",
-  highlight: "36 ay 0 faizli ödeme planı",
-  description: "Temmuz'a özel fırsatlar",
-  bg: "/kampanya/6.png",
-  image: "/kampanya/icons/6.png",
-  firstOne: "NATA Yaşam projelerinde şimdi %5 gibi düşük bir peşinatla ev sahibi olabilir, kalan ödemeni 36 ay boyunca sıfır faizle yapabilirsin. Bankaya gitmeden, ek masraf çıkmadan, bütçeni sarsmadan ev sahibi olmak için seni bekliyoruz.",
-  content: [
-   
-    {
-      title: "Neden Bu Kampanya?",
-      text: [
-        "1. Yalnıca %5 peşinatla başlangıç yap",
-        "2. 36 ay boyunca faizsiz ödeme fırsatı",
-        "3. Sabit taksitlerle kontrol sende",
-        "4. Hızlı başvuru, anında avantajlı plan",
-        "5. Hemen yerleş, ödemeni rahat rahat yap",
-      ]
-    }
-  ],
-  secondText: "Detaylı ödeme planı için satış danışmanlarımızla <span class='text-red-600'>hemen iletişime geç</span>. Ertelemek yerine şimdi harekte geç, konut sahibi olmanın en kolay yolunu kaçırma!"
+ 
 
-}
-,
  {
   slug: "hemen-tapu-hemen-teslim",
   title: "Hemen Tapu,",
@@ -167,28 +122,6 @@
   ],
   secondText: "NATA Yaşam\'da her detay, ev sahibi olma sürecini kolaylaştırmak ve hızlandırmak için titizlikle planlandı. Tapunuzu almak için haftalarca beklemenize gerek yok; işlemler hızlı, net ve güvenli bir şekilde ilerler. Satın aldığınız daireye aynı gün içinde sahip olabilir, anahtarınızı teslim alarak hemen yeni hayatınıza başlayabilirsiniz. Bürokratik gecikmeler, belirsiz teslim tarihleri ya da fazladan masraflar olmadan, tam anlamıyla hazır bir yaşama adım atın. Detaylı bilgi almak, tapu ve teslim sürecini yakından öğrenmek için bizimle hemen iletişime geçin. Size en yakın satış ofisimiz ya da online danışmanlarımız bir telefon kadar yakın."
 },
-  {
-  slug: "otuz-pesinat-24-ay",
-  title: "%30 peşinatla",
-  highlight: "24 ay sıfır faizli taksit imkanı",
-  description: "Vega Cadde",
-  bg: "/kampanya/8.png",
-  image: "/kampanya/icons/8.png",
-  firstOne: "NATA Yaşam, yatırım yapmak veya yeni bir hayata başlamak isteyenler için esnek ve avantajlı bir ödeme fırsatı sunuyor. Sadece %30 peşinatla dilediğin daireye sahip olabilir, kalan tutarı 24 ay boyunca sıfır faizle, sabit taksitlerle ödeyebilirsin. Bu sistem, hem birikimini korumanı sağlar hem de faiz yüküne girmeden mülk sahibi olmanın en rahat yolunu sunar.",
-  grayText: `Faizsiz ödeme, net fiyat, sabit plan. Karmaşa yok, sürpriz yok!`,
-  content: [
-    {
-      title: "Bu Fırsat Kimler İçin İdeal?",
-      text: [
-        "1. Orta ölçekli birikimi olan yatırımcılar",
-        "2. Kendi evine geçmek isteyen ama tüm bedeli çıkartmak istemeyenler",
-        "3. Aylık düzenli ödeme yapabilecekler",
-        "4. Faizsiz, net ve kontrollü sistem isteyen herkes"
-      ]
-    }
-  ],
-  secondText: "Kampanya detaylarını öğrenmek, sana özel ödeme planı çıkartmak veya projeyi yerinde görmek için bizimle iletişime geç. Satış danışmanlarımız sana en uygun koşullarla destek olmaya hazır."
-
-}
+ 
 
 ];

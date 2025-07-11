@@ -8,10 +8,10 @@ const slides = [
   {
     title: "Ankara nın Yeni İş ve Yaşam Merkezi",
     image: "/vegacenter-dergi.jpg",
-    popup: {
+      popup: {
       title: "Prestijli Konumda Modern Ofis ve Ticaret Alanları",
-      text: "Vega Center, iş dünyası ve sosyal yaşamı tek bir noktada buluşturan yeni nesil karma proje anlayışıyla Ankara&apos;nın yükselen değeri oluyor. Modern ofisler, mağazalar ve sosyal alanlarla hem iş hayatınıza prestij katıyor hem de günlük ihtiyaçlarınıza kolay erişim sağlıyor. Şehrin dinamik yapısına uyumlu tasarımıyla, yatırımcılar ve profesyoneller için ideal bir merkez haline geliyor.",
-      images: ["/vegacenter-Ankara nın Yeni İş ve Yaşam Merkezi (2).jpg", "/vegacenter-Ankara nın Yeni İş ve Yaşam Merkezi.jpg"]
+      text: "Vega Center, iş dünyası ve sosyal yaşamı tek bir noktada buluşturan yeni nesil karma proje anlayışıyla Ankara'nın yükselen değeri oluyor. Modern ofisler, mağazalar ve sosyal alanlarla hem iş hayatınıza prestij katıyor hem de günlük ihtiyaçlarınıza kolay erişim sağlıyor. Şehrin dinamik yapısına uyumlu tasarımıyla, yatırımcılar ve profesyoneller için ideal bir merkez haline geliyor.",
+      images: ["/yenibatıplus/ofis.png", "/vegacenter-Ankara nın Yeni İş ve Yaşam Merkezi.jpg"]
     }
   },
   {
