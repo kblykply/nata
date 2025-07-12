@@ -38,7 +38,7 @@ interface Listing {
     id: "1",
     title: "Koru Konfor	",
     link: "/koru-konfor-20",
-    type: "villa",
+    type: "standard",
     price: "Etimesgut'ta Villa",
     label: "İkinci El",
     metro: "",
