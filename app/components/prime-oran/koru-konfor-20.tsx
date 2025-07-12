@@ -6,7 +6,7 @@ import { useState } from "react";
 const gallery = [
   {
     label: "TIP B8 3+1 Daire / 144.3 m² Daire",
-    image: "/KORU KONFOR 5+1.png",
+    image: "/siteplans/primeoran3+1.png",
     price: "19 Milyon TL",
     location: "Çankaya/Ankara",
     details: [

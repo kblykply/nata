@@ -6,7 +6,7 @@ import { useState } from "react";
 const gallery = [
   {
     label: "Alt Kat/ 90 m² Daire",
-    image: "/KORU KONFOR 5+1.png",
+    image: "/siteplans/natura2+1dublexalt.png",
     price: "8 Milyon TL",
     location: "Çankaya/Ankara",
      details: [
@@ -19,7 +19,7 @@ const gallery = [
   },
    {
     label: "Üst Kat / 90 m² Daire",
-    image: "/KORU KONFOR 5+1.png",
+    image: "/siteplans/natura2+1dublexüst.png",
     price: "8 Milyon TL",
     location: "Çankaya/Ankara",
      details: [

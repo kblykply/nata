@@ -6,7 +6,7 @@ import { useState } from "react";
 const gallery = [
   {
     label: "2+1  / 90 m² Daire",
-    image: "/KORU KONFOR 5+1.png",
+    image: "/siteplans/natura2+1.png",
     price: "8 Milyon TL",
     location: "Çankaya/Ankara",
     details: [

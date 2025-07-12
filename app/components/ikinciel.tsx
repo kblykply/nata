@@ -44,19 +44,19 @@ const listings: SimpleListing[] = [
       location: "Gölbaşı/Ankara",
       type: "Residans",
       specs: ["2+1", "90 m²", "Fransız Balkon"],
-      image: "/NATURA I╠çNCEK 2+1.png",
+      image: "/siteplans/natura2+1.png",
       imageAlt: "/natura-map.png",
       link: "/natura-20"
     },
     {
              id: "3",
       title: "Prime Oran",
-      price: "Çankayada 2+1 Daire",
+      price: "Çankaya'da 2+1 Daire",
       currency: "",
       location: "Çankaya/Ankara",
       type: "Rezidans",
       specs: ["2+1", "117 m²", "31. Kat"],
-      image: "/PRIME ORAN 2+1 TI╠çPC16-D1_D2 BLOK.png",
+      image: "/siteplans/primeoran2+1.png",
       imageAlt: "/prime-map.png",
       link: "/prime-oran-21"
     },
@@ -81,7 +81,7 @@ const listings: SimpleListing[] = [
       location: "Gölbaşı/Ankara",
       type: "Rezidans",
       specs: ["2+1", "90 m²", "Dubleks"],
-      image: "/NATURA I╠çNCEK 2+1.png",
+      image: "/siteplans/natura2+1dublex.png",
       imageAlt: "/natura-map.png",
       link: "/natura-21"
     },
@@ -91,12 +91,12 @@ const listings: SimpleListing[] = [
              id: "8",
 
       title: "Prime Oran",
-      price: "Çankayada 3+1 Daire",
+      price: "Çankaya'da 3+1 Daire",
       currency: "",
       location: "Çankaya/Ankara",
       type: "Rezidans",
       specs: ["3+1", "144 m²", "TIP B8"],
-      image: "/PRIME ORAN 3+1 TI╠çPB2B-A1 BLOK.png",
+      image: "/siteplans/primeoran3+1.png",
       imageAlt: "/prime-map.png",
       link: "/prime-oran-20"
     }
@@ -269,16 +269,7 @@ export default function FilteredListingCards() {
 
         <div className="flex items-center gap-4">
       <Link href="/ikinci_el_harita">
-  <button className="flex items-center px-4 py-2 rounded-full bg-gray-100">
-    <Image
-      src="/pin-red.png"
-      alt="Haritada Gör"
-      width={20}
-      height={20}
-      className="mr-2"
-    />
-    Haritada Gör
-  </button>
+
 </Link>
         </div>
       </div>

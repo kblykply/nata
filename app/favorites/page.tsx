@@ -59,7 +59,7 @@ interface Listing {
     time: "",
     stats: ["2+1", "90 m²", "Fransız Balkon"],
     footer: "Gölbaşı/Ankara",
-    image: "/NATURA İNCEK 2+1.png",
+    image: "/siteplans/natura2+1.png",
     imageAlt: "/natura-map.png",
   },
   {
@@ -73,7 +73,7 @@ interface Listing {
     time: "",
     stats: ["2+1", "117 m²", "31. Kat"],
     footer: "Çankaya/Ankara",
-    image: "/PRIME ORAN 2+1 TİPC16-D1_D2 BLOK.png",
+    image: "/siteplans/primeoran2+1.png",
     imageAlt: "/prime-map.png",
   },
   {
@@ -101,7 +101,7 @@ interface Listing {
     time: "",
     stats: ["2+1", "90 m²", "Dubleks"],
     footer: "Gölbaşı/Ankara",
-    image: "/NATURA İNCEK 2+1.png",
+    image: "/siteplans/natura2+1dublex.png",
     imageAlt: "/natura-map.png",
   },
   {
@@ -115,7 +115,7 @@ interface Listing {
     time: "",
     stats: ["3+1", "144 m²", "TIP B8"],
     footer: "Çankaya/Ankara",
-    image: "/PRIME ORAN 3+1 TİPB2B-A1 BLOK.png",
+    image: "/siteplans/primeoran3+1.png",
     imageAlt: "/prime-map.png",},
   
     // Tamamlanan Projeler Listings (IDs 9–16)
