@@ -5,25 +5,24 @@ import { useState } from "react";
 
 const gallery = [
   {
-    label: "TIP B8 3+1 Daire / 144.3 m² Daire",
+    label: "Tip C1A 2+1 Daire / 117.3 m² Daire",
     image: "/KORU KONFOR 5+1.png",
-    price: "19 Milyon TL",
+    price: "16 Milyon TL",
     location: "Çankaya/Ankara",
     details: [
-    ["Net Alan", "144,3 m²"],
-    ["Antre", "6,42 m²"],
-    ["Koridor", "10,14 m²"],
-    ["Salon", "35,11 m²"],
-    ["Mutfak", "17,10 m²"],
-    ["Yatak Odası", "12,80 m²"],
-    ["Yatak Odası", "12,80 m²"],
-    ["Ebeveyn Yatak Odası", "15,11 m²"],
-    ["Giysi Odası", "5,05 m²"],
+    ["Net Alan", "117,3 m²"],
+    ["Antre", "10,00 m²"],
+    ["Koridor", "6,10 m²"],
+    ["Salon", "28,40 m²"],
+    ["Mutfak", "16,10 m²"],
+    ["Yatak Odası", "12,70 m²"],
+    ["Ebeveyn Yatak Odası", "15,30 m²"],
+    ["Giysi Odası", "4,50 m²"],
     ["Ebeveyn Banyo", "4,60 m²"],
-    ["Çamaşır Odası", "1,60 m²"],
-    ["Genel Banyo", "4,60 m²"],
-    ["Balkon 1", "3,70 m²"],
-    ["Balkon 2", "15,30 m²"]
+    ["Çamaşır Odası", "1,20 m²"],
+    ["Genel Banyo", "4,30 m²"],
+    ["Balkon 1", "3,60 m²"],
+    ["Balkon 2", "10,00 m²"]
   ]
   },
   

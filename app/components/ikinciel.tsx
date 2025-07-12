@@ -43,7 +43,7 @@ const listings: SimpleListing[] = [
       currency: "",
       location: "Gölbaşı/Ankara",
       type: "Residans",
-      specs: ["2+1 Flat", "80 m²", "1. Bodrum Kat"],
+      specs: ["2+1", "90 m²", "Fransız Balkon"],
       image: "/NATURA I╠çNCEK 2+1.png",
       imageAlt: "/natura-map.png",
       link: "/natura-20"
@@ -58,7 +58,7 @@ const listings: SimpleListing[] = [
       specs: ["2+1", "117 m²", "31. Kat"],
       image: "/PRIME ORAN 2+1 TI╠çPC16-D1_D2 BLOK.png",
       imageAlt: "/prime-map.png",
-      link: "/prime-oran-20"
+      link: "/prime-oran-21"
     },
       {
        id: "4",
@@ -76,29 +76,17 @@ const listings: SimpleListing[] = [
              id: "5",
 
       title: "Natura İncek",
-      price: "Gölbaşı'nda 3+1 Daire",
+      price: "Gölbaşı'nda 2+1 Daire",
       currency: "",
       location: "Gölbaşı/Ankara",
       type: "Rezidans",
-      specs: ["3+1", "144 m²", "3. Kat"],
+      specs: ["2+1", "90 m²", "Dubleks"],
       image: "/NATURA I╠çNCEK 2+1.png",
       imageAlt: "/natura-map.png",
-      link: "/natura-20"
+      link: "/natura-21"
     },
     
-    {
-             id: "7",
-
-      title: "Natura İncek",
-      price: "Gölbaşı'nda 4+1 Daire",
-      currency: "",
-      location: "Gölbaşı/Ankara",
-      type: "Rezidans",
-      specs: ["4+1", "154 m²", "4. Kat"],
-      image: "/NATURA I╠çNCEK 2+1.png",
-      imageAlt: "/natura-map.png",
-      link: "/natura-20"
-    },
+   
     {
              id: "8",
 
@@ -107,7 +95,7 @@ const listings: SimpleListing[] = [
       currency: "",
       location: "Çankaya/Ankara",
       type: "Rezidans",
-      specs: ["3+1", "140 m²", "14. Kat"],
+      specs: ["3+1", "144 m²", "TIP B8"],
       image: "/PRIME ORAN 3+1 TI╠çPB2B-A1 BLOK.png",
       imageAlt: "/prime-map.png",
       link: "/prime-oran-20"
@@ -194,15 +182,7 @@ export default function FilteredListingCards() {
           ))}
         </select>
 
-        <select
-          value={selectedPrice}
-          onChange={(e) => setSelectedPrice(e.target.value)}
-          className="flex items-center bg-gray-100 px-4 py-2 rounded-full text-gray-700"
-        >
-          {priceRanges.map((item) => (
-            <option key={item} value={item}>{item}</option>
-          ))}
-        </select>
+     
 
         <button
           onClick={() => setShowAllFilters(true)}
@@ -265,18 +245,7 @@ export default function FilteredListingCards() {
                 </select>
               </div>
 
-              <div>
-                <label className="block mb-1 text-sm font-medium text-gray-700">Fiyat</label>
-                <select
-                  value={selectedPrice}
-                  onChange={(e) => setSelectedPrice(e.target.value)}
-                  className="w-full border rounded-lg px-3 py-2"
-                >
-                  {priceRanges.map((price) => (
-                    <option key={price} value={price}>{price}</option>
-                  ))}
-                </select>
-              </div>
+          
 
               <button
                 onClick={() => setShowAllFilters(false)}

@@ -20,7 +20,7 @@ const gallery = [
 {
   label: "Zemin Kat",
   image: "/koruzemin.jpg", // replace with actual image path if needed
-  price: "1.000.000$",
+  price: "1.500.000$",
   location: "Çankaya/Ankara", // optional
   details: [
     ["Antre", "12.00 m²"],
@@ -39,7 +39,7 @@ const gallery = [
   {
   label: "1. Kat",
   image: "/korubirincikat.jpg", // update this with the actual image path if needed
-  price: "1.000.000$", // optional, update if needed
+  price: "1.500.000$", // optional, update if needed
   location: "Çankaya/Ankara", // optional or editable
   details: [
     ["Hol", "6.70 m²"],

@@ -5,25 +5,31 @@ import { useState } from "react";
 
 const gallery = [
   {
-    label: "TIP B8 3+1 Daire / 144.3 m² Daire",
+    label: "Alt Kat/ 90 m² Daire",
     image: "/KORU KONFOR 5+1.png",
-    price: "19 Milyon TL",
+    price: "8 Milyon TL",
     location: "Çankaya/Ankara",
-    details: [
-    ["Net Alan", "144,3 m²"],
-    ["Antre", "6,42 m²"],
-    ["Koridor", "10,14 m²"],
-    ["Salon", "35,11 m²"],
-    ["Mutfak", "17,10 m²"],
-    ["Yatak Odası", "12,80 m²"],
-    ["Yatak Odası", "12,80 m²"],
-    ["Ebeveyn Yatak Odası", "15,11 m²"],
-    ["Giysi Odası", "5,05 m²"],
-    ["Ebeveyn Banyo", "4,60 m²"],
-    ["Çamaşır Odası", "1,60 m²"],
-    ["Genel Banyo", "4,60 m²"],
-    ["Balkon 1", "3,70 m²"],
-    ["Balkon 2", "15,30 m²"]
+     details: [
+    ["Alt Kat Alanı", "44,50 m²"],
+    ["Salon", "26,70 m²"],
+    ["Antre", "5,70 m²"],
+    ["Banyo", "3,90 m²"],
+    ["Balkon", "8,20 m²"]
+  ]
+  },
+   {
+    label: "Üst Kat / 90 m² Daire",
+    image: "/KORU KONFOR 5+1.png",
+    price: "8 Milyon TL",
+    location: "Çankaya/Ankara",
+     details: [
+    ["Üst Kat Alanı", "42,75 m²"],
+      ["Oda", "13,30 m²"],
+      ["Ebeveyn Yatak Odası", "14,60 m²"],
+      ["Hol", "5,00 m²"],
+      ["Ebeveyn Banyo", "3,90 m²"],
+      ["Balkon", "5,50 m²"],
+      ["Fransız Balkon", "1,45 m²"]
   ]
   },
   
@@ -39,8 +45,8 @@ export default function PlanDetailsWithGallery() {
       <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-start gap-10">
         {/* Left Details */}
         <div className="flex-1 space-y-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Prime Oran</h2>
-          <h3 className="text-xl font-medium text-gray-700">Rezidans - {current.label}</h3>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Natura Incek</h2>
+          <h3 className="text-xl font-medium text-gray-700">2+1 - {current.label}</h3>
 
           <div className="bg-white  rounded-xl shadow p-6 w-full max-w-md text-sm text-gray-700">
             <p className="font-semibold mb-4 text-base text-black">

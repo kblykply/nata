@@ -5,56 +5,23 @@ import { useState } from "react";
 
 const gallery = [
   {
-    label: "2+1 Flat / 80 m² Daire",
+    label: "2+1  / 90 m² Daire",
     image: "/KORU KONFOR 5+1.png",
-    price: "7,75 Milyon TL",
+    price: "8 Milyon TL",
     location: "Çankaya/Ankara",
     details: [
-      ["Otobüs", "5 Dakikadan itibaren"],
-      ["Konut", "3 Blok 408"],
-      ["Teslim", "2025 Yıl Sonu"],
-      ["Ebeveyn Yatak Odası", "15,50 m²"],
-      ["Ebeveyn Banyo", "4,00 m²"],
-      ["Oda", "11,30 m²"],
-      ["Antre", "7,85 m²"],
-      ["Genel Banyo", "5,10 m²"],
-      ["Balkon", "11,10 m²"]
-    ]
+    ["Alan", "90 m²"],
+    ["Salon + Mutfak", "33,10 m²"],
+    ["Ebeveyn Yatak Odası", "15,50 m²"],
+    ["Ebeveyn Banyo", "4,00 m²"],
+    ["Oda", "11,30 m²"],
+    ["Antre", "7,85 m²"],
+    ["Genel Banyo", "5,10 m²"],
+    ["Balkon", "11,10 m²"],
+    ["Fransız Balkon", "1,60 m²"]
+  ]
   },
-  {
-    label: "2+1 Geniş Plan",
-    image: "/KORU KONFOR 5+1.png",
-    price: "8,25 Milyon TL",
-    location: "Çankaya/Ankara",
-    details: [
-      ["Otobüs", "5 Dakikadan itibaren"],
-      ["Konut", "3 Blok 408"],
-      ["Teslim", "2025 Yıl Sonu"],
-      ["Ebeveyn Yatak Odası", "16,10 m²"],
-      ["Ebeveyn Banyo", "4,50 m²"],
-      ["Oda", "12,00 m²"],
-      ["Antre", "8,10 m²"],
-      ["Genel Banyo", "5,30 m²"],
-      ["Balkon", "12,20 m²"]
-    ]
-  },
-  {
-    label: "2+1 Bahçeli Seçenek",
-    image: "/KORU KONFOR 5+1.png",
-    price: "8,60 Milyon TL",
-    location: "Çankaya/Ankara",
-    details: [
-      ["Otobüs", "5 Dakikadan itibaren"],
-      ["Konut", "3 Blok 408"],
-      ["Teslim", "2025 Yıl Sonu"],
-      ["Ebeveyn Yatak Odası", "15,80 m²"],
-      ["Ebeveyn Banyo", "4,20 m²"],
-      ["Oda", "11,80 m²"],
-      ["Antre", "7,90 m²"],
-      ["Genel Banyo", "5,00 m²"],
-      ["Bahçe Alanı", "25,00 m²"]
-    ]
-  }
+  
 ];
 
 
@@ -68,7 +35,7 @@ export default function PlanDetailsWithGallery() {
         {/* Left Details */}
         <div className="flex-1 space-y-6">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Natura Incek</h2>
-          <h3 className="text-xl font-medium text-gray-700">3+1 TİP B2B - {current.label}</h3>
+          <h3 className="text-xl font-medium text-gray-700">Rezidans- {current.label}</h3>
 
           <div className="bg-white  rounded-xl shadow p-6 w-full max-w-md text-sm text-gray-700">
             <p className="font-semibold mb-4 text-base text-black">

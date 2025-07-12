@@ -38,7 +38,7 @@ const allListings: Listing[] = [
 
     link: "/rams-garden",
     type: "standard",
-    price: "RAMS GARDEN",
+    price: "RAMS GARDEN BAHÇELİEVLER",
     label: "Hemen Teslim",
     metro: "Haznedar Metro",
     time: "9 dakika mesafede",
@@ -121,7 +121,7 @@ const allListings: Listing[] = [
     time: "10 dakika mesafede",
     stats: ["43.500 m²", "405 konut + 5 Ticari Alan "],
     footer: "Yeni Batı Mahallesi",
-    image: "/yenibatıplus/görsel.jpeg",
+    image: "/yenibatıplusdikeygörsel.jpg",
     imageAlt: "/yenibatıplus/map.png",
   },
   {
@@ -310,7 +310,7 @@ export default function ProjectListingSection() {
                     </div>
                   ) : (
                     <div className="p-4 space-y-2">
-                      <h3 className="text-xl font-semibold leading-snug text-gray-800">{item.price}</h3>
+                      <h3 className="text-l font-semibold leading-snug text-gray-800">{item.price}</h3>
                       {item.label && (
                         <span className="text-xs bg-[#ab1e3b] text-white px-3 py-1 rounded-full inline-block">
                           {item.label}

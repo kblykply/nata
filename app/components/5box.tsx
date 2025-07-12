@@ -44,7 +44,7 @@ const popupContent = [
 ];
 
 const images = [
-  "/nata_web_rams_garden.jpg",
+  "/ramsgardenbahçelievlergorsel.jpg",
   "/nata_web_goat_villas.jpg",
   "/sehrin-merkezinde-hayatın-yeni-noktası.jpg",
   "/türkiyenin-en-prestijli-projeleri.jpg",
