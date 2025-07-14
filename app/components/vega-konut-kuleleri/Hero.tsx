@@ -55,7 +55,7 @@ export default function ProjectHeroCloudSection() {
     <span className="cursor-pointer hover:underline">Tamamlanmış Projeler</span>
   </Link>
     <span>/</span>
-    <span className="font-bold">Vega Konut Kuleleri</span>
+    <span className="font-bold">NATA Vega Konut Kuleleri</span>
   </div>
 </div>
 

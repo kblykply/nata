@@ -54,51 +54,8 @@
   ],
  
 },
-  {
-  slug: "pesin-alim-20-indirim",
-  title: "Peşin alımlarda",
-  highlight: "%20 indirim",
-  description: "Temmuz'a özel fırsatlar",
-  bg: "/kampanya/3.png",
-  image: "/kampanya/icons/3.png",
-  firstOne: "NATA Yaşam projelerinde peşin ödeme yapanlara özel %20\'ye varan indirim avantajı seni bekliyor. Üstelik hemen sahip olabilir, dilediğin gibi değerlendirebilirsin. Modern yaşamla birlikte kazancı da bugünden garantile!",
-  content: [
-    {
-      title: "Neden Şimdi?",
-      text: [
-        "• %20\'ye varan anında indirim",
-        "• Ek ödeme, sürpriz maliyet yok",
-        "• Kampanya süresi sınırlı",
-        "• Değeri yükselen projelere erkenden giriş fırsatı",
-        "• Dilersen hemen otur, dilersen yatırım olarak değerlendir"
-      ]
-    }
-  ]
-},
-{
-  slug: "esnek-odeme-imkani",
-  title: "Kişiye özel ödeme planları ile",
-  highlight: "esnek ödeme imkanı",
-  description: "Nata Vega Konutları",
-  bg: "/kampanya/4.png",
-  image: "/kampanya/icons/4.png",
-  firstOne: "NATA Yaşam\'da ev sahibi olmak, artık herkes için mümkün. Aylık gelirine, yatırım planına ve tercihlerine göre sana en uygun ödeme modelini birlikte oluşturuyoruz. Peşin alıma gerek kalmadan, esnek taksit seçenekleriyle hayalindeki yaşama adım atabilirsin.",
-  grayText: `Senin için en uygun ödeme planı burada seni bekliyor`,
 
-  content: [
-    {
-      title: "Sana Uygun Ödeme Modelleri",
-      text: [
-        "• Uzun vadeli taksit seçenekleri",
-        "• Ara ödemeli plan yapısı",
-        "• Balon ödeme opsiyonu",
-        "• Teslim sonrası ödeme desteği",
-        `• "Kira öder gibi" taksitli model`
-      ]
-    }
-  ]
-},
- 
+
 
  {
   slug: "hemen-tapu-hemen-teslim",
@@ -122,6 +79,6 @@
   ],
   secondText: "NATA Yaşam\'da her detay, ev sahibi olma sürecini kolaylaştırmak ve hızlandırmak için titizlikle planlandı. Tapunuzu almak için haftalarca beklemenize gerek yok; işlemler hızlı, net ve güvenli bir şekilde ilerler. Satın aldığınız daireye aynı gün içinde sahip olabilir, anahtarınızı teslim alarak hemen yeni hayatınıza başlayabilirsiniz. Bürokratik gecikmeler, belirsiz teslim tarihleri ya da fazladan masraflar olmadan, tam anlamıyla hazır bir yaşama adım atın. Detaylı bilgi almak, tapu ve teslim sürecini yakından öğrenmek için bizimle hemen iletişime geçin. Size en yakın satış ofisimiz ya da online danışmanlarımız bir telefon kadar yakın."
 },
- 
+  
 
 ];

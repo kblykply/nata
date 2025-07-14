@@ -55,14 +55,14 @@ export default function ProjectHeroCloudSection() {
     <span className="cursor-pointer hover:underline">Tamamlanmış Projeler</span>
   </Link>
     <span>/</span>
-    <span className="font-bold">Tempoint</span>
+    <span className="font-bold">Tempoint Konutları</span>
   </div>
 </div>
 
 
 
       {/* Content goes here */}
-      <div className="flex justify-center my-10">
+      <div className="flex justify-center my-5">
       <div className="w-90 md:w-150">
         <Image
           src="/TEMPOINTKONUTLARI-LOGO.png"
