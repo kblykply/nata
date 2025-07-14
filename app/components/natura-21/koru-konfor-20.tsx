@@ -49,9 +49,7 @@ export default function PlanDetailsWithGallery() {
           <h3 className="text-xl font-medium text-gray-700">2+1 - {current.label}</h3>
 
           <div className="bg-white  rounded-xl shadow p-6 w-full max-w-md text-sm text-gray-700">
-            <p className="font-semibold mb-4 text-base text-black">
-              {current.price}’den başlayan fiyatlarla
-            </p>
+             
             <div className="space-y-1">
               <div className="flex justify-between">
                 <span>Lokasyon:</span>
@@ -84,7 +82,7 @@ export default function PlanDetailsWithGallery() {
     <button
       key={i}
       onClick={() => setCurrentIndex(i)}
-      className={`w-[60px] h-[60px] border-2 rounded-lg transition ${
+      className={`w-[60px] h-[80px] border-2 rounded-lg transition ${
         i === currentIndex ? "border-[#ab1e3b]" : "border-gray-300"
       }`}
     >
@@ -100,7 +98,7 @@ export default function PlanDetailsWithGallery() {
 </div>
 
 {/* Mobile: horizontal scrollable thumbnails */}
-<div className="flex lg:hidden gap-3 mt-6 overflow-x-auto">
+<div className="fl  ex lg:hidden gap-3 mt-6 overflow-x-auto">
   {gallery.map((item, i) => (
     <button
       key={i}

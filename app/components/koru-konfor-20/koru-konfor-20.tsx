@@ -69,9 +69,7 @@ export default function PlanDetailsWithGallery() {
           <h3 className="text-xl font-medium text-gray-700">Villa Tipi - {current.label}</h3>
 
           <div className="bg-white  rounded-xl shadow p-6 w-full max-w-md text-sm text-gray-700">
-            <p className="font-semibold mb-4 text-base text-black">
-              {current.price}’dan başlayan fiyatlarla
-            </p>
+            
             <div className="space-y-1">
               <div className="flex justify-between">
                 <span>Lokasyon:</span>
