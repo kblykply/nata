@@ -122,18 +122,25 @@
               className="w-full bg-gray-100 rounded-sm px-4 py-2 text-sm h-24 placeholder:text-gray-500"
             />
 
-            <div className="flex items-start gap-2 text-sm">
-              <input
-                type="checkbox"
-                className="mt-1"
-                id="kvkkCheckbox"
-                checked={accepted}
-                onChange={() => setAccepted(!accepted)}
-              />
-              <label htmlFor="kvkkCheckbox" className="text-xs text-gray-800">
-                KVKK koşullarını kabul ediyorum.
-              </label>
-            </div>
+      <div className="flex items-start gap-2 text-sm">
+  <input
+    type="checkbox"
+    className="mt-1"
+    id="kvkkCheckbox"
+    checked={accepted}
+    onChange={() => setAccepted(!accepted)}
+  />
+  <label htmlFor="kvkkCheckbox" className="text-xs text-gray-800 leading-snug">
+    <span className="block">
+      <strong>Kişisel Verilerin Korunması</strong> hakkında bilgilendirildim ve{" "}
+      <Link href="/kvkk" target="_blank" className="underline text-blue-600 hover:text-blue-800">
+        KVKK Aydınlatma Metni
+      </Link>
+      ’ni okudum. Koşulları kabul ediyorum.
+    </span>
+  </label>
+</div>
+
 
             <button
               onClick={handleSubmit}

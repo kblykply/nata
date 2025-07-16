@@ -1,7 +1,9 @@
 // pages/_app.tsx
 import type { Metadata } from "next";
 import "./globals.css";
+import WhatsAppButton from "./components/WhatsAppButton";
 import ClientLayout from "./components/ClientLayout";
+
 import Script from 'next/script';
 import Preloader from "./components/Preloader";
 
@@ -27,20 +29,7 @@ export default function RootLayout({
 
 <head>
 
-        {/* Zoho SalesIQ Initialization Script */}
-        <Script id="zoho-salesiq-init" strategy="afterInteractive">
-          {`
-            window.$zoho = window.$zoho || {};
-            $zoho.salesiq = $zoho.salesiq || { ready: function() {} };
-          `}
-        </Script>
-
-        {/* Zoho SalesIQ Widget Script */}
-        <Script
-          id="zsiqscript"
-          src="https://salesiq.zohopublic.eu/widget?wc=siq12bbb3f71233b881580f172590a15f3e21a37acd0a5d6482713a01047b753e48"
-          strategy="lazyOnload"
-        />
+      
         
       </head>
 
@@ -52,7 +41,7 @@ export default function RootLayout({
 <ClientLayout>
 
 {children}
-
+      <WhatsAppButton />
 </ClientLayout>
 
       </body>

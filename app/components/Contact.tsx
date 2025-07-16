@@ -8,6 +8,8 @@ import { Pagination } from "swiper/modules";
 import SwiperCore from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
+  import Link from "next/link";
+  
 
 export default function ContactQrSection() {
   const [selectedTab, setSelectedTab] = useState("whatsapp");
@@ -201,10 +203,16 @@ export default function ContactQrSection() {
             />
           </div>
 
-          <p className="text-[11px] text-gray-500 text-center mb-6 leading-snug max-w-md mx-auto">
-            Formu gönderdiğiniz takdirde <br />
-            <span className="font-semibold">Gizlilik Politikalarımızı onaylamış bulunuyorsunuz</span>
-          </p>
+         <p className="text-[11px] text-gray-500 text-center mb-6 leading-snug max-w-md mx-auto">
+  Formu gönderdiğiniz takdirde <br />
+  <span className="font-semibold">
+    <Link href="/kvkk" target="_blank" className="underline text-blue-600 hover:text-blue-800">
+      Gizlilik Politikalarımızı
+    </Link>{" "}
+    onaylamış bulunuyorsunuz
+  </span>
+</p>
+
 
           <div className="flex justify-center">
             <button

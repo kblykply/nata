@@ -119,17 +119,24 @@ export default function ContactMapPopup() {
           />
 
           <div className="flex items-start gap-2 text-sm">
-            <input
-              type="checkbox"
-              className="mt-1"
-              id="kvkkCheckbox"
-              checked={accepted}
-              onChange={() => setAccepted(!accepted)}
-            />
-            <label htmlFor="kvkkCheckbox" className="text-xs text-gray-800">
-              KVKK koşullarını kabul ediyorum.
-            </label>
-          </div>
+  <input
+    type="checkbox"
+    className="mt-1"
+    id="kvkkCheckbox"
+    checked={accepted}
+    onChange={() => setAccepted(!accepted)}
+  />
+  <label htmlFor="kvkkCheckbox" className="text-xs text-gray-800 leading-snug">
+    <span className="block">
+      <strong>Kişisel Verilerin Korunması</strong> hakkında bilgilendirildim ve{" "}
+      <Link href="/kvkk" target="_blank" className="underline text-blue-600 hover:text-blue-800">
+        KVKK Aydınlatma Metni
+      </Link>
+      ’ni okudum. Koşulları kabul ediyorum.
+    </span>
+  </label>
+</div>
+
 
           <ReCAPTCHA
             sitekey="6LeDBj8rAAAAAITpieFy0OTWktxwblgStiQHc9iv"
