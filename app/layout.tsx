@@ -1,7 +1,6 @@
 // pages/_app.tsx
 
 
-export const dynamic = "force-dynamic"; // ⬅️ ADD THIS LINE FIRST
 
 
 
