@@ -1,4 +1,10 @@
 // pages/_app.tsx
+
+
+export const dynamic = "force-dynamic"; // ⬅️ ADD THIS LINE FIRST
+
+
+
 import type { Metadata } from "next";
 import "./globals.css";
 import WhatsAppButton from "./components/WhatsAppButton";
