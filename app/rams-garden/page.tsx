@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic"; // ⬅️ ADD THIS LINE FIRST
+
 import React from "react";
 import Hero from "../components/rams-garden/Hero"; // Ensure Hero is in components folder
 import Life from "../components/rams-garden/Life"; // Ensure Life is in components folder
@@ -9,6 +11,9 @@ import Office from "../components/Office"; // Ensure Office is in components fol
 import UnitTypes from "../components/rams-garden/unit-types"; // Ensure UnitTypes is in components folder
 import Boxes from "../components/rams-garden/boxes"; // Ensure Boxes is in components folder
 import Navigator from "../components/Navigator"; // Ensure Navigator is in components folder
+
+
+
 const Page: React.FC = () => {
   return (
     <main className="scroll-smooth a-color-white ">
