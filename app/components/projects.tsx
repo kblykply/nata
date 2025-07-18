@@ -232,7 +232,7 @@ export default function ProjectListingSection() {
                 }}
                 className={`relative rounded-md overflow-hidden shadow-sm transition cursor-pointer flex flex-col ${
                   item.type === "featured"
-                    ? "bg-black text-white min-h-[495px]"
+                    ? "bg-black text-white min-h-[540px]"
                     : "bg-white"
                 }`}
               >
@@ -264,17 +264,7 @@ export default function ProjectListingSection() {
 
 
                 {/* Image */}
-                {item.progress !== undefined && (
-  <div className="absolute top-3 right-3 w-30 bg-white/60 backdrop-blur-sm rounded-full px-4 py-2 text-[10px] font-medium text-gray-700 z-30">
-    <div className="mb-1 text-center">{item.progress}%</div>
-    <div className="w-full bg-gray-200 h-1 rounded-full overflow-hidden">
-      <div
-        className="bg-green-600 h-full"
-        style={{ width: `${item.progress}%` }}
-      />
-    </div>
-  </div>
-)}
+
                 {item.type === "featured" ? (
                   <>
                     <Image
@@ -335,6 +325,23 @@ export default function ProjectListingSection() {
                         <span className="bg-green-500 px-2 py-0.5 rounded-full">M</span>
                         {item.metro} · {item.time}
                       </p>
+
+                    {item.progress !== undefined && (
+  <div className="mt-3 px-2 py-2 rounded-md bg-white/40 backdrop-blur-sm w-fit">
+    <div className="flex flex-col items-start">
+      <p className="text-[10px] text-gray-800 mb-1">İnşaat Tamamlanma</p>
+      <div className="w-28 h-1.5 bg-gray-300 rounded-full overflow-hidden">
+        <div
+          className="bg-green-600 h-full transition-all"
+          style={{ width: `${item.progress}%` }}
+        />
+      </div>
+      <p className="text-[10px] mt-1 text-gray-800">{item.progress}%</p>
+    </div>
+  </div>
+)}
+
+
                     </div>
                   ) : (
                     <div className="p-4 space-y-2">
@@ -360,8 +367,29 @@ export default function ProjectListingSection() {
                       {item.footer && (
                         <div className="text-sm mt-2 text-gray-500">{item.footer}</div>
                       )}
+
+
+{item.progress !== undefined && (
+  <div className="mt-2 flex flex-col items-start">
+    <p className="text-[10px] text-gray-500 mb-1">İnşaat Tamamlanma</p>
+    <div className="w-1/2 h-1.5 bg-gray-200 rounded-full overflow-hidden">
+      <div
+        className="bg-green-600 h-full transition-all"
+        style={{ width: `${item.progress}%` }}
+      />
+    </div>
+    <p className="text-[10px] mt-1 text-gray-500">{item.progress}%</p>
+  </div>
+)}
+
+
+
+
+
                     </div>
                   )}
+
+
 
                   {item.type === "featured" && (
                     <div className="mt-4 flex gap-2 flex-wrap">

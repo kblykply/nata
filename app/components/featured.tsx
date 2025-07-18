@@ -63,6 +63,7 @@ export default function FeaturedProjects() {
         </div>
         <p className="mt-4 font-semibold whitespace-pre-line">{project.title}</p>
         <p className="text-sm text-gray-500 whitespace-pre-line">{project.subtitle}</p>
+        
         <div className="flex gap-3 mt-3">
           <a
             href={project.locationLink}
