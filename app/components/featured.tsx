@@ -27,8 +27,7 @@ const projects = [
     subtitle: "AVM & Konut & Ofis Projesi",
     image: "/sofyaprojesiyakında.png",
     blur: true,
-    locationLink:
-      "https://www.google.com/maps/place/Sofia,+Bulgaria",
+   
     demandLink: "/on-talep/vega-sofya",
   },
   {
@@ -36,8 +35,7 @@ const projects = [
     subtitle: "Karma Kullanım: AVM, Ofis, Rezidans",
     image: "/natacenteryakinda.png",
     blur: true,
-    locationLink:
-      "https://www.google.com/maps/place/Nata+Vega+Outlet+Ankara",
+
     demandLink: "/on-talep/nata-center",
   },
 ];
