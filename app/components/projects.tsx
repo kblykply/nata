@@ -330,7 +330,7 @@ export default function ProjectListingSection() {
   <div className="mt-3 px-2 py-2 rounded-md bg-white/40 backdrop-blur-sm w-fit">
     <div className="flex flex-col items-start">
       <p className="text-[10px] text-gray-800 mb-1">İnşaat Tamamlanma</p>
-      <div className="w-28 h-1.5 bg-gray-300 rounded-full overflow-hidden">
+      <div className="w-45 h-1.5 bg-gray-300 rounded-full overflow-hidden">
         <div
           className="bg-green-600 h-full transition-all"
           style={{ width: `${item.progress}%` }}
