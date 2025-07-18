@@ -1,4 +1,3 @@
-'use client';
 
 import { kampanyalar } from '@/data/kampanyalar';
 import { notFound } from 'next/navigation';

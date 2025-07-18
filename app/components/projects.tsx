@@ -28,44 +28,51 @@ interface Listing {
     label: string;
   }[];
   link: string;
+  progress?: number; // percentage from 0 to 100
 }
 
 const allListings: Listing[] = [
     
-  
-  {
-       id: "22",
-
-    link: "/rams-garden",
-    type: "standard",
-    price: "RAMS GARDEN BAHÇELİEVLER",
-    label: "Hemen Teslim",
-    metro: "Haznedar Metro",
-    time: "9 dakika mesafede",
-    stats: ["8.815 m²", "796 daire"],
-    footer: "Bahçelievler",
-    image: "/rams-garden-bahcelievler-5.jpg",
-    imageAlt: "/RAMS GARDEN - ARKA.jpg",
-  },
-  
   {
     id: "10",
     link: "/vega-center",
-    type: "featured",
+    type: "standard",
     price: "VEGA CENTER",
-    highlight: "2025 Teslim",
+    label: "2025 Teslim",
     metro: "Bilkent Metro",
     time: "5 dakika mesafede",
     stats: ["Merkezi Lokasyon", "Açık Avm Konsepti"],
     footer: "Çankaya",
     image: "/vegacenter-dikey.png",
     imageAlt: "/VEGA CENTER - MAP.jpg",
-    extra: [
-      { icon: "", label: "Merkezi Lokasyon" },
-      { icon: "", label: "Açık Avm Konsepti" },
-      { icon: "", label: "Business Class" },
-    ],
+    progress: 95 
+   
   },
+  
+  {
+       id: "22",
+
+    link: "/rams-garden",
+    type: "featured",
+price: "RAMS GARDEN\nBAHÇELİEVLER",
+    highlight: "Hemen Teslim ve Tapu",
+    metro: "Haznedar Metro",
+    time: "9 dakika mesafede",
+    stats: ["8.815 m²", "796 daire"],
+    footer: "Bahçelievler",
+    image: "/rams-garden-bahcelievler-5.jpg",
+    imageAlt: "/RAMS GARDEN - ARKA.jpg",
+
+     extra: [
+      { icon: "", label: "Merkezi Lokasyon" },
+      { icon: "", label: "Ticari Aalanlar" },
+      { icon: "", label: "Premium Hayat " },
+    ],
+        progress: 100
+
+  },
+  
+  
   {
     id: "11",
     link: "/goat-villas",
@@ -78,19 +85,21 @@ const allListings: Listing[] = [
     label: "2025 Teslim",
     footer: "Bilkent",
     stats: ["3. Çeyrek 2025", "Villa Projesi"],
+    progress: 95
   },
   {
     id: "12",
     link: "/vega-otonomi",
     type: "standard",
     price: "VEGA OTONOMİ",
-    label: "Hemen Teslim",
+    label: "Hemen Teslim ve Tapu",
     metro: "Fatih Metro",
     time: "4 dakika mesafede",
     stats: ["490m² ye kadar", "207 bölüm"],
     footer: "Plevne",
     image: "/otonomiMainRender2.jpg",
     imageAlt: "/OTONOMI - ARKA.jpg",
+    progress: 100
   },
   {
     id: "13",
@@ -109,6 +118,7 @@ const allListings: Listing[] = [
       { icon: "", label: "Rezidans Projesi" },
       { icon: "", label: "Ulaşım Imkanları" },
     ],
+    progress: 5
   },
 
   {
@@ -123,6 +133,7 @@ const allListings: Listing[] = [
     footer: "Yeni Batı Mahallesi",
     image: "/yenibatıplusdikeygörsel.jpg",
     imageAlt: "/yenibatıplus/map.png",
+     progress: 100 
   },
   {
     id: "15",
@@ -136,43 +147,49 @@ const allListings: Listing[] = [
     footer: "Bilkent",
     stats: ["1+1 ve 2,5+1 daireler", "190 adet konut"],
     label: "2025 Teslim",
+    progress: 100
   },
   {
     id: "16",
     link: "/mega-sasmaz",
     type: "featured",
     price: "MEGA ŞAŞMAZ",
-    label: "Hemen Teslim",
+    label: "Hemen Teslim ve Tapu",
     metro: "Ümitköy Metro",
     time: "8 dakika mesafede",
     stats: ["160.000 m²", "700 bölüm"],
     footer: "Şaşmaz",
     image: "/MEGA SASMAZ - ON.jpg",
     imageAlt: "/MEGA SASMAZ - MAP.jpg",
-    highlight: "Hemen Teslim",
+    highlight: "Hemen Teslim ve Tapu",
     extra: [
       { icon: "", label: "Merkezi Lokasyon" },
       { icon: "", label: "Sanayi Bölgesi" },
       { icon: "", label: "Business Class" },
     ],
+
+    progress: 100
   },  {
     id: "14",
     link: "/anteres",
     type: "standard",
-    price: "ANTARES KONUTLARI",
+    price: "ANTARES KONUTLARI 2. ETAP",
     metro: "Yenimahalle Metro",
     time: "11 dakika mesafede",
     image: "/ANTARES KONUTLARI-ON.jpg",
     footer: "Bilkent",
     imageAlt: "/ANTARES KONUTLARI-ARKA.jpg",
-    highlight: "Hemen Teslim",
-    label: "Hemen Teslim",
+    highlight: "Hemen Teslim ve Tapu",
+    label: "Hemen Teslim ve Tapu",
     extra: [
       { icon: "", label: "90 Konut" },
       { icon: "", label: "52.515 ₺ / ay" },
       { icon: "", label: "İş & Yaşam" },
     ],
     stats: ["3. Çeyrek 2025", "Villa Projesi"],
+
+
+    progress: 100 
   },
     
     
@@ -247,6 +264,17 @@ export default function ProjectListingSection() {
 
 
                 {/* Image */}
+                {item.progress !== undefined && (
+  <div className="absolute top-3 right-3 w-30 bg-white/60 backdrop-blur-sm rounded-full px-4 py-2 text-[10px] font-medium text-gray-700 z-30">
+    <div className="mb-1 text-center">{item.progress}%</div>
+    <div className="w-full bg-gray-200 h-1 rounded-full overflow-hidden">
+      <div
+        className="bg-green-600 h-full"
+        style={{ width: `${item.progress}%` }}
+      />
+    </div>
+  </div>
+)}
                 {item.type === "featured" ? (
                   <>
                     <Image
@@ -354,6 +382,8 @@ export default function ProjectListingSection() {
                       </div>
                     </div>
                   )}
+
+                  
 
                   {item.type === "featured" && popupIndex === index && (
                     <div className="absolute right-4 bottom-12 w-64 bg-[#4A4A4A] text-white rounded-2xl shadow-xl p-4 z-30 space-y-2">
