@@ -11,6 +11,8 @@ const cards = [
     background:     "/incek-galeri/nataincek2.jpg",
 
     wide: true,   // Mark this card as wide
+                    link: "https://www.instagram.com/nataincekkonutlari/",
+
   },
   {
     id: 2,
@@ -18,6 +20,8 @@ const cards = [
     title: "Belgeleri İndirin",
     highlight: "NATA Yaşam Projeleri",
     icon: "/x.png",
+                    link: "https://api.whatsapp.com/send/?phone=905017111818&text=Merhaba%2C+projeleriniz+hakk%C4%B1nda+detayl%C4%B1+bilgi+almak+istiyorum.&type=phone_number&app_absent=0",
+
   },
   {
     id: 3,
@@ -25,6 +29,8 @@ const cards = [
     title: "Ziyaret Edin",
     highlight: "Projenin Lokasyonunu Görün",
     background:    "/incek-galeri/nataincek5.jpg",
+                    link: "https://maps.app.goo.gl/i5kQ8WfUCrxMWR4T8",
+
 
   },
   {
@@ -34,6 +40,8 @@ const cards = [
     highlight: "5 dakika içinde",
     icon: "/vegacenter-canli-destek.png",
     subtitle: "Projesyonel Ekibimizle",
+                    link: "https://api.whatsapp.com/send/?phone=905017111818&text=Merhaba%2C+projeleriniz+hakk%C4%B1nda+detayl%C4%B1+bilgi+almak+istiyorum.&type=phone_number&app_absent=0",
+
   },
 ];
 
@@ -42,24 +50,27 @@ export default function InfoCardsSection() {
     <section className="w-full bg-white py-12 px-4">
       <div className="flex flex-wrap justify-center gap-6 max-w-7xl mx-auto">
         {cards.map((card) => (
-          <div
+          <a
             key={card.id}
+            href={card.link}
+            target="_blank"
+            rel="noopener noreferrer"
             className={`relative w-full ${
               card.wide ? "md:w-115" : "md:w-59"
-            } h-60 md:h-52 rounded-lg overflow-hidden shadow-sm ${
+            } h-60 md:h-52 rounded-lg overflow-hidden shadow-sm transition-transform duration-300 hover:scale-105 ${
               card.type === "icon" ? "bg-gray-50 flex flex-col justify-between p-4" : ""
             }`}
           >
             {card.type === "image" && card.background && (
               <>
-                   <Image
+                <Image
                   src={card.background}
                   alt={card.highlight}
                   fill
                   className="object-cover"
-                />     <div className="absolute inset-0 bg-black/30 z-0" />
-
-                <div className="absolute top-4 left-4 text-white text-sm leading-snug">
+                />
+                <div className="absolute inset-0 bg-black/30 z-0" />
+                <div className="absolute top-4 left-4 text-white text-sm leading-snug z-10">
                   <p>{card.title}</p>
                   <p className="font-semibold">{card.highlight}</p>
                 </div>
@@ -79,14 +90,14 @@ export default function InfoCardsSection() {
                   <Image
                     src={card.icon}
                     alt="Icon"
-                    width={200}
-                    height={200}
+                    width={600}
+                    height={600}
                     className="object-contain"
                   />
                 </div>
               </>
             )}
-          </div>
+          </a>
         ))}
       </div>
     </section>
