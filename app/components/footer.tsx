@@ -109,7 +109,7 @@ Mustafa Kemal, 2127. Cd No:21, 06530 Çankaya/Ankara
 </ul>
 
 
-            <h5 className="font-semibold mt-4 mb-2">Tamamlanmış Projeler</h5>
+            <h5 className="font-semibold mt-4 mb-2">Satışı Tamamlanmış Projeler</h5>
           <ul className="flex flex-col gap-2">
   {[
     { name: "ANTARES KONUTLARI 1. ETAP", url: "/anteres" },

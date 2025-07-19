@@ -14,7 +14,7 @@ interface BlogPost {
 
 type Params = Promise<{ slug: string }>;
 
-export async function generateMetadata({
+export async function generateMetadata({  
   params,
 }: {
   params: Params;
