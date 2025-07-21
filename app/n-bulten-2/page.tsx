@@ -21,6 +21,8 @@ export default function Magazine() {
   const [page, setPage] = useState(0);
   const [zoomed, setZoomed] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+            const FlipBookAny = HTMLFlipBook as any;
+
 
   const goNext = () => bookRef.current?.pageFlip().flipNext();
   const goPrev = () => bookRef.current?.pageFlip().flipPrev();
@@ -74,41 +76,27 @@ export default function Magazine() {
               borderRadius: "16px",
             }}
           >
-            <HTMLFlipBook
-              width={isMobile ? 400 : 900}
-              height={isMobile ? 600 : 1200}
-              size="stretch"
-              minWidth={300}
-              maxWidth={1600}
-              minHeight={400}
-              maxHeight={1600}
-              showCover={false}
-              flippingTime={700}
-              drawShadow={true}
-              useMouseEvents={true}
-              clickEventForward={true}
-              usePortrait={isMobile}
-              startPage={0}
-              className="rounded-xl overflow-hidden"
-              onFlip={(e) => setPage(e.data)}
-              ref={bookRef}
-            >
-              {pages.map((src, index) => (
-                <div
-                  key={index}
-                  className="relative w-full h-full"
-                  style={{ backgroundColor: "#fff" }}
-                >
-                  <Image
-                    src={src}
-                    alt={`Sayfa ${index}`}
-                    fill
-                    className="object-cover"
-                    sizes="100vw"
-                  />
-                </div>
-              ))}
-            </HTMLFlipBook>
+
+<FlipBookAny
+  width={isMobile ? 400 : 900}
+  height={isMobile ? 600 : 1200}
+  size="stretch"
+  minWidth={300}
+  maxWidth={1600}
+  minHeight={400}
+  maxHeight={1600}
+  showCover={true}
+  flippingTime={700}
+  drawShadow={true}
+  useMouseEvents={true}
+  clickEventForward={true}
+  usePortrait={isMobile}
+  startPage={0}
+  className="rounded-xl overflow-hidden"
+  onFlip={(e: any) => setPage(e.data)}
+  ref={bookRef}
+/>
+
           </div>
         </div>
 
