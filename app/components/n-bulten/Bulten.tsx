@@ -17,7 +17,7 @@ const NBultenSection = () => {
 <div className="flex flex-wrap justify-center gap-10">
   {/* Issue 1 */}
   <Link 
-    href="https://nbulten.natayasam.com/issue-1.html" 
+    href="/n-bulten-1" 
     target="_blank" 
     rel="noopener noreferrer"
     className="flex flex-col items-center cursor-pointer"
@@ -29,7 +29,7 @@ const NBultenSection = () => {
 
   {/* Issue 2 */}
   <Link 
-    href="https://nbulten.natayasam.com/issue-2.html" 
+    href="/n-bulten-2" 
     target="_blank" 
     rel="noopener noreferrer"
     className="flex flex-col items-center cursor-pointer"
@@ -41,12 +41,23 @@ const NBultenSection = () => {
 
   {/* Issue 3 */}
   <Link 
-    href="https://nbulten.natayasam.com/issue-3.html" 
+    href="/n-bulten-3" 
     target="_blank" 
     rel="noopener noreferrer"
     className="flex flex-col items-center cursor-pointer"
   >
     <Image src="/sayi3.png" alt="3. Sayı" width={250} height={220} />
+    <p className="mt-3 text-sm font-semibold text-[#ab1e3b]">3. Sayı</p>
+    <p className="text-xs text-gray-500">Ekim - Kasım - Aralık 24</p>
+  </Link>
+  {/* Issue 3 */}
+  <Link 
+    href="/n-bulten-4" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="flex flex-col items-center cursor-pointer"
+  >
+    <Image src="/n-bulten-4/0-kapak.jpg" alt="3. Sayı" width={250} height={220} />
     <p className="mt-3 text-sm font-semibold text-[#ab1e3b]">3. Sayı</p>
     <p className="text-xs text-gray-500">Ekim - Kasım - Aralık 24</p>
   </Link>

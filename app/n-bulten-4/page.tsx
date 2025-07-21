@@ -3,7 +3,7 @@
 import HTMLFlipBook from "react-pageflip";
 import Image from "next/image";
 import Head from "next/head";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import {
   FaExpand,
   FaCompress,
@@ -21,10 +21,11 @@ export default function Magazine() {
     ...Array.from({ length: 19 }, (_, i) => `${folder}/${i + 1}.jpg`),
   ];
 
-  const bookRef = useRef<any>(null);
+     const bookRef = useRef<any>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [page, setPage] = useState(0);
   const [zoomed, setZoomed] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const goNext = () => bookRef.current?.pageFlip().flipNext();
   const goPrev = () => bookRef.current?.pageFlip().flipPrev();
@@ -39,6 +40,17 @@ export default function Magazine() {
       }
     }
   };
+
+  useEffect(() => {
+    const checkScreen = () => {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      setIsMobile(width < 768 || height < 600);
+    };
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
 
   return (
     <>
@@ -56,7 +68,7 @@ export default function Magazine() {
           ref={containerRef}
           className="transition-transform duration-300 ease-in-out origin-center"
           style={{
-            transform: zoomed ? "scale(1.3)" : "scale(1)",
+            transform: zoomed ? "scale(1.1)" : "scale(1)",
             transition: "transform 0.4s ease",
           }}
         >
@@ -68,19 +80,19 @@ export default function Magazine() {
             }}
           >
             <HTMLFlipBook
-              width={840}
-              height={1200}
+              width={isMobile ? 400 : 900}
+              height={isMobile ? 600 : 1200}
               size="stretch"
-              minWidth={500}
-              maxWidth={1200}
+              minWidth={300}
+              maxWidth={1600}
               minHeight={400}
-              maxHeight={1000}
+              maxHeight={1600}
               showCover={false}
               flippingTime={700}
               drawShadow={true}
               useMouseEvents={true}
               clickEventForward={true}
-              usePortrait={false}
+              usePortrait={isMobile}
               startPage={0}
               className="rounded-xl overflow-hidden"
               onFlip={(e) => setPage(e.data)}
@@ -94,10 +106,10 @@ export default function Magazine() {
                 >
                   <Image
                     src={src}
-                    alt={`Sayfa ${index + 1}`}
+                    alt={`Sayfa ${index}`}
                     fill
                     className="object-cover"
-                    sizes="840px"
+                    sizes="100vw"
                   />
                 </div>
               ))}
