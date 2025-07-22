@@ -57,7 +57,7 @@ const NBultenSection = () => {
     rel="noopener noreferrer"
     className="flex flex-col items-center cursor-pointer"
   >
-    <Image src="/0-kapak.jpg" alt="4. Sayı" width={250} height={220} />
+    <Image src="/n-bulten-dort/0-kapak.jpg" alt="4. Sayı" width={250} height={220} />
     <p className="mt-3 text-sm font-semibold text-[#ab1e3b]">4. Sayı</p>
     <p className="text-xs text-gray-500">Ekim - Kasım - Aralık 24</p>
   </Link>
