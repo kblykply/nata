@@ -15,7 +15,7 @@ import {
 const totalPages = 45;
 
 export default function Magazine() {
-  const folder = "/n-bulten-4";
+  const folder = "/n-bulten-dort";
   const pages = [
     `${folder}/page-0.jpg`,
     ...Array.from({ length: 19 }, (_, i) => `${folder}/${i + 1}.jpg`),

@@ -15,7 +15,7 @@ import {
 const totalPages = 28;
 
 export default function Magazine() {
-  const pages = Array.from({ length: totalPages }, (_, i) => `/n-bulten-2/${String(i + 1).padStart(2, "0")}.webp`);
+  const pages = Array.from({ length: totalPages }, (_, i) => `/n-bulten-iki/${String(i + 1).padStart(2, "0")}.webp`);
     const bookRef = useRef<any>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [page, setPage] = useState(0);

@@ -15,8 +15,7 @@ import {
 const totalPages = 31;
 
 export default function Magazine() {
-  const pages = Array.from({ length: totalPages }, (_, i) => `/n-bulten-bir
-  /page-${i}.jpg`);
+  const pages = Array.from({ length: totalPages }, (_, i) => `/n-bulten-bir/page-${i}.jpg`);
    const bookRef = useRef<any>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [page, setPage] = useState(0);
