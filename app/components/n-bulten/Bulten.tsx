@@ -1,70 +1,71 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-const NBultenSection = () => {
+const issues = [
+  {
+    number: 1,
+    image: '/sayi1.png',
+    href: '/n-bulten-1',
+    period: 'Nisan - Mayıs - Haziran 24',
+  },
+  {
+    number: 2,
+    image: '/sayi2.png',
+    href: '/n-bulten-2',
+    period: 'Temmuz - Ağustos - Eylül 24',
+  },
+  {
+    number: 3,
+    image: '/sayi3.png',
+    href: '/n-bulten-3',
+    period: 'Ekim - Kasım - Aralık 24',
+  },
+  {
+    number: 4,
+    image: '/n-bulten-dort/0.jpg',
+    href: '/n-bulten-4',
+    period: 'Ocak - Şubat - Mart 25',
+  },
+];
+
+export default function NBultenSection() {
   return (
-    <div className="px-6 md:px-20 py-12 text-center">
+    <section className="px-6 md:px-20 py-16 bg-gray-50 text-center">
       {/* Title */}
-      <h2 className="text-lg font-semibold mb-4">N-BÜLTEN</h2>
+      <h2 className="text-2xl md:text-3xl font-bold text-[#ab1e3b] mb-4 tracking-wide">
+        N-BÜLTEN
+      </h2>
 
       {/* Description */}
-      <p className="text-sm text-gray-700 max-w-3xl mx-auto mb-10 leading-relaxed">
+      <p className="text-sm md:text-base text-gray-600 max-w-3xl mx-auto mb-12 leading-relaxed">
         N-Bülten dergimizde, NATA Holding’in projelerindeki yenilikler, başarılar ve önemli gelişmelerin yanı sıra, çeşitli içerikler ve röportajlar da yer almaktadır. Dergimiz, siz değerli okuyucularımıza hem projelerimiz hakkında en güncel bilgileri sunmayı hem de bilgilendirici içerikler sağlamayı amaçlamaktadır.
       </p>
 
-      {/* Magazine Issues */}
-
-<div className="flex flex-wrap justify-center gap-10">
-  {/* Issue 1 */}
-  <Link 
-    href="/n-bulten-1" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    className="flex flex-col items-center cursor-pointer"
-  >
-    <Image src="/sayi1.png" alt="1. Sayı" width={250} height={220} />
-    <p className="mt-3 text-sm font-semibold text-[#ab1e3b]">1. Sayı</p>
-    <p className="text-xs text-gray-500">Nisan - Mayıs - Haziran 24</p>
-  </Link>
-
-  {/* Issue 2 */}
-  <Link 
-    href="/n-bulten-2" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    className="flex flex-col items-center cursor-pointer"
-  >
-    <Image src="/sayi2.png" alt="2. Sayı" width={250} height={220} />
-    <p className="mt-3 text-sm font-semibold text-[#ab1e3b]">2. Sayı</p>
-    <p className="text-xs text-gray-500">Temmuz - Ağustos - Eylül 24</p>
-  </Link>
-
-  {/* Issue 3 */}
-  <Link 
-    href="/n-bulten-3" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    className="flex flex-col items-center cursor-pointer"
-  >
-    <Image src="/sayi3.png" alt="3. Sayı" width={250} height={220} />
-    <p className="mt-3 text-sm font-semibold text-[#ab1e3b]">3. Sayı</p>
-    <p className="text-xs text-gray-500">Ekim - Kasım - Aralık 24</p>
-  </Link>
-  {/* Issue 3 */}
-  <Link 
-    href="/n-bulten-4" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    className="flex flex-col items-center cursor-pointer"
-  >
-    <Image src="/n-bulten-dort/0.jpg" alt="4. Sayı" width={250} height={220} />
-    <p className="mt-3 text-sm font-semibold text-[#ab1e3b]">4. Sayı</p>
-    <p className="text-xs text-gray-500">Ekim - Kasım - Aralık 24</p>
-  </Link>
-</div>
-
-    </div>
+      {/* Grid of Issues */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 place-items-center">
+        {issues.map((issue) => (
+          <Link
+            key={issue.number}
+            href={issue.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col items-center transition-transform hover:scale-105"
+          >
+            <div className="w-[250px] h-[350px] relative overflow-hidden rounded-xl shadow-md">
+              <Image
+                src={issue.image}
+                alt={`${issue.number}. Sayı`}
+                fill
+                className="object-cover group-hover:scale-110 transition-transform duration-300 ease-out"
+              />
+            </div>
+            <p className="mt-4 text-base font-semibold text-[#ab1e3b]">
+              {issue.number}. Sayı
+            </p>
+            <p className="text-sm text-gray-500">{issue.period}</p>
+          </Link>
+        ))}
+      </div>
+    </section>
   );
-};
-
-export default NBultenSection;
+}

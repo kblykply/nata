@@ -88,15 +88,9 @@ export default function Magazine() {
 
   return (
     <>
-      <Head>
-        <title>Dijital Dergi</title>
-        <meta name="description" content="Dijital derginizi çevrimiçi okuyun" />
-      </Head>
+      
 
-      <main
-        className="min-h-screen w-full bg-white flex flex-col items-center justify-center relative"
-        
-      >
+      <main className="min-h-screen w-full bg-white flex flex-col items-center justify-center relative">
         <div
           ref={containerRef}
           className="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center"
@@ -135,7 +129,7 @@ export default function Magazine() {
   maxShadowOpacity={0.5}
   showPageCorners={true}
   mobileScrollSupport={true}
-/>
+>
               {pages.map((src, index) => (
                 <div
                   key={index}
