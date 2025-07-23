@@ -111,25 +111,31 @@ export default function Magazine() {
               borderRadius: "16px",
             }}
           >
-            <HTMLFlipBook
-              width={flipSize.width}
-              height={flipSize.height}
-              size="stretch"
-              minWidth={300}
-              maxWidth={1800}
-              minHeight={400}
-              maxHeight={2400}
-              showCover={false}
-              flippingTime={700}
-              drawShadow={true}
-              useMouseEvents={true}
-              clickEventForward={true}
-              usePortrait={isMobile}
-              startPage={0}
-              className="rounded-xl overflow-hidden"
-              onFlip={(e) => setPage(e.data)}
-              ref={bookRef}
-            >
+          <HTMLFlipBook
+  width={flipSize.width}
+  height={flipSize.height}
+  size="stretch"
+  minWidth={300}
+  maxWidth={1800}
+  minHeight={400}
+  maxHeight={2400}
+  showCover={false}
+  flippingTime={700}
+  drawShadow={true}
+  useMouseEvents={true}
+  clickEventForward={true}
+  usePortrait={isMobile}
+  startPage={0}
+  className="rounded-xl overflow-hidden"
+  onFlip={(e) => setPage(e.data)}
+  ref={bookRef}
+  style={{}} // ✅ Required even if empty
+  startZIndex={0}
+  autoSize={true}
+  maxShadowOpacity={0.5}
+  showPageCorners={true}
+  mobileScrollSupport={true}
+/>
               {pages.map((src, index) => (
                 <div
                   key={index}
