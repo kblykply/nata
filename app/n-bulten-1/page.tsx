@@ -96,7 +96,6 @@ import {
 
       <main
         className="min-h-screen w-full bg-white flex flex-col items-center justify-center relative"
-        style={{ fontFamily: "'Inter', sans-serif" }}
       >
         <div
           ref={containerRef}
