@@ -21,7 +21,6 @@ export default function DesignSection() {
 
             "/yenibatıplus/6.jpeg",
 
-                "/yenibatıplus/7.jpeg",
 
     
   ];
