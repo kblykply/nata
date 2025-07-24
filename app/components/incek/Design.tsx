@@ -34,7 +34,7 @@ export default function DesignSection() {
             Nata İncek Konutları
           </h2>
           <p className="mt-6 text-sm text-gray-700 leading-relaxed">
-            Doğayla iç içe yapısı ve metroya yakınlığıyla Nata İncek, ideal yaşamın adresi.
+            Doğayla iç içe yapısı ve şehre yakınlığıyla Nata İncek, ideal yaşamın adresi.
           </p>
           <button
             onClick={() => {

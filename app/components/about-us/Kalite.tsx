@@ -8,7 +8,7 @@ const QualitySection = () => {
 
       {/* Description */}
       <p className="text-sm text-gray-700 mb-6 leading-relaxed max-w-4xl">
-        NATA Yaşam olarak önceliğimiz, estetik ve fonksiyonelliği bir arada sunarken, yatırımlarımıza ve sakinlerimize yüksek yaşam standartları sağlamaktır. Projelerimizde kullandığımız kaliteli malzemeler, yenilikçi mimari yaklaşımlar ve çevre dostu çözümler ile sektörde fark yaratıyoruz.
+        NATA Yaşam olarak önceliğimiz, estetik ve fonksiyonelliği bir arada sunarken, sakinlerimize yüksek yaşam standartları sağlamaktır. Projelerimizde kullandığımız kaliteli malzemeler, yenilikçi mimari yaklaşımlar ve çevre dostu çözümler ile sektörde fark yaratıyoruz.
       </p>
 
       {/* Image */}

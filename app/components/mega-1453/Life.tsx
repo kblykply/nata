@@ -35,10 +35,10 @@ const slides = [
   {
     title: "Dinamik iş hayatının gücü",
     image: "/mega-dinamik.jpg",
-    popup: {
-      title: "İş ve yaşamın kesiştiği verimli alanlar.",
-      text: "Mega 1453, modern ofis alanları ve merkezi konumuyla iş hayatınızı daha etkin ve prestijli hale getiriyor. Başarıya giden yolda size güç katıyor.",
-      images: ["/mega Dinamik iş hayatının gücü (2).jpg", "/mega Dinamik iş hayatının gücü.jpg"]
+       popup: {
+      title: "Modern yaşam ve iş dünyası için güçlü altyapı çözümleri.",
+      text: "Kesintisiz enerji, hızlı internet ve ileri teknoloji olanaklarıyla donatılmış altyapı, hem yaşam hem de iş hayatında konfor ve süreklilik sağlar.",
+      images: ["/mega Zengin Altyapı (2).jpg", "/mega Zengin Altyapı.jpg"]
     }
   },
   {
@@ -87,11 +87,11 @@ const slides = [
     }
   },
   {
-    title: "⁠Güvenli ve konforlu yeraltı otopark",
+    title: "⁠Güvenli ve Konforlu Açık - Kapalı Otopark",
     image: "/mega-güven.jpg",
     popup: {
       title: "Araçlarınız için güvenli, size özel alanlar.",
-      text: "Geniş ve modern tasarlanmış yeraltı otopark ile aracınız her zaman güvende. Kolay erişim ve konforlu park alanlarıyla şehir yaşamının stresinden uzaklaşın.",
+      text: "Geniş ve modern tasarlanmış kapalı otopark ile aracınız her zaman güvende. Kolay erişim ve konforlu park alanlarıyla şehir yaşamının stresinden uzaklaşın.",
       images: ["/mega ⁠Güvenli ve konforlu yeraltı otopark (2).jpg", "/mega ⁠Güvenli ve konforlu yeraltı otopark.jpg"]
     }
   },

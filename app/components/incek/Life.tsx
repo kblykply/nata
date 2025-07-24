@@ -33,7 +33,7 @@ const slides = [
     }
   },
    {
-    title: "Açık Yüzme Havuzu",
+    title: "Kapalı Yüzme Havuzu",
     image: "/incek/Ac╠º─▒k Yu╠êzme Havuzu.jpg",
     popup: {
       title: "Yazın tadını serin sularla çıkarın.",
@@ -108,7 +108,7 @@ const handlePointerUp = () => {
       NATA  <br />İNCEK KONUTLARI
       </h2>
       <p className="mt-4 text-sm text-gray-600 max-w-xl mx-auto">
-NATA İncek Konutları'da her aşama sizi düşünerek tasarlandı. Mogan Gölü’nün manzarası ile doğayla iç içe, 12.000 m² yeşil alan, hayatınızı kolaylaştıracak ferah, şık ve kullanışlı yaşam alanları NATA İncek Konutları'nda sizlerle buluşuyor.
+NATA İncek Konutları'nda her aşama sizi düşünerek tasarlandı. Mogan Gölü’nün manzarası ile doğayla iç içe, 12.000 m² yeşil alan, hayatınızı kolaylaştıracak ferah, şık ve kullanışlı yaşam alanları NATA İncek Konutları'nda sizlerle buluşuyor.
 
       </p>
 

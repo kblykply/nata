@@ -109,7 +109,7 @@ const handlePointerUp = () => {
      TEMPOINT KONUTLARI  <br />Yaşam Merkezi
       </h2>
       <p className="mt-4 text-sm text-gray-600 max-w-xl mx-auto">
-Sultangazi, İstanbul'da TEM Otoyolu üzerinde bulunan Tempoint Konutları açık ve yetişkin çocuk havuzu, koşu parkurları, Playstation odası, yemyeşil alanları, çocuk parkları ve hemen yanıbaşında yer alan VEGA İstanbul Alışveriş ve Yaşam Merkezi ile can alıcı bir lokasyonda yer almaktadır.
+Sultangazi, İstanbul'da TEM Otoyolu üzerinde bulunan Tempoint Konutları açık ve yetişkin çocuk havuzu, koşu parkurları, Playstation odası, yemyeşil alanları, çocuk parkları ve hemen yanı başında yer alan VEGA İstanbul Alışveriş ve Yaşam Merkezi ile can alıcı bir lokasyonda yer almaktadır.
 
       </p>
 

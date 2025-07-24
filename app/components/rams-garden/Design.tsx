@@ -33,10 +33,10 @@ export default function DesignSection() {
         {/* Left Text Content */}
         <div className="w-full max-w-xl z-25">
           <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 leading-tight">
-            RAMS Garden <br /> ile Tanışın
+            RAMS GARDEN BAHÇELİEVLER <br /> ile Tanışın
           </h2>
           <p className="mt-6 text-sm text-gray-700 leading-relaxed">
-            RAMS Garden Bahçelievler, şehir merkezine yakınlığı ve 42.300 metrekarelik koru ile çevrili benzersiz bir konumda yaşamanın tüm faydalarını bir arada sunmaktadır. Burada şehrin koşuşturmacasından uzaklaşabilir, ailenizle birlikte 33.000 metrekarelik peyzaj içerisinde doğanın tadını çıkarabilirsiniz.
+            RAMS Garden Bahçelievler, şehir merkezine yakınlığı ve 42.300 metrekarelik koru ile çevrili benzersiz bir konumda yaşamanın tüm avantajlarını bir arada sunmaktadır. Burada şehrin koşuşturmacasından uzaklaşabilir, ailenizle birlikte 33.000 metrekarelik peyzaj içerisinde doğanın tadını çıkarabilirsiniz.
           </p>
           <button
             onClick={() => {

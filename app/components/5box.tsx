@@ -8,7 +8,7 @@ import { Dialog, Transition } from "@headlessui/react";
 const popupContent = [
   {
     title: "Ev Almanın En Kolay Yolu: NATA Yaşam’da Başlar!",
-    text: `Hayalindeki eve ulaşmak artık zahmetli bir süreç değil. NATA Yaşam, dijital platformları ve kullanıcı dostu arayüzüyle ev arama deneyimini baştan sona değiştiriyor. İster akıllı filtrelerle arama yap, ister lokasyon bazlı keşfe çık — sana en uygun projeyi saniyeler içinde bulabilirsin. Üstelik satış danışmanlarımız da her adımda senin yanında.`
+    text: `Hayalindeki eve ulaşmak artık zahmetli bir süreç değil. NATA Yaşam, dijital platformları ve kullanıcı dostu arayüzüyle ev arama deneyimini baştan sona değiştiriyor. İster akıllı filtrelerle arama yap, ister lokasyon bazlı keşfe çık, sana en uygun projeyi saniyeler içinde bulabilirsin.`
   },
   {
     title: "Akıllı Teknolojiyle Donatılmış Yaşam Alanlarıyla Hayatını Kolaylaştır!",

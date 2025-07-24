@@ -109,7 +109,7 @@ const handlePointerUp = () => {
 
       
       <h2 className="text-3xl font-light text-gray-800 uppercase leading-tight">
-      RAMS GARDEN
+      RAMS GARDEN BAHÇELİEVLER
 
   <br />İstanbul'un kalbi
       </h2>

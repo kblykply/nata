@@ -94,7 +94,7 @@ Metroya 8 Dk Uzaklıkta    </div>
 
   <Link href="#contact">
     <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
-161 Konut & Ofis    </div>
+161 Konut & Ofis ve AVM Konsepti   </div>
   </Link>
 
   <Link href="#contact">

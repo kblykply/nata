@@ -93,7 +93,7 @@ Geniş Otopark ve Kolay Erişim İmkanı     </div>
 
 <Link href="#contact">
     <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
-  250+ Modern Ofis ve Ticari Alan     </div>
+  207 Ticari Alan ve Modern Ofis</div>
   </Link>
   <Link href="#design">
     <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">

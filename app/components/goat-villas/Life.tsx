@@ -6,7 +6,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const slides = [
   {
-    title: "Ankara nın Yeni İş ve Yaşam Merkezi",
+    title: "Ankara'nın Yeni İş ve Yaşam Merkezi",
     image: "/goatvillas-dergi.jpg",
     popup: {
       title: "Teknolojiyle Korunan Huzur",
@@ -51,7 +51,7 @@ const slides = [
     }
   },
   {
-    title: "Açık ve Kişiye Özel İç Mekan Tasarımı Kapalı Otopark",
+    title: "Kişiye Özel İç Mekan Tasarımı, Açık ve Kapalı Otopark",
     image: "/goat-özel.jpg",
     popup: {
       title: "Hayallerinize Uygun Yaşam Alanları",

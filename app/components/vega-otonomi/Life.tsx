@@ -51,7 +51,7 @@ const slides = [
     }
   },
   {
-    title: "Türkiye’nin İlk Otomotiv AVM Konseptifi",
+    title: "Türkiye’nin İlk Otomotiv AVM Konsepti",
     image: "/vegaotonomi-Türkiye’nin İlk Otomotiv AVM Konsepti.jpg",
     popup: {
       title: "Yenilikçi Yaklaşımıyla İlk ve Tek",

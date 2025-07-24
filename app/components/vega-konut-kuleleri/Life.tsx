@@ -46,7 +46,7 @@ const slides = [
     image: "/vega-konut-kuleleri/Kapal─▒ Otopark.jpg",
     popup: {
       title: "Aracınız da sizin kadar değerli.",
-      text: "Mega 1453, şehrin merkezinde konfor, estetik ve prestiji bir araya getiriyor. Hem ayrıcalıklı bir yaşam hem de kazançlı bir yatırım fırsatı sunuyor.",
+      text: "VEGA KONUT KULELERİ, şehrin merkezinde konfor, estetik ve prestiji bir araya getiriyor. Hem ayrıcalıklı bir yaşam hem de kazançlı bir yatırım fırsatı sunuyor.",
       images: ["/vega-konut-kuleleri-popup/Kapal─▒ Otopark (2).jpg", "/vega-konut-kuleleri-popup/Kapal─▒ Otopark.jpg"]
     }
   },

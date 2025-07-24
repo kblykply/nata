@@ -19,7 +19,7 @@ const slides = [
     image: "/vega-cadde/24 Saat Gu╠êvenlik ve Kameral─▒ Sistem.jpg",
     popup: {
       title: "Ticaretin ve yaşamın güvencesi.",
-      text: "Her alanı kapsayan güvenlik sistemleri sayesinde ofisler vekonutlar gece gündüz koruma altında.",
+      text: "Her alanı kapsayan güvenlik sistemleri sayesinde ofisler ve konutlar gece gündüz koruma altında.",
       images: ["/vega-cadde-popup/24 Saat Gu╠êvenlik ve Kameral─▒ Sistem (2).jpg", "/vega-cadde-popup/24 Saat Gu╠êvenlik ve Kameral─▒ Sistem.jpg"]
     }
   },
@@ -108,7 +108,7 @@ const handlePointerUp = () => {
       <h2 className="text-3xl font-light text-gray-800 uppercase leading-tight">
       VEGA CADDE
 
-  <br />Yaşamın kalbinden
+  <br />Yaşamın kalbinde
       </h2>
       <p className="mt-4 text-sm text-gray-600 max-w-xl mx-auto">
 Yaşamın kalbinden kurumsal dünyaya açılan, boyutlandırılabilir 161 adet OFİS kompleksi, 1+1 ve 2+1 seçenekleri ile şıklığı ve konforu bir araya getiren KONUT konsepti ile VEGA CADDE'de tek bir noktada toplanıyor, başkente yeni bir soluk kazandırıyor.      </p>

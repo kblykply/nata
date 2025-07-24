@@ -24,6 +24,33 @@ export default function DesignSection() {
         "/vega-revize/2.png",
         "/vega-revize/3.png",
         "/vega-revize/4.png",
+"/vegacentergörseller/1.jpeg",
+"/vegacentergörseller/2.jpeg",
+
+"/vegacentergörseller/3.jpeg",
+
+"/vegacentergörseller/4.jpeg",
+
+"/vegacentergörseller/5.jpeg",
+
+"/vegacentergörseller/6.jpeg",
+"/vegacentergörseller/7.jpeg",
+
+"/vegacentergörseller/8.jpeg",
+
+"/vegacentergörseller/9.jpeg",
+
+"/vegacentergörseller/10.jpeg",
+
+"/vegacentergörseller/11.jpeg",
+
+"/vegacentergörseller/12.jpeg",
+
+"/vegacentergörseller/13.jpeg",
+
+"/vegacentergörseller/14.jpeg",
+
+
 
 
 

@@ -30,7 +30,7 @@ const ApproachSection = () => {
               Stratejik Lokasyonlarda Prestijli Projeler
             </h3>
             <p className="text-sm text-gray-700 leading-relaxed">
-            Ankara’dan Bodrum’a, Milas’tan Türkiye’nin yükselen bölgelerine kadar konumlandırdığımız projelerimiz; merkezi lokasyonları, ulaşım kolaylığı ve sosyal donatılarıyla hem yaşam hem de yatırım açısından büyük avantaj sağlıyor. Konut ve AVM konseptinden, exclusive villa projelerine ve turizm odaklı yaşam alanlarına kadar geniş bir portföye sahibiz.            </p>
+            Ankara’dan Bodrum’a, Milas’tan Türkiye’nin yükselen bölgelerine kadar konumlandırdığımız projelerimiz; merkezi lokasyonları, ulaşım kolaylığı ve sosyal donatılarıyla hem yaşam hem de yatırım açısından büyük avantaj sağlıyor. Konut, Ofis, Ticari Alan ve AVM konseptinden, exclusive villa projelerine ve turizm odaklı yaşam alanlarına kadar geniş bir portföye sahibiz.            </p>
           </div>
 
           <div>
