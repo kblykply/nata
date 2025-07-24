@@ -61,7 +61,7 @@ export default function ProjectHeroCloudSection() {
       {/* Building image */}
       <div className="absolute bottom-0 left-0 w-full h-[140vh] z-20 pointer-events-none">
         <Image
-          src="/vega-build.png"
+          src="/vegacenterbuild.png"
           alt="Building"
           fill
           className="object-contain object-bottom"
