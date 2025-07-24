@@ -135,7 +135,7 @@ export default function Magazine() {
   // ✅ These fix the TypeScript error
   swipeDistance={30}
   disableFlipByClick={false}
-/>
+>
 
                  {pages.map((src, index) => (
                    <div
