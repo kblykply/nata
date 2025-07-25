@@ -19,7 +19,7 @@ const slides = [
     image: "/yenibatıplus/724güvenlik.jpeg",
     popup: {
         title: "Dört Mevsim Koruma ve Güvenlik",
-  text: "Kapalı otopark ile aracınız her mevsim hava koşullarına karşı koruma altında; 7/24 aktif güvenlik sistemiyle de güvenle park edebilirsiniz.",
+  text: "Modern güvenlik altyapısı ve sürekli izleme sistemleriyle siz ve sevdikleriniz için güvenli bir yaşam alanı sunuyoruz.",
       images: ["/yenibatıplus/popupgüvenlik1.jpeg", "/yenibatıplus/popupgüvenlik2.jpeg"]
     }
   },
