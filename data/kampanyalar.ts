@@ -39,7 +39,7 @@
   description: "",
   bg: "/kampanya/2.png",
   image: "/kampanya/icons/2.png",
-  firstOne: "NATA Yaşam deneyimini sevdiklerinle paylaşarak hem onların güvenli bir yaşama adım atmasını sağla hem de sen kazançlı çık. Her yeni yönlendirme için seni özel fırsatlar ve sürpriz hediyeler bekliyor.",
+  firstOne: "NATA Yaşam deneyimini sevdiklerinle paylaşarak hem onların güvenli bir yaşama adım atmasını sağla hem de sen kazançlı çık.",
   content: [
     {
       title: "Seninle Büyüyen Avantajlar",
@@ -64,7 +64,7 @@
   description: "Vega Cadde",
   bg: "/kampanya/7.png",
   image: "/kampanya/icons/7.png",
-  firstOne: "NATA Yaşam projelerinde artık hayalindeki eve ulaşmak için aylarca beklemenize gerek yok. Tapunuzu anında teslim alabilir, dairenize hemen yerleşebilirsiniz. Bürokratik gecikmeler yok, teslim tarihi beklemek yok. Hazır projeler, hazır yaşamlar için seni bekliyor.",
+  firstOne: "NATA Yaşam projelerinde artık hayalindeki eve ulaşmak için aylarca beklemenize gerek yok. Tapunuzu anında teslim alabilir, dairenize hemen yerleşebilirsiniz. Gecikmeler yok, teslim tarihi beklemek yok. Hazır projeler, hazır yaşamlar için seni bekliyor.",
   content: [
     {
       title: "Bu Avantajla Neler Kazanırsın?",
@@ -73,11 +73,10 @@
         "2. Anahtar teslim dairelere hemen yerleş",
         "3. Zaman kaybetmeden yatırımını değerlendirmeye başla",
         "4. Kira geliri elde etmek isteyenler için hızlı çözüm",
-        "5. Gerçek sahiplik duygusunu şimdi yaşa",
       ]
     }
   ],
-  secondText: "NATA Yaşam\'da her detay, ev sahibi olma sürecini kolaylaştırmak ve hızlandırmak için titizlikle planlandı. Tapunuzu almak için haftalarca beklemenize gerek yok; işlemler hızlı, net ve güvenli bir şekilde ilerler. Satın aldığınız daireye aynı gün içinde sahip olabilir, anahtarınızı teslim alarak hemen yeni hayatınıza başlayabilirsiniz. Bürokratik gecikmeler, belirsiz teslim tarihleri ya da fazladan masraflar olmadan, tam anlamıyla hazır bir yaşama adım atın. Detaylı bilgi almak, tapu ve teslim sürecini yakından öğrenmek için bizimle hemen iletişime geçin. Size en yakın satış ofisimiz ya da online danışmanlarımız bir telefon kadar yakın."
+  secondText: "NATA Yaşam\'da her detay, ev sahibi olma sürecini kolaylaştırmak ve hızlandırmak için titizlikle planlandı. Tapunuzu almak için haftalarca beklemenize gerek yok; işlemler hızlı, net ve güvenli bir şekilde ilerler. Satın aldığınız daireye aynı gün içinde sahip olabilir, anahtarınızı teslim alarak hemen yeni hayatınıza başlayabilirsiniz. Gecikmeler, belirsiz teslim tarihleri ya da fazladan masraflar olmadan, tam anlamıyla hazır bir yaşama adım atın. Detaylı bilgi almak, tapu ve teslim sürecini yakından öğrenmek için bizimle hemen iletişime geçin. Size en yakın satış ofisimiz ya da online danışmanlarımız bir telefon kadar yakın."
 },
   
 

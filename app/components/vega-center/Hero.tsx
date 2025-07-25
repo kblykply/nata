@@ -9,6 +9,16 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 export default function ProjectHeroCloudSection() {
   return (
     <section  className="relative w-full h-[90vh] md:h-[150vh] overflow-hidden bg-gradient-to-b from-[#006d9d] to-[#e6f3fd]">
+
+
+      <Image
+  src="/outstandinglondon-logo.png" // ← Replace with your image path
+  alt="Top Left Decorative"
+  width={160} // Adjust size as needed
+  height={160}
+  className="absolute top-4 left-4 z-30"
+  priority
+/>
 <a
   href="https://nataholding.com/360/vega-center/" // ← Replace with your actual link
   target="_blank"

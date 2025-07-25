@@ -34,7 +34,7 @@ const slides = [
   },
   {
     title: "Dinamik iş hayatının gücü",
-    image: "/mega-dinamik.jpg",
+    image: "/mega Zengin Altyapı.jpg",
        popup: {
       title: "Modern yaşam ve iş dünyası için güçlü altyapı çözümleri.",
       text: "Kesintisiz enerji, hızlı internet ve ileri teknoloji olanaklarıyla donatılmış altyapı, hem yaşam hem de iş hayatında konfor ve süreklilik sağlar.",
@@ -50,15 +50,8 @@ const slides = [
       images: ["/mega Şehrin İçinde Huzurlu Yaşam Alanı (2).jpg", "/mega Şehrin İçinde Huzurlu Yaşam Alanı.jpg"]
     }
   },
-  {
-    title: "Zarif ve fonksiyonel çalışma alanı",
-    image: "/mega-zarif.jpg",
-    popup: {
-      title: "Şıklığı ve verimliliği bir araya getiren ofisler.",
-      text: "Mega 1453, modern tasarımıyla iş hayatınıza prestij katarken, fonksiyonel alanlarıyla çalışma verimliliğinizi artırır. İş dünyası için ideal bir ortam sunar.",
-      images: ["/mega Zarif ve fonksiyonel çalışma alanı (2).jpg", "/mega Zarif ve fonksiyonel çalışma alanı.jpg"]
-    }
-  },
+
+
   {
     title: "⁠Akıllı güvenlik ile kontrollü giriş",
     image: "/mega-akıllı.jpg",
@@ -72,8 +65,8 @@ const slides = [
     title: "Zengin Altyapı",
     image: "/mega-zengin.jpg",
     popup: {
-      title: "Modern yaşam ve iş dünyası için güçlü altyapı çözümleri.",
-      text: "Kesintisiz enerji, hızlı internet ve ileri teknoloji olanaklarıyla donatılmış altyapı, hem yaşam hem de iş hayatında konfor ve süreklilik sağlar.",
+      title: "Modern yaşam için güçlü altyapı çözümleri.",
+      text: "Kesintisiz enerji, hızlı internet ve ileri teknoloji olanaklarıyla donatılmış altyapı, hem yaşam hem de şehir hayatında konfor ve süreklilik sağlar.",
       images: ["/mega Zengin Altyapı (2).jpg", "/mega Zengin Altyapı.jpg"]
     }
   },
@@ -82,7 +75,7 @@ const slides = [
     image: "/mega-verimli.jpg",
     popup: {
       title: "Alan kullanımında maksimum konfor ve işlevsellik.",
-      text: "Kesintisiz enerji, hızlı internet ve ileri teknoloji olanaklarıyla donatılmış altyapı, hem yaşam hem de iş hayatında konfor ve süreklilik sağlar.İhtiyaca uygun tasarlanmış yaşam ve çalışma alanlarıyla, her metrekare akıllıca değerlendiriliyor. Fonksiyonel çözümlerle konfor ve verimlilik bir arada sunuluyor.",
+      text: "Kesintisiz enerji, hızlı internet ve ileri teknoloji olanaklarıyla donatılmış altyapı, hem yaşam hem de şehir hayatında konfor ve süreklilik sağlar.İhtiyaca uygun tasarlanmış yaşam ve çalışma alanlarıyla, her metrekare akıllıca değerlendiriliyor. Fonksiyonel çözümlerle konfor ve verimlilik bir arada sunuluyor.",
       images: ["/mega Verimli planlamalar (2).jpg", "/mega Verimli planlamalar.jpg"]
     }
   },

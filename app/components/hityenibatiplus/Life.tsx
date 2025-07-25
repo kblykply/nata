@@ -45,8 +45,8 @@ const slides = [
     title: "Kapalı Otopark",
     image: "/yenibatıplus/kapalıotopark.jpeg",
     popup: {
-      title: "Dört Mevsim Güvenli Park Alanı",
-      text: "Kapalı otopark sayesinde aracınızı olumsuz hava koşullarından korurken, 7/24 güvenlik sistemiyle birlikte huzurla park edebilirsiniz.",
+      title: "Dört Mevsim Güvenli Park İmkanı",
+      text: "Kapalı otopark ile aracınız her mevsim hava koşullarına karşı koruma altında; 7/24 aktif güvenlik sistemiyle de güvenle park edebilirsiniz.",
       images: ["/yenibatıplus/kapalıotopark1.jpeg", "/yenibatıplus/kapalıotopark2.jpeg"]
     }
   },

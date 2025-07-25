@@ -6,7 +6,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const slides = [
   {
-    title: "Ankara'nın Yeni İş ve Yaşam Merkezi",
+    title: "Ankara'nın Yeni Yaşam Merkezi",
     image: "/goatvillas-dergi.jpg",
     popup: {
       title: "Teknolojiyle Korunan Huzur",

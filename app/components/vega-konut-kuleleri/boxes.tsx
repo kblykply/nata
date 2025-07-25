@@ -40,7 +40,7 @@ const cards = [
     highlight: "5 dakika içinde",
     icon: "/vegacenter-canli-destek.png",
     subtitle: "Projesyonel Ekibimizle",
-        link: "https://api.whatsapp.com/send/?phone=905017111818&text=Merhaba%2C+projeleriniz+hakk%C4%B1nda+detayl%C4%B1+bilgi+almak+istiyorum.&type=phone_number&app_absent=0",
+link: "https://api.whatsapp.com/send/?phone=905017111818&text=Merhaba%2C+projeleriniz+hakk%C4%B1nda+detayl%C4%B1+bilgi+almak+istiyorum.&type=phone_number&app_absent=0",
 
   },
 ];

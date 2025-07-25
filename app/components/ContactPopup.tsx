@@ -184,7 +184,7 @@
               </div>
               <p className="font-medium">Mustafa Kemal Mah. 2127 Cad. No:21, Çankaya - ANKARA</p>
               <p className="text-black font-semibold">444 80 18</p>
-              <p className="text-gray-500">8:30 AM - 18:30 PM All Week</p>
+              <p className="text-gray-500">9:30 AM - 18:30 PM All Week</p>
             </div>
           </div>
         </div>

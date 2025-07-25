@@ -68,14 +68,6 @@
       titlePosition: 'top-30 left-6',
     },
     {
-      id: 13,
-      background: '/sliderplus/koru konfor/korukonforimage.jpg',
-      textColor: 'black',
-      logoImage: '/sliderson/logo.png',
-      logoPosition: 'top-30 left-6',
-      titleImage: '/yaşam/korukonfortext.png',
-      titlePosition: 'bottom-5 left-6',
-    }, {
       id: 14,
       background: '/sliderplus/goat/goatimage.jpg',
       textColor: 'black',

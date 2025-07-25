@@ -111,7 +111,7 @@ const handlePointerUp = () => {
   <br />Yaşamın kalbinde
       </h2>
       <p className="mt-4 text-sm text-gray-600 max-w-xl mx-auto">
-Yaşamın kalbinden kurumsal dünyaya açılan, boyutlandırılabilir 161 adet OFİS kompleksi, 1+1 ve 2+1 seçenekleri ile şıklığı ve konforu bir araya getiren KONUT konsepti ile VEGA CADDE'de tek bir noktada toplanıyor, başkente yeni bir soluk kazandırıyor.      </p>
+Yaşamın kalbinden kurumsal dünyaya açılan, boyutlandırılabilir 161 adet OFİS kompleksi, 1+1 ve 2+1 seçenekleri ile şıklığı ve konforu bir araya getiren AVM & OFİS & KONUT konsepti ile VEGA CADDE'de tek bir noktada toplanıyor, başkente yeni bir soluk kazandırıyor.      </p>
 
       <div className="relative mt-12 w-full max-w-7xl mx-auto h-[500px]">
       <div className="relative flex items-center justify-center h-full">
