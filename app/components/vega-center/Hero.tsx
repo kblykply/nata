@@ -10,16 +10,22 @@ export default function ProjectHeroCloudSection() {
   return (
     <section  className="relative w-full h-[90vh] md:h-[150vh] overflow-hidden bg-gradient-to-b from-[#006d9d] to-[#e6f3fd]">
   
- <Image
-  src="/outstandinglondon-logo.png"
-  alt="Top Left Decorative"
-  width={150}
-  height={150}
-  className="absolute z-30 
-             top-4 left-4 
-             md:bottom-auto md:left-4 md:top-4 
-             bottom-14 left-4 top-auto md:top-4"
-/>
+<div
+  className="absolute z-30
+             bottom-18 left-4 top-auto right-auto
+             md:top-4 md:left-4 md:bottom-auto md:right-auto
+             backdrop-blur-sm bg-white/30 rounded-xl p-2 w-fit h-fit"
+>
+  <Image
+    src="/outstandinglondon-logo.png"
+    alt="Top Left Decorative"
+    width={150}
+    height={150}
+    priority
+  />
+</div>
+
+
 <a
   href="https://nataholding.com/360/vega-center/" // ← Replace with your actual link
   target="_blank"
