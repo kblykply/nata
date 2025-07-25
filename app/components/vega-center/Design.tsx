@@ -16,6 +16,8 @@ export default function DesignSection() {
   const [isOpen, setIsOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
   const gallery = [
+    "/vegacentergörsel.jpg",
+
     "/vega-site.jpg",
     "/vega-center-02.jpg",
     "/vega-center-03.jpg",
@@ -61,15 +63,7 @@ export default function DesignSection() {
       ref={sectionRef}
       className="relative min-h-[100vh] py-20 px-4 sm:px-6 lg:px-12 flex flex-col lg:flex-row items-center justify-between gap-10 overflow-hidden bg-white"
     >
-      <Image
-  src="/your-black-logo.png"
-  alt="Logo"
-  width={60}
-  height={60}
-  className="absolute top-4 left-4 z-30 invert"
-  priority
-/>
-
+      
       <div className="max-w-screen-xl mx-auto w-full flex flex-col lg:flex-row items-center justify-between gap-10 relative z-10">
         {/* Left Text Content */}
         <div className="w-full max-w-xl z-25">
