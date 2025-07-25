@@ -112,6 +112,20 @@ export default function ProjectHeroCloudSection() {
     Ferah, Şık ve Kullanışlı
     </div>
   </Link>
+     <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
+    22 Katlı 
+    </div>
+         <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
+    11 mağaza ve sosyal tesis 
+    </div>
+       <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
+    16.000 m2
+    </div>
+      <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
+    12.000 m2 yeşil alan
+    </div>
+        <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
+CCTV sistemi    </div>
 </div>
 
 

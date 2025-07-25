@@ -32,15 +32,7 @@ const slides = [
       images: ["/mega Modern Yaşamın Yeni Merkezi (2).jpg", "/mega Modern Yaşamın Yeni Merkezi.jpg"]
     }
   },
-  {
-    title: "Dinamik iş hayatının gücü",
-    image: "/mega Zengin Altyapı.jpg",
-       popup: {
-      title: "Modern yaşam ve iş dünyası için güçlü altyapı çözümleri.",
-      text: "Kesintisiz enerji, hızlı internet ve ileri teknoloji olanaklarıyla donatılmış altyapı, hem yaşam hem de iş hayatında konfor ve süreklilik sağlar.",
-      images: ["/mega Zengin Altyapı (2).jpg", "/mega Zengin Altyapı.jpg"]
-    }
-  },
+ 
   {
     title: "Şehrin İçinde Huzurlu Yaşam Alanı",
     image: "/mega-sehir.jpg",
