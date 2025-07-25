@@ -12,7 +12,7 @@ export default function ProjectHeroCloudSection() {
   
 <div
   className="absolute z-30
-             bottom-18 left-4 top-auto right-auto
+             bottom-18   left-4 top-auto right-auto
              md:top-4 md:left-4 md:bottom-auto md:right-auto
              backdrop-blur-sm bg-white/30 rounded-xl p-2 w-fit h-fit"
 >
