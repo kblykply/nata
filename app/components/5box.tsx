@@ -48,7 +48,7 @@ const images = [
   "/nata_web_goat_villas.jpg",
   "/sehrin-merkezinde-hayatın-yeni-noktası.jpg",
   "/türkiyenin-en-prestijli-projeleri.jpg",
-  "/slideralt5.jpg",
+  "/millitakimafis.jpg",
 ];
 
 export default function InfoSection() {

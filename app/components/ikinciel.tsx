@@ -81,7 +81,7 @@ const listings: SimpleListing[] = [
       location: "Gölbaşı/Ankara",
       type: "Rezidans",
       specs: ["2+1", "90 m²", "Dubleks"],
-      image: "/siteplans/natura2+1dublex.png",
+      image: "/siteplans/naturaikiartibirdublex.png",
       imageAlt: "/natura-map.png",
       link: "/natura-21"
     },

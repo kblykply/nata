@@ -24,7 +24,7 @@ const issues = [
     number: 4,
     image: '/n-bulten-dort/0.jpg',
     href: '/n-bulten-4',
-    period: 'Ocak - Şubat - Mart 25',
+    period: 'Temmuz - Ağustos - Eylül 24',
   },
 ];
 

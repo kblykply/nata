@@ -1,14 +1,25 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  experimental: {
-  },
-    images: {
+  devIndicators: false, // 👈 Disable Dev Tools completely
+  experimental: {},
+  images: {
+    unoptimized: true, // 🔥 Disable image optimizer on Plesk
     remotePatterns: [
       {
-        protocol: 'https',  
+        protocol: 'https',
         hostname: 'res.cloudinary.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'www.salihkaankoc.net',
+        pathname: '/nata-core/**',
+      },
+      {
+        protocol: 'http',
+        hostname: 'www.salihkaankoc.net',
+        pathname: '/nata-core/**',
+      }
     ],
   },
   headers: async () => {
@@ -25,7 +36,5 @@ const nextConfig: NextConfig = {
     ];
   }
 };
-
-
 
 export default nextConfig;
