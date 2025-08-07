@@ -14,7 +14,7 @@ const QualitySection = () => {
       {/* Image */}
       <div className="w-full rounded-2xl overflow-hidden">
         <Image
-          src="/kalitegüven.png"
+          src="/hakkimizdabanneriki.png"
           alt="Kalite ve Güven"
           width={3000}
           height={500}

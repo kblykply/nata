@@ -7,7 +7,7 @@ const AboutSection = () => {
 <div className="px-6 md:px-30 py-10">
   <div className="relative w-full h-64 rounded-2xl overflow-hidden">
     <Image
-      src="/natayasamhakkinda.png"
+      src="/hakkimizdabanner.png"
       alt="About NATA Yaşam"
       layout="fill"
       objectFit="cover"

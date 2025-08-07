@@ -44,7 +44,7 @@ const listings: SimpleListing[] = [
       location: "Gölbaşı/Ankara",
       type: "Residans",
       specs: ["2+1", "90 m²", "Fransız Balkon"],
-      image: "/siteplans/natura2+1.png",
+      image: "/siteplans/naturaikiartibir.png",
       imageAlt: "/natura-map.png",
       link: "/natura-20"
     },
@@ -56,7 +56,7 @@ const listings: SimpleListing[] = [
       location: "Çankaya/Ankara",
       type: "Rezidans",
       specs: ["2+1", "117 m²", "31. Kat"],
-      image: "/siteplans/primeoran2+1.png",
+      image: "/siteplans/primeoranikiartibir.png",
       imageAlt: "/prime-map.png",
       link: "/prime-oran-21"
     },
@@ -96,7 +96,7 @@ const listings: SimpleListing[] = [
       location: "Çankaya/Ankara",
       type: "Rezidans",
       specs: ["3+1", "144 m²", "TIP B8"],
-      image: "/siteplans/primeoran3+1.png",
+      image: "/siteplans/primeoranucartibir.png",
       imageAlt: "/prime-map.png",
       link: "/prime-oran-20"
     }

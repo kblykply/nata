@@ -9,7 +9,7 @@ const ApproachSection = () => {
           {/* Overlapping Images */}
           <div className="rounded-xl overflow-hidden w-fit">
   <Image 
-    src="/road.png"   // This is your image showing both visuals
+    src="/hakkimizdakutuiki.png"   // This is your image showing both visuals
     alt="Prestijli Projeler"
     width={800}
     height={300}
@@ -19,7 +19,7 @@ const ApproachSection = () => {
 
           {/* Bottom Image */}
           <div className="w-full rounded-xl overflow-hidden">
-            <Image src="/dal.png" alt="Nature" width={600} height={300} objectFit="cover" />
+            <Image src="/hakkimizdaphoto.png" alt="Nature" width={600} height={300} objectFit="cover" />
           </div>
         </div>
 

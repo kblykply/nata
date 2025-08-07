@@ -3,6 +3,7 @@ import Hero from "../components/about-us/Hero"; // Ensure Hero is in components 
 import Content  from "../components/about-us/Content"; // Ensure Hero is in components folder
 import Kalite  from "../components/about-us/Kalite"; // Ensure Hero is in components folder
 import Points  from "../components/about-us/Points"; // Ensure Hero is in components folder
+import Gallery from "../components/about-us/Gallery"; // Ensure Hero is in components folder
 
 
 

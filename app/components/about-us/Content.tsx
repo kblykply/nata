@@ -14,7 +14,7 @@ const AboutContentSection = () => {
           </h2>
           <div className="w-full max-w-md rounded-2xl overflow-hidden ">
             <Image
-              src="/homesdesign.png"   // Single image here
+              src="/hakkimizdakutu.png"   // Single image here
               alt="Modern Living Space"
               width={600}
               height={400}
