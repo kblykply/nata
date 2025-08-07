@@ -33,14 +33,14 @@ interface Listing {
 }
 
 	  const allListings: Listing[] = [
-    // İkinci El Listings (IDs 1–8)
-     {
+    // İkinci El Listings (IDs 1–8) 
+    {
        id: "1",
       title: "Koru Konfor",
       price: "Etimesgut'ta Villa",
       currency: " ",
       location: "Etimesgut/Ankara",
-      type: "Villa",
+      type: "standard",
       specs: ["Villa", "350 m²", "3 Katlı"],
       image: "/korubirincikat.jpg",
       imageAlt: "/koru-map.png",
@@ -53,7 +53,7 @@ interface Listing {
       price: "Ankara Gölbaşı'nda 2+1 Daire",
       currency: "",
       location: "Gölbaşı/Ankara",
-      type: "Residans",
+      type: "standard",
       specs: ["2+1", "90 m²", "Fransız Balkon"],
       image: "/siteplans/naturaikiartibir.png",
       imageAlt: "/natura-map.png",
@@ -65,7 +65,7 @@ interface Listing {
       price: "Çankaya'da 2+1 Daire",
       currency: "",
       location: "Çankaya/Ankara",
-      type: "Rezidans",
+      type: "standard",
       specs: ["2+1", "117 m²", "31. Kat"],
       image: "/siteplans/primeoranikiartibir.png",
       imageAlt: "/prime-map.png",
@@ -77,7 +77,7 @@ interface Listing {
       price: "Etimesgut'ta Villa",
       currency: " ",
       location: "Etimesgut/Ankara",
-      type: "Villa",
+      type: "standard",
       specs: ["Villa", "350 m²", "3 Katlı"],
       image: "/korubirincikat.jpg",
       imageAlt: "/koru-map.png",
@@ -90,7 +90,7 @@ interface Listing {
       price: "Gölbaşı'nda 2+1 Daire",
       currency: "",
       location: "Gölbaşı/Ankara",
-      type: "Rezidans",
+      type: "standard",
       specs: ["2+1", "90 m²", "Dubleks"],
       image: "/siteplans/naturaikiartibirdublex.png",
       imageAlt: "/natura-map.png",
@@ -105,7 +105,7 @@ interface Listing {
       price: "Çankaya'da 3+1 Daire",
       currency: "",
       location: "Çankaya/Ankara",
-      type: "Rezidans",
+      type: "standard",
       specs: ["3+1", "144 m²", "TIP B8"],
       image: "/siteplans/primeoranucartibir.png",
       imageAlt: "/prime-map.png",
