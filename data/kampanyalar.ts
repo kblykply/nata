@@ -37,8 +37,8 @@
   title: "Paylaştıkça",
   highlight: "Kazanırsın",
   description: "",
-  bg: "/kampanya/2.png",
-  image: "/kampanya/icons/2.png",
+  bg: "/chartsredtwo.png",
+  image: "/chartsredtwo.png",
   firstOne: "NATA Yaşam deneyimini sevdiklerinle paylaşarak hem onların güvenli bir yaşama adım atmasını sağla hem de sen kazançlı çık.",
   content: [
     {

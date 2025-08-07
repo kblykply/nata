@@ -197,7 +197,7 @@
 
             <div
               className="rounded-xl bg-no-repeat bg-cover bg-center shadow-md h-[120px] mt-4 px-6 py-4 flex items-start w-full"
-              style={{ backgroundImage: "url('/natakalp.png')" }}
+              style={{ backgroundImage: "url('/chartsredone.png')" }}
             >
               <div className="text-sm leading-tight">
                 <p className="text-black font-medium">Paylaştıkça</p>
