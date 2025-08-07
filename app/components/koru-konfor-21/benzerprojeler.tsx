@@ -10,7 +10,7 @@ import { useState } from "react";
 const listings = [
 
   
-  {
+   {
        id: "1",
       title: "Koru Konfor",
       price: "Etimesgut'ta Villa",
@@ -35,9 +35,7 @@ const listings = [
       imageAlt: "/koru-map.png",
       link: "/koru-konfor-21"
     },
-
    
-    
 ];
 
 export default function KoruKonforListings() {
