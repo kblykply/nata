@@ -7,28 +7,56 @@ interface DemandPopupProps {
   selectedProject: string;
 }
 
+export default function DemandPopup({ onClose, projects, selectedProject }: DemandPopupProps) {
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    project: selectedProject,
+    message: "",
+    email: "salihkaaankoc@gmail.com", // Default static email (you can make this dynamic if needed)
+  });
 
-export default function DemandPopup({ onClose, projects, selectedProject }: DemandPopupProps) {const [formData, setFormData] = useState({
-  name: "",
-  phone: "",
-  project: selectedProject,
-  message: "",
-});
-
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    onClose();
+
+    const payload = {
+      name: formData.name,
+      phone: formData.phone,
+      project_name: formData.project,
+      message: formData.message,
+      email: formData.email,
+    };
+
+    try {
+      const response = await fetch("https://www.salihkaankoc.net/nata-core/form-data", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error("Form submission failed");
+      }
+
+      console.log("Form submitted:", payload);
+      onClose();
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert("Form gönderilirken bir hata oluştu. Lütfen tekrar deneyin.");
+    }
   };
 
   return (
-<div className="fixed inset-0 bg-black/30 flex items-center justify-center z-50">
-                  <div className="bg-white rounded-xl p-6 max-w-md w-full relative shadow-lg">
+    <div className="fixed inset-0 bg-black/30 flex items-center justify-center z-50">
+      <div className="bg-white rounded-xl p-6 max-w-md w-full relative shadow-lg">
         <button
           onClick={onClose}
           className="absolute top-2 right-3 text-xl font-bold text-gray-500 hover:text-gray-700"
