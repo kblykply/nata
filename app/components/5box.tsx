@@ -32,12 +32,7 @@ const popupContent = [
   },
   {
     title: "Hayallerimiz Ortak: Bu Forma, Hepimizin Umudu!",
-    text: `Küçük bir çocuğun odasında başlayan büyük bir hayalin sembolü: Ay-yıldızlı forma. Nata Holding olarak, sporun birleştirici gücüne inanıyor ve çocukların hayallerine ortak oluyoruz. Milli Takımımıza destek verirken, geleceğin yıldızlarına da ilham veriyoruz. Katılacağın çekilişle 1 kişiye imzalı forma,5 kişiye normal forma ve 10 maç bileti (Türkiye - Gürcistan / Türkiye - Bulgaristan) hediye ediyoruz!
-
-• Hayalin kıyısında bir forma
-• Çekilişe katıl, kazanma şansını yakala
-• Bu sadece bir hediye değil, bir umut!
-• Bu Forma Hepimizin Hayali
+    text: `Küçük bir çocuğun odasında başlayan büyük bir hayalin sembolü: Ay-yıldızlı forma. Nata Holding olarak, sporun birleştirici gücüne inanıyor ve çocukların hayallerine ortak oluyoruz. Milli Takımımıza destek verirken, geleceğin yıldızlarına da ilham veriyoruz. 
 
 #AyYıldızİzinİzde`
   }
@@ -48,7 +43,7 @@ const images = [
   "/nata_web_goat_villas.jpg",
   "/sehrin-merkezinde-hayatın-yeni-noktası.jpg",
   "/türkiyenin-en-prestijli-projeleri.jpg",
-  "/millitakimafis.jpg",
+  "/millitakimafis.jpg  ",
 ];
 
 export default function InfoSection() {
