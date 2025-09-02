@@ -215,15 +215,76 @@ const places  = [
     coords: [39.8210, 32.7715],
     name: "BİM İncek",
     description: "2 dk, 300 metre"
+  },
+    {
+    id: 2001,
+    category: "malls",
+    coords: [39.847863, 32.832094],
+    name: "Panora AVM",
+    description: "8 dk, 6.0 km"
+  },
+  {
+    id: 2002,
+    category: "ministries",
+    coords: [39.845280, 32.786110],
+    name: "Yargıtay",
+    description: "5 dk, 3.5 km"
+  },
+  {
+    id: 2003,
+    category: "parks",
+    coords: [39.842240, 32.787130],
+    name: "Türkiye Golf Federasyonu (Ahlatlıbel)",
+    description: "5 dk, 3.0 km"
+  },
+  {
+    id: 2004,
+    category: "schools",
+    coords: [39.835900, 32.785500], // Ufuk Üniversitesi İncek Kampüsü
+    name: "Ufuk Üniversitesi (İncek Kampüsü)",
+    description: "4 dk, 2.0 km"
+  },
+  {
+    id: 2005,
+    category: "parks",
+    coords: [39.891388, 32.784721], // ODTÜ Ormanı (north edge)
+    name: "ODTÜ Ormanı",
+    description: "10 dk, 7.0 km"
+  },
+  {
+    id: 2006,
+    category: "schools",
+    coords: [39.835300, 32.776800], // TED Ankara Koleji İncek
+    name: "TED Ankara Koleji",
+    description: "3 dk, 1.8 km"
+  },
+  {
+    id: 2007,
+    category: "all",
+    coords: [39.829800, 32.760500], // O-20 Ankara–Adana Otoyolu (closest junction)
+    name: "Ankara–Adana Otoyolu",
+    description: "2 dk, 1.2 km"
+  },
+  {
+    id: 2008,
+    category: "business",
+    coords: [39.828700, 32.784200], // Jandarma Okullar Komutanlığı
+    name: "Jandarma Okullar Komutanlığı",
+    description: "5 dk, 2.5 km"
   }
 ];
 
 const categories = [
-  { id: "all", name: "Tümü", pin: "/pin.png" },
+   { id: "all", name: "Tümü", pin: "/pin.png" },
   { id: "malls", name: "AVM'ler", pin: "/mall.png" },
   { id: "schools", name: "Okullar", pin: "/scool.png" },
   { id: "hospitals", name: "Hastaneler", pin: "/hospital.png" },
   { id: "markets", name: "Marketler", pin: "/shop.png" },
+  { id: "hotels", name: "Oteller", pin: "/ikonlar-lokasyon/otel.png" },
+  { id: "mosques", name: "Camii", pin: "/ikonlar-lokasyon/cami.png" },
+  { id: "ministries", name: "Bakanlıklar / Kurumlar", pin: "/ikonlar-lokasyon/kurumlar.png" },
+  { id: "business", name: "İş Merkezleri", pin: "/ikonlar-lokasyon/ismerkezi.png" },
+  { id: "parks", name: "Parklar", pin: "/ikonlar-lokasyon/park.png" },  
 ].map((cat) => ({
   ...cat,
   count: cat.id === "all" ? places.length : places.filter(p => p.category === cat.id).length,

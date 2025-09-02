@@ -215,15 +215,76 @@ const places  = [
     coords: [39.8935, 32.9370],
     name: "BİM Mamak Şubesi",
     description: "4 dk, 350 metre"
+  },
+   {
+    id: 3001,
+    category: "markets",
+    coords: [39.89264, 32.93411], // IKEA Ankara (Nata Vega AVM içi)
+    name: "İKEA Ankara",
+    description: "1 dk, 0.2 km"
+  },
+  {
+    id: 3002,
+    category: "parks",
+    coords: [39.89210, 32.93450], // Aqua Vega Aquarium (Nata Vega AVM içi)
+    name: "Aqua Vega Akvaryum",
+    description: "1 dk, 0.2 km"
+  },
+  {
+    id: 3003,
+    category: "schools",
+    coords: [39.88840, 32.94920], // Yükselen Koleji Mamak Kampüsü
+    name: "Yükselen Koleji",
+    description: "5 dk, 2.0 km"
+  },
+  {
+    id: 3004,
+    category: "hospitals",
+    coords: [39.92320, 32.88260], // Mamak Devlet Hastanesi
+    name: "Mamak Devlet Hastanesi",
+    description: "12 dk, 6.5 km"
+  },
+  {
+    id: 3005,
+    category: "parks",
+    coords: [39.98990, 33.01270], // Mavi Göl (Bayındır Barajı)
+    name: "Mavi Göl",
+    description: "25 dk, 15 km"
+  },
+  {
+    id: 3006,
+    category: "all", // cadde
+    coords: [39.89650, 32.95300], // Doğukent Caddesi (Mamak merkez)
+    name: "Doğukent Caddesi",
+    description: "6 dk, 3.0 km"
+  },
+  {
+    id: 3007,
+    category: "all", // çevre yolu
+    coords: [39.87450, 32.97000], // Ankara Çevre Yolu (O-20 yakın kavşak)
+    name: "Ankara Çevre Yolu",
+    description: "10 dk, 5.0 km"
+  },
+  {
+    id: 3008,
+    category: "schools",
+    coords: [39.88720, 32.94400], // Genetik Koleji Mamak
+    name: "Genetik Koleji",
+    description: "5 dk, 1.8 km"
   }
 ];
 
 const categories = [
-  { id: "all", name: "Tümü", pin: "/pin.png" },
+ { id: "all", name: "Tümü", pin: "/pin.png" },
   { id: "malls", name: "AVM'ler", pin: "/mall.png" },
   { id: "schools", name: "Okullar", pin: "/scool.png" },
   { id: "hospitals", name: "Hastaneler", pin: "/hospital.png" },
   { id: "markets", name: "Marketler", pin: "/shop.png" },
+  { id: "hotels", name: "Oteller", pin: "/ikonlar-lokasyon/otel.png" },
+  { id: "mosques", name: "Camii", pin: "/ikonlar-lokasyon/cami.png" },
+  { id: "ministries", name: "Bakanlıklar / Kurumlar", pin: "/ikonlar-lokasyon/kurumlar.png" },
+  { id: "business", name: "İş Merkezleri", pin: "/ikonlar-lokasyon/ismerkezi.png" },
+  { id: "parks", name: "Parklar", pin: "/ikonlar-lokasyon/park.png" },  
 ].map((cat) => ({
   ...cat,
   count: cat.id === "all" ? places.length : places.filter(p => p.category === cat.id).length,

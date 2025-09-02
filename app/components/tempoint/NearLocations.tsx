@@ -208,13 +208,53 @@ const places  = [
     name: "Erenköy Sosyete Pazarı",
     description: "34 dk, 13.9 km"
   }
+  ,{
+    id: 1001,
+    category: "hospitals",
+    coords: [41.0890, 28.9010],
+    name: "Gaziosmanpaşa Eğitim ve Araştırma Hastanesi",
+    description: "1 dk, 0.4 km"
+  },
+  {
+    id: 1002,
+    category: "parks",
+    coords: [41.09071, 28.91319],
+    name: "Gaziosmanpaşa Gençlik Parkı",
+    description: "3 dk, 0.9 km"
+  },
+  {
+    id: 1003,
+    category: "malls",
+    coords: [41.09284, 28.90350],
+    name: "VEGA İstanbul AVM",
+    description: "1 dk, 0.05 km"
+  },
+  {
+    id: 1004,
+    category: "all", // theme park—no perfect category
+    coords: [41.070317, 28.922099],
+    name: "Vialand Tema Park",
+    description: "6 dk, 2.8 km"
+  },
+  {
+    id: 1005,
+    category: "business", // metro station—closest public transport category
+    coords: [41.08494, 28.90978],
+    name: "Kazım Karabekir Metro İstasyonu",
+    description: "3 dk, 1.0 km"
+  }
 ];
 const categories = [
-  { id: "all", name: "Tümü", pin: "/pin.png" },
+ { id: "all", name: "Tümü", pin: "/pin.png" },
   { id: "malls", name: "AVM'ler", pin: "/mall.png" },
   { id: "schools", name: "Okullar", pin: "/scool.png" },
   { id: "hospitals", name: "Hastaneler", pin: "/hospital.png" },
   { id: "markets", name: "Marketler", pin: "/shop.png" },
+  { id: "hotels", name: "Oteller", pin: "/ikonlar-lokasyon/otel.png" },
+  { id: "mosques", name: "Camii", pin: "/ikonlar-lokasyon/cami.png" },
+  { id: "ministries", name: "Bakanlıklar / Kurumlar", pin: "/ikonlar-lokasyon/kurumlar.png" },
+  { id: "business", name: "İş Merkezleri", pin: "/ikonlar-lokasyon/ismerkezi.png" },
+  { id: "parks", name: "Parklar", pin: "/ikonlar-lokasyon/park.png" },  
 ].map((cat) => ({
   ...cat,
   count: cat.id === "all" ? places.length : places.filter(p => p.category === cat.id).length,

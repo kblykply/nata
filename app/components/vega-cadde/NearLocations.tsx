@@ -93,6 +93,7 @@ import {
     url: "https://www.vegaavmyalova.com/", // fallback IG
     size: [70, 70],
   },
+  
 ];
 
 const places  = [
@@ -207,7 +208,56 @@ const places  = [
     coords: [39.9500649, 32.7702425],
     name: "TİMKO",
     description: "63 dk, 4.7 km"
-  }
+  },
+  {
+  id: 901,
+  category: "ministries", // boulevard: no exact bucket → per your rule use "all"
+  coords: [39.954080, 32.697086],
+  name: "FATİH SULTAN MEHMET BULVARI",
+  description: "4 dk, 1.8 km"
+},
+{
+  id: 902,
+  category: "ministries", // boulevard: no exact bucket → "all"
+  coords: [39.934731, 32.712955],
+  name: "ŞAŞMAZ BULVARI",
+  description: "3 dk, 1.3 km"
+},
+{
+  id: 903,
+  category: "hospitals",
+  coords: [39.950424, 32.715717],
+  name: "ÖZEL BİLGİ HASTANESİ",
+  description: "1 dk, 0.5 km"
+},
+{
+  id: 904,
+  category: "malls",
+  coords: [39.9463264, 32.7595615],
+  name: "ACİTY AVM",
+  description: "8 dk, 3.8 km"
+},
+{
+  id: 905,
+  category: "ministries",
+  coords: [39.955000, 32.701000], // AFAD on FSM Blv. No:290 (approx. point on the complex)
+  name: "Ankara Valiliği İl Afet ve Acil Durum Müdürlüğü",
+  description: "3 dk, 1.6 km"
+},
+{
+  id: 906,
+  category: "hotels",
+  coords: [39.959580, 32.771580],
+  name: "Hilton Garden Inn Ankara Gimat",
+  description: "11 dk, 5.0 km"
+},
+{
+  id: 907,
+  category: "markets",
+  coords: [39.945910, 32.715490], // in Vega Cadde
+  name: "STARBUCKS DRIVE THRU (Vega Cadde)",
+  description: "0 dk, 0.0 km"
+}
 ];
 
 const categories = [
@@ -216,6 +266,11 @@ const categories = [
   { id: "schools", name: "Okullar", pin: "/scool.png" },
   { id: "hospitals", name: "Hastaneler", pin: "/hospital.png" },
   { id: "markets", name: "Marketler", pin: "/shop.png" },
+  { id: "hotels", name: "Oteller", pin: "/ikonlar-lokasyon/otel.png" },
+  { id: "mosques", name: "Camii", pin: "/ikonlar-lokasyon/cami.png" },
+  { id: "ministries", name: "Bakanlıklar / Kurumlar", pin: "/ikonlar-lokasyon/kurumlar.png" },
+  { id: "business", name: "İş Merkezleri", pin: "/ikonlar-lokasyon/ismerkezi.png" },
+  { id: "parks", name: "Parklar", pin: "/ikonlar-lokasyon/park.png" },  
 ].map((cat) => ({
   ...cat,
   count: cat.id === "all" ? places.length : places.filter(p => p.category === cat.id).length,
