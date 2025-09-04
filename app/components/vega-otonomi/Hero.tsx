@@ -82,7 +82,7 @@ export default function ProjectHeroCloudSection() {
  
   <Link href="#near-locations">
     <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm cursor-pointer">
-      <FaMapMarkerAlt /> Ankara – Yenimahalle
+      <FaMapMarkerAlt /> Ankara – Sincan
     </div>
   </Link>
 
