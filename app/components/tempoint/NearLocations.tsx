@@ -576,24 +576,23 @@ const getCategoryPinUrl = (categoryId: string): string =>
 
 
 
-  <motion.section
-          key="altyapi"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: 50 }}
-          transition={{ duration: 0.4 }}
-          className="flex items-center justify-center flex-1 bg-white text-center p-0"
-        >
-          <div className="overflow-x-auto md:overflow-visible">
-            <div className="w-[200%] md:w-auto"> {/* Zoomed width for mobile */}
-              <img
-                src="/alt/tempoint.jpg"
-                alt="Altyapı Görseli"
-                className="mx-auto rounded w-full"
-              />
-            </div>
-          </div>
-        </motion.section>
+<motion.section
+  key="altyapi"
+  initial={{ opacity: 0, x: -50 }}
+  animate={{ opacity: 1, x: 0 }}
+  exit={{ opacity: 0, x: 50 }}
+  transition={{ duration: 0.4 }}
+  className="flex items-center justify-center bg-white text-center p-0 min-h-[40svh]" 
+>
+  <div className="w-full">
+    <img
+      src="/altyapirevize/tempoint.jpg"
+      alt="Altyapı Görseli"
+      className="mx-auto rounded max-h-[90svh] w-auto object-contain block"
+    />
+  </div>
+</motion.section>
+
 
 
         )}

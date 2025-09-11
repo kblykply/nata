@@ -95,7 +95,7 @@ interface NewProjectsProps {
  <div onClick={onClose}>
   <Link href="/#aktif-projeler" scroll={true}>
     <p className="text-sm text-gray-700 hover:underline cursor-pointer">Aktif Satışta Olan Projeler
-      <sup className="text-red-600 text-xs ml-1">8</sup>
+      <sup className="text-red-600 text-xs ml-1">9</sup>
 
     </p>
   </Link>
@@ -104,7 +104,7 @@ interface NewProjectsProps {
 
 <Link href="/#yakinda-projeler" scroll={true}>
   <p className="text-sm text-gray-700 hover:underline cursor-pointer">Çok Yakında Satışta
-          <sup className="text-red-600 text-xs ml-1">2</sup>
+          <sup className="text-red-600 text-xs ml-1">4</sup>
 
   </p>
   

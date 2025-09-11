@@ -79,7 +79,7 @@ export default function ProjectHeroCloudSection() {
 <div className="flex flex-wrap justify-center gap-3 max-w-xl mx-auto mt-6 font-semibold z-10">
   <Link href="/anteres#contact">
     <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm cursor-pointer">
-      500+ Konut ve Ticari Alan
+      840 Konut & Ticari Alan & AVM
     </div>
   </Link>
 
