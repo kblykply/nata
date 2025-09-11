@@ -140,7 +140,7 @@ interface NewProjectsProps {
           {/* Right: Project Image */}
           <div className="relative w-200  rounded-xl overflow-hidden">
           <Image
-  src="/nata-yeni-projeler-2.png"
+  src="/natayeniiki.png"
   alt="Vega Center"
   width={10000}
   height={1000}

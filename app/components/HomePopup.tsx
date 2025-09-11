@@ -20,8 +20,9 @@ export default function HomePopup() {
 
   // Slides
   const SLIDES: Slide[] = [
-    { src: "/nata-tr-popup.jpg", alt: "Kampanya - TR" },
     { src: "/natayasamkampanya.jpg", alt: "Campaign - EN" },
+        { src: "/nata-tr-popup.jpg", alt: "Kampanya - TR" },
+
   ];
 
   // Aspect ratios (height / width) per slide; filled after preload
