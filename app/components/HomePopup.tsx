@@ -92,7 +92,7 @@ export default function HomePopup() {
     return () => window.removeEventListener("resize", measure);
   }, [index]);
 
-  // Auto-slide (no dragging involved)
+  // Auto-slide (no dragging)
   useEffect(() => {
     if (intervalRef.current) {
       window.clearInterval(intervalRef.current);
@@ -111,7 +111,7 @@ export default function HomePopup() {
         intervalRef.current = null;
       }
     };
-  }, [showPopup, paused, index, SLIDES.length]);
+  }, [showPopup, paused, index]);
 
   // Close on Esc
   useEffect(() => {
@@ -152,7 +152,7 @@ export default function HomePopup() {
     <>
       {showPopup && (
         <div
-          className="fixed inset-0 z-5000 bg-black/50 backdrop-blur-sm flex items-center justify-center"
+          className="fixed inset-0 z-[5000] bg-black/50 backdrop-blur-sm flex items-center justify-center"
           onClick={handleClose}
           role="dialog"
           aria-modal="true"
@@ -179,7 +179,7 @@ export default function HomePopup() {
               className="relative w-full overflow-hidden transition-[height] duration-300 ease-out bg-black/5"
               style={{ height: targetH }}
             >
-              {/* Track: no drag handlers, no explicit width */}
+              {/* Track */}
               <div
                 ref={trackRef}
                 className="flex h-full cursor-default touch-pan-y will-change-transform"
@@ -194,15 +194,10 @@ export default function HomePopup() {
                       alt={s.alt}
                       fill
                       sizes="(max-width: 560px) 90vw, 560px"
-                      className="object-contain pointer-events-none select-none bg-white"
+                      className="object-contain pointer-events-none select-none no-drag bg-white"
                       draggable={false}
                       onDragStart={(e) => e.preventDefault()}
                       priority={i === 0}
-                      style={{
-                        WebkitUserDrag: "none",
-                        WebkitTouchCallout: "none",
-                        userSelect: "none",
-                      }}
                     />
                   </div>
                 ))}
