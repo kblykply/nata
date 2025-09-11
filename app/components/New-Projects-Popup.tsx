@@ -136,20 +136,16 @@ interface NewProjectsProps {
 
 </div>
 
+<div className="relative w-full max-w-4xl rounded-xl overflow-hidden">
+  <Image
+    src="/natayeniiki.png"
+    alt="Vega Center"
+    width={1200}   // set a normal width
+    height={800}   // keep ratio close to the real image
+    className="object-contain w-full h-auto"
+  />
+</div>
 
-          {/* Right: Project Image */}
-          <div className="relative w-200  rounded-xl overflow-hidden">
-          <Image
-  src="/natayeniiki.png"
-  alt="Vega Center"
-  width={10000}
-  height={1000}
-  className="object-none"
-/>
-        
-
-        
-          </div>
         </div>
       </div>
     </>
