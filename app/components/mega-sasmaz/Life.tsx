@@ -110,8 +110,7 @@ const handlePointerUp = () => {
         YAŞAM RİTİMİNİZ <br /> MEGA ŞAŞMAZ'DA 
       </h2>
       <p className="mt-4 text-sm text-gray-600 max-w-xl mx-auto">
-      Ankara Şaşmaz'da 700 bağımsız bölümden oluşan, 2 bodrum katı, alt zemin kat, üst zemin kat ve 7 ofis katı ile geniş depolama hacimlerine sahip MEGA Şaşmaz, toplam 160.000 m2 kapalı alana sahiptir. 
-      </p>
+Ankara Şaşmaz'da 700 bağımsız bölümden oluşan, fonksiyonel dükkanlar, mağazalar, ofisler ile geniş depolama alanlarına sahip MEGA Şaşmaz, toplam 200.000 m2 kullanım alanına sahiptir.      </p>
 
       <div className="relative mt-12 w-full max-w-7xl mx-auto h-[500px]">
           <div className="relative flex items-center justify-center h-full">

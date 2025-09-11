@@ -97,7 +97,7 @@ Metroya 14 dk uzaklıkta
 
   <Link href="#contact">
     <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
-  Hemen Teslim 
+  Hemen Teslim  
     </div>
   </Link>
 
