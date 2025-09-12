@@ -104,7 +104,7 @@ export default function HomePopup() {
     if (!paused) {
       intervalRef.current = window.setInterval(() => {
         setIndex((i) => (i + 1) % SLIDES.length);
-      }, 3000);
+      }, 8000);
     }
     return () => {
       if (intervalRef.current) {
