@@ -10,6 +10,7 @@ export default function HomePopup() {
   const [showPopup, setShowPopup] = useState(false);
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [dragging, setDragging] = useState(false);
 
   // Refs
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -18,11 +19,17 @@ export default function HomePopup() {
   const intervalRef = useRef<number | null>(null);
   const originalOverflowRef = useRef<string>("");
 
+  // Drag state
+  const dragStartXRef = useRef(0);
+  const dragLastXRef = useRef(0);
+  const dragStartTimeRef = useRef(0);
+  const dragDeltaRef = useRef(0);
+  const baseXRef = useRef(0); // base translate at gesture start
+
   // Slides
   const SLIDES: Slide[] = [
     { src: "/natayasamkampanya.jpg", alt: "Campaign - EN" },
-        { src: "/nata-tr-popup.jpg", alt: "Kampanya - TR" },
-
+    { src: "/nata-tr-popup.jpg", alt: "Kampanya - TR" },
   ];
 
   // Aspect ratios (height / width) per slide; filled after preload
@@ -87,13 +94,14 @@ export default function HomePopup() {
       const base = -index * widthRef.current;
       trackRef.current.style.transition = "none";
       trackRef.current.style.transform = `translate3d(${Math.round(base)}px,0,0)`;
+      baseXRef.current = base;
     };
     measure();
     window.addEventListener("resize", measure);
     return () => window.removeEventListener("resize", measure);
   }, [index]);
 
-  // Auto-slide (no dragging)
+  // Auto-slide
   useEffect(() => {
     if (intervalRef.current) {
       window.clearInterval(intervalRef.current);
@@ -101,10 +109,11 @@ export default function HomePopup() {
     }
     if (!showPopup) return;
 
-    if (!paused) {
+    // don't autoplay while dragging or paused (hover)
+    if (!paused && !dragging) {
       intervalRef.current = window.setInterval(() => {
         setIndex((i) => (i + 1) % SLIDES.length);
-      }, 8000);
+      }, 10000);
     }
     return () => {
       if (intervalRef.current) {
@@ -112,26 +121,111 @@ export default function HomePopup() {
         intervalRef.current = null;
       }
     };
-  }, [showPopup, paused, index]);
+  }, [showPopup, paused, dragging]);
 
   // Close on Esc
   useEffect(() => {
     if (!showPopup) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setShowPopup(false);
+      if (e.key === "ArrowRight") goTo(index + 1);
+      if (e.key === "ArrowLeft") goTo(index - 1);
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [showPopup]);
+  }, [showPopup, index]);
 
-  // Sync when index changes
+  // Sync when index changes (programmatic changes)
   useEffect(() => {
     if (!trackRef.current) return;
     const width = widthRef.current || containerRef.current?.offsetWidth || 0;
     const base = -index * width;
-    trackRef.current.style.transform = `translate3d(${Math.round(base)}px,0,0)`;
     trackRef.current.style.transition = "transform 400ms ease-out";
+    trackRef.current.style.transform = `translate3d(${Math.round(base)}px,0,0)`;
+    baseXRef.current = base;
   }, [index]);
+
+  const goTo = (i: number) => {
+    const next = (i + SLIDES.length) % SLIDES.length;
+    setIndex(next);
+  };
+
+  // ----- Drag handlers (Pointer Events) -----
+  const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (!trackRef.current || !containerRef.current) return;
+    setPaused(true); // pause while interacting
+    setDragging(true);
+
+    // capture pointer to keep receiving move/up outside element
+    (e.currentTarget as HTMLDivElement).setPointerCapture(e.pointerId);
+
+    dragStartXRef.current = e.clientX;
+    dragLastXRef.current = e.clientX;
+    dragStartTimeRef.current = performance.now();
+    dragDeltaRef.current = 0;
+
+    widthRef.current = containerRef.current.offsetWidth || 0;
+    const base = -index * widthRef.current;
+    baseXRef.current = base;
+
+    trackRef.current.style.transition = "none";
+  };
+
+  const onPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (!dragging || !trackRef.current) return;
+    const dx = e.clientX - dragStartXRef.current;
+    dragDeltaRef.current = dx;
+    dragLastXRef.current = e.clientX;
+
+    // Add small resistance at edges
+    const w = widthRef.current || 1;
+    const atFirst = index === 0;
+    const atLast = index === SLIDES.length - 1;
+    let offset = dx;
+
+    if ((atFirst && dx > 0) || (atLast && dx < 0)) {
+      const sign = dx > 0 ? 1 : -1;
+      offset = sign * (Math.abs(dx) ** 0.85); // gentle rubberband
+    }
+
+    const x = baseXRef.current + offset;
+    trackRef.current.style.transform = `translate3d(${Math.round(x)}px,0,0)`;
+  };
+
+  const onPointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (!dragging || !trackRef.current) return;
+    setDragging(false);
+    setPaused(false);
+
+    // release pointer
+    try {
+      (e.currentTarget as HTMLDivElement).releasePointerCapture(e.pointerId);
+    } catch {
+      /* nop */
+    }
+
+    const w = widthRef.current || containerRef.current?.offsetWidth || 1;
+    const dx = dragDeltaRef.current;
+    const dt = Math.max(1, performance.now() - dragStartTimeRef.current);
+    const vx = dx / dt; // px per ms
+
+    const THRESHOLD = Math.min(0.18 * w, 240); // distance threshold
+    const FLICK_VELOCITY = 0.6 / 1000; // px per ms (≈0.6px/ms)
+
+    let next = index;
+
+    // decide by distance or flick
+    if (Math.abs(dx) > THRESHOLD || Math.abs(vx) > FLICK_VELOCITY) {
+      if (dx < 0 && index < SLIDES.length - 1) next = index + 1;
+      if (dx > 0 && index > 0) next = index - 1;
+      // allow wrap if you prefer:
+      // if (dx < 0) next = (index + 1) % SLIDES.length;
+      // if (dx > 0) next = (index - 1 + SLIDES.length) % SLIDES.length;
+    }
+
+    // snap
+    setIndex(next);
+  };
 
   const handleClose = () => setShowPopup(false);
 
@@ -142,9 +236,7 @@ export default function HomePopup() {
   const minH = 320;
   const maxH = Math.min(
     720,
-    Math.floor(
-      (typeof window !== "undefined" ? window.innerHeight : 900) * 0.9
-    )
+    Math.floor((typeof window !== "undefined" ? window.innerHeight : 900) * 0.9)
   );
   const targetH =
     Math.max(minH, Math.min(maxH, Math.round(containerWidth * ratio))) || 420;
@@ -163,7 +255,7 @@ export default function HomePopup() {
             className="relative bg-white rounded-xl overflow-hidden shadow-2xl w-[min(90vw,560px)] select-none"
             onClick={(e) => e.stopPropagation()}
             onMouseEnter={() => setPaused(true)}
-            onMouseLeave={() => setPaused(false)}
+            onMouseLeave={() => !dragging && setPaused(false)}
             onContextMenu={(e) => e.preventDefault()}
           >
             <button
@@ -177,25 +269,30 @@ export default function HomePopup() {
             {/* Media area: dynamic height per slide */}
             <div
               ref={containerRef}
-              className="relative w-full overflow-hidden transition-[height] duration-300 ease-out bg-black/5"
+              className="relative w-full overflow-hidden transition-[height] duration-300 ease-out bg-black/5 touch-pan-y"
               style={{ height: targetH }}
             >
               {/* Track */}
               <div
                 ref={trackRef}
-                className="flex h-full cursor-default touch-pan-y will-change-transform"
+                className="flex h-full cursor-grab active:cursor-grabbing will-change-transform select-none"
                 style={{ transform: "translate3d(0px,0,0)" }}
                 aria-roledescription="carousel"
                 aria-label="Popup slider"
+                // Pointer Events for drag
+                onPointerDown={onPointerDown}
+                onPointerMove={onPointerMove}
+                onPointerUp={onPointerUp}
+                onPointerCancel={onPointerUp}
               >
                 {SLIDES.map((s, i) => (
-                  <div key={i} className="relative h-full flex-[0_0_100%]">
+                  <div key={i} className="relative h-full flex-[0_0_100%] bg-white">
                     <Image
                       src={s.src}
                       alt={s.alt}
                       fill
                       sizes="(max-width: 560px) 90vw, 560px"
-                      className="object-contain pointer-events-none select-none no-drag bg-white"
+                      className="object-contain pointer-events-none select-none"
                       draggable={false}
                       onDragStart={(e) => e.preventDefault()}
                       priority={i === 0}
