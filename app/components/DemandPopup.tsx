@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 
 interface DemandPopupProps {
   onClose: () => void;
@@ -7,63 +7,87 @@ interface DemandPopupProps {
   selectedProject: string;
 }
 
-export default function DemandPopup({ onClose, projects, selectedProject }: DemandPopupProps) {
+export default function DemandPopup({
+  onClose,
+  projects,
+  selectedProject,
+}: DemandPopupProps) {
+  const initialProject = useMemo(() => {
+    if (selectedProject && projects.some(p => p.title === selectedProject)) return selectedProject;
+    return projects[0]?.title ?? "";
+  }, [projects, selectedProject]);
+
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
-    project: selectedProject,
+    project: initialProject,
     message: "",
-    email: "salihkaaankoc@gmail.com", // Default static email (you can make this dynamic if needed)
+    email: "salihkaaankoc@gmail.com", // gerekirse değiştir
   });
+
+  const [submitting, setSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
   ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitting(true);
+    setErrorMsg(null);
 
     const payload = {
-      name: formData.name,
-      phone: formData.phone,
+      name: formData.name.trim(),
+      phone: formData.phone.trim(),
       project_name: formData.project,
-      message: formData.message,
-      email: formData.email,
+      message: formData.message.trim(),
+      email: formData.email.trim(),
     };
 
     try {
-      const response = await fetch("https://www.salihkaankoc.net/nata-core/form-data", {
+      const res = await fetch("/api/form", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
 
-      if (!response.ok) {
-        throw new Error("Form submission failed");
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || data?.ok === false) {
+        // data.body sunucudan dönen ham hata metni olabilir
+        throw new Error(
+          data?.error ||
+          data?.body ||
+          `Form gönderilemedi (status: ${res.status}).`
+        );
       }
 
-      console.log("Form submitted:", payload);
+      alert("Talebiniz başarıyla gönderildi. Teşekkürler!");
       onClose();
-    } catch (error) {
-      console.error("Submission error:", error);
-      alert("Form gönderilirken bir hata oluştu. Lütfen tekrar deneyin.");
+    } catch (err: any) {
+      console.error("Submission error:", err);
+      setErrorMsg(err?.message ?? "Form gönderilirken bir hata oluştu.");
+      alert(err?.message ?? "Form gönderilirken bir hata oluştu. Lütfen tekrar deneyin.");
+    } finally {
+      setSubmitting(false);
     }
   };
 
   return (
-    <div className="fixed inset-0 bg-black/30 flex items-center justify-center z-50">
-      <div className="bg-white rounded-xl p-6 max-w-md w-full relative shadow-lg">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/30">
+      <div className="relative w-full max-w-md rounded-xl bg-white p-6 shadow-lg">
         <button
           onClick={onClose}
-          className="absolute top-2 right-3 text-xl font-bold text-gray-500 hover:text-gray-700"
+          className="absolute right-3 top-2 text-xl font-bold text-gray-500 hover:text-gray-700"
+          aria-label="Kapat"
         >
           ×
         </button>
-        <h3 className="text-lg font-semibold mb-4 text-center">Ön Talep Formu</h3>
+
+        <h3 className="mb-4 text-center text-lg font-semibold">Ön Talep Formu</h3>
+
         <form onSubmit={handleSubmit} className="space-y-4 text-left">
           <div>
             <label className="block text-sm font-medium">Ad Soyad</label>
@@ -73,9 +97,10 @@ export default function DemandPopup({ onClose, projects, selectedProject }: Dema
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full border border-gray-300 px-3 py-2 rounded-md"
+              className="w-full rounded-md border border-gray-300 px-3 py-2"
             />
           </div>
+
           <div>
             <label className="block text-sm font-medium">Telefon</label>
             <input
@@ -84,9 +109,11 @@ export default function DemandPopup({ onClose, projects, selectedProject }: Dema
               value={formData.phone}
               onChange={handleChange}
               required
-              className="w-full border border-gray-300 px-3 py-2 rounded-md"
+              inputMode="tel"
+              className="w-full rounded-md border border-gray-300 px-3 py-2"
             />
           </div>
+
           <div>
             <label className="block text-sm font-medium">Proje Seçin</label>
             <select
@@ -94,7 +121,7 @@ export default function DemandPopup({ onClose, projects, selectedProject }: Dema
               value={formData.project}
               onChange={handleChange}
               required
-              className="w-full border border-gray-300 px-3 py-2 rounded-md"
+              className="w-full rounded-md border border-gray-300 px-3 py-2"
             >
               {projects.map((proj, idx) => (
                 <option key={idx} value={proj.title}>
@@ -103,21 +130,28 @@ export default function DemandPopup({ onClose, projects, selectedProject }: Dema
               ))}
             </select>
           </div>
+
           <div>
             <label className="block text-sm font-medium">Mesaj (Opsiyonel)</label>
             <textarea
               name="message"
               value={formData.message}
               onChange={handleChange}
-              className="w-full border border-gray-300 px-3 py-2 rounded-md"
               rows={3}
+              className="w-full rounded-md border border-gray-300 px-3 py-2"
             />
           </div>
+
+          {errorMsg && (
+            <p className="text-sm text-red-600">{errorMsg}</p>
+          )}
+
           <button
             type="submit"
-            className="w-full bg-[#ab1e3b] text-white py-2 rounded-md hover:bg-[#901932] transition"
+            disabled={submitting}
+            className="w-full rounded-md bg-[#ab1e3b] py-2 text-white transition hover:bg-[#901932] disabled:cursor-not-allowed disabled:opacity-70"
           >
-            Gönder
+            {submitting ? "Gönderiliyor..." : "Gönder"}
           </button>
         </form>
       </div>
