@@ -48,18 +48,7 @@ const listings: SimpleListing[] = [
       imageAlt: "/natura-map.png",
       link: "/natura-20"
     },
-    {
-             id: "3",
-      title: "Prime Oran",
-      price: "Çankaya'da 2+1 Daire",
-      currency: "",
-      location: "Çankaya/Ankara",
-      type: "Rezidans",
-      specs: ["2+1", "117 m²", "31. Kat"],
-      image: "/siteplans/primeoranikiartibir.png",
-      imageAlt: "/prime-map.png",
-      link: "/prime-oran-21"
-    },
+ 
       {
        id: "4",
       title: "Koru Konfor",
@@ -72,34 +61,10 @@ const listings: SimpleListing[] = [
       imageAlt: "/koru-map.png",
       link: "/koru-konfor-21"
     },
-    {
-             id: "5",
-
-      title: "Natura İncek",
-      price: "Gölbaşı'nda 2+1 Daire",
-      currency: "",
-      location: "Gölbaşı/Ankara",
-      type: "Rezidans",
-      specs: ["2+1", "90 m²", "Dubleks"],
-      image: "/siteplans/naturaikiartibirdublex.png",
-      imageAlt: "/natura-map.png",
-      link: "/natura-21"
-    },
+  
     
    
-    {
-             id: "8",
 
-      title: "Prime Oran",
-      price: "Çankaya'da 3+1 Daire",
-      currency: "",
-      location: "Çankaya/Ankara",
-      type: "Rezidans",
-      specs: ["3+1", "144 m²", "TIP B8"],
-      image: "/siteplans/primeoranucartibir.png",
-      imageAlt: "/prime-map.png",
-      link: "/prime-oran-20"
-    }
   ];
 
 const locations = ["Tümü", "Etimesgut/Ankara", "Gölbaşı/Ankara", "Çankaya/Ankara"];

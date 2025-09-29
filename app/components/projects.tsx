@@ -118,7 +118,7 @@ price: "RAMS GARDEN\nBAHÇELİEVLER",
       { icon: "", label: "Rezidans Projesi" },
       { icon: "", label: "Ulaşım Imkanları" },
     ],
-    progress: 5
+    progress: 35
   },
 
   {
