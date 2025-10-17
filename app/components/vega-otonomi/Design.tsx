@@ -20,6 +20,16 @@ export default function DesignSection() {
     "/otonomi-2.jpg",
     "/otonomi-3.jpg",
     "/otonomi-4.jpg",
+    "/otonomi/2.jpeg",
+    "/otonomi/3.jpeg",
+    "/otonomi/4.jpeg",
+    "/otonomi/5.jpeg",
+    "/otonomi/6.jpeg",
+    "/otonomi/7.jpeg",
+    "/otonomi/8.jpeg",
+    "/otonomi/9.jpeg",
+    "/otonomi/10.jpeg",
+    
   ];
 
   return (

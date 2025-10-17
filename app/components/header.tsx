@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Bell, Menu, X, Info, CheckCircle, AlertCircle } from "lucide-react";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, type ReactNode } from "react";
 import FavoriteButton from "./FavoriteButton";
 import { usePathname } from "next/navigation";
 // import { Unbounded } from "next/font/google";
@@ -37,7 +37,8 @@ export default function Header({
   const [menuOpen, setMenuOpen] = useState(false);
   const [showNotifications, setShowNotifications] = useState(false);
   const [notifications, setNotifications] = useState<Notification[]>([]);
-  const hoverTimeout = useRef<NodeJS.Timeout | null>(null);
+  // Safer across environments than NodeJS.Timeout
+  const hoverTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const isHoveringPopup = useRef(false);
   const pathname = usePathname();
   const notificationRef = useRef<HTMLDivElement | null>(null);
@@ -65,7 +66,7 @@ export default function Header({
       try {
         const res = await fetch("https://www.salihkaankoc.net/nata-core/web-notifications", {
           next: { revalidate: 60 },
-        });
+        } as RequestInit);
         const json = await res.json();
         if (Array.isArray(json.data)) {
           const mapped: Notification[] = json.data.map((item: any, index: number) => ({
@@ -83,7 +84,8 @@ export default function Header({
     fetchNotifications();
   }, []);
 
-  const iconMap: Record<NotificationType, JSX.Element> = {
+  // Use ReactNode instead of JSX.Element to avoid JSX namespace issues
+  const iconMap: Record<NotificationType, ReactNode> = {
     info: <Info size={16} className="text-blue-500 shrink-0" />,
     success: <CheckCircle size={16} className="text-green-500 shrink-0" />,
     alert: <AlertCircle size={16} className="text-red-500 shrink-0" />,
