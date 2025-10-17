@@ -38,7 +38,7 @@ const slides = [
     popup: {
       title: "Her İhtiyaca Uygun Yaşam Alanları",
       text: "Farklı yaşam tarzlarına hitap eden 1+1 ve 2,5+1 daire seçenekleriyle NATA Yaşam, hem yatırım hem de konforlu yaşam için ideal çözümler sunuyor. Ferah iç mekanlar ve fonksiyonel planlamalar sizi bekliyor.",
-      images: ["/hit- 1+1 ve 2,5+1 Daire Seçenekleri.jpg", "/hit- 1+1 ve 2,5+1 Daire Seçenekleri (2).jpg"]
+      images: ["/hitbir.jpg", "/hitiki.jpg"]
     }
   },
   {

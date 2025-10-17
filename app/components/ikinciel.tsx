@@ -35,19 +35,7 @@ const listings: SimpleListing[] = [
       imageAlt: "/koru-map.png",
       link: "/koru-konfor-20"
     },
-    {
-             id: "2",
-
-      title: "Natura İncek",
-      price: "Ankara Gölbaşı'nda 2+1 Daire",
-      currency: "",
-      location: "Gölbaşı/Ankara",
-      type: "Residans",
-      specs: ["2+1", "90 m²", "Fransız Balkon"],
-      image: "/siteplans/naturaikiartibir.png",
-      imageAlt: "/natura-map.png",
-      link: "/natura-20"
-    },
+ 
  
       {
        id: "4",

@@ -92,7 +92,7 @@
     }, []);
 
     return (
-      <div className="relative w-full h-[100vh]">
+      <div className="relative w-full h-[90vh]">
         <Swiper
           modules={[Pagination, Autoplay]}
           autoplay={{ delay: 5000, disableOnInteraction: false }}

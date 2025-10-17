@@ -10,7 +10,6 @@ import WhatsAppButton from "./components/WhatsAppButton";
 import ClientLayout from "./components/ClientLayout";
 
 import Script from 'next/script';
-import Preloader from "./components/Preloader";
 
 
 
@@ -41,7 +40,6 @@ export default function RootLayout({
 
       <body className="antialiased">
 
-                <Preloader />
 
 <ClientLayout>
 

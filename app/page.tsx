@@ -5,7 +5,6 @@ import FeaturedProjects from "./components/featured";
 import FinishedProjects from "./components/finished";
 import ProjectFilters from "./components/ProjectFilters";
 import Blogs from "./components/Blogs";
-import HomePopup from "./components/HomePopup"; // adjust path if needed
 
 
 export interface BlogPost {
@@ -37,7 +36,6 @@ export default async function Page() {
       <FeaturedProjects />
       <FinishedProjects />
       <Blogs posts={posts} />
-            <HomePopup />
     </main>
   );
 }

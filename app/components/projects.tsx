@@ -65,7 +65,7 @@ price: "RAMS GARDEN\nBAHÇELİEVLER",
 
      extra: [
       { icon: "", label: "Merkezi Lokasyon" },
-      { icon: "", label: "Ticari Aalanlar" },
+      { icon: "", label: "Ticari Alanlar" },
       { icon: "", label: "Premium Hayat " },
     ],
         progress: 100
