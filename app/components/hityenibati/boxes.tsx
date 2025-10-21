@@ -20,7 +20,7 @@ const cards = [
     title: "Belgeleri İndirin",
     highlight: "NATA Yaşam Projeleri",
     icon: "/x.png",
-            link: "#",
+            link: "https://hityapi.com/projeler/hityenibati/",
 
   },
   {

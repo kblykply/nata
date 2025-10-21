@@ -144,7 +144,7 @@ price: "RAMS GARDEN\nBAHÇELİEVLER",
     time: "8 dakika mesafede",
     image: "/HİTYENİBATI-ON.jpg",
     imageAlt: "/HİTYENİBATI-ON.jpg",
-    footer: "Bilkent",
+    footer: "Yeni Batı Mahallesi",
     stats: ["1+1 ve 2,5+1 daireler", "190 adet konut"],
     label: "Hemen Teslim ve Tapu",
     progress: 100
