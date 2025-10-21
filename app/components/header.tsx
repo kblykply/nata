@@ -281,7 +281,7 @@ export default function Header({
         {menuOpen && (
           <div className="backdrop-blur bg-white/97 md:hidden absolute top-full left-0 w-full shadow-xl z-50 px-6 py-6 space-y-4 rounded-b-2xl animate-slide-down">
             <Link href="/" className="block font-medium" onClick={() => setMenuOpen(false)}>Ana Sayfa</Link>
-            <Link href="/projects" className="block font-medium" onClick={() => setMenuOpen(false)}>Projeler</Link>
+            <Link href="/#aktif-projeler" className="block font-medium" onClick={() => setMenuOpen(false)}>Projeler</Link>
             <Link href="/about-us" className="block font-medium" onClick={() => setMenuOpen(false)}>Hakkımızda</Link>
             <Link href="/contact-us" className="block font-medium" onClick={() => setMenuOpen(false)}>İletişim</Link>
             <Link href="/n-bulten" className="block font-medium" onClick={() => setMenuOpen(false)}>N Bülten</Link>

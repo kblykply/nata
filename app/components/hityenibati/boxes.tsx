@@ -11,7 +11,7 @@ const cards = [
     background:     "/hityenibati-7.jpg",
 
     wide: true,   // Mark this card as wide
-            link: "https://hityapi.com/",
+            link: "https://hityapi.com/projeler/hityenibati/",
 
   },
   {
@@ -20,7 +20,7 @@ const cards = [
     title: "Belgeleri İndirin",
     highlight: "NATA Yaşam Projeleri",
     icon: "/x.png",
-            link: "https://api.whatsapp.com/send/?phone=905017111818&text=Merhaba%2C+projeleriniz+hakk%C4%B1nda+detayl%C4%B1+bilgi+almak+istiyorum.&type=phone_number&app_absent=0",
+            link: "#",
 
   },
   {

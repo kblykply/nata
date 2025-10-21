@@ -38,7 +38,7 @@ const listings: Listing[] = [
     stats: ["Merkezi Lokasyon", "Açık Avm Konsepti"],
     footer: "Çankaya",
     image: "/r-antares-1.jpg",
-    imageAlt: "/ANTARES KONUTLARI-ARKA.jpg",
+    imageAlt: "/r-antares-1.jpg",
     extra: [
       { icon: "", label: "840 Daire" },
       { icon: "", label: "AVM Yanında" },
@@ -55,7 +55,7 @@ const listings: Listing[] = [
     stats: ["Merkezi Lokasyon", "Açık Avm Konsepti"],
     footer: "Çankaya",
     image: "/vega-cadde.jpg",
-    imageAlt: "/vega-cadde-avm-pin.jpeg",
+    imageAlt: "/vega-cadde.jpg",
     extra: [
       { icon: "", label: "161 Adet Konut&Ofis" },
       { icon: "", label: "Vega AVM" },
@@ -72,7 +72,7 @@ const listings: Listing[] = [
     stats: ["Merkezi Lokasyon", "Açık Avm Konsepti"],
     footer: "Çankaya",
     image: "/tempoint-konutlari.jpg",
-    imageAlt: "/tempoint-konutları-pin.jpeg",
+    imageAlt: "/tempoint-konutlari.jpg",
     extra: [
       { icon: "", label: "TEM Otoyolu Üzerinde" },
       { icon: "", label: "Vega AVM" },
@@ -89,7 +89,7 @@ const listings: Listing[] = [
     stats: ["Merkezi Lokasyon", "Açık Avm Konsepti"],
     footer: "Çankaya",
     image: "/nata-incek-konutlari.jpg",
-    imageAlt: "/nata-incek-konutları-pin.jpeg",
+    imageAlt: "/nata-incek-konutlari.jpg",
     extra: [
       { icon: "", label: "Mogan Gölü Manzarası" },
       { icon: "", label: "12.000 m2 Yeşil Alan" },
@@ -106,7 +106,7 @@ const listings: Listing[] = [
     stats: ["Merkezi Lokasyon", "Açık Avm Konsepti"],
     footer: "Çankaya",
     image: "/nata-vega-konut-kuleleri.jpg",
-    imageAlt: "/natavegakonutkulemap.png",
+    imageAlt: "/nata-vega-konut-kuleleri.jpg",
     extra: [
       { icon: "", label: "Nata Vega Outlet" },
       { icon: "", label: "Aquavega Akvaryum" },

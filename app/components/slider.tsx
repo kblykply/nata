@@ -23,7 +23,7 @@
 
     {
       id: 7,
-      background: '/sliderson/image2.jpg',
+      background: '/revize/vegacenterslider.jpeg',
       textColor: 'black',
       logoImage: '/outstandinglondon-logo.png',
       logoPosition: 'top-26 right-6',
@@ -46,7 +46,7 @@
       textColor: 'black',
       logoImage: '/sliderson/logo.png',
       logoPosition: 'top-30 left-6',
-      titleImage: '/yaşam/ramsgardentext.png',
+      titleImage: '/revize/ramsgardenslider-text.png',
       titlePosition: 'bottom-5 left-1/2 -translate-x-1/2 -translate-y-1/2',
     },
     {
