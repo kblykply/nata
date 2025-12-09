@@ -11,7 +11,7 @@ export default function NewProjectsFilterSection() {
     <div className="relative max-w-screen-xl mx-auto px-0 py-6 bg-white rounded-2xl space-y-5 font-sans">
       {/* Heading */}
       <h2 className="text-3xl px-6 font-semibold text-gray-800">
-        Satışı Devam Eden{" "}
+        Satışı Devam Eden {" "}
         <span className="text-[#ab1e3b]">Projeler</span>
       </h2>
 
