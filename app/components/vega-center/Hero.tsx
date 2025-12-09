@@ -27,7 +27,7 @@ export default function ProjectHeroCloudSection() {
 
 
 <a
-  href="https://nataholding.com/360/vega-center/" // ← Replace with your actual link
+  href="https://vegacenter360.vercel.app/" // ← Replace with your actual link
   target="_blank"
   rel="noopener noreferrer"
   className="absolute z-30 text-white text-sm font-semibold bg-white/20 px-4 py-2 rounded-xl inline-flex items-center gap-2 backdrop-blur-sm shadow-sm w-fit h-auto max-h-[40px]
@@ -142,7 +142,7 @@ export default function ProjectHeroCloudSection() {
 
   <Link href="#contact">
     <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
-    2. Çeyrek 2025
+    Hemen Teslim Hemen Tapu
      </div>
   </Link>
 
