@@ -22,7 +22,7 @@ export default function DemandPopup({
     phone: "",
     project: initialProject,
     message: "",
-    email: "salihkaaankoc@gmail.com", // gerekirse değiştir
+    email: "",
   });
 
   const [submitting, setSubmitting] = useState(false);

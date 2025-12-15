@@ -25,8 +25,8 @@ interface Notification {
   time: string;
 }
 
-const HEADER_H_MOBILE = 64; // px -> h-16
-const HEADER_H_DESKTOP = 82; // px -> h-[82px]
+const HEADER_H_MOBILE = 64;
+const HEADER_H_DESKTOP = 82;
 
 export default function Header({
   isKampanyalarOpen,
@@ -37,13 +37,11 @@ export default function Header({
   const [menuOpen, setMenuOpen] = useState(false);
   const [showNotifications, setShowNotifications] = useState(false);
   const [notifications, setNotifications] = useState<Notification[]>([]);
-  // Safer across environments than NodeJS.Timeout
   const hoverTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const isHoveringPopup = useRef(false);
   const pathname = usePathname();
   const notificationRef = useRef<HTMLDivElement | null>(null);
 
-  // Close notifications on outside click/scroll
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (notificationRef.current && !notificationRef.current.contains(event.target as Node)) {
@@ -60,7 +58,6 @@ export default function Header({
     };
   }, []);
 
-  // Fetch notifications once
   useEffect(() => {
     const fetchNotifications = async () => {
       try {
@@ -84,7 +81,6 @@ export default function Header({
     fetchNotifications();
   }, []);
 
-  // Use ReactNode instead of JSX.Element to avoid JSX namespace issues
   const iconMap: Record<NotificationType, ReactNode> = {
     info: <Info size={16} className="text-blue-500 shrink-0" />,
     success: <CheckCircle size={16} className="text-green-500 shrink-0" />,
@@ -118,7 +114,6 @@ export default function Header({
       minute: "2-digit",
     });
 
-  // Stable visual style
   const isHomepage = pathname === "/";
   const headerTone = isHomepage ? "bg-white/98" : "bg-white/95";
 
@@ -184,6 +179,8 @@ export default function Header({
                   Kampanyalar
                 </div>
               </Link>
+
+              <Link className="font-medium" href="/yetkili-satis-agi">Yetkili Satış Ağı</Link>
 
               <Link className="font-medium" href="/n-bulten">N-Bülten</Link>
 
@@ -283,6 +280,7 @@ export default function Header({
             <Link href="/" className="block font-medium" onClick={() => setMenuOpen(false)}>Ana Sayfa</Link>
             <Link href="/#aktif-projeler" className="block font-medium" onClick={() => setMenuOpen(false)}>Projeler</Link>
             <Link href="/about-us" className="block font-medium" onClick={() => setMenuOpen(false)}>Hakkımızda</Link>
+            <Link href="/yetkili-satis-agi" className="block font-medium" onClick={() => setMenuOpen(false)}>Yetkili Satış Ağı</Link>
             <Link href="/contact-us" className="block font-medium" onClick={() => setMenuOpen(false)}>İletişim</Link>
             <Link href="/n-bulten" className="block font-medium" onClick={() => setMenuOpen(false)}>N Bülten</Link>
             <Link href="/blog" className="block font-medium" onClick={() => setMenuOpen(false)}>Blog</Link>
