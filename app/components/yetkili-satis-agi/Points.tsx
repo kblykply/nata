@@ -113,34 +113,34 @@ const Points = () => {
             placeholder="İsim Soyisim"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full bg-gray-100 rounded-sm px-4 py-2 text-sm placeholder:text-gray-500"
+            className="w-full bg-gray-100 rounded-sm px-4 py-2 text-sm text-gray-800 placeholder:text-gray-500"
           />
           <input
             type="email"
             placeholder="E-mail"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full bg-gray-100 rounded-sm px-4 py-2 text-sm placeholder:text-gray-500"
+            className="w-full bg-gray-100 rounded-sm px-4 py-2 text-sm text-gray-800 placeholder:text-gray-500"
           />
           <input
             type="tel"
             placeholder="Telefon"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            className="w-full bg-gray-100 rounded-sm px-4 py-2 text-sm placeholder:text-gray-500"
+            className="w-full bg-gray-100 rounded-sm px-4 py-2 text-sm text-gray-800 placeholder:text-gray-500"
           />
           <input
             type="text"
             placeholder="İşletme Bilgisi"
             value={business}
             onChange={(e) => setBusiness(e.target.value)}
-            className="w-full bg-gray-100 rounded-sm px-4 py-2 text-sm placeholder:text-gray-500"
+            className="w-full bg-gray-100 rounded-sm px-4 py-2 text-sm text-gray-800 placeholder:text-gray-500"
           />
           <textarea
             placeholder="Mesajınız (isteğe bağlı)"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="w-full bg-gray-100 rounded-sm px-4 py-2 text-sm h-24 placeholder:text-gray-500"
+            className="w-full bg-gray-100 rounded-sm px-4 py-2 text-sm h-24 text-gray-800 placeholder:text-gray-500"
           />
 
           <div className="flex items-start gap-2 text-sm">
@@ -172,7 +172,7 @@ const Points = () => {
           <button
             onClick={handleSubmit}
             disabled={loading}
-            className="w-full bg-gray-100 text-sm font-semibold py-2 rounded-sm hover:bg-gray-200 transition disabled:opacity-50"
+            className="w-full bg-gray-100 text-sm font-semibold py-2 rounded-sm hover:bg-gray-200 transition disabled:opacity-50 text-gray-800"
           >
             {loading ? "Gönderiliyor..." : "GÖNDER"}
           </button>
