@@ -28,11 +28,13 @@ const Kalite = () => {
         <div>
           <div className="w-full max-w-md mx-auto rounded-2xl overflow-hidden">
             <Image
-              src="/yetkili-satis-agi-contentiki.jpg"
+              src="/yetkili-satis-agi-contentiki.webp"
               alt="Yetkili Satış Ağı"
               width={600}
               height={400}
-              objectFit="cover"
+              className="w-full h-auto object-cover"
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
         </div>

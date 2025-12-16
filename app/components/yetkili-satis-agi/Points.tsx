@@ -98,22 +98,26 @@ const Points = () => {
           {/* First Image */}
           <div className="rounded-xl overflow-hidden w-fit">
             <Image
-              src="/yetkili-satis-agi-image-1.jpg"
+              src="/yetkili-satis-agi-image-1.webp"
               alt="Yetkili Satış Ağı"
               width={400}
               height={200}
               className="rounded-xl"
+              loading="lazy"
+              sizes="(max-width: 768px) 50vw, 400px"
             />
           </div>
 
           {/* Second Image */}
           <div className="rounded-xl overflow-hidden w-fit">
             <Image
-              src="/yetkili-satis-agi-image-2.jpg"
+              src="/yetkili-satis-agi-image-2.webp"
               alt="Satış Ağı"
               width={400}
               height={200}
               className="rounded-xl"
+              loading="lazy"
+              sizes="(max-width: 768px) 50vw, 400px"
             />
           </div>
         </div>
