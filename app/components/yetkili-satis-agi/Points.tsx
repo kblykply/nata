@@ -16,11 +16,25 @@ const Points = () => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
+  const [errors, setErrors] = useState({
+    name: false,
+    email: false,
+    phone: false,
+    business: false,
+  });
   const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const handleSubmit = async () => {
     setError("");
     setSuccess(false);
+
+    const newErrors = {
+      name: !name.trim(),
+      email: !email.trim(),
+      phone: !phone.trim(),
+      business: !business.trim(),
+    };
+    setErrors(newErrors);
 
     if (!name.trim() || !email.trim() || !phone.trim() || !business.trim()) {
       setError("Lütfen tüm zorunlu alanları doldurun.");
@@ -64,6 +78,7 @@ const Points = () => {
         setMessage("");
         setAccepted(false);
         setRecaptchaToken("");
+        setErrors({ name: false, email: false, phone: false, business: false });
         recaptchaRef.current?.reset();
       } else {
         setError(data.error || "Gönderim başarısız oldu. Lütfen tekrar deneyin.");
@@ -112,29 +127,49 @@ const Points = () => {
             type="text"
             placeholder="İsim Soyisim"
             value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="w-full bg-gray-100 rounded-sm px-4 py-2 text-sm text-gray-800 placeholder:text-gray-500"
+            onChange={(e) => {
+              setName(e.target.value);
+              setErrors({ ...errors, name: false });
+            }}
+            className={`w-full bg-gray-100 rounded-sm px-4 py-2 text-sm text-gray-800 placeholder:text-gray-500 ${
+              errors.name ? "border-2 border-red-500" : ""
+            }`}
           />
           <input
             type="email"
             placeholder="E-mail"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="w-full bg-gray-100 rounded-sm px-4 py-2 text-sm text-gray-800 placeholder:text-gray-500"
+            onChange={(e) => {
+              setEmail(e.target.value);
+              setErrors({ ...errors, email: false });
+            }}
+            className={`w-full bg-gray-100 rounded-sm px-4 py-2 text-sm text-gray-800 placeholder:text-gray-500 ${
+              errors.email ? "border-2 border-red-500" : ""
+            }`}
           />
           <input
             type="tel"
             placeholder="Telefon"
             value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            className="w-full bg-gray-100 rounded-sm px-4 py-2 text-sm text-gray-800 placeholder:text-gray-500"
+            onChange={(e) => {
+              setPhone(e.target.value);
+              setErrors({ ...errors, phone: false });
+            }}
+            className={`w-full bg-gray-100 rounded-sm px-4 py-2 text-sm text-gray-800 placeholder:text-gray-500 ${
+              errors.phone ? "border-2 border-red-500" : ""
+            }`}
           />
           <input
             type="text"
             placeholder="İşletme Bilgisi"
             value={business}
-            onChange={(e) => setBusiness(e.target.value)}
-            className="w-full bg-gray-100 rounded-sm px-4 py-2 text-sm text-gray-800 placeholder:text-gray-500"
+            onChange={(e) => {
+              setBusiness(e.target.value);
+              setErrors({ ...errors, business: false });
+            }}
+            className={`w-full bg-gray-100 rounded-sm px-4 py-2 text-sm text-gray-800 placeholder:text-gray-500 ${
+              errors.business ? "border-2 border-red-500" : ""
+            }`}
           />
           <textarea
             placeholder="Mesajınız (isteğe bağlı)"

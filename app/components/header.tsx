@@ -143,7 +143,7 @@ export default function Header({
 
             {/* Center: Navigation */}
             <nav
-              className="hidden md:flex flex-1 justify-center gap-6 text-xs leading-none"
+              className="hidden md:flex flex-1 justify-center items-center gap-6 text-xs leading-none"
               style={{ fontFamily: "Unbounded, system-ui, sans-serif" }}
             >
               <div
@@ -156,14 +156,14 @@ export default function Header({
                     setIsNewProjectsOpen(false);
                   }, 200);
                 }}
-                className="relative cursor-pointer font-medium"
+                className="relative cursor-pointer font-medium flex items-center"
               >
                 Yeni Projeler
               </div>
 
-              <Link className="font-medium" href="/about-us">Hakkımızda</Link>
+              <Link className="font-medium flex items-center" href="/about-us">Hakkımızda</Link>
 
-              <Link href="/kampanya" className="font-medium">
+              <Link href="/kampanya" className="font-medium flex items-center">
                 <div
                   onMouseEnter={() => {
                     clearTimeout((window as any).kampanyaTimeout ?? undefined);
@@ -180,12 +180,10 @@ export default function Header({
                 </div>
               </Link>
 
-              <Link className="font-medium" href="/yetkili-satis-agi">Yetkili Satış Ağı</Link>
-
-              <Link className="font-medium" href="/n-bulten">N-Bülten</Link>
+              <Link className="font-medium flex items-center" href="/n-bulten">N-Bülten</Link>
 
               <Link
-                className="font-medium"
+                className="font-medium flex items-center"
                 href="https://www.nataholding.com/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -193,7 +191,14 @@ export default function Header({
                 Nata Holding
               </Link>
 
-              <Link href="/contact-us" className="font-medium">
+              <Link 
+                className="font-medium px-3 py-1 rounded-full bg-[#ab1e3b] text-white hover:bg-[#911a33] transition flex items-center" 
+                href="/yetkili-satis-agi"
+              >
+                Yetkili Satış Ağı
+              </Link>
+
+              <Link href="/contact-us" className="font-medium flex items-center">
                 <div
                   onMouseEnter={() => {
                     clearTimeout((window as any).iletisimTimeout ?? undefined);
@@ -280,10 +285,16 @@ export default function Header({
             <Link href="/" className="block font-medium" onClick={() => setMenuOpen(false)}>Ana Sayfa</Link>
             <Link href="/#aktif-projeler" className="block font-medium" onClick={() => setMenuOpen(false)}>Projeler</Link>
             <Link href="/about-us" className="block font-medium" onClick={() => setMenuOpen(false)}>Hakkımızda</Link>
-            <Link href="/yetkili-satis-agi" className="block font-medium" onClick={() => setMenuOpen(false)}>Yetkili Satış Ağı</Link>
-            <Link href="/contact-us" className="block font-medium" onClick={() => setMenuOpen(false)}>İletişim</Link>
             <Link href="/n-bulten" className="block font-medium" onClick={() => setMenuOpen(false)}>N Bülten</Link>
             <Link href="/blog" className="block font-medium" onClick={() => setMenuOpen(false)}>Blog</Link>
+            <Link 
+              href="/yetkili-satis-agi" 
+              className="block font-medium px-3 py-1.5 rounded-full bg-[#ab1e3b] text-white hover:bg-[#911a33] transition w-fit" 
+              onClick={() => setMenuOpen(false)}
+            >
+              Yetkili Satış Ağı
+            </Link>
+            <Link href="/contact-us" className="block font-medium" onClick={() => setMenuOpen(false)}>İletişim</Link>
           </div>
         )}
       </header>
