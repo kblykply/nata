@@ -10,7 +10,7 @@ const socials = [
   { icon: FaInstagram, name: 'Instagram', url: 'https://www.instagram.com/natayasam ' },
   { icon: FaXTwitter, name: 'X', url: 'https://x.com/natayasam' },
   { icon: FaFacebook, name: 'Facebook', url: 'https://www.facebook.com/people/Nata-Ya%C5%9Fam/100080725145381/' },
-  { icon: FaYoutube, name: 'YouTube', url: 'https://www.youtube.com/channel/UChLQfpkpdd4fNd9FjTxInRg' }
+  { icon: FaYoutube, name: 'YouTube', url: 'https://www.youtube.com/@natayasam1' }
 ];
 
 export default function Footer() {
