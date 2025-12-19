@@ -1,6 +1,11 @@
+"use client";
+
 import Image from 'next/image';
+import { useState } from 'react';
 
 const Content = () => {
+  const [showTooltip, setShowTooltip] = useState(false);
+
   return (
     <div className="bg-white py-12 px-6 md:px-30">
       <div className="grid md:grid-cols-2 gap-10 items-center">
@@ -10,16 +15,30 @@ const Content = () => {
             Yetkili Satış Ağı Portalımıza<br />
             Hoş Geldiniz
           </h2>
-          <div className="w-full max-w-md mx-auto rounded-2xl overflow-hidden">
-            <Image
-              src="/contentpic4.webp"
-              alt="Yetkili Satış Ağı"
-              width={600}
-              height={400}
-              className="w-full h-auto object-cover"
-              loading="lazy"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
+          <div className="w-full max-w-md mx-auto rounded-2xl overflow-hidden relative group">
+            <a
+              href="https://youtu.be/xEleIV9zfRQ?si=E3JKZH5wLCIMHOcv"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block cursor-pointer"
+              onMouseEnter={() => setShowTooltip(true)}
+              onMouseLeave={() => setShowTooltip(false)}
+            >
+              <Image
+                src="/contentpic4.webp"
+                alt="Yetkili Satış Ağı"
+                width={600}
+                height={400}
+                className="w-full h-auto object-cover transition-opacity group-hover:opacity-90"
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </a>
+            {showTooltip && (
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/80 text-white px-4 py-2 rounded-lg text-sm whitespace-nowrap z-10 pointer-events-none">
+                Bilgilendirme videosunu izlemek için görsele tıklayın
+              </div>
+            )}
           </div>
         </div>
 
