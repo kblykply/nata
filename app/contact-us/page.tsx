@@ -73,7 +73,7 @@ export default function ContactMapPopup() {
         {/* Left: Contact Info */}
         <div className="bg-white/70 backdrop-blur-md rounded-2xl p-6 w-72 mx-auto relative shadow-lg">
           <h3 className="font-semibold text-sm mb-1">Bizimle İletişime Geçin</h3>
-          <p className="text-xs text-gray-500 mb-6">VEGA CENTER TANITIM OFİSİ</p>
+          <p className="text-xs text-gray-500 mb-6">NATA YAŞAM MERKEZ TANITIM OFİSİ</p>
           <div className="flex items-center gap-3 mb-4">
             <Image src="/contact-phone.png" alt="Phone" width={20} height={20} />
             <p className="text-sm font-medium">444 8 018</p>
