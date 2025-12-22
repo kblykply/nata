@@ -33,7 +33,7 @@ const Kalite = () => {
         <div>
           <div className="w-full max-w-md mx-auto rounded-2xl overflow-hidden relative group">
             <a
-              href="https://youtube.com/shorts/KTctZWmBebY?si=lvNRC8Sjwj6LmxZl"
+              href="https://www.youtube.com/shorts/GNH6Gq1TdRQ"
               target="_blank"
               rel="noopener noreferrer"
               className="block cursor-pointer"
