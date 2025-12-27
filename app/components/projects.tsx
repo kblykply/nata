@@ -112,7 +112,7 @@ price: "RAMS GARDEN\nBAHÇELİEVLER",
     footer: "Yenimahalle",
     image: "/MEGA 1453 - ON.jpg",
     imageAlt: "/MEGA 1453 - ON.jpg",
-    highlight: "2026 Teslim",
+    highlight: "2027 1. Çeyrek Teslim",
     extra: [
       { icon: "", label: "Merkezi Lokasyon" },
       { icon: "", label: "Rezidans Projesi" },

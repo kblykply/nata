@@ -103,7 +103,7 @@ export default function ProjectHeroCloudSection() {
 
   <Link href="#contact">
     <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
-  2. Çeyrek 2027
+  2027 1. Çeyrek Teslim
     </div>
   </Link>
 
