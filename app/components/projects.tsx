@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { FaFire, FaTrain } from "react-icons/fa";
 import { FiPlus } from "react-icons/fi";
+import { SlidersHorizontal, X } from "lucide-react";
 
 interface Listing {
   id: string; 
@@ -201,6 +202,54 @@ export default function ProjectListingSection() {
   const [showAltImage, setShowAltImage] = useState(false);
   const [popupIndex, setPopupIndex] = useState<number | null>(null);
   const { toggleFavorite, isFavorite } = useFavorites();
+  const [selectedLocation, setSelectedLocation] = useState("Tümü");
+  const [selectedMetro, setSelectedMetro] = useState("Tümü");
+  const [selectedDelivery, setSelectedDelivery] = useState("Tümü");
+  const [showAllFilters, setShowAllFilters] = useState(false);
+
+  const getDeliveryLabel = (item: Listing) =>
+    item.label || item.highlight || "";
+
+  const locationOptions = [
+    "Tümü",
+    ...Array.from(
+      new Set(allListings.map((item) => item.footer).filter(Boolean))
+    ),
+  ];
+  const metroOptions = [
+    "Tümü",
+    ...Array.from(
+      new Set(allListings.map((item) => item.metro).filter(Boolean))
+    ),
+  ];
+  const deliveryOptions = [
+    "Tümü",
+    ...Array.from(
+      new Set(
+        allListings
+          .map((item) => getDeliveryLabel(item))
+          .filter((value) => value)
+      )
+    ),
+  ];
+
+  const resetFilters = () => {
+    setSelectedLocation("Tümü");
+    setSelectedMetro("Tümü");
+    setSelectedDelivery("Tümü");
+  };
+
+  const filteredListings = allListings.filter((item) => {
+    const locationMatch =
+      selectedLocation === "Tümü" || item.footer === selectedLocation;
+    const metroMatch =
+      selectedMetro === "Tümü" || item.metro === selectedMetro;
+    const deliveryLabel = getDeliveryLabel(item);
+    const deliveryMatch =
+      selectedDelivery === "Tümü" || deliveryLabel === selectedDelivery;
+
+    return locationMatch && metroMatch && deliveryMatch;
+  });
 
   const handleMouseMove = (e: React.MouseEvent, index: number) => {
     const bounds = e.currentTarget.getBoundingClientRect();
@@ -218,8 +267,140 @@ export default function ProjectListingSection() {
 
   return (
     <section id="aktif-projeler" className="bg-white py-16 px-6">
+      <div className="max-w-screen-xl mx-auto mb-6">
+        <div className="flex flex-wrap items-center gap-3 text-sm mb-4">
+          <select
+            value={selectedLocation}
+            onChange={(e) => setSelectedLocation(e.target.value)}
+            className="flex items-center bg-gray-100 px-4 py-2 rounded-full text-gray-700"
+          >
+            {locationOptions.map((item) => (
+              <option key={item} value={item}>
+                {item}
+              </option>
+            ))}
+          </select>
+
+          <select
+            value={selectedMetro}
+            onChange={(e) => setSelectedMetro(e.target.value)}
+            className="flex items-center bg-gray-100 px-4 py-2 rounded-full text-gray-700"
+          >
+            {metroOptions.map((item) => (
+              <option key={item} value={item}>
+                {item}
+              </option>
+            ))}
+          </select>
+
+          <select
+            value={selectedDelivery}
+            onChange={(e) => setSelectedDelivery(e.target.value)}
+            className="flex items-center bg-gray-100 px-4 py-2 rounded-full text-gray-700"
+          >
+            {deliveryOptions.map((item) => (
+              <option key={item} value={item}>
+                {item}
+              </option>
+            ))}
+          </select>
+
+          <button
+            onClick={() => setShowAllFilters(true)}
+            className="flex items-center px-4 py-2 rounded-full bg-gray-100 text-[#ab1e3b] font-medium"
+          >
+            <SlidersHorizontal className="w-4 h-4 mr-2" />
+            Tüm Filtreler
+          </button>
+        </div>
+
+        {showAllFilters && (
+          <div className="fixed inset-0 bg-black/50 z-50 flex justify-center items-center">
+            <div className="bg-white w-full max-w-md p-6 rounded-xl relative">
+              <button
+                className="absolute top-4 right-4 text-gray-500"
+                onClick={() => setShowAllFilters(false)}
+                aria-label="Filtreleri kapat"
+              >
+                <X className="w-5 h-5" />
+              </button>
+              <h2 className="text-lg font-semibold mb-4">Tüm Filtreler</h2>
+
+              <div className="space-y-4">
+                <div>
+                  <label className="block mb-1 text-sm font-medium text-gray-700">
+                    Lokasyon
+                  </label>
+                  <select
+                    value={selectedLocation}
+                    onChange={(e) => setSelectedLocation(e.target.value)}
+                    className="w-full border rounded-lg px-3 py-2"
+                  >
+                    {locationOptions.map((loc) => (
+                      <option key={loc} value={loc}>
+                        {loc}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block mb-1 text-sm font-medium text-gray-700">
+                    Metro İstasyonu
+                  </label>
+                  <select
+                    value={selectedMetro}
+                    onChange={(e) => setSelectedMetro(e.target.value)}
+                    className="w-full border rounded-lg px-3 py-2"
+                  >
+                    {metroOptions.map((metro) => (
+                      <option key={metro} value={metro}>
+                        {metro}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block mb-1 text-sm font-medium text-gray-700">
+                    Teslim Durumu
+                  </label>
+                  <select
+                    value={selectedDelivery}
+                    onChange={(e) => setSelectedDelivery(e.target.value)}
+                    className="w-full border rounded-lg px-3 py-2"
+                  >
+                    {deliveryOptions.map((delivery) => (
+                      <option key={delivery} value={delivery}>
+                        {delivery}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <button
+                  onClick={() => setShowAllFilters(false)}
+                  className="w-full mt-4 py-2 rounded-lg bg-[#ab1e3b] text-white text-sm font-medium"
+                >
+                  Uygula
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        <div className="flex justify-between items-center text-sm mt-2">
+          <button
+            onClick={resetFilters}
+            className="text-gray-500 hover:underline"
+          >
+            Tüm filtreleri temizle
+          </button>
+        </div>
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-screen-xl mx-auto relative">
-        {allListings.map((item, index) => {
+        {filteredListings.map((item, index) => {
           const isHovered = hoveredIndex === index;
           const imgSrc = isHovered && showAltImage && item.imageAlt ? item.imageAlt : item.image;
           return (

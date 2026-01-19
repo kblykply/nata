@@ -23,6 +23,18 @@
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState("");
+    const [errors, setErrors] = useState({
+      name: false,
+      email: false,
+      phone: false,
+      message: false,
+    });
+    const [errorMessages, setErrorMessages] = useState({
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+    });
 
 
     const modalRef = useRef<HTMLDivElement>(null);
@@ -31,7 +43,25 @@
 
 
     const handleSubmit = async () => {
+      setError("");
+      setSuccess(false);
 
+      const nextErrors = {
+        name: !name.trim(),
+        email: !email.trim(),
+        phone: !phone.trim(),
+        message: !message.trim(),
+      };
+      setErrors(nextErrors);
+      setErrorMessages({
+        name: nextErrors.name ? "Bu alanı doldurun" : "",
+        email: nextErrors.email ? "Bu alanı doldurun" : "",
+        phone: nextErrors.phone ? "Bu alanı doldurun" : "",
+        message: nextErrors.message ? "Bu alanı doldurun" : "",
+      });
+      if (Object.values(nextErrors).some(Boolean)) {
+        return;
+      }
 
       if (!recaptchaToken) {
     setError("Lütfen reCAPTCHA doğrulamasını tamamlayın.");
@@ -43,8 +73,6 @@
       }
 
       setLoading(true);
-      setError("");
-      setSuccess(false);
 
       try {
         const res = await fetch('/api/contact', {
@@ -61,6 +89,8 @@
           setPhone("");
           setMessage("");
           setAccepted(false);
+          setErrors({ name: false, email: false, phone: false, message: false });
+          setErrorMessages({ name: "", email: "", phone: "", message: "" });
         } else {
           setError("Gönderim başarısız.");
         }
@@ -94,33 +124,85 @@
               <X size={20} />
             </button>
 
-            <input
-              type="text"
-              placeholder="İsim Soyisim"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="w-full bg-gray-100 rounded-sm px-4 py-2 text-sm placeholder:text-gray-500"
-            />
-            <input
-              type="email"
-              placeholder="E-mail"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full bg-gray-100 rounded-sm px-4 py-2 text-sm placeholder:text-gray-500"
-            />
-            <input
-              type="tel"
-              placeholder="Telefon"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              className="w-full bg-gray-100 rounded-sm px-4 py-2 text-sm placeholder:text-gray-500"
-            />
-            <textarea
-              placeholder="Mesajınız"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              className="w-full bg-gray-100 rounded-sm px-4 py-2 text-sm h-24 placeholder:text-gray-500"
-            />
+            <div>
+              <input
+                type="text"
+                placeholder="İsim Soyisim"
+                value={name}
+                onChange={(e) => {
+                  setName(e.target.value);
+                  if (errors.name) {
+                    setErrors({ ...errors, name: false });
+                    setErrorMessages({ ...errorMessages, name: "" });
+                  }
+                }}
+                className={`w-full bg-gray-100 rounded-sm px-4 py-2 text-sm placeholder:text-gray-500 ${
+                  errors.name ? "border-2 border-red-500" : ""
+                }`}
+              />
+              {errors.name && (
+                <p className="text-red-500 text-xs mt-1">{errorMessages.name}</p>
+              )}
+            </div>
+            <div>
+              <input
+                type="email"
+                placeholder="E-mail"
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  if (errors.email) {
+                    setErrors({ ...errors, email: false });
+                    setErrorMessages({ ...errorMessages, email: "" });
+                  }
+                }}
+                className={`w-full bg-gray-100 rounded-sm px-4 py-2 text-sm placeholder:text-gray-500 ${
+                  errors.email ? "border-2 border-red-500" : ""
+                }`}
+              />
+              {errors.email && (
+                <p className="text-red-500 text-xs mt-1">{errorMessages.email}</p>
+              )}
+            </div>
+            <div>
+              <input
+                type="tel"
+                placeholder="Telefon"
+                value={phone}
+                onChange={(e) => {
+                  setPhone(e.target.value);
+                  if (errors.phone) {
+                    setErrors({ ...errors, phone: false });
+                    setErrorMessages({ ...errorMessages, phone: "" });
+                  }
+                }}
+                className={`w-full bg-gray-100 rounded-sm px-4 py-2 text-sm placeholder:text-gray-500 ${
+                  errors.phone ? "border-2 border-red-500" : ""
+                }`}
+              />
+              {errors.phone && (
+                <p className="text-red-500 text-xs mt-1">{errorMessages.phone}</p>
+              )}
+            </div>
+            <div>
+              <textarea
+                placeholder="Mesajınız"
+                value={message}
+                onChange={(e) => {
+                  setMessage(e.target.value);
+                  if (errors.message) {
+                    setErrors({ ...errors, message: false });
+                    setErrorMessages({ ...errorMessages, message: "" });
+                  }
+                }}
+                className={`w-full bg-gray-100 rounded-sm px-4 py-2 text-sm h-24 placeholder:text-gray-500 ${
+                  errors.message ? "border-2 border-red-500" : ""
+                }`}
+              />
+              {errors.message && (
+                <p className="text-red-500 text-xs mt-1">{errorMessages.message}</p>
+              )}
+            </div>
 
       <div className="flex items-start gap-2 text-sm">
   <input

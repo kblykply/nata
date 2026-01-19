@@ -27,17 +27,48 @@ export default function DemandPopup({
 
   const [submitting, setSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [errors, setErrors] = useState({
+    name: false,
+    phone: false,
+    project: false,
+  });
+  const [errorMessages, setErrorMessages] = useState({
+    name: "",
+    phone: "",
+    project: "",
+  });
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
   ) => {
-    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+    if (errors[name as keyof typeof errors]) {
+      setErrors({ ...errors, [name]: false });
+      setErrorMessages({ ...errorMessages, [name]: "" });
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitting(true);
     setErrorMsg(null);
+
+    const nextErrors = {
+      name: !formData.name.trim(),
+      phone: !formData.phone.trim(),
+      project: !formData.project.trim(),
+    };
+    setErrors(nextErrors);
+    setErrorMessages({
+      name: nextErrors.name ? "Bu alanı doldurun" : "",
+      phone: nextErrors.phone ? "Bu alanı doldurun" : "",
+      project: nextErrors.project ? "Bu alanı doldurun" : "",
+    });
+    if (Object.values(nextErrors).some(Boolean)) {
+      return;
+    }
+
+    setSubmitting(true);
 
     const payload = {
       name: formData.name.trim(),
@@ -96,9 +127,13 @@ export default function DemandPopup({
               name="name"
               value={formData.name}
               onChange={handleChange}
-              required
-              className="w-full rounded-md border border-gray-300 px-3 py-2"
+              className={`w-full rounded-md border px-3 py-2 ${
+                errors.name ? "border-2 border-red-500" : "border-gray-300"
+              }`}
             />
+            {errors.name && (
+              <p className="text-red-500 text-xs mt-1">{errorMessages.name}</p>
+            )}
           </div>
 
           <div>
@@ -108,10 +143,14 @@ export default function DemandPopup({
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              required
               inputMode="tel"
-              className="w-full rounded-md border border-gray-300 px-3 py-2"
+              className={`w-full rounded-md border px-3 py-2 ${
+                errors.phone ? "border-2 border-red-500" : "border-gray-300"
+              }`}
             />
+            {errors.phone && (
+              <p className="text-red-500 text-xs mt-1">{errorMessages.phone}</p>
+            )}
           </div>
 
           <div>
@@ -120,8 +159,9 @@ export default function DemandPopup({
               name="project"
               value={formData.project}
               onChange={handleChange}
-              required
-              className="w-full rounded-md border border-gray-300 px-3 py-2"
+              className={`w-full rounded-md border px-3 py-2 ${
+                errors.project ? "border-2 border-red-500" : "border-gray-300"
+              }`}
             >
               {projects.map((proj, idx) => (
                 <option key={idx} value={proj.title}>
@@ -129,6 +169,9 @@ export default function DemandPopup({
                 </option>
               ))}
             </select>
+            {errors.project && (
+              <p className="text-red-500 text-xs mt-1">{errorMessages.project}</p>
+            )}
           </div>
 
           <div>

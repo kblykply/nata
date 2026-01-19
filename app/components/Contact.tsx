@@ -19,6 +19,14 @@ export default function ContactQrSection() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
+  const [errors, setErrors] = useState({
+    name: false,
+    phone: false,
+  });
+  const [errorMessages, setErrorMessages] = useState({
+    name: "",
+    phone: "",
+  });
   const [recaptchaToken, setRecaptchaToken] = useState("");
   const recaptchaRef = useRef<ReCAPTCHA>(null);
   const swiperRef = useRef<SwiperCore | null>(null); // ✅ Fix: provide initial value
@@ -30,18 +38,27 @@ export default function ContactQrSection() {
   ];
 
   const validateForm = () => {
-    if (!name.trim()) {
-      setError("Lütfen adınızı ve soyadınızı giriniz.");
-      return false;
-    }
-    if (!phone.trim()) {
-      setError("Lütfen telefon numaranızı giriniz.");
+    const nextErrors = {
+      name: !name.trim(),
+      phone: !phone.trim(),
+    };
+    const nextMessages = {
+      name: nextErrors.name ? "Bu alanı doldurun" : "",
+      phone: nextErrors.phone ? "Bu alanı doldurun" : "",
+    };
+    setErrors(nextErrors);
+    setErrorMessages(nextMessages);
+    if (nextErrors.name || nextErrors.phone) {
       return false;
     }
     const cleanPhone = phone.replace(/\D/g, "");
     const phoneRegex = /^(0|90)?[0-9]{10}$/;
     if (!phoneRegex.test(cleanPhone)) {
-      setError("Lütfen geçerli bir telefon numarası giriniz. Örnek: 05520295752");
+      setErrors({ ...nextErrors, phone: true });
+      setErrorMessages({
+        ...nextMessages,
+        phone: "Geçerli bir telefon numarası giriniz",
+      });
       return false;
     }
     if (!recaptchaToken) {
@@ -79,6 +96,8 @@ export default function ContactQrSection() {
         setPhone("");
         setMessage("");
         setRecaptchaToken("");
+        setErrors({ name: false, phone: false });
+        setErrorMessages({ name: "", phone: "" });
         recaptchaRef.current?.reset();
       } else {
         setError(data.error || "Gönderim başarısız oldu. Lütfen tekrar deneyin.");
@@ -171,20 +190,46 @@ export default function ContactQrSection() {
           </p>
 
           <div className="flex flex-col md:flex-row gap-4 justify-center mb-4">
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder="Adınız ve Soyadınız"
-              className="px-6 py-4 bg-gray-50 border text-gray-800 border-gray-300 rounded-full w-full md:w-1/2"
-            />
-            <input
-              type="tel"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              placeholder="+90 (5__) ___ __ __"
-              className="px-6 py-4 bg-gray-50 border text-gray-800 border-gray-300 rounded-full w-full md:w-1/2"
-            />
+            <div className="w-full md:w-1/2">
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => {
+                  setName(e.target.value);
+                  if (errors.name) {
+                    setErrors({ ...errors, name: false });
+                    setErrorMessages({ ...errorMessages, name: "" });
+                  }
+                }}
+                placeholder="Adınız ve Soyadınız"
+                className={`px-6 py-4 bg-gray-50 border text-gray-800 rounded-full w-full ${
+                  errors.name ? "border-red-500 border-2" : "border-gray-300"
+                }`}
+              />
+              {errors.name && (
+                <p className="text-red-500 text-xs mt-1">{errorMessages.name}</p>
+              )}
+            </div>
+            <div className="w-full md:w-1/2">
+              <input
+                type="tel"
+                value={phone}
+                onChange={(e) => {
+                  setPhone(e.target.value);
+                  if (errors.phone) {
+                    setErrors({ ...errors, phone: false });
+                    setErrorMessages({ ...errorMessages, phone: "" });
+                  }
+                }}
+                placeholder="+90 (5__) ___ __ __"
+                className={`px-6 py-4 bg-gray-50 border text-gray-800 rounded-full w-full ${
+                  errors.phone ? "border-red-500 border-2" : "border-gray-300"
+                }`}
+              />
+              {errors.phone && (
+                <p className="text-red-500 text-xs mt-1">{errorMessages.phone}</p>
+              )}
+            </div>
           </div>
 
           <textarea

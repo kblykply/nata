@@ -18,11 +18,45 @@ export default function MeetingReservationForm() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
+  const [errors, setErrors] = useState({
+    name: false,
+    email: false,
+    phone: false,
+    date: false,
+    time: false,
+  });
+  const [errorMessages, setErrorMessages] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    date: "",
+    time: "",
+  });
 
   const handleSubmit = async () => {
     setLoading(true);
     setSuccess(false);
     setError("");
+
+    const nextErrors = {
+      name: !name.trim(),
+      email: !email.trim(),
+      phone: !phone.trim(),
+      date: !selectedDate,
+      time: !selectedTime,
+    };
+    setErrors(nextErrors);
+    setErrorMessages({
+      name: nextErrors.name ? "Bu alanı doldurun" : "",
+      email: nextErrors.email ? "Bu alanı doldurun" : "",
+      phone: nextErrors.phone ? "Bu alanı doldurun" : "",
+      date: nextErrors.date ? "Bu alanı doldurun" : "",
+      time: nextErrors.time ? "Bu alanı doldurun" : "",
+    });
+    if (Object.values(nextErrors).some(Boolean)) {
+      setLoading(false);
+      return;
+    }
 
     if (!recaptchaToken) {
       setError("Lütfen reCAPTCHA doğrulamasını tamamlayın.");
@@ -51,6 +85,8 @@ export default function MeetingReservationForm() {
       setNotes("");
       setAccepted(false);
       setRecaptchaToken("");
+      setErrors({ name: false, email: false, phone: false, date: false, time: false });
+      setErrorMessages({ name: "", email: "", phone: "", date: "", time: "" });
     } catch (err) {
       setError("Gönderim sırasında bir hata oluştu.");
     } finally {
@@ -90,49 +126,114 @@ export default function MeetingReservationForm() {
 
         {/* Right: Reservation Form */}
         <div className="space-y-4">
-          <input
-            type="text"
-            placeholder="İsim Soyisim"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="w-full bg-gray-100 rounded-sm px-4 py-2 text-sm placeholder:text-gray-500"
-          />
-          <input
-            type="email"
-            placeholder="E-mail"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="w-full bg-gray-100 rounded-sm px-4 py-2 text-sm placeholder:text-gray-500"
-          />
-          <input
-            type="tel"
-            placeholder="Telefon"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            className="w-full bg-gray-100 rounded-sm px-4 py-2 text-sm placeholder:text-gray-500"
-          />
+          <div>
+            <input
+              type="text"
+              placeholder="İsim Soyisim"
+              value={name}
+              onChange={(e) => {
+                setName(e.target.value);
+                if (errors.name) {
+                  setErrors({ ...errors, name: false });
+                  setErrorMessages({ ...errorMessages, name: "" });
+                }
+              }}
+              className={`w-full bg-gray-100 rounded-sm px-4 py-2 text-sm placeholder:text-gray-500 ${
+                errors.name ? "border-2 border-red-500" : ""
+              }`}
+            />
+            {errors.name && (
+              <p className="text-red-500 text-xs mt-1">{errorMessages.name}</p>
+            )}
+          </div>
+          <div>
+            <input
+              type="email"
+              placeholder="E-mail"
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                if (errors.email) {
+                  setErrors({ ...errors, email: false });
+                  setErrorMessages({ ...errorMessages, email: "" });
+                }
+              }}
+              className={`w-full bg-gray-100 rounded-sm px-4 py-2 text-sm placeholder:text-gray-500 ${
+                errors.email ? "border-2 border-red-500" : ""
+              }`}
+            />
+            {errors.email && (
+              <p className="text-red-500 text-xs mt-1">{errorMessages.email}</p>
+            )}
+          </div>
+          <div>
+            <input
+              type="tel"
+              placeholder="Telefon"
+              value={phone}
+              onChange={(e) => {
+                setPhone(e.target.value);
+                if (errors.phone) {
+                  setErrors({ ...errors, phone: false });
+                  setErrorMessages({ ...errorMessages, phone: "" });
+                }
+              }}
+              className={`w-full bg-gray-100 rounded-sm px-4 py-2 text-sm placeholder:text-gray-500 ${
+                errors.phone ? "border-2 border-red-500" : ""
+              }`}
+            />
+            {errors.phone && (
+              <p className="text-red-500 text-xs mt-1">{errorMessages.phone}</p>
+            )}
+          </div>
 
-          <DatePicker
-            selected={selectedDate}
-            onChange={(date) => setSelectedDate(date)}
-            minDate={new Date()}
-            placeholderText="Tarih Seçin"
-            className="w-full bg-gray-100 rounded-sm px-4 py-2 text-sm placeholder:text-gray-500"
-            dateFormat="dd/MM/yyyy"
-          />
+          <div>
+            <DatePicker
+              selected={selectedDate}
+              onChange={(date) => {
+                setSelectedDate(date);
+                if (errors.date) {
+                  setErrors({ ...errors, date: false });
+                  setErrorMessages({ ...errorMessages, date: "" });
+                }
+              }}
+              minDate={new Date()}
+              placeholderText="Tarih Seçin"
+              className={`w-full bg-gray-100 rounded-sm px-4 py-2 text-sm placeholder:text-gray-500 ${
+                errors.date ? "border-2 border-red-500" : ""
+              }`}
+              dateFormat="dd/MM/yyyy"
+            />
+            {errors.date && (
+              <p className="text-red-500 text-xs mt-1">{errorMessages.date}</p>
+            )}
+          </div>
 
-          <select
-            value={selectedTime}
-            onChange={(e) => setSelectedTime(e.target.value)}
-            className="w-full bg-gray-100 rounded-sm px-4 py-2 text-sm text-gray-500"
-          >
-            <option value="">Saat Seçin</option>
-            <option value="10:00">10:00</option>
-            <option value="11:00">11:00</option>
-            <option value="14:00">14:00</option>
-            <option value="15:00">15:00</option>
-            <option value="16:00">16:00</option>
-          </select>
+          <div>
+            <select
+              value={selectedTime}
+              onChange={(e) => {
+                setSelectedTime(e.target.value);
+                if (errors.time) {
+                  setErrors({ ...errors, time: false });
+                  setErrorMessages({ ...errorMessages, time: "" });
+                }
+              }}
+              className={`w-full bg-gray-100 rounded-sm px-4 py-2 text-sm text-gray-500 ${
+                errors.time ? "border-2 border-red-500" : ""
+              }`}
+            >
+              <option value="">Saat Seçin</option>
+              <option value="10:00">10:00</option>
+              <option value="11:00">11:00</option>
+              <option value="14:00">14:00</option>
+              <option value="15:00">15:00</option>
+              <option value="16:00">16:00</option>
+            </select>
+            {errors.time && (
+              <p className="text-red-500 text-xs mt-1">{errorMessages.time}</p>
+            )}
+          </div>
 
           <textarea
             placeholder="Notlar (isteğe bağlı)"

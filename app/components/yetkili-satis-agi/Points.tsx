@@ -22,6 +22,12 @@ const Points = () => {
     phone: false,
     business: false,
   });
+  const [errorMessages, setErrorMessages] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    business: "",
+  });
   const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const handleSubmit = async () => {
@@ -35,6 +41,12 @@ const Points = () => {
       business: !business.trim(),
     };
     setErrors(newErrors);
+    setErrorMessages({
+      name: newErrors.name ? "Bu alanı doldurun" : "",
+      email: newErrors.email ? "Bu alanı doldurun" : "",
+      phone: newErrors.phone ? "Bu alanı doldurun" : "",
+      business: newErrors.business ? "Bu alanı doldurun" : "",
+    });
 
     if (!name.trim() || !email.trim() || !phone.trim() || !business.trim()) {
       setError("Lütfen tüm zorunlu alanları doldurun.");
@@ -79,6 +91,7 @@ const Points = () => {
         setAccepted(false);
         setRecaptchaToken("");
         setErrors({ name: false, email: false, phone: false, business: false });
+        setErrorMessages({ name: "", email: "", phone: "", business: "" });
         recaptchaRef.current?.reset();
       } else {
         setError(data.error || "Gönderim başarısız oldu. Lütfen tekrar deneyin.");
@@ -134,11 +147,15 @@ const Points = () => {
             onChange={(e) => {
               setName(e.target.value);
               setErrors({ ...errors, name: false });
+              setErrorMessages({ ...errorMessages, name: "" });
             }}
             className={`w-full bg-gray-100 rounded-sm px-4 py-2 text-sm text-gray-800 placeholder:text-gray-500 ${
               errors.name ? "border-2 border-red-500" : ""
             }`}
           />
+          {errors.name && (
+            <p className="text-red-500 text-xs mt-1">{errorMessages.name}</p>
+          )}
           <input
             type="email"
             placeholder="E-mail"
@@ -146,11 +163,15 @@ const Points = () => {
             onChange={(e) => {
               setEmail(e.target.value);
               setErrors({ ...errors, email: false });
+              setErrorMessages({ ...errorMessages, email: "" });
             }}
             className={`w-full bg-gray-100 rounded-sm px-4 py-2 text-sm text-gray-800 placeholder:text-gray-500 ${
               errors.email ? "border-2 border-red-500" : ""
             }`}
           />
+          {errors.email && (
+            <p className="text-red-500 text-xs mt-1">{errorMessages.email}</p>
+          )}
           <input
             type="tel"
             placeholder="Telefon"
@@ -158,11 +179,15 @@ const Points = () => {
             onChange={(e) => {
               setPhone(e.target.value);
               setErrors({ ...errors, phone: false });
+              setErrorMessages({ ...errorMessages, phone: "" });
             }}
             className={`w-full bg-gray-100 rounded-sm px-4 py-2 text-sm text-gray-800 placeholder:text-gray-500 ${
               errors.phone ? "border-2 border-red-500" : ""
             }`}
           />
+          {errors.phone && (
+            <p className="text-red-500 text-xs mt-1">{errorMessages.phone}</p>
+          )}
           <input
             type="text"
             placeholder="İşletme Bilgisi"
@@ -170,11 +195,15 @@ const Points = () => {
             onChange={(e) => {
               setBusiness(e.target.value);
               setErrors({ ...errors, business: false });
+              setErrorMessages({ ...errorMessages, business: "" });
             }}
             className={`w-full bg-gray-100 rounded-sm px-4 py-2 text-sm text-gray-800 placeholder:text-gray-500 ${
               errors.business ? "border-2 border-red-500" : ""
             }`}
           />
+          {errors.business && (
+            <p className="text-red-500 text-xs mt-1">{errorMessages.business}</p>
+          )}
           <textarea
             placeholder="Mesajınız (isteğe bağlı)"
             value={message}

@@ -5,7 +5,7 @@ import DemandPopup from "./DemandPopup"; // Add this import
 
 const projects = [
   {
-    title: "YALIKAVAK",
+    title: "BODRUM-YALIKAVAK",
     subtitle: "Exclusive Villa",
     image: "/nata-yalikavak.jpg",
     blur: true,
@@ -23,12 +23,12 @@ const projects = [
     demandLink: "/on-talep/milas",
   },
   {
-    title: "VEGA SOFYA",
-    subtitle: "AVM & Konut & Ofis Projesi",
+    title: "VEGA SOFYA-BULGARİSTAN",
+    subtitle: "Konut & Ofis Projesi",
     image: "/sofyaprojesiyakında.png",
     blur: true,
    locationLink:
-      "https://www.google.com/maps/search/42.615207,+23.509408?entry=tts&g_ep=EgoyMDI1MDcyMy4wIPu8ASoASAFQAw%3D%3D&skid=3bd4791d-1b7b-46f4-8e7f-6debbce7e71e",
+      "https://maps.app.goo.gl/gmod5LPGNt7Y9kU9A?g_st=ic",
     
     demandLink: "/on-talep/vega-sofya",
   },
