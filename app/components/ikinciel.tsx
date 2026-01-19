@@ -39,15 +39,15 @@ const listings: SimpleListing[] = [
  
       {
        id: "4",
-      title: "Koru Konfor",
-      price: "Etimesgut'ta Villa",
+      title: "MOMENT BEŞTEPE",
+      price: "Satılık Dükkan",
       currency: " ",
-      location: "Etimesgut/Ankara",
-      type: "Villa",
-      specs: ["Villa", "350 m²", "3 Katlı"],
-      image: "/korubirincikat.jpg",
-      imageAlt: "/koru-map.png",
-      link: "/koru-konfor-21"
+      location: "Yeni Mahalle/Ankara",
+      type: "Dükkan",
+      specs: ["Dükkan", "539 m²", "Asma katlı"],
+      image: "/momentbestepe/asmakat.png",
+      imageAlt: "/momentbestepe/asmakat.png",
+      link: "/moment-bestepe"
     },
   
     
@@ -55,8 +55,8 @@ const listings: SimpleListing[] = [
 
   ];
 
-const locations = ["Tümü", "Etimesgut/Ankara", "Gölbaşı/Ankara", "Çankaya/Ankara"];
-const roomTypes = ["Tümü", "2+1", "3+1", "4+1"];
+const locations = ["Tümü", "Etimesgut/Ankara", "Yeni Mahalle/Ankara", "Gölbaşı/Ankara", "Çankaya/Ankara"];
+const roomTypes = ["Tümü", "Dükkan", "2+1", "3+1", "4+1"];
 const areaRanges = ["Tümü", "<100", "100–130", ">130"];
 const priceRanges = ["Tümü", "<10M", "10M–15M", ">15M"];
 

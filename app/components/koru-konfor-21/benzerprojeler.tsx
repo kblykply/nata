@@ -24,16 +24,16 @@ const listings = [
     },
    
       {
-       id: "4",
-      title: "Koru Konfor",
-      price: "Etimesgut'ta Villa",
+      id: "4",
+      title: "MOMENT BEŞTEPE",
+      price: "Satılık Dükkan",
       currency: " ",
-      location: "Etimesgut/Ankara",
-      type: "Villa",
-      specs: ["Villa", "350 m²", "3 Katlı"],
-      image: "/korubirincikat.jpg",
-      imageAlt: "/koru-map.png",
-      link: "/koru-konfor-21"
+      location: "Yeni Mahalle/Ankara",
+      type: "Dükkan",
+      specs: ["Dükkan", "539 m²", "Asma katlı"],
+      image: "/momentbestepe/asmakat.png",
+      imageAlt: "/momentbestepe/asmakat.png",
+      link: "/moment-bestepe"
     },
    
 ];
