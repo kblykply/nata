@@ -1,10 +1,9 @@
 "use client";
 
-import { useFavorites } from "@/app/contexts/FavoritesContext";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { FaFire, FaTrain } from "react-icons/fa";
+import { FaFire, FaTrain, FaWhatsapp } from "react-icons/fa";
 import { FiPlus } from "react-icons/fi";
 import { SlidersHorizontal, X } from "lucide-react";
 
@@ -201,7 +200,6 @@ export default function ProjectListingSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [showAltImage, setShowAltImage] = useState(false);
   const [popupIndex, setPopupIndex] = useState<number | null>(null);
-  const { toggleFavorite, isFavorite } = useFavorites();
   const [selectedLocation, setSelectedLocation] = useState("Tümü");
   const [selectedMetro, setSelectedMetro] = useState("Tümü");
   const [selectedDelivery, setSelectedDelivery] = useState("Tümü");
@@ -417,31 +415,29 @@ export default function ProjectListingSection() {
                     : "bg-white"
                 }`}
               >
-                {/* Favorite Button */}
-              <div className="absolute bottom-4 right-4 z-30">
-  <button
-    onClick={(e) => {
-      e.preventDefault();
-      toggleFavorite(item.id);
-    }}
-    className="w-11 h-11 bg-gray-100 rounded-full flex items-center justify-center relative"
-    title="Favorilere ekle"
-  >
-    {/* Ping animation */}
-    {isFavorite(item.id) && (
-      <span className="absolute inline-flex h-6 w-6 rounded-full bg-red-400 opacity-75 animate-ping"></span>
-    )}
-
-    {/* Icon */}
-    <Image
-      src="/favori icon.png"
-      alt="Favori"
-      width={20}
-      height={20}
-      className="z-10"
-    />
-  </button>
-</div>
+                {/* Action Buttons */}
+                <div className="absolute bottom-4 right-4 z-30 flex flex-col gap-2">
+                  <Link
+                    href="/contact-us"
+                    onClick={(e) => e.stopPropagation()}
+                    className="w-11 h-11 bg-[#ab1e3b] rounded-full flex items-center justify-center text-[10px] text-white hover:bg-[#961a33] transition"
+                    title="Fiyat Al"
+                  >
+                    Fiyat Al
+                  </Link>
+                  <a
+                    href={`https://api.whatsapp.com/send/?phone=905017111818&text=${encodeURIComponent(
+                      `Merhaba, ${item.price.replace(/\n/g, " ")} projesi hakkında detaylı bilgi almak istiyorum.`
+                    )}&type=phone_number&app_absent=0`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="w-11 h-11 bg-green-500 hover:bg-green-600 text-white rounded-full flex items-center justify-center"
+                    title="WhatsApp"
+                  >
+                    <FaWhatsapp size={18} />
+                  </a>
+                </div>
 
 
                 {/* Image */}

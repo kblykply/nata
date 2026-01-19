@@ -179,7 +179,12 @@ Mustafa Kemal, 2127. Cd No:21, 06530 Çankaya/Ankara
       </div>
 
       <div className="mt-10 border-t pt-6 text-xs text-center text-gray-500">
-        <p className="mb-2">Gizlilik Politikası · Kişisel verilerin işlenmesine onay</p>
+        <p className="mb-2">
+          <Link href="/kvkk" className="text-blue-600 hover:underline">
+            Gizlilik Politikası
+          </Link>
+          {" · Kişisel verilerin işlenmesine onay"}
+        </p>
         <p>
           © NATA HOLDING 2025. Tüm hakları saklıdır. Bu sitede yayınlanan bilgiler sadece bilgilendirme amaçlıdır.
         </p>
