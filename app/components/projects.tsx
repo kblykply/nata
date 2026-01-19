@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { Fragment, useState } from "react";
 import { FaFire, FaTrain, FaWhatsapp } from "react-icons/fa";
 import { FiPlus } from "react-icons/fi";
 import { SlidersHorizontal, X } from "lucide-react";
@@ -200,6 +201,10 @@ export default function ProjectListingSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [showAltImage, setShowAltImage] = useState(false);
   const [popupIndex, setPopupIndex] = useState<number | null>(null);
+  const router = useRouter();
+  const [compareSelection, setCompareSelection] = useState<
+    [Listing | null, Listing | null]
+  >([null, null]);
   const [selectedLocation, setSelectedLocation] = useState("Tümü");
   const [selectedMetro, setSelectedMetro] = useState("Tümü");
   const [selectedDelivery, setSelectedDelivery] = useState("Tümü");
@@ -248,6 +253,73 @@ export default function ProjectListingSection() {
 
     return locationMatch && metroMatch && deliveryMatch;
   });
+  const isCompared = (item: Listing) =>
+    compareSelection.some((selected) => selected?.id === item.id);
+  const compareCount = compareSelection.filter(Boolean).length;
+  const hasCompareSelection = compareSelection.some(Boolean);
+  const shouldHideOthers = compareCount === 2;
+  const visibleListings = shouldHideOthers
+    ? filteredListings.filter((item) => isCompared(item))
+    : filteredListings;
+  const compareLeft = shouldHideOthers ? visibleListings[0] : null;
+  const compareRight = shouldHideOthers ? visibleListings[1] : null;
+  const formatLine = (value?: string) =>
+    value ? value.replace(/\n/g, " ") : "-";
+  const formatArray = (value?: string[]) =>
+    value && value.length > 0 ? value.join(", ") : "-";
+  const formatExtra = (value?: { label: string }[]) =>
+    value && value.length > 0 ? value.map((item) => item.label).join(", ") : "-";
+  const comparisonRows =
+    compareLeft && compareRight
+      ? [
+          {
+            label: "Proje",
+            left: formatLine(compareLeft.price),
+            right: formatLine(compareRight.price),
+          },
+          {
+            label: "Teslim",
+            left: formatLine(compareLeft.label || compareLeft.highlight),
+            right: formatLine(compareRight.label || compareRight.highlight),
+          },
+          {
+            label: "Metro",
+            left: formatLine(compareLeft.metro),
+            right: formatLine(compareRight.metro),
+          },
+          {
+            label: "Mesafe",
+            left: formatLine(compareLeft.time),
+            right: formatLine(compareRight.time),
+          },
+          {
+            label: "Özellikler",
+            left: formatArray(compareLeft.stats),
+            right: formatArray(compareRight.stats),
+          },
+          {
+            label: "Lokasyon",
+            left: formatLine(compareLeft.footer),
+            right: formatLine(compareRight.footer),
+          },
+          {
+            label: "İlerleme",
+            left:
+              compareLeft.progress !== undefined
+                ? `%${compareLeft.progress}`
+                : "-",
+            right:
+              compareRight.progress !== undefined
+                ? `%${compareRight.progress}`
+                : "-",
+          },
+          {
+            label: "Ekstra",
+            left: formatExtra(compareLeft.extra),
+            right: formatExtra(compareRight.extra),
+          },
+        ]
+      : [];
 
   const handleMouseMove = (e: React.MouseEvent, index: number) => {
     const bounds = e.currentTarget.getBoundingClientRect();
@@ -262,6 +334,38 @@ export default function ProjectListingSection() {
     e.stopPropagation();
     setPopupIndex(index);
   };
+
+  const handleCompareToggle = (
+    e: React.MouseEvent,
+    item: Listing
+  ) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    setCompareSelection(([first, second]) => {
+      const isFirst = first?.id === item.id;
+      const isSecond = second?.id === item.id;
+
+      if (isFirst) {
+        return [second ?? null, null];
+      }
+
+      if (isSecond) {
+        return [first ?? null, null];
+      }
+
+      if (!first) {
+        return [item, second ?? null];
+      }
+
+      if (!second) {
+        return [first, item];
+      }
+
+      return [first, item];
+    });
+  };
+
 
   return (
     <section id="aktif-projeler" className="bg-white py-16 px-6">
@@ -310,6 +414,14 @@ export default function ProjectListingSection() {
             <SlidersHorizontal className="w-4 h-4 mr-2" />
             Tüm Filtreler
           </button>
+          {hasCompareSelection && (
+            <button
+              onClick={() => setCompareSelection([null, null])}
+              className="flex items-center px-4 py-2 rounded-full bg-gray-100 text-gray-700 font-medium hover:bg-gray-200 transition"
+            >
+              Karşılaştırmayı temizle
+            </button>
+          )}
         </div>
 
         {showAllFilters && (
@@ -398,26 +510,64 @@ export default function ProjectListingSection() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-screen-xl mx-auto relative">
-        {filteredListings.map((item, index) => {
+        {visibleListings.map((item, index) => {
           const isHovered = hoveredIndex === index;
           const imgSrc = isHovered && showAltImage && item.imageAlt ? item.imageAlt : item.image;
+          const compared = isCompared(item);
           return (
-            <Link href={item.link} key={index} className="block h-full">
+            <Fragment key={item.id}>
+              {shouldHideOthers && comparisonRows.length > 0 && index === 1 && (
+                <div className="rounded-md border border-gray-200 bg-white p-4 shadow-sm h-fit">
+                  <div className="space-y-3 text-xs text-gray-700">
+                    {comparisonRows.map((row) => (
+                      <div key={row.label} className="grid grid-cols-3 gap-2 items-start">
+                        <div className="text-right text-gray-800">{row.left}</div>
+                        <div className="text-center text-gray-500 font-semibold">
+                          {row.label}
+                        </div>
+                        <div className="text-left text-gray-800">{row.right}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
               <div
-                onMouseMove={(e) => handleMouseMove(e, index)}
-                onMouseLeave={() => {
-                  setHoveredIndex(null);
-                  setPopupIndex(null);
-                }}
-                className={`relative rounded-md overflow-hidden shadow-sm transition cursor-pointer flex flex-col ${
-                  item.type === "featured"
-                    ? "bg-black text-white min-h-[540px]"
-                    : "bg-white"
-                }`}
-              >
+                key={item.id}
+              role="link"
+              tabIndex={0}
+              onClick={() => router.push(item.link)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  router.push(item.link);
+                }
+              }}
+              onMouseMove={(e) => handleMouseMove(e, index)}
+              onMouseLeave={() => {
+                setHoveredIndex(null);
+                setPopupIndex(null);
+              }}
+              className={`block h-full relative rounded-md overflow-hidden shadow-sm transition cursor-pointer flex flex-col ${
+                item.type === "featured"
+                  ? "bg-black text-white min-h-[540px]"
+                  : "bg-white"
+              }`}
+            >
                 {/* Action Buttons */}
-                <div className="absolute bottom-4 right-4 z-30 flex flex-col gap-2">
-                  <Link
+        <div className="absolute top-4 right-4 z-30">
+          <button
+            onClick={(e) => handleCompareToggle(e, item)}
+            className={`px-3 py-1 rounded-full text-[10px] font-medium transition ${
+              compared
+                ? "bg-black text-white"
+                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+            }`}
+          >
+            {compared ? "Seçildi" : "Karşılaştır"}
+          </button>
+        </div>
+        <div className="absolute bottom-4 right-4 z-30 flex flex-col gap-2 items-end">
+          <Link
                     href="/contact-us"
                     onClick={(e) => e.stopPropagation()}
                     className="w-11 h-11 bg-[#ab1e3b] rounded-full flex items-center justify-center text-[10px] text-white hover:bg-[#961a33] transition"
@@ -605,7 +755,7 @@ export default function ProjectListingSection() {
                   )}
                 </div>
               </div>
-            </Link>
+            </Fragment>
           );
         })}
       </div>
