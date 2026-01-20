@@ -44,8 +44,8 @@ const allListings: Listing[] = [
     time: "5 dakika mesafede",
     stats: ["Merkezi Lokasyon", "Açık Avm ve Ofis Konsepti"],
     footer: "Çankaya",
-    image: "/vegacenter-dikey.png",
-    imageAlt: "/vegacenter-dikey.png",
+    image: "/VegaCenterGenelGorunum.webp",
+    imageAlt: "/VegaCenterGenelGorunum.webp",
     progress: 100 
    
   },
@@ -61,8 +61,8 @@ price: "RAMS GARDEN\nBAHÇELİEVLER",
     time: "9 dakika mesafede",
     stats: ["8.815 m²", "796 daire"],
     footer: "Bahçelievler",
-    image: "/rams-garden-bahcelievler-5.jpg",
-    imageAlt: "/rams-garden-bahcelievler-5.jpg",
+    image: "/RamsPArkBAhcelievler.webp",
+    imageAlt: "/RamsPArkBAhcelievler.webp",
 
      extra: [
       { icon: "", label: "Merkezi Lokasyon" },
@@ -119,7 +119,7 @@ price: "RAMS GARDEN\nBAHÇELİEVLER",
       { icon: "", label: "Rezidans Projesi" },
       { icon: "", label: "Ulaşım Imkanları" },
     ],
-    progress: 35
+    progress: 50
   },
 
   {
