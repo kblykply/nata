@@ -7,7 +7,7 @@ const projects = [
   {
     title: "BODRUM-YALIKAVAK",
     subtitle: "Exclusive Villa",
-    image: "/Yalikavak2.webp",
+    image: "/nata-yalikavak.jpg",
     blur: true,
     locationLink:
       "https://www.google.com/maps/place/37%C2%B008'18.0%22N+27%C2%B019'06.2%22E/@37.1383383,27.3161983,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d37.138334!4d27.318387",
@@ -16,7 +16,7 @@ const projects = [
   {
     title: "MİLAS KIYIKIŞLACIK",
     subtitle: "VİLLA & KONUT\n& TURİZM & SAĞLIK & AVM",
-    image: "/Kiyikislacik1.webp",
+    image: "/nata-kiyikislacik.jpg",
     blur: true,
     locationLink:
       "https://www.google.com/maps?q=K%C4%B1y%C4%B1k%C4%B1%C5%9Flac%C4%B1k,+48200+Milas/Mu%C4%9Fla&ftid=0x14bef5bf2b757283:0x7d86dea5fbe1f934&hl=tr-TR&gl=tr&entry=gps&g_ep=INeCAw%3D%3D&g_st=iw",
@@ -25,7 +25,7 @@ const projects = [
   {
     title: "VEGA SOFYA-BULGARİSTAN",
     subtitle: "Konut & Ofis Projesi",
-    image: "/SofiaProje.webp",
+    image: "/sofyaprojesiyakında.png",
     blur: true,
    locationLink:
       "https://maps.app.goo.gl/gmod5LPGNt7Y9kU9A?g_st=ic",
@@ -35,7 +35,7 @@ const projects = [
   {
     title: "NATA CENTER",
     subtitle: "Karma Kullanım: AVM, Ofis, Rezidans",
-    image: "/NataCenter.webp",
+    image: "/natacenteryakinda.png",
     blur: true,
     locationLink:
       "https://www.google.com/maps/search/39.909313,+32.782915?entry=tts&g_ep=EgoyMDI1MDcyMy4wIPu8ASoASAFQAw%3D%3D&skid=32a7c5c1-6b19-491b-8ae8-b599f4810a0f",
