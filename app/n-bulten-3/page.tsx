@@ -181,6 +181,14 @@ export default function Magazine() {
               </span>
             </div>
 
+            <a
+              href="/n-bulten-3.pdf"
+              download
+              className="fixed top-4 left-4 z-[1000] px-4 py-2 rounded-full bg-[#ab1e3b] text-white text-sm font-medium shadow-md hover:bg-[#961a33] transition"
+            >
+              Dergiyi indir
+            </a>
+
             {/* === ESC Button === */}
             {isFullscreen && (
               <button

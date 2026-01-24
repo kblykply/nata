@@ -36,7 +36,7 @@ const AboutContentSection = () => {
       <div className="bg-gray-100 p-6 rounded-2xl flex items-center justify-center w-[100px] h-[100px]">
         <Image src="/tecrübe.png" alt="Tecrübe" width={40} height={40} />
       </div>
-      <p className="text-sm mt-3 w-36">40+ Yıllık Tecrübe</p>
+      <p className="text-sm mt-3 w-36">57 Yıllık Tecrübe</p>
     </div>
 
     {/* Icon 2 */}
@@ -44,7 +44,7 @@ const AboutContentSection = () => {
       <div className="bg-gray-100 p-6 rounded-2xl flex items-center justify-center w-[100px] h-[100px]">
         <Image src="/tamamlananproje.png" alt="Tamamlanan Proje" width={40} height={40} />
       </div>
-      <p className="text-sm mt-3 w-36">30+ Tamamlanan Proje</p>
+      <p className="text-sm mt-3 w-36">277 Tamamlanan Proje</p>
     </div>
 
     {/* Icon 3 */}
@@ -52,7 +52,7 @@ const AboutContentSection = () => {
       <div className="bg-gray-100 p-6 rounded-2xl flex items-center justify-center w-[100px] h-[100px]">
         <Image src="/devamedenproje.png" alt="Devam Eden Proje" width={40} height={40} />
       </div>
-      <p className="text-sm mt-3 w-36">20+ Devam Eden Proje</p>
+      <p className="text-sm mt-3 w-36">24 Devam Eden Proje</p>
     </div>
 
     {/* Icon 4 */}

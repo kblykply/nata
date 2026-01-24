@@ -44,8 +44,8 @@ const allListings: Listing[] = [
     time: "5 dakika mesafede",
     stats: ["Merkezi Lokasyon", "Açık Avm ve Ofis Konsepti"],
     footer: "Çankaya",
-    image: "/VegaCenterGenelGorunum.webp",
-    imageAlt: "/VegaCenterGenelGorunum.webp",
+    image: "/vega-center/DJI_0380.webp",
+    imageAlt: "/vega-center/DJI_0380.webp",
     progress: 100 
    
   },
@@ -205,13 +205,12 @@ export default function ProjectListingSection() {
   const [compareSelection, setCompareSelection] = useState<
     [Listing | null, Listing | null]
   >([null, null]);
+  const [selectedProject, setSelectedProject] = useState("Tümü");
   const [selectedLocation, setSelectedLocation] = useState("Tümü");
-  const [selectedMetro, setSelectedMetro] = useState("Tümü");
-  const [selectedDelivery, setSelectedDelivery] = useState("Tümü");
   const [showAllFilters, setShowAllFilters] = useState(false);
 
-  const getDeliveryLabel = (item: Listing) =>
-    item.label || item.highlight || "";
+  const formatOptionLabel = (value?: string) =>
+    value ? value.replace(/\n/g, " ") : "";
 
   const locationOptions = [
     "Tümü",
@@ -219,39 +218,23 @@ export default function ProjectListingSection() {
       new Set(allListings.map((item) => item.footer).filter(Boolean))
     ),
   ];
-  const metroOptions = [
+  const projectOptions = [
     "Tümü",
-    ...Array.from(
-      new Set(allListings.map((item) => item.metro).filter(Boolean))
-    ),
-  ];
-  const deliveryOptions = [
-    "Tümü",
-    ...Array.from(
-      new Set(
-        allListings
-          .map((item) => getDeliveryLabel(item))
-          .filter((value) => value)
-      )
-    ),
+    ...Array.from(new Set(allListings.map((item) => item.price).filter(Boolean))),
   ];
 
   const resetFilters = () => {
+    setSelectedProject("Tümü");
     setSelectedLocation("Tümü");
-    setSelectedMetro("Tümü");
-    setSelectedDelivery("Tümü");
   };
 
   const filteredListings = allListings.filter((item) => {
+    const projectMatch =
+      selectedProject === "Tümü" || item.price === selectedProject;
     const locationMatch =
       selectedLocation === "Tümü" || item.footer === selectedLocation;
-    const metroMatch =
-      selectedMetro === "Tümü" || item.metro === selectedMetro;
-    const deliveryLabel = getDeliveryLabel(item);
-    const deliveryMatch =
-      selectedDelivery === "Tümü" || deliveryLabel === selectedDelivery;
 
-    return locationMatch && metroMatch && deliveryMatch;
+    return projectMatch && locationMatch;
   });
   const isCompared = (item: Listing) =>
     compareSelection.some((selected) => selected?.id === item.id);
@@ -372,35 +355,23 @@ export default function ProjectListingSection() {
       <div className="max-w-screen-xl mx-auto mb-6">
         <div className="flex flex-wrap items-center gap-3 text-sm mb-4">
           <select
+            value={selectedProject}
+            onChange={(e) => setSelectedProject(e.target.value)}
+            className="flex items-center bg-gray-100 px-4 py-2 rounded-full text-gray-700"
+          >
+            {projectOptions.map((item) => (
+              <option key={item} value={item}>
+                {formatOptionLabel(item)}
+              </option>
+            ))}
+          </select>
+
+          <select
             value={selectedLocation}
             onChange={(e) => setSelectedLocation(e.target.value)}
             className="flex items-center bg-gray-100 px-4 py-2 rounded-full text-gray-700"
           >
             {locationOptions.map((item) => (
-              <option key={item} value={item}>
-                {item}
-              </option>
-            ))}
-          </select>
-
-          <select
-            value={selectedMetro}
-            onChange={(e) => setSelectedMetro(e.target.value)}
-            className="flex items-center bg-gray-100 px-4 py-2 rounded-full text-gray-700"
-          >
-            {metroOptions.map((item) => (
-              <option key={item} value={item}>
-                {item}
-              </option>
-            ))}
-          </select>
-
-          <select
-            value={selectedDelivery}
-            onChange={(e) => setSelectedDelivery(e.target.value)}
-            className="flex items-center bg-gray-100 px-4 py-2 rounded-full text-gray-700"
-          >
-            {deliveryOptions.map((item) => (
               <option key={item} value={item}>
                 {item}
               </option>
@@ -439,6 +410,23 @@ export default function ProjectListingSection() {
               <div className="space-y-4">
                 <div>
                   <label className="block mb-1 text-sm font-medium text-gray-700">
+                    Proje
+                  </label>
+                  <select
+                    value={selectedProject}
+                    onChange={(e) => setSelectedProject(e.target.value)}
+                    className="w-full border rounded-lg px-3 py-2"
+                  >
+                    {projectOptions.map((project) => (
+                      <option key={project} value={project}>
+                        {formatOptionLabel(project)}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block mb-1 text-sm font-medium text-gray-700">
                     Lokasyon
                   </label>
                   <select
@@ -449,40 +437,6 @@ export default function ProjectListingSection() {
                     {locationOptions.map((loc) => (
                       <option key={loc} value={loc}>
                         {loc}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block mb-1 text-sm font-medium text-gray-700">
-                    Metro İstasyonu
-                  </label>
-                  <select
-                    value={selectedMetro}
-                    onChange={(e) => setSelectedMetro(e.target.value)}
-                    className="w-full border rounded-lg px-3 py-2"
-                  >
-                    {metroOptions.map((metro) => (
-                      <option key={metro} value={metro}>
-                        {metro}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block mb-1 text-sm font-medium text-gray-700">
-                    Teslim Durumu
-                  </label>
-                  <select
-                    value={selectedDelivery}
-                    onChange={(e) => setSelectedDelivery(e.target.value)}
-                    className="w-full border rounded-lg px-3 py-2"
-                  >
-                    {deliveryOptions.map((delivery) => (
-                      <option key={delivery} value={delivery}>
-                        {delivery}
                       </option>
                     ))}
                   </select>
