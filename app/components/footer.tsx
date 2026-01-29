@@ -95,7 +95,7 @@ Mustafa Kemal, 2127. Cd No:21, 06530 Çankaya/Ankara
     { name: "YALIKAVAK", url: "https://www.google.com/maps/place/37%C2%B008'18.0%22N+27%C2%B019'06.2%22E/@37.1385557,27.3174448,669m/data=!3m1!1e3!4m4!3m3!8m2!3d37.1383333!4d27.3183889?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D" },
     { name: "MİLAS KIYIKIŞLACIK", url: "https://www.google.com/maps/place/K%C4%B1y%C4%B1k%C4%B1%C5%9Flac%C4%B1k,+48200+Milas%2FMu%C4%9Fla/@37.2725837,27.6177563,667m/data=!3m2!1e3!4b1!4m6!3m5!1s0x14bef5bf2b757283:0x7d86dea5fbe1f934!8m2!3d37.2725837!4d27.6177563!16s%2Fg%2F11p61vs7xc?hl=tr-TR&entry=ttu&g_ep=EgoyMDI1MDYwNC4wIKXMDSoASAFQAw%3D%3D" },
         { name: "VEGA SOFYA", url: "https://www.google.com/maps/search/42.615207,+23.509408?entry=tts&g_ep=EgoyMDI1MDcyMy4wIPu8ASoASAFQAw%3D%3D&skid=3bd4791d-1b7b-46f4-8e7f-6debbce7e71e" },
-    { name: "MİLAS KIYIKIŞLACIK", url: "https://www.google.com/maps/search/39.909313,+32.782915?entry=tts&g_ep=EgoyMDI1MDcyMy4wIPu8ASoASAFQAw%3D%3D&skid=32a7c5c1-6b19-491b-8ae8-b599f4810a0f" },
+    { name: "VEGA CENTER", url: "https://www.google.com/maps/search/39.909313,+32.782915?entry=tts&g_ep=EgoyMDI1MDcyMy4wIPu8ASoASAFQAw%3D%3D&skid=32a7c5c1-6b19-491b-8ae8-b599f4810a0f" },
 
   ].map((item, idx) => (
     <li key={idx}>
