@@ -5,6 +5,7 @@ import { useState } from "react";
 import { FaFire, FaTrain } from "react-icons/fa";
 import { FiPlus } from "react-icons/fi";
 import Link from "next/link";
+import { SlidersHorizontal, X } from "lucide-react";
 
 interface Listing {
   link: string;
@@ -22,7 +23,39 @@ interface Listing {
     icon: string;
     label: string;
   }[];
+  city?: "Ankara" | "İstanbul";
+  district?: string;
+  productType?: "Konut" | "Ofis" | "Ticari" | "Villa";
+  deliveryStatus?: string;
 }
+
+// Helper functions
+const getProductTypeFromListing = (listing: Omit<Listing, 'productType' | 'city' | 'district' | 'deliveryStatus'>): "Konut" | "Ofis" | "Ticari" | "Villa" => {
+  const statsText = listing.stats?.join(" ").toLowerCase() || "";
+  const extraText = listing.extra?.map(e => e.label).join(" ").toLowerCase() || "";
+  const combinedText = `${statsText} ${extraText}`;
+
+  if (combinedText.includes("villa")) {
+    return "Villa";
+  }
+  if (combinedText.includes("ofis") || combinedText.includes("açık avm ve ofis")) {
+    return "Ofis";
+  }
+  if (combinedText.includes("ticari")) {
+    return "Ticari";
+  }
+  return "Konut";
+};
+
+const getDistrictsByCity = (city: string, listings: Listing[]): string[] => {
+  return Array.from(
+    new Set(
+      listings
+        .filter((item) => item.city === city && item.district)
+        .map((item) => item.district!)
+    )
+  ).sort();
+};
 
 
 const listings: Listing[] = [
@@ -44,6 +77,10 @@ const listings: Listing[] = [
       { icon: "", label: "AVM Yanında" },
       { icon: "", label: "YHT Garı'na 5 dakika uzaklık" },
     ],
+    city: "Ankara",
+    district: "Yenimahalle",
+    productType: "Ticari",
+    deliveryStatus: "Tamamlandı",
   },
   {
     link: "/vega-cadde",
@@ -61,6 +98,10 @@ const listings: Listing[] = [
       { icon: "", label: "Vega AVM" },
       { icon: "", label: "Cazip Yatırım Fırsatı" },
     ],
+    city: "Ankara",
+    district: "Yenimahalle",
+    productType: "Ofis",
+    deliveryStatus: "Tamamlandı",
   },
   {
     link: "/tempoint",
@@ -78,6 +119,10 @@ const listings: Listing[] = [
       { icon: "", label: "Vega AVM" },
       { icon: "", label: "Can Alıcı Lokasyon" },
     ],
+    city: "İstanbul",
+    district: "Sultangazi",
+    productType: "Konut",
+    deliveryStatus: "Tamamlandı",
   },
   {
     link: "/incek",
@@ -95,6 +140,10 @@ const listings: Listing[] = [
       { icon: "", label: "12.000 m2 Yeşil Alan" },
       { icon: "", label: "Ferah, Şık ve Kullanışlı" },
     ],
+    city: "Ankara",
+    district: "İncek Mahallesi",
+    productType: "Konut",
+    deliveryStatus: "Tamamlandı",
   },
   {
     link: "/vega-konut-kuleleri",
@@ -112,12 +161,16 @@ const listings: Listing[] = [
       { icon: "", label: "Aquavega Akvaryum" },
       { icon: "", label: "Kusursuz Mimari" },
     ],
+    city: "Ankara",
+    district: "Mamak",
+    productType: "Konut",
+    deliveryStatus: "Tamamlandı",
   },
 
 
   
   
-  
+
 ];
 
 
@@ -125,6 +178,40 @@ export default function ProjectListingSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [showAltImage, setShowAltImage] = useState(false);
   const [popupIndex, setPopupIndex] = useState<number | null>(null);
+  const [selectedCity, setSelectedCity] = useState("Tümü");
+  const [selectedDistrict, setSelectedDistrict] = useState("Tümü");
+  const [selectedProductType, setSelectedProductType] = useState("Tümü");
+  const [showAllFilters, setShowAllFilters] = useState(false);
+
+  // Get unique filter options
+  const cityOptions = Array.from(new Set(listings.map((item) => item.city).filter((city): city is "Ankara" | "İstanbul" => Boolean(city))));
+  const districtOptions = selectedCity === "Tümü" || selectedCity === "İstanbul"
+    ? []
+    : getDistrictsByCity(selectedCity, listings);
+  const productTypeOptions = ["Konut", "Ofis", "Ticari", "Villa"];
+
+  const resetFilters = () => {
+    setSelectedCity("Tümü");
+    setSelectedDistrict("Tümü");
+    setSelectedProductType("Tümü");
+  };
+
+  // Update district when city changes
+  const handleCityChange = (city: string) => {
+    setSelectedCity(city);
+    setSelectedDistrict("Tümü"); // Reset district when city changes
+  };
+
+  const filteredListings = listings.filter((item) => {
+    const cityMatch =
+      selectedCity === "Tümü" || item.city === selectedCity;
+    const districtMatch =
+      selectedCity === "Tümü" || selectedCity === "İstanbul" || selectedDistrict === "Tümü" || item.district === selectedDistrict;
+    const productTypeMatch =
+      selectedProductType === "Tümü" || item.productType === selectedProductType;
+
+    return cityMatch && districtMatch && productTypeMatch;
+  });
 
   const handleMouseMove = (e: React.MouseEvent, index: number) => {
     const bounds = e.currentTarget.getBoundingClientRect();
@@ -143,10 +230,159 @@ export default function ProjectListingSection() {
   return (
     <section id="tamamlanan-projeler" className="bg-white py-16 px-6">
       <h2 className="text-2xl  text-center    font-semibold mb-10">Satışı Tamamlanan<span className="text-[#ab1e3b]"> Projeler</span></h2>
+      
+      <div className="max-w-screen-xl mx-auto mb-6">
+        <div className="flex flex-wrap items-center gap-3 text-sm mb-4">
+          {/* Şehir Filtresi */}
+          <select
+            value={selectedCity === "Tümü" ? "" : selectedCity}
+            onChange={(e) => handleCityChange(e.target.value || "Tümü")}
+            className="flex items-center bg-gray-100 px-4 py-2 rounded-full text-gray-700"
+          >
+            <option value="" disabled>
+              Şehir Seçin
+            </option>
+            {cityOptions.map((item) => (
+              <option key={item} value={item}>
+                {item}
+              </option>
+            ))}
+          </select>
+
+          {/* İlçe Filtresi - Sadece Ankara seçildiğinde görünür */}
+          {selectedCity === "Ankara" && districtOptions.length > 0 && (
+            <select
+              value={selectedDistrict === "Tümü" ? "" : selectedDistrict}
+              onChange={(e) => setSelectedDistrict(e.target.value || "Tümü")}
+              className="flex items-center bg-gray-100 px-4 py-2 rounded-full text-gray-700"
+            >
+              <option value="" disabled>
+                İlçe Seçin
+              </option>
+              {districtOptions.map((item) => (
+                <option key={item} value={item}>
+                  {item}
+                </option>
+              ))}
+            </select>
+          )}
+
+          {/* Proje Tipi Filtresi */}
+          <select
+            value={selectedProductType === "Tümü" ? "" : selectedProductType}
+            onChange={(e) => setSelectedProductType(e.target.value || "Tümü")}
+            className="flex items-center bg-gray-100 px-4 py-2 rounded-full text-gray-700"
+          >
+            <option value="" disabled>
+              Proje Tipi Seçin
+            </option>
+            {productTypeOptions.map((item) => (
+              <option key={item} value={item}>
+                {item}
+              </option>
+            ))}
+          </select>
+
+          <button
+            onClick={() => setShowAllFilters(true)}
+            className="flex items-center px-4 py-2 rounded-full bg-gray-100 text-[#ab1e3b] font-medium"
+          >
+            <SlidersHorizontal className="w-4 h-4 mr-2" />
+            Tüm Filtreler
+          </button>
+        </div>
+
+        {showAllFilters && (
+          <div className="fixed inset-0 bg-black/50 z-50 flex justify-center items-center">
+            <div className="bg-white w-full max-w-md p-6 rounded-xl relative">
+              <button
+                className="absolute top-4 right-4 text-gray-500"
+                onClick={() => setShowAllFilters(false)}
+                aria-label="Filtreleri kapat"
+              >
+                <X className="w-5 h-5" />
+              </button>
+              <h2 className="text-lg font-semibold mb-4">Tüm Filtreler</h2>
+
+              <div className="space-y-4">
+                <div>
+                  <label className="block mb-1 text-sm font-medium text-gray-700">
+                    Şehir
+                  </label>
+                  <select
+                    value={selectedCity}
+                    onChange={(e) => handleCityChange(e.target.value)}
+                    className="w-full border rounded-lg px-3 py-2"
+                  >
+                    {cityOptions.map((city) => (
+                      <option key={city} value={city}>
+                        {city}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {selectedCity === "Ankara" && districtOptions.length > 0 && (
+                  <div>
+                    <label className="block mb-1 text-sm font-medium text-gray-700">
+                      İlçe
+                    </label>
+                    <select
+                      value={selectedDistrict}
+                      onChange={(e) => setSelectedDistrict(e.target.value)}
+                      className="w-full border rounded-lg px-3 py-2"
+                    >
+                      {districtOptions.map((district) => (
+                        <option key={district} value={district}>
+                          {district}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                )}
+
+                <div>
+                  <label className="block mb-1 text-sm font-medium text-gray-700">
+                    Proje Tipi
+                  </label>
+                  <select
+                    value={selectedProductType}
+                    onChange={(e) => setSelectedProductType(e.target.value)}
+                    className="w-full border rounded-lg px-3 py-2"
+                  >
+                    {productTypeOptions.map((type) => (
+                      <option key={type} value={type}>
+                        {type}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <button
+                  onClick={() => setShowAllFilters(false)}
+                  className="w-full mt-4 py-2 rounded-lg bg-[#ab1e3b] text-white text-sm font-medium"
+                >
+                  Uygula
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        <div className="flex justify-between items-center text-sm mt-2">
+          <button
+            onClick={resetFilters}
+            className="text-gray-500 hover:underline"
+          >
+            Tüm filtreleri temizle
+          </button>
+        </div>
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-screen-xl mx-auto relative">
 
         
-        {listings.map((item, index) => {
+        {filteredListings.map((item, index) => {
           const isHovered = hoveredIndex === index;
           const imgSrc = isHovered && showAltImage && item.imageAlt ? item.imageAlt : item.image;
           console.log(imgSrc);

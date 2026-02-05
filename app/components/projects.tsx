@@ -30,7 +30,55 @@ interface Listing {
   }[];
   link: string;
   progress?: number; // percentage from 0 to 100
+  city?: "Ankara" | "İstanbul";
+  district?: string;
+  productType?: "Konut" | "Ofis" | "Ticari" | "Villa";
+  deliveryStatus?: string;
 }
+
+// Helper functions
+const getProductTypeFromListing = (listing: Omit<Listing, 'productType' | 'city' | 'district' | 'deliveryStatus'>): "Konut" | "Ofis" | "Ticari" | "Villa" => {
+  const statsText = listing.stats?.join(" ").toLowerCase() || "";
+  const extraText = listing.extra?.map(e => e.label).join(" ").toLowerCase() || "";
+  const combinedText = `${statsText} ${extraText}`;
+
+  if (combinedText.includes("villa")) {
+    return "Villa";
+  }
+  if (combinedText.includes("ofis") || combinedText.includes("açık avm ve ofis")) {
+    return "Ofis";
+  }
+  if (combinedText.includes("ticari")) {
+    return "Ticari";
+  }
+  return "Konut";
+};
+
+const normalizeDeliveryStatus = (label?: string, highlight?: string): string => {
+  const text = (label || highlight || "").toLowerCase();
+  
+  if (text.includes("hemen teslim")) {
+    return "Hemen Teslim";
+  }
+  
+  // Extract year from patterns like "2026 3. Çeyrek Teslim", "2027 1. Çeyrek Teslim", "3. Çeyrek 2025"
+  const yearMatch = text.match(/(20\d{2})/);
+  if (yearMatch) {
+    return yearMatch[1];
+  }
+  
+  return "Hemen Teslim"; // Default
+};
+
+const getDistrictsByCity = (city: string, listings: Listing[]): string[] => {
+  return Array.from(
+    new Set(
+      listings
+        .filter((item) => item.city === city && item.district)
+        .map((item) => item.district!)
+    )
+  ).sort();
+};
 
 const allListings: Listing[] = [
     
@@ -46,8 +94,11 @@ const allListings: Listing[] = [
     footer: "Çankaya",
     image: "/vega-center/DJI_0380.webp",
     imageAlt: "/vega-center/DJI_0380.webp",
-    progress: 100 
-   
+    progress: 100,
+    city: "Ankara",
+    district: "Mustafa Kemal Mahallesi",
+    productType: "Ofis",
+    deliveryStatus: "Hemen Teslim"
   },
   
   {
@@ -69,7 +120,11 @@ price: "RAMS GARDEN\nBAHÇELİEVLER",
       { icon: "", label: "Ticari Alanlar" },
       { icon: "", label: "Premium Hayat " },
     ],
-        progress: 100
+        progress: 100,
+    city: "İstanbul",
+    district: "Bahçelievler",
+    productType: "Ticari",
+    deliveryStatus: "Hemen Teslim"
 
   },
   
@@ -86,7 +141,11 @@ price: "RAMS GARDEN\nBAHÇELİEVLER",
     label: "2026 3. Çeyrek Teslim",
     footer: "Bilkent",
     stats: [ "Villa Projesi"],
-    progress: 95
+    progress: 95,
+    city: "Ankara",
+    district: "Bilkent",
+    productType: "Villa",
+    deliveryStatus: "2026"
   },
   {
     id: "12",
@@ -100,7 +159,11 @@ price: "RAMS GARDEN\nBAHÇELİEVLER",
     footer: "Plevne",
     image: "/otonomiMainRender2.jpg",
     imageAlt: "/otonomiMainRender2.jpg",
-    progress: 100
+    progress: 100,
+    city: "Ankara",
+    district: "Sincan",
+    productType: "Konut",
+    deliveryStatus: "Hemen Teslim"
   },
   {
     id: "13",
@@ -119,7 +182,11 @@ price: "RAMS GARDEN\nBAHÇELİEVLER",
       { icon: "", label: "Rezidans Projesi" },
       { icon: "", label: "Ulaşım Imkanları" },
     ],
-    progress: 50
+    progress: 50,
+    city: "Ankara",
+    district: "Yenimahalle",
+    productType: "Konut",
+    deliveryStatus: "2027"
   },
 
   {
@@ -134,7 +201,11 @@ price: "RAMS GARDEN\nBAHÇELİEVLER",
     footer: "Yeni Batı Mahallesi",
     image: "/yenibatıplusdikeygörsel.jpg",
     imageAlt: "/yenibatıplusdikeygörsel.jpg",
-     progress: 100 
+     progress: 100,
+    city: "Ankara",
+    district: "Yeni Batı",
+    productType: "Konut",
+    deliveryStatus: "Hemen Teslim"
   },
   {
     id: "15",
@@ -148,7 +219,11 @@ price: "RAMS GARDEN\nBAHÇELİEVLER",
     footer: "Yeni Batı Mahallesi",
     stats: ["1+1 ve 2,5+1 daireler", "190 adet konut"],
     label: "Hemen Teslim ve Tapu",
-    progress: 100
+    progress: 100,
+    city: "Ankara",
+    district: "Yeni Batı Mahallesi",
+    productType: "Konut",
+    deliveryStatus: "Hemen Teslim"
   },
   {
     id: "16",
@@ -169,7 +244,11 @@ price: "RAMS GARDEN\nBAHÇELİEVLER",
       { icon: "", label: "Business Class" },
     ],
 
-    progress: 100
+    progress: 100,
+    city: "Ankara",
+    district: "Şaşmaz",
+    productType: "Konut",
+    deliveryStatus: "Hemen Teslim"
   },  {
     id: "14",
     link: "/anteres",
@@ -190,7 +269,11 @@ price: "RAMS GARDEN\nBAHÇELİEVLER",
     stats: ["3. Çeyrek 2025", "Konut ve Ticari Alan"],
 
 
-    progress: 100 
+    progress: 100,
+    city: "Ankara",
+    district: "Yenimahalle",
+    productType: "Ticari",
+    deliveryStatus: "2025"
   },
     
     
@@ -205,36 +288,46 @@ export default function ProjectListingSection() {
   const [compareSelection, setCompareSelection] = useState<
     [Listing | null, Listing | null]
   >([null, null]);
-  const [selectedProject, setSelectedProject] = useState("Tümü");
-  const [selectedLocation, setSelectedLocation] = useState("Tümü");
+  const [selectedCity, setSelectedCity] = useState("Tümü");
+  const [selectedDistrict, setSelectedDistrict] = useState("Tümü");
+  const [selectedProductType, setSelectedProductType] = useState("Tümü");
+  const [selectedDeliveryStatus, setSelectedDeliveryStatus] = useState("Tümü");
   const [showAllFilters, setShowAllFilters] = useState(false);
 
-  const formatOptionLabel = (value?: string) =>
-    value ? value.replace(/\n/g, " ") : "";
-
-  const locationOptions = [
-    "Tümü",
-    ...Array.from(
-      new Set(allListings.map((item) => item.footer).filter(Boolean))
-    ),
-  ];
-  const projectOptions = [
-    "Tümü",
-    ...Array.from(new Set(allListings.map((item) => item.price).filter(Boolean))),
-  ];
+  // Get unique filter options
+  const cityOptions = Array.from(new Set(allListings.map((item) => item.city).filter((city): city is "Ankara" | "İstanbul" => Boolean(city))));
+  const districtOptions = selectedCity === "Tümü" || selectedCity === "İstanbul"
+    ? []
+    : getDistrictsByCity(selectedCity, allListings);
+  const productTypeOptions = ["Konut", "Ofis", "Ticari", "Villa"];
+  const deliveryStatusOptions = Array.from(
+    new Set(allListings.map((item) => item.deliveryStatus).filter(Boolean))
+  ).sort();
 
   const resetFilters = () => {
-    setSelectedProject("Tümü");
-    setSelectedLocation("Tümü");
+    setSelectedCity("Tümü");
+    setSelectedDistrict("Tümü");
+    setSelectedProductType("Tümü");
+    setSelectedDeliveryStatus("Tümü");
+  };
+
+  // Update district when city changes
+  const handleCityChange = (city: string) => {
+    setSelectedCity(city);
+    setSelectedDistrict("Tümü"); // Reset district when city changes
   };
 
   const filteredListings = allListings.filter((item) => {
-    const projectMatch =
-      selectedProject === "Tümü" || item.price === selectedProject;
-    const locationMatch =
-      selectedLocation === "Tümü" || item.footer === selectedLocation;
+    const cityMatch =
+      selectedCity === "Tümü" || item.city === selectedCity;
+    const districtMatch =
+      selectedCity === "Tümü" || selectedCity === "İstanbul" || selectedDistrict === "Tümü" || item.district === selectedDistrict;
+    const productTypeMatch =
+      selectedProductType === "Tümü" || item.productType === selectedProductType;
+    const deliveryStatusMatch =
+      selectedDeliveryStatus === "Tümü" || item.deliveryStatus === selectedDeliveryStatus;
 
-    return projectMatch && locationMatch;
+    return cityMatch && districtMatch && productTypeMatch && deliveryStatusMatch;
   });
   const isCompared = (item: Listing) =>
     compareSelection.some((selected) => selected?.id === item.id);
@@ -354,24 +447,66 @@ export default function ProjectListingSection() {
     <section id="aktif-projeler" className="bg-white py-16 px-6">
       <div className="max-w-screen-xl mx-auto mb-6">
         <div className="flex flex-wrap items-center gap-3 text-sm mb-4">
+          {/* Şehir Filtresi */}
           <select
-            value={selectedProject}
-            onChange={(e) => setSelectedProject(e.target.value)}
+            value={selectedCity === "Tümü" ? "" : selectedCity}
+            onChange={(e) => handleCityChange(e.target.value || "Tümü")}
             className="flex items-center bg-gray-100 px-4 py-2 rounded-full text-gray-700"
           >
-            {projectOptions.map((item) => (
+            <option value="" disabled>
+              Şehir Seçin
+            </option>
+            {cityOptions.map((item) => (
               <option key={item} value={item}>
-                {formatOptionLabel(item)}
+                {item}
               </option>
             ))}
           </select>
 
+          {/* İlçe Filtresi - Sadece Ankara seçildiğinde görünür */}
+          {selectedCity === "Ankara" && districtOptions.length > 0 && (
+            <select
+              value={selectedDistrict === "Tümü" ? "" : selectedDistrict}
+              onChange={(e) => setSelectedDistrict(e.target.value || "Tümü")}
+              className="flex items-center bg-gray-100 px-4 py-2 rounded-full text-gray-700"
+            >
+              <option value="" disabled>
+                İlçe Seçin
+              </option>
+              {districtOptions.map((item) => (
+                <option key={item} value={item}>
+                  {item}
+                </option>
+              ))}
+            </select>
+          )}
+
+          {/* Proje Tipi Filtresi */}
           <select
-            value={selectedLocation}
-            onChange={(e) => setSelectedLocation(e.target.value)}
+            value={selectedProductType === "Tümü" ? "" : selectedProductType}
+            onChange={(e) => setSelectedProductType(e.target.value || "Tümü")}
             className="flex items-center bg-gray-100 px-4 py-2 rounded-full text-gray-700"
           >
-            {locationOptions.map((item) => (
+            <option value="" disabled>
+              Proje Tipi Seçin
+            </option>
+            {productTypeOptions.map((item) => (
+              <option key={item} value={item}>
+                {item}
+              </option>
+            ))}
+          </select>
+
+          {/* Teslim Durumu Filtresi */}
+          <select
+            value={selectedDeliveryStatus === "Tümü" ? "" : selectedDeliveryStatus}
+            onChange={(e) => setSelectedDeliveryStatus(e.target.value || "Tümü")}
+            className="flex items-center bg-gray-100 px-4 py-2 rounded-full text-gray-700"
+          >
+            <option value="" disabled>
+              Teslim Durumu Seçin
+            </option>
+            {deliveryStatusOptions.map((item) => (
               <option key={item} value={item}>
                 {item}
               </option>
@@ -410,16 +545,52 @@ export default function ProjectListingSection() {
               <div className="space-y-4">
                 <div>
                   <label className="block mb-1 text-sm font-medium text-gray-700">
-                    Proje
+                    Şehir
                   </label>
                   <select
-                    value={selectedProject}
-                    onChange={(e) => setSelectedProject(e.target.value)}
+                    value={selectedCity}
+                    onChange={(e) => handleCityChange(e.target.value)}
                     className="w-full border rounded-lg px-3 py-2"
                   >
-                    {projectOptions.map((project) => (
-                      <option key={project} value={project}>
-                        {formatOptionLabel(project)}
+                    {cityOptions.map((city) => (
+                      <option key={city} value={city}>
+                        {city}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {selectedCity === "Ankara" && districtOptions.length > 0 && (
+                  <div>
+                    <label className="block mb-1 text-sm font-medium text-gray-700">
+                      İlçe
+                    </label>
+                    <select
+                      value={selectedDistrict}
+                      onChange={(e) => setSelectedDistrict(e.target.value)}
+                      className="w-full border rounded-lg px-3 py-2"
+                    >
+                      {districtOptions.map((district) => (
+                        <option key={district} value={district}>
+                          {district}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                )}
+
+                <div>
+                  <label className="block mb-1 text-sm font-medium text-gray-700">
+                    Proje Tipi
+                  </label>
+                  <select
+                    value={selectedProductType}
+                    onChange={(e) => setSelectedProductType(e.target.value)}
+                    className="w-full border rounded-lg px-3 py-2"
+                  >
+                    {productTypeOptions.map((type) => (
+                      <option key={type} value={type}>
+                        {type}
                       </option>
                     ))}
                   </select>
@@ -427,16 +598,16 @@ export default function ProjectListingSection() {
 
                 <div>
                   <label className="block mb-1 text-sm font-medium text-gray-700">
-                    Lokasyon
+                    Teslim Durumu
                   </label>
                   <select
-                    value={selectedLocation}
-                    onChange={(e) => setSelectedLocation(e.target.value)}
+                    value={selectedDeliveryStatus}
+                    onChange={(e) => setSelectedDeliveryStatus(e.target.value)}
                     className="w-full border rounded-lg px-3 py-2"
                   >
-                    {locationOptions.map((loc) => (
-                      <option key={loc} value={loc}>
-                        {loc}
+                    {deliveryStatusOptions.map((status) => (
+                      <option key={status} value={status}>
+                        {status}
                       </option>
                     ))}
                   </select>
