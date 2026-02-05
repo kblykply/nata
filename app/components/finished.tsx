@@ -25,7 +25,7 @@ interface Listing {
   }[];
   city?: "Ankara" | "İstanbul";
   district?: string;
-  productType?: "Konut" | "Ofis" | "Ticari" | "Villa";
+  productType?: ("Konut" | "Ofis" | "Ticari" | "Villa")[];
   deliveryStatus?: string;
 }
 
@@ -79,7 +79,7 @@ const listings: Listing[] = [
     ],
     city: "Ankara",
     district: "Yenimahalle",
-    productType: "Ticari",
+    productType: ["Ticari"],
     deliveryStatus: "Tamamlandı",
   },
   {
@@ -100,7 +100,7 @@ const listings: Listing[] = [
     ],
     city: "Ankara",
     district: "Yenimahalle",
-    productType: "Ofis",
+    productType: ["Ofis"],
     deliveryStatus: "Tamamlandı",
   },
   {
@@ -121,7 +121,7 @@ const listings: Listing[] = [
     ],
     city: "İstanbul",
     district: "Sultangazi",
-    productType: "Konut",
+    productType: ["Konut"],
     deliveryStatus: "Tamamlandı",
   },
   {
@@ -142,7 +142,7 @@ const listings: Listing[] = [
     ],
     city: "Ankara",
     district: "İncek Mahallesi",
-    productType: "Konut",
+    productType: ["Konut"],
     deliveryStatus: "Tamamlandı",
   },
   {
@@ -163,7 +163,7 @@ const listings: Listing[] = [
     ],
     city: "Ankara",
     district: "Mamak",
-    productType: "Konut",
+    productType: ["Konut"],
     deliveryStatus: "Tamamlandı",
   },
 
@@ -208,7 +208,8 @@ export default function ProjectListingSection() {
     const districtMatch =
       selectedCity === "Tümü" || selectedCity === "İstanbul" || selectedDistrict === "Tümü" || item.district === selectedDistrict;
     const productTypeMatch =
-      selectedProductType === "Tümü" || item.productType === selectedProductType;
+      selectedProductType === "Tümü" || 
+      (item.productType && Array.isArray(item.productType) && item.productType.includes(selectedProductType as "Konut" | "Ofis" | "Ticari" | "Villa"));
 
     return cityMatch && districtMatch && productTypeMatch;
   });

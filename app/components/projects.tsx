@@ -32,7 +32,7 @@ interface Listing {
   progress?: number; // percentage from 0 to 100
   city?: "Ankara" | "İstanbul";
   district?: string;
-  productType?: "Konut" | "Ofis" | "Ticari" | "Villa";
+  productType?: ("Konut" | "Ofis" | "Ticari" | "Villa")[];
   deliveryStatus?: string;
 }
 
@@ -97,7 +97,7 @@ const allListings: Listing[] = [
     progress: 100,
     city: "Ankara",
     district: "Mustafa Kemal Mahallesi",
-    productType: "Ofis",
+    productType: ["Ofis"],
     deliveryStatus: "Hemen Teslim"
   },
   
@@ -123,7 +123,7 @@ price: "RAMS GARDEN\nBAHÇELİEVLER",
         progress: 100,
     city: "İstanbul",
     district: "Bahçelievler",
-    productType: "Ticari",
+    productType: ["Konut"],
     deliveryStatus: "Hemen Teslim"
 
   },
@@ -144,7 +144,7 @@ price: "RAMS GARDEN\nBAHÇELİEVLER",
     progress: 95,
     city: "Ankara",
     district: "Bilkent",
-    productType: "Villa",
+    productType: ["Villa"],
     deliveryStatus: "2026"
   },
   {
@@ -162,7 +162,7 @@ price: "RAMS GARDEN\nBAHÇELİEVLER",
     progress: 100,
     city: "Ankara",
     district: "Sincan",
-    productType: "Konut",
+    productType: ["Ticari", "Ofis"],
     deliveryStatus: "Hemen Teslim"
   },
   {
@@ -185,7 +185,7 @@ price: "RAMS GARDEN\nBAHÇELİEVLER",
     progress: 50,
     city: "Ankara",
     district: "Yenimahalle",
-    productType: "Konut",
+    productType: ["Konut"],
     deliveryStatus: "2027"
   },
 
@@ -204,7 +204,7 @@ price: "RAMS GARDEN\nBAHÇELİEVLER",
      progress: 100,
     city: "Ankara",
     district: "Yeni Batı",
-    productType: "Konut",
+    productType: ["Konut"],
     deliveryStatus: "Hemen Teslim"
   },
   {
@@ -222,7 +222,7 @@ price: "RAMS GARDEN\nBAHÇELİEVLER",
     progress: 100,
     city: "Ankara",
     district: "Yeni Batı Mahallesi",
-    productType: "Konut",
+    productType: ["Konut"],
     deliveryStatus: "Hemen Teslim"
   },
   {
@@ -247,7 +247,7 @@ price: "RAMS GARDEN\nBAHÇELİEVLER",
     progress: 100,
     city: "Ankara",
     district: "Şaşmaz",
-    productType: "Konut",
+    productType: ["Ticari", "Ofis"],
     deliveryStatus: "Hemen Teslim"
   },  {
     id: "14",
@@ -272,7 +272,7 @@ price: "RAMS GARDEN\nBAHÇELİEVLER",
     progress: 100,
     city: "Ankara",
     district: "Yenimahalle",
-    productType: "Ticari",
+    productType: ["Konut"],
     deliveryStatus: "2025"
   },
     
@@ -323,7 +323,8 @@ export default function ProjectListingSection() {
     const districtMatch =
       selectedCity === "Tümü" || selectedCity === "İstanbul" || selectedDistrict === "Tümü" || item.district === selectedDistrict;
     const productTypeMatch =
-      selectedProductType === "Tümü" || item.productType === selectedProductType;
+      selectedProductType === "Tümü" || 
+      (item.productType && Array.isArray(item.productType) && item.productType.includes(selectedProductType as "Konut" | "Ofis" | "Ticari" | "Villa"));
     const deliveryStatusMatch =
       selectedDeliveryStatus === "Tümü" || item.deliveryStatus === selectedDeliveryStatus;
 
