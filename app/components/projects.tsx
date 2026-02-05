@@ -203,7 +203,7 @@ price: "RAMS GARDEN\nBAHÇELİEVLER",
     imageAlt: "/yenibatıplusdikeygörsel.jpg",
      progress: 100,
     city: "Ankara",
-    district: "Yeni Batı",
+    district: "Yeni Batı Mahallesi",
     productType: ["Konut"],
     deliveryStatus: "Hemen Teslim"
   },
