@@ -1,16 +1,19 @@
 // components/AboutContentSection.tsx
+"use client";
 
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 const AboutContentSection = () => {
+  const t = useTranslations('aboutUs');
+  
   return (
     <div className="bg-white py-12 px-6 md:px-30">
       <div className="grid md:grid-cols-2 gap-10 items-center">
         {/* Left Side */}
         <div>
-          <h2 className="text-2xl font-bold mb-6 leading-snug">
-            Geleceği İnşa Ediyoruz,<br />
-            Yaşam Alanlarınıza Değer Katıyoruz
+          <h2 className="text-2xl font-bold mb-6 leading-snug whitespace-pre-line">
+            {t('contentHeading')}
           </h2>
           <div className="w-full max-w-md rounded-2xl overflow-hidden ">
             <Image
@@ -26,7 +29,7 @@ const AboutContentSection = () => {
         {/* Right Side */}
         <div>
           <p className="text-sm text-gray-700 mb-8 leading-relaxed">
-            Nata Holding güvencesiyle hayata geçirilen NATA Yaşam, sadece konut projeleri geliştiren bir marka olmanın ötesine geçerek, yaşamın her alanına dokunan; modern ve sürdürülebilir projelere imza atmaktadır. Türkiye’nin dört bir yanında; konut, villa, ofis, ticari alan, alışveriş merkezi, turizm, sağlık ve sosyal yaşam alanlarını bir araya getiren çok yönlü projelerimizle, geleceğin şehircilik anlayışını bugünden sunuyoruz.
+            {t('contentDescription')}
           </p>
 
        <div className="w-full">
@@ -36,7 +39,7 @@ const AboutContentSection = () => {
       <div className="bg-gray-100 p-6 rounded-2xl flex items-center justify-center w-[100px] h-[100px]">
         <Image src="/tecrübe.png" alt="Tecrübe" width={40} height={40} />
       </div>
-      <p className="text-sm mt-3 w-36">57 Yıllık Tecrübe</p>
+      <p className="text-sm mt-3 w-36">{t('stat1')}</p>
     </div>
 
     {/* Icon 2 */}
@@ -44,7 +47,7 @@ const AboutContentSection = () => {
       <div className="bg-gray-100 p-6 rounded-2xl flex items-center justify-center w-[100px] h-[100px]">
         <Image src="/tamamlananproje.png" alt="Tamamlanan Proje" width={40} height={40} />
       </div>
-      <p className="text-sm mt-3 w-36">277 Tamamlanan Proje</p>
+      <p className="text-sm mt-3 w-36">{t('stat2')}</p>
     </div>
 
     {/* Icon 3 */}
@@ -52,7 +55,7 @@ const AboutContentSection = () => {
       <div className="bg-gray-100 p-6 rounded-2xl flex items-center justify-center w-[100px] h-[100px]">
         <Image src="/devamedenproje.png" alt="Devam Eden Proje" width={40} height={40} />
       </div>
-      <p className="text-sm mt-3 w-36">24 Devam Eden Proje</p>
+      <p className="text-sm mt-3 w-36">{t('stat3')}</p>
     </div>
 
     {/* Icon 4 */}
@@ -60,7 +63,7 @@ const AboutContentSection = () => {
       <div className="bg-gray-100 p-6 rounded-2xl flex items-center justify-center w-[100px] h-[100px]">
         <Image src="/teslimedilenproje.png" alt="Teslim Edilen" width={40} height={40} />
       </div>
-      <p className="text-sm mt-3 w-36">10.000+ Teslim Edilen Ticari Alan</p>
+      <p className="text-sm mt-3 w-36">{t('stat4')}</p>
     </div>
   </div>
 </div>

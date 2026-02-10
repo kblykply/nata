@@ -6,12 +6,14 @@ import { useState, useEffect } from "react";
 import { Link } from "@/i18n/navigation";
 import { useSwipeable } from "react-swipeable";
 import { AnimatePresence, motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 interface KampanyalarPopupProps {
   onClose: () => void;
 }
 
 export default function KampanyalarPopup({ onClose }: KampanyalarPopupProps) {
+  const t = useTranslations("popups");
   const images = ["/kampanya1.png", "/kampanya2.png", "/kampanya3.png"];
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState<"left" | "right">("left");
@@ -119,7 +121,7 @@ export default function KampanyalarPopup({ onClose }: KampanyalarPopupProps) {
           <div onClick={onClose}>
             <Link href="/kampanya">
               <button className="absolute bottom-4 right-6 bg-white px-4 py-1 rounded-xl text-sm font-medium shadow hover:bg-gray-100 transition z-10">
-                Kampanyalara git
+                {t("goToCampaigns")}
               </button>
             </Link>
           </div>

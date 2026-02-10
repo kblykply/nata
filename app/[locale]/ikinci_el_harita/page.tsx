@@ -8,6 +8,7 @@ import {
   useJsApiLoader,
 } from "@react-google-maps/api";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { useLocale, useTranslations } from "next-intl";
 
 interface SimpleListing {
   title: string;
@@ -22,7 +23,7 @@ interface SimpleListing {
   coords: [number, number];
 }
 
-const listings: SimpleListing[] = [
+const listingsTr: SimpleListing[] = [
   {
     title: "Koru Konfor",
     price: "10 Milyon",
@@ -121,6 +122,105 @@ const listings: SimpleListing[] = [
   },
 ];
 
+const listingsEn: SimpleListing[] = [
+  {
+    title: "Koru Konfor",
+    price: "10 Million",
+    currency: "USD",
+    location: "Etimesgut / Ankara",
+    type: "Residence",
+    specs: ["2+1", "117 sqm", "1st Floor"],
+    image: "/ikinciel/korukonforbesartibir.png",
+    imageAlt: "/koru-map.png",
+    link: "/koru-konfor-20",
+    coords: [39.9439, 32.6901],
+  },
+  {
+    title: "Natura İncek",
+    price: "7.75 Million",
+    currency: "TRY",
+    location: "Gölbaşı / Ankara",
+    type: "Office",
+    specs: ["2+1 Flat", "80 sqm", "Basement Floor -1"],
+    image: "/ikinciel/naturaincekikiartibir.png",
+    imageAlt: "/natura-map.png",
+    link: "/natura-20",
+    coords: [39.7964, 32.7814],
+  },
+  {
+    title: "Prime Oran",
+    price: "16.8 Million",
+    currency: "TRY",
+    location: "Çankaya / Ankara",
+    type: "Residence",
+    specs: ["2+1", "117 sqm", "31st Floor"],
+    image: "/ikinciel/primeikiartibir.png",
+    imageAlt: "/prime-map.png",
+    link: "/prime-oran-20",
+    coords: [39.8889, 32.8135],
+  },
+  {
+    title: "Koru Konfor",
+    price: "7.75 Million",
+    currency: "TRY",
+    location: "Etimesgut / Ankara",
+    type: "Residence",
+    specs: ["2+1", "80 sqm", "1st Floor"],
+    image: "/ikinciel/korukonforbesartibir.png",
+    imageAlt: "/koru-map.png",
+    link: "/koru-konfor-20",
+    coords: [39.9439, 32.6901],
+  },
+  {
+    title: "Natura İncek",
+    price: "10 Million",
+    currency: "USD",
+    location: "Gölbaşı / Ankara",
+    type: "Office",
+    specs: ["3+1", "144 sqm", "3rd Floor"],
+    image: "/ikinciel/naturaincekikiartibir.png",
+    imageAlt: "/natura-map.png",
+    link: "/natura-20",
+    coords: [39.7964, 32.7814],
+  },
+  {
+    title: "Koru Konfor",
+    price: "10 Million",
+    currency: "USD",
+    location: "Etimesgut / Ankara",
+    type: "Residence",
+    specs: ["3+1", "144 sqm", "3rd Floor"],
+    image: "/ikinciel/korukonfordortartibir.png",
+    imageAlt: "/koru-map.png",
+    link: "/koru-konfor-20",
+    coords: [39.9439, 32.6901],
+  },
+  {
+    title: "Natura İncek",
+    price: "10 Million",
+    currency: "USD",
+    location: "Gölbaşı / Ankara",
+    type: "Office",
+    specs: ["4+1", "154 sqm", "4th Floor"],
+    image: "/ikinciel/naturaincekikiartibir.png",
+    imageAlt: "/natura-map.png",
+    link: "/natura-20",
+    coords: [39.7964, 32.7814],
+  },
+  {
+    title: "Prime Oran",
+    price: "14.2 Million",
+    currency: "TRY",
+    location: "Çankaya / Ankara",
+    type: "Residence",
+    specs: ["3+1", "140 sqm", "14th Floor"],
+    image: "/ikinciel/primeoranucartibir.png",
+    imageAlt: "/prime-map.png",
+    link: "/prime-oran-20",
+    coords: [39.8889, 32.8135],
+  },
+];
+
 const containerStyle = {
   width: "100%",
   height: "100%",
@@ -132,13 +232,16 @@ const center = {
 };
 
 export default function SimpleMapWithSidebar() {
+  const locale = useLocale();
+  const tMap = useTranslations("map");
   const [selectedListing, setSelectedListing] = useState<SimpleListing | null>(null);
+  const listings = locale === "en" ? listingsEn : listingsTr;
 
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
   });
 
-  if (!isLoaded) return <div>Harita yükleniyor...</div>;
+  if (!isLoaded) return <div>{tMap("loading")}</div>;
 
   return (
     <div className="flex h-screen">
@@ -283,7 +386,7 @@ export default function SimpleMapWithSidebar() {
                   href={selectedListing.link}
                   className="mt-2 inline-block bg-[#aa1e3a] text-white text-xs px-3 py-1 rounded hover:bg-red-700"
                 >
-                  Projeyi Gör
+                  {tMap("viewProject")}
                 </a>
               </div>
             </InfoWindow>

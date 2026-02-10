@@ -9,13 +9,14 @@ import {
 } from "@react-google-maps/api";
 import { FaFire, FaTrain } from "react-icons/fa";
 import { MarkerClusterer } from "@react-google-maps/api";
+import { useTranslations } from "next-intl";
 interface Listing {
   link: string;
   type: "standard" | "featured";
   price: string;
   label?: string;
   metro: string;
-  time: string;
+  timeMinutes: number;
   stats?: string[];
   footer?: string;
   image: string;
@@ -35,7 +36,7 @@ const listings: Listing[] = [
     price: "RAMS GARDEN",
     label: "Hemen Teslim",
     metro: "Haznedar Metro",
-    time: "9 dakika mesafede",
+    timeMinutes: 9,
     stats: ["8.815 m²", "796 daire"],
     footer: "Bahçelievler",
     image: "/RAMS GARDEN - ON.jpg",
@@ -50,7 +51,7 @@ const listings: Listing[] = [
     price: "VEGA CENTER",
     label: "",
     metro: "Bilkent Metro",
-    time: "5 dakika mesafede",
+    timeMinutes: 5,
     stats: ["Merkezi Lokasyon", "Açık Avm Konsepti"],
     footer: "Çankaya",
     image: "/VEGA CENTER - ON.jpg",
@@ -69,7 +70,7 @@ const listings: Listing[] = [
     price: "GOAT VILLAS Bilkent",
     label: "2025 Teslim",
     metro: "Bahçe Konutları",
-    time: "5 dakikada mesafede",
+    timeMinutes: 5,
     stats: ["3. Çeyrek 2025", "Villa Projesi"],
     footer: "Bilkent",
     image: "/GOAT VILLAS BİLKENT-ON.jpg",
@@ -84,7 +85,7 @@ const listings: Listing[] = [
     price: "VEGA OTONOMI",
     label: "Hemen Teslim",
     metro: "Fatih Metro",
-    time: "4 dakika mesafede",
+    timeMinutes: 4,
     stats: ["490m² ye kadar", "207 bölüm"],
     footer: "Plevne",
     image: "/OTONOMI - ON.jpg",
@@ -99,7 +100,7 @@ const listings: Listing[] = [
     price: "MEGA 1453",
     label: "",
     metro: "Hastane Metro",
-    time: "11 dakika mesafede",
+    timeMinutes: 11,
     stats: ["70.000 m²", "715 konut"],
     footer: "Yenimahalle",
     image: "/MEGA 1453 - ON.jpg",
@@ -118,7 +119,7 @@ const listings: Listing[] = [
     price: "ANTARES KONUTLARI",
     label: "Hemen Teslim",
     metro: "Yenimahalle Metro",
-    time: "11 dakikada mesafede",
+    timeMinutes: 11,
     stats: ["3. Çeyrek 2025", "Villa Projesi"],
     footer: "Bilkent",
     image: "/ANTARES KONUTLARI-ON.jpg",
@@ -137,7 +138,7 @@ const listings: Listing[] = [
     price: "HİTYENİBATI",
     label: "2025 Teslim",
     metro: "İstanbul Yolu Metro",
-    time: "8 dakikada mesafede",
+    timeMinutes: 8,
     stats: ["1+1 ve 2,5+1 daireler", "190 adet konut"],
     footer: "Bilkent",
     image: "/HİTYENİBATI-ON.jpg",
@@ -152,7 +153,7 @@ const listings: Listing[] = [
     price: "MEGA ŞAŞMAZ",
     label: "Hemen Teslim",
     metro: "Ümitköy Metro",
-    time: "8 dakika mesafede",
+    timeMinutes: 8,
     stats: ["160.000 m2", "700 bölüm"],
     footer: "Şaşmaz",
     image: "/MEGA SASMAZ - ON.jpg",
@@ -174,6 +175,41 @@ const containerStyle = {
 export default function MapWithProjects() {
   const [selectedListing, setSelectedListing] = useState<Listing | null>(null);
   const [activeMarker, setActiveMarker] = useState<string | null>(null);
+  const tMap = useTranslations("map");
+  const tCommon = useTranslations("common");
+
+  const translateTag = (label: string) => {
+    switch (label) {
+      case "Hemen Teslim":
+        return tCommon("immediateDelivery");
+      case "2025 Teslim":
+        return tCommon("delivery2025");
+      case "2026 Teslim":
+        return tCommon("delivery2026");
+      case "Merkezi Lokasyon":
+        return tCommon("centralLocation");
+      case "Açık Avm Konsepti":
+        return tCommon("openMallConcept");
+      case "Business Class":
+        return tCommon("businessClass");
+      case "Bahçe Konutları":
+        return tCommon("gardenHomes");
+      case "Villa Projesi":
+        return tCommon("villaProject");
+      case "Rezidans Projesi":
+        return tCommon("residenceProject");
+      case "Ulaşım Imkanları":
+        return tCommon("transportAccess");
+      case "İş & Yaşam":
+        return tCommon("workAndLife");
+      case "Sanayi Bölgesi":
+        return tCommon("industrialZone");
+      default:
+        return label;
+    }
+  };
+
+  const formatTime = (minutes: number) => `${minutes} ${tMap("minutesAway")}`;
 
   const center = {
     lat: 39.94720,
@@ -185,7 +221,7 @@ export default function MapWithProjects() {
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
   });
 
-  if (!isLoaded) return <div>Harita yükleniyor...</div>;
+  if (!isLoaded) return <div>{tMap("loading")}</div>;
 
   return (
     <div className="flex h-screen">
@@ -207,7 +243,8 @@ export default function MapWithProjects() {
                     {listing.price}
                   </h3>
                   <p className="text-sm text-gray-600 flex items-center gap-1">
-                    <FaTrain className="text-gray-500" /> {listing.metro} — {listing.time}
+                    <FaTrain className="text-gray-500" /> {listing.metro} —{" "}
+                    {formatTime(listing.timeMinutes)}
                   </p>
                   {listing.footer && (
                     <p className="text-xs text-gray-500">📍 {listing.footer}</p>
@@ -223,7 +260,8 @@ export default function MapWithProjects() {
                               : "border border-[#ab1e3b] text-[#ab1e3b]"
                           }`}
                         >
-                          {tag === listing.label && <FaFire />} {tag}
+                          {tag === listing.label && <FaFire />}{" "}
+                          {translateTag(tag)}
                         </span>
                       ) : null
                     )}
@@ -239,18 +277,19 @@ export default function MapWithProjects() {
             className="text-sm text-gray-400 mb-4 underline"
             onClick={() => setSelectedListing(null)}
           >
-            ← Geri dön
+            {tMap("goBack")}
           </button>
           <h2 className="text-2xl font-bold mb-2 text-gray-900">
             {selectedListing.price}
           </h2>
           <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
-            <FaTrain className="text-gray-500" /> {selectedListing.metro} — {selectedListing.time}
+            <FaTrain className="text-gray-500" /> {selectedListing.metro} —{" "}
+            {formatTime(selectedListing.timeMinutes)}
           </div>
           <div className="flex items-center gap-2 flex-wrap text-xs mb-4">
             {selectedListing.highlight && (
               <span className="text-[#ab1e3b] border border-[#ab1e3b] px-2 py-0.5 rounded-full font-semibold">
-                {selectedListing.highlight}
+                {translateTag(selectedListing.highlight)}
               </span>
             )}
             {selectedListing.stats?.map((stat, index) => (
@@ -258,7 +297,7 @@ export default function MapWithProjects() {
                 key={index}
                 className="bg-gray-100 text-gray-700 px-2 py-0.5 rounded-full"
               >
-                {stat}
+                {translateTag(stat)}
               </span>
             ))}
           </div>
@@ -271,7 +310,7 @@ export default function MapWithProjects() {
             href={selectedListing.link}
             className="w-full block text-center py-3 mt-4 bg-[#ab1e3b] hover:bg-red-700 text-white rounded-xl text-sm font-semibold"
           >
-            Projeyi Gör
+            {tMap("viewProject")}
           </a>
         </aside>
       )}
@@ -400,18 +439,19 @@ export default function MapWithProjects() {
       />
       <h4 className="text-md font-bold mb-1">{selectedListing.price}</h4>
       <p className="text-sm text-gray-600 flex items-center gap-1 mb-1">
-        <FaTrain className="text-gray-500" /> {selectedListing.metro} — {selectedListing.time}
+        <FaTrain className="text-gray-500" /> {selectedListing.metro} —{" "}
+        {formatTime(selectedListing.timeMinutes)}
       </p>
 
       <div className="flex flex-wrap gap-1 mb-2">
         {selectedListing.label && (
           <span className="text-xs px-2 py-0.5 bg-red-100 text-red-600 rounded-full">
-            {selectedListing.label}
+            {translateTag(selectedListing.label)}
           </span>
         )}
         {selectedListing.highlight && (
           <span className="text-xs px-2 py-0.5 border border-[#ab1e3b] text-[#ab1e3b] rounded-full">
-            {selectedListing.highlight}
+            {translateTag(selectedListing.highlight)}
           </span>
         )}
       </div>
@@ -420,7 +460,7 @@ export default function MapWithProjects() {
         href={selectedListing.link}
         className="block w-full text-center py-1.5 mt-2 text-white bg-[#ab1e3b] hover:bg-red-700 rounded-md text-sm font-medium"
       >
-        Detayları Gör
+        {tMap("seeDetails")}
       </a>
     </div>
   </InfoWindow>

@@ -4,8 +4,10 @@ import Image from "next/image";
 import { useState, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Dialog } from "@headlessui/react";
+import { useTranslations } from "next-intl";
 
 export default function DesignSection() {
+  const t = useTranslations("incek");
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], [0, -200]);
@@ -31,10 +33,10 @@ export default function DesignSection() {
         {/* Left Text Content */}
         <div className="w-full max-w-xl z-25">
           <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 leading-tight">
-            Nata İncek Konutları
+            {t("designTitle")}
           </h2>
           <p className="mt-6 text-sm text-gray-700 leading-relaxed">
-            Doğayla iç içe yapısı ve şehre yakınlığıyla Nata İncek, ideal yaşamın adresi.
+            {t("designDescription")}
           </p>
           <button
             onClick={() => {
@@ -43,7 +45,7 @@ export default function DesignSection() {
             }}
             className="mt-6 bg-gray-800 text-white text-sm px-5 py-2 rounded-full"
           >
-            Proje Galerisini Gör
+            {t("designOpenGallery")}
           </button>
         </div>
 

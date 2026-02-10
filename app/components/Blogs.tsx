@@ -1,8 +1,9 @@
 'use client';
 
-import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
+import { useTranslations, useLocale } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 
 export interface BlogPost {
   id: number;
@@ -18,6 +19,8 @@ interface BlogsProps {
 }
 
 export default function Blogs({ posts }: BlogsProps) {
+  const t = useTranslations('home');
+  const locale = useLocale();
   const [visibleCount, setVisibleCount] = useState(3);
   const [loading, setLoading] = useState(false);
 
@@ -37,13 +40,13 @@ export default function Blogs({ posts }: BlogsProps) {
       {/* Header */}
       <div className="flex items-center justify-between mb-12 flex-wrap gap-4">
         <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-          Son Durum Haberler
+          {t('blogSectionTitle')}
         </h2>
         <Link
           href="/blog"
           className="border border-gray-300 text-sm px-5 py-2 rounded-full hover:bg-gray-100 transition whitespace-nowrap"
         >
-          Tüm Yazıları Gör
+          {t('viewAllPosts')}
         </Link>
       </div>
 
@@ -61,36 +64,38 @@ export default function Blogs({ posts }: BlogsProps) {
               <Link href={`/blog/${post.slug}`} className="block">
                 <div className="relative group flex flex-col md:flex-row justify-between items-start gap-6 bg-gray-50 p-6 rounded-xl transition hover:shadow-md">
                   {/* Hover Image */}
-<div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 md:opacity-70 md:group-hover:opacity-100 transition duration-300 pointer-events-none z-10">
-  <div className="w-[200px] h-[140px] rounded-xl overflow-hidden shadow-xl relative">
-    
-    {/* Blurred background fill */}
-    <Image
-      src={post.image}
-      alt={`${post.title} background`}
-      fill
-      className="object-cover blur-sm scale-110 absolute top-0 left-0 z-0"
-    />
+                  <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 md:opacity-70 md:group-hover:opacity-100 transition duration-300 pointer-events-none z-10">
+                    <div className="w-[200px] h-[140px] rounded-xl overflow-hidden shadow-xl relative">
+                      {/* Blurred background fill */}
+                      <Image
+                        src={post.image}
+                        alt={`${post.title} background`}
+                        fill
+                        className="object-cover blur-sm scale-110 absolute top-0 left-0 z-0"
+                      />
 
-    {/* Main sharp image */}  
-    <Image
-      src={post.image}
-      alt={post.title}
-      width={180}
-      height={120}
-      className="object-contain w-full h-full relative z-10"
-    />
-  </div>
-</div>
+                      {/* Main sharp image */}
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        width={180}
+                        height={120}
+                        className="object-contain w-full h-full relative z-10"
+                      />
+                    </div>
+                  </div>
                   {/* Left Side: Title + Date */}
                   <div className="md:w-1/3 z-20">
                     <h3 className="text-lg font-semibold text-gray-900">{post.title}</h3>
                     <span className="inline-block mt-2 text-xs px-4 py-1 bg-white rounded-full text-gray-700">
-                      {new Date(post.created_at).toLocaleDateString('tr-TR', {
-                        day: '2-digit',
-                        month: 'long',
-                        year: 'numeric',
-                      })}
+                      {new Date(post.created_at).toLocaleDateString(
+                        locale === 'en' ? 'en-US' : 'tr-TR',
+                        {
+                          day: '2-digit',
+                          month: 'long',
+                          year: 'numeric',
+                        }
+                      )}
                     </span>
                   </div>
 
@@ -118,7 +123,7 @@ export default function Blogs({ posts }: BlogsProps) {
               onClick={handleLoadMore}
               className="bg-[#aa1e3a] text-white text-sm font-medium px-6 py-3 rounded-full shadow hover:opacity-90 transition"
             >
-              Daha Fazla Yükle
+              {t('loadMore')}
             </button>
           )}
         </div>

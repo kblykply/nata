@@ -5,8 +5,12 @@ import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
 import { GiFootsteps } from "react-icons/gi";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { useTranslations } from "next-intl";
 
 export default function ProjectHeroCloudSection() {
+  const t = useTranslations("vegaCenter");
+  const tHeader = useTranslations("header");
+  
   return (
     <section  className="relative w-full h-[90vh] md:h-[150vh] overflow-hidden bg-gradient-to-b from-[#006d9d] to-[#e6f3fd]">
   
@@ -43,7 +47,7 @@ export default function ProjectHeroCloudSection() {
   >
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12h18M3 6h18M3 18h18" />
   </svg>
-  360° Görünüm
+  {t("view360")}
 </a>
 
 
@@ -89,14 +93,14 @@ export default function ProjectHeroCloudSection() {
       <div className="py-4">
   <div className="text-white text-sm md:text-base flex justify-center gap-2">
        <Link href="/" passHref>
-    <span className="cursor-pointer hover:underline">NATA Yaşam</span>
+    <span className="cursor-pointer hover:underline">{t("breadcrumbHome")}</span>
   </Link>
   <span>/</span>
   <Link href="/#aktif-projeler" passHref>
-    <span className="cursor-pointer hover:underline">Yeni Projeler</span>
+    <span className="cursor-pointer hover:underline">{t("breadcrumbProjects")}</span>
   </Link>
     <span>/</span>
-    <span className="font-bold">VEGA Center</span>
+    <span className="font-bold">{t("breadcrumbVega")}</span>
   </div>
 </div>
 
@@ -125,30 +129,32 @@ export default function ProjectHeroCloudSection() {
 <div className="flex flex-wrap justify-center gap-3 max-w-xl mx-auto mt-6 font-semibold">
   <Link href="#near-locations">
     <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm cursor-pointer">
-    Metroya <GiFootsteps /> 5 dk uzaklıkta
+    {t("metroDistance")} <GiFootsteps /> {t("metroWalk")}
   </div>
   </Link>
 
   <Link href="#near-locations">
     <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm cursor-pointer">
-      <FaMapMarkerAlt /> Ankara — Mustafa Kemal Mahallesi
+      <FaMapMarkerAlt /> {t("location")}
     </div>
   </Link>
 
   <Link href="#contact">
     <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
-339 Ofis + 87 Ticari Alan    </div>
+      {t("units")}
+    </div>
   </Link>
 
   <Link href="#contact">
     <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
-    Hemen Teslim Hemen Tapu
+      {t("delivery")}
      </div>
   </Link>
 
   <Link href="#life">
     <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
-Cazip Yatırım Fırsatı    </div>
+      {t("investment")}
+    </div>
   </Link>
 </div>
     </section>

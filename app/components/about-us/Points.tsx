@@ -1,6 +1,11 @@
+"use client";
+
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 const ApproachSection = () => {
+  const t = useTranslations('aboutUs');
+  
   return (
     <div className="px-6 md:px-20 py-12 bg-[radial-gradient(circle,_#e5e7eb_1px,_transparent_1px)] [background-size:20px_20px]">
       <div className="grid md:grid-cols-2 gap-10 items-start">
@@ -27,26 +32,29 @@ const ApproachSection = () => {
         <div className="flex flex-col gap-25">
           <div>
             <h3 className="font-bold text-lg mb-2">
-              Stratejik Lokasyonlarda Prestijli Projeler
+              {t('point1Title')}
             </h3>
             <p className="text-sm text-gray-700 leading-relaxed">
-            Ankara’dan Bodrum’a, Milas’tan Türkiye’nin yükselen bölgelerine kadar konumlandırdığımız projelerimiz; merkezi lokasyonları, ulaşım kolaylığı ve sosyal donatılarıyla hem yaşam hem de yatırım açısından büyük avantaj sağlıyor. Konut, Ofis, Ticari Alan ve AVM konseptinden, exclusive villa projelerine ve turizm odaklı yaşam alanlarına kadar geniş bir portföye sahibiz.            </p>
+              {t('point1Description')}
+            </p>
           </div>
 
           <div>
             <h3 className="font-bold text-lg mb-2">
-              Müşteri Memnuniyeti Odaklı Yaklaşım
+              {t('point2Title')}
             </h3>
             <p className="text-sm text-gray-700 leading-relaxed">
-            Her zaman müşterilerimizin beklentilerini aşmayı hedefliyor, satış öncesi ve sonrası sunduğumuz profesyonel hizmetlerle güvenilir bir çözüm ortağı oluyoruz. Şeffaf iletişim, hızlı destek ve kişiye özel çözümlerle, yatırım yolculuğunuzda daima yanınızdayız.            </p>
+              {t('point2Description')}
+            </p>
           </div>
 
           <div>
             <h3 className="font-bold text-lg mb-2">
-              Sürdürülebilir ve Yenilikçi Yaklaşım
+              {t('point3Title')}
             </h3>
             <p className="text-sm text-gray-700 leading-relaxed">
-            NATA Yaşam, geleceğe değer katacak projeler üretirken, çevresel ve toplumsal sorumluluklarını da göz önünde bulundurur. Doğayla uyumlu, enerji verimliliği yüksek yapılarımızla sürdürülebilir bir yaşamın kapılarını aralıyoruz.            </p>
+              {t('point3Description')}
+            </p>
           </div>
         </div>
       </div>

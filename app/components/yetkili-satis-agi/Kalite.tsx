@@ -1,28 +1,22 @@
 "use client";
 
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 const Kalite = () => {
+  const t = useTranslations('salesNetwork');
+  
   return (
     <div className="px-6 md:px-30 py-10">
       <div className="grid md:grid-cols-2 gap-10 items-center">
         {/* Left Side */}
         <div>
           {/* Title */}
-          <h2 className="text-2xl font-bold mb-4 text-gray-800">Portal Hakkında</h2>
+          <h2 className="text-2xl font-bold mb-4 text-gray-800">{t('aboutPortalTitle')}</h2>
 
           {/* Description */}
-          <p className="text-sm text-gray-700 mb-6 leading-relaxed">
-            Nata Yaşam yetkili Satış Ağı Portalı, gayrimenkul satış süreçlerini tek bir merkezde toplayan yeni bir ekosistemdir. 
-            Peki bu sistem nasıl çalışır?
-            Sistem, Konut, Ofis, Ticari Alan portföyü tek bir veritabanında birleştirilir. 
-            Bu portföy Türkiye genelinde seçilmiş profesyonel emlak ofislerine kontrollü bir şekilde açılır. 
-            Profesyonel emlak danışmanları bu portala giriş yaptığında, tüm ilanlara, güncel fiyatlara, proje detaylarına ve satış dökümanlarına doğrudan erişir. 
-            Müşteri kaydı, teklif oluşturma, rezervasyon talebi ve sözleşme süreçleri ise tamamen NATA YAŞAM CRM üzerinden yönetilir. 
-            Sistem ayrıca özel bir onay mekanizmasına sahiptir. Yapılan her işlem NATA YAŞAM'ın merkezi ekipleri tarafından dijital olarak kontrol edilir. 
-            Bu fiyat istikrarını, doğru bilgi akışını ve standart bir satış sürecini garanti eder. 
-            Güçlü bir portföye erişim, hızlı bilgi akışı, doğru veri ve tek merkezden yönetilen profesyonel bir satış düzeni. Sonuç olarak, 
-            NATA YAŞAM Yetkili Satış Ağı, gayrimenkul satışını kolay erişilebilir, sistematik, güvenilir ve çok daha verimli hale getiren yeni bir dijital iş modeli sunar.
+          <p className="text-sm text-gray-700 mb-6 leading-relaxed whitespace-pre-line">
+            {t('aboutPortalDescription')}
           </p>
           <a
             href="https://www.youtube.com/shorts/GNH6Gq1TdRQ"
@@ -30,7 +24,7 @@ const Kalite = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-full bg-[#ab1e3b] text-white text-sm font-medium px-4 py-2 hover:bg-[#961a33] transition"
           >
-            Bilgilendirme videosu için tıklayın
+            {t('videoButtonText')}
           </a>
         </div>
 

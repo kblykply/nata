@@ -1,11 +1,20 @@
 
-import { kampanyalar } from '@/data/kampanyalar';
-import { notFound } from 'next/navigation';
-import { use } from 'react';
-import Image from 'next/image';
+"use client";
 
-export default function KampanyaDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+import { getKampanyalar } from "@/data/kampanyalar";
+import { notFound } from "next/navigation";
+import { use } from "react";
+import Image from "next/image";
+import { useLocale } from "next-intl";
+
+export default function KampanyaDetailPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = use(params);
+  const locale = useLocale();
+  const kampanyalar = getKampanyalar(locale);
   const kampanya = kampanyalar.find((k) => k.slug === slug);
 
   if (!kampanya) return notFound();

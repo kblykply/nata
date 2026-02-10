@@ -3,59 +3,40 @@
 import Image from "next/image";
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useTranslations } from "next-intl";
 
-const slides = [
+const slideConfigs = [
   {
-    title: "Ankara'nın Yeni İş ve Yaşam Merkezi",
+    key: "slide1",
     image: "/vegacenter-dergi.jpg",
-      popup: {
-      title: "Prestijli Konumda Modern Ofis ve Ticaret Alanları",
-      text: "Vega Center, iş dünyası ve sosyal yaşamı tek bir noktada buluşturan yeni nesil karma proje anlayışıyla Ankara'nın yükselen değeri oluyor. Modern ofisler, mağazalar ve sosyal alanlarla hem iş hayatınıza prestij katıyor hem de günlük ihtiyaçlarınıza kolay erişim sağlıyor. Şehrin dinamik yapısına uyumlu tasarımıyla, yatırımcılar ve profesyoneller için ideal bir merkez haline geliyor.",
-      images: ["/yenibatıplus/ofis.png", "/vegacenter-Ankara nın Yeni İş ve Yaşam Merkezi.jpg"]
-    }
+    popupImages: ["/yenibatıplus/ofis.png", "/vegacenter-Ankara nın Yeni İş ve Yaşam Merkezi.jpg"],
   },
   {
-    title: "Elektrikli Araçlar İçin Şarj İstasyonları",
+    key: "slide2",
     image: "/Elektrikli Araçlar İçin Şarj İstasyonları.jpg",
-    popup: {
-      title: "Geleceğin Enerjisine Uyumlu Akıllı Çözümler",
-      text: "Vega Center da sürdürülebilir yaşam anlayışıyla elektrikli araç sahipleri için özel şarj istasyonları sunuluyor. Çevre dostu ulaşımı destekleyen bu altyapı sayesinde, aracınızı güvenle ve kolayca şarj edebilir, geleceğin teknolojisine her zaman bir adım önde uyum sağlayabilirsiniz. Modern yaşamın gereksinimlerine cevap veren bu özellik ile konforunuzu ve çevreci yaklaşımınızı bir arada yaşayın.",
-      images: ["/vegacenter-şarj istasyonu.jpg", "/vegacenter-şarj istasyonu (2).jpg"]
-    }
+    popupImages: ["/vegacenter-şarj istasyonu.jpg", "/vegacenter-şarj istasyonu (2).jpg"],
   },
   {
-    title: "Merkezi Konum, Kolay Ulaşım",
+    key: "slide3",
     image: "/Merkezi Konum, Kolay Ulaşım.jpg",
-    popup: {
-      title: "Şehrin Kalbinde, Her Yere Bir Adım Uzaklıkta",
-      text: "Vega Center, Ankara’nın en stratejik noktalarından birinde konumlanarak size zamandan tasarruf etme ayrıcalığı sunuyor. Metro, ana arterler ve önemli ticaret merkezlerine yakınlığı sayesinde hem iş hem de sosyal yaşamınızda ulaşımı sorun olmaktan çıkarıyor. Merkezi konum avantajıyla, iş dünyasının dinamizmiyle şehrin olanaklarını en verimli şekilde değerlendirin.",
-      images: ["/vegacenter-merkezi konum.jpg", "/vegacenter-merkezi konum (2).jpg"]
-    }
+    popupImages: ["/vegacenter-merkezi konum.jpg", "/vegacenter-merkezi konum (2).jpg"],
   },
   {
-    title: "Ankara'nın Yeni İş ve Yaşam Merkezi",
+    key: "slide4",
     image: "/Ankara nın Yeni İş ve Yaşam Merkezi.jpg",
-    popup: {
-      title: "Prestijli Konumda Modern Ofis ve Ticaret Alanları",
-      text: "Vega Center, iş dünyası ve sosyal yaşamı tek bir noktada buluşturan yeni nesil karma proje anlayışıyla Ankara'nın yükselen değeri oluyor. Modern ofisler, mağazalar ve sosyal alanlarla hem iş hayatınıza prestij katıyor hem de günlük ihtiyaçlarınıza kolay erişim sağlıyor. Şehrin dinamik yapısına uyumlu tasarımıyla, yatırımcılar ve profesyoneller için ideal bir merkez haline geliyor.",
-      images: ["/yenibatıplus/ofis.png", "/vegacenter-Ankara nın Yeni İş ve Yaşam Merkezi.jpg"]
-    }
+    popupImages: ["/yenibatıplus/ofis.png", "/vegacenter-Ankara nın Yeni İş ve Yaşam Merkezi.jpg"],
   },
   {
-    title: "Teraslı Ofislerle Doğayla İç İçe Çalışma",
+    key: "slide5",
     image: "/Teraslı Ofislerle Doğayla İç İçe Çalışma.jpg",
-    popup: {
-      title: "Verimliliği Doğanın Huzuruyla Buluşturan Ofisler",
-      text: "Modern iş hayatını, ferah teraslı ofislerle doğanın sakinleştirici etkisiyle yeniden tanımlayın. Açık hava alanlarıyla motivasyonunuzu artıran bu özel çalışma ortamı, yeşilin enerjisiyle daha üretken ve keyifli bir iş deneyimi sunuyor. Şehrin kalabalığından uzak, doğayla iç içe ofis konseptiyle hem konforu hem de prestiji bir arada yaşayın.",
-      images: ["/vega-teraslı ofis.jpg", "/vega-teraslıofis.jpg"]
-    }
+    popupImages: ["/vega-teraslı ofis.jpg", "/vega-teraslıofis.jpg"],
   },
 ];
 
 export default function ProjectLifeRhythmSection() {
   const [index, setIndex] = useState(0);
   const [popupIndex, setPopupIndex] = useState<number | null>(null);
-  const totalSlides = slides.length;
+  const totalSlides = slideConfigs.length;
   const [dragStartX, setDragStartX] = useState<number | null>(null);
 const [dragDeltaX, setDragDeltaX] = useState(0);
 
@@ -88,6 +69,17 @@ const handlePointerUp = () => {
 
 
 
+  const t = useTranslations("vegaCenter");
+  const slides = slideConfigs.map((config) => ({
+    ...config,
+    title: t(`lifeSlides.${config.key}Title`),
+    popup: {
+      title: t(`lifeSlides.${config.key}PopupTitle`),
+      text: t(`lifeSlides.${config.key}PopupText`),
+      images: config.popupImages,
+    },
+  }));
+  
   return (
     <section className="select-none scroll-smooth relative py-24 px-6 bg-white text-center overflow-hidden">
 
@@ -95,12 +87,13 @@ const handlePointerUp = () => {
 
       
       <h2 className="text-3xl font-light text-gray-800 uppercase leading-tight">
-      VEGA CENTER
+      {t("lifeTitle")}
 
-  <br /> Ofis & AVM konsepti
+  <br /> {t("lifeSubtitle")}
       </h2>
       <p className="mt-4 text-sm text-gray-600 max-w-xl mx-auto">
-Ankara'nın en gözde lokasyonu üzerinde bulunan VEGA Center, modern mimarisiyle Ofis & AVM konsepti ile beraber seçkin mağaza ve restoranları beraberinde Ankara'ya yeni bir soluk getiriyor.      </p>
+        {t("lifeDescription")}
+      </p>
 
       <div className="relative mt-12 w-full max-w-7xl mx-auto h-[500px]">
       <div className="relative flex items-center justify-center h-full">
@@ -173,7 +166,7 @@ Ankara'nın en gözde lokasyonu üzerinde bulunan VEGA Center, modern mimarisiyl
     rel="noopener noreferrer" // <-- Change this URL to your target link
         className="z-100 absolute    left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-black text-sm text-white  px-5 py-2 rounded-full shadow"
       >
-        Sunuma Git
+        {t("goToPresentation")}
       </a>
     ) : (
       // For other slides, open popup
@@ -181,7 +174,7 @@ Ankara'nın en gözde lokasyonu üzerinde bulunan VEGA Center, modern mimarisiyl
         onClick={() => setPopupIndex(i)}
         className="z-100 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-sm text-gray-700 px-5 py-2 rounded-full shadow"
       >
-        Ayrıntılı Bilgi
+        {t("detailedInfo")}
       </button>
     )}
   </>
@@ -193,16 +186,16 @@ Ankara'nın en gözde lokasyonu üzerinde bulunan VEGA Center, modern mimarisiyl
 
           <button
             onClick={() => setIndex((prev) => (prev - 1 + totalSlides) % totalSlides)}
-            aria-label="Önceki"
-            title="Önceki"
+            aria-label={t("previous")}
+            title={t("previous")}
             className="absolute left-0 top-1/2 -translate-y-1/2 bg-white text-black p-3 rounded-full shadow z-40"
           >
             <FaChevronLeft />
           </button>
           <button
             onClick={() => setIndex((prev) => (prev + 1) % totalSlides)}
-            aria-label="Sonraki"
-            title="Sonraki"
+            aria-label={t("next")}
+            title={t("next")}
             className="absolute right-0 top-1/2 -translate-y-1/2 bg-white text-black p-3 rounded-full shadow z-40"
           >
             <FaChevronRight />
@@ -216,8 +209,8 @@ Ankara'nın en gözde lokasyonu üzerinde bulunan VEGA Center, modern mimarisiyl
             <button
               onClick={() => setPopupIndex(null)}
               className="absolute top-3 right-4 text-gray-500 hover:text-gray-800 text-xl"
-              aria-label="Kapat"
-              title="Kapat"
+              aria-label={t("close")}
+              title={t("close")}
             >
               ✕
             </button>
@@ -246,7 +239,7 @@ Ankara'nın en gözde lokasyonu üzerinde bulunan VEGA Center, modern mimarisiyl
                 }
                 className="text-sm text-gray-700 hover:underline"
               >
-                ← Geri
+                {t("back")}
               </button>
               <button
                 onClick={() =>
@@ -254,7 +247,7 @@ Ankara'nın en gözde lokasyonu üzerinde bulunan VEGA Center, modern mimarisiyl
                 }
                 className="text-sm text-gray-700 hover:underline"
               >
-                İleri →
+                {t("forward")}
               </button>
             </div>
           </div>

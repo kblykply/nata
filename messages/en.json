@@ -170,6 +170,8 @@
     "tagline": "NATA Living, at the heart of life, at the peak of comfort."
   },
   "bulletin": {
+    "title": "N-BULLETIN",
+    "description": "In our N-Bulletin magazine, you will find innovations, achievements and major developments from NATA Holding’s projects, as well as various articles and interviews. Our magazine aims both to provide you, our valued readers, with the most up-to-date information about our projects and to offer informative, engaging content.",
     "previousPage": "Previous Page",
     "nextPage": "Next Page",
     "fullScreen": "Full Screen",
@@ -201,5 +203,452 @@
   },
   "projects": {
     "campaignImage": "Campaign Image"
+  },
+  "home": {
+    "sharingTitle1": "The more you share",
+    "sharingTitle2": "The more you earn",
+    "moreCampaigns": "+6 more",
+    "ongoingHeadingMain": "Ongoing",
+    "ongoingHeadingHighlight": "Projects",
+    "tabNewProjects": "New Projects",
+    "tabOtherProjects": "Other Projects",
+    "blogSectionTitle": "Latest News",
+    "viewAllPosts": "View All Posts",
+    "loadMore": "Load More",
+    "planned": {
+      "sectionTitleMain": "Planned",
+      "sectionTitleHighlight": "Projects",
+      "location": "Location",
+      "createDemand": "Register Interest",
+      "bodrumYalikavakSubtitle": "Exclusive Villas",
+      "milasSubtitle": "Villas, Residences, Tourism, Health & Mall",
+      "vegaSofyaSubtitle": "Residential & Office Project",
+      "nataCenterSubtitle": "Mixed Use: Mall, Offices, Residences"
+    }
+  },
+  "projectList": {
+    "cityPlaceholder": "Select City",
+    "districtPlaceholder": "Select District",
+    "typePlaceholder": "Select Project Type",
+    "deliveryPlaceholder": "Select Delivery Status",
+    "allFilters": "All Filters",
+    "clearComparison": "Clear comparison",
+    "filtersTitle": "All Filters",
+    "cityLabel": "City",
+    "districtLabel": "District",
+    "typeLabel": "Project Type",
+    "deliveryLabel": "Delivery Status",
+    "apply": "Apply",
+    "clearAllFilters": "Clear all filters",
+    "compare": "Compare",
+    "selected": "Selected",
+    "project": "Project",
+    "delivery": "Delivery",
+    "metro": "Metro",
+    "distance": "Distance",
+    "features": "Features",
+    "location": "Location",
+    "progress": "Progress",
+    "extra": "Extra",
+    "constructionProgress": "Construction Progress",
+    "priceRequestTitle": "Get Price",
+    "whatsAppTitle": "WhatsApp",
+    "whatsAppMessage": "Hello, I would like to get detailed information about the {projectName} project.",
+    "completedHeadingMain": "Completed",
+    "completedHeadingHighlight": "Projects",
+    "locationLabel": "Location",
+    "apartmentTypeLabel": "Apartment Type",
+    "areaLabel": "Area (m²)",
+    "addToFavorites": "Add to favorites",
+    "all": "All",
+    "deliveryCompleted": "Completed"
+  },
+  "popups": {
+    "searchPlaceholder": "Select location, delivery year or segment",
+    "activeProjects": "Projects Available for Sale",
+    "comingSoon": "Coming Very Soon",
+    "completedProjects": "Completed Projects",
+    "selectFromMap": "Select from Map",
+    "goToCampaigns": "Go to Campaigns",
+    "scanQR": "Scan the QR Code with your camera,\nYou can communicate via your phone.",
+    "allQuestions": "WE ARE HERE FOR\nALL YOUR QUESTIONS",
+    "requestCallSubtitle": "Request a call.\nWe're here for any questions you have.",
+    "fullNamePlaceholder": "Your Full Name",
+    "phonePlaceholder": "+90 (5__) ___ __ __",
+    "messagePlaceholder": "Your Message (optional)",
+    "formSubmitNote": "By submitting this form, you acknowledge that you have accepted",
+    "privacyPolicyLink": "our Privacy Policy",
+    "privacyAcceptSuffix": "",
+    "validPhone": "Please enter a valid phone number"
+  },
+  "aboutUs": {
+    "heroTitle": "NATA Living",
+    "heroSubtitle": "About Us",
+    "contentHeading": "Building the Future,\nAdding Value to Your Living Spaces",
+    "contentDescription": "NATA Living, backed by Nata Holding, goes beyond being just a brand that develops residential projects. We create modern and sustainable projects that touch every aspect of life. Across Turkey, we offer a diverse portfolio ranging from residential, villa, office, commercial spaces, and shopping malls to tourism, healthcare, and social living spaces, presenting tomorrow's urban planning vision today.",
+    "stat1": "57 Years of Experience",
+    "stat2": "277 Completed Projects",
+    "stat3": "24 Ongoing Projects",
+    "stat4": "10,000+ Delivered Commercial Spaces",
+    "qualityTitle": "Quality and Trust in Every Project",
+    "qualityDescription": "As NATA Living, our priority is to provide high living standards to our residents while offering aesthetics and functionality together. We make a difference in the industry with quality materials, innovative architectural approaches, and environmentally friendly solutions used in our projects.",
+    "point1Title": "Prestigious Projects in Strategic Locations",
+    "point1Description": "From Ankara to Bodrum, from Milas to Turkey's rising regions, our projects provide great advantages for both living and investment with their central locations, transportation ease, and social facilities. We have a wide portfolio from residential, office, commercial, and mall concepts to exclusive villa projects and tourism-focused living spaces.",
+    "point2Title": "Customer Satisfaction-Oriented Approach",
+    "point2Description": "We always aim to exceed our customers' expectations, becoming a trusted solution partner with the professional services we provide before and after sales. With transparent communication, fast support, and personalized solutions, we are always by your side in your investment journey.",
+    "point3Title": "Sustainable and Innovative Approach",
+    "point3Description": "NATA Living considers its environmental and social responsibilities while producing projects that add value to the future. We open the doors to a sustainable life with our structures that are in harmony with nature and have high energy efficiency.",
+    "galleryTitle": "Office Gallery",
+    "galleryDescription": "You can find photos from our company's office below. Discover our modern, elegant, and functional spaces."
+  },
+  "salesNetwork": {
+    "heroTitle": "Welcome to Our\nAuthorized Sales Network Portal",
+    "contentDescription": "NATA LIVING's powerful portfolio is now under one roof.\nNata Living has established a new ecosystem that offers its real estate portfolio from a single center for selected professionals.\nThis ecosystem is not just an access area, but a new approach that will shape the functioning of the sector.\nWe are bringing a new discipline to real estate sales processes with a digital, transparent and fully controllable CRM infrastructure.\nNow all transactions are carried out under one order, one system and one standard.\nThe NATA LIVING era is beginning for professional real estate experts.\nThis new sales network, which offers direct access to our corporate portfolio, is designed to take your trust, speed and service quality to the next level.\nJoin the NATA LIVING Authorized Sales Network. Strengthen your portfolio.",
+    "videoButtonText": "Click for informational video",
+    "aboutPortalTitle": "About the Portal",
+    "aboutPortalDescription": "The Nata Living Authorized Sales Network Portal is a new ecosystem that brings together real estate sales processes in one center.\nSo how does this system work?\nThe system combines Residential, Office, and Commercial Space portfolios in a single database.\nThis portfolio is opened in a controlled manner to selected professional real estate offices throughout Turkey.\nWhen professional real estate consultants log into this portal, they directly access all listings, current prices, project details, and sales documents.\nCustomer registration, offer creation, reservation requests, and contract processes are completely managed through NATA LIVING CRM.\nThe system also has a special approval mechanism. Every transaction is digitally controlled by NATA LIVING's central teams.\nThis guarantees price stability, correct information flow, and a standard sales process.\nAccess to a strong portfolio, fast information flow, accurate data, and a professional sales order managed from a single center. As a result,\nThe NATA LIVING Authorized Sales Network offers a new digital business model that makes real estate sales easily accessible, systematic, reliable, and much more efficient.",
+    "formTitle": "Contact us for information",
+    "fullNamePlaceholder": "Full Name",
+    "emailPlaceholder": "E-mail",
+    "phonePlaceholder": "Phone",
+    "businessPlaceholder": "Business Information",
+    "messagePlaceholder": "Your Message (optional)",
+    "kvkkIntro": "Personal Data Protection",
+    "kvkkText": "I have been informed about",
+    "kvkkLink": "KVKK Disclosure Text",
+    "kvkkAccept": "and read it. I accept the terms.",
+    "allFieldsRequired": "Please fill in all required fields.",
+    "acceptKVKK": "Please accept the KVKK terms."
+  },
+  "vegaCenter": {
+    "view360": "360° View",
+    "breadcrumbHome": "NATA Living",
+    "breadcrumbProjects": "New Projects",
+    "breadcrumbVega": "VEGA Center",
+    "metroDistance": "Metro",
+    "metroWalk": "5 min away",
+    "location": "Ankara — Mustafa Kemal District",
+    "units": "339 Offices + 87 Commercial Units",
+    "delivery": "Immediate Delivery, Immediate Title Deed",
+    "investment": "Attractive Investment Opportunity",
+    "lifeTitle": "VEGA CENTER",
+    "lifeSubtitle": "Office & Mall Concept",
+    "lifeDescription": "Located in Ankara's most prestigious location, VEGA Center brings a fresh breath to Ankara with its modern architecture, Office & Mall concept, along with distinguished stores and restaurants.",
+    "goToPresentation": "Go to Presentation",
+    "detailedInfo": "Detailed Information",
+    "previous": "Previous",
+    "next": "Next",
+    "back": "← Back",
+    "forward": "Forward →",
+    "close": "Close",
+    "designTitle": "Meet\nVEGA Center",
+    "designDescription": "VEGA Center, a NATA Living project, is a lifestyle center that adds aesthetic value to the city's silhouette with its horizontal architecture, elevating the business and premium shopping experience to the highest level. With its spacious offices and efficient work areas, every point of VEGA Center, which has high potential, is designed to make life easier.",
+    "viewGallery": "View Project Gallery",
+    "boxesLearnNews": "Learn the news",
+    "boxesAllInfo": "All Information About the Project",
+    "boxesDownloadDocs": "Download Documents",
+    "boxesNataProjects": "NATA Living Projects",
+    "boxesVisit": "Visit",
+    "boxesViewLocation": "View Project Location",
+    "boxesAnswerQuestions": "We Answer Your Questions",
+    "boxes5Minutes": "Within 5 minutes",
+    "boxesProfessionalTeam": "With Our Professional Team",
+    "sitePlansHeading": "Where Life Is\nWe Are There.",
+    "sitePlansDescription": "VEGA Center, a NATA Living project, is a lifestyle center that adds aesthetic value to the city's silhouette with its horizontal architecture, elevating the business and premium shopping experience to the highest level. With its spacious offices and efficient work areas, every point of VEGA Center, which has high potential, is designed to make life easier.",
+    "lifeSlides": {
+      "slide1Title": "Ankara's New Business and Life Center",
+      "slide1PopupTitle": "Modern Offices and Commercial Spaces in a Prestigious Location",
+      "slide1PopupText": "Vega Center is becoming Ankara's rising value with its new-generation mixed-use concept that brings together the business world and social life in a single location. With modern offices, stores and social areas, it adds prestige to your business life while giving you easy access to your daily needs. With a design that is in harmony with the city's dynamic structure, it becomes an ideal center for both investors and professionals.",
+      "slide2Title": "Charging Stations for Electric Vehicles",
+      "slide2PopupTitle": "Smart Solutions Compatible with the Energy of the Future",
+      "slide2PopupText": "At Vega Center, special charging stations are offered for electric vehicle owners with a sustainable living approach. Thanks to this infrastructure that supports eco-friendly transportation, you can safely and easily charge your vehicle and stay one step ahead with future technologies. With this feature that meets the requirements of modern life, you can experience both comfort and an environmentally friendly approach together.",
+      "slide3Title": "Central Location, Easy Access",
+      "slide3PopupTitle": "In the Heart of the City, Just Steps Away from Everywhere",
+      "slide3PopupText": "Located in one of Ankara's most strategic points, Vega Center offers you the privilege of saving time. Thanks to its proximity to the metro, main arteries and major commercial centers, it removes transportation from being a problem in both your business and social life. With its central location advantage, make the most efficient use of the city's opportunities together with the dynamism of the business world.",
+      "slide4Title": "Ankara's New Business and Life Center",
+      "slide4PopupTitle": "Modern Offices and Commercial Spaces in a Prestigious Location",
+      "slide4PopupText": "Vega Center is becoming Ankara's rising value with its new-generation mixed-use concept that brings together the business world and social life in a single location. With modern offices, stores and social areas, it adds prestige to your business life while giving you easy access to your daily needs. With a design that is in harmony with the city's dynamic structure, it becomes an ideal center for both investors and professionals.",
+      "slide5Title": "Working in Touch with Nature with Terrace Offices",
+      "slide5PopupTitle": "Offices that Combine Productivity with the Calm of Nature",
+      "slide5PopupText": "Redefine modern business life with spacious terrace offices that bring together the calming effect of nature. This special working environment, which boosts your motivation with open-air areas, offers a more productive and enjoyable work experience with the energy of greenery. With an office concept in touch with nature, away from the city's crowds, experience both comfort and prestige together."
+    },
+    "sitePlans": {
+      "aBlockLabel": "Block A",
+      "aBlockText": "Stunning Views, Quality Living",
+      "aBlockInfo": "Ground + 8 Floors, 26,925.87 m², 100 Offices",
+      "bBlockLabel": "Block B",
+      "bBlockText": "Urban Modernity, Natural Landscaping",
+      "bBlockInfo": "Ground + 10 Floors, 38,450.94 m², 152 Offices",
+      "cBlockLabel": "Block C",
+      "cBlockText": "Easy Access, Comfortable Living",
+      "cBlockInfo": "Ground + 11 Floors, 21,639.35 m², 87 Offices",
+      "dBlockLabel": "Block D",
+      "dBlockText": "Vega Center",
+      "dBlockInfo": "87 Commercial Units"
+    }
+  },
+  "ramsGarden": {
+    "breadcrumbHome": "NATA Living",
+    "breadcrumbProjects": "New Projects",
+    "breadcrumbProject": "RAMS Garden"
+  },
+  "incek": {
+    "breadcrumbHome": "NATA Living",
+    "breadcrumbCompletedProjects": "Completed Projects",
+    "breadcrumbProject": "Nata İncek Residences",
+    "heroTagBusStop": "1 min to bus stop",
+    "heroTagLocation": "Incek Neighborhood / Ankara",
+    "heroTagUnits": "160 Residences",
+    "heroTagImmediateDelivery": "Immediate Delivery",
+    "heroTagComfort": "Spacious, elegant and functional",
+    "heroTagFloors": "22 Floors",
+    "heroTagShopsSocial": "11 shops and social facilities",
+    "heroTagPlotSize": "16,000 m²",
+    "heroTagGreenArea": "12,000 m² green area",
+    "heroTagCctv": "CCTV system",
+    "lifeTitle": "NATA İncek Residences",
+    "lifeDescription": "With the view of Lake Mogan and its nature-integrated location, Nata İncek is the address of ideal living on a 16,000 m² area, of which 12,000 m² is green space. Offering spacious, stylish and functional living spaces that make your life easier, the project consists of 160 residences in 4 blocks of 22 floors (basement + ground floor), along with 11 shops and social facilities. While each apartment has 2 dedicated indoor parking spaces, social amenities such as a fitness center, sauna, Turkish bath, swimming pool, children's playgrounds and walking tracks await you for a comfortable life. The entire site is safely monitored 24/7 with a CCTV system.",
+    "lifeSlides": {
+      "slide1Title": "The New Name of Modern Living: Nata İncek",
+      "slide1PopupTitle": "Live with complete peace of mind.",
+      "slide1PopupText": "With a comprehensive security network, the peace of the residents is always the top priority.",
+      "slide2Title": "12,000 m² Green Area",
+      "slide2PopupTitle": "A life in the heart of nature.",
+      "slide2PopupText": "Thanks to the wide landscaping area, every block is surrounded by nature, offering its residents a breathing environment.",
+      "slide3Title": "24/7 Security and Camera System",
+      "slide3PopupTitle": "Live with complete peace of mind.",
+      "slide3PopupText": "With a comprehensive security network, the peace of the residents is always the top priority.",
+      "slide4Title": "Indoor Swimming Pool",
+      "slide4PopupTitle": "Enjoy summer with cool waters.",
+      "slide4PopupText": "The pool inside the site offers a safe and enjoyable swimming environment for both children and adults.",
+      "slide5Title": "Children's Play Areas",
+      "slide5PopupTitle": "Comfort for families, happiness for little ones.",
+      "slide5PopupText": "Thanks to the large play areas, children can socialize without compromising on safety.",
+      "slide6Title": "Walking and Running Tracks",
+      "slide6PopupTitle": "Add health to your daily life.",
+      "slide6PopupText": "The walking paths in the site support a healthy lifestyle intertwined with nature."
+    },
+    "goToPresentation": "Go to Presentation",
+    "detailedInfo": "Detailed Information",
+    "previous": "Previous",
+    "next": "Next",
+    "back": "← Back",
+    "forward": "Forward →",
+    "close": "Close",
+    "lifeMoreInfo": "More Info",
+    "nearbyTabInfrastructure": "Infrastructure",
+    "nearbyTabLocation": "Location",
+    "nearbyHeadingPopular": "Popular places nearby",
+    "nearbyCategoryAll": "All",
+    "nearbyCategoryMalls": "Malls",
+    "nearbyCategorySchools": "Schools",
+    "nearbyCategoryHospitals": "Hospitals",
+    "nearbyCategoryMarkets": "Markets",
+    "nearbyCategoryHotels": "Hotels",
+    "nearbyCategoryMosques": "Mosques",
+    "nearbyCategoryMinistries": "Ministries / Institutions",
+    "nearbyCategoryBusiness": "Business Centers",
+    "nearbyCategoryParks": "Parks",
+    "nearbyInfrastructureAlt": "Infrastructure visual",
+    "nearbyProjectName": "Nata İncek Residences",
+    "nearbyProjectDescription": "A living space intertwined with nature in İncek, Gölbaşı.",
+    "sitePlansTitle": "A privileged life intertwined with nature in İncek",
+    "sitePlansDescription": "Located in İncek, one of Ankara's most prestigious districts, the project offers a life intertwined with nature with its 12,000 m² green area and spacious landscaping arrangements. Comprising a total of 290 residences in 5 blocks, Nata İncek is equipped with modern solutions for a peaceful family life.",
+    "siteBlockALabel": "Block A",
+    "siteBlockAText": "Block A",
+    "siteBlockAInfo": "Nata İncek Block A",
+    "siteBlockBLabel": "Block B",
+    "siteBlockBText": "Block B",
+    "siteBlockBInfo": "Nata İncek Block B",
+    "siteBlockCLabel": "Block C",
+    "siteBlockCText": "Block C",
+    "siteBlockCInfo": "Nata İncek Block C",
+    "siteBlockDLabel": "Block D",
+    "siteBlockDText": "Block D",
+    "siteBlockDInfo": "Nata İncek Block D",
+    "designTitle": "Nata İncek Residences",
+    "designDescription": "With its structure that is integrated with nature and its proximity to the city, Nata İncek is the address of ideal living.",
+    "designOpenGallery": "View Project Gallery",
+    "unitTypesTabAria": "Unit Type {id}",
+    "unitTypesSelectorAria": "Apartment type selector",
+    "unitTypesSelectorLabel": "Apartment",
+    "unitTypesSelectorSubLabel": "Types",
+    "unitTypesPreviousPlan": "Previous Plan",
+    "unitTypesNextPlan": "Next Plan",
+    "unitTypesLightboxClose": "Close",
+    "unitTypesLightboxAlt": "Enlarged unit plan {id}",
+    "unitTypesMainAlt": "Unit plan {id}"
+  },
+  "goatVillas": {
+    "lifeTitle": "GOAT VILLAS",
+    "lifeSubtitle": "Bilkent",
+    "lifeDescription": "Located in the heart of Ankara in Bilkent 3, this 4-storey villa project with open landscaping and three villa types is designed to offer a lifestyle where you will feel truly special, with its unique design, high-quality materials and distinctive architecture.",
+    "goToPresentation": "Go to Presentation",
+    "detailedInfo": "Detailed Information",
+    "previous": "Previous",
+    "next": "Next",
+    "back": "← Back",
+    "forward": "Forward →",
+    "close": "Close",
+    "lifeSlides": {
+      "slide1Title": "Ankara's New Center of Life",
+      "slide1PopupTitle": "Peace Protected by Technology",
+      "slide1PopupText": "In this living space equipped with smart home systems, security and comfort come together. Thanks to camera systems, digital access controls and remote management technologies, your home is always under your control.",
+      "slide2Title": "Sustainable and High-Quality Materials",
+      "slide2PopupTitle": "Durable and Eco-Friendly Building Materials",
+      "slide2PopupText": "All materials used in the project are selected to be friendly to both nature and people. With energy‑efficient, durable and aesthetic solutions, a high-quality life is being built while remaining environmentally conscious.",
+      "slide3Title": "Modern Living Integrated with Nature",
+      "slide3PopupTitle": "Feel the Rhythm of Nature in the City",
+      "slide3PopupText": "With large landscaping areas, walking paths and architecture that respects the natural texture, modern life turns into an experience intertwined with nature. Special spaces where you can relieve the stress of the day accompanied by birdsong are waiting for you.",
+      "slide4Title": "Safe and Smart Living",
+      "slide4PopupTitle": "Peace Protected by Technology",
+      "slide4PopupText": "In this living space equipped with smart home systems, security and comfort come together. Thanks to camera systems, digital access controls and remote management technologies, your home is always under your control.",
+      "slide5Title": "The Peak of Modern Architecture",
+      "slide5PopupTitle": "Timeless Design, Functional Solutions",
+      "slide5PopupText": "The project design, which combines aesthetic lines with functionality, takes contemporary architecture to a new level. With spacious interiors, wide façades and light‑filled living areas, it offers an architectural experience with a strong sense of style.",
+      "slide6Title": "Tailor-Made Interiors, Open and Closed Parking",
+      "slide6PopupTitle": "Living Spaces That Fit Your Dreams",
+      "slide6PopupText": "Personalization options are offered for interiors that reflect your style. From the color palette to cabinet layouts, every detail is shaped according to your choices. Build a living space that is uniquely yours."
+    }
+  },
+  "anteres": {
+    "hero": {
+      "breadcrumbHome": "NATA Living",
+      "breadcrumbProjects": "New Projects",
+      "breadcrumbProject": "Antares Residences",
+      "tagUnits": "840 Residences, Commercial Areas & Mall",
+      "tagLocation": "Ankara – Yenimahalle",
+      "tagInvestment": "High-Value Investment Project",
+      "tagSocialCommercial": "Social and Commercial Hub"
+    },
+    "life": {
+      "title": "ANTARES RESIDENCES",
+      "subtitle": "In the heart of Etlik",
+      "description": "As a subsidiary of Dolunay, Antares Residences brings together a pleasant and comfortable life with its central location and rich social amenities.",
+      "slides": {
+        "1": {
+          "title": "Designed for a Prestigious Life",
+          "popupTitle": "Social Life as an Extension of Your Home",
+          "popupText": "From the fitness center to children's playgrounds, from the cafeteria to relaxation areas, Antares Residences offers social facilities that meet all your needs. Rediscover the neighborhood culture in modern social spaces."
+        },
+        "2": {
+          "title": "Modern Life in the Heart of Etlik",
+          "popupTitle": "A Comfortable Life in the City Center",
+          "popupText": "Located at one of Etlik's most prestigious points, Antares Residences offers a comfortable life in the heart of the city with its proximity to shopping malls, healthcare facilities and public transport."
+        },
+        "3": {
+          "title": "Intertwined with Nature through Large Green Areas",
+          "popupTitle": "Spaces Where You Can Breathe Amid Concrete",
+          "popupText": "Antares Residences offers wide landscaping and green areas where you can be alone with nature in the density of the city. With children's playgrounds and walking paths, a living environment that appeals to all ages awaits you."
+        },
+        "4": {
+          "title": "Rich Social Facilities",
+          "popupTitle": "Social Life as an Extension of Your Home",
+          "popupText": "From the fitness center to children's playgrounds, from the cafeteria to relaxation areas, Antares Residences offers social facilities that meet all your needs. Rediscover the neighborhood culture in modern social spaces."
+        },
+        "5": {
+          "title": "Ample Parking Opportunities",
+          "popupTitle": "No More Looking for a Parking Spot",
+          "popupText": "With closed parking spaces allocated for each apartment, Antares Residences offers safe and spacious parking areas for your vehicles. Thanks to the guest parking, your visitors will also be comfortable."
+        },
+        "6": {
+          "title": "Swimming Pool",
+          "popupTitle": "Holiday Pleasure in the Middle of the City",
+          "popupText": "With indoor and outdoor swimming pools, you can enjoy swimming at Antares Residences in every season. Enjoy both sports and the cool waters together with your family."
+        }
+      },
+      "buttons": {
+        "goToPresentation": "Go to Presentation",
+        "details": "Detailed Information",
+        "prev": "← Back",
+        "next": "Forward →",
+        "prevShort": "Previous",
+        "nextShort": "Next",
+        "close": "Close"
+      }
+    },
+    "design": {
+      "title": "Meet\nANTARES RESIDENCES",
+      "description": "With its wide landscaping areas, walking paths, children's playground and ornamental pools with water features, you can go for a walk at any time of the day in the park where 10,000 m² is reserved as green space. While your children play safely in the park, you can spend pleasant time with your loved ones in the common area where the ornamental pools are located.",
+      "openGallery": "View Project Gallery"
+    },
+    "nearby": {
+      "switchInfrastructure": "Infrastructure",
+      "switchLocation": "Location",
+      "sectionTitle": "Popular places nearby",
+      "projectName": "Antares Residences",
+      "projectDescription": "In the heart of Etlik",
+      "infrastructureAlt": "Infrastructure visual",
+      "categories": {
+        "all": "All",
+        "malls": "Malls",
+        "schools": "Schools",
+        "hospitals": "Hospitals",
+        "markets": "Markets"
+      }
+    },
+    "sitePlans": {
+      "title": "Where Life Is\nWe Are There.",
+      "description": "Antares offers a comfortable life with its modern architecture and wide open spaces. Each block provides a living environment intertwined with nature while impressing with its aesthetic design. Our residences, with their spacious interiors and large garden areas, allow you to spend enjoyable moments with your family.",
+      "hotspots": {
+        "1": {
+          "label": "Block A",
+          "info": "Striking Views, Quality Living"
+        },
+        "2": {
+          "label": "Block B",
+          "info": "Modern Design, Comfortable Living"
+        },
+        "3": {
+          "label": "Block C",
+          "info": "In the Heart of the City, at the Center of Life"
+        },
+        "4": {
+          "label": "Block D",
+          "info": "Endless Opportunities, Unlimited Comfort"
+        },
+        "5": {
+          "label": "Block E",
+          "info": "The Living Space of Your Dreams"
+        },
+        "6": {
+          "label": "Block F",
+          "info": "The Living Space of Your Dreams"
+        }
+      }
+    },
+    "unitTypes": {
+      "tabAria": "Unit Type {id}",
+      "selectorAria": "Apartment type selector",
+      "selectorLabel": "Apartment",
+      "selectorSubLabel": "Types",
+      "previousPlan": "Previous Plan",
+      "nextPlan": "Next Plan",
+      "lightboxClose": "Close",
+      "lightboxAlt": "Enlarged unit plan {id}",
+      "mainAlt": "Unit plan {id}",
+      "openLightbox": "Enlarge floor plan"
+    },
+    "boxes": {
+      "cards": {
+        "1": {
+          "title": "Get the news",
+          "highlight": "All Information About the Project"
+        },
+        "2": {
+          "title": "Download Documents",
+          "highlight": "NATA Living Projects"
+        },
+        "3": {
+          "title": "Visit",
+          "highlight": "View Project Location"
+        },
+        "4": {
+          "title": "We Answer Your Questions",
+          "highlight": "Within 5 minutes",
+          "subtitle": "With Our Professional Team"
+        }
+      }
+    }
   }
 }

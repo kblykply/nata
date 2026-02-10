@@ -1,9 +1,13 @@
-'use client';
+"use client";
 
 import { Link } from "@/i18n/navigation";
-import { kampanyalar } from "@/data/kampanyalar";
+import { getKampanyalar } from "@/data/kampanyalar";
+import { useLocale } from "next-intl";
 
 export default function PromotionGrid() {
+  const locale = useLocale();
+  const kampanyalar = getKampanyalar(locale);
+
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 gap-6 px-6 py-12 bg-white">
       {kampanyalar.map((promo) => (
@@ -17,7 +21,11 @@ export default function PromotionGrid() {
                 {promo.title}{" "}
                 <span className="text-red-600">{promo.highlight}</span>
               </h3>
-              <p className="text-sm text-gray-500 mt-2">{promo.description}</p>
+              {promo.description && (
+                <p className="text-sm text-gray-500 mt-2">
+                  {promo.description}
+                </p>
+              )}
             </div>
           </div>
         </Link>

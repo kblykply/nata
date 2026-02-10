@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useTranslations } from "next-intl";
 
 const slides = [
   {
@@ -63,6 +64,8 @@ const slides = [
 ];
 
 export default function ProjectLifeRhythmSection() {
+  const t = useTranslations("incek");
+
   const [index, setIndex] = useState(0);
   const [popupIndex, setPopupIndex] = useState<number | null>(null);
   const totalSlides = slides.length;
@@ -105,12 +108,10 @@ const handlePointerUp = () => {
 
       
       <h2 className="text-3xl font-light text-gray-800 uppercase leading-tight">
-      NATA  <br />İNCEK KONUTLARI
+        {t("lifeTitle")}
       </h2>
       <p className="mt-4 text-sm text-gray-600 max-w-xl mx-auto">
-Mogan Gölü’nün manzarası ile doğayla iç içe, 16.000 m² alana yayılan projede 12.000 m² yeşil alan, hayatınızı kolaylaştıracak ferah, şık ve kullanışlı yaşam alanları NATA İncek Konutları'nda sizlerle buluşuyor.
-
-22 katlı (bodrum + zemin kat) 4 blokta 160 konutun yer aldığı projede, 11 mağaza ve sosyal tesisler de bulunuyor. Her daireye özel 2 araçlık kapalı otopark alanı sunulurken, fitness salonu, sauna, hamam, yüzme havuzu, çocuk parkları ve yürüyüş parkurları gibi sosyal olanaklarla konforlu bir yaşam sizi bekliyor. Tüm site, 24 saat CCTV sistemiyle güvenli bir şekilde denetleniyor.
+        {t("lifeDescription")}
       </p>
 
       <div className="relative mt-12 w-full max-w-7xl mx-auto h-[500px]">

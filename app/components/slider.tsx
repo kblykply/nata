@@ -1,13 +1,14 @@
-  'use client';
+'use client';
 
-  import { Swiper, SwiperSlide } from 'swiper/react';
-  import { Pagination, Autoplay } from 'swiper/modules';
-  import { Swiper as SwiperType } from 'swiper';
-  import Image from 'next/image';
-  import { useRef, useState, useEffect } from 'react';
-  import 'swiper/css';
-  import 'swiper/css/pagination';
-  import Link from 'next/link';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay } from 'swiper/modules';
+import { Swiper as SwiperType } from 'swiper';
+import Image from 'next/image';
+import { useRef, useState, useEffect } from 'react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 
   interface SlideData {
     id: number;
@@ -80,6 +81,7 @@
   ];
 
   export default function HeroSlider() {
+    const t = useTranslations('home');
     const [currentIndex, setCurrentIndex] = useState(0);
     const swiperRef = useRef<SwiperType | null>(null);
     const [isMobile, setIsMobile] = useState(false);
@@ -200,14 +202,14 @@
               style={{ backgroundImage: "url('/chartsredone.png')" }}
             >
               <div className="text-sm leading-tight">
-                <p className="text-black font-medium">Paylaştıkça</p>
-                <p className="text-red-600 font-semibold">Kazanırsın</p>
+                <p className="text-black font-medium">{t('sharingTitle1')}</p>
+                <p className="text-red-600 font-semibold">{t('sharingTitle2')}</p>
               </div>
             </div>
 
             <Link href="/kampanya" className="w-full">
               <button className="mt-4 bg-gradient-to-r from-red-600 to-orange-400 text-white py-4 px-4 rounded shadow-md text-sm font-medium w-full">
-                +6 daha
+                {t('moreCampaigns')}
               </button>
             </Link>
           </div>

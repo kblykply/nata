@@ -1,14 +1,14 @@
 import React from "react";
-import Hero from "../../components/anteres/Hero"; // Ensure Hero is in components folder
-import Life from "../../components/anteres/Life"; // Ensure Life is in components folder
-import NearLocations from "../../components/anteres/NearLocations"; // Ensure NearLocations is in components folder
-import SitePlans from "../../components/anteres/SitePlans"; // Ensure SitePlans is in components folder
-import Design from "../../components/anteres/Design"; // Ensure Design is in components folder
-import Contact from "../../components/Contact"; // Ensure Contact is in components folder
-import Office from "../../components/Office"; // Ensure Office is in components folder
-import UnitTypes from "../../components/anteres/unit-types"; // Ensure UnitTypes is in components folder
-import Boxes from "../../components/anteres/boxes"; // Ensure Boxes is in components folder
-import Navigator from "../../components/Navigator"; // Ensure Navigator is in components folder
+import Hero from "@/app/components/anteres/Hero";
+import Life from "@/app/components/anteres/Life";
+import SitePlans from "@/app/components/anteres/SitePlans";
+import NearLocations from "@/app/components/anteres/NearLocations";
+import Design from "@/app/components/anteres/Design";
+import Contact from "@/app/components/Contact";
+import Office from "@/app/components/Office";
+import UnitTypes from "@/app/components/anteres/unit-types";
+import Boxes from "@/app/components/anteres/boxes";
+import Navigator from "@/app/components/Navigator";
 const Page: React.FC = () => {
    return (
       <main className="scroll-smooth  ">
@@ -23,10 +23,6 @@ const Page: React.FC = () => {
       <section id="near-locations" className="scroll-mt-24">
         <NearLocations />
       </section>
-  
-     
-  
- 
   
       <section id="design" className="scroll-mt-24">
         <Design />

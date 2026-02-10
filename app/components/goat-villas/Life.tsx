@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useTranslations } from "next-intl";
 
 const slides = [
   {
@@ -64,9 +65,21 @@ const slides = [
 ];
 
 export default function ProjectLifeRhythmSection() {
+  const t = useTranslations("goatVillas");
+
+  const localizedSlides = slides.map((slide, index) => ({
+    ...slide,
+    title: t(`lifeSlides.slide${index + 1}Title`),
+    popup: {
+      ...slide.popup,
+      title: t(`lifeSlides.slide${index + 1}PopupTitle`),
+      text: t(`lifeSlides.slide${index + 1}PopupText`),
+    },
+  }));
+
   const [index, setIndex] = useState(0);
   const [popupIndex, setPopupIndex] = useState<number | null>(null);
-  const totalSlides = slides.length;
+  const totalSlides = localizedSlides.length;
   const [dragStartX, setDragStartX] = useState<number | null>(null);
 const [dragDeltaX, setDragDeltaX] = useState(0);
 
@@ -106,15 +119,17 @@ const handlePointerUp = () => {
 
       
       <h2 className="text-3xl font-light text-gray-800 uppercase leading-tight">
-      GOAT VILLAS  <br />BİLKENT
+        {t("lifeTitle")} <br />
+        {t("lifeSubtitle")}
       </h2>
       <p className="mt-4 text-sm text-gray-600 max-w-xl mx-auto">
-Ankara’nın merkezi Bilkent 3’te, tüm şehri gören muhteşem bir noktada yer alan 4 katlı, açık peyzajlı ve 3 tip villa seçenekli bu proje; eşsiz tasarımı, yüksek kaliteli malzemeleri ve benzersiz mimarisi ile kendinizi tamamen özel hissedeceğiniz bir yaşam tarzı sunmak üzere tasarlandı.      </p>
+        {t("lifeDescription")}
+      </p>
 
       <div className="relative mt-12 w-full max-w-7xl mx-auto h-[500px]">
       <div className="relative flex items-center justify-center h-full">
 
-          {slides.map((slide, i) => {
+          {localizedSlides.map((slide, i) => {
             const offset = (i - index + totalSlides) % totalSlides;
             const normalized = offset > totalSlides / 2 ? offset - totalSlides : offset;
 
@@ -177,12 +192,12 @@ Ankara’nın merkezi Bilkent 3’te, tüm şehri gören muhteşem bir noktada y
     {i === 0 ? (
       // If it's the first slide, render a link
       <a
-         href="https://katalog.goatvillasbilkent.com.tr/"
-    target="_blank"
-    rel="noopener noreferrer"   // <-- Change this URL to your target link
-        className="z-100 absolute    left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-black text-sm text-white  px-5 py-2 rounded-full shadow"
+        href="https://katalog.goatvillasbilkent.com.tr/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="z-100 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-black text-sm text-white px-5 py-2 rounded-full shadow"
       >
-        Sunuma Git
+        {t("goToPresentation")}
       </a>
     ) : (
       // For other slides, open popup
@@ -190,7 +205,7 @@ Ankara’nın merkezi Bilkent 3’te, tüm şehri gören muhteşem bir noktada y
         onClick={() => setPopupIndex(i)}
         className="z-100 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-sm text-gray-700 px-5 py-2 rounded-full shadow"
       >
-        Ayrıntılı Bilgi
+        {t("detailedInfo")}
       </button>
     )}
   </>
@@ -201,17 +216,21 @@ Ankara’nın merkezi Bilkent 3’te, tüm şehri gören muhteşem bir noktada y
           })}
 
           <button
-            onClick={() => setIndex((prev) => (prev - 1 + totalSlides) % totalSlides)}
-            aria-label="Önceki"
-            title="Önceki"
+            onClick={() =>
+              setIndex((prev) => (prev - 1 + totalSlides) % totalSlides)
+            }
+            aria-label={t("previous")}
+            title={t("previous")}
             className="absolute left-0 top-1/2 -translate-y-1/2 bg-white text-black p-3 rounded-full shadow z-40"
           >
             <FaChevronLeft />
           </button>
           <button
-            onClick={() => setIndex((prev) => (prev + 1) % totalSlides)}
-            aria-label="Sonraki"
-            title="Sonraki"
+            onClick={() =>
+              setIndex((prev) => (prev + 1) % totalSlides)
+            }
+            aria-label={t("next")}
+            title={t("next")}
             className="absolute right-0 top-1/2 -translate-y-1/2 bg-white text-black p-3 rounded-full shadow z-40"
           >
             <FaChevronRight />
@@ -225,19 +244,19 @@ Ankara’nın merkezi Bilkent 3’te, tüm şehri gören muhteşem bir noktada y
             <button
               onClick={() => setPopupIndex(null)}
               className="absolute top-3 right-4 text-gray-500 hover:text-gray-800 text-xl"
-              aria-label="Kapat"
-              title="Kapat"
+              aria-label={t("close")}
+              title={t("close")}
             >
               ✕
             </button>
             <h3 className="text-xl font-semibold text-gray-900 mb-3">
-              {slides[popupIndex].popup.title}
+              {localizedSlides[popupIndex].popup.title}
             </h3>
             <p className="text-sm text-gray-700 mb-4">
-              {slides[popupIndex].popup.text}
+              {localizedSlides[popupIndex].popup.text}
             </p>
             <div className="grid grid-cols-2 gap-4">
-              {slides[popupIndex].popup.images.map((img, i) => (
+              {localizedSlides[popupIndex].popup.images.map((img, i) => (
                 <Image
                   key={i}
                   src={img}
@@ -251,19 +270,25 @@ Ankara’nın merkezi Bilkent 3’te, tüm şehri gören muhteşem bir noktada y
             <div className="flex justify-between mt-6">
               <button
                 onClick={() =>
-                  setPopupIndex((prev) => (prev! - 1 + slides.length) % slides.length)
+                  setPopupIndex(
+                    (prev) =>
+                      (prev! - 1 + localizedSlides.length) %
+                      localizedSlides.length
+                  )
                 }
                 className="text-sm text-gray-700 hover:underline"
               >
-                ← Geri
+                {t("back")}
               </button>
               <button
                 onClick={() =>
-                  setPopupIndex((prev) => (prev! + 1) % slides.length)
+                  setPopupIndex(
+                    (prev) => (prev! + 1) % localizedSlides.length
+                  )
                 }
                 className="text-sm text-gray-700 hover:underline"
               >
-                İleri →
+                {t("forward")}
               </button>
             </div>
           </div>

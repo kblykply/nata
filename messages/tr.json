@@ -170,6 +170,8 @@
     "tagline": "NATA Yaşam, yaşamın kalbinde, konforun zirvesinde."
   },
   "bulletin": {
+    "title": "N-BÜLTEN",
+    "description": "N-Bülten dergimizde, NATA Holding’in projelerindeki yenilikler, başarılar ve önemli gelişmelerin yanı sıra, çeşitli içerikler ve röportajlar da yer almaktadır. Dergimiz, siz değerli okuyucularımıza hem projelerimiz hakkında en güncel bilgileri sunmayı hem de bilgilendirici içerikler sağlamayı amaçlamaktadır.",
     "previousPage": "Önceki Sayfa",
     "nextPage": "Sonraki Sayfa",
     "fullScreen": "Tam Ekran",
@@ -201,5 +203,452 @@
   },
   "projects": {
     "campaignImage": "Kampanya Görseli"
+  },
+  "home": {
+    "sharingTitle1": "Paylaştıkça",
+    "sharingTitle2": "Kazanırsın",
+    "moreCampaigns": "+6 daha",
+    "ongoingHeadingMain": "Satışı Devam Eden",
+    "ongoingHeadingHighlight": "Projeler",
+    "tabNewProjects": "Yeni Projeler",
+    "tabOtherProjects": "Diğer Projeler",
+    "blogSectionTitle": "Son Durum Haberler",
+    "viewAllPosts": "Tüm Yazıları Gör",
+    "loadMore": "Daha Fazla Yükle",
+    "planned": {
+      "sectionTitleMain": "Planlanan",
+      "sectionTitleHighlight": "Projeler",
+      "location": "Lokasyon",
+      "createDemand": "Ön Talep Oluştur",
+      "bodrumYalikavakSubtitle": "Exclusive Villa",
+      "milasSubtitle": "VİLLA & KONUT\n& TURİZM & SAĞLIK & AVM",
+      "vegaSofyaSubtitle": "Konut & Ofis Projesi",
+      "nataCenterSubtitle": "Karma Kullanım: AVM, Ofis, Rezidans"
+    }
+  },
+  "projectList": {
+    "cityPlaceholder": "Şehir Seçin",
+    "districtPlaceholder": "İlçe Seçin",
+    "typePlaceholder": "Proje Tipi Seçin",
+    "deliveryPlaceholder": "Teslim Durumu Seçin",
+    "allFilters": "Tüm Filtreler",
+    "clearComparison": "Karşılaştırmayı temizle",
+    "filtersTitle": "Tüm Filtreler",
+    "cityLabel": "Şehir",
+    "districtLabel": "İlçe",
+    "typeLabel": "Proje Tipi",
+    "deliveryLabel": "Teslim Durumu",
+    "apply": "Uygula",
+    "clearAllFilters": "Tüm filtreleri temizle",
+    "compare": "Karşılaştır",
+    "selected": "Seçildi",
+    "project": "Proje",
+    "delivery": "Teslim",
+    "metro": "Metro",
+    "distance": "Mesafe",
+    "features": "Özellikler",
+    "location": "Lokasyon",
+    "progress": "İlerleme",
+    "extra": "Ekstra",
+    "constructionProgress": "İnşaat İlerleme Oranı",
+    "priceRequestTitle": "Fiyat Al",
+    "whatsAppTitle": "WhatsApp",
+    "whatsAppMessage": "Merhaba, {projectName} projesi hakkında detaylı bilgi almak istiyorum.",
+    "completedHeadingMain": "Satışı Tamamlanan",
+    "completedHeadingHighlight": "Projeler",
+    "locationLabel": "Lokasyon",
+    "apartmentTypeLabel": "Daire Tipi",
+    "areaLabel": "m² Alanı",
+    "addToFavorites": "Favorilere ekle",
+    "all": "Tümü",
+    "deliveryCompleted": "Tamamlandı"
+  },
+  "popups": {
+    "searchPlaceholder": "Lokasyon, teslim yılı veya segment seçin",
+    "activeProjects": "Aktif Satışta Olan Projeler",
+    "comingSoon": "Çok Yakında Satışta",
+    "completedProjects": "Tamamlanan Projeler",
+    "selectFromMap": "Haritadan Proje Seç",
+    "goToCampaigns": "Kampanyalara git",
+    "scanQR": "Kamerayla QR Kodu Okutun,\nTelefonunuz üzerinden iletişim kurabilirsiniz.",
+    "allQuestions": "TÜM SORULARINIZ İÇİN\nBURADAYIZ",
+    "requestCallSubtitle": "Bir çağrı talebinde bulunun.\nAklınızdaki sorular için buradayız.",
+    "fullNamePlaceholder": "Adınız ve Soyadınız",
+    "phonePlaceholder": "+90 (5__) ___ __ __",
+    "messagePlaceholder": "Mesajınız (isteğe bağlı)",
+    "formSubmitNote": "Formu gönderdiğiniz takdirde",
+    "privacyPolicyLink": "Gizlilik Politikalarımızı",
+    "privacyAcceptSuffix": "onaylamış bulunuyorsunuz",
+    "validPhone": "Geçerli bir telefon numarası giriniz"
+  },
+  "aboutUs": {
+    "heroTitle": "NATA Yaşam",
+    "heroSubtitle": "Hakkında",
+    "contentHeading": "Geleceği İnşa Ediyoruz,\nYaşam Alanlarınıza Değer Katıyoruz",
+    "contentDescription": "Nata Holding güvencesiyle hayata geçirilen NATA Yaşam, sadece konut projeleri geliştiren bir marka olmanın ötesine geçerek, yaşamın her alanına dokunan; modern ve sürdürülebilir projelere imza atmaktadır. Türkiye'nin dört bir yanında; konut, villa, ofis, ticari alan, alışveriş merkezi, turizm, sağlık ve sosyal yaşam alanlarını bir araya getiren çok yönlü projelerimizle, geleceğin şehircilik anlayışını bugünden sunuyoruz.",
+    "stat1": "57 Yıllık Tecrübe",
+    "stat2": "277 Tamamlanan Proje",
+    "stat3": "24 Devam Eden Proje",
+    "stat4": "10.000+ Teslim Edilen Ticari Alan",
+    "qualityTitle": "Her Projede Kalite ve Güven",
+    "qualityDescription": "NATA Yaşam olarak önceliğimiz, estetik ve fonksiyonelliği bir arada sunarken, sakinlerimize yüksek yaşam standartları sağlamaktır. Projelerimizde kullandığımız kaliteli malzemeler, yenilikçi mimari yaklaşımlar ve çevre dostu çözümler ile sektörde fark yaratıyoruz.",
+    "point1Title": "Stratejik Lokasyonlarda Prestijli Projeler",
+    "point1Description": "Ankara'dan Bodrum'a, Milas'tan Türkiye'nin yükselen bölgelerine kadar konumlandırdığımız projelerimiz; merkezi lokasyonları, ulaşım kolaylığı ve sosyal donatılarıyla hem yaşam hem de yatırım açısından büyük avantaj sağlıyor. Konut, Ofis, Ticari Alan ve AVM konseptinden, exclusive villa projelerine ve turizm odaklı yaşam alanlarına kadar geniş bir portföye sahibiz.",
+    "point2Title": "Müşteri Memnuniyeti Odaklı Yaklaşım",
+    "point2Description": "Her zaman müşterilerimizin beklentilerini aşmayı hedefliyor, satış öncesi ve sonrası sunduğumuz profesyonel hizmetlerle güvenilir bir çözüm ortağı oluyoruz. Şeffaf iletişim, hızlı destek ve kişiye özel çözümlerle, yatırım yolculuğunuzda daima yanınızdayız.",
+    "point3Title": "Sürdürülebilir ve Yenilikçi Yaklaşım",
+    "point3Description": "NATA Yaşam, geleceğe değer katacak projeler üretirken, çevresel ve toplumsal sorumluluklarını da göz önünde bulundurur. Doğayla uyumlu, enerji verimliliği yüksek yapılarımızla sürdürülebilir bir yaşamın kapılarını aralıyoruz.",
+    "galleryTitle": "Ofis Galerisi",
+    "galleryDescription": "Şirketimizin ofisinden kareleri aşağıda bulabilirsiniz. Modern, şık ve fonksiyonel alanlarımızı keşfedin."
+  },
+  "salesNetwork": {
+    "heroTitle": "Yetkili Satış Ağı Portalımıza\nHoş Geldiniz",
+    "contentDescription": "NATA YAŞAM'ın güçlü portföyü artık tek çatı altında.\n Nata Yaşam gayrimenkul portföyünü seçilmiş profesyoneller için tek merkezden sunan yeni bir ekosistem kurdu. \n Bu ekosistem, yalnızca bir erişim alanı değil, sektörün işleyişine yön verecek yeni bir yaklaşım. \n Dijital, şeffaf ve tamamen kontrol edilebilir CRM altyapısıyla gayrimenkul satış süreçlerine yeni bir disiplin kazandırıyoruz. \n Artık tüm işlemler tek düzen, tek sistem ve tek standart altında yürütülüyor. \n Profesyonel gayrimenkul uzmanları için NATA YAŞAM çağı başlıyor. \nKurumsal portföyümüze doğrudan erişim sunan bu yeni satış ağı, güveninizi, hızınızı ve hizmet kalitenizi bir üst seviyeye taşımak için tasarlandı. \nNATA YAŞAM Yetkili Satış Ağı'na katılın. Portföyünüzü güçlendirin.",
+    "videoButtonText": "Bilgilendirme videosu için tıklayın",
+    "aboutPortalTitle": "Portal Hakkında",
+    "aboutPortalDescription": "Nata Yaşam yetkili Satış Ağı Portalı, gayrimenkul satış süreçlerini tek bir merkezde toplayan yeni bir ekosistemdir. \nPeki bu sistem nasıl çalışır?\nSistem, Konut, Ofis, Ticari Alan portföyü tek bir veritabanında birleştirilir. \nBu portföy Türkiye genelinde seçilmiş profesyonel emlak ofislerine kontrollü bir şekilde açılır. \nProfesyonel emlak danışmanları bu portala giriş yaptığında, tüm ilanlara, güncel fiyatlara, proje detaylarına ve satış dökümanlarına doğrudan erişir. \nMüşteri kaydı, teklif oluşturma, rezervasyon talebi ve sözleşme süreçleri ise tamamen NATA YAŞAM CRM üzerinden yönetilir. \nSistem ayrıca özel bir onay mekanizmasına sahiptir. Yapılan her işlem NATA YAŞAM'ın merkezi ekipleri tarafından dijital olarak kontrol edilir. \nBu fiyat istikrarını, doğru bilgi akışını ve standart bir satış sürecini garanti eder. \nGüçlü bir portföye erişim, hızlı bilgi akışı, doğru veri ve tek merkezden yönetilen profesyonel bir satış düzeni. Sonuç olarak, \nNATA YAŞAM Yetkili Satış Ağı, gayrimenkul satışını kolay erişilebilir, sistematik, güvenilir ve çok daha verimli hale getiren yeni bir dijital iş modeli sunar.",
+    "formTitle": "Bilgi almak için iletişime geçin",
+    "fullNamePlaceholder": "İsim Soyisim",
+    "emailPlaceholder": "E-mail",
+    "phonePlaceholder": "Telefon",
+    "businessPlaceholder": "İşletme Bilgisi",
+    "messagePlaceholder": "Mesajınız (isteğe bağlı)",
+    "kvkkIntro": "Kişisel Verilerin Korunması",
+    "kvkkText": "hakkında bilgilendirildim ve",
+    "kvkkLink": "KVKK Aydınlatma Metni",
+    "kvkkAccept": "'ni okudum. Koşulları kabul ediyorum.",
+    "allFieldsRequired": "Lütfen tüm zorunlu alanları doldurun.",
+    "acceptKVKK": "Lütfen KVKK koşullarını kabul edin."
+  },
+  "vegaCenter": {
+    "view360": "360° Görünüm",
+    "breadcrumbHome": "NATA Yaşam",
+    "breadcrumbProjects": "Yeni Projeler",
+    "breadcrumbVega": "VEGA Center",
+    "metroDistance": "Metroya",
+    "metroWalk": "5 dk uzaklıkta",
+    "location": "Ankara — Mustafa Kemal Mahallesi",
+    "units": "339 Ofis + 87 Ticari Alan",
+    "delivery": "Hemen Teslim Hemen Tapu",
+    "investment": "Cazip Yatırım Fırsatı",
+    "lifeTitle": "VEGA CENTER",
+    "lifeSubtitle": "Ofis & AVM konsepti",
+    "lifeDescription": "Ankara'nın en gözde lokasyonu üzerinde bulunan VEGA Center, modern mimarisiyle Ofis & AVM konsepti ile beraber seçkin mağaza ve restoranları beraberinde Ankara'ya yeni bir soluk getiriyor.",
+    "goToPresentation": "Sunuma Git",
+    "detailedInfo": "Ayrıntılı Bilgi",
+    "previous": "Önceki",
+    "next": "Sonraki",
+    "back": "← Geri",
+    "forward": "İleri →",
+    "close": "Kapat",
+    "designTitle": "VEGA Center\nile Tanışın",
+    "designDescription": "Bir NATA Yaşam projesi olan VEGA Center, yatay mimarisi ile şehrin silüetine estetik bir değer katan, iş ve premium alışveriş deneyimini en yüksek seviyeye çıkaran bir yaşam merkezidir. Ferah ofisleri ve verimli iş alanları ile yüksek potansiyele sahip olan VEGA Center'ın her noktası hayatı kolaylaştırmak için tasarlandı.",
+    "viewGallery": "Proje Galerisini Gör",
+    "boxesLearnNews": "Haberleri öğrenin",
+    "boxesAllInfo": "Proje Hakkında Tüm Bilgiler",
+    "boxesDownloadDocs": "Belgeleri İndirin",
+    "boxesNataProjects": "NATA Yaşam Projeleri",
+    "boxesVisit": "Ziyaret Edin",
+    "boxesViewLocation": "Projenin Lokasyonunu Görün",
+    "boxesAnswerQuestions": "Sorularınızı Cevaplıyoruz",
+    "boxes5Minutes": "5 dakika içinde",
+    "boxesProfessionalTeam": "Projesyonel Ekibimizle",
+    "sitePlansHeading": "Yaşam Nerede\nBiz Orada.",
+    "sitePlansDescription": "Bir NATA Yaşam projesi olan VEGA Center, yatay mimarisi ile şehrin silüetine estetik bir değer katan, iş ve premium alışveriş deneyimini en yüksek seviyeye çıkaran bir yaşam merkezidir. Ferah ofisleri ve verimli iş alanları ile yüksek potansiyele sahip olan VEGA Center'ın her noktası hayatı kolaylaştırmak için tasarlandı.",
+    "lifeSlides": {
+      "slide1Title": "Ankara'nın Yeni İş ve Yaşam Merkezi",
+      "slide1PopupTitle": "Prestijli Konumda Modern Ofis ve Ticaret Alanları",
+      "slide1PopupText": "Vega Center, iş dünyası ve sosyal yaşamı tek bir noktada buluşturan yeni nesil karma proje anlayışıyla Ankara'nın yükselen değeri oluyor. Modern ofisler, mağazalar ve sosyal alanlarla hem iş hayatınıza prestij katıyor hem de günlük ihtiyaçlarınıza kolay erişim sağlıyor. Şehrin dinamik yapısına uyumlu tasarımıyla, yatırımcılar ve profesyoneller için ideal bir merkez haline geliyor.",
+      "slide2Title": "Elektrikli Araçlar İçin Şarj İstasyonları",
+      "slide2PopupTitle": "Geleceğin Enerjisine Uyumlu Akıllı Çözümler",
+      "slide2PopupText": "Vega Center'da sürdürülebilir yaşam anlayışıyla elektrikli araç sahipleri için özel şarj istasyonları sunuluyor. Çevre dostu ulaşımı destekleyen bu altyapı sayesinde, aracınızı güvenle ve kolayca şarj edebilir, geleceğin teknolojisine her zaman bir adım önde uyum sağlayabilirsiniz. Modern yaşamın gereksinimlerine cevap veren bu özellik ile konforunuzu ve çevreci yaklaşımınızı bir arada yaşayın.",
+      "slide3Title": "Merkezi Konum, Kolay Ulaşım",
+      "slide3PopupTitle": "Şehrin Kalbinde, Her Yere Bir Adım Uzaklıkta",
+      "slide3PopupText": "Vega Center, Ankara’nın en stratejik noktalarından birinde konumlanarak size zamandan tasarruf etme ayrıcalığı sunuyor. Metro, ana arterler ve önemli ticaret merkezlerine yakınlığı sayesinde hem iş hem de sosyal yaşamınızda ulaşımı sorun olmaktan çıkarıyor. Merkezi konum avantajıyla, iş dünyasının dinamizmiyle şehrin olanaklarını en verimli şekilde değerlendirin.",
+      "slide4Title": "Ankara'nın Yeni İş ve Yaşam Merkezi",
+      "slide4PopupTitle": "Prestijli Konumda Modern Ofis ve Ticaret Alanları",
+      "slide4PopupText": "Vega Center, iş dünyası ve sosyal yaşamı tek bir noktada buluşturan yeni nesil karma proje anlayışıyla Ankara'nın yükselen değeri oluyor. Modern ofisler, mağazalar ve sosyal alanlarla hem iş hayatınıza prestij katıyor hem de günlük ihtiyaçlarınıza kolay erişim sağlıyor. Şehrin dinamik yapısına uyumlu tasarımıyla, yatırımcılar ve profesyoneller için ideal bir merkez haline geliyor.",
+      "slide5Title": "Teraslı Ofislerle Doğayla İç İçe Çalışma",
+      "slide5PopupTitle": "Verimliliği Doğanın Huzuruyla Buluşturan Ofisler",
+      "slide5PopupText": "Modern iş hayatını, ferah teraslı ofislerle doğanın sakinleştirici etkisiyle yeniden tanımlayın. Açık hava alanlarıyla motivasyonunuzu artıran bu özel çalışma ortamı, yeşilin enerjisiyle daha üretken ve keyifli bir iş deneyimi sunuyor. Şehrin kalabalığından uzak, doğayla iç içe ofis konseptiyle hem konforu hem de prestiji bir arada yaşayın."
+    },
+    "sitePlans": {
+      "aBlockLabel": "A Blok",
+      "aBlockText": "Göz Alıcı Manzara, Kaliteli Yaşam",
+      "aBlockInfo": "Zemin + 8 Kat, 26.925,87 m², Ofis Sayısı 100",
+      "bBlockLabel": "B Blok",
+      "bBlockText": "Şehirde Modernlik, Peyzajda Doğallık",
+      "bBlockInfo": "Zemin + 10 Kat, 38.450,94 m², Ofis Sayısı 152",
+      "cBlockLabel": "C Blok",
+      "cBlockText": "Ulaşımda Kolaylık, Yaşamda Konfor",
+      "cBlockInfo": "Zemin + 11 Kat, 21.639,35 m², Ofis Sayısı 87",
+      "dBlockLabel": "D Blok",
+      "dBlockText": "Vega Merkez",
+      "dBlockInfo": "87 Ticari Alan"
+    }
+  },
+  "ramsGarden": {
+    "breadcrumbHome": "NATA Yaşam",
+    "breadcrumbProjects": "Yeni Projeler",
+    "breadcrumbProject": "RAMS Garden"
+  },
+  "incek": {
+    "breadcrumbHome": "NATA Yaşam",
+    "breadcrumbCompletedProjects": "Tamamlanmış Projeler",
+    "breadcrumbProject": "Nata İncek Konutları",
+    "heroTagBusStop": "Otobüs Durağına 1 dk",
+    "heroTagLocation": "İncek Mahallesi / Ankara",
+    "heroTagUnits": "160 Konut",
+    "heroTagImmediateDelivery": "Hemen Teslim",
+    "heroTagComfort": "Ferah, şık ve kullanışlı",
+    "heroTagFloors": "22 Katlı",
+    "heroTagShopsSocial": "11 mağaza ve sosyal tesis",
+    "heroTagPlotSize": "16.000 m²",
+    "heroTagGreenArea": "12.000 m² yeşil alan",
+    "heroTagCctv": "CCTV sistemi",
+    "lifeTitle": "NATA İNCEK KONUTLARI",
+    "lifeDescription": "Mogan Gölü’nün manzarası ile doğayla iç içe, 16.000 m² alana yayılan projede 12.000 m² yeşil alan, hayatınızı kolaylaştıracak ferah, şık ve kullanışlı yaşam alanları NATA İncek Konutları'nda sizlerle buluşuyor. 22 katlı (bodrum + zemin kat) 4 blokta 160 konutun yer aldığı projede, 11 mağaza ve sosyal tesisler de bulunuyor. Her daireye özel 2 araçlık kapalı otopark alanı sunulurken, fitness salonu, sauna, hamam, yüzme havuzu, çocuk parkları ve yürüyüş parkurları gibi sosyal olanaklarla konforlu bir yaşam sizi bekliyor. Tüm site, 24 saat CCTV sistemiyle güvenli bir şekilde denetleniyor.",
+    "lifeSlides": {
+      "slide1Title": "Modern Yaşamın Yeni Adı: Nata İncek",
+      "slide1PopupTitle": "Gönül rahatlığıyla yaşayın.",
+      "slide1PopupText": "Tam kapsamlı güvenlik ağı ile site sakinlerinin huzuru her zaman öncelikli tutulur.",
+      "slide2Title": "12.000 m² Yeşil Alan",
+      "slide2PopupTitle": "Doğanın ortasında bir yaşam.",
+      "slide2PopupText": "Geniş peyzaj alanı sayesinde her blok doğayla çevrili. Sakinlerine nefes aldıran bir çevre sunar.",
+      "slide3Title": "24 Saat Güvenlik ve Kameralı Sistem",
+      "slide3PopupTitle": "Gönül rahatlığıyla yaşayın.",
+      "slide3PopupText": "Tam kapsamlı güvenlik ağı ile site sakinlerinin huzuru her zaman öncelikli tutulur.",
+      "slide4Title": "Kapalı Yüzme Havuzu",
+      "slide4PopupTitle": "Yazın tadını serin sularla çıkarın.",
+      "slide4PopupText": "Site içindeki havuz, çocuklar ve yetişkinler için güvenli, keyifli bir yüzme ortamı sunar.",
+      "slide5Title": "Çocuk Oyun Alanları",
+      "slide5PopupTitle": "Ailece konfor, miniklere mutluluk.",
+      "slide5PopupText": "Geniş oyun alanları sayesinde çocuklar sosyalleşirken güvenlikten ödün verilmez.",
+      "slide6Title": "Yürüyüş ve Koşu Parkurları",
+      "slide6PopupTitle": "Günlük yaşamınıza sağlık katın.",
+      "slide6PopupText": "Sitede yer alan yürüyüş yolları, doğayla iç içe sağlıklı bir yaşam tarzını destekler."
+    },
+    "goToPresentation": "Sunuma Git",
+    "detailedInfo": "Ayrıntılı Bilgi",
+    "previous": "Önceki",
+    "next": "Sonraki",
+    "back": "← Geri",
+    "forward": "İleri →",
+    "close": "Kapat",
+    "lifeMoreInfo": "Ayrıntılı Bilgi",
+    "nearbyTabInfrastructure": "Altyapı",
+    "nearbyTabLocation": "Konum",
+    "nearbyHeadingPopular": "Yakındaki popüler yerler",
+    "nearbyCategoryAll": "Tümü",
+    "nearbyCategoryMalls": "AVM'ler",
+    "nearbyCategorySchools": "Okullar",
+    "nearbyCategoryHospitals": "Hastaneler",
+    "nearbyCategoryMarkets": "Marketler",
+    "nearbyCategoryHotels": "Oteller",
+    "nearbyCategoryMosques": "Camii",
+    "nearbyCategoryMinistries": "Bakanlıklar / Kurumlar",
+    "nearbyCategoryBusiness": "İş Merkezleri",
+    "nearbyCategoryParks": "Parklar",
+    "nearbyInfrastructureAlt": "Altyapı görseli",
+    "nearbyProjectName": "Nata İncek Konutları",
+    "nearbyProjectDescription": "Gölbaşı İncek'te, doğayla iç içe bir yaşam alanı.",
+    "sitePlansTitle": "İncek’te Doğayla İç İçe Ayrıcalıklı Yaşam",
+    "sitePlansDescription": "Ankara’nın prestijli semti İncek’te konumlanan proje, 12.000 m² yeşil alanı ve ferah peyzaj düzenlemeleriyle doğayla iç içe bir yaşam sunar. 5 blokta toplam 290 konuttan oluşan Nata İncek, huzurlu bir aile yaşamı için modern çözümlerle donatılmıştır.",
+    "siteBlockALabel": "A Blok",
+    "siteBlockAText": "A Blok",
+    "siteBlockAInfo": "Nata İncek A Blok",
+    "siteBlockBLabel": "B Blok",
+    "siteBlockBText": "B Blok",
+    "siteBlockBInfo": "Nata İncek B Blok",
+    "siteBlockCLabel": "C Blok",
+    "siteBlockCText": "C Blok",
+    "siteBlockCInfo": "Nata İncek C Blok",
+    "siteBlockDLabel": "D Blok",
+    "siteBlockDText": "D Blok",
+    "siteBlockDInfo": "Nata İncek D Blok",
+    "designTitle": "Nata İncek Konutları",
+    "designDescription": "Doğayla iç içe yapısı ve şehre yakınlığıyla Nata İncek, ideal yaşamın adresi.",
+    "designOpenGallery": "Proje Galerisini Gör",
+    "unitTypesTabAria": "Ünite Tipi {id}",
+    "unitTypesSelectorAria": "Daire tipi seçici",
+    "unitTypesSelectorLabel": "Daire",
+    "unitTypesSelectorSubLabel": "Tipleri",
+    "unitTypesPreviousPlan": "Önceki Plan",
+    "unitTypesNextPlan": "Sonraki Plan",
+    "unitTypesLightboxClose": "Kapat",
+    "unitTypesLightboxAlt": "Büyütülmüş Ünite Planı {id}",
+    "unitTypesMainAlt": "Ünite Planı {id}"
+  },
+  "goatVillas": {
+    "lifeTitle": "GOAT VILLAS",
+    "lifeSubtitle": "BİLKENT",
+    "lifeDescription": "Ankara’nın merkezi Bilkent 3’te, tüm şehri gören muhteşem bir noktada yer alan 4 katlı, açık peyzajlı ve 3 tip villa seçenekli bu proje; eşsiz tasarımı, yüksek kaliteli malzemeleri ve benzersiz mimarisi ile kendinizi tamamen özel hissedeceğiniz bir yaşam tarzı sunmak üzere tasarlandı.",
+    "goToPresentation": "Sunuma Git",
+    "detailedInfo": "Ayrıntılı Bilgi",
+    "previous": "Önceki",
+    "next": "Sonraki",
+    "back": "← Geri",
+    "forward": "İleri →",
+    "close": "Kapat",
+    "lifeSlides": {
+      "slide1Title": "Ankara'nın Yeni Yaşam Merkezi",
+      "slide1PopupTitle": "Teknolojiyle Korunan Huzur",
+      "slide1PopupText": "Akıllı ev sistemleriyle donatılan bu yaşam alanında, güvenlik ve konfor bir arada. Kamera sistemleri, dijital giriş kontrolleri ve uzaktan yönetim teknolojileri sayesinde eviniz her an sizin kontrolünüzde.",
+      "slide2Title": "Sürdürülebilir ve Kaliteli Malzemeler",
+      "slide2PopupTitle": "Uzun Ömürlü ve Çevre Dostu Yapı Malzemeleri",
+      "slide2PopupText": "Projede kullanılan tüm malzemeler doğaya ve insana dost olacak şekilde seçildi. Enerji verimliliği yüksek, dayanıklı ve estetik çözümler ile hem çevreye duyarlı hem de kaliteli bir yaşam inşa ediliyor.",
+      "slide3Title": "Doğayla Bütünleşen Modern Yaşam",
+      "slide3PopupTitle": "Şehirde Doğanın Ritmini Yakala",
+      "slide3PopupText": "Geniş peyzaj alanları, yürüyüş yolları ve doğal dokuya saygılı mimarisiyle projede, modern yaşam doğayla iç içe bir deneyime dönüşüyor. Günün yorgunluğunu kuş sesleri eşliğinde atabileceğiniz özel alanlar sizi bekliyor.",
+      "slide4Title": "Güvenli ve Akıllı Yaşam",
+      "slide4PopupTitle": "Teknolojiyle Korunan Huzur",
+      "slide4PopupText": "Akıllı ev sistemleriyle donatılan bu yaşam alanında, güvenlik ve konfor bir arada. Kamera sistemleri, dijital giriş kontrolleri ve uzaktan yönetim teknolojileri sayesinde eviniz her an sizin kontrolünüzde.",
+      "slide5Title": "Modern Mimarinin Zirvesi",
+      "slide5PopupTitle": "Zamansız Tasarım, Fonksiyonel Çözümler",
+      "slide5PopupText": "Estetik çizgilerle fonksiyonelliği birleştiren proje tasarımı, çağdaş mimariyi yeni bir seviyeye taşıyor. Ferah iç mekanlar, geniş cepheler ve ışık alan yaşam alanları ile stil sahibi bir mimari deneyim sunuluyor.",
+      "slide6Title": "Kişiye Özel İç Mekan Tasarımı, Açık ve Kapalı Otopark",
+      "slide6PopupTitle": "Hayallerinize Uygun Yaşam Alanları",
+      "slide6PopupText": "Tarzınızı yansıtan iç mekanlar için kişiselleştirme seçenekleri sunuluyor. Renk paletinden dolap yerleşimlerine kadar tüm detaylar sizin seçiminizle şekilleniyor. Kendinize özel bir yaşam alanı inşa edin."
+    }
+  },
+  "anteres": {
+    "hero": {
+      "breadcrumbHome": "NATA Yaşam",
+      "breadcrumbProjects": "Yeni Projeler",
+      "breadcrumbProject": "Antares Konutları",
+      "tagUnits": "840 Konut & Ticari Alan & AVM",
+      "tagLocation": "Ankara – Yenimahalle",
+      "tagInvestment": "Yatırım Değeri Yüksek Proje",
+      "tagSocialCommercial": "Sosyal ve Ticari Merkez"
+    },
+    "life": {
+      "title": "ANTARES KONUTLARI",
+      "subtitle": "Etlik'in kalbinde",
+      "description": "Dolunay iştiraki olan Antares Konutları, merkezi konumu ve sosyal olanaklarıyla keyifli ve konforlu bir yaşamı bir araya getiriyor.",
+      "slides": {
+        "1": {
+          "title": "Prestijli Yaşam İçin Tasarlandı",
+          "popupTitle": "Sosyal Hayat Evinizin Bir Parçası",
+          "popupText": "Fitness salonundan çocuk oyun alanlarına, kafeteryadan dinlenme alanlarına kadar Antares Konutları'nda her ihtiyacınıza yönelik sosyal imkanlar mevcut. Komşuluk kültürünü modern sosyal alanlarda yeniden keşfedin."
+        },
+        "2": {
+          "title": "Etlik’in Kalbinde Modern Yaşam",
+          "popupTitle": "Şehrin Merkezinde Konforlu Bir Hayat",
+          "popupText": "Antares Konutları, Etlik'in en prestijli noktasında, alışveriş merkezlerine, sağlık kurumlarına ve toplu ulaşım ağlarına yakınlığıyla şehrin merkezinde konforlu bir yaşam sunuyor."
+        },
+        "3": {
+          "title": "Geniş Yeşil Alanlarla Doğayla İç İçe",
+          "popupTitle": "Betonun İçinde Nefes Alabileceğiniz Alanlar",
+          "popupText": "Antares Konutları, sizlere şehrin yoğunluğunda doğayla baş başa kalabileceğiniz geniş peyzaj ve yeşil alanlar sunuyor. Çocuk oyun alanları ve yürüyüş yolları ile her yaşa hitap eden bir yaşam alanı sizi bekliyor."
+        },
+        "4": {
+          "title": "Zengin Sosyal Olanaklar",
+          "popupTitle": "Sosyal Hayat Evinizin Bir Parçası",
+          "popupText": "Fitness salonundan çocuk oyun alanlarına, kafeteryadan dinlenme alanlarına kadar Antares Konutları'nda her ihtiyacınıza yönelik sosyal imkanlar mevcut. Komşuluk kültürünü modern sosyal alanlarda yeniden keşfedin."
+        },
+        "5": {
+          "title": "Geniş Otopark İmkanları",
+          "popupTitle": "Park Yeri Arama Derdi Yok",
+          "popupText": "Antares Konutları, her daireye özel kapalı otopark alanlarıyla araçlarınız için güvenli ve geniş park alanları sunuyor. Misafir otoparkı sayesinde ziyaretçileriniz de rahat edecek."
+        },
+        "6": {
+          "title": "Yüzme Havuzu",
+          "popupTitle": "Şehrin Ortasında Tatil Keyfi",
+          "popupText": "Açık ve kapalı yüzme havuzları ile yılın her döneminde yüzme keyfi Antares Konutları'nda. Ailenizle birlikte hem spor yapın hem de serin suların tadını çıkarın."
+        }
+      },
+      "buttons": {
+        "goToPresentation": "Sunuma Git",
+        "details": "Ayrıntılı Bilgi",
+        "prev": "← Geri",
+        "next": "İleri →",
+        "prevShort": "Önceki",
+        "nextShort": "Sonraki",
+        "close": "Kapat"
+      }
+    },
+    "design": {
+      "title": "ANTARES KONUTLARI \nile Tanışın",
+      "description": "Geniş peyzaj alanı, yürüyüş yolları, çocuk bahçesi, su oyunlu süs havuzları. 10.000 m²'si yeşil alana ayrılmış parkın içinde günün her saati yürüyüş yapabilecek, çocuklarınız parkta güven içinde oynarken, siz de sevdiklerinizle süs havuzlarının bulunduğu ortak alanda keyifli vakit geçirebileceksiniz.",
+      "openGallery": "Proje Galerisini Gör"
+    },
+    "nearby": {
+      "switchInfrastructure": "Altyapı",
+      "switchLocation": "Konum",
+      "sectionTitle": "Yakındaki popüler yerler",
+      "projectName": "Antares Konutları",
+      "projectDescription": "Etlik'in kalbinde",
+      "infrastructureAlt": "Altyapı Görseli",
+      "categories": {
+        "all": "Tümü",
+        "malls": "AVM'ler",
+        "schools": "Okullar",
+        "hospitals": "Hastaneler",
+        "markets": "Marketler"
+      }
+    },
+    "sitePlans": {
+      "title": "Yaşam Nerede\nBiz Orada.",
+      "description": "Antares, modern mimarisi ve geniş açık alanlarıyla konforlu bir yaşam sunuyor. Her blok, doğayla iç içe bir yaşam alanı sağlarken, estetik tasarımıyla da göz dolduruyor. Konutlarımız, ferah iç mekanları ve geniş bahçe alanları ile ailenizle birlikte keyifli anlar geçirmenizi sağlıyor.",
+      "hotspots": {
+        "1": {
+          "label": "A Blok",
+          "info": "Göz Alıcı Manzara, Kaliteli Yaşam"
+        },
+        "2": {
+          "label": "B Blok",
+          "info": "Modern Tasarım, Konforlu Yaşam"
+        },
+        "3": {
+          "label": "C Blok",
+          "info": "Şehrin Kalbinde, Hayatın İçinde"
+        },
+        "4": {
+          "label": "D Blok",
+          "info": "Sonsuz Olanaklar, Sınırsız Konfor"
+        },
+        "5": {
+          "label": "E Blok",
+          "info": "Hayalinizdeki Yaşam Alanı"
+        },
+        "6": {
+          "label": "F Blok",
+          "info": "Hayalinizdeki Yaşam Alanı"
+        }
+      }
+    },
+    "unitTypes": {
+      "tabAria": "Ünite Tipi {id}",
+      "selectorAria": "Daire tipi seçici",
+      "selectorLabel": "Daire",
+      "selectorSubLabel": "Tipleri",
+      "previousPlan": "Önceki Plan",
+      "nextPlan": "Sonraki Plan",
+      "lightboxClose": "Kapat",
+      "lightboxAlt": "Büyütülmüş Ünite Planı {id}",
+      "mainAlt": "Ünite Planı {id}",
+      "openLightbox": "Kat planını büyüt"
+    },
+    "boxes": {
+      "cards": {
+        "1": {
+          "title": "Haberleri öğrenin",
+          "highlight": "Proje Hakkında Tüm Bilgiler"
+        },
+        "2": {
+          "title": "Belgeleri İndirin",
+          "highlight": "NATA Yaşam Projeleri"
+        },
+        "3": {
+          "title": "Ziyaret Edin",
+          "highlight": "Projenin Lokasyonunu Görün"
+        },
+        "4": {
+          "title": "Sorularınızı Cevaplıyoruz",
+          "highlight": "5 dakika içinde",
+          "subtitle": "Projesyonel Ekibimizle"
+        }
+      }
+    }
   }
 }

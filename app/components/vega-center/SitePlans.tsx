@@ -2,43 +2,45 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 const hotspots = [
   {
     id: 1,
-    label: "A Blok",
-    text: "Göz Alıcı Manzara, Kaliteli Yaşam",
+    labelKey: "sitePlans.aBlockLabel",
+    textKey: "sitePlans.aBlockText",
+    infoKey: "sitePlans.aBlockInfo",
     image: "/vega-a-blok.png",
-    info: "Zemin + 8 Kat, 26.925,87 m², Ofis Sayısı 100",
     position: { top: "50%", left: "75%" },
   },
   {
     id: 2,
-    label: "B Blok",
-    text: "Şehirde Modernlik, Peyzajda Doğallık",
+    labelKey: "sitePlans.bBlockLabel",
+    textKey: "sitePlans.bBlockText",
+    infoKey: "sitePlans.bBlockInfo",
     image: "/vega-b-blok.png",
-    info: "Zemin + 10 Kat, 38.450,94 m², Ofis Sayısı 152",
     position: { top: "40%", left: "45%" },
   },
   {
     id: 3,
-    label: "C Blok",
-    text: "Ulaşımda Kolaylık, Yaşamda Konfor",
+    labelKey: "sitePlans.cBlockLabel",
+    textKey: "sitePlans.cBlockText",
+    infoKey: "sitePlans.cBlockInfo",
     image: "/vega-c-blok.png",
-    info: "Zemin + 11 Kat, 21.639,35 m², Ofis Sayısı 87",
     position: { top: "40%", left: "25%" },
   },
   {
     id: 4,
-    label: "D Blok",
-    text: "Vega Merkez",
+    labelKey: "sitePlans.dBlockLabel",
+    textKey: "sitePlans.dBlockText",
+    infoKey: "sitePlans.dBlockInfo",
     image: "/vega-d-blok.png",
-    info: "87 Ticari Alan",
     position: { top: "60%", left: "35%" },
   },
 ];
 
 export default function SidePlans() {
+  const t = useTranslations("vegaCenter");
   const [hoveredId, setHoveredId] = useState<number | null>(null);
   const hoveredImage = hotspots.find((h) => h.id === hoveredId)?.image || null;
 
@@ -46,11 +48,11 @@ export default function SidePlans() {
     <section className="relative w-full bg-white">
       {/* Top Text */}
       <div className="text-center max-w-4xl mx-auto py-12 md:py-16 px-4">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-wide text-gray-900">
-          Yaşam Nerede <br /> Biz Orada.
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-wide text-gray-900 whitespace-pre-line">
+          {t("sitePlansHeading")}
         </h2>
         <p className="mt-4 text-sm md:text-base text-gray-700 leading-relaxed">
-          Bir NATA Yaşam projesi olan VEGA Center, yatay mimarisi ile şehrin silüetine estetik bir değer katan, iş ve premium alışveriş deneyimini en yüksek seviyeye çıkaran bir yaşam merkezidir. Ferah ofisleri ve verimli iş alanları ile yüksek potansiyele sahip olan VEGA Center'ın her noktası hayatı kolaylaştırmak için tasarlandı. 
+          {t("sitePlansDescription")}
         </p>
       </div>
 
@@ -86,13 +88,15 @@ export default function SidePlans() {
             >
               {/* Label Button */}
               <div className="bg-white px-3 py-1 sm:px-4 sm:py-2 rounded-full shadow text-xs sm:text-sm font-medium text-gray-800 border border-gray-200 whitespace-nowrap cursor-pointer hover:bg-gray-100 transition">
-                {spot.label}
+                {t(spot.labelKey as any)}
               </div>
 
               {/* Info Box */}
               {hoveredId === spot.id && (
                 <div className="absolute left-1/2 bottom-full mb-2 transform -translate-x-1/2 w-40 sm:w-48 bg-white border border-gray-200 shadow-xl rounded-lg p-2 sm:p-3 text-[10px] sm:text-xs text-gray-700 z-30">
-                  {spot.info.split("\n").map((line, i) => (
+                  {t(spot.infoKey as any)
+                    .split("\n")
+                    .map((line, i) => (
                     <p key={i} className="mb-1">{line}</p>
                   ))}
                 </div>

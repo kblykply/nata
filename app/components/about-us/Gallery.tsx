@@ -4,6 +4,7 @@ import Image from "next/image";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 const officeImages = [
   {
@@ -55,6 +56,7 @@ const officeImages = [
 ];
 
 export default function OfficeGallery() {
+  const t = useTranslations('aboutUs');
   const [open, setOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -62,10 +64,10 @@ export default function OfficeGallery() {
   <section className="bg-white py-20 px-4 md:px-24">
   <div className="max-w-7xl mx-auto">
     <h2 className="text-3xl font-semibold text-gray-900 mb-8 text-center md:text-left">
-      Ofis Galerisi
+      {t('galleryTitle')}
     </h2>
     <p className="text-gray-600 leading-relaxed mb-12 text-center md:text-left max-w-3xl">
-      Şirketimizin ofisinden kareleri aşağıda bulabilirsiniz. Modern, şık ve fonksiyonel alanlarımızı keşfedin.
+      {t('galleryDescription')}
     </p>
 
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

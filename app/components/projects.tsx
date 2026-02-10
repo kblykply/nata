@@ -7,6 +7,7 @@ import { Fragment, useState } from "react";
 import { FaFire, FaTrain, FaWhatsapp } from "react-icons/fa";
 import { FiPlus } from "react-icons/fi";
 import { SlidersHorizontal, X } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 interface Listing {
   id: string; 
@@ -281,6 +282,9 @@ price: "RAMS GARDEN\nBAHÇELİEVLER",
   ];
 
 export default function ProjectListingSection() {
+  const t = useTranslations("projectList");
+  const tCommon = useTranslations("common");
+  const tMap = useTranslations("map");
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [showAltImage, setShowAltImage] = useState(false);
   const [popupIndex, setPopupIndex] = useState<number | null>(null);
@@ -303,6 +307,51 @@ export default function ProjectListingSection() {
   const deliveryStatusOptions = Array.from(
     new Set(allListings.map((item) => item.deliveryStatus).filter(Boolean))
   ).sort();
+
+  const translateTag = (label: string) => {
+    const text = label.trim();
+    if (!text) return text;
+
+    if (text.includes("Hemen Teslim")) {
+      return tCommon("immediateDelivery");
+    }
+
+    switch (text) {
+      case "Merkezi Lokasyon":
+        return tCommon("centralLocation");
+      case "Açık Avm Konsepti":
+      case "Açık Avm ve Ofis Konsepti":
+        return tCommon("openMallConcept");
+      case "Business Class":
+        return tCommon("businessClass");
+      case "Rezidans Projesi":
+        return tCommon("residenceProject");
+      case "Ulaşım Imkanları":
+        return tCommon("transportAccess");
+      case "İş & Yaşam":
+        return tCommon("workAndLife");
+      case "Sanayi Bölgesi":
+        return tCommon("industrialZone");
+      default:
+        return text;
+    }
+  };
+
+  const translateDeliveryStatus = (status: string) => {
+    if (status === "Hemen Teslim") {
+      return tCommon("immediateDelivery");
+    }
+    return status;
+  };
+
+  const formatTime = (timeText?: string) => {
+    if (!timeText) return "-";
+    const match = timeText.match(/(\d+)/);
+    if (!match) return timeText;
+    const minutes = Number(match[1]);
+    if (!Number.isFinite(minutes)) return timeText;
+    return `${minutes} ${tMap("minutesAway")}`;
+  };
 
   const resetFilters = () => {
     setSelectedCity("Tümü");
@@ -350,37 +399,37 @@ export default function ProjectListingSection() {
     compareLeft && compareRight
       ? [
           {
-            label: "Proje",
+            label: t("project"),
             left: formatLine(compareLeft.price),
             right: formatLine(compareRight.price),
           },
           {
-            label: "Teslim",
-            left: formatLine(compareLeft.label || compareLeft.highlight),
-            right: formatLine(compareRight.label || compareRight.highlight),
+            label: t("delivery"),
+            left: translateTag(formatLine(compareLeft.label || compareLeft.highlight)),
+            right: translateTag(formatLine(compareRight.label || compareRight.highlight)),
           },
           {
-            label: "Metro",
+            label: t("metro"),
             left: formatLine(compareLeft.metro),
             right: formatLine(compareRight.metro),
           },
           {
-            label: "Mesafe",
-            left: formatLine(compareLeft.time),
-            right: formatLine(compareRight.time),
+            label: t("distance"),
+            left: formatTime(compareLeft.time),
+            right: formatTime(compareRight.time),
           },
           {
-            label: "Özellikler",
-            left: formatArray(compareLeft.stats),
-            right: formatArray(compareRight.stats),
+            label: t("features"),
+            left: formatArray(compareLeft.stats?.map(translateTag)),
+            right: formatArray(compareRight.stats?.map(translateTag)),
           },
           {
-            label: "Lokasyon",
+            label: t("location"),
             left: formatLine(compareLeft.footer),
             right: formatLine(compareRight.footer),
           },
           {
-            label: "İlerleme",
+            label: t("progress"),
             left:
               compareLeft.progress !== undefined
                 ? `%${compareLeft.progress}`
@@ -391,9 +440,9 @@ export default function ProjectListingSection() {
                 : "-",
           },
           {
-            label: "Ekstra",
-            left: formatExtra(compareLeft.extra),
-            right: formatExtra(compareRight.extra),
+            label: t("extra"),
+            left: formatExtra(compareLeft.extra?.map((e) => ({ label: translateTag(e.label) }))),
+            right: formatExtra(compareRight.extra?.map((e) => ({ label: translateTag(e.label) }))),
           },
         ]
       : [];
@@ -455,7 +504,7 @@ export default function ProjectListingSection() {
             className="flex items-center bg-gray-100 px-4 py-2 rounded-full text-gray-700"
           >
             <option value="" disabled>
-              Şehir Seçin
+              {t("cityPlaceholder")}
             </option>
             {cityOptions.map((item) => (
               <option key={item} value={item}>
@@ -472,7 +521,7 @@ export default function ProjectListingSection() {
               className="flex items-center bg-gray-100 px-4 py-2 rounded-full text-gray-700"
             >
               <option value="" disabled>
-                İlçe Seçin
+                {t("districtPlaceholder")}
               </option>
               {districtOptions.map((item) => (
                 <option key={item} value={item}>
@@ -489,7 +538,7 @@ export default function ProjectListingSection() {
             className="flex items-center bg-gray-100 px-4 py-2 rounded-full text-gray-700"
           >
             <option value="" disabled>
-              Proje Tipi Seçin
+              {t("typePlaceholder")}
             </option>
             {productTypeOptions.map((item) => (
               <option key={item} value={item}>
@@ -505,11 +554,11 @@ export default function ProjectListingSection() {
             className="flex items-center bg-gray-100 px-4 py-2 rounded-full text-gray-700"
           >
             <option value="" disabled>
-              Teslim Durumu Seçin
+              {t("deliveryPlaceholder")}
             </option>
             {deliveryStatusOptions.map((item) => (
               <option key={item} value={item}>
-                {item}
+                {translateDeliveryStatus(item as string)}
               </option>
             ))}
           </select>
@@ -519,14 +568,14 @@ export default function ProjectListingSection() {
             className="flex items-center px-4 py-2 rounded-full bg-gray-100 text-[#ab1e3b] font-medium"
           >
             <SlidersHorizontal className="w-4 h-4 mr-2" />
-            Tüm Filtreler
+            {t("allFilters")}
           </button>
           {hasCompareSelection && (
             <button
               onClick={() => setCompareSelection([null, null])}
               className="flex items-center px-4 py-2 rounded-full bg-gray-100 text-gray-700 font-medium hover:bg-gray-200 transition"
             >
-              Karşılaştırmayı temizle
+              {t("clearComparison")}
             </button>
           )}
         </div>
@@ -537,16 +586,16 @@ export default function ProjectListingSection() {
               <button
                 className="absolute top-4 right-4 text-gray-500"
                 onClick={() => setShowAllFilters(false)}
-                aria-label="Filtreleri kapat"
+                aria-label={t("clearAllFilters")}
               >
                 <X className="w-5 h-5" />
               </button>
-              <h2 className="text-lg font-semibold mb-4">Tüm Filtreler</h2>
+              <h2 className="text-lg font-semibold mb-4">{t("filtersTitle")}</h2>
 
               <div className="space-y-4">
                 <div>
                   <label className="block mb-1 text-sm font-medium text-gray-700">
-                    Şehir
+                    {t("cityLabel")}
                   </label>
                   <select
                     value={selectedCity}
@@ -564,7 +613,7 @@ export default function ProjectListingSection() {
                 {selectedCity === "Ankara" && districtOptions.length > 0 && (
                   <div>
                     <label className="block mb-1 text-sm font-medium text-gray-700">
-                      İlçe
+                      {t("districtLabel")}
                     </label>
                     <select
                       value={selectedDistrict}
@@ -582,7 +631,7 @@ export default function ProjectListingSection() {
 
                 <div>
                   <label className="block mb-1 text-sm font-medium text-gray-700">
-                    Proje Tipi
+                    {t("typeLabel")}
                   </label>
                   <select
                     value={selectedProductType}
@@ -599,7 +648,7 @@ export default function ProjectListingSection() {
 
                 <div>
                   <label className="block mb-1 text-sm font-medium text-gray-700">
-                    Teslim Durumu
+                    {t("deliveryLabel")}
                   </label>
                   <select
                     value={selectedDeliveryStatus}
@@ -618,7 +667,7 @@ export default function ProjectListingSection() {
                   onClick={() => setShowAllFilters(false)}
                   className="w-full mt-4 py-2 rounded-lg bg-[#ab1e3b] text-white text-sm font-medium"
                 >
-                  Uygula
+                  {t("apply")}
                 </button>
               </div>
             </div>
@@ -630,7 +679,7 @@ export default function ProjectListingSection() {
             onClick={resetFilters}
             className="text-gray-500 hover:underline"
           >
-            Tüm filtreleri temizle
+            {t("clearAllFilters")}
           </button>
         </div>
       </div>
@@ -680,36 +729,38 @@ export default function ProjectListingSection() {
               }`}
             >
                 {/* Action Buttons */}
-        <div className="absolute top-4 right-4 z-30">
-          <button
-            onClick={(e) => handleCompareToggle(e, item)}
-            className={`px-3 py-1 rounded-full text-[10px] font-medium transition ${
-              compared
-                ? "bg-black text-white"
-                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-            }`}
-          >
-            {compared ? "Seçildi" : "Karşılaştır"}
-          </button>
-        </div>
-        <div className="absolute bottom-4 right-4 z-30 flex flex-col gap-2 items-end">
-          <Link
+                <div className="absolute top-4 right-4 z-30">
+                  <button
+                    onClick={(e) => handleCompareToggle(e, item)}
+                    className={`px-3 py-1 rounded-full text-[10px] font-medium transition ${
+                      compared
+                        ? "bg-black text-white"
+                        : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                    }`}
+                  >
+                    {compared ? t("selected") : t("compare")}
+                  </button>
+                </div>
+                <div className="absolute bottom-4 right-4 z-30 flex flex-col gap-2 items-end">
+                  <Link
                     href="/contact-us"
                     onClick={(e) => e.stopPropagation()}
                     className="w-11 h-11 bg-[#ab1e3b] rounded-full flex items-center justify-center text-[10px] text-white hover:bg-[#961a33] transition"
-                    title="Fiyat Al"
+                    title={t("priceRequestTitle")}
                   >
-                    Fiyat Al
+                    {t("priceRequestTitle")}
                   </Link>
                   <a
                     href={`https://api.whatsapp.com/send/?phone=905017111818&text=${encodeURIComponent(
-                      `Merhaba, ${item.price.replace(/\n/g, " ")} projesi hakkında detaylı bilgi almak istiyorum.`
+                      t("whatsAppMessage", {
+                        projectName: item.price.replace(/\n/g, " "),
+                      })
                     )}&type=phone_number&app_absent=0`}
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={(e) => e.stopPropagation()}
                     className="w-11 h-11 bg-green-500 hover:bg-green-600 text-white rounded-full flex items-center justify-center"
-                    title="WhatsApp"
+                    title={t("whatsAppTitle")}
                   >
                     <FaWhatsapp size={18} />
                   </a>
@@ -776,23 +827,27 @@ export default function ProjectListingSection() {
                       ))}
                       <p className="flex items-center gap-1 mt-2 text-sm">
                         <span className="bg-green-500 px-2 py-0.5 rounded-full">M</span>
-                        {item.metro} · {item.time}
+                        {item.metro} · {formatTime(item.time)}
                       </p>
 
                     {item.progress !== undefined && (
-  <div className="mt-3 px-2 py-2 rounded-md bg-white/40 backdrop-blur-sm w-fit">
-    <div className="flex flex-col items-start">
-      <p className="text-[10px] text-gray-800 mb-1">İnşaat ilerleme Oranı</p>
-      <div className="w-45 h-1.5 bg-gray-300 rounded-full overflow-hidden">
-        <div
-          className="bg-green-600 h-full transition-all"
-          style={{ width: `${item.progress}%` }}
-        />
-      </div>
-      <p className="text-[10px] mt-1 text-gray-800">{item.progress}%</p>
-    </div>
-  </div>
-)}
+                      <div className="mt-3 px-2 py-2 rounded-md bg-white/40 backdrop-blur-sm w-fit">
+                        <div className="flex flex-col items-start">
+                          <p className="text-[10px] text-gray-800 mb-1">
+                            {t("constructionProgress")}
+                          </p>
+                          <div className="w-45 h-1.5 bg-gray-300 rounded-full overflow-hidden">
+                            <div
+                              className="bg-green-600 h-full transition-all"
+                              style={{ width: `${item.progress}%` }}
+                            />
+                          </div>
+                          <p className="text-[10px] mt-1 text-gray-800">
+                            {item.progress}%
+                          </p>
+                        </div>
+                      </div>
+                    )}
 
 
                     </div>
@@ -801,19 +856,19 @@ export default function ProjectListingSection() {
                       <h3 className="text-l font-semibold leading-snug text-gray-800">{item.price}</h3>
                       {item.label && (
                         <span className="text-xs bg-[#ab1e3b] text-white px-3 py-1 rounded-full inline-block">
-                          {item.label}
+                          {translateTag(item.label)}
                         </span>
                       )}
                       <p className="text-sm flex items-center gap-2 text-gray-700">
                         <span className="bg-blue-500 text-white text-xs rounded-full px-2 py-0.5">M</span>
                         <span>{item.metro}</span>
                         <FaTrain className="text-gray-400" />
-                        <span>{item.time}</span>
+                        <span>{formatTime(item.time)}</span>
                       </p>
                       <div className="flex gap-2 text-xs text-gray-600">
                         {item.stats?.map((stat, idx) => (
                           <span key={idx} className="px-2 py-0.5 border rounded-full">
-                            {stat}
+                            {translateTag(stat)}
                           </span>
                         ))}
                       </div>
@@ -822,18 +877,22 @@ export default function ProjectListingSection() {
                       )}
 
 
-{item.progress !== undefined && (
-  <div className="mt-2 flex flex-col items-start">
-    <p className="text-[10px] text-gray-500 mb-1">İnşaat İlerleme Oranı</p>
-    <div className="w-1/2 h-1.5 bg-gray-200 rounded-full overflow-hidden">
-      <div
-        className="bg-green-600 h-full transition-all"
-        style={{ width: `${item.progress}%` }}
-      />
-    </div>
-    <p className="text-[10px] mt-1 text-gray-500">{item.progress}%</p>
-  </div>
-)}
+                    {item.progress !== undefined && (
+                      <div className="mt-2 flex flex-col items-start">
+                        <p className="text-[10px] text-gray-500 mb-1">
+                          {t("constructionProgress")}
+                        </p>
+                        <div className="w-1/2 h-1.5 bg-gray-200 rounded-full overflow-hidden">
+                          <div
+                            className="bg-green-600 h-full transition-all"
+                            style={{ width: `${item.progress}%` }}
+                          />
+                        </div>
+                        <p className="text-[10px] mt-1 text-gray-500">
+                          {item.progress}%
+                        </p>
+                      </div>
+                    )}
 
 
 
@@ -849,7 +908,7 @@ export default function ProjectListingSection() {
                       {item.highlight && (
                         <div className="inline-flex bg-[#ab1e3b] text-white font-normal text-sm px-3 py-1 rounded-full items-center gap-1">
                           <FaFire className="text-xs" />
-                          {item.highlight}
+                          {translateTag(item.highlight)}
                         </div>
                       )}
                       <div
@@ -874,7 +933,9 @@ export default function ProjectListingSection() {
                           className="flex items-center gap-2 g-[#5C5C5C] px-3 py-1.5 rounded-full text-sm"
                         >
                           <span>{info.icon}</span>
-                          <span className="whitespace-nowrap">{info.label}</span>
+                          <span className="whitespace-nowrap">
+                            {translateTag(info.label)}
+                          </span>
                         </div>
                       ))}
                     </div>

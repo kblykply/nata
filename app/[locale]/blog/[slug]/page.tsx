@@ -1,6 +1,7 @@
-import { notFound } from 'next/navigation';
-import Image from 'next/image';
-import { Metadata } from 'next';
+import { notFound } from "next/navigation";
+import Image from "next/image";
+import { Metadata } from "next";
+import { getBlogPosts } from "@/data/blogPosts";
 
 interface BlogPost {
   id: number;
@@ -12,22 +13,35 @@ interface BlogPost {
   created_at: string;
 }
 
-type Params = Promise<{ slug: string }>;
+type Params = Promise<{ locale: string; slug: string }>;
 
-export async function generateMetadata({  
+export async function generateMetadata({
   params,
 }: {
   params: Params;
 }): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug, locale } = await params;
 
-  const res = await fetch('https://www.salihkaankoc.net/nata-core/blog');
-  const json = await res.json();
-  const post = json.data.find((p: BlogPost) => p.slug === slug);
+  let post: { title: string; excerpt: string } | undefined;
+
+  if (locale === "en") {
+    const data = getBlogPosts("en");
+    const found = data.find((p) => p.slug === slug);
+    if (found) {
+      post = { title: found.title, excerpt: found.excerpt };
+    }
+  } else {
+    const res = await fetch("https://www.salihkaankoc.net/nata-core/blog");
+    const json = await res.json();
+    const found = json.data.find((p: BlogPost) => p.slug === slug);
+    if (found) {
+      post = { title: found.title, excerpt: found.excerpt };
+    }
+  }
 
   return {
-    title: post?.title || 'Blog',
-    description: post?.excerpt || '',
+    title: post?.title || "Blog",
+    description: post?.excerpt || "",
   };
 }
 
@@ -36,13 +50,40 @@ export default async function BlogPostPage({
 }: {
   params: Params;
 }) {
-  const { slug } = await params;
+  const { slug, locale } = await params;
 
-  const res = await fetch('https://www.salihkaankoc.net/nata-core/blog');
-  const json = await res.json();
-  const post: BlogPost | undefined = json.data.find(
-    (p: BlogPost) => p.slug === slug
-  );
+  let post:
+    | BlogPost
+    | {
+        id: number;
+        title: string;
+        slug: string;
+        image: string;
+        excerpt: string;
+        content: string;
+        created_at: string;
+      }
+    | undefined;
+
+  if (locale === "en") {
+    const data = getBlogPosts("en");
+    const found = data.find((p) => p.slug === slug);
+    if (found) {
+      post = {
+        id: found.id,
+        title: found.title,
+        slug: found.slug,
+        image: found.image,
+        excerpt: found.excerpt,
+        content: found.content,
+        created_at: found.date,
+      };
+    }
+  } else {
+    const res = await fetch("https://www.salihkaankoc.net/nata-core/blog");
+    const json = await res.json();
+    post = json.data.find((p: BlogPost) => p.slug === slug);
+  }
 
   if (!post) return notFound();
 

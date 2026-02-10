@@ -6,6 +6,7 @@ import { FaFire, FaTrain } from "react-icons/fa";
 import { FiPlus } from "react-icons/fi";
 import { Link } from "@/i18n/navigation";
 import { SlidersHorizontal, X } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 interface Listing {
   link: string;
@@ -67,7 +68,7 @@ const listings: Listing[] = [
     price: "ANTARES KONUTLARI 1. ETAP",
     highlight : "Tamamlandı",
     metro: "Otobüs Durağına ",
-    time: "2 dakika mesafede",
+    time: "2",
     stats: ["Merkezi Lokasyon", "Açık Avm Konsepti"],
     footer: "Çankaya",
     image: "/r-antares-1.jpg",
@@ -88,7 +89,7 @@ const listings: Listing[] = [
     price: "VEGA CADDE",
     highlight : "Tamamlandı",
     metro: "Metro Durağına ",
-    time: "8 dakika mesafede",
+    time: "8",
     stats: ["Merkezi Lokasyon", "Açık Avm Konsepti"],
     footer: "Çankaya",
     image: "/vega-cadde.jpg",
@@ -109,7 +110,7 @@ const listings: Listing[] = [
     price: "TEMPOINT KONUTLARI",
     highlight : "Tamamlandı",
     metro: "Metro Durağına ",
-    time: "10 dakika mesafede",
+    time: "10",
     stats: ["Merkezi Lokasyon", "Açık Avm Konsepti"],
     footer: "Çankaya",
     image: "/tempoint-konutlari.jpg",
@@ -130,7 +131,7 @@ const listings: Listing[] = [
     price: "NATA İNCEK KONUTLARI",
     highlight : "Tamamlandı",
     metro: "Otobüs Durağına ",
-    time: "1 dakika mesafede",
+    time: "1",
     stats: ["Merkezi Lokasyon", "Açık Avm Konsepti"],
     footer: "Çankaya",
     image: "/nata-incek-konutlari.jpg",
@@ -151,7 +152,7 @@ const listings: Listing[] = [
     price: "NATA VEGA KONUT KULELERİ",
     highlight : "Tamamlandı",
     metro: "Otobüs Durağına ",
-    time: "2 dakika mesafede",
+    time: "2",
     stats: ["Merkezi Lokasyon", "Açık Avm Konsepti"],
     footer: "Çankaya",
     image: "/nata-vega-konut-kuleleri.jpg",
@@ -175,6 +176,9 @@ const listings: Listing[] = [
 
 
 export default function ProjectListingSection() {
+  const t = useTranslations("projectList");
+  const tCommon = useTranslations("common");
+  const tMap = useTranslations("map");
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [showAltImage, setShowAltImage] = useState(false);
   const [popupIndex, setPopupIndex] = useState<number | null>(null);
@@ -182,6 +186,25 @@ export default function ProjectListingSection() {
   const [selectedDistrict, setSelectedDistrict] = useState("Tümü");
   const [selectedProductType, setSelectedProductType] = useState("Tümü");
   const [showAllFilters, setShowAllFilters] = useState(false);
+
+  const translateTag = (label: string) => {
+    switch (label) {
+      case "Merkezi Lokasyon":
+        return tCommon("centralLocation");
+      case "Açık Avm Konsepti":
+        return tCommon("openMallConcept");
+      case "Tamamlandı":
+        return t("deliveryCompleted");
+      default:
+        return label;
+    }
+  };
+
+  const formatTime = (minutesText: string) => {
+    const minutes = Number(minutesText);
+    if (!Number.isFinite(minutes)) return minutesText;
+    return `${minutes} ${tMap("minutesAway")}`;
+  };
 
   // Get unique filter options
   const cityOptions = Array.from(new Set(listings.map((item) => item.city).filter((city): city is "Ankara" | "İstanbul" => Boolean(city))));
@@ -230,7 +253,10 @@ export default function ProjectListingSection() {
 
   return (
     <section id="tamamlanan-projeler" className="bg-white py-16 px-6">
-      <h2 className="text-2xl  text-center    font-semibold mb-10">Satışı Tamamlanan<span className="text-[#ab1e3b]"> Projeler</span></h2>
+      <h2 className="text-2xl text-center font-semibold mb-10">
+        {t("completedHeadingMain")}{" "}
+        <span className="text-[#ab1e3b]">{t("completedHeadingHighlight")}</span>
+      </h2>
       
       <div className="max-w-screen-xl mx-auto mb-6">
         <div className="flex flex-wrap items-center gap-3 text-sm mb-4">
@@ -241,7 +267,7 @@ export default function ProjectListingSection() {
             className="flex items-center bg-gray-100 px-4 py-2 rounded-full text-gray-700"
           >
             <option value="" disabled>
-              Şehir Seçin
+              {t("cityPlaceholder")}
             </option>
             {cityOptions.map((item) => (
               <option key={item} value={item}>
@@ -258,7 +284,7 @@ export default function ProjectListingSection() {
               className="flex items-center bg-gray-100 px-4 py-2 rounded-full text-gray-700"
             >
               <option value="" disabled>
-                İlçe Seçin
+                {t("districtPlaceholder")}
               </option>
               {districtOptions.map((item) => (
                 <option key={item} value={item}>
@@ -275,7 +301,7 @@ export default function ProjectListingSection() {
             className="flex items-center bg-gray-100 px-4 py-2 rounded-full text-gray-700"
           >
             <option value="" disabled>
-              Proje Tipi Seçin
+              {t("typePlaceholder")}
             </option>
             {productTypeOptions.map((item) => (
               <option key={item} value={item}>
@@ -289,7 +315,7 @@ export default function ProjectListingSection() {
             className="flex items-center px-4 py-2 rounded-full bg-gray-100 text-[#ab1e3b] font-medium"
           >
             <SlidersHorizontal className="w-4 h-4 mr-2" />
-            Tüm Filtreler
+            {t("allFilters")}
           </button>
         </div>
 
@@ -299,16 +325,16 @@ export default function ProjectListingSection() {
               <button
                 className="absolute top-4 right-4 text-gray-500"
                 onClick={() => setShowAllFilters(false)}
-                aria-label="Filtreleri kapat"
+                aria-label={t("clearAllFilters")}
               >
                 <X className="w-5 h-5" />
               </button>
-              <h2 className="text-lg font-semibold mb-4">Tüm Filtreler</h2>
+              <h2 className="text-lg font-semibold mb-4">{t("filtersTitle")}</h2>
 
               <div className="space-y-4">
                 <div>
                   <label className="block mb-1 text-sm font-medium text-gray-700">
-                    Şehir
+                    {t("cityLabel")}
                   </label>
                   <select
                     value={selectedCity}
@@ -326,7 +352,7 @@ export default function ProjectListingSection() {
                 {selectedCity === "Ankara" && districtOptions.length > 0 && (
                   <div>
                     <label className="block mb-1 text-sm font-medium text-gray-700">
-                      İlçe
+                      {t("districtLabel")}
                     </label>
                     <select
                       value={selectedDistrict}
@@ -344,7 +370,7 @@ export default function ProjectListingSection() {
 
                 <div>
                   <label className="block mb-1 text-sm font-medium text-gray-700">
-                    Proje Tipi
+                    {t("typeLabel")}
                   </label>
                   <select
                     value={selectedProductType}
@@ -363,7 +389,7 @@ export default function ProjectListingSection() {
                   onClick={() => setShowAllFilters(false)}
                   className="w-full mt-4 py-2 rounded-lg bg-[#ab1e3b] text-white text-sm font-medium"
                 >
-                  Uygula
+                  {t("apply")}
                 </button>
               </div>
             </div>
@@ -375,7 +401,7 @@ export default function ProjectListingSection() {
             onClick={resetFilters}
             className="text-gray-500 hover:underline"
           >
-            Tüm filtreleri temizle
+            {t("clearAllFilters")}
           </button>
         </div>
       </div>
@@ -438,7 +464,7 @@ export default function ProjectListingSection() {
                       ))}
                       <p className="flex items-center gap-1 mt-2 text-sm">
                         <span className="bg-green-500 px-2 py-0.5 rounded-full">M</span>
-                        {item.metro} · {item.time}
+                        {item.metro} · {formatTime(item.time)}
                       </p>
                     </div>
                   ) : (
@@ -468,19 +494,19 @@ export default function ProjectListingSection() {
                         <h3 className="text-xl font-semibold leading-snug text-gray-800">{item.price}</h3>
                         {item.label && (
                           <span className="text-xs bg-[#ab1e3b] text-white px-3 py-1 rounded-full inline-block">
-                            {item.label}
+                            {translateTag(item.label)}
                           </span>
                         )}
                         <p className="text-sm flex items-center gap-2 text-gray-700">
                           <span className="bg-blue-500 text-white text-xs rounded-full px-2 py-0.5">M</span>
                           <span>{item.metro}</span>
                           <FaTrain className="text-gray-400" />
-                          <span>{item.time}</span>
+                          <span>{formatTime(item.time)}</span>
                         </p>
                         <div className="flex gap-2 text-xs text-gray-600">
                           {item.stats?.map((stat, idx) => (
                             <span key={idx} className="px-2 py-0.5 border rounded-full">
-                              {stat}
+                              {translateTag(stat)}
                             </span>
                           ))}
                         </div>
@@ -496,7 +522,7 @@ export default function ProjectListingSection() {
                       {item.highlight && (
                         <div className="inline-flex bg-[#ab1e3b] text-white font-normal text-sm px-3 py-1 rounded-full items-center gap-1">
                           <FaFire className="text-xs" />
-                          {item.highlight}
+                          {translateTag(item.highlight)}
                         </div>
                       )}
                       <div
@@ -519,7 +545,9 @@ export default function ProjectListingSection() {
                           className="flex items-center gap-2 g-[#5C5C5C] px-3 py-1.5 rounded-full text-sm"
                         >
                           <span>{info.icon}</span>
-                          <span className="whitespace-nowrap">{info.label}</span>
+                          <span className="whitespace-nowrap">
+                            {translateTag(info.label)}
+                          </span>
                         </div>
                       ))}
                     </div>

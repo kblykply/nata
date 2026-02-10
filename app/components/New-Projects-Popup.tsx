@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { X } from "lucide-react";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
  
 
 interface NewProjectsProps {
@@ -14,6 +15,7 @@ interface NewProjectsProps {
   }
   
   export default function NewProjects({ onClose }: NewProjectsProps) {
+    const t = useTranslations("popups");
     const [query, setQuery] = useState("");
   
     const projectList = [
@@ -56,7 +58,7 @@ interface NewProjectsProps {
 
     <input
       type="text"
-      placeholder="Lokasyon, teslim yılı veya segment seçin"
+      placeholder={t("searchPlaceholder")}
       value={query}
       onChange={(e) => setQuery(e.target.value)}
       className="w-full bg-transparent text-sm outline-none"
@@ -94,30 +96,26 @@ interface NewProjectsProps {
     <h3 className="text-lg font-semibold">NATALife Business</h3>
  <div onClick={onClose}>
   <Link href="/#aktif-projeler" scroll={true}>
-    <p className="text-sm text-gray-700 hover:underline cursor-pointer">Aktif Satışta Olan Projeler
+    <p className="text-sm text-gray-700 hover:underline cursor-pointer">
+      {t("activeProjects")}
       <sup className="text-red-600 text-xs ml-1">9</sup>
-
     </p>
   </Link>
 </div>
  <div onClick={onClose}>
-
 <Link href="/#yakinda-projeler" scroll={true}>
-  <p className="text-sm text-gray-700 hover:underline cursor-pointer">Çok Yakında Satışta
-          <sup className="text-red-600 text-xs ml-1">4</sup>
-
+  <p className="text-sm text-gray-700 hover:underline cursor-pointer">
+    {t("comingSoon")}
+    <sup className="text-red-600 text-xs ml-1">4</sup>
   </p>
-  
 </Link>
-
 </div>
-
 
  <div onClick={onClose}>
   <Link href="/#tamamlanan-projeler" scroll={true}>
-    <p className="text-sm text-gray-700 hover:underline cursor-pointer">Tamamlanan Projeler
+    <p className="text-sm text-gray-700 hover:underline cursor-pointer">
+      {t("completedProjects")}
       <sup className="text-red-600 text-xs ml-1">5</sup>
-
     </p>
   </Link>
 </div>
@@ -129,7 +127,7 @@ interface NewProjectsProps {
 <Link href="/projects">
   <button className="w-fit flex items-center gap-2 px-4 py-2 border rounded-xl text-[#6F1D1B] border-gray-300 font-semibold text-sm hover:bg-gray-100 transition">
     <Image src="/redpin.png" alt="Map" width={16} height={16} />
-    Haritadan Proje Seç
+    {t("selectFromMap")}
   </button>
 </Link>
 </div>

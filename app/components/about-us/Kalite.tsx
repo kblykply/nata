@@ -1,14 +1,19 @@
+"use client";
+
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 const QualitySection = () => {
+  const t = useTranslations('aboutUs');
+  
   return (
     <div className="px-6 md:px-30 py-10">
       {/* Title */}
-      <h2 className="text-2xl font-bold mb-4">Her Projede Kalite ve Güven</h2>
+      <h2 className="text-2xl font-bold mb-4">{t('qualityTitle')}</h2>
 
       {/* Description */}
       <p className="text-sm text-gray-700 mb-6 leading-relaxed max-w-4xl">
-        NATA Yaşam olarak önceliğimiz, estetik ve fonksiyonelliği bir arada sunarken, sakinlerimize yüksek yaşam standartları sağlamaktır. Projelerimizde kullandığımız kaliteli malzemeler, yenilikçi mimari yaklaşımlar ve çevre dostu çözümler ile sektörde fark yaratıyoruz.
+        {t('qualityDescription')}
       </p>
 
       {/* Image */}

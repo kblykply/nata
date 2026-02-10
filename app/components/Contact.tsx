@@ -8,10 +8,14 @@ import { Pagination } from "swiper/modules";
 import SwiperCore from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
-  import { Link } from "@/i18n/navigation";
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
   
 
 export default function ContactQrSection() {
+  const t = useTranslations("popups");
+  const tCommon = useTranslations("common");
+  const tContact = useTranslations("contact");
   const [selectedTab, setSelectedTab] = useState("whatsapp");
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
@@ -43,8 +47,8 @@ export default function ContactQrSection() {
       phone: !phone.trim(),
     };
     const nextMessages = {
-      name: nextErrors.name ? "Bu alanı doldurun" : "",
-      phone: nextErrors.phone ? "Bu alanı doldurun" : "",
+      name: nextErrors.name ? tCommon("requiredField") : "",
+      phone: nextErrors.phone ? tCommon("requiredField") : "",
     };
     setErrors(nextErrors);
     setErrorMessages(nextMessages);
@@ -57,12 +61,12 @@ export default function ContactQrSection() {
       setErrors({ ...nextErrors, phone: true });
       setErrorMessages({
         ...nextMessages,
-        phone: "Geçerli bir telefon numarası giriniz",
+        phone: t("validPhone"),
       });
       return false;
     }
     if (!recaptchaToken) {
-      setError("Lütfen reCAPTCHA doğrulamasını tamamlayın.");
+      setError(tContact("recaptchaError"));
       return false;
     }
     return true;
@@ -100,10 +104,10 @@ export default function ContactQrSection() {
         setErrorMessages({ name: "", phone: "" });
         recaptchaRef.current?.reset();
       } else {
-        setError(data.error || "Gönderim başarısız oldu. Lütfen tekrar deneyin.");
+        setError(data.error || tContact("submitFailed"));
       }
     } catch {
-      setError("Sunucu hatası, lütfen daha sonra tekrar deneyin.");
+      setError(tContact("serverError"));
     } finally {
       setLoading(false);
     }
@@ -133,9 +137,8 @@ export default function ContactQrSection() {
             ))}
           </div>
 
-          <p className="text-center text-xs mb-4 leading-tight">
-            Kamerayla QR Kodu Okutun,<br />
-            Telefonunuz üzerinden iletişim kurabilirsiniz.
+          <p className="text-center text-xs mb-4 leading-tight whitespace-pre-line">
+            {t("scanQR")}
           </p>
 
           <div className="relative w-64 h-96">
@@ -181,12 +184,11 @@ export default function ContactQrSection() {
 
         {/* RIGHT SIDE - FORM */}
         <div className="w-full">
-          <h2 className="text-3xl font-semibold text-gray-800 text-center mb-4 leading-snug">
-            TÜM SORULARINIZ İÇİN <br />BURADAYIZ
+          <h2 className="text-3xl font-semibold text-gray-800 text-center mb-4 leading-snug whitespace-pre-line">
+            {t("allQuestions")}
           </h2>
-          <p className="text-sm text-gray-600 text-center mb-8">
-            Bir çağrı talebinde bulunun.<br />
-            Aklınızdaki sorular için buradayız.
+          <p className="text-sm text-gray-600 text-center mb-8 whitespace-pre-line">
+            {t("requestCallSubtitle")}
           </p>
 
           <div className="flex flex-col md:flex-row gap-4 justify-center mb-4">
@@ -201,7 +203,7 @@ export default function ContactQrSection() {
                     setErrorMessages({ ...errorMessages, name: "" });
                   }
                 }}
-                placeholder="Adınız ve Soyadınız"
+                placeholder={t("fullNamePlaceholder")}
                 className={`px-6 py-4 bg-gray-50 border text-gray-800 rounded-full w-full ${
                   errors.name ? "border-red-500 border-2" : "border-gray-300"
                 }`}
@@ -221,7 +223,7 @@ export default function ContactQrSection() {
                     setErrorMessages({ ...errorMessages, phone: "" });
                   }
                 }}
-                placeholder="+90 (5__) ___ __ __"
+                placeholder={t("phonePlaceholder")}
                 className={`px-6 py-4 bg-gray-50 border text-gray-800 rounded-full w-full ${
                   errors.phone ? "border-red-500 border-2" : "border-gray-300"
                 }`}
@@ -235,7 +237,7 @@ export default function ContactQrSection() {
           <textarea
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            placeholder="Mesajınız (isteğe bağlı)"
+            placeholder={t("messagePlaceholder")}
             className="w-full p-4 bg-gray-50 border border-gray-300 rounded-xl mb-4 text-gray-800"
             rows={4}
           />
@@ -249,12 +251,12 @@ export default function ContactQrSection() {
           </div>
 
          <p className="text-[11px] text-gray-500 text-center mb-6 leading-snug max-w-md mx-auto">
-  Formu gönderdiğiniz takdirde <br />
+  {t("formSubmitNote")} <br />
   <span className="font-semibold">
     <Link href="/kvkk" target="_blank" className="underline text-blue-600 hover:text-blue-800">
-      Gizlilik Politikalarımızı
+      {t("privacyPolicyLink")}
     </Link>{" "}
-    onaylamış bulunuyorsunuz
+    {t("privacyAcceptSuffix")}
   </span>
 </p>
 
@@ -267,13 +269,13 @@ export default function ContactQrSection() {
                 name && phone ? "bg-[#ab1e3b]" : "bg-[#c2b8be]"
               }`}
             >
-              {loading ? "Gönderiliyor..." : "Gönder"}
+              {loading ? tCommon("sending") : tCommon("submit")}
             </button>
           </div>
 
           {success && (
             <p className="text-green-600 text-center mt-4">
-              Form başarıyla gönderildi!
+              {tContact("formSuccess")}
             </p>
           )}
           {error && (

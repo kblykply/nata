@@ -4,15 +4,21 @@ import Image from "next/image";
 import { useState, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Dialog } from "@headlessui/react";
+import { useTranslations } from "next-intl";
 
 export default function DesignSection() {
   const sectionRef = useRef(null);
-  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] });
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
   const y = useTransform(scrollYProgress, [0, 1], [0, -200]);
 
   const [isOpen, setIsOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
   const gallery = ["/antares-1.jpg", "/antares-2.jpg", "/antares-3.jpg", "/antares-4.jpg"];
+
+  const tDesign = useTranslations("anteres.design");
 
   return (
     <section
@@ -22,14 +28,11 @@ export default function DesignSection() {
       <div className="max-w-screen-xl mx-auto w-full flex flex-col lg:flex-row items-center justify-between gap-10 relative z-10">
         {/* Left Text Content */}
         <div className="w-full max-w-xl z-100">
-          <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 leading-tight ">
-            ANTARES KONUTLARI <br /> ile Tanışın
+          <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 leading-tight whitespace-pre-line">
+            {tDesign("title")}
           </h2>
           <p className="mt-6 text-sm text-gray-700 leading-relaxed">
-            Geniş peyzaj alanı, yürüyüş yolları, çocuk bahçesi, su oyunlu süs havuzları.
-            10.000 m²&apos;si yeşil alana ayrılmış parkın içinde günün her saati yürüyüş yapabilecek,
-            çocuklarınız parkta güven içinde oynarken, siz de sevdiklerinizle süs havuzlarının
-            bulunduğu ortak alanda keyifli vakit geçirebileceksiniz.
+            {tDesign("description")}
           </p>
           <button
             onClick={() => {
@@ -38,7 +41,7 @@ export default function DesignSection() {
             }}
             className="mt-6 bg-gray-800 text-white text-sm px-5 py-2 rounded-full"
           >
-            Proje Galerisini Gör
+            {tDesign("openGallery")}
           </button>
         </div>
 
@@ -76,6 +79,7 @@ export default function DesignSection() {
             <button
               onClick={() => setIsOpen(false)}
               className="absolute top-6 right-6 text-white text-3xl z-50"
+              aria-label="Close"
             >
               ×
             </button>
@@ -93,6 +97,7 @@ export default function DesignSection() {
                 <button
                   onClick={() => setGalleryIndex(galleryIndex - 1)}
                   className="absolute left-6 text-white text-4xl z-50"
+                  aria-label="Previous"
                 >
                   ‹
                 </button>
@@ -103,6 +108,7 @@ export default function DesignSection() {
                 <button
                   onClick={() => setGalleryIndex(galleryIndex + 1)}
                   className="absolute right-6 text-white text-4xl z-50"
+                  aria-label="Next"
                 >
                   ›
                 </button>

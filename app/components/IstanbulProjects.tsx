@@ -5,6 +5,7 @@
   import { FaFire, FaTrain } from "react-icons/fa";
   import { FiPlus } from "react-icons/fi";
   import { Link } from "@/i18n/navigation";
+  import { useTranslations } from "next-intl";
 
   interface Listing {
     link: string;
@@ -48,6 +49,7 @@
 
 
   export default function ProjectListingSection() {
+    const t = useTranslations("common");
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
     const [showAltImage, setShowAltImage] = useState(false);
     const [popupIndex, setPopupIndex] = useState<number | null>(null);

@@ -4,8 +4,12 @@ import Image from 'next/image';
 import { useState, useRef } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 const Points = () => {
+  const t = useTranslations('salesNetwork');
+  const tCommon = useTranslations('common');
+  const tContact = useTranslations('contact');
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -42,24 +46,24 @@ const Points = () => {
     };
     setErrors(newErrors);
     setErrorMessages({
-      name: newErrors.name ? "Bu alanı doldurun" : "",
-      email: newErrors.email ? "Bu alanı doldurun" : "",
-      phone: newErrors.phone ? "Bu alanı doldurun" : "",
-      business: newErrors.business ? "Bu alanı doldurun" : "",
+      name: newErrors.name ? tCommon("requiredField") : "",
+      email: newErrors.email ? tCommon("requiredField") : "",
+      phone: newErrors.phone ? tCommon("requiredField") : "",
+      business: newErrors.business ? tCommon("requiredField") : "",
     });
 
     if (!name.trim() || !email.trim() || !phone.trim() || !business.trim()) {
-      setError("Lütfen tüm zorunlu alanları doldurun.");
+      setError(t("allFieldsRequired"));
       return;
     }
 
     if (!recaptchaToken) {
-      setError("Lütfen reCAPTCHA doğrulamasını tamamlayın.");
+      setError(tContact("recaptchaError"));
       return;
     }
 
     if (!accepted) {
-      setError("Lütfen KVKK koşullarını kabul edin.");
+      setError(t("acceptKVKK"));
       return;
     }
 
@@ -94,10 +98,10 @@ const Points = () => {
         setErrorMessages({ name: "", email: "", phone: "", business: "" });
         recaptchaRef.current?.reset();
       } else {
-        setError(data.error || "Gönderim başarısız oldu. Lütfen tekrar deneyin.");
+        setError(data.error || tContact("submitFailed"));
       }
     } catch {
-      setError("Sunucu hatası, lütfen daha sonra tekrar deneyin.");
+      setError(tContact("serverError"));
     } finally {
       setLoading(false);
     }
@@ -138,11 +142,11 @@ const Points = () => {
         {/* Right Side - Form */}
         <div className="space-y-4">
           <h3 className="text-2xl font-bold mb-4 text-gray-800">
-            Bilgi almak için iletişime geçin
+            {t('formTitle')}
           </h3>
           <input
             type="text"
-            placeholder="İsim Soyisim"
+            placeholder={t('fullNamePlaceholder')}
             value={name}
             onChange={(e) => {
               setName(e.target.value);
@@ -158,7 +162,7 @@ const Points = () => {
           )}
           <input
             type="email"
-            placeholder="E-mail"
+            placeholder={t('emailPlaceholder')}
             value={email}
             onChange={(e) => {
               setEmail(e.target.value);
@@ -174,7 +178,7 @@ const Points = () => {
           )}
           <input
             type="tel"
-            placeholder="Telefon"
+            placeholder={t('phonePlaceholder')}
             value={phone}
             onChange={(e) => {
               setPhone(e.target.value);
@@ -190,7 +194,7 @@ const Points = () => {
           )}
           <input
             type="text"
-            placeholder="İşletme Bilgisi"
+            placeholder={t('businessPlaceholder')}
             value={business}
             onChange={(e) => {
               setBusiness(e.target.value);
@@ -205,7 +209,7 @@ const Points = () => {
             <p className="text-red-500 text-xs mt-1">{errorMessages.business}</p>
           )}
           <textarea
-            placeholder="Mesajınız (isteğe bağlı)"
+            placeholder={t('messagePlaceholder')}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             className="w-full bg-gray-100 rounded-sm px-4 py-2 text-sm h-24 text-gray-800 placeholder:text-gray-500"
@@ -221,11 +225,11 @@ const Points = () => {
             />
             <label htmlFor="kvkkCheckbox" className="text-xs text-gray-800 leading-snug">
               <span className="block">
-                <strong>Kişisel Verilerin Korunması</strong> hakkında bilgilendirildim ve{" "}
+                <strong>{t('kvkkIntro')}</strong> {t('kvkkText')}{" "}
                 <Link href="/kvkk" target="_blank" className="underline text-blue-600 hover:text-blue-800">
-                  KVKK Aydınlatma Metni
+                  {t('kvkkLink')}
                 </Link>
-                'ni okudum. Koşulları kabul ediyorum.
+                {t('kvkkAccept')}
               </span>
             </label>
           </div>
@@ -242,10 +246,10 @@ const Points = () => {
             disabled={loading}
             className="w-full bg-gray-100 text-sm font-semibold py-2 rounded-sm hover:bg-gray-200 transition disabled:opacity-50 text-gray-800"
           >
-            {loading ? "Gönderiliyor..." : "GÖNDER"}
+            {loading ? tCommon("sending") : tCommon("submit").toUpperCase()}
           </button>
 
-          {success && <p className="text-green-600 text-sm mt-2">Form başarıyla gönderildi!</p>}
+          {success && <p className="text-green-600 text-sm mt-2">{tContact("formSuccess")}</p>}
           {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
         </div>
       </div>

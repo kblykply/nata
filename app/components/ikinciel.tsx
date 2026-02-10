@@ -6,6 +6,7 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import { ChevronDown, SlidersHorizontal, X } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { useFavorites } from "@/app/contexts/FavoritesContext";
+import { useTranslations } from "next-intl";
 
 
 
@@ -61,6 +62,7 @@ const areaRanges = ["Tümü", "<100", "100–130", ">130"];
 const priceRanges = ["Tümü", "<10M", "10M–15M", ">15M"];
 
 export default function FilteredListingCards() {
+  const t = useTranslations("projectList");
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [selectedLocation, setSelectedLocation] = useState("Tümü");
   const [selectedType, setSelectedType] = useState("Tümü");
@@ -101,6 +103,9 @@ export default function FilteredListingCards() {
     return locationMatch && typeMatch && areaMatch && priceMatch;
   });
 
+  const renderOptionLabel = (value: string) =>
+    value === "Tümü" ? t("all") : value;
+
   return (
     <section className="px-6 py-12 ">
       {/* Filter Pills */}
@@ -111,7 +116,9 @@ export default function FilteredListingCards() {
           className="flex items-center bg-gray-100 px-4 py-2 rounded-full text-gray-700"
         >
           {locations.map((item) => (
-            <option key={item} value={item}>{item}</option>
+            <option key={item} value={item}>
+              {renderOptionLabel(item)}
+            </option>
           ))}
         </select>
 
@@ -121,7 +128,9 @@ export default function FilteredListingCards() {
           className="flex items-center bg-gray-100 px-4 py-2 rounded-full text-gray-700"
         >
           {roomTypes.map((item) => (
-            <option key={item} value={item}>{item}</option>
+            <option key={item} value={item}>
+              {renderOptionLabel(item)}
+            </option>
           ))}
         </select>
 
@@ -131,7 +140,9 @@ export default function FilteredListingCards() {
           className="flex items-center bg-gray-100 px-4 py-2 rounded-full text-gray-700"
         >
           {areaRanges.map((item) => (
-            <option key={item} value={item}>{item}</option>
+            <option key={item} value={item}>
+              {renderOptionLabel(item)}
+            </option>
           ))}
         </select>
 
@@ -142,7 +153,7 @@ export default function FilteredListingCards() {
           className="flex items-center px-4 py-2 rounded-full bg-gray-100 text-[#ab1e3b] font-medium"
         >
           <SlidersHorizontal className="w-4 h-4 mr-2" />
-          Tüm Filtreler
+          {t("allFilters")}
         </button>
       </div>
 
@@ -156,44 +167,56 @@ export default function FilteredListingCards() {
             >
               <X className="w-5 h-5" />
             </button>
-            <h2 className="text-lg font-semibold mb-4">Tüm Filtreler</h2>
+            <h2 className="text-lg font-semibold mb-4">{t("filtersTitle")}</h2>
 
             <div className="space-y-4">
               <div>
-                <label className="block mb-1 text-sm font-medium text-gray-700">Lokasyon</label>
+                <label className="block mb-1 text-sm font-medium text-gray-700">
+                  {t("locationLabel")}
+                </label>
                 <select
                   value={selectedLocation}
                   onChange={(e) => setSelectedLocation(e.target.value)}
                   className="w-full border rounded-lg px-3 py-2"
                 >
                   {locations.map((loc) => (
-                    <option key={loc} value={loc}>{loc}</option>
+                    <option key={loc} value={loc}>
+                      {renderOptionLabel(loc)}
+                    </option>
                   ))}
                 </select>
               </div>
 
               <div>
-                <label className="block mb-1 text-sm font-medium text-gray-700">Daire Tipi</label>
+                <label className="block mb-1 text-sm font-medium text-gray-700">
+                  {t("apartmentTypeLabel")}
+                </label>
                 <select
                   value={selectedType}
                   onChange={(e) => setSelectedType(e.target.value)}
                   className="w-full border rounded-lg px-3 py-2"
                 >
                   {roomTypes.map((type) => (
-                    <option key={type} value={type}>{type}</option>
+                    <option key={type} value={type}>
+                      {renderOptionLabel(type)}
+                    </option>
                   ))}
                 </select>
               </div>
 
               <div>
-                <label className="block mb-1 text-sm font-medium text-gray-700">m² Alanı</label>
+                <label className="block mb-1 text-sm font-medium text-gray-700">
+                  {t("areaLabel")}
+                </label>
                 <select
                   value={selectedArea}
                   onChange={(e) => setSelectedArea(e.target.value)}
                   className="w-full border rounded-lg px-3 py-2"
                 >
                   {areaRanges.map((area) => (
-                    <option key={area} value={area}>{area}</option>
+                    <option key={area} value={area}>
+                      {renderOptionLabel(area)}
+                    </option>
                   ))}
                 </select>
               </div>
@@ -204,7 +227,7 @@ export default function FilteredListingCards() {
                 onClick={() => setShowAllFilters(false)}
                 className="w-full mt-4 py-2 rounded-lg bg-[#ab1e3b] text-white text-sm font-medium"
               >
-                Uygula
+                {t("apply")}
               </button>
             </div>
           </div>
@@ -217,7 +240,7 @@ export default function FilteredListingCards() {
           onClick={resetFilters}
           className="text-gray-500 hover:underline"
         >
-          Tüm filtreleri temizle
+          {t("clearAllFilters")}
         </button>
 
         <div className="flex items-center gap-4">
@@ -289,7 +312,7 @@ export default function FilteredListingCards() {
       toggleFavorite(item.id);
     }}
     className="w-11 h-11 bg-gray-100 rounded-full flex items-center justify-center relative"
-    title="Favorilere ekle"
+    title={t("addToFavorites")}
   >
     {/* Ping animation */}
     {isFavorite(item.id) && (

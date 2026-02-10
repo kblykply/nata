@@ -4,8 +4,12 @@ import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { useTranslations } from "next-intl";
 
 export default function ProjectHeroCloudSection() {
+  const t = useTranslations("incek");
+  const tCommon = useTranslations("common");
+
   return (
     <section className="relative w-full h-[90vh] md:h-[150vh] overflow-hidden bg-gradient-to-b from-[#006d9d] to-[#e6f3fd]">
       {/* Looping clouds (seamless illusion) */}
@@ -45,19 +49,23 @@ export default function ProjectHeroCloudSection() {
       </div>
 
 
-      <div className="py-4   ">
-  <div className="text-white text-sm md:text-base flex justify-center gap-2 top-10  ">   
-        <Link href="/" passHref>
-    <span className="cursor-pointer hover:underline">NATA Yaşam</span>
-  </Link>
-  <span>/</span>
-  <Link href="/#tamamlanan-projeler" passHref>
-    <span className="cursor-pointer hover:underline">Tamamlanmış Projeler</span>
-  </Link>
-    <span>/</span>
-    <span className="font-bold">Nata İncek Konutları</span>
-  </div>
-</div>
+      <div className="py-4">
+        <div className="text-white text-sm md:text-base flex justify-center gap-2 top-10">
+          <Link href="/" passHref>
+            <span className="cursor-pointer hover:underline">
+              {t("breadcrumbHome")}
+            </span>
+          </Link>
+          <span>/</span>
+          <Link href="/#tamamlanan-projeler" passHref>
+            <span className="cursor-pointer hover:underline">
+              {t("breadcrumbCompletedProjects")}
+            </span>
+          </Link>
+          <span>/</span>
+          <span className="font-bold">{t("breadcrumbProject")}</span>
+        </div>
+      </div>
 
 
 
@@ -81,52 +89,53 @@ export default function ProjectHeroCloudSection() {
 
 
 
-  <div className="flex flex-wrap justify-center gap-3 max-w-xl mx-auto mt-6 font-semibold">
-  <Link href="#near-locations">
-    <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm cursor-pointer">
-   Otobüs Durağına 1 dk
+      <div className="flex flex-wrap justify-center gap-3 max-w-xl mx-auto mt-6 font-semibold">
+        <Link href="#near-locations">
+          <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm cursor-pointer">
+            {t("heroTagBusStop")}
+          </div>
+        </Link>
 
-    </div>
-  </Link>
+        <Link href="#near-locations">
+          <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm cursor-pointer">
+            <FaMapMarkerAlt /> {t("heroTagLocation")}
+          </div>
+        </Link>
 
-  <Link href="#near-locations">
-    <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm cursor-pointer">
-      <FaMapMarkerAlt /> İncek Mahallesi / Ankara
-    </div>
-  </Link>
+        <Link href="#contact">
+          <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
+            {t("heroTagUnits")}
+          </div>
+        </Link>
 
-  <Link href="#contact">
-    <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
- 160 Konut
-    </div>
-  </Link>
+        <Link href="#contact">
+          <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
+            {tCommon("immediateDelivery")}
+          </div>
+        </Link>
 
-  <Link href="#contact">
-    <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
-  Hemen Teslim
-    </div>
-  </Link>
+        <Link href="#life">
+          <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
+            {t("heroTagComfort")}
+          </div>
+        </Link>
 
-  <Link href="#life">
-    <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
-    Ferah, Şık ve Kullanışlı
-    </div>
-  </Link>
-     <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
-    22 Katlı 
-    </div>
-         <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
-    11 mağaza ve sosyal tesis 
-    </div>
-       <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
-    16.000 m2
-    </div>
-      <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
-    12.000 m2 yeşil alan
-    </div>
         <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
-CCTV sistemi    </div>
-</div>
+          {t("heroTagFloors")}
+        </div>
+        <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
+          {t("heroTagShopsSocial")}
+        </div>
+        <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
+          {t("heroTagPlotSize")}
+        </div>
+        <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
+          {t("heroTagGreenArea")}
+        </div>
+        <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
+          {t("heroTagCctv")}
+        </div>
+      </div>
 
 
     </section>

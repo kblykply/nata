@@ -3,66 +3,39 @@
 import Image from "next/image";
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useTranslations } from "next-intl";
 
 const slides = [
   {
-    title: "Prestijli Yaşam İçin Tasarlandı",
+    id: "1",
     image: "/Antares-dergi.jpg",
-    popup: {
-      title: "Sosyal Hayat Evinizin Bir Parçası",
-      text: "Fitness salonundan çocuk oyun alanlarına, kafeteryadan dinlenme alanlarına kadar Antares Konutları'nda her ihtiyacınıza yönelik sosyal imkanlar mevcut. Komşuluk kültürünü modern sosyal alanlarda yeniden keşfedin.",
-      images: ["/Antares-Zengin Sosyal Olanaklar.jpg", "/Antares-Zengin Sosyal Olanaklar (2).jpg"]
-    }
+    popupImages: ["/Antares-Zengin Sosyal Olanaklar.jpg", "/Antares-Zengin Sosyal Olanaklar (2).jpg"],
   },
   {
-    title: "Etlik’in Kalbinde Modern Yaşam",
+    id: "2",
     image: "/Antares Etlik.jpg",
-    popup: {
-      title: "Şehrin Merkezinde Konforlu Bir Hayat",
-      text: "Antares Konutları, Etlik'in en prestijli noktasında, alışveriş ",
-      images: ["/Antares-Etlik’in Kalbinde Modern Yaşam (2).jpg", "/Antares-Etlik’in Kalbinde Modern Yaşam.jpg"]
-    }
+    popupImages: ["/Antares-Etlik’in Kalbinde Modern Yaşam (2).jpg", "/Antares-Etlik’in Kalbinde Modern Yaşam.jpg"],
   },
   {
-    title: "Geniş Yeşil Alanlarla Doğayla İç İçe",
+    id: "3",
     image: "/Antares Yeşil.jpg",
-    popup: {
-      title: "Betonun İçinde Nefes Alabileceğiniz Alanlar",
-      text: "Antares Konutları, sizlere şehrin yoğunluğunda doğayla baş başa kalabileceğiniz geniş peyzaj ve yeşil alanlar sunuyor. Çocuk oyun alanları ve yürüyüş yolları ile her yaşa hitap eden bir yaşam alanı sizi bekliyor.",
-      images: ["/antares-Geniş Yeşil Alanlarla Doğayla İç İçe (2).jpg", "/antares-Geniş Yeşil Alanlarla Doğayla İç İçe.jpg"]
-    }
+    popupImages: ["/antares-Geniş Yeşil Alanlarla Doğayla İç İçe (2).jpg", "/antares-Geniş Yeşil Alanlarla Doğayla İç İçe.jpg"],
   },
   {
-    title: "Zengin Sosyal Olanaklar",
+    id: "4",
     image: "/Antares Zengin.jpg",
-    popup: {
-      title: "Sosyal Hayat Evinizin Bir Parçası",
-      text: "Fitness salonundan çocuk oyun alanlarına, kafeteryadan dinlenme alanlarına kadar Antares Konutları'nda her ihtiyacınıza yönelik sosyal imkanlar mevcut. Komşuluk kültürünü modern sosyal alanlarda yeniden keşfedin.",
-      images: ["/Antares-Zengin Sosyal Olanaklar.jpg", "/Antares-Zengin Sosyal Olanaklar (2).jpg"]
-    }
+    popupImages: ["/Antares-Zengin Sosyal Olanaklar.jpg", "/Antares-Zengin Sosyal Olanaklar (2).jpg"],
   },
   {
-    title: "Geniş Otopark İmkanları",
+    id: "5",
     image: "/Antares Otopark.jpg",
-    popup: {
-      title: "Park Yeri Arama Derdi Yok",
-      text: "Antares Konutları, her daireye özel kapalı otopark alanlarıyla araçlarınız için güvenli ve geniş park alanları sunuyor. Misafir otoparkı sayesinde ziyaretçileriniz de rahat edecek.",
-      images: ["/antares-Geniş Otopark İmkanları (2).jpg", "/antares-Geniş Otopark İmkanları.jpg"]
-    }
+    popupImages: ["/antares-Geniş Otopark İmkanları (2).jpg", "/antares-Geniş Otopark İmkanları.jpg"],
   },
   {
-    title: "Yüzme Havuzu",
+    id: "6",
     image: "/Antares havuz.jpg",
-    popup: {
-      title: "Şehrin Ortasında Tatil Keyfi",
-      text: "Açık ve kapalı yüzme havuzları ile yılın her döneminde yüzme keyfi Antares Konutları'nda. Ailenizle birlikte hem spor yapın hem de serin suların tadını çıkarın.",
-      images: ["/antares-Yüzme Havuzu (2).jpg", "/antares-Yüzme Havuzu.jpg"]
-    }
+    popupImages: ["/antares-Yüzme Havuzu (2).jpg", "/antares-Yüzme Havuzu.jpg"],
   },
-
-
-
-  
 ];
 
 export default function ProjectLifeRhythmSection() {
@@ -70,53 +43,46 @@ export default function ProjectLifeRhythmSection() {
   const [popupIndex, setPopupIndex] = useState<number | null>(null);
   const totalSlides = slides.length;
   const [dragStartX, setDragStartX] = useState<number | null>(null);
-const [dragDeltaX, setDragDeltaX] = useState(0);
+  const [dragDeltaX, setDragDeltaX] = useState(0);
 
+  const tLife = useTranslations("anteres.life");
 
+  const handlePointerDown = (e: React.PointerEvent) => {
+    setDragStartX(e.clientX);
+  };
 
+  const handlePointerMove = (e: React.PointerEvent) => {
+    if (dragStartX !== null) {
+      setDragDeltaX(e.clientX - dragStartX);
+    }
+  };
 
-const handlePointerDown = (e: React.PointerEvent) => {
-  setDragStartX(e.clientX);
-};
+  const handlePointerUp = () => {
+    if (dragDeltaX > 50) {
+      setIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
+    } else if (dragDeltaX < -50) {
+      setIndex((prev) => (prev + 1) % totalSlides);
+    }
 
-const handlePointerMove = (e: React.PointerEvent) => {
-  if (dragStartX !== null) {
-    setDragDeltaX(e.clientX - dragStartX);
-  }
-};
-
-const handlePointerUp = () => {
-  if (dragDeltaX > 50) {
-    setIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
-  } else if (dragDeltaX < -50) {
-    setIndex((prev) => (prev + 1) % totalSlides);
-  }
-
-  // ✅ Add a slight delay to allow animation to complete before reset
-  setTimeout(() => {
-    setDragDeltaX(0);
-    setDragStartX(null);
-  }, 200); // 200ms matches your CSS transition
-};
-
-
+    setTimeout(() => {
+      setDragDeltaX(0);
+      setDragStartX(null);
+    }, 200);
+  };
 
   return (
     <section className="select-none scroll-smooth relative py-24 px-6 bg-white text-center overflow-hidden">
-
-
-
-      
-      <h2 className="text-3xl font-light text-gray-800 uppercase leading-tight">
-      ANTARES KONUTLARI  <br />Etlik'in kalbinde
+      <h2 className="text-3xl font-light text-gray-800 uppercase leading-tight whitespace-pre-line">
+        {tLife("title")}
+        <br />
+        {tLife("subtitle")}
       </h2>
       <p className="mt-4 text-sm text-gray-600 max-w-xl mx-auto">
-      Dolunay iştiraki olan Antares Konutları merkezi konumu, sosyal olanaklarıyla keyifli ve konforlu bir yaşam Antares Konutları ile buluşuyor.
+        {tLife("description")}
       </p>
 
       <div className="relative mt-12 w-full max-w-7xl mx-auto h-[500px]">
-      <div className="relative flex items-center justify-center h-full">
-
+        <div className="relative flex items-center justify-center h-full">
           {slides.map((slide, i) => {
             const offset = (i - index + totalSlides) % totalSlides;
             const normalized = offset > totalSlides / 2 ? offset - totalSlides : offset;
@@ -147,55 +113,48 @@ const handlePointerUp = () => {
                 style={{
                   left: `calc(50% - 150px)`,
                   transform: `translateX(${translateX}) translateY(${translateY}) scale(${scale})`,
-                                    zIndex: z,
-                  opacity
+                  zIndex: z,
+                  opacity,
                 }}
               >
+                <div className="relative w-full h-full">
+                  {normalized === 0 && (
+                    <div
+                      className="absolute inset-0 z-10"
+                      onPointerDown={handlePointerDown}
+                      onPointerMove={handlePointerMove}
+                      onPointerUp={handlePointerUp}
+                      onPointerLeave={handlePointerUp}
+                    />
+                  )}
 
-                
-<div className="relative w-full h-full">
-  {normalized === 0 && (
-    <div
-      className="absolute inset-0 z-10"
-      onPointerDown={handlePointerDown}
-      onPointerMove={handlePointerMove}
-      onPointerUp={handlePointerUp}
-      onPointerLeave={handlePointerUp}
-    />
-  )}
-
-
-  
                   <Image
                     src={slide.image}
-                    alt={slide.title}
+                    alt={tLife(`slides.${slide.id}.title`)}
                     fill
                     className="object-cover rounded-xl"
                   />
                   <div className="absolute top-4 left-4 bg-black/50 text-white text-xs px-3 py-1 rounded">
-                    {slide.title}
+                    {tLife(`slides.${slide.id}.title`)}
                   </div>
                   {index === i && (
-  <>
-    {i === 0 ? (
-      // If it's the first slide, render a link
-      <a
-           // <-- Change this URL to your target link
-        className="z-100 absolute    left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-black text-sm text-white  px-5 py-2 rounded-full shadow"
-      >
-        Sunuma Git
-      </a>
-    ) : (
-      // For other slides, open popup
-      <button
-        onClick={() => setPopupIndex(i)}
-        className="z-100 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-sm text-gray-700 px-5 py-2 rounded-full shadow"
-      >
-        Ayrıntılı Bilgi
-      </button>
-    )}
-  </>
-)}
+                    <>
+                      {i === 0 ? (
+                        <a
+                          className="z-100 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-black text-sm text-white px-5 py-2 rounded-full shadow"
+                        >
+                          {tLife("buttons.goToPresentation")}
+                        </a>
+                      ) : (
+                        <button
+                          onClick={() => setPopupIndex(i)}
+                          className="z-100 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-sm text-gray-700 px-5 py-2 rounded-full shadow"
+                        >
+                          {tLife("buttons.details")}
+                        </button>
+                      )}
+                    </>
+                  )}
                 </div>
               </div>
             );
@@ -203,16 +162,16 @@ const handlePointerUp = () => {
 
           <button
             onClick={() => setIndex((prev) => (prev - 1 + totalSlides) % totalSlides)}
-            aria-label="Önceki"
-            title="Önceki"
+            aria-label={tLife("buttons.prevShort")}
+            title={tLife("buttons.prevShort")}
             className="absolute left-0 top-1/2 -translate-y-1/2 bg-white text-black p-3 rounded-full shadow z-40"
           >
             <FaChevronLeft />
           </button>
           <button
             onClick={() => setIndex((prev) => (prev + 1) % totalSlides)}
-            aria-label="Sonraki"
-            title="Sonraki"
+            aria-label={tLife("buttons.nextShort")}
+            title={tLife("buttons.nextShort")}
             className="absolute right-0 top-1/2 -translate-y-1/2 bg-white text-black p-3 rounded-full shadow z-40"
           >
             <FaChevronRight />
@@ -226,19 +185,19 @@ const handlePointerUp = () => {
             <button
               onClick={() => setPopupIndex(null)}
               className="absolute top-3 right-4 text-gray-500 hover:text-gray-800 text-xl"
-              aria-label="Kapat"
-              title="Kapat"
+              aria-label={tLife("buttons.close")}
+              title={tLife("buttons.close")}
             >
               ✕
             </button>
             <h3 className="text-xl font-semibold text-gray-900 mb-3">
-              {slides[popupIndex].popup.title}
+              {tLife(`slides.${slides[popupIndex].id}.popupTitle`)}
             </h3>
             <p className="text-sm text-gray-700 mb-4">
-              {slides[popupIndex].popup.text}
+              {tLife(`slides.${slides[popupIndex].id}.popupText`)}
             </p>
             <div className="grid grid-cols-2 gap-4">
-              {slides[popupIndex].popup.images.map((img, i) => (
+              {slides[popupIndex].popupImages.map((img, i) => (
                 <Image
                   key={i}
                   src={img}
@@ -256,7 +215,7 @@ const handlePointerUp = () => {
                 }
                 className="text-sm text-gray-700 hover:underline"
               >
-                ← Geri
+                {tLife("buttons.prev")}
               </button>
               <button
                 onClick={() =>
@@ -264,7 +223,7 @@ const handlePointerUp = () => {
                 }
                 className="text-sm text-gray-700 hover:underline"
               >
-                İleri →
+                {tLife("buttons.next")}
               </button>
             </div>
           </div>

@@ -1,45 +1,47 @@
 "use client";
 
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
-const cards = [
+export default function InfoCardsSection() {
+  const t = useTranslations("vegaCenter");
+  
+  const cards = [
   {
     id: 1,
     type: "image",
-    title: "Haberleri öğrenin",
-    highlight: "Proje Hakkında Tüm Bilgiler",
+    title: t("boxesLearnNews"),
+    highlight: t("boxesAllInfo"),
     background: "/vega-center-03.jpg",
-    wide: true,   // Mark this card as wide
+    wide: true,
     link: "https://vegacenter.com.tr/",
   },
   {
     id: 2,
     type: "icon",
-    title: "Belgeleri İndirin",
-    highlight: "NATA Yaşam Projeleri",
+    title: t("boxesDownloadDocs"),
+    highlight: t("boxesNataProjects"),
     icon: "/x.png",
     link: "https://vegacenter.com.tr/img/VEGA-Center-Katalog.pdf",
   },
   {
     id: 3,
     type: "image",
-    title: "Ziyaret Edin",
-    highlight: "Projenin Lokasyonunu Görün",
+    title: t("boxesVisit"),
+    highlight: t("boxesViewLocation"),
     background: "/vega-center-02.jpg",
     link: "https://maps.app.goo.gl/jP8rWRVC7bCDYWch7",
   },
   {
     id: 4,
     type: "icon",
-    title: "Sorularınızı Cevaplıyoruz",
-    highlight: "5 dakika içinde",
+    title: t("boxesAnswerQuestions"),
+    highlight: t("boxes5Minutes"),
     icon: "/vegacenter-canli-destek.png",
-    subtitle: "Projesyonel Ekibimizle",
+    subtitle: t("boxesProfessionalTeam"),
     link: "https://api.whatsapp.com/send/?phone=905017111818&text=Merhaba%2C+projeleriniz+hakk%C4%B1nda+detayl%C4%B1+bilgi+almak+istiyorum.&type=phone_number&app_absent=0",
   },
 ];
-
-export default function InfoCardsSection() {
   return (
     <section className="w-full bg-white py-12 px-4">
       <div className="flex flex-wrap justify-center gap-6 max-w-7xl mx-auto">
