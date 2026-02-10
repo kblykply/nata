@@ -1,10 +1,13 @@
 import type { NextConfig } from "next";
+import createNextIntlPlugin from "next-intl/plugin";
+
+const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 
 const nextConfig: NextConfig = {
-  devIndicators: false, // 👈 Disable Dev Tools completely
+  devIndicators: false,
   experimental: {},
   images: {
-    unoptimized: true, // 🔥 Disable image optimizer on Plesk
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
@@ -37,4 +40,4 @@ const nextConfig: NextConfig = {
   }
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

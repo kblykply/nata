@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 export default function ProjectHeroCloudSection() {
   return (

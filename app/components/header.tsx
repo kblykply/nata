@@ -1,13 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { Bell, Menu, X, Info, CheckCircle, AlertCircle } from "lucide-react";
 import { useState, useEffect, useRef, type ReactNode } from "react";
 import FavoriteButton from "./FavoriteButton";
-import { usePathname } from "next/navigation";
-// import { Unbounded } from "next/font/google";
-// const unbounded = Unbounded({ subsets: ["latin","latin-ext"], display: "swap", weight: ["400","500","600","700"], fallback: ["system-ui","Segoe UI","Arial"], adjustFontFallback: false });
+import { usePathname, useRouter } from "@/i18n/navigation";
+import { useLocale, useTranslations } from "next-intl";
 
 interface HeaderProps {
   isKampanyalarOpen: boolean;
@@ -41,6 +40,14 @@ export default function Header({
   const isHoveringPopup = useRef(false);
   const pathname = usePathname();
   const notificationRef = useRef<HTMLDivElement | null>(null);
+  const t = useTranslations("header");
+  const locale = useLocale();
+  const router = useRouter();
+
+  const switchLocale = () => {
+    const nextLocale = locale === "tr" ? "en" : "tr";
+    router.replace(pathname, { locale: nextLocale });
+  };
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -69,17 +76,17 @@ export default function Header({
           const mapped: Notification[] = json.data.map((item: any, index: number) => ({
             id: item.id ?? index,
             type: (item.type as NotificationType) ?? "info",
-            message: item.message || item.title || "Yeni bildirim",
+            message: item.message || item.title || t("newNotification"),
             time: item.time || new Date().toISOString(),
           }));
           setNotifications(mapped);
         }
       } catch (error) {
-        console.error("Bildirimler alınamadı:", error);
+        console.error(t("notificationsFailed"), error);
       }
     };
     fetchNotifications();
-  }, []);
+  }, [t]);
 
   const iconMap: Record<NotificationType, ReactNode> = {
     info: <Info size={16} className="text-blue-500 shrink-0" />,
@@ -106,7 +113,7 @@ export default function Header({
   };
 
   const formatDate = (dateString: string) =>
-    new Date(dateString).toLocaleString("tr-TR", {
+    new Date(dateString).toLocaleString(locale === "tr" ? "tr-TR" : "en-US", {
       day: "numeric",
       month: "long",
       year: "numeric",
@@ -120,7 +127,6 @@ export default function Header({
   return (
     <>
       <header
-        // className={`${unbounded.className} ...`}
         className={`sticky top-0 z-[100] w-full ${headerTone} backdrop-blur border-b border-black/5`}
         suppressHydrationWarning
       >
@@ -129,7 +135,7 @@ export default function Header({
           <div className="max-w-7xl mx-auto h-full flex items-center justify-between px-4 md:px-6">
             {/* Left: Logo */}
             <div className="flex-shrink-0">
-              <Link href="/" aria-label="Anasayfa">
+              <Link href="/" aria-label={t("homepage")}>
                 <Image
                   src="/navbarLogo.png"
                   alt="NATA Yaşam Logo"
@@ -158,10 +164,10 @@ export default function Header({
                 }}
                 className="relative cursor-pointer font-medium flex items-center"
               >
-                Yeni Projeler
+                {t("newProjects")}
               </div>
 
-              <Link className="font-medium flex items-center" href="/about-us">Hakkımızda</Link>
+              <Link className="font-medium flex items-center" href="/about-us">{t("aboutUs")}</Link>
 
               <Link href="/kampanya" className="font-medium flex items-center">
                 <div
@@ -176,11 +182,11 @@ export default function Header({
                   }}
                   className="relative cursor-pointer"
                 >
-                  Kampanyalar
+                  {t("campaigns")}
                 </div>
               </Link>
 
-              <Link className="font-medium flex items-center" href="/n-bulten">N-Bülten</Link>
+              <Link className="font-medium flex items-center" href="/n-bulten">{t("nBulletin")}</Link>
 
               <Link
                 className="font-medium flex items-center"
@@ -188,14 +194,14 @@ export default function Header({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Nata Holding
+                {t("nataHolding")}
               </Link>
 
               <Link 
                 className="font-medium px-3 py-1 rounded-full bg-[#ab1e3b] text-white hover:bg-[#911a33] transition flex items-center" 
                 href="/yetkili-satis-agi"
               >
-                Yetkili Satış Ağı
+                {t("authorizedSalesNetwork")}
               </Link>
 
               <Link href="/contact-us" className="font-medium flex items-center">
@@ -211,7 +217,7 @@ export default function Header({
                   }}
                   className="relative cursor-pointer"
                 >
-                  Bize Ulaşın
+                  {t("contactUs")}
                 </div>
               </Link>
             </nav>
@@ -219,21 +225,24 @@ export default function Header({
             {/* Right: Buttons */}
             <div className="flex items-center gap-2 flex-shrink-0">
               {/* Language */}
-              <button className="flex items-center px-3 h-10 rounded-full text-sm bg-gray-100 hover:bg-gray-200">
+              <button
+                onClick={switchLocale}
+                className="flex items-center px-3 h-10 rounded-full text-sm bg-gray-100 hover:bg-gray-200"
+              >
                 <Image
-                  src="/turkish-flag.png"
-                  alt="Turkish Flag"
+                  src={locale === "tr" ? "/turkish-flag.png" : "/english-flag.svg"}
+                  alt={locale === "tr" ? "Turkish Flag" : "English Flag"}
                   width={20}
                   height={20}
                   className="mr-2"
                 />
-                TR
+                {locale === "tr" ? "TR" : "EN"}
               </button>
 
               {/* Notifications */}
               <div className="relative" ref={notificationRef}>
                 <button
-                  aria-label="Bildirimler"
+                  aria-label={t("notifications")}
                   onClick={() => setShowNotifications((s) => !s)}
                   className="w-10 h-10 rounded-full bg-[#ab1e3b] hover:bg-[#911a33] flex items-center justify-center relative"
                 >
@@ -245,7 +254,7 @@ export default function Header({
 
                 {showNotifications && (
                   <div className="md:mt-5 absolute top-full mt-3 w-[90vw] max-w-sm left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-0 bg-white/96 backdrop-blur rounded-xl shadow-2xl animate-fade-in z-50">
-                    <div className="p-4 font-semibold text-gray-800">Bildirimler</div>
+                    <div className="p-4 font-semibold text-gray-800">{t("notifications")}</div>
                     <ul className="max-h-60 overflow-y-auto">
                       {notifications.map((note) => (
                         <li key={note.id} className="flex items-start gap-3 px-4 py-3 hover:bg-gray-50 transition">
@@ -257,7 +266,7 @@ export default function Header({
                         </li>
                       ))}
                       {notifications.length === 0 && (
-                        <li className="px-4 py-3 text-sm text-gray-500">Henüz bildirim yok.</li>
+                        <li className="px-4 py-3 text-sm text-gray-500">{t("noNotifications")}</li>
                       )}
                     </ul>
                   </div>
@@ -271,7 +280,7 @@ export default function Header({
               <button
                 className="md:hidden w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full"
                 onClick={() => setMenuOpen((o) => !o)}
-                aria-label="Menüyü Aç/Kapat"
+                aria-label={t("toggleMenu")}
               >
                 {menuOpen ? <X size={20} /> : <Menu size={20} />}
               </button>
@@ -282,19 +291,19 @@ export default function Header({
         {/* Mobile Menu */}
         {menuOpen && (
           <div className="backdrop-blur bg-white/97 md:hidden absolute top-full left-0 w-full shadow-xl z-50 px-6 py-6 space-y-4 rounded-b-2xl animate-slide-down">
-            <Link href="/" className="block font-medium" onClick={() => setMenuOpen(false)}>Ana Sayfa</Link>
-            <Link href="/#aktif-projeler" className="block font-medium" onClick={() => setMenuOpen(false)}>Projeler</Link>
-            <Link href="/about-us" className="block font-medium" onClick={() => setMenuOpen(false)}>Hakkımızda</Link>
-            <Link href="/n-bulten" className="block font-medium" onClick={() => setMenuOpen(false)}>N Bülten</Link>
-            <Link href="/blog" className="block font-medium" onClick={() => setMenuOpen(false)}>Blog</Link>
+            <Link href="/" className="block font-medium" onClick={() => setMenuOpen(false)}>{t("home")}</Link>
+            <Link href="/#aktif-projeler" className="block font-medium" onClick={() => setMenuOpen(false)}>{t("projects")}</Link>
+            <Link href="/about-us" className="block font-medium" onClick={() => setMenuOpen(false)}>{t("aboutUs")}</Link>
+            <Link href="/n-bulten" className="block font-medium" onClick={() => setMenuOpen(false)}>{t("nBulletin")}</Link>
+            <Link href="/blog" className="block font-medium" onClick={() => setMenuOpen(false)}>{t("blog")}</Link>
             <Link 
               href="/yetkili-satis-agi" 
               className="block font-medium px-3 py-1.5 rounded-full bg-[#ab1e3b] text-white hover:bg-[#911a33] transition w-fit" 
               onClick={() => setMenuOpen(false)}
             >
-              Yetkili Satış Ağı
+              {t("authorizedSalesNetwork")}
             </Link>
-            <Link href="/contact-us" className="block font-medium" onClick={() => setMenuOpen(false)}>İletişim</Link>
+            <Link href="/contact-us" className="block font-medium" onClick={() => setMenuOpen(false)}>{t("contact")}</Link>
           </div>
         )}
       </header>

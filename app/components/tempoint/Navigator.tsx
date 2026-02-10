@@ -1,4 +1,6 @@
 "use client";
+import { useTranslations } from "next-intl";
+"use client";
 
 import { useState, useEffect } from "react";
 import { FiMenu, FiSend, FiX } from "react-icons/fi";

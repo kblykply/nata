@@ -5,8 +5,12 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import ReCAPTCHA from "react-google-recaptcha";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export default function MeetingReservationForm() {
+  const t = useTranslations("reservation");
+  const tc = useTranslations("common");
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -47,11 +51,11 @@ export default function MeetingReservationForm() {
     };
     setErrors(nextErrors);
     setErrorMessages({
-      name: nextErrors.name ? "Bu alanı doldurun" : "",
-      email: nextErrors.email ? "Bu alanı doldurun" : "",
-      phone: nextErrors.phone ? "Bu alanı doldurun" : "",
-      date: nextErrors.date ? "Bu alanı doldurun" : "",
-      time: nextErrors.time ? "Bu alanı doldurun" : "",
+      name: nextErrors.name ? tc("requiredField") : "",
+      email: nextErrors.email ? tc("requiredField") : "",
+      phone: nextErrors.phone ? tc("requiredField") : "",
+      date: nextErrors.date ? tc("requiredField") : "",
+      time: nextErrors.time ? tc("requiredField") : "",
     });
     if (Object.values(nextErrors).some(Boolean)) {
       setLoading(false);
@@ -59,7 +63,7 @@ export default function MeetingReservationForm() {
     }
 
     if (!recaptchaToken) {
-      setError("Lütfen reCAPTCHA doğrulamasını tamamlayın.");
+      setError(t("submitError"));
       setLoading(false);
       return;
     }
@@ -88,7 +92,7 @@ export default function MeetingReservationForm() {
       setErrors({ name: false, email: false, phone: false, date: false, time: false });
       setErrorMessages({ name: "", email: "", phone: "", date: "", time: "" });
     } catch (err) {
-      setError("Gönderim sırasında bir hata oluştu.");
+      setError(t("submitError"));
     } finally {
       setLoading(false);
     }
@@ -98,9 +102,9 @@ export default function MeetingReservationForm() {
     <div className="relative px-6 md:px-20 py-16">
       {/* Title & Description */}
       <div className="text-center mb-12">
-        <h2 className="text-2xl font-semibold mb-4">Toplantı Rezervasyonu</h2>
+        <h2 className="text-2xl font-semibold mb-4">{t("title")}</h2>
         <p className="text-sm max-w-2xl mx-auto text-gray-700 leading-relaxed">
-          Müsait zaman aralığında sizinle birebir görüşme gerçekleştirelim. Bilgilerinizi girerek rezervasyon talebinizi bize iletebilirsiniz.
+          {t("description")}
         </p>
       </div>
 
@@ -108,8 +112,8 @@ export default function MeetingReservationForm() {
       <div className="grid md:grid-cols-2 gap-12 relative z-10 items-start">
         {/* Left: Meeting Office Info */}
         <div className="bg-white/70 backdrop-blur-md rounded-2xl p-6 w-72 mx-auto relative shadow-lg">
-          <h3 className="font-semibold text-sm mb-1">Satış Ofisi</h3>
-          <p className="text-xs text-gray-500 mb-6">VEGA CENTER REZERVASYON</p>
+          <h3 className="font-semibold text-sm mb-1">{t("salesOffice")}</h3>
+          <p className="text-xs text-gray-500 mb-6">{t("vegaCenterReservation")}</p>
           <div className="flex items-center gap-3 mb-4">
             <Image src="/contact-phone.png" alt="Phone" width={20} height={20} />
             <p className="text-sm font-medium">444 8 018</p>
@@ -129,7 +133,7 @@ export default function MeetingReservationForm() {
           <div>
             <input
               type="text"
-              placeholder="İsim Soyisim"
+              placeholder={tc("nameSurname")}
               value={name}
               onChange={(e) => {
                 setName(e.target.value);
@@ -149,7 +153,7 @@ export default function MeetingReservationForm() {
           <div>
             <input
               type="email"
-              placeholder="E-mail"
+              placeholder={tc("email")}
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value);
@@ -169,7 +173,7 @@ export default function MeetingReservationForm() {
           <div>
             <input
               type="tel"
-              placeholder="Telefon"
+              placeholder={tc("phone")}
               value={phone}
               onChange={(e) => {
                 setPhone(e.target.value);
@@ -198,7 +202,7 @@ export default function MeetingReservationForm() {
                 }
               }}
               minDate={new Date()}
-              placeholderText="Tarih Seçin"
+              placeholderText={t("selectDate")}
               className={`w-full bg-gray-100 rounded-sm px-4 py-2 text-sm placeholder:text-gray-500 ${
                 errors.date ? "border-2 border-red-500" : ""
               }`}
@@ -223,7 +227,7 @@ export default function MeetingReservationForm() {
                 errors.time ? "border-2 border-red-500" : ""
               }`}
             >
-              <option value="">Saat Seçin</option>
+              <option value="">{t("selectTime")}</option>
               <option value="10:00">10:00</option>
               <option value="11:00">11:00</option>
               <option value="14:00">14:00</option>
@@ -236,7 +240,7 @@ export default function MeetingReservationForm() {
           </div>
 
           <textarea
-            placeholder="Notlar (isteğe bağlı)"
+            placeholder={t("notesOptional")}
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
             className="w-full bg-gray-100 rounded-sm px-4 py-2 text-sm h-24 placeholder:text-gray-500"
@@ -251,7 +255,7 @@ export default function MeetingReservationForm() {
               onChange={() => setAccepted(!accepted)}
             />
             <label htmlFor="kvkkCheckbox" className="text-xs text-gray-800">
-              KVKK koşullarını kabul ediyorum.
+              {t("kvkkAccept")}
             </label>
           </div>
 
@@ -266,10 +270,10 @@ export default function MeetingReservationForm() {
             disabled={loading}
             className="w-full bg-gray-100 text-sm font-semibold py-2 rounded-sm hover:bg-gray-200 transition disabled:opacity-50"
           >
-            {loading ? "Gönderiliyor..." : "GÖNDER"}
+            {loading ? tc("sending") : tc("send")}
           </button>
 
-          {success && <p className="text-green-600 text-sm mt-2">Rezervasyon başarıyla alındı!</p>}
+          {success && <p className="text-green-600 text-sm mt-2">{t("success")}</p>}
           {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
         </div>
       </div>

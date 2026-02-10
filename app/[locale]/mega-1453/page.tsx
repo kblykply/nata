@@ -1,0 +1,47 @@
+import React from "react";
+import Hero from "../../components/mega-1453/Hero"; // Ensure Hero is in components folder
+import Life from "../../components/mega-1453/Life"; // Ensure Life is in components folder
+import NearLocations from "../../components/mega-1453/NearLocations"; // Ensure NearLocations is in components folder
+import Design from "../../components/mega-1453/Design"; // Ensure Design is in components folder
+import Contact from "../../components/Contact"; // Ensure Contact is in components folder
+
+import Boxes from "../../components/mega-1453/boxes"; // Ensure Boxes is in components folder
+import Navigator from "../../components/Navigator"; // Ensure Navigator is in components folder
+const Page: React.FC = () => {
+   return (
+         <main className="scroll-smooth a-color-white ">
+         <section id="hero" className="scroll-mt-24">
+           <Hero />
+         </section>
+     
+         <section id="life" className="scroll-mt-24">
+           <Life />
+         </section>
+     
+         <section id="near-locations" className="scroll-mt-24">
+           <NearLocations />
+         </section>
+     
+  
+     
+         
+     
+         <section id="design" className="scroll-mt-24">
+           <Design />
+         </section>
+     
+         <section id="contact">
+           <Contact />
+         </section>
+     
+
+         <section id="boxes" className="scroll-mt-24">
+           <Boxes />
+         </section>
+     
+         <Navigator />
+       </main>
+       );
+};
+
+export default Page;

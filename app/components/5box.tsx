@@ -1,45 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useState, Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-
-const popupContent = [
-  {
-    title: "Ev Almanın En Kolay Yolu: NATA Yaşam’da Başlar!",
-    text: `Hayalindeki eve ulaşmak artık zahmetli bir süreç değil. NATA Yaşam, dijital platformları ve kullanıcı dostu arayüzüyle ev arama deneyimini baştan sona değiştiriyor. İster akıllı filtrelerle arama yap, ister lokasyon bazlı keşfe çık, sana en uygun projeyi saniyeler içinde bulabilirsin.`
-  },
-  {
-    title: "Akıllı Teknolojiyle Donatılmış Yaşam Alanlarıyla Hayatını Kolaylaştır!",
-    text: `Günümüzün hızlı temposuna ayak uydurmak için sadece güzel bir ev değil, aynı zamanda fonksiyonel ve teknolojik çözümler sunan bir yaşam alanına ihtiyaç var. NATA Yaşam projeleri; uzaktan kontrol edilebilen akıllı sistemleri, enerji verimliliği, sosyal donatı alanları ve merkezi lokasyonlarıyla sana zaman kazandırır, yaşam kaliteni artırır.
-
-• Akıllı ev sistemleri
-• Güvenli ve sürdürülebilir altyapı
-• Modern mimari tasarımlar`
-  },
-  {
-    title: "Modern Yaşamın Yeni Tanımı: NATA Yaşam ile Geleceğe Hazır Ol!",
-    text: `Günümüzde konfor, estetik ve teknolojiyi bir arada sunan yaşam alanlarına olan ihtiyaç her geçen gün artıyor. NATA Yaşam projeleri, sadece barınma ihtiyacını değil, aynı zamanda güvenlik, sürdürülebilirlik ve akıllı yaşam çözümleriyle modern bir hayatı mümkün kılıyor. Enerji tasarruflu sistemlerden, sosyal yaşamı destekleyen donatılara kadar her detay düşünülerek tasarlanan bu projeler, merkezi konumları sayesinde ulaşımı kolaylaştırırken, sana zaman kazandırarak yaşam kaliteni yükseltiyor.`
-  },
-  {
-    title: "Ankara’da Yaşamın Yeni Tanımı: Prestij, Konfor ve Değer!",
-    text: `Ankara’nın yükselen bölgelerinde, vizyoner mimarilerle şekillenen NATA Yaşam projeleri; yatırımcılara uzun vadeli kazanç, sakinlerine ise ayrıcalıklı bir yaşam vaat ediyor. Şehrin merkezine sadece dakikalar mesafede, geniş balkonlu dairelerden manzaralı rezidanslara kadar farklı alternatiflerle lüksü ulaşılabilir kılıyoruz.
-
-• Panoramik şehir manzarası
-• Uluslararası ödüllü projeler
-• Prestijli yaşam alanları`
-  },
-  {
-    title: "Hayallerimiz Ortak: Bu Forma, Hepimizin Umudu!",
-    text: `Küçük bir çocuğun odasında başlayan büyük bir hayalin sembolü: Ay-yıldızlı forma. Nata Holding olarak, sporun birleştirici gücüne inanıyor ve çocukların hayallerine ortak oluyoruz. Milli Takımımıza destek verirken, geleceğin yıldızlarına da ilham veriyoruz. 
-
-#AyYıldızİzinİzde`
-  }
-];
+import { useTranslations } from "next-intl";
 
 const images = [
-  "/ramsgardenbahçelievlergorsel.jpg",
+  "/ramsgardenbahçelievlergorsel.jpg",
   "/nata_web_goat_villas.jpg",
   "/sehrin-merkezinde-hayatın-yeni-noktası.jpg",
   "/türkiyenin-en-prestijli-projeleri.jpg",
@@ -48,6 +16,15 @@ const images = [
 
 export default function InfoSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const t = useTranslations("fiveBox");
+
+  const popupContent = [
+    { title: t("popup1Title"), text: t("popup1Text") },
+    { title: t("popup2Title"), text: t("popup2Text") },
+    { title: t("popup3Title"), text: t("popup3Text") },
+    { title: t("popup4Title"), text: t("popup4Text") },
+    { title: t("popup5Title"), text: t("popup5Text") },
+  ];
 
   return (
     <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 w-full px-4 py-10">
@@ -82,7 +59,7 @@ export default function InfoSection() {
     >
       <div
         className="fixed inset-0 bg-black/80"
-        onClick={() => setOpenIndex(null)} // ✅ Clicking on black closes
+        onClick={() => setOpenIndex(null)}
       />
     </Transition.Child>
 
@@ -98,7 +75,7 @@ export default function InfoSection() {
       >
         <div
           className="relative w-[930px] h-[584px] grid grid-cols-1 md:grid-cols-2 bg-white rounded-lg shadow-lg overflow-hidden z-20"
-          onClick={(e) => e.stopPropagation()} // ✅ Prevent close if clicked inside
+          onClick={(e) => e.stopPropagation()}
         >
           <div className="relative w-full h-full">
             <Image

@@ -4,7 +4,7 @@
   import { useState } from "react";
   import { FaFire, FaTrain } from "react-icons/fa";
   import { FiPlus } from "react-icons/fi";
-  import Link from "next/link";
+  import { Link } from "@/i18n/navigation";
 
   interface Listing {
     link: string;

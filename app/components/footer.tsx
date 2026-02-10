@@ -1,9 +1,10 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { useTranslations } from "next-intl";
 
 
 const socials = [
@@ -14,6 +15,9 @@ const socials = [
 ];
 
 export default function Footer() {
+  const t = useTranslations("footer");
+  const tHeader = useTranslations("header");
+
   return (
     <footer className="bg-gray-100 text-gray-800 py-10 px-6 md:px-16 text-sm">
       <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
@@ -28,24 +32,24 @@ export default function Footer() {
           <div className="flex flex-wrap gap-3">
 <a href="/rezervation">
   <button className="px-4 py-2 bg-[#ab1e3b] text-white rounded-full">
-    Bir çağrı talep edin
+    {t("requestCall")}
   </button>
 </a>
-<a href="/contact-us">
+<Link href="/contact-us">
 
-            <button className="px-4 py-2 border rounded-full">Bize yazın</button>
-            </a>
+            <button className="px-4 py-2 border rounded-full">{t("writeUs")}</button>
+            </Link>
 
           </div>
           <div>
-            <h4 className="font-semibold">Merkezi Satış Ofisi</h4>
+            <h4 className="font-semibold">{t("centralSalesOffice")}</h4>
             <p>
 Mustafa Kemal, 2127. Cd No:21, 06530 Çankaya/Ankara
 </p>
-            <p>9:30 ile 18:30 saatleri arasında çalışıyoruz.</p>
+            <p>{t("workingHours")}</p>
           </div>
           <div>
-            <p className="font-semibold mt-4">Sosyal Medya</p>
+            <p className="font-semibold mt-4">{t("socialMedia")}</p>
             <div className="flex space-x-4 mt-2">
   {socials.map(({ icon: Icon, name, url }, idx) => (
     <Link href={url} key={idx} aria-label={name} target="_blank" rel="noopener noreferrer">
@@ -62,7 +66,7 @@ Mustafa Kemal, 2127. Cd No:21, 06530 Çankaya/Ankara
         {/* Middle Columns */}
         <div className="col-span-3 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
           <div>
-            <h5 className="font-semibold mb-2">Satışı Devam Eden Projeler</h5>
+            <h5 className="font-semibold mb-2">{t("ongoingProjects")}</h5>
           <ul className="flex flex-col gap-2">
   {[
     { name: "VEGA CENTER", url: "/vega-center" },
@@ -89,7 +93,7 @@ Mustafa Kemal, 2127. Cd No:21, 06530 Çankaya/Ankara
           </div>
 
           <div>
-            <h5 className="font-semibold mb-2">Gelecek Projeler</h5>
+            <h5 className="font-semibold mb-2">{t("upcomingProjects")}</h5>
           <ul className="flex flex-col gap-2">
   {[
     { name: "YALIKAVAK", url: "https://www.google.com/maps/place/37%C2%B008'18.0%22N+27%C2%B019'06.2%22E/@37.1385557,27.3174448,669m/data=!3m1!1e3!4m4!3m3!8m2!3d37.1383333!4d27.3183889?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D" },
@@ -112,7 +116,7 @@ Mustafa Kemal, 2127. Cd No:21, 06530 Çankaya/Ankara
 </ul>
 
 
-            <h5 className="font-semibold mt-4 mb-2">Satışı Tamamlanmış Projeler</h5>
+            <h5 className="font-semibold mt-4 mb-2">{t("completedProjects")}</h5>
           <ul className="flex flex-col gap-2">
   {[
     { name: "ANTARES KONUTLARI 1. ETAP", url: "/anteres" },
@@ -137,14 +141,14 @@ Mustafa Kemal, 2127. Cd No:21, 06530 Çankaya/Ankara
           </div>
 
           <div>
-            <h5 className="font-semibold mb-2">Sayfalar</h5>
+            <h5 className="font-semibold mb-2">{t("pages")}</h5>
           <ul className="flex flex-col gap-2">
   {[
-    { name: "Ana Sayfa", url: "/" },
-    { name: "Hakkımızda", url: "/about-us" },
-    { name: "Kampanyalar", url: "/kampanya" },
-    { name: "N-Bülten", url: "/n-bulten" },
-    { name: "İletişim", url: "/contact-us" },
+    { name: tHeader("home"), url: "/" },
+    { name: tHeader("aboutUs"), url: "/about-us" },
+    { name: tHeader("campaigns"), url: "/kampanya" },
+    { name: tHeader("nBulletin"), url: "/n-bulten" },
+    { name: tHeader("contact"), url: "/contact-us" },
    
   ].map((item, i) => (
     <li key={i}>
@@ -157,7 +161,7 @@ Mustafa Kemal, 2127. Cd No:21, 06530 Çankaya/Ankara
           </div>
 
           <div>
-  <h5 className="font-semibold mb-2">Diğer Nata Siteleri</h5>
+  <h5 className="font-semibold mb-2">{t("otherNataSites")}</h5>
           <ul className="flex flex-col gap-2">
     {[
       { name: "Nata Holding", url: "https://www.nataholding.com/" },
@@ -181,12 +185,12 @@ Mustafa Kemal, 2127. Cd No:21, 06530 Çankaya/Ankara
       <div className="mt-10 border-t pt-6 text-xs text-center text-gray-500">
         <p className="mb-2">
           <Link href="/kvkk" className="text-blue-600 hover:underline">
-            Gizlilik Politikası
+            {t("privacyPolicy")}
           </Link>
-          {" · Kişisel verilerin işlenmesine onay"}
+          {" · "}{t("personalDataConsent")}
         </p>
         <p>
-          © NATA HOLDING 2025. Tüm hakları saklıdır. Bu sitede yayınlanan bilgiler sadece bilgilendirme amaçlıdır.
+          {t("copyright")}
         </p>
       </div>
     </footer>

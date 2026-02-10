@@ -1,4 +1,6 @@
 "use client";
+import { useTranslations } from "next-intl";
+"use client";
 
 import { useState } from "react";
 import { FiMenu, FiSend, FiX } from "react-icons/fi";
@@ -47,7 +49,7 @@ export default function ExpandableNavigator() {
               {/* Close Button */}
               <button
                 onClick={() => setIsOpen(false)}
-                aria-label="Menüyü Kapat"
+                aria-label="Close Menu"
                 className="w-8 h-8 flex items-center justify-center rounded-full border border-white text-white"
               >
                 <FiX size={16} />
@@ -58,7 +60,7 @@ export default function ExpandableNavigator() {
               {/* Menu Button */}
               <button
                 onClick={() => setIsOpen(true)}
-                aria-label="Menüyü Aç"
+                aria-label="Open Menu"
                 className="w-9 h-9 flex items-center justify-center rounded-full border border-white text-white"
               >
                 <FiMenu size={18} />

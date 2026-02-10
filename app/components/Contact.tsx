@@ -8,7 +8,7 @@ import { Pagination } from "swiper/modules";
 import SwiperCore from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
-  import Link from "next/link";
+  import { Link } from "@/i18n/navigation";
   
 
 export default function ContactQrSection() {

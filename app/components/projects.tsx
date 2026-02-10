@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useRouter } from "next/navigation";
 import { Fragment, useState } from "react";
 import { FaFire, FaTrain, FaWhatsapp } from "react-icons/fa";

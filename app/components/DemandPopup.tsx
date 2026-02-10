@@ -1,5 +1,6 @@
 "use client";
 import React, { useMemo, useState } from "react";
+import { useTranslations } from "next-intl";
 
 interface DemandPopupProps {
   onClose: () => void;
@@ -12,6 +13,9 @@ export default function DemandPopup({
   projects,
   selectedProject,
 }: DemandPopupProps) {
+  const t = useTranslations("demand");
+  const tc = useTranslations("common");
+
   const initialProject = useMemo(() => {
     if (selectedProject && projects.some(p => p.title === selectedProject)) return selectedProject;
     return projects[0]?.title ?? "";
@@ -60,9 +64,9 @@ export default function DemandPopup({
     };
     setErrors(nextErrors);
     setErrorMessages({
-      name: nextErrors.name ? "Bu alanı doldurun" : "",
-      phone: nextErrors.phone ? "Bu alanı doldurun" : "",
-      project: nextErrors.project ? "Bu alanı doldurun" : "",
+      name: nextErrors.name ? tc("requiredField") : "",
+      phone: nextErrors.phone ? tc("requiredField") : "",
+      project: nextErrors.project ? tc("requiredField") : "",
     });
     if (Object.values(nextErrors).some(Boolean)) {
       return;
@@ -87,7 +91,6 @@ export default function DemandPopup({
 
       const data = await res.json().catch(() => ({}));
       if (!res.ok || data?.ok === false) {
-        // data.body sunucudan dönen ham hata metni olabilir
         throw new Error(
           data?.error ||
           data?.body ||
@@ -95,12 +98,12 @@ export default function DemandPopup({
         );
       }
 
-      alert("Talebiniz başarıyla gönderildi. Teşekkürler!");
+      alert(t("submitSuccess"));
       onClose();
     } catch (err: any) {
       console.error("Submission error:", err);
-      setErrorMsg(err?.message ?? "Form gönderilirken bir hata oluştu.");
-      alert(err?.message ?? "Form gönderilirken bir hata oluştu. Lütfen tekrar deneyin.");
+      setErrorMsg(err?.message ?? t("submitError"));
+      alert(err?.message ?? t("submitErrorRetry"));
     } finally {
       setSubmitting(false);
     }
@@ -112,16 +115,16 @@ export default function DemandPopup({
         <button
           onClick={onClose}
           className="absolute right-3 top-2 text-xl font-bold text-gray-500 hover:text-gray-700"
-          aria-label="Kapat"
+          aria-label={tc("close")}
         >
           ×
         </button>
 
-        <h3 className="mb-4 text-center text-lg font-semibold">Ön Talep Formu</h3>
+        <h3 className="mb-4 text-center text-lg font-semibold">{t("title")}</h3>
 
         <form onSubmit={handleSubmit} className="space-y-4 text-left">
           <div>
-            <label className="block text-sm font-medium">Ad Soyad</label>
+            <label className="block text-sm font-medium">{t("nameSurname")}</label>
             <input
               type="text"
               name="name"
@@ -137,7 +140,7 @@ export default function DemandPopup({
           </div>
 
           <div>
-            <label className="block text-sm font-medium">Telefon</label>
+            <label className="block text-sm font-medium">{t("phone")}</label>
             <input
               type="tel"
               name="phone"
@@ -154,7 +157,7 @@ export default function DemandPopup({
           </div>
 
           <div>
-            <label className="block text-sm font-medium">Proje Seçin</label>
+            <label className="block text-sm font-medium">{t("selectProject")}</label>
             <select
               name="project"
               value={formData.project}
@@ -175,7 +178,7 @@ export default function DemandPopup({
           </div>
 
           <div>
-            <label className="block text-sm font-medium">Mesaj (Opsiyonel)</label>
+            <label className="block text-sm font-medium">{t("messageOptional")}</label>
             <textarea
               name="message"
               value={formData.message}
@@ -194,7 +197,7 @@ export default function DemandPopup({
             disabled={submitting}
             className="w-full rounded-md bg-[#ab1e3b] py-2 text-white transition hover:bg-[#901932] disabled:cursor-not-allowed disabled:opacity-70"
           >
-            {submitting ? "Gönderiliyor..." : "Gönder"}
+            {submitting ? tc("sending") : tc("submit")}
           </button>
         </form>
       </div>

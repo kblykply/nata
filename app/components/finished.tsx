@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { FaFire, FaTrain } from "react-icons/fa";
 import { FiPlus } from "react-icons/fi";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { SlidersHorizontal, X } from "lucide-react";
 
 interface Listing {

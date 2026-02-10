@@ -2,9 +2,10 @@
 
   import { X } from "lucide-react";
   import Image from "next/image";
-  import Link from "next/link";
+  import { Link } from "@/i18n/navigation";
   import ReCAPTCHA from "react-google-recaptcha";
   import { useState, useEffect, useRef } from "react";
+  import { useTranslations } from "next-intl";
 
 
 
@@ -36,6 +37,8 @@
       message: "",
     });
 
+    const t = useTranslations("contact");
+    const tc = useTranslations("common");
 
     const modalRef = useRef<HTMLDivElement>(null);
 
@@ -54,21 +57,21 @@
       };
       setErrors(nextErrors);
       setErrorMessages({
-        name: nextErrors.name ? "Bu alanı doldurun" : "",
-        email: nextErrors.email ? "Bu alanı doldurun" : "",
-        phone: nextErrors.phone ? "Bu alanı doldurun" : "",
-        message: nextErrors.message ? "Bu alanı doldurun" : "",
+        name: nextErrors.name ? tc("requiredField") : "",
+        email: nextErrors.email ? tc("requiredField") : "",
+        phone: nextErrors.phone ? tc("requiredField") : "",
+        message: nextErrors.message ? tc("requiredField") : "",
       });
       if (Object.values(nextErrors).some(Boolean)) {
         return;
       }
 
       if (!recaptchaToken) {
-    setError("Lütfen reCAPTCHA doğrulamasını tamamlayın.");
+    setError(t("recaptchaError"));
     return;
   }
       if (!accepted) {
-        setError("Lütfen KVKK koşullarını kabul ediniz.");
+        setError(t("kvkkError"));
         return;
       }
 
@@ -92,10 +95,10 @@
           setErrors({ name: false, email: false, phone: false, message: false });
           setErrorMessages({ name: "", email: "", phone: "", message: "" });
         } else {
-          setError("Gönderim başarısız.");
+          setError(t("submitFailed"));
         }
       } catch {
-        setError("Sunucu hatası, lütfen tekrar deneyin.");
+        setError(t("serverError"));
       } finally {
         setLoading(false);
       }
@@ -118,8 +121,8 @@
             <button
               onClick={onClose}
               className="absolute top-4 right-4 text-gray-500 hover:text-black"
-              title="Kapat"
-              aria-label="Kapat"
+              title={tc("close")}
+              aria-label={tc("close")}
             >
               <X size={20} />
             </button>
@@ -127,7 +130,7 @@
             <div>
               <input
                 type="text"
-                placeholder="İsim Soyisim"
+                placeholder={tc("nameSurname")}
                 value={name}
                 onChange={(e) => {
                   setName(e.target.value);
@@ -147,7 +150,7 @@
             <div>
               <input
                 type="email"
-                placeholder="E-mail"
+                placeholder={tc("email")}
                 value={email}
                 onChange={(e) => {
                   setEmail(e.target.value);
@@ -167,7 +170,7 @@
             <div>
               <input
                 type="tel"
-                placeholder="Telefon"
+                placeholder={tc("phone")}
                 value={phone}
                 onChange={(e) => {
                   setPhone(e.target.value);
@@ -186,7 +189,7 @@
             </div>
             <div>
               <textarea
-                placeholder="Mesajınız"
+                placeholder={tc("message")}
                 value={message}
                 onChange={(e) => {
                   setMessage(e.target.value);
@@ -214,11 +217,11 @@
   />
   <label htmlFor="kvkkCheckbox" className="text-xs text-gray-800 leading-snug">
     <span className="block">
-      <strong>Kişisel Verilerin Korunması</strong> hakkında bilgilendirildim ve{" "}
+      <strong>{t("kvkkLabel")}</strong> {t("kvkkInfoText")}{" "}
       <Link href="/kvkk" target="_blank" className="underline text-blue-600 hover:text-blue-800">
-        KVKK Aydınlatma Metni
+        {t("kvkkLinkText")}
       </Link>
-      ’ni okudum. Koşulları kabul ediyorum.
+      {" "}{t("kvkkAccept")}
     </span>
   </label>
 </div>
@@ -229,20 +232,20 @@
               disabled={loading}
               className="w-full bg-gray-100 text-sm font-semibold py-2 rounded-sm hover:bg-gray-200 transition disabled:opacity-50"
             >
-              {loading ? "Gönderiliyor..." : "GÖNDER"}
+              {loading ? tc("sending") : tc("send")}
             </button>
   <ReCAPTCHA
-    sitekey="6LeDBj8rAAAAAITpieFy0OTWktxwblgStiQHc9iv" // ⬅️ Replace this!
+    sitekey="6LeDBj8rAAAAAITpieFy0OTWktxwblgStiQHc9iv"
     onChange={(token) => setRecaptchaToken(token || "")}
     className="mt-2"
   />
-            {success && <p className="text-green-600 text-sm mt-2">Form başarıyla gönderildi!</p>}
+            {success && <p className="text-green-600 text-sm mt-2">{t("formSuccess")}</p>}
             {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
 
             <div className="mt-8 text-sm text-black space-y-1">
            <Link href="/rezervation" passHref>
   <button className="mt-4 px-4 py-2 border border-gray-300 rounded-xl font-medium text-sm hover:bg-gray-50 transition">
-    Satış ofisiyle görüşme planlayın
+    {t("planMeeting")}
   </button>
 </Link>
 

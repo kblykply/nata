@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { ChevronDown, SlidersHorizontal, X } from "lucide-react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useFavorites } from "@/app/contexts/FavoritesContext";
 
 

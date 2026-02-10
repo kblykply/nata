@@ -3,17 +3,7 @@
 import { useState, useEffect } from "react";
 import { FiMenu, FiSend, FiX } from "react-icons/fi";
 import { usePathname } from "next/navigation";
-
-const sections = [
-  { id: "hero", label: "Proje Hakkında" },
-  { id: "life", label: "Yaşam" },
-  { id: "near-locations", label: "Konum" },
-  { id: "design", label: "Galeri" },
-  { id: "contact", label: "İletişim" },
-  { id: "boxes", label: "Daha Fazla" },
-];
-
-
+import { useTranslations } from "next-intl";
 
 const sectionLinks: Record<string, { path: string; mapUrl: string }> = {
   "vega-center": {
@@ -60,29 +50,33 @@ const sectionLinks: Record<string, { path: string; mapUrl: string }> = {
   },
   "incek": {
     path: "/incek",
-    // Based on Yandex coordinates (39.820070, 32.771799):
     mapUrl:
       "https://www.google.com/maps/place/Nata+%C4%B0ncek+Konutlar%C4%B1/@39.8203951,32.7712204,403m/data=!3m1!1e3!4m14!1m7!3m6!1s0x14d341228b217a1b:0x24f86bfeee2276bc!2sNata+%C4%B0ncek+Konutlar%C4%B1!8m2!3d39.820393!4d32.7725079!16s%2Fg%2F11c1xhc1qm!3m5!1s0x14d341228b217a1b:0x24f86bfeee2276bc!8m2!3d39.820393!4d32.7725079!16s%2Fg%2F11c1xhc1qm?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D",
   },
   "vega-konut-kuleleri": {
     path: "/vega-konut-kuleleri",
-    // Transit info confirms its location in Mamak, Ankara:
     mapUrl:
       "https://www.google.com/maps/place/Nata+Vega+Konut+Kuleleri/@39.8904937,32.9312976,805m/data=!3m2!1e3!4b1!4m6!3m5!1s0x14d35051be4f25db:0xf931f0881a15c496!8m2!3d39.8904896!4d32.9338725!16s%2Fg%2F11c0vy_395?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D",
   },
 };
 
-
-
-
-
-
 export default function ExpandableNavigator() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("");
-  const pathname = usePathname(); // e.g. "/rams-garden"
-const slug = pathname.replace("/", "").split("?")[0]; // clean slug like "rams-garden"
-const mapUrl = sectionLinks[slug]?.mapUrl || "#";     // default fallback "#"
+  const pathname = usePathname();
+  const t = useTranslations("navigator");
+
+  const sections = [
+    { id: "hero", label: t("aboutProject") },
+    { id: "life", label: t("life") },
+    { id: "near-locations", label: t("location") },
+    { id: "design", label: t("gallery") },
+    { id: "contact", label: t("contact") },
+    { id: "boxes", label: t("more") },
+  ];
+
+  const slug = pathname.replace("/", "").split("?")[0];
+  const mapUrl = sectionLinks[slug]?.mapUrl || "#";
 
   useEffect(() => {
     const handleIntersection = (entries: IntersectionObserverEntry[]) => {
@@ -119,7 +113,7 @@ const mapUrl = sectionLinks[slug]?.mapUrl || "#";     // default fallback "#"
         {/* Left Side */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          aria-label={isOpen ? "Menüyü Kapat" : "Menüyü Aç"}
+          aria-label={isOpen ? t("closeMenu") : t("openMenu")}
           className="w-9 h-9 flex items-center justify-center rounded-full border border-white text-white"
         >
           {isOpen ? <FiX size={18} /> : <FiMenu size={18} />}
@@ -153,7 +147,7 @@ const mapUrl = sectionLinks[slug]?.mapUrl || "#";     // default fallback "#"
       : 'max-w-[140px] whitespace-nowrap overflow-hidden text-ellipsis'
   }`}
 >
-  NATA Yaşam, yaşamın kalbinde, konforun zirvesinde.
+  {t("tagline")}
 </div>
 
       {/* Right Action Button */}
@@ -162,7 +156,7 @@ const mapUrl = sectionLinks[slug]?.mapUrl || "#";     // default fallback "#"
     href={mapUrl}
     target="_blank"
     rel="noopener noreferrer"
-    aria-label="Haritada Gör"
+    aria-label={t("location")}
   >
     <button
       className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-600 text-white shadow-md"
