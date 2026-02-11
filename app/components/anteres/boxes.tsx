@@ -1,45 +1,48 @@
 "use client";
 
 import Image from "next/image";
-
-const cards = [
-  {
-    id: 1,
-    type: "image",
-    title: "Haberleri öğrenin",
-    highlight: "Proje Hakkında Tüm Bilgiler",
-    background: "/antares-1.jpg",
-    wide: true,
-    link: "https://www.antareskonutlari.com.tr/",
-  },
-  {
-    id: 2,
-    type: "icon",
-    title: "Belgeleri İndirin",
-    highlight: "NATA Yaşam Projeleri",
-    icon: "/x.png",
-            link: "https://www.antareskonutlari.com.tr/kat-planlari.php",
-  },
-  {
-    id: 3,
-    type: "image",
-    title: "Ziyaret Edin",
-    highlight: "Projenin Lokasyonunu Görün",
-    background: "/antares-3.jpg",
-    link: "https://maps.app.goo.gl/nhMqmef8UWB8NK5h9",
-  },
-  {
-    id: 4,
-    type: "icon",
-    title: "Sorularınızı Cevaplıyoruz",
-    highlight: "5 dakika içinde",
-    icon: "/vegacenter-canli-destek.png",
-    subtitle: "Projesyonel Ekibimizle",
-    link: "https://api.whatsapp.com/send/?phone=905017111818&text=Merhaba%2C+projeleriniz+hakk%C4%B1nda+detayl%C4%B1+bilgi+almak+istiyorum.&type=phone_number&app_absent=0",
-  },
-];
+import { useTranslations } from "next-intl";
 
 export default function InfoCardsSection() {
+  const tBoxes = useTranslations("anteres.boxes.cards");
+
+  const cards = [
+    {
+      id: 1,
+      type: "image",
+      title: tBoxes("1.title"),
+      highlight: tBoxes("1.highlight"),
+      background: "/antares-1.jpg",
+      wide: true,
+      link: "https://www.antareskonutlari.com.tr/",
+    },
+    {
+      id: 2,
+      type: "icon",
+      title: tBoxes("2.title"),
+      highlight: tBoxes("2.highlight"),
+      icon: "/x.png",
+      link: "https://www.antareskonutlari.com.tr/kat-planlari.php",
+    },
+    {
+      id: 3,
+      type: "image",
+      title: tBoxes("3.title"),
+      highlight: tBoxes("3.highlight"),
+      background: "/antares-3.jpg",
+      link: "https://maps.app.goo.gl/nhMqmef8UWB8NK5h9",
+    },
+    {
+      id: 4,
+      type: "icon",
+      title: tBoxes("4.title"),
+      highlight: tBoxes("4.highlight"),
+      icon: "/vegacenter-canli-destek.png",
+      subtitle: tBoxes("4.subtitle"),
+      link: "https://api.whatsapp.com/send/?phone=905017111818&text=Merhaba%2C+projeleriniz+hakk%C4%B1nda+detayl%C4%B1+bilgi+almak+istiyorum.&type=phone_number&app_absent=0",
+    },
+  ];
+
   return (
     <section className="w-full bg-white py-12 px-4">
       <div className="flex flex-wrap justify-center gap-6 max-w-7xl mx-auto">

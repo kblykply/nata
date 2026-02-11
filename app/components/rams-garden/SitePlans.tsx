@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 type Hotspot = {
   id: number;
   label: string;
@@ -109,6 +110,7 @@ const hotspots = [
   
 ];
 export default function SidePlans() {
+  const tSitePlans = useTranslations("ramsGarden.sitePlans");
   const [hovered, setHovered] = useState<{ id: number; x: number; y: number } | null>(null);
   const [hoveredImage, setHoveredImage] = useState<string | null>(null);
 
@@ -131,12 +133,11 @@ export default function SidePlans() {
     <section className="relative w-full bg-white">
       {/* Header */}
       <div className="text-center max-w-4xl mx-auto py-12 md:py-16 px-4">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-wide text-gray-900">
-          Yaşam Nerede <br /> Biz Orada.
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-wide text-gray-900 whitespace-pre-line">
+          {tSitePlans("title")}
         </h2>
         <p className="mt-4 text-sm md:text-base text-gray-700 leading-relaxed">
-          RAMS GARDEN, İstanbul’un kalbinde, Yenimahalle Orman Çiftliği Mahallesi’nde
-          şehrin ritmini yeniden tanımlayan eşsiz bir yaşam deneyimi sunuyor...
+          {tSitePlans("description")}
         </p>
       </div>
 

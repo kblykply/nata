@@ -3,86 +3,78 @@
 import Image from "next/image";
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-
-const slides = [
-  {
-    title: "Prestijli Yaşam için Mega 1453",
-    image: "/mega-prestij.jpg",
-    popup: {
-      title: "Modern Mimarinin, Konforun ve Değerli Yatırımın Buluşma Noktası",
-      text: "Mega 1453, şehrin merkezinde konfor, estetik ve prestiji bir araya getiriyor. Hem ayrıcalıklı bir yaşam hem de kazançlı bir yatırım fırsatı sunuyor.",
-      images: ["/mega  Prestijli Yaşam için Mega 1453.jpg", "/mega Prestijli Yaşam için Mega 1453.jpg"]
-    }
-  },
-  {
-    title: "Doğa ile İç İçe Mimari",
-    image: "/mega-doga.jpg",
-    popup: {
-      title: "Yeşilin huzuru, modern yaşamla buluşuyor.",
-      text: "Mega 1453, doğayla uyumlu tasarımıyla sizi şehirde sakin ve ferah bir yaşama davet ediyor. Her anınızı yeşilin içinde geçirmenin ayrıcalığını sunuyor.",
-      images: ["/mega Doğa ile İç İçe Mimari (2).jpg", "/mega Doğa ile İç İçe Mimari.jpg"]
-    }
-  },
-  {
-    title: "Modern Yaşamın Yeni Merkezi",
-    image: "/mega-modern.jpg",
-    popup: {
-      title: "Şehrin kalbinde yenilikçi ve konforlu yaşam.",
-      text: "Mega 1453, modern mimarisi ve merkezi konumuyla çağdaş yaşamın tüm ayrıcalıklarını bir araya getiriyor. Hem sosyal hem de konforlu bir yaşam sizi bekliyor.",
-      images: ["/mega Modern Yaşamın Yeni Merkezi (2).jpg", "/mega Modern Yaşamın Yeni Merkezi.jpg"]
-    }
-  },
- 
-  {
-    title: "Şehrin İçinde Huzurlu Yaşam Alanı",
-    image: "/mega-sehir.jpg",
-    popup: {
-      title: "Şehir merkezinde sakin ve konforlu bir hayat.",
-      text: "Mega 1453, şehir yaşamının dinamizmi içinde size huzur dolu bir yaşam sunuyor. Doğayla iç içe, modern ve ferah yaşam alanlarıyla fark yaratıyor.",
-      images: ["/mega Şehrin İçinde Huzurlu Yaşam Alanı (2).jpg", "/mega Şehrin İçinde Huzurlu Yaşam Alanı.jpg"]
-    }
-  },
-
-
-  {
-    title: "⁠Akıllı güvenlik ile kontrollü giriş",
-    image: "/mega-akıllı.jpg",
-    popup: {
-      title: "Güvenli ve huzurlu yaşamın teknolojik çözümü.",
-      text: "Akıllı sistemlerle donatılmış giriş-çıkışlar sayesinde, her anınız güven altında. Teknoloji destekli güvenlik ile hem evinizde hem iş yerinizde huzurla yaşayın.",
-      images: ["/mega ⁠Akıllı güvenlik ile kontrollü giriş (2).jpg", "/mega ⁠Akıllı güvenlik ile kontrollü giriş.jpg"]
-    }
-  },
-  {
-    title: "Zengin Altyapı",
-    image: "/mega-zengin.jpg",
-    popup: {
-      title: "Modern yaşam için güçlü altyapı çözümleri.",
-      text: "Kesintisiz enerji, hızlı internet ve ileri teknoloji olanaklarıyla donatılmış altyapı, hem yaşam hem de şehir hayatında konfor ve süreklilik sağlar.",
-      images: ["/mega Zengin Altyapı (2).jpg", "/mega Zengin Altyapı.jpg"]
-    }
-  },
-  {
-    title: "Verimli planlamalar",
-    image: "/mega-verimli.jpg",
-    popup: {
-      title: "Alan kullanımında maksimum konfor ve işlevsellik.",
-      text: "Kesintisiz enerji, hızlı internet ve ileri teknoloji olanaklarıyla donatılmış altyapı, hem yaşam hem de şehir hayatında konfor ve süreklilik sağlar.İhtiyaca uygun tasarlanmış yaşam ve çalışma alanlarıyla, her metrekare akıllıca değerlendiriliyor. Fonksiyonel çözümlerle konfor ve verimlilik bir arada sunuluyor.",
-      images: ["/mega Verimli planlamalar (2).jpg", "/mega Verimli planlamalar.jpg"]
-    }
-  },
-  {
-    title: "⁠Güvenli ve Konforlu Açık - Kapalı Otopark",
-    image: "/mega-güven.jpg",
-    popup: {
-      title: "Araçlarınız için güvenli, size özel alanlar.",
-      text: "Geniş ve modern tasarlanmış kapalı otopark ile aracınız her zaman güvende. Kolay erişim ve konforlu park alanlarıyla şehir yaşamının stresinden uzaklaşın.",
-      images: ["/mega ⁠Güvenli ve konforlu yeraltı otopark (2).jpg", "/mega ⁠Güvenli ve konforlu yeraltı otopark.jpg"]
-    }
-  },
-];
+import { useTranslations } from "next-intl";
 
 export default function ProjectLifeRhythmSection() {
+  const tLife = useTranslations("mega1453.life");
+
+  const slides = [
+    {
+      id: 1,
+      image: "/mega-prestij.jpg",
+      images: [
+        "/mega  Prestijli Yaşam için Mega 1453.jpg",
+        "/mega Prestijli Yaşam için Mega 1453.jpg",
+      ],
+    },
+    {
+      id: 2,
+      image: "/mega-doga.jpg",
+      images: [
+        "/mega Doğa ile İç İçe Mimari (2).jpg",
+        "/mega Doğa ile İç İçe Mimari.jpg",
+      ],
+    },
+    {
+      id: 3,
+      image: "/mega-modern.jpg",
+      images: [
+        "/mega Modern Yaşamın Yeni Merkezi (2).jpg",
+        "/mega Modern Yaşamın Yeni Merkezi.jpg",
+      ],
+    },
+    {
+      id: 4,
+      image: "/mega-sehir.jpg",
+      images: [
+        "/mega Şehrin İçinde Huzurlu Yaşam Alanı (2).jpg",
+        "/mega Şehrin İçinde Huzurlu Yaşam Alanı.jpg",
+      ],
+    },
+    {
+      id: 5,
+      image: "/mega-akıllı.jpg",
+      images: [
+        "/mega ⁠Akıllı güvenlik ile kontrollü giriş (2).jpg",
+        "/mega ⁠Akıllı güvenlik ile kontrollü giriş.jpg",
+      ],
+    },
+    {
+      id: 6,
+      image: "/mega-zengin.jpg",
+      images: [
+        "/mega Zengin Altyapı (2).jpg",
+        "/mega Zengin Altyapı.jpg",
+      ],
+    },
+    {
+      id: 7,
+      image: "/mega-verimli.jpg",
+      images: [
+        "/mega Verimli planlamalar (2).jpg",
+        "/mega Verimli planlamalar.jpg",
+      ],
+    },
+    {
+      id: 8,
+      image: "/mega-güven.jpg",
+      images: [
+        "/mega ⁠Güvenli ve konforlu yeraltı otopark (2).jpg",
+        "/mega ⁠Güvenli ve konforlu yeraltı otopark.jpg",
+      ],
+    },
+  ];
+
   const [index, setIndex] = useState(0);
   const [popupIndex, setPopupIndex] = useState<number | null>(null);
   const totalSlides = slides.length;
@@ -124,12 +116,11 @@ const handlePointerUp = () => {
 
 
       
-      <h2 className="text-3xl font-light text-gray-800 uppercase leading-tight">
-      MEGA 1453  <br />ANKARA'nın kalbinde
+      <h2 className="text-3xl font-light text-gray-800 uppercase leading-tight whitespace-pre-line">
+        {tLife("title")}
       </h2>
       <p className="mt-4 text-sm text-gray-600 max-w-xl mx-auto">
-Toplamda 70.000 m²’lik geniş arsa alanında yükselen bu prestijli proje, başkentin dokusuna doğa ile harmanlanmış bir soluk getiriyor. Özgün mimarisi ve 36.000 m² peyzaj alanıyla modern yaşamı yeniden tasarlayan MEGA 1453, her biri yüksek yaşam standartlarına sahip toplam 715 konut ve ticari alanları ile oluşuyor.
-
+        {tLife("description")}
       </p>
 
       <div className="relative mt-12 w-full max-w-7xl mx-auto h-[500px]">
@@ -186,12 +177,12 @@ Toplamda 70.000 m²’lik geniş arsa alanında yükselen bu prestijli proje, ba
   
                   <Image
                     src={slide.image}
-                    alt={slide.title}
+                    alt={tLife(`slides.${slide.id}.title` as const)}
                     fill
                     className="object-cover rounded-xl"
                   />
                   <div className="absolute top-4 left-4 bg-black/50 text-white text-xs px-3 py-1 rounded">
-                    {slide.title}
+                    {tLife(`slides.${slide.id}.title` as const)}
                   </div>
                   {index === i && (
   <>
@@ -203,7 +194,7 @@ Toplamda 70.000 m²’lik geniş arsa alanında yükselen bu prestijli proje, ba
     rel="noopener noreferrer"   // <-- Change this URL to your target link
         className="z-100 absolute    left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-black text-sm text-white  px-5 py-2 rounded-full shadow"
       >
-        Sunuma Git
+        {tLife("buttons.goToPresentation")}
       </a>
     ) : (
       // For other slides, open popup
@@ -211,7 +202,7 @@ Toplamda 70.000 m²’lik geniş arsa alanında yükselen bu prestijli proje, ba
         onClick={() => setPopupIndex(i)}
         className="z-100 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-sm text-gray-700 px-5 py-2 rounded-full shadow"
       >
-        Ayrıntılı Bilgi
+        {tLife("buttons.details")}
       </button>
     )}
   </>
@@ -223,16 +214,16 @@ Toplamda 70.000 m²’lik geniş arsa alanında yükselen bu prestijli proje, ba
 
           <button
             onClick={() => setIndex((prev) => (prev - 1 + totalSlides) % totalSlides)}
-            aria-label="Önceki"
-            title="Önceki"
+            aria-label={tLife("buttons.previousShort")}
+            title={tLife("buttons.previousShort")}
             className="absolute left-0 top-1/2 -translate-y-1/2 bg-white text-black p-3 rounded-full shadow z-40"
           >
             <FaChevronLeft />
           </button>
           <button
             onClick={() => setIndex((prev) => (prev + 1) % totalSlides)}
-            aria-label="Sonraki"
-            title="Sonraki"
+            aria-label={tLife("buttons.nextShort")}
+            title={tLife("buttons.nextShort")}
             className="absolute right-0 top-1/2 -translate-y-1/2 bg-white text-black p-3 rounded-full shadow z-40"
           >
             <FaChevronRight />
@@ -246,19 +237,19 @@ Toplamda 70.000 m²’lik geniş arsa alanında yükselen bu prestijli proje, ba
             <button
               onClick={() => setPopupIndex(null)}
               className="absolute top-3 right-4 text-gray-500 hover:text-gray-800 text-xl"
-              aria-label="Kapat"
-              title="Kapat"
+              aria-label={tLife("buttons.close")}
+              title={tLife("buttons.close")}
             >
               ✕
             </button>
             <h3 className="text-xl font-semibold text-gray-900 mb-3">
-              {slides[popupIndex].popup.title}
+              {tLife(`slides.${slides[popupIndex].id}.popupTitle` as const)}
             </h3>
             <p className="text-sm text-gray-700 mb-4">
-              {slides[popupIndex].popup.text}
+              {tLife(`slides.${slides[popupIndex].id}.popupText` as const)}
             </p>
             <div className="grid grid-cols-2 gap-4">
-              {slides[popupIndex].popup.images.map((img, i) => (
+              {slides[popupIndex].images.map((img, i) => (
                 <Image
                   key={i}
                   src={img}
@@ -276,7 +267,7 @@ Toplamda 70.000 m²’lik geniş arsa alanında yükselen bu prestijli proje, ba
                 }
                 className="text-sm text-gray-700 hover:underline"
               >
-                ← Geri
+                {tLife("buttons.back")}
               </button>
               <button
                 onClick={() =>
@@ -284,7 +275,7 @@ Toplamda 70.000 m²’lik geniş arsa alanında yükselen bu prestijli proje, ba
                 }
                 className="text-sm text-gray-700 hover:underline"
               >
-                İleri →
+                {tLife("buttons.forward")}
               </button>
             </div>
           </div>

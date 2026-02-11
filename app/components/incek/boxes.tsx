@@ -1,51 +1,51 @@
 "use client";
 
 import Image from "next/image";
-
-const cards = [
-  {
-    id: 1,
-    type: "image",
-    title: "Haberleri öğrenin",
-    highlight: "Proje Hakkında Tüm Bilgiler",
-    background:     "/incek-galeri/nataincek2.jpg",
-
-    wide: true,   // Mark this card as wide
-                    link: "https://www.instagram.com/nataincekkonutlari/",
-
-  },
-  {
-    id: 2,
-    type: "icon",
-    title: "Belgeleri İndirin",
-    highlight: "NATA Yaşam Projeleri",
-    icon: "/x.png",
-                    link: "https://api.whatsapp.com/send/?phone=905017111818&text=Merhaba%2C+projeleriniz+hakk%C4%B1nda+detayl%C4%B1+bilgi+almak+istiyorum.&type=phone_number&app_absent=0",
-
-  },
-  {
-    id: 3,
-    type: "image",
-    title: "Ziyaret Edin",
-    highlight: "Projenin Lokasyonunu Görün",
-    background:    "/incek-galeri/nataincek5.jpg",
-                    link: "https://maps.app.goo.gl/i5kQ8WfUCrxMWR4T8",
-
-
-  },
-  {
-    id: 4,
-    type: "icon",
-    title: "Sorularınızı Cevaplıyoruz",
-    highlight: "5 dakika içinde",
-    icon: "/vegacenter-canli-destek.png",
-    subtitle: "Projesyonel Ekibimizle",
-                    link: "https://api.whatsapp.com/send/?phone=905017111818&text=Merhaba%2C+projeleriniz+hakk%C4%B1nda+detayl%C4%B1+bilgi+almak+istiyorum.&type=phone_number&app_absent=0",
-
-  },
-];
+import { useTranslations } from "next-intl";
+import { buildWhatsAppUrl } from "@/utils/whatsapp";
 
 export default function InfoCardsSection() {
+  const tCommon = useTranslations("common");
+
+  const whatsappLink = buildWhatsAppUrl(tCommon("whatsAppGenericMessage"));
+
+  const cards = [
+    {
+      id: 1,
+      type: "image" as const,
+      title: tCommon("boxesNewsTitle"),
+      highlight: tCommon("boxesNewsHighlight"),
+      background: "/incek-galeri/nataincek2.jpg",
+      wide: true,
+      link: "https://www.instagram.com/nataincekkonutlari/",
+    },
+    {
+      id: 2,
+      type: "icon" as const,
+      title: tCommon("boxesDownloadTitle"),
+      highlight: tCommon("boxesDownloadHighlight"),
+      icon: "/x.png",
+      link: "https://api.whatsapp.com/send/?phone=905017111818&text=Merhaba%2C+projeleriniz+hakk%C4%B1nda+detayl%C4%B1+bilgi+almak+istiyorum.&type=phone_number&app_absent=0",
+    },
+    {
+      id: 3,
+      type: "image" as const,
+      title: tCommon("boxesVisitTitle"),
+      highlight: tCommon("boxesVisitHighlight"),
+      background: "/incek-galeri/nataincek5.jpg",
+      link: "https://maps.app.goo.gl/i5kQ8WfUCrxMWR4T8",
+    },
+    {
+      id: 4,
+      type: "icon" as const,
+      title: tCommon("boxesQuestionsTitle"),
+      highlight: tCommon("boxesQuestionsHighlight"),
+      icon: "/vegacenter-canli-destek.png",
+      subtitle: tCommon("boxesQuestionsSubtitle"),
+      link: whatsappLink,
+    },
+  ];
+
   return (
     <section className="w-full bg-white py-12 px-4">
       <div className="flex flex-wrap justify-center gap-6 max-w-7xl mx-auto">

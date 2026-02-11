@@ -3,117 +3,96 @@
 import Image from "next/image";
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useTranslations } from "next-intl";
 
 const slides = [
   {
-    title: "Kurumsal pencerenin yeni adresi ",
+    id: 1,
     image: "/vegaotonomi-dergi.jpg",
-    popup: {
-      title: "Modern Altyapı ile Kurumsal Kimliğinizi Güçlendirin",
-      text: "Vega Otonomi'nin sunduğu profesyonel iş alanları sayesinde müşterilerinize güven veren bir ortamda hizmet sunun. Modern tasarımı ve kurumsal altyapısıyla işinize prestij kazandırın.",
-      images: ["/vegaotonomi2- İşinize Güven Katın (2).jpg", "/vegaotonomi2- İşinize Güven Katın.jpg"]
-    }
+    images: ["/vegaotonomi2- İşinize Güven Katın (2).jpg", "/vegaotonomi2- İşinize Güven Katın.jpg"],
   },
   {
-    title: "Otomotiv Ticaretinin Yeni Merkezi",
+    id: 2,
     image: "/vegaotonomi-Otomotiv Ticaretinin Yeni Merkezi.jpg",
-    popup: {
-      title: "Sektörün Kalbi Artık Vega Otonomi’de",
-      text: "Vega Otonomi, otomotiv dünyasının tüm ihtiyaçlarını tek çatı altında toplayarak, modern ve yenilikçi yapısıyla ticaretin yeni buluşma noktası oluyor. Araç alım-satımında prestijli bir merkezde yerinizi alın.",
-      images: ["/vegaotonomi2-Otomotiv Ticaretinin Yeni Merkezi (2).jpg", "/vegaotonomi2-Otomotiv Ticaretinin Yeni Merkezi.jpg"]
-    }
+    images: [
+      "/vegaotonomi2-Otomotiv Ticaretinin Yeni Merkezi (2).jpg",
+      "/vegaotonomi2-Otomotiv Ticaretinin Yeni Merkezi.jpg",
+    ],
   },
   {
-    title: "Stratejik Konum, Yüksek Erişilebilirlik",
+    id: 3,
     image: "/vegaotonomi-Stratejik Konum, Yüksek Erişilebilirlik.jpg",
-    popup: {
-      title: "Her Yerden Kolay Ulaşım Avantajı",
-      text: "Ankara'nın en değerli lokasyonlarından birinde konumlanan Vega Otonomi, hem şehir içi hem de şehirlerarası ulaşım kolaylığı ile işinizi hızlandırıyor. Müşterileriniz ve iş ortaklarınız için ulaşımı sorun olmaktan çıkarın.",
-      images: ["/vegaotonomi2- Stratejik Konum, Yüksek Erişilebilirlik (2).jpg", "/vegaotonomi2- Stratejik Konum, Yüksek Erişilebilirlik.jpg"]
-    }
+    images: [
+      "/vegaotonomi2- Stratejik Konum, Yüksek Erişilebilirlik (2).jpg",
+      "/vegaotonomi2- Stratejik Konum, Yüksek Erişilebilirlik.jpg",
+    ],
   },
   {
-    title: "İşinize Güven Katın",
+    id: 4,
     image: "/vegaotonomi-İşinize Güven Katın.jpg",
-    popup: {
-      title: "Modern Altyapı ile Kurumsal Kimliğinizi Güçlendirin",
-      text: "Vega Otonomi'nin sunduğu profesyonel iş alanları sayesinde müşterilerinize güven veren bir ortamda hizmet sunun. Modern tasarımı ve kurumsal altyapısıyla işinize prestij kazandırın.",
-      images: ["/vegaotonomi2- İşinize Güven Katın (2).jpg", "/vegaotonomi2- İşinize Güven Katın.jpg"]
-    }
+    images: ["/vegaotonomi2- İşinize Güven Katın (2).jpg", "/vegaotonomi2- İşinize Güven Katın.jpg"],
   },
   {
-    title: "Sektöre Değer Katan Yeni Nesil İş Alanları",
+    id: 5,
     image: "/vegaotonomi-Sektöre Değer Katan Yeni Nesil İş Alanları.jpg",
-    popup: {
-      title: "Sadece Bir Galeri Değil, Çok Daha Fazlası",
-      text: "Vega Otonomi, klasik ticaret anlayışını geride bırakıyor. Yeni nesil iş alanlarıyla, showroomlardan toplantı odalarına kadar her detay, sektöre değer katacak şekilde tasarlandı.",
-      images: ["/vegaotonomi2-Sektöre Değer Katan Yeni Nesil İş Alanları (2).jpg", "/vegaotonomi2-Sektöre Değer Katan Yeni Nesil İş Alanları.jpg"]
-    }
+    images: [
+      "/vegaotonomi2-Sektöre Değer Katan Yeni Nesil İş Alanları (2).jpg",
+      "/vegaotonomi2-Sektöre Değer Katan Yeni Nesil İş Alanları.jpg",
+    ],
   },
   {
-    title: "Türkiye’nin İlk Otomotiv AVM Konsepti",
+    id: 6,
     image: "/vegaotonomi-Türkiye’nin İlk Otomotiv AVM Konsepti.jpg",
-    popup: {
-      title: "Yenilikçi Yaklaşımıyla İlk ve Tek",
-      text: "Vega Otonomi, Türkiye’nin otomotiv sektöründe AVM konseptiyle hizmet veren ilk yapısı olma özelliğini taşıyor. Araç alım-satımı, servis, aksesuar ve finansal hizmetleri tek noktadan sunan bu konsept ile fark yaratın.",
-      images: ["/vegaotonomi2-Türkiye’nin İlk Otomotiv AVM Konseptifi (2).jpg", "/vegaotonomi2-Türkiye’nin İlk Otomotiv AVM Konseptifi.jpg"]
-    }
+    images: [
+      "/vegaotonomi2-Türkiye’nin İlk Otomotiv AVM Konseptifi (2).jpg",
+      "/vegaotonomi2-Türkiye’nin İlk Otomotiv AVM Konseptifi.jpg",
+    ],
   },
-];
+] as const;
 
 export default function ProjectLifeRhythmSection() {
+  const tLife = useTranslations("vegaOtonomi.life");
+
   const [index, setIndex] = useState(0);
   const [popupIndex, setPopupIndex] = useState<number | null>(null);
   const totalSlides = slides.length;
   const [dragStartX, setDragStartX] = useState<number | null>(null);
-const [dragDeltaX, setDragDeltaX] = useState(0);
+  const [dragDeltaX, setDragDeltaX] = useState(0);
 
+  const handlePointerDown = (e: React.PointerEvent) => {
+    setDragStartX(e.clientX);
+  };
 
+  const handlePointerMove = (e: React.PointerEvent) => {
+    if (dragStartX !== null) {
+      setDragDeltaX(e.clientX - dragStartX);
+    }
+  };
 
+  const handlePointerUp = () => {
+    if (dragDeltaX > 50) {
+      setIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
+    } else if (dragDeltaX < -50) {
+      setIndex((prev) => (prev + 1) % totalSlides);
+    }
 
-const handlePointerDown = (e: React.PointerEvent) => {
-  setDragStartX(e.clientX);
-};
-
-const handlePointerMove = (e: React.PointerEvent) => {
-  if (dragStartX !== null) {
-    setDragDeltaX(e.clientX - dragStartX);
-  }
-};
-
-const handlePointerUp = () => {
-  if (dragDeltaX > 50) {
-    setIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
-  } else if (dragDeltaX < -50) {
-    setIndex((prev) => (prev + 1) % totalSlides);
-  }
-
-  // ✅ Add a slight delay to allow animation to complete before reset
-  setTimeout(() => {
-    setDragDeltaX(0);
-    setDragStartX(null);
-  }, 200); // 200ms matches your CSS transition
-};
-
-
+    setTimeout(() => {
+      setDragDeltaX(0);
+      setDragStartX(null);
+    }, 200);
+  };
 
   return (
     <section className="select-none scroll-smooth relative py-24 px-6 bg-white text-center overflow-hidden">
-
-
-
-      
-      <h2 className="text-3xl font-light text-gray-800 uppercase leading-tight">
-    VEGA OTONOMİ
-
-  <br />Ofis & Galeri seçenekleri ile
+      <h2 className="text-3xl font-light text-gray-800 uppercase leading-tight whitespace-pre-line">
+        {tLife("title")}
       </h2>
       <p className="mt-4 text-sm text-gray-600 max-w-xl mx-auto">
-Vega Otonomi, geniş ulaşım imkanı, merkezi konumu ve 490m²’ye kadar 207 adet Oto Galeri ve Ofis avantajları ile şehrin otonomi kültürüne yeni bir soluk kazandırıyor. VEGA Otonomi Ofis & Galeri seçenekleri ile sizlerle buluşuyor.      </p>
+        {tLife("description")}
+      </p>
 
       <div className="relative mt-12 w-full max-w-7xl mx-auto h-[500px]">
-      <div className="relative flex items-center justify-center h-full">
-
+        <div className="relative flex items-center justify-center h-full">
           {slides.map((slide, i) => {
             const offset = (i - index + totalSlides) % totalSlides;
             const normalized = offset > totalSlides / 2 ? offset - totalSlides : offset;
@@ -139,62 +118,56 @@ Vega Otonomi, geniş ulaşım imkanı, merkezi konumu ve 490m²’ye kadar 207 a
 
             return (
               <div
-                key={i}
+                key={slide.id}
                 className={`w-[300px] h-[400px] bg-white rounded-xl overflow-hidden shadow-lg ${styles}`}
                 style={{
                   left: `calc(50% - 150px)`,
                   transform: `translateX(${translateX}) translateY(${translateY}) scale(${scale})`,
-                                    zIndex: z,
-                  opacity
+                  zIndex: z,
+                  opacity,
                 }}
               >
+                <div className="relative w-full h-full">
+                  {normalized === 0 && (
+                    <div
+                      className="absolute inset-0 z-10"
+                      onPointerDown={handlePointerDown}
+                      onPointerMove={handlePointerMove}
+                      onPointerUp={handlePointerUp}
+                      onPointerLeave={handlePointerUp}
+                    />
+                  )}
 
-                
-<div className="relative w-full h-full">
-  {normalized === 0 && (
-    <div
-      className="absolute inset-0 z-10"
-      onPointerDown={handlePointerDown}
-      onPointerMove={handlePointerMove}
-      onPointerUp={handlePointerUp}
-      onPointerLeave={handlePointerUp}
-    />
-  )}
-
-
-  
                   <Image
                     src={slide.image}
-                    alt={slide.title}
+                    alt={tLife(`slides.${slide.id}.title`)}
                     fill
                     className="object-cover rounded-xl"
                   />
                   <div className="absolute top-4 left-4 bg-black/50 text-white text-xs px-3 py-1 rounded">
-                    {slide.title}
+                    {tLife(`slides.${slide.id}.title`)}
                   </div>
                   {index === i && (
-  <>
-    {i === 0 ? (
-      // If it's the first slide, render a link
-      <a
-          href="https://vegaotonomi.com/img/otonomiKatalog.pdf"
-    target="_blank"
-    rel="noopener noreferrer"  // <-- Change this URL to your target link
-        className="z-100 absolute    left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-black text-sm text-white  px-5 py-2 rounded-full shadow"
-      >
-        Sunuma Git
-      </a>
-    ) : (
-      // For other slides, open popup
-      <button
-        onClick={() => setPopupIndex(i)}
-        className="z-100 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-sm text-gray-700 px-5 py-2 rounded-full shadow"
-      >
-        Ayrıntılı Bilgi
-      </button>
-    )}
-  </>
-)}
+                    <>
+                      {i === 0 ? (
+                        <a
+                          href="https://vegaotonomi.com/img/otonomiKatalog.pdf"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="z-100 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-black text-sm text-white px-5 py-2 rounded-full shadow"
+                        >
+                          {tLife("buttons.goToPresentation")}
+                        </a>
+                      ) : (
+                        <button
+                          onClick={() => setPopupIndex(i)}
+                          className="z-100 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-sm text-gray-700 px-5 py-2 rounded-full shadow"
+                        >
+                          {tLife("buttons.details")}
+                        </button>
+                      )}
+                    </>
+                  )}
                 </div>
               </div>
             );
@@ -202,16 +175,16 @@ Vega Otonomi, geniş ulaşım imkanı, merkezi konumu ve 490m²’ye kadar 207 a
 
           <button
             onClick={() => setIndex((prev) => (prev - 1 + totalSlides) % totalSlides)}
-            aria-label="Önceki"
-            title="Önceki"
+            aria-label={tLife("buttons.previousShort")}
+            title={tLife("buttons.previousShort")}
             className="absolute left-0 top-1/2 -translate-y-1/2 bg-white text-black p-3 rounded-full shadow z-40"
           >
             <FaChevronLeft />
           </button>
           <button
             onClick={() => setIndex((prev) => (prev + 1) % totalSlides)}
-            aria-label="Sonraki"
-            title="Sonraki"
+            aria-label={tLife("buttons.nextShort")}
+            title={tLife("buttons.nextShort")}
             className="absolute right-0 top-1/2 -translate-y-1/2 bg-white text-black p-3 rounded-full shadow z-40"
           >
             <FaChevronRight />
@@ -225,19 +198,19 @@ Vega Otonomi, geniş ulaşım imkanı, merkezi konumu ve 490m²’ye kadar 207 a
             <button
               onClick={() => setPopupIndex(null)}
               className="absolute top-3 right-4 text-gray-500 hover:text-gray-800 text-xl"
-              aria-label="Kapat"
-              title="Kapat"
+              aria-label={tLife("buttons.close")}
+              title={tLife("buttons.close")}
             >
               ✕
             </button>
             <h3 className="text-xl font-semibold text-gray-900 mb-3">
-              {slides[popupIndex].popup.title}
+              {tLife(`slides.${slides[popupIndex].id}.popupTitle`)}
             </h3>
             <p className="text-sm text-gray-700 mb-4">
-              {slides[popupIndex].popup.text}
+              {tLife(`slides.${slides[popupIndex].id}.popupText`)}
             </p>
             <div className="grid grid-cols-2 gap-4">
-              {slides[popupIndex].popup.images.map((img, i) => (
+              {slides[popupIndex].images.map((img, i) => (
                 <Image
                   key={i}
                   src={img}
@@ -255,7 +228,7 @@ Vega Otonomi, geniş ulaşım imkanı, merkezi konumu ve 490m²’ye kadar 207 a
                 }
                 className="text-sm text-gray-700 hover:underline"
               >
-                ← Geri
+                {tLife("buttons.back")}
               </button>
               <button
                 onClick={() =>
@@ -263,7 +236,7 @@ Vega Otonomi, geniş ulaşım imkanı, merkezi konumu ve 490m²’ye kadar 207 a
                 }
                 className="text-sm text-gray-700 hover:underline"
               >
-                İleri →
+                {tLife("buttons.forward")}
               </button>
             </div>
           </div>

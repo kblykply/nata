@@ -1,22 +1,22 @@
 "use client";
-import { useTranslations } from "next-intl";
-"use client";
 
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { FiMenu, FiSend, FiX } from "react-icons/fi";
 
 const sections = [
-  { id: "proje-hakkinda", label: "Proje hakkında" },
-  { id: "ozellikler", label: "Özellikler" },
-  { id: "konum", label: "Konum" },
-  { id: "genel-plan", label: "Genel Plan" },
-  { id: "mimarlik", label: "Mimarlık" },
-  { id: "iyilestirme", label: "İyileştirme" },
-  { id: "daha-fazlasi", label: "Daha fazlası" },
+  { id: "proje-hakkinda", key: "aboutProject" },
+  { id: "ozellikler", key: "features" },
+  { id: "konum", key: "location" },
+  { id: "genel-plan", key: "masterPlan" },
+  { id: "mimarlik", key: "architecture" },
+  { id: "iyilestirme", key: "improvement" },
+  { id: "daha-fazlasi", key: "more" },
 ];
 
 export default function ExpandableNavigator() {
   const [isOpen, setIsOpen] = useState(false);
+  const tNav = useTranslations("navigator");
 
   return (
     <div
@@ -41,7 +41,7 @@ export default function ExpandableNavigator() {
                     href={`#${section.id}`}
                     className="hover:underline"
                   >
-                    {section.label}
+                    {tNav(section.key)}
                   </a>
                 ))}
               </div>
@@ -49,7 +49,7 @@ export default function ExpandableNavigator() {
               {/* Close Button */}
               <button
                 onClick={() => setIsOpen(false)}
-                aria-label="Close Menu"
+                aria-label={tNav("closeMenu")}
                 className="w-8 h-8 flex items-center justify-center rounded-full border border-white text-white"
               >
                 <FiX size={16} />
@@ -60,7 +60,7 @@ export default function ExpandableNavigator() {
               {/* Menu Button */}
               <button
                 onClick={() => setIsOpen(true)}
-                aria-label="Open Menu"
+                aria-label={tNav("openMenu")}
                 className="w-9 h-9 flex items-center justify-center rounded-full border border-white text-white"
               >
                 <FiMenu size={18} />
@@ -77,13 +77,13 @@ export default function ExpandableNavigator() {
             isOpen ? "max-w-md" : "max-w-[100px]"
           } ml-4`}
         >
-          Ankaranın en gözde projesi Vega Center 2025 yılında tamamlanıyor.
+          {tNav("tagline")}
         </div>
 
         {/* Right Action Button */}
         <div className="relative ml-4">
           <button
-            aria-label="Mesaj Gönder"
+            aria-label={tNav("sendMessage")}
             className={`${
               isOpen ? "w-11 h-11" : "w-9 h-9"
             } flex items-center justify-center rounded-full bg-gray-700 text-white shadow-md`}

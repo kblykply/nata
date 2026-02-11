@@ -4,8 +4,11 @@ import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { useTranslations } from "next-intl";
 
 export default function ProjectHeroCloudSection() {
+  const tHero = useTranslations("vegaOtonomi.hero");
+
   return (
     <section  className="relative w-full h-[90vh] md:h-[150vh] overflow-hidden bg-gradient-to-b from-[#006d9d] to-[#e6f3fd]">
       {/* Looping clouds (seamless illusion) */}
@@ -46,18 +49,22 @@ export default function ProjectHeroCloudSection() {
 
 
       <div className="py-4 ">
-  <div className="text-white text-sm md:text-base flex justify-center gap-2 top-10   ">
-       <Link href="/" passHref>
-    <span className="cursor-pointer hover:underline">NATA Yaşam</span>
-  </Link>
-  <span>/</span>
-  <Link href="/#aktif-projeler" passHref>
-    <span className="cursor-pointer hover:underline">Yeni Projeler</span>
-  </Link>
-    <span>/</span>
-    <span className="font-bold">Vega Otonomi</span>
-  </div>
-</div>
+        <div className="text-white text-sm md:text-base flex justify-center gap-2 top-10">
+          <Link href="/" passHref>
+            <span className="cursor-pointer hover:underline">
+              {tHero("breadcrumbHome")}
+            </span>
+          </Link>
+          <span>/</span>
+          <Link href="/#aktif-projeler" passHref>
+            <span className="cursor-pointer hover:underline">
+              {tHero("breadcrumbProjects")}
+            </span>
+          </Link>
+          <span>/</span>
+          <span className="font-bold">{tHero("breadcrumbProject")}</span>
+        </div>
+      </div>
 
 
 
@@ -78,35 +85,37 @@ export default function ProjectHeroCloudSection() {
 
 
 
-<div className="flex flex-wrap justify-center gap-3 max-w-xl mx-auto mt-6 font-semibold">
- 
-  <Link href="#near-locations">
-    <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm cursor-pointer">
-      <FaMapMarkerAlt /> Ankara – Sincan
-    </div>
-  </Link>
+      <div className="flex flex-wrap justify-center gap-3 max-w-xl mx-auto mt-6 font-semibold">
+        <Link href="#near-locations">
+          <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm cursor-pointer">
+            <FaMapMarkerAlt /> {tHero("tagLocation")}
+          </div>
+        </Link>
 
-  <Link href="#contact">
-    <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
-Geniş Otopark ve Kolay Erişim İmkanı     </div>
-  </Link>
+        <Link href="#contact">
+          <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
+            {tHero("tagParking")}
+          </div>
+        </Link>
 
-<Link href="#contact">
-    <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
-  207 Ticari Alan ve Modern Ofis</div>
-  </Link>
-  <Link href="#design">
-    <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
- Araç Alım-Satımına Uygun Özel Tasarım
-     </div>
-  </Link>
+        <Link href="#contact">
+          <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
+            {tHero("tagUnits")}
+          </div>
+        </Link>
 
-  <Link href="#contact">
-    <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
-   Kazandıran Ticari Proje
-   </div>
-  </Link>
-</div>
+        <Link href="#design">
+          <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
+            {tHero("tagSpecialDesign")}
+          </div>
+        </Link>
+
+        <Link href="#contact">
+          <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
+            {tHero("tagInvestment")}
+          </div>
+        </Link>
+      </div>
 
     </section>
   );

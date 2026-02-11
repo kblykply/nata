@@ -3,9 +3,11 @@
 import Image from "next/image";
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useTranslations } from "next-intl";
 
 const slides = [
   {
+    id: 1,
     title: "Yeni Batı Plus",
     image: "/yenibatıplus/yenibatıbroşür.jpeg",
      popup: {
@@ -15,6 +17,7 @@ const slides = [
     }
   },
   {
+    id: 2,
     title: "7/24 Güvenlik",
     image: "/yenibatıplus/724güvenlik.jpeg",
     popup: {
@@ -24,6 +27,7 @@ const slides = [
     }
   },
   {
+    id: 3,
     title: "Açık Otopark",
     image: "/yenibatıplus/açıkotopark.jpeg",
     popup: {
@@ -33,6 +37,7 @@ const slides = [
     }
   },
   {
+    id: 4,
     title: "Basketbol Sahası",
     image: "/yenibatıplus/basketbol.jpeg",
     popup: {
@@ -42,6 +47,7 @@ const slides = [
     }
   },
   {
+    id: 5,
     title: "Kapalı Otopark",
     image: "/yenibatıplus/kapalıotopark.jpeg",
     popup: {
@@ -50,7 +56,8 @@ const slides = [
       images: ["/yenibatıplus/kapalıotopark1.jpeg", "/yenibatıplus/kapalıotopark2.jpeg"]
     }
   },
-    {
+  {
+    id: 6,
     title: "Oyun Alanı",
     image: "/yenibatıplus/oyunalanı.jpeg",
     popup: {
@@ -63,6 +70,8 @@ const slides = [
 ];
 
 export default function ProjectLifeRhythmSection() {
+  const tLife = useTranslations("hityenibatiplus.life");
+
   const [index, setIndex] = useState(0);
   const [popupIndex, setPopupIndex] = useState<number | null>(null);
   const totalSlides = slides.length;
@@ -100,16 +109,11 @@ const handlePointerUp = () => {
 
   return (
     <section className="select-none scroll-smooth relative py-24 px-6 bg-white text-center overflow-hidden">
-
-
-
-      
-      <h2 className="text-3xl font-light text-gray-800 uppercase leading-tight">
-      Yeni Batı Plus  <br />Ankara'nın yükselen değeri
+      <h2 className="text-3xl font-light text-gray-800 uppercase leading-tight whitespace-pre-line">
+        {tLife("title")}
       </h2>
       <p className="mt-4 text-sm text-gray-600 max-w-xl mx-auto">
-Ankara'nın yükselen değeri, son zamanların en gözde konut ve yatırım bölgesi olan Yeni Batı Mahallesi, sıradışı ve prestijli konut projesi Yeni Batı Plus ile yeni bir soluk kazanıyor. Bu eşsiz proje, sıradışı mimarisiyle şehrin kalbinde sizlere nefes alacak yeni bir yaşam alanı sunuyor.
-
+        {tLife("description")}
       </p>
 
       <div className="relative mt-12 w-full max-w-7xl mx-auto h-[500px]">
@@ -166,51 +170,50 @@ Ankara'nın yükselen değeri, son zamanların en gözde konut ve yatırım böl
   
                   <Image
                     src={slide.image}
-                    alt={slide.title}
+                    alt={tLife(`slides.${slide.id}.title`)}
                     fill
                     className="object-cover rounded-xl"
                   />
                   <div className="absolute top-4 left-4 bg-black/50 text-white text-xs px-3 py-1 rounded">
-                    {slide.title}
+                    {tLife(`slides.${slide.id}.title`)}
                   </div>
                   {index === i && (
-  <>
-    {i === 0 ? (
-      // If it's the first slide, render a link
-      <a
-          // <-- Change this URL to your target link
-        className="z-100 absolute    left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-black text-sm text-white  px-5 py-2 rounded-full shadow"
-      >
-        Sunuma Git
-      </a>
-    ) : (
-      // For other slides, open popup
-      <button
-        onClick={() => setPopupIndex(i)}
-        className="z-100 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-sm text-gray-700 px-5 py-2 rounded-full shadow"
-      >
-        Ayrıntılı Bilgi
-      </button>
-    )}
-  </>
-)}
+                    <>
+                      {i === 0 ? (
+                        // If it's the first slide, render a link
+                        <a className="z-100 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-black text-sm text-white px-5 py-2 rounded-full shadow">
+                          {tLife("buttons.goToPresentation")}
+                        </a>
+                      ) : (
+                        // For other slides, open popup
+                        <button
+                          onClick={() => setPopupIndex(i)}
+                          className="z-100 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-sm text-gray-700 px-5 py-2 rounded-full shadow"
+                        >
+                          {tLife("buttons.details")}
+                        </button>
+                      )}
+                    </>
+                  )}
                 </div>
               </div>
             );
           })}
 
           <button
-            onClick={() => setIndex((prev) => (prev - 1 + totalSlides) % totalSlides)}
-            aria-label="Önceki"
-            title="Önceki"
+            onClick={() =>
+              setIndex((prev) => (prev - 1 + totalSlides) % totalSlides)
+            }
+            aria-label={tLife("buttons.previousShort")}
+            title={tLife("buttons.previousShort")}
             className="absolute left-0 top-1/2 -translate-y-1/2 bg-white text-black p-3 rounded-full shadow z-40"
           >
             <FaChevronLeft />
           </button>
           <button
             onClick={() => setIndex((prev) => (prev + 1) % totalSlides)}
-            aria-label="Sonraki"
-            title="Sonraki"
+            aria-label={tLife("buttons.nextShort")}
+            title={tLife("buttons.nextShort")}
             className="absolute right-0 top-1/2 -translate-y-1/2 bg-white text-black p-3 rounded-full shadow z-40"
           >
             <FaChevronRight />
@@ -224,16 +227,16 @@ Ankara'nın yükselen değeri, son zamanların en gözde konut ve yatırım böl
             <button
               onClick={() => setPopupIndex(null)}
               className="absolute top-3 right-4 text-gray-500 hover:text-gray-800 text-xl"
-              aria-label="Kapat"
-              title="Kapat"
+              aria-label={tLife("buttons.close")}
+              title={tLife("buttons.close")}
             >
               ✕
             </button>
             <h3 className="text-xl font-semibold text-gray-900 mb-3">
-              {slides[popupIndex].popup.title}
+              {tLife(`slides.${slides[popupIndex].id}.popupTitle`)}
             </h3>
             <p className="text-sm text-gray-700 mb-4">
-              {slides[popupIndex].popup.text}
+              {tLife(`slides.${slides[popupIndex].id}.popupText`)}
             </p>
             <div className="grid grid-cols-2 gap-4">
               {slides[popupIndex].popup.images.map((img, i) => (
@@ -250,11 +253,13 @@ Ankara'nın yükselen değeri, son zamanların en gözde konut ve yatırım böl
             <div className="flex justify-between mt-6">
               <button
                 onClick={() =>
-                  setPopupIndex((prev) => (prev! - 1 + slides.length) % slides.length)
+                  setPopupIndex(
+                    (prev) => (prev! - 1 + slides.length) % slides.length
+                  )
                 }
                 className="text-sm text-gray-700 hover:underline"
               >
-                ← Geri
+                {tLife("buttons.back")}
               </button>
               <button
                 onClick={() =>
@@ -262,7 +267,7 @@ Ankara'nın yükselen değeri, son zamanların en gözde konut ve yatırım böl
                 }
                 className="text-sm text-gray-700 hover:underline"
               >
-                İleri →
+                {tLife("buttons.forward")}
               </button>
             </div>
           </div>

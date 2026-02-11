@@ -8,7 +8,6 @@ import { useTranslations } from "next-intl";
 
 export default function ProjectHeroCloudSection() {
   const t = useTranslations("incek");
-  const tCommon = useTranslations("common");
 
   return (
     <section className="relative w-full h-[90vh] md:h-[150vh] overflow-hidden bg-gradient-to-b from-[#006d9d] to-[#e6f3fd]">
@@ -110,7 +109,7 @@ export default function ProjectHeroCloudSection() {
 
         <Link href="#contact">
           <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
-            {tCommon("immediateDelivery")}
+            {t("heroTagImmediateDelivery")}
           </div>
         </Link>
 

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useTranslations } from "next-intl";
 
 const slides = [
   {
@@ -63,6 +64,7 @@ const slides = [
 ];
 
 export default function ProjectLifeRhythmSection() {
+  const tLife = useTranslations("vegaKonutKuleleri.life");
   const [index, setIndex] = useState(0);
   const [popupIndex, setPopupIndex] = useState<number | null>(null);
   const totalSlides = slides.length;
@@ -100,15 +102,12 @@ const handlePointerUp = () => {
 
   return (
     <section className="select-none scroll-smooth relative py-24 px-6 bg-white text-center overflow-hidden">
-
-
-
-      
-      <h2 className="text-3xl font-light text-gray-800 uppercase leading-tight">
-      NATA VEGA <br />KONUT KULELERİ
+      <h2 className="text-3xl font-light text-gray-800 uppercase leading-tight whitespace-pre-line">
+        {tLife("title")}
       </h2>
       <p className="mt-4 text-sm text-gray-600 max-w-xl mx-auto">
-NATA VEGA Konut Kuleleri, yanbaşında bulunan NATA VEGA Outlet ve devasa AQUAVEGA Akvaryum ile herkesi düşünerek tasarlandı. Merkezi lokasyon avantajı, kusursuz mimarisi ve konforlu yaşam alanları NATA VEGA Konut Kuleleri'nde sizlerle buluşuyor.      </p>
+        {tLife("description")}
+      </p>
 
       <div className="relative mt-12 w-full max-w-7xl mx-auto h-[500px]">
       <div className="relative flex items-center justify-center h-full">
@@ -164,12 +163,12 @@ NATA VEGA Konut Kuleleri, yanbaşında bulunan NATA VEGA Outlet ve devasa AQUAVE
   
                   <Image
                     src={slide.image}
-                    alt={slide.title}
+                    alt={tLife(`slides.${i + 1}.title`)}
                     fill
                     className="object-cover rounded-xl"
                   />
                   <div className="absolute top-4 left-4 bg-black/50 text-white text-xs px-3 py-1 rounded">
-                    {slide.title}
+                    {tLife(`slides.${i + 1}.title`)}
                   </div>
                   {index === i && (
   <>
@@ -179,7 +178,7 @@ NATA VEGA Konut Kuleleri, yanbaşında bulunan NATA VEGA Outlet ve devasa AQUAVE
            // <-- Change this URL to your target link
         className="z-100 absolute    left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-black text-sm text-white  px-5 py-2 rounded-full shadow"
       >
-        Sunuma Git
+        {tLife("buttons.goToPresentation")}
       </a>
     ) : (
       // For other slides, open popup
@@ -187,7 +186,7 @@ NATA VEGA Konut Kuleleri, yanbaşında bulunan NATA VEGA Outlet ve devasa AQUAVE
         onClick={() => setPopupIndex(i)}
         className="z-100 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-sm text-gray-700 px-5 py-2 rounded-full shadow"
       >
-        Ayrıntılı Bilgi
+        {tLife("buttons.details")}
       </button>
     )}
   </>
@@ -199,16 +198,16 @@ NATA VEGA Konut Kuleleri, yanbaşında bulunan NATA VEGA Outlet ve devasa AQUAVE
 
           <button
             onClick={() => setIndex((prev) => (prev - 1 + totalSlides) % totalSlides)}
-            aria-label="Önceki"
-            title="Önceki"
+            aria-label={tLife("buttons.previousShort")}
+            title={tLife("buttons.previousShort")}
             className="absolute left-0 top-1/2 -translate-y-1/2 bg-white text-black p-3 rounded-full shadow z-40"
           >
             <FaChevronLeft />
           </button>
           <button
             onClick={() => setIndex((prev) => (prev + 1) % totalSlides)}
-            aria-label="Sonraki"
-            title="Sonraki"
+            aria-label={tLife("buttons.nextShort")}
+            title={tLife("buttons.nextShort")}
             className="absolute right-0 top-1/2 -translate-y-1/2 bg-white text-black p-3 rounded-full shadow z-40"
           >
             <FaChevronRight />
@@ -222,16 +221,16 @@ NATA VEGA Konut Kuleleri, yanbaşında bulunan NATA VEGA Outlet ve devasa AQUAVE
             <button
               onClick={() => setPopupIndex(null)}
               className="absolute top-3 right-4 text-gray-500 hover:text-gray-800 text-xl"
-              aria-label="Kapat"
-              title="Kapat"
+              aria-label={tLife("buttons.close")}
+              title={tLife("buttons.close")}
             >
               ✕
             </button>
             <h3 className="text-xl font-semibold text-gray-900 mb-3">
-              {slides[popupIndex].popup.title}
+              {tLife(`slides.${popupIndex + 1}.popupTitle`)}
             </h3>
             <p className="text-sm text-gray-700 mb-4">
-              {slides[popupIndex].popup.text}
+              {tLife(`slides.${popupIndex + 1}.popupText`)}
             </p>
             <div className="grid grid-cols-2 gap-4">
               {slides[popupIndex].popup.images.map((img, i) => (

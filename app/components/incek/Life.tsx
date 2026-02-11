@@ -7,60 +7,53 @@ import { useTranslations } from "next-intl";
 
 const slides = [
   {
-    title: "Modern Yaşamın Yeni Adı: Nata İncek",
+    id: 1,
     image: "/incek/Modern Yas╠ºam─▒n Yeni Ad─▒_ Nata I╠çncek Konutlar─▒.jpg",
-   popup: {
-      title: "Gönül rahatlığıyla yaşayın.",
-      text: "Tam kapsamlı güvenlik ağı ile site sakinlerinin huzuru her zaman öncelikli tutulur.",
-      images: ["/nata-incek-popup/24 Saat Gu╠êvenlik ve Kameral─▒ Sistem (2).jpg", "/nata-incek-popup/24 Saat Gu╠êvenlik ve Kameral─▒ Sistem.jpg"]
-    }
+    popupImages: [
+      "/nata-incek-popup/24 Saat Gu╠êvenlik ve Kameral─▒ Sistem (2).jpg",
+      "/nata-incek-popup/24 Saat Gu╠êvenlik ve Kameral─▒ Sistem.jpg",
+    ],
   },
-   {
-    title: "12.000 m² Yeşil Alan",
+  {
+    id: 2,
     image: "/incek/12.000 m┬▓ Yes╠ºil Alan.jpg",
-    popup: {
-      title: "Doğanın ortasında bir yaşam.",
-      text: "Geniş peyzaj alanı sayesinde her blok doğayla çevrili. Sakinlerine nefes aldıran bir çevre sunar.",
-      images: ["/nata-incek-popup/12.000 m┬▓ Yes╠ºil Alan (2).jpg", "/nata-incek-popup/12.000 m┬▓ Yes╠ºil Alan.jpg"]
-    }
+    popupImages: [
+      "/nata-incek-popup/12.000 m┬▓ Yes╠ºil Alan (2).jpg",
+      "/nata-incek-popup/12.000 m┬▓ Yes╠ºil Alan.jpg",
+    ],
   },
-    {
-    title: "24 Saat Güvenlik ve Kameralı Sistem",
+  {
+    id: 3,
     image: "/incek/24 Saat Gu╠êvenlik ve Kameral─▒ Sistem.jpg",
-    popup: {
-      title: "Gönül rahatlığıyla yaşayın.",
-      text: "Tam kapsamlı güvenlik ağı ile site sakinlerinin huzuru her zaman öncelikli tutulur.",
-      images: ["/nata-incek-popup/24 Saat Gu╠êvenlik ve Kameral─▒ Sistem (2).jpg", "/nata-incek-popup/24 Saat Gu╠êvenlik ve Kameral─▒ Sistem.jpg"]
-    }
+    popupImages: [
+      "/nata-incek-popup/24 Saat Gu╠êvenlik ve Kameral─▒ Sistem (2).jpg",
+      "/nata-incek-popup/24 Saat Gu╠êvenlik ve Kameral─▒ Sistem.jpg",
+    ],
   },
-   {
-    title: "Kapalı Yüzme Havuzu",
+  {
+    id: 4,
     image: "/incek/Ac╠º─▒k Yu╠êzme Havuzu.jpg",
-    popup: {
-      title: "Yazın tadını serin sularla çıkarın.",
-      text: "Site içindeki havuz, çocuklar ve yetişkinler için güvenli, keyifli bir yüzme ortamı sunar.",
-      images: ["/nata-incek-popup/Ac╠º─▒k Yu╠êzme Havuzu (2).jpg", "/nata-incek-popup/Ac╠º─▒k Yu╠êzme Havuzu.jpg"]
-    }
+    popupImages: [
+      "/nata-incek-popup/Ac╠º─▒k Yu╠êzme Havuzu (2).jpg",
+      "/nata-incek-popup/Ac╠º─▒k Yu╠êzme Havuzu.jpg",
+    ],
   },
-   {
-    title: "Çocuk Oyun Alanları",
+  {
+    id: 5,
     image: "/incek/C╠ºocuk Oyun Alanlar─▒.jpg",
-    popup: {
-      title: "Ailece konfor, miniklere mutluluk.",
-      text: "Geniş oyun alanları sayesinde çocuklar sosyalleşirken güvenlikten ödün verilmez.",
-      images: ["/nata-incek-popup/C╠ºocuk Oyun Alanlar─▒ (2).jpg", "/nata-incek-popup/C╠ºocuk Oyun Alanlar─▒.jpg"]
-    }
+    popupImages: [
+      "/nata-incek-popup/C╠ºocuk Oyun Alanlar─▒ (2).jpg",
+      "/nata-incek-popup/C╠ºocuk Oyun Alanlar─▒.jpg",
+    ],
   },
-    {
-    title: "Yürüyüş ve Koşu Parkurları",
+  {
+    id: 6,
     image: "/incek/Yu╠êru╠êyu╠ês╠º Parkurlar─▒.jpg",
-    popup: {
-      title: "Günlük yaşamınıza sağlık katın.",
-      text: "Sitede yer alan yürüyüş yolları, doğayla iç içe sağlıklı bir yaşam tarzını destekler.",
-      images: ["/nata-incek-popup/Yu╠êru╠êyu╠ês╠º Parkurlar─▒ (2).jpg", "/nata-incek-popup/Yu╠êru╠êyu╠ês╠º Parkurlar─▒.jpg"]
-    }
+    popupImages: [
+      "/nata-incek-popup/Yu╠êru╠êyu╠ês╠º Parkurlar─▒ (2).jpg",
+      "/nata-incek-popup/Yu╠êru╠êyu╠ês╠º Parkurlar─▒.jpg",
+    ],
   },
-  
 ];
 
 export default function ProjectLifeRhythmSection() {
@@ -168,34 +161,31 @@ const handlePointerUp = () => {
   
                   <Image
                     src={slide.image}
-                    alt={slide.title}
+                    alt={t(`lifeSlides.slide${slide.id}Title` as any)}
                     fill
                     className="object-cover rounded-xl"
                   />
                   <div className="absolute top-4 left-4 bg-black/50 text-white text-xs px-3 py-1 rounded">
-                    {slide.title}
+                    {t(`lifeSlides.slide${slide.id}Title` as any)}
                   </div>
                   {index === i && (
-  <>
-    {i === 0 ? (
-      // If it's the first slide, render a link
-      <a
-           // <-- Change this URL to your target link
-        className="z-100 absolute    left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-black text-sm text-white  px-5 py-2 rounded-full shadow"
-      >
-        Sunuma Git
-      </a>
-    ) : (
-      // For other slides, open popup
-      <button
-        onClick={() => setPopupIndex(i)}
-        className="z-100 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-sm text-gray-700 px-5 py-2 rounded-full shadow"
-      >
-        Ayrıntılı Bilgi
-      </button>
-    )}
-  </>
-)}
+                    <>
+                      {i === 0 ? (
+                        <a
+                          className="z-100 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-black text-sm text-white px-5 py-2 rounded-full shadow"
+                        >
+                          {t("goToPresentation")}
+                        </a>
+                      ) : (
+                        <button
+                          onClick={() => setPopupIndex(i)}
+                          className="z-100 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-sm text-gray-700 px-5 py-2 rounded-full shadow"
+                        >
+                          {t("detailedInfo")}
+                        </button>
+                      )}
+                    </>
+                  )}
                 </div>
               </div>
             );
@@ -203,16 +193,16 @@ const handlePointerUp = () => {
 
           <button
             onClick={() => setIndex((prev) => (prev - 1 + totalSlides) % totalSlides)}
-            aria-label="Önceki"
-            title="Önceki"
+            aria-label={t("previous")}
+            title={t("previous")}
             className="absolute left-0 top-1/2 -translate-y-1/2 bg-white text-black p-3 rounded-full shadow z-40"
           >
             <FaChevronLeft />
           </button>
           <button
             onClick={() => setIndex((prev) => (prev + 1) % totalSlides)}
-            aria-label="Sonraki"
-            title="Sonraki"
+            aria-label={t("next")}
+            title={t("next")}
             className="absolute right-0 top-1/2 -translate-y-1/2 bg-white text-black p-3 rounded-full shadow z-40"
           >
             <FaChevronRight />
@@ -226,19 +216,19 @@ const handlePointerUp = () => {
             <button
               onClick={() => setPopupIndex(null)}
               className="absolute top-3 right-4 text-gray-500 hover:text-gray-800 text-xl"
-              aria-label="Kapat"
-              title="Kapat"
+              aria-label={t("close")}
+              title={t("close")}
             >
               ✕
             </button>
             <h3 className="text-xl font-semibold text-gray-900 mb-3">
-              {slides[popupIndex].popup.title}
+              {t(`lifeSlides.slide${slides[popupIndex].id}PopupTitle` as any)}
             </h3>
             <p className="text-sm text-gray-700 mb-4">
-              {slides[popupIndex].popup.text}
+              {t(`lifeSlides.slide${slides[popupIndex].id}PopupText` as any)}
             </p>
             <div className="grid grid-cols-2 gap-4">
-              {slides[popupIndex].popup.images.map((img, i) => (
+              {slides[popupIndex].popupImages.map((img, i) => (
                 <Image
                   key={i}
                   src={img}
@@ -256,7 +246,7 @@ const handlePointerUp = () => {
                 }
                 className="text-sm text-gray-700 hover:underline"
               >
-                ← Geri
+                {t("back")}
               </button>
               <button
                 onClick={() =>
@@ -264,7 +254,7 @@ const handlePointerUp = () => {
                 }
                 className="text-sm text-gray-700 hover:underline"
               >
-                İleri →
+                {t("forward")}
               </button>
             </div>
           </div>

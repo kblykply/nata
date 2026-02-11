@@ -3,13 +3,14 @@
 import { useState } from "react";
 import Image from "next/image";
 import { FiChevronLeft, FiChevronRight, FiX } from "react-icons/fi";
+import { useTranslations } from "next-intl";
 
 const unitTypes = [
   {
     id: "1",
     image: "/hityenikatplangorsel-01.png",
     details: {
-      " Net alan": "46.01 m²",
+      netArea: "46.01 m²",
       
     },
   },
@@ -17,7 +18,7 @@ const unitTypes = [
     id: "2",
     image: "/hityenikatplangorsel-02.png",
     details: {
-      " Net alan": "103.05 m²",
+      netArea: "103.05 m²",
       
     },
   },
@@ -25,7 +26,7 @@ const unitTypes = [
     id: "3",
     image: "/hityenikatplangorsel-03.png",
     details: {
-      " Net alan": "46.01 m²",
+      netArea: "46.01 m²",
       
     },
   },
@@ -33,7 +34,7 @@ const unitTypes = [
     id: "4",
     image: "/hityenikatplangorsel-04.png",
     details: {
-      " Net alan": "99.23 m²",
+      netArea: "99.23 m²",
       
     },
   },
@@ -41,7 +42,7 @@ const unitTypes = [
     id: "5",
     image: "/hityenikatplangorsel-05.png",
     details: {
-      " Net alan": "102.71 m²",
+      netArea: "102.71 m²",
       
     },
   },
@@ -54,6 +55,7 @@ export default function UnitTypesSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeUnit = unitTypes[activeIndex];
   const [showLightbox, setShowLightbox] = useState(false);
+  const tUnit = useTranslations("hityenibati.unitTypes");
 
 
   const handlePrev = () => {
@@ -80,7 +82,7 @@ export default function UnitTypesSection() {
       <button
         onClick={() => setShowLightbox(false)}
         className="absolute top-3 right-3 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-1 transition"
-        aria-label="Kapat"
+        aria-label={tUnit("lightboxClose")}
       >
         <FiX size={24} />
       </button>
@@ -88,7 +90,7 @@ export default function UnitTypesSection() {
       <div className="relative w-full h-[70vh]">
         <Image
           src={unitTypes[activeIndex].image}
-          alt={`Büyütülmüş Ünite Planı ${unitTypes[activeIndex].id}`}
+          alt={tUnit("lightboxAlt", { id: unitTypes[activeIndex].id })}
           fill
           className="object-contain"
         />
@@ -105,7 +107,7 @@ export default function UnitTypesSection() {
           <button
             key={unit.id}
             onClick={() => setActiveIndex(index)}
-            aria-label={`Ünite Tipi ${unit.id}`}
+            aria-label={tUnit("tabAria", { id: unit.id })}
             className={`w-10 h-10 rounded-full border flex items-center justify-center text-sm font-medium transition ${
               activeIndex === index
                 ? "bg-[#4B3B4E] text-white border-[#4B3B4E]"
@@ -121,10 +123,13 @@ export default function UnitTypesSection() {
 
         {/* Currency Selector (Optional, can remove if not needed) */}
         <button
-          aria-label="Para Birimi Seçici"
+          aria-label={tUnit("selectorAria")}
           className="flex items-center px-4 py-2 rounded-full border border-gray-300 text-sm text-gray-700"
         >
-          Daire <span className="ml-1 text-xs text-gray-400">Tipleri</span>
+          {tUnit("selectorLabel")}{" "}
+          <span className="ml-1 text-xs text-gray-400">
+            {tUnit("selectorSubLabel")}
+          </span>
         </button>
       </div>
 
@@ -132,7 +137,10 @@ export default function UnitTypesSection() {
       <div className="text-center mb-10 space-y-2">
         {Object.entries(activeUnit.details).map(([key, value]) => (
           <p key={key} className="text-sm text-gray-600">
-            <span className="font-medium text-gray-800">{key}:</span> {value}
+            <span className="font-medium text-gray-800">
+              {tUnit(`detailLabels.${key}` as const)}:
+            </span>{" "}
+            {value}
           </p>
         ))}
       </div>
@@ -142,7 +150,7 @@ export default function UnitTypesSection() {
         {/* Left Arrow */}
         <button
           onClick={handlePrev}
-          aria-label="Önceki Plan"
+          aria-label={tUnit("previousPlan")}
           className="absolute left-4 md:left-20 w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:bg-gray-100 transition"
         >
           <FiChevronLeft size={20} />
@@ -152,11 +160,11 @@ export default function UnitTypesSection() {
        <button
   onClick={() => setShowLightbox(true)}
   className="relative w-[300px] md:w-[500px] aspect-[4/3] rounded overflow-hidden focus:outline-none"
-  aria-label="Kat planını büyüt"
+  aria-label={tUnit("openLightbox")}
 >
   <Image
     src={activeUnit.image}
-    alt={`Ünite Planı ${activeUnit.id}`}
+    alt={tUnit("mainAlt", { id: activeUnit.id })}
     fill
     className="object-contain"
   />
@@ -166,7 +174,7 @@ export default function UnitTypesSection() {
         {/* Right Arrow */}
         <button
           onClick={handleNext}
-          aria-label="Sonraki Plan"
+          aria-label={tUnit("nextPlan")}
           className="absolute right-4 md:right-20 w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:bg-gray-100 transition"
         >
           <FiChevronRight size={20} />

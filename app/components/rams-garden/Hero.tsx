@@ -4,8 +4,11 @@ import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { useTranslations } from "next-intl";
 
 export default function ProjectHeroCloudSection() {
+  const tHero = useTranslations("ramsGarden.hero");
+
   return (
     <section  className="relative w-full h-[90vh] md:h-[150vh] overflow-hidden bg-gradient-to-b from-[#006d9d] to-[#e6f3fd]">
       {/* Looping clouds (seamless illusion) */}
@@ -45,19 +48,25 @@ export default function ProjectHeroCloudSection() {
       </div>
 
 
-  <div className="py-4">
-  <div className="text-white text-sm md:text-base flex flex-wrap justify-center items-center gap-2 text-center px-4">
-    <Link href="/" passHref>
-      <span className="cursor-pointer hover:underline whitespace-nowrap">NATA Yaşam</span>
-    </Link>
-    <span>/</span>
-    <Link href="/#aktif-projeler" passHref>
-      <span className="cursor-pointer hover:underline whitespace-nowrap">Yeni Projeler</span>
-    </Link>
-    <span>/</span>
-    <span className="font-bold whitespace-nowrap">Rams Garden Bahçelievler</span>
-  </div>
-</div>
+      <div className="py-4">
+        <div className="text-white text-sm md:text-base flex flex-wrap justify-center items-center gap-2 text-center px-4">
+          <Link href="/" passHref>
+            <span className="cursor-pointer hover:underline whitespace-nowrap">
+              {tHero("breadcrumbHome")}
+            </span>
+          </Link>
+          <span>/</span>
+          <Link href="/#aktif-projeler" passHref>
+            <span className="cursor-pointer hover:underline whitespace-nowrap">
+              {tHero("breadcrumbProjects")}
+            </span>
+          </Link>
+          <span>/</span>
+          <span className="font-bold whitespace-nowrap">
+            {tHero("breadcrumbProject")}
+          </span>
+        </div>
+      </div>
 
 
 
@@ -84,37 +93,37 @@ export default function ProjectHeroCloudSection() {
 
 
 
-<div className="flex flex-wrap justify-center gap-3 max-w-xl mx-auto mt-6 font-semibold">
-  <Link href="#near-locations">
-    <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm cursor-pointer">
-  Metro çıkışında, E5’e 2 dk
-    </div>
-  </Link>
+      <div className="flex flex-wrap justify-center gap-3 max-w-xl mx-auto mt-6 font-semibold">
+        <Link href="#near-locations">
+          <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm cursor-pointer">
+            {tHero("tagMetroDistance")}
+          </div>
+        </Link>
 
-  <Link href="#near-locations">
-    <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm cursor-pointer">
-      <FaMapMarkerAlt /> İstanbul – Bahçelievler
-    </div>
-  </Link>
+        <Link href="#near-locations">
+          <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm cursor-pointer">
+            <FaMapMarkerAlt /> {tHero("tagLocation")}
+          </div>
+        </Link>
 
-  <Link href="#contact">
-    <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
-  796 Daire +49 adet Ticari Dükkan
-    </div>
-  </Link>
+        <Link href="#contact">
+          <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
+            {tHero("tagUnits")}
+          </div>
+        </Link>
 
-  <Link href="#contact">
-    <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
-  Hemen Teslim
-    </div>
-  </Link>
+        <Link href="#contact">
+          <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
+            {tHero("tagImmediateDelivery")}
+          </div>
+        </Link>
 
-  <Link href="#life">
-    <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
-      Premium Hayat
-    </div>
-  </Link>
-</div>
+        <Link href="#life">
+          <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
+            {tHero("tagPremiumLife")}
+          </div>
+        </Link>
+      </div>
 
 
     </section>

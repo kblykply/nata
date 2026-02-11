@@ -4,8 +4,10 @@ import Image from "next/image";
 import { useState, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Dialog } from "@headlessui/react";
+import { useTranslations } from "next-intl";
 
 export default function DesignSection() {
+  const tDesign = useTranslations("vegaKonutKuleleri.design");
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -32,11 +34,11 @@ export default function DesignSection() {
       <div className="max-w-screen-xl mx-auto w-full flex flex-col lg:flex-row items-center justify-between gap-10 relative z-10">
         {/* Left Text Content */}
         <div className="w-full max-w-xl z-25">
-          <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 leading-tight">
-            Nata Vega Konut Kuleleri
+          <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 leading-tight whitespace-pre-line">
+            {tDesign("title")}
           </h2>
           <p className="mt-6 text-sm text-gray-700 leading-relaxed">
-            Şehrin merkezinde yükselen Nata Vega, ayrıcalıklı bir yaşam alanı sunuyor.
+            {tDesign("description")}
           </p>
           <button
             onClick={() => {
@@ -45,7 +47,7 @@ export default function DesignSection() {
             }}
             className="mt-6 bg-gray-800 text-white text-sm px-5 py-2 rounded-full"
           >
-            Proje Galerisini Gör
+            {tDesign("openGallery")}
           </button>
         </div>
 

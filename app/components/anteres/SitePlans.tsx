@@ -2,60 +2,43 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 const hotspots = [
   {
     id: 1,
-    label: "A Blok",
-    text: "Göz Alıcı Manzara, Kaliteli Yaşam",
     image: "/antares-A BLOK.png",
-    info: "Göz Alıcı Manzara, Kaliteli Yaşam",
     position: { top: "40%", left: "80%" },
   },
   {
     id: 2,
-    label: "B Blok",
-    text: "Modern Tasarım, Konforlu Yaşam",
     image: "/antares-B BLOK.png",
-    info: "Modern Tasarım, Konforlu Yaşam",
-    position: {top: "40%", left: "65%"},
+    position: { top: "40%", left: "65%" },
   },
   {
     id: 3,
-    label: "C Blok",
-    text: "Şehrin Kalbinde, Hayatın İçinde",
     image: "/antares-C BLOK.png",
-    info: "Şehrin Kalbinde, Hayatın İçinde",
     position: { top: "50%", left: "70%" },
   },
   {
     id: 4,
-    label: "D Blok",
-    text: "Sonsuz Olanaklar, Sınırsız Konfor",
     image: "/antares-D BLOK.png",
-    info: "Sonsuz Olanaklar, Sınırsız Konfor",
     position: { top: "50%", left: "55%" },
   },
   {
     id: 5,
-    label: "E Blok",
-    text: "Hayalinizdeki Yaşam Alanı",
     image: "/antares-E BLOK.png",
-    info: "Hayalinizdeki Yaşam Alanı",
     position: { top: "50%", left: "40%" },
   },
   {
     id: 6,
-    label: "F Blok",
-    text: "Hayalinizdeki Yaşam Alanı",
     image: "/antares-F BLOK.png",
-    info: "Hayalinizdeki Yaşam Alanı",
     position: { top: "50%", left: "25%" },
   },
- 
-
 ];
+
 export default function SidePlans() {
+  const t = useTranslations("anteres.sitePlans");
   const [hoveredId, setHoveredId] = useState<number | null>(null);
   const hoveredImage = hotspots.find((h) => h.id === hoveredId)?.image || null;
 
@@ -63,11 +46,11 @@ export default function SidePlans() {
     <section className="relative w-full bg-white">
       {/* Top Text */}
       <div className="text-center max-w-4xl mx-auto py-12 md:py-16 px-4">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-wide text-gray-900">
-          Yaşam Nerede <br /> Biz Orada.
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-wide text-gray-900 whitespace-pre-line">
+          {t("title")}
         </h2>
         <p className="mt-4 text-sm md:text-base text-gray-700 leading-relaxed">
-          Anteres, modern mimarisi ve geniş açık alanlarıyla konforlu bir yaşam sunuyor. Her blok, doğayla iç içe bir yaşam alanı sağlarken, estetik tasarımıyla da göz dolduruyor. Villalarımız, ferah iç mekanları ve geniş bahçe alanları ile ailenizle birlikte keyifli anlar geçirmenizi sağlıyor.
+          {t("description")}
         </p>
       </div>
 
@@ -102,17 +85,20 @@ export default function SidePlans() {
               onMouseLeave={() => setHoveredId(null)}
             >
               <div className="bg-white px-3 py-1 sm:px-4 sm:py-2 rounded-full shadow text-xs sm:text-sm font-medium text-gray-800 border border-gray-200 whitespace-nowrap cursor-pointer hover:bg-gray-50 transition">
-                {spot.label}
+                {t(`hotspots.${spot.id}.label`)}
               </div>
 
-           {hoveredId === spot.id && (
-  <div className="absolute left-1/2 bottom-full mb-2 transform -translate-x-1/2 w-40 sm:w-48 bg-white border border-gray-200 shadow-lg rounded-lg p-2 sm:p-3 text-[10px] sm:text-xs text-gray-700 z-30">
-    {spot.info.split("\n").map((line, i) => (
-      <p key={i} className="mb-1">{line}</p>
-    ))}
-  </div>
-)}
-
+              {hoveredId === spot.id && (
+                <div className="absolute left-1/2 bottom-full mb-2 transform -translate-x-1/2 w-40 sm:w-48 bg-white border border-gray-200 shadow-lg rounded-lg p-2 sm:p-3 text-[10px] sm:text-xs text-gray-700 z-30">
+                  {t(`hotspots.${spot.id}.info`)
+                    .split("\n")
+                    .map((line, i) => (
+                      <p key={i} className="mb-1">
+                        {line}
+                      </p>
+                    ))}
+                </div>
+              )}
             </div>
           ))}
         </div>

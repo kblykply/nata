@@ -2,7 +2,8 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
- import { OverlayView } from "@react-google-maps/api";
+import { useLocale, useTranslations } from "next-intl";
+import { OverlayView } from "@react-google-maps/api";
 import {
   GoogleMap,
   Marker,
@@ -11,8 +12,7 @@ import {
   MarkerClusterer,
 } from "@react-google-maps/api";
 
-
- const vegaAvms = [
+const vegaAvms = [
   {
     id: "aquavega",
     name: "AquaVega Aquarium",
@@ -96,7 +96,7 @@ import {
   
 ];
 
-const places  = [
+const places = [
   {
     id: 101,
     category: "malls",
@@ -260,30 +260,23 @@ const places  = [
 }
 ];
 
-const categories = [
-  { id: "all", name: "Tümü", pin: "/pin.png" },
-  { id: "malls", name: "AVM'ler", pin: "/mall.png" },
-  { id: "schools", name: "Okullar", pin: "/scool.png" },
-  { id: "hospitals", name: "Hastaneler", pin: "/hospital.png" },
-  { id: "markets", name: "Marketler", pin: "/shop.png" },
-  { id: "hotels", name: "Oteller", pin: "/ikonlar-lokasyon/otel.png" },
-  { id: "mosques", name: "Camii", pin: "/ikonlar-lokasyon/cami.png" },
-  { id: "ministries", name: "Bakanlıklar / Kurumlar", pin: "/ikonlar-lokasyon/kurumlar.png" },
-  { id: "business", name: "İş Merkezleri", pin: "/ikonlar-lokasyon/ismerkezi.png" },
-  { id: "parks", name: "Parklar", pin: "/ikonlar-lokasyon/park.png" },  
-].map((cat) => ({
-  ...cat,
-  count: cat.id === "all" ? places.length : places.filter(p => p.category === cat.id).length,
-}));
-
+const categoriesBase = [
+  { id: "all", pin: "/pin.png" },
+  { id: "malls", pin: "/mall.png" },
+  { id: "schools", pin: "/scool.png" },
+  { id: "hospitals", pin: "/hospital.png" },
+  { id: "markets", pin: "/shop.png" },
+  { id: "hotels", pin: "/ikonlar-lokasyon/otel.png" },
+  { id: "mosques", pin: "/ikonlar-lokasyon/cami.png" },
+  { id: "ministries", pin: "/ikonlar-lokasyon/kurumlar.png" },
+  { id: "business", pin: "/ikonlar-lokasyon/ismerkezi.png" },
+  { id: "parks", pin: "/ikonlar-lokasyon/park.png" },
+];
 
 const projectLocation = {
   coords: [39.94591, 32.71549],
-  name: "Vega CADDE",
-  description: "Yaşam Vega'da",
   image: "/cadde-galeri/vegacadde2.png",
 };
-
 
 const containerStyle = {
   width: "100%",
@@ -295,33 +288,45 @@ const center = {
   lng: projectLocation.coords[1],
 };
 
+const getCategoryPinUrl = (categoryId: string): string =>
+  categoriesBase.find((cat) => cat.id === categoryId)?.pin ?? "/icons/default.png";
+
 export default function NearbyMap() {
+  const locale = useLocale();
+  const tCommon = useTranslations("common");
+  const tNearby = useTranslations("vegaCadde.nearby");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedSwitch, setSelectedSwitch] = useState("altyapi");
 
 
-const [activeMarker, setActiveMarker] = useState<string | number | null>(null as string | number | null);
+  const [activeMarker, setActiveMarker] = useState<string | number | null>(
+    null as string | number | null
+  );
 
-
-if (typeof window !== 'undefined') {
-  if (!process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY) {
-    throw new Error("Google Maps API key is missing in environment variables");
+  if (typeof window !== "undefined") {
+    if (!process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY) {
+      throw new Error("Google Maps API key is missing in environment variables");
+    }
   }
-}
 
-const { isLoaded } = useJsApiLoader({
-  googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
-});
-
-
+  const { isLoaded } = useJsApiLoader({
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
+    language: locale,
+  });
 
   const filteredPlaces =
     selectedCategory === "all"
       ? places
       : places.filter((p) => p.category === selectedCategory);
 
-const getCategoryPinUrl = (categoryId: string): string =>
-  categories.find((cat) => cat.id === categoryId)?.pin ?? "/icons/default.png";
+  const categories = categoriesBase.map((cat) => ({
+    ...cat,
+    name: tNearby(`categories.${cat.id}` as any),
+    count:
+      cat.id === "all"
+        ? places.length
+        : places.filter((p) => p.category === cat.id).length,
+  }));
 
   return (
     <div className="w-full h-screen flex bg-white flex-col relative">
@@ -333,7 +338,7 @@ const getCategoryPinUrl = (categoryId: string): string =>
               selectedSwitch === "altyapi" ? "bg-[#4B3B4E] text-white" : "text-gray-700"
             }`}
           >
-            Altyapı
+            {tCommon("nearbyInfrastructure")}
           </button>
           <button
             onClick={() => setSelectedSwitch("konum")}
@@ -341,7 +346,7 @@ const getCategoryPinUrl = (categoryId: string): string =>
               selectedSwitch === "konum" ? "bg-[#4B3B4E] text-white" : "text-gray-700"
             }`}
           >
-            Konum
+            {tCommon("nearbyLocation")}
           </button>
         </div>
       </div>
@@ -358,7 +363,7 @@ const getCategoryPinUrl = (categoryId: string): string =>
           >
             <aside className="fixed md:static w-[250px] bg-white shadow-md p-4 h-full overflow-y-auto z-10">
               <h3 className="font-semibold text-gray-800 mb-4 text-sm">
-                Yakındaki popüler yerler
+                {tNearby("sectionTitle")}
               </h3>
               <ul className="space-y-2">
                 {categories.map((cat) => (
@@ -477,15 +482,15 @@ const getCategoryPinUrl = (categoryId: string): string =>
                     <div className="bg-white rounded-xl shadow-xl p-3 w-72 flex items-center gap-4">
                       <img
                         src={projectLocation.image}
-                        alt={projectLocation.name}
+                        alt={tNearby("projectName")}
                         className="w-16 h-16 object-cover rounded-lg border"
                       />
                       <div className="flex flex-col">
                         <h4 className="text-base font-bold text-gray-900">
-                          {projectLocation.name}
+                          {tNearby("projectName")}
                         </h4>
                         <p className="text-sm text-gray-600">
-                          {projectLocation.description}
+                          {tNearby("projectDescription")}
                         </p>
                       </div>
                     </div>
@@ -603,7 +608,7 @@ const getCategoryPinUrl = (categoryId: string): string =>
             <div className="w-[200%] md:w-auto"> {/* Zoomed width for mobile */}
               <img
                 src="/revize/vegacaddeavmaltyapi.jpeg"
-                alt="Altyapı Görseli"
+                alt={tNearby("infrastructureAlt")}
                 className="mx-auto rounded w-full"
               />
             </div>

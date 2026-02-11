@@ -1,51 +1,48 @@
 "use client";
 
 import Image from "next/image";
-
-const cards = [
-  {
-    id: 1,
-    type: "image",
-    title: "Haberleri öğrenin",
-    highlight: "Proje Hakkında Tüm Bilgiler",
-    background:     "/new-mega1453-6.jpg",
-
-    wide: true,   // Mark this card as wide
-                        link: "https://trinvest.com.tr/mega1453/",
-
-  },
-  {
-    id: 2,
-    type: "icon",
-    title: "Belgeleri İndirin",
-    highlight: "NATA Yaşam Projeleri",
-    icon: "/x.png",
-                        link: "https://trinvest.com.tr/kataloglar/#flipbook-df_21514/1/",
-
-  },
-  {
-    id: 3,
-    type: "image",
-    title: "Ziyaret Edin",
-    highlight: "Projenin Lokasyonunu Görün",
-    background:    "/new-mega1453-8.jpg",
-                        link: "https://maps.app.goo.gl/bmZ66EzsQ6R4vXoa7",
-
-
-  },
-  {
-    id: 4,
-    type: "icon",
-    title: "Sorularınızı Cevaplıyoruz",
-    highlight: "5 dakika içinde",
-    icon: "/vegacenter-canli-destek.png",
-    subtitle: "Projesyonel Ekibimizle",
-link: "https://api.whatsapp.com/send/?phone=905017111818&text=Merhaba%2C+projeleriniz+hakk%C4%B1nda+detayl%C4%B1+bilgi+almak+istiyorum.&type=phone_number&app_absent=0",
-
-  },
-];
+import { useTranslations } from "next-intl";
 
 export default function InfoCardsSection() {
+  const tCommon = useTranslations("common");
+
+  const cards = [
+    {
+      id: 1,
+      type: "image" as const,
+      title: tCommon("boxesNewsTitle"),
+      highlight: tCommon("boxesNewsHighlight"),
+      background: "/new-mega1453-6.jpg",
+      wide: true,
+      link: "https://trinvest.com.tr/mega1453/",
+    },
+    {
+      id: 2,
+      type: "icon" as const,
+      title: tCommon("boxesDownloadTitle"),
+      highlight: tCommon("boxesDownloadHighlight"),
+      icon: "/x.png",
+      link: "https://trinvest.com.tr/kataloglar/#flipbook-df_21514/1/",
+    },
+    {
+      id: 3,
+      type: "image" as const,
+      title: tCommon("boxesVisitTitle"),
+      highlight: tCommon("boxesVisitHighlight"),
+      background: "/new-mega1453-8.jpg",
+      link: "https://maps.app.goo.gl/bmZ66EzsQ6R4vXoa7",
+    },
+    {
+      id: 4,
+      type: "icon" as const,
+      title: tCommon("boxesQuestionsTitle"),
+      highlight: tCommon("boxesQuestionsHighlight"),
+      icon: "/vegacenter-canli-destek.png",
+      subtitle: tCommon("boxesQuestionsSubtitle"),
+      link: "https://api.whatsapp.com/send/?phone=905017111818&text=Merhaba%2C+projeleriniz+hakk%C4%B1nda+detayl%C4%B1+bilgi+almak+istiyorum.&type=phone_number&app_absent=0",
+    },
+  ];
+
   return (
     <section className="w-full bg-white py-12 px-4">
       <div className="flex flex-wrap justify-center gap-6 max-w-7xl mx-auto">

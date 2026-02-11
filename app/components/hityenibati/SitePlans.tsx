@@ -2,20 +2,19 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 const hotspots = [
   {
     id: 1,
-    label: "Hit Yeni Batı",
-    text: "Göz Alıcı Manzara, Kaliteli Yaşam",
     image: "/hityenibati-hover.png",
-    info: "Göz Alıcı Manzara, Kaliteli Yaşam",
     position: { top: "50%", left: "65%" },
   },
-  
 ];
 
 export default function SidePlans() {
+  const t = useTranslations("hityenibati.sitePlans");
+
   const [hoveredId, setHoveredId] = useState<number | null>(null);
   const hoveredImage = hotspots.find((h) => h.id === hoveredId)?.image || null;
 
@@ -23,11 +22,11 @@ export default function SidePlans() {
     <section className="relative w-full bg-white">
       {/* Top Text */}
       <div className="text-center max-w-4xl mx-auto py-12 md:py-16 px-4">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-wide text-gray-900">
-          Yaşam Nerede <br /> Biz Orada.
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-wide text-gray-900 whitespace-pre-line">
+          {t("title")}
         </h2>
         <p className="mt-4 text-sm md:text-base text-gray-700 leading-relaxed">
-          Hit Yeni Batı, modern yaşamın tüm olanaklarını sunan bir proje. Tek Bloktan oluşan bu proje, geniş açık alanları, estetik mimarisi ve konforlu yaşam alanlarıyla dikkat çekiyor. Her detayın özenle düşünüldüğü Hit Yeni Batı, ailenizle birlikte huzurlu ve keyifli bir yaşam sunuyor.
+          {t("description")}
         </p>
       </div>
 
@@ -62,11 +61,11 @@ export default function SidePlans() {
               onMouseLeave={() => setHoveredId(null)}
             >
               <div className="bg-white px-3 py-1 sm:px-4 sm:py-2 rounded-full shadow text-xs sm:text-sm font-medium text-gray-800 border border-gray-200 whitespace-nowrap cursor-pointer hover:bg-gray-50 transition">
-                {spot.label}
+                {t(`hotspots.${spot.id}.label`)}
               </div>
-        {hoveredId === spot.id && (
+    {hoveredId === spot.id && (
   <div className="absolute left-1/2 bottom-full mb-2 transform -translate-x-1/2 w-40 sm:w-48 bg-white border border-gray-200 shadow-lg rounded-lg p-2 sm:p-3 text-[10px] sm:text-xs text-gray-700 z-30">
-    {spot.info.split("\n").map((line, i) => (
+    {t(`hotspots.${spot.id}.info`).split("\n").map((line, i) => (
       <p key={i} className="mb-1">{line}</p>
     ))}
   </div>

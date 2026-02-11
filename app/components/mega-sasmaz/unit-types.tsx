@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { FiChevronLeft, FiChevronRight, FiX } from "react-icons/fi";
+import { useTranslations } from "next-intl";
 
 
 const unitTypes = [
@@ -10,7 +11,7 @@ const unitTypes = [
     id: "1",
     image: "/megas╠ºas╠ºmazkatplan-01.png",
     details: {
-      "Kat": "1. BODRUM KAT",
+      floor: "1. BODRUM KAT",
  
     },
   },
@@ -18,7 +19,7 @@ const unitTypes = [
     id: "2",
     image: "/megas╠ºas╠ºmazkatplan-02.png",
     details: {
-      "Kat": "1. KAT PLANI",
+      floor: "1. KAT PLANI",
  
     },
   },
@@ -26,7 +27,7 @@ const unitTypes = [
     id: "3",
     image: "/megas╠ºas╠ºmazkatplan-03.png",
     details: {
-      "Kat": "2. BODRUM KAT",
+      floor: "2. BODRUM KAT",
  
     },
   },
@@ -34,7 +35,7 @@ const unitTypes = [
     id: "4",
     image: "/megas╠ºas╠ºmazkatplan-04.png",
     details: {
-      "Kat": "2. KAT PLANI",
+      floor: "2. KAT PLANI",
  
     },
   },
@@ -42,7 +43,7 @@ const unitTypes = [
     id: "5",
     image: "/megas╠ºas╠ºmazkatplan-05.png",
     details: {
-      "Kat": "3. BODRUM KAT",
+      floor: "3. BODRUM KAT",
  
     },
   },
@@ -50,7 +51,7 @@ const unitTypes = [
     id: "6",
     image: "/megas╠ºas╠ºmazkatplan-06.png",
     details: {
-      "Kat": "3. KAT PLANI",
+      floor: "3. KAT PLANI",
  
     },
   },
@@ -58,7 +59,7 @@ const unitTypes = [
     id: "7",
     image: "/megas╠ºas╠ºmazkatplan-07.png",
     details: {
-      "Kat": "ASMA KAT PLANI",
+      floor: "ASMA KAT PLANI",
  
     },
   },
@@ -66,7 +67,7 @@ const unitTypes = [
     id: "8",
     image: "/megas╠ºas╠ºmazkatplan-08.png",
     details: {
-      "Kat": "ZEMİN KAT PLANI",
+      floor: "ZEMİN KAT PLANI",
  
     },
   },
@@ -80,6 +81,7 @@ export default function UnitTypesSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeUnit = unitTypes[activeIndex];
   const [showLightbox, setShowLightbox] = useState(false);
+  const tUnit = useTranslations("megaSasmaz.unitTypes");
 
   const handlePrev = () => {
     setActiveIndex((prev) => (prev === 0 ? unitTypes.length - 1 : prev - 1));
@@ -104,7 +106,7 @@ export default function UnitTypesSection() {
       <button
         onClick={() => setShowLightbox(false)}
         className="absolute top-3 right-3 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-1 transition"
-        aria-label="Kapat"
+        aria-label={tUnit("lightboxClose")}
       >
         <FiX size={24} />
       </button>
@@ -129,7 +131,7 @@ export default function UnitTypesSection() {
           <button
             key={unit.id}
             onClick={() => setActiveIndex(index)}
-            aria-label={`Ünite Tipi ${unit.id}`}
+            aria-label={tUnit("tabAria", { id: unit.id })}
             className={`w-10 h-10 rounded-full border flex items-center justify-center text-sm font-medium transition ${
               activeIndex === index
                 ? "bg-[#4B3B4E] text-white border-[#4B3B4E]"
@@ -145,10 +147,13 @@ export default function UnitTypesSection() {
 
         {/* Currency Selector (Optional, can remove if not needed) */}
         <button
-          aria-label="Para Birimi Seçici"
+          aria-label={tUnit("selectorAria")}
           className="flex items-center px-4 py-2 rounded-full border border-gray-300 text-sm text-gray-700"
         >
-          Daire <span className="ml-1 text-xs text-gray-400">Tipleri</span>
+          {tUnit("selectorLabel")}{" "}
+          <span className="ml-1 text-xs text-gray-400">
+            {tUnit("selectorSubLabel")}
+          </span>
         </button>
       </div>
 
@@ -156,7 +161,10 @@ export default function UnitTypesSection() {
       <div className="text-center mb-10 space-y-2">
         {Object.entries(activeUnit.details).map(([key, value]) => (
           <p key={key} className="text-sm text-gray-600">
-            <span className="font-medium text-gray-800">{key}:</span> {value}
+            <span className="font-medium text-gray-800">
+              {tUnit(`detailLabels.${key}` as const)}:
+            </span>{" "}
+            {value}
           </p>
         ))}
       </div>
@@ -166,7 +174,7 @@ export default function UnitTypesSection() {
         {/* Left Arrow */}
         <button
           onClick={handlePrev}
-          aria-label="Önceki Plan"
+          aria-label={tUnit("previousPlan")}
           className="absolute left-4 md:left-20 w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:bg-gray-100 transition"
         >
           <FiChevronLeft size={20} />
@@ -176,11 +184,11 @@ export default function UnitTypesSection() {
     <button
   onClick={() => setShowLightbox(true)}
   className="relative w-[300px] md:w-[500px] aspect-[4/3] rounded overflow-hidden focus:outline-none"
-  aria-label="Kat planını büyüt"
+  aria-label={tUnit("openLightbox")}
 >
   <Image
     src={activeUnit.image}
-    alt={`Ünite Planı ${activeUnit.id}`}
+    alt={tUnit("mainAlt", { id: activeUnit.id })}
     fill
     className="object-contain"
   />
@@ -190,7 +198,7 @@ export default function UnitTypesSection() {
         {/* Right Arrow */}
         <button
           onClick={handleNext}
-          aria-label="Sonraki Plan"
+          aria-label={tUnit("nextPlan")}
           className="absolute right-4 md:right-20 w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:bg-gray-100 transition"
         >
           <FiChevronRight size={20} />

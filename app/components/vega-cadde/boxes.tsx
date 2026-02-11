@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const cards = [
   {
@@ -42,10 +43,44 @@ const cards = [
 ];
 
 export default function InfoCardsSection() {
+  const tCommon = useTranslations("common");
+
+  const localizedCards = cards.map((card) => {
+    if (card.id === 1) {
+      return {
+        ...card,
+        title: tCommon("boxesNewsTitle"),
+        highlight: tCommon("boxesNewsHighlight"),
+      };
+    }
+    if (card.id === 2) {
+      return {
+        ...card,
+        title: tCommon("boxesDownloadTitle"),
+        highlight: tCommon("boxesDownloadHighlight"),
+      };
+    }
+    if (card.id === 3) {
+      return {
+        ...card,
+        title: tCommon("boxesVisitTitle"),
+        highlight: tCommon("boxesVisitHighlight"),
+      };
+    }
+    if (card.id === 4) {
+      return {
+        ...card,
+        title: tCommon("boxesQuestionsTitle"),
+        highlight: tCommon("boxesQuestionsHighlight"),
+        subtitle: tCommon("boxesQuestionsSubtitle"),
+      };
+    }
+    return card;
+  });
   return (
     <section className="w-full bg-white py-12 px-4">
       <div className="flex flex-wrap justify-center gap-6 max-w-7xl mx-auto">
-        {cards.map((card) => (
+        {localizedCards.map((card) => (
           <a
             key={card.id}
             href={card.link}

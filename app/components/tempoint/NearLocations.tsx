@@ -2,7 +2,8 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
- import { OverlayView } from "@react-google-maps/api";
+import { useLocale, useTranslations } from "next-intl";
+import { OverlayView } from "@react-google-maps/api";
 import {
   GoogleMap,
   Marker,
@@ -12,7 +13,7 @@ import {
 } from "@react-google-maps/api";
 
 
- const vegaAvms = [
+const vegaAvms = [
   {
     id: "aquavega",
     name: "AquaVega Aquarium",
@@ -244,28 +245,25 @@ const places  = [
     description: "3 dk, 1.0 km"
   }
 ];
-const categories = [
- { id: "all", name: "Tümü", pin: "/pin.png" },
-  { id: "malls", name: "AVM'ler", pin: "/mall.png" },
-  { id: "schools", name: "Okullar", pin: "/scool.png" },
-  { id: "hospitals", name: "Hastaneler", pin: "/hospital.png" },
-  { id: "markets", name: "Marketler", pin: "/shop.png" },
-  { id: "hotels", name: "Oteller", pin: "/ikonlar-lokasyon/otel.png" },
-  { id: "mosques", name: "Camii", pin: "/ikonlar-lokasyon/cami.png" },
-  { id: "ministries", name: "Bakanlıklar / Kurumlar", pin: "/ikonlar-lokasyon/kurumlar.png" },
-  { id: "business", name: "İş Merkezleri", pin: "/ikonlar-lokasyon/ismerkezi.png" },
-  { id: "parks", name: "Parklar", pin: "/ikonlar-lokasyon/park.png" },  
-].map((cat) => ({
-  ...cat,
-  count: cat.id === "all" ? places.length : places.filter(p => p.category === cat.id).length,
-}));
+const categoriesBase = [
+  { id: "all", pin: "/pin.png" },
+  { id: "malls", pin: "/mall.png" },
+  { id: "schools", pin: "/scool.png" },
+  { id: "hospitals", pin: "/hospital.png" },
+  { id: "markets", pin: "/shop.png" },
+  { id: "hotels", pin: "/ikonlar-lokasyon/otel.png" },
+  { id: "mosques", pin: "/ikonlar-lokasyon/cami.png" },
+  { id: "ministries", pin: "/ikonlar-lokasyon/kurumlar.png" },
+  { id: "business", pin: "/ikonlar-lokasyon/ismerkezi.png" },
+  { id: "parks", pin: "/ikonlar-lokasyon/park.png" },
+];
 
 
 
 const projectLocation = {
   coords: [41.09228, 28.90347],
-  name: "Tempoint Konutları",
-  description: "Tem'in Kalbi",
+  nameKey: "projectName" as const,
+  descriptionKey: "projectDescription" as const,
   image: "/tempoint-konutlari.jpg",
 };
 
@@ -280,6 +278,9 @@ const center = {
 };
 
 export default function NearbyMap() {
+  const locale = useLocale();
+  const tCommon = useTranslations("common");
+  const tNearby = useTranslations("tempoint.nearby");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedSwitch, setSelectedSwitch] = useState("altyapi");
 
@@ -294,6 +295,7 @@ if (typeof window !== 'undefined') {
 
 const { isLoaded } = useJsApiLoader({
   googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
+  language: locale,
 });
 
 
@@ -306,6 +308,12 @@ const { isLoaded } = useJsApiLoader({
 const getCategoryPinUrl = (categoryId: string): string =>
   categories.find((cat) => cat.id === categoryId)?.pin ?? "/icons/default.png";
 
+const categories = categoriesBase.map((cat) => ({
+  ...cat,
+  name: tNearby(`categories.${cat.id}`),
+  count: cat.id === "all" ? places.length : places.filter((p) => p.category === cat.id).length,
+}));
+
   return (
     <div className="w-full h-screen flex bg-white flex-col relative">
       <div className="w-full flex justify-center py-6 bg-white z-30">
@@ -316,7 +324,7 @@ const getCategoryPinUrl = (categoryId: string): string =>
               selectedSwitch === "altyapi" ? "bg-[#4B3B4E] text-white" : "text-gray-700"
             }`}
           >
-            Altyapı
+            {tCommon("nearbyInfrastructure")}
           </button>
           <button
             onClick={() => setSelectedSwitch("konum")}
@@ -324,7 +332,7 @@ const getCategoryPinUrl = (categoryId: string): string =>
               selectedSwitch === "konum" ? "bg-[#4B3B4E] text-white" : "text-gray-700"
             }`}
           >
-            Konum
+            {tCommon("nearbyLocation")}
           </button>
         </div>
       </div>
@@ -341,7 +349,7 @@ const getCategoryPinUrl = (categoryId: string): string =>
           >
             <aside className="fixed md:static w-[250px] bg-white shadow-md p-4 h-full overflow-y-auto z-10">
               <h3 className="font-semibold text-gray-800 mb-4 text-sm">
-                Yakındaki popüler yerler
+                {tNearby("sectionTitle")}
               </h3>
               <ul className="space-y-2">
                 {categories.map((cat) => (
@@ -460,15 +468,15 @@ const getCategoryPinUrl = (categoryId: string): string =>
                     <div className="bg-white rounded-xl shadow-xl p-3 w-72 flex items-center gap-4">
                       <img
                         src={projectLocation.image}
-                        alt={projectLocation.name}
+                        alt={tNearby(projectLocation.nameKey)}
                         className="w-16 h-16 object-cover rounded-lg border"
                       />
                       <div className="flex flex-col">
                         <h4 className="text-base font-bold text-gray-900">
-                          {projectLocation.name}
+                          {tNearby(projectLocation.nameKey)}
                         </h4>
                         <p className="text-sm text-gray-600">
-                          {projectLocation.description}
+                          {tNearby(projectLocation.descriptionKey)}
                         </p>
                       </div>
                     </div>
@@ -587,7 +595,7 @@ const getCategoryPinUrl = (categoryId: string): string =>
   <div className="w-full">
     <img
       src="/altyapirevize/tempoint.jpg"
-      alt="Altyapı Görseli"
+      alt={tNearby("infrastructureAlt")}
       className="mx-auto rounded max-h-[90svh] w-auto object-contain block"
     />
   </div>

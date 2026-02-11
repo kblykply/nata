@@ -27,7 +27,19 @@
     "residenceProject": "Residence Project",
     "transportAccess": "Transport Access",
     "workAndLife": "Work & Life",
-    "industrialZone": "Industrial Zone"
+    "industrialZone": "Industrial Zone",
+    "boxesNewsTitle": "Get the news",
+    "boxesNewsHighlight": "All Information About the Project",
+    "boxesDownloadTitle": "Download Documents",
+    "boxesDownloadHighlight": "NATA Living Projects",
+    "boxesVisitTitle": "Visit",
+    "boxesVisitHighlight": "View Project Location",
+    "boxesQuestionsTitle": "We Answer Your Questions",
+    "boxesQuestionsHighlight": "Within 5 minutes",
+    "boxesQuestionsSubtitle": "With Our Professional Team",
+    "whatsAppGenericMessage": "Hello, I would like to get detailed information about your projects.",
+    "nearbyInfrastructure": "Infrastructure",
+    "nearbyLocation": "Location"
   },
   "metadata": {
     "title": "NATA Living",
@@ -160,13 +172,18 @@
   },
   "navigator": {
     "aboutProject": "About Project",
+    "features": "Features",
     "life": "Living",
     "location": "Location",
+    "masterPlan": "Master Plan",
+    "architecture": "Architecture",
+    "improvement": "Improvement",
     "gallery": "Gallery",
     "contact": "Contact",
     "more": "More",
     "closeMenu": "Close Menu",
     "openMenu": "Open Menu",
+    "sendMessage": "Send Message",
     "tagline": "NATA Living, at the heart of life, at the peak of comfort."
   },
   "bulletin": {
@@ -251,7 +268,7 @@
     "progress": "Progress",
     "extra": "Extra",
     "constructionProgress": "Construction Progress",
-    "priceRequestTitle": "Get Price",
+    "priceRequestTitle": "Pricing",
     "whatsAppTitle": "WhatsApp",
     "whatsAppMessage": "Hello, I would like to get detailed information about the {projectName} project.",
     "completedHeadingMain": "Completed",
@@ -385,12 +402,199 @@
       "dBlockLabel": "Block D",
       "dBlockText": "Vega Center",
       "dBlockInfo": "87 Commercial Units"
+    },
+    "nearby": {
+      "sectionTitle": "Popular places nearby",
+      "projectName": "VEGA CENTER",
+      "projectDescription": "The new center of the business world, VEGA Center",
+      "infrastructureAlt": "Infrastructure visual",
+      "categories": {
+        "all": "All",
+        "malls": "Malls",
+        "schools": "Schools",
+        "hospitals": "Hospitals",
+        "markets": "Markets",
+        "hotels": "Hotels",
+        "mosques": "Mosques",
+        "ministries": "Ministries / Institutions",
+        "business": "Business Centers",
+        "parks": "Parks"
+      }
+    }
+  },
+  "vegaOtonomi": {
+    "hero": {
+      "breadcrumbHome": "NATA Living",
+      "breadcrumbProjects": "New Projects",
+      "breadcrumbProject": "Vega Otonomi",
+      "tagLocation": "Ankara – Sincan",
+      "tagParking": "Spacious Parking and Easy Access",
+      "tagUnits": "207 Commercial Units and Modern Offices",
+      "tagSpecialDesign": "Special Design for Vehicle Trading",
+      "tagInvestment": "Profitable Commercial Project"
+    },
+    "design": {
+      "title": "Meet\nVEGA Otonomi",
+      "description": "VEGA Otonomi, the gateway to happiness with memorable touches, has been designed according to your taste and needs.",
+      "openGallery": "View Project Gallery"
+    },
+    "sitePlans": {
+      "title": "Where Life Is\nWe Are There.",
+      "description": "Vega Otonomi is a lifestyle center equipped with the latest and most advanced technologies of the industry. With its horizontal architecture that adds aesthetic value to the city's silhouette, it elevates business and premium shopping to the highest level. With its spacious offices and efficient work areas, every point of Vega Otonomi has been designed to make life easier.",
+      "hotspots": {
+        "1": {
+          "label": "Block A",
+          "info": "Vega Otonomi Block A"
+        },
+        "2": {
+          "label": "Block B",
+          "info": "Vega Otonomi Block B"
+        },
+        "3": {
+          "label": "Block C",
+          "info": "Vega Otonomi Block C"
+        },
+        "4": {
+          "label": "Block D",
+          "info": "Vega Otonomi Block D"
+        },
+        "5": {
+          "label": "Block E",
+          "info": "Vega Otonomi Block E"
+        },
+        "6": {
+          "label": "Block F",
+          "info": "Vega Otonomi Block F"
+        },
+        "7": {
+          "label": "Block G",
+          "info": "Vega Otonomi Block G"
+        },
+        "8": {
+          "label": "Block H",
+          "info": "Vega Otonomi Block H"
+        }
+      }
+    },
+    "nearby": {
+      "switchInfrastructure": "Infrastructure",
+      "switchLocation": "Location",
+      "sectionTitle": "Popular places nearby",
+      "projectName": "VEGA OTONOMI",
+      "projectDescription": "The new center of the business world",
+      "infrastructureAlt": "Infrastructure visual",
+      "categories": {
+        "all": "All",
+        "malls": "Malls",
+        "schools": "Schools",
+        "hospitals": "Hospitals",
+        "markets": "Markets"
+      }
+    },
+    "life": {
+      "title": "VEGA OTONOMI\nwith Office & Gallery options",
+      "description": "With its wide transportation network, central location and 207 Auto Gallery and Office units up to 490 m², Vega Otonomi brings a new breath to the city's automotive culture. VEGA Otonomi meets you with Office & Gallery options.",
+      "slides": {
+        "1": {
+          "title": "The new address of the corporate showcase",
+          "popupTitle": "Strengthen Your Corporate Identity with Modern Infrastructure",
+          "popupText": "Thanks to the professional workspaces offered by Vega Otonomi, you can serve your customers in an environment that inspires confidence. Its modern design and corporate infrastructure add prestige to your business."
+        },
+        "2": {
+          "title": "The New Center of Automotive Trade",
+          "popupTitle": "The Heart of the Sector is Now at Vega Otonomi",
+          "popupText": "Vega Otonomi becomes the new meeting point of trade with its modern and innovative structure that brings together all the needs of the automotive world under one roof. Take your place in a prestigious center for vehicle buying and selling."
+        },
+        "3": {
+          "title": "Strategic Location, High Accessibility",
+          "popupTitle": "The Advantage of Easy Access from Everywhere",
+          "popupText": "Located in one of Ankara's most valuable locations, Vega Otonomi accelerates your business with both intra-city and intercity transportation convenience. Make transportation cease to be a problem for your customers and business partners."
+        },
+        "4": {
+          "title": "Add Confidence to Your Business",
+          "popupTitle": "Strengthen Your Corporate Identity with Modern Infrastructure",
+          "popupText": "Thanks to the professional workspaces offered by Vega Otonomi, you can serve your customers in an environment that inspires confidence. Its modern design and corporate infrastructure add prestige to your business."
+        },
+        "5": {
+          "title": "New-Generation Workspaces that Add Value to the Sector",
+          "popupTitle": "More Than Just a Gallery",
+          "popupText": "Vega Otonomi goes beyond the traditional concept of trade. With new-generation workspaces, every detail from showrooms to meeting rooms has been designed to add value to the sector."
+        },
+        "6": {
+          "title": "Turkey's First Automotive Mall Concept",
+          "popupTitle": "First and Only with Its Innovative Approach",
+          "popupText": "Vega Otonomi is the first structure in Turkey to serve the automotive sector with a mall concept. Stand out with this concept that offers vehicle buying and selling, service, accessories and financial services all from a single point."
+        }
+      },
+      "buttons": {
+        "goToPresentation": "Go to Presentation",
+        "details": "Detailed Information",
+        "previousShort": "Previous",
+        "nextShort": "Next",
+        "back": "← Back",
+        "forward": "Forward →",
+        "close": "Close"
+      }
     }
   },
   "ramsGarden": {
-    "breadcrumbHome": "NATA Living",
-    "breadcrumbProjects": "New Projects",
-    "breadcrumbProject": "RAMS Garden"
+    "hero": {
+      "breadcrumbHome": "NATA Living",
+      "breadcrumbProjects": "New Projects",
+      "breadcrumbProject": "RAMS Garden Bahçelievler",
+      "tagMetroDistance": "At the metro exit, 2 min to E5",
+      "tagLocation": "Istanbul – Bahçelievler",
+      "tagUnits": "796 Residences + 49 Commercial Units",
+      "tagImmediateDelivery": "Immediate Delivery",
+      "tagPremiumLife": "Premium Life"
+    },
+    "design": {
+      "title": "Meet\nRAMS GARDEN BAHÇELİEVLER",
+      "description": "RAMS Garden Bahçelievler offers all the advantages of living in a unique location close to the city center and surrounded by a 42,300 m² grove. Here you can escape the rush of the city and enjoy nature with your family within 33,000 m² of landscaped areas.",
+      "openGallery": "View Project Gallery"
+    },
+    "sitePlans": {
+      "title": "Where Life Is\nWe Are There.",
+      "description": "Located in the heart of Istanbul, in Yenimahalle Orman Çiftliği Neighborhood, RAMS GARDEN offers a unique living experience that redefines the rhythm of the city..."
+    },
+    "nearby": {
+      "sectionTitle": "Popular places nearby",
+      "projectName": "RAMS GARDEN",
+      "projectDescription": "A privileged lifestyle in the heart of Istanbul, Bahçelievler",
+      "infrastructureAlt": "Infrastructure visual",
+      "categories": {
+        "all": "All",
+        "malls": "Malls",
+        "schools": "Schools",
+        "hospitals": "Hospitals",
+        "markets": "Markets"
+      }
+    },
+    "life": {
+      "title": "RAMS GARDEN BAHÇELİEVLER\nHeart of Istanbul",
+      "description": "In the heart of Istanbul, Bahçelievler, RAMS Garden offers 796 residences ranging from 2+1 to 5+1, together with a special project that brings you qualified green and landscaped areas as well as prestigious stores, under the assurance of NATA Holding and Rams Turkey.",
+      "buttons": {
+        "goToPresentation": "Go to Presentation",
+        "details": "Detailed Information",
+        "previousShort": "Previous",
+        "nextShort": "Next",
+        "back": "← Back",
+        "forward": "Forward →",
+        "close": "Close"
+      }
+    },
+    "navigator": {
+      "pillText": "The most prestigious project of Ankara, Vega Center, will be completed in 2025.",
+      "sections": {
+        "aboutProject": "About the Project",
+        "features": "Features",
+        "location": "Location",
+        "masterPlan": "Master Plan",
+        "architecture": "Architecture",
+        "improvement": "Enhancement",
+        "more": "More"
+      }
+    }
   },
   "incek": {
     "breadcrumbHome": "NATA Living",
@@ -477,7 +681,21 @@
     "unitTypesNextPlan": "Next Plan",
     "unitTypesLightboxClose": "Close",
     "unitTypesLightboxAlt": "Enlarged unit plan {id}",
-    "unitTypesMainAlt": "Unit plan {id}"
+    "unitTypesMainAlt": "Unit plan {id}",
+    "navigator": {
+      "pillText": "With Nata İncek Residences, a life intertwined with nature begins.",
+      "sections": {
+        "hero": "About the Project",
+        "life": "Life",
+        "near-locations": "Location",
+        "site-plans": "Site Plans",
+        "unit-types": "Unit Types",
+        "design": "Design",
+        "contact": "Contact",
+        "office": "Office",
+        "boxes": "More"
+      }
+    }
   },
   "goatVillas": {
     "lifeTitle": "GOAT VILLAS",
@@ -509,6 +727,830 @@
       "slide6Title": "Tailor-Made Interiors, Open and Closed Parking",
       "slide6PopupTitle": "Living Spaces That Fit Your Dreams",
       "slide6PopupText": "Personalization options are offered for interiors that reflect your style. From the color palette to cabinet layouts, every detail is shaped according to your choices. Build a living space that is uniquely yours."
+    },
+    "hero": {
+      "breadcrumbHome": "NATA Living",
+      "breadcrumbProjects": "New Projects",
+      "breadcrumbProject": "GOAT Villas",
+      "tagCityCenter": "10 min to city center",
+      "tagLocation": "Ankara – Bilkent",
+      "tagUnits": "9 Villas",
+      "tagDelivery": "Q3 2026 Delivery",
+      "tagPremiumLife": "Premium Life"
+    },
+    "design": {
+      "title": "GREATEST OF\nANKARA TIME",
+      "description": "Located in the heart of Ankara in Bilkent 3, at a magnificent point overlooking the entire city, the project stands out with its easy access to universities, hospitals, schools, shopping centers, forests and parks. With the slogan “GREATEST OF ANKARA TIME”, this city villa concept offers an ideal living space for those who seek luxury service and quality.",
+      "openGallery": "View Project Gallery"
+    },
+    "sitePlans": {
+      "title": "Where Life Is\nWe Are There.",
+      "description": "Goat Villas offers a comfortable life with its modern architecture and large open spaces. Each block provides a living environment intertwined with nature while impressing with its aesthetic design. Our villas, with their spacious interiors and large garden areas, allow you to spend enjoyable moments with your family.",
+      "hotspots": {
+        "1": {
+          "label": "TYPE 1",
+          "info": "Striking Views, Quality Living"
+        },
+        "2": {
+          "label": "TYPE 2",
+          "info": "Modern Design, Comfortable Living"
+        },
+        "3": {
+          "label": "TYPE 3",
+          "info": "Timeless Design, Spacious Living"
+        }
+      }
+    },
+    "nearby": {
+      "switchInfrastructure": "Infrastructure",
+      "switchLocation": "Location",
+      "sectionTitle": "Popular places nearby",
+      "projectName": "GOAT VILLAS BILKENT",
+      "projectDescription": "In the heart of Ankara, Bilkent",
+      "infrastructureAlt": "Infrastructure visual",
+      "categories": {
+        "all": "All",
+        "malls": "Malls",
+        "schools": "Schools",
+        "hospitals": "Hospitals",
+        "markets": "Markets"
+      }
+    }
+  },
+  "vegaCadde": {
+    "hero": {
+      "breadcrumbHome": "NATA Living",
+      "breadcrumbCompletedProjects": "Completed Projects",
+      "breadcrumbProject": "Vega Cadde",
+      "tagMetroDistance": "8 min to metro",
+      "tagLocation": "Ankara — Yenimahalle",
+      "tagUnits": "161 Residences & Offices and Mall Concept",
+      "tagImmediateDelivery": "Immediate Delivery",
+      "tagPremiumLife": "Attractive Investment Opportunity"
+    },
+    "design": {
+      "title": "Vega Cadde",
+      "description": "With its modern architecture and shopping opportunities, Vega Cadde awaits you to experience the city.",
+      "openGallery": "View Project Gallery"
+    },
+    "sitePlans": {
+      "title": "Where Work and Life\nIntersect",
+      "description": "Located in Ankara Yenimahalle, Vega Cadde consists of 161 independent units across 3 blocks. Suitable for both residential and office use, it offers a versatile living space that brings together the city's business and social life. Its proximity to the metro provides great convenience in transportation.",
+      "hotspots": {
+        "1": {
+          "label": "VEGA CADDE",
+          "info": "Cadde A Block"
+        }
+      }
+    },
+    "nearby": {
+      "switchInfrastructure": "Infrastructure",
+      "switchLocation": "Location",
+      "sectionTitle": "Popular places nearby",
+      "projectName": "VEGA CADDE",
+      "projectDescription": "A mixed-use project with residences, offices and a mall in Ankara Yenimahalle",
+      "infrastructureAlt": "Infrastructure visual",
+      "categories": {
+        "all": "All",
+        "malls": "Malls",
+        "schools": "Schools",
+        "hospitals": "Hospitals",
+        "markets": "Markets",
+        "hotels": "Hotels",
+        "mosques": "Mosques",
+        "ministries": "Ministries / Institutions",
+        "business": "Business Centers",
+        "parks": "Parks"
+      }
+    },
+    "unitTypes": {
+      "tabAria": "Unit Type {id}",
+      "selectorAria": "Apartment type selector",
+      "selectorLabel": "Apartment",
+      "selectorSubLabel": "Types",
+      "previousPlan": "Previous Plan",
+      "nextPlan": "Next Plan",
+      "lightboxClose": "Close",
+      "lightboxAlt": "Enlarged unit plan {id}",
+      "mainAlt": "Unit plan {id}",
+      "openLightbox": "Enlarge floor plan",
+      "detailLabels": {
+        "floorPlan": "Floor Plan"
+      }
+    },
+    "life": {
+      "title": "VEGA CADDE\nAt the heart of life",
+      "description": "Opening from the heart of life to the corporate world, 161 scalable OFFICE units and the AVM & OFFICE & RESIDENCE concept that combines elegance and comfort with 1+1 and 2+1 options all come together at a single point in VEGA CADDE, bringing a new breath to the capital.",
+      "slides": {
+        "1": {
+          "title": "The New Name of Luxury and Life: Vega Cadde",
+          "popupTitle": "An elegant setting for professional meetings.",
+          "popupText": "With meeting rooms equipped with technology that adds value to business life, prestigious meetings are always at your fingertips."
+        },
+        "2": {
+          "title": "24/7 Security and Camera System",
+          "popupTitle": "The assurance of commerce and life.",
+          "popupText": "Thanks to security systems that cover every area, offices and residences are protected day and night."
+        },
+        "3": {
+          "title": "Open and Closed Parking Areas",
+          "popupTitle": "Parking comfort instead of parking problems.",
+          "popupText": "With a total capacity of 1,030 vehicles, it offers residents and office owners convenient access and secure parking."
+        },
+        "4": {
+          "title": "Spacious Meeting Rooms",
+          "popupTitle": "An elegant setting for professional meetings.",
+          "popupText": "Meeting rooms equipped with technology that adds value to business life offer you prestigious meeting spaces."
+        },
+        "5": {
+          "title": "High Lobby Entrances",
+          "popupTitle": "A perfect welcome for a first impression.",
+          "popupText": "Lobby areas designed with modern architecture offer a reception space that is both stylish and functional."
+        },
+        "6": {
+          "title": "Location Close to the Metro",
+          "popupTitle": "A transportation advantage that saves time.",
+          "popupText": "Just a few minutes from the Ankara metro, it provides maximum convenience in transportation."
+        }
+      },
+      "buttons": {
+        "goToPresentation": "Go to Presentation",
+        "details": "Detailed Information",
+        "previousShort": "Previous",
+        "nextShort": "Next",
+        "back": "← Back",
+        "forward": "Forward →",
+        "close": "Close"
+      }
+    }
+  },
+  "mega1453": {
+    "hero": {
+      "breadcrumbHome": "NATA Living",
+      "breadcrumbProjects": "New Projects",
+      "breadcrumbProject": "Mega 1453",
+      "tagJunction": "At the intersection of Anadolu Boulevard and Istanbul Road",
+      "tagLocation": "Ankara – Yenimahalle",
+      "tagUnits": "715 Residences",
+      "tagDelivery": "Q1 2027 Delivery",
+      "tagPremiumLife": "Premium Life"
+    },
+    "design": {
+      "title": "Mega 1453\nMixed-Use Living Project",
+      "description": "With its unique architecture and exceptional location, Mega 1453 offers the living space you have always dreamed of.",
+      "openGallery": "View Project Gallery"
+    },
+    "sitePlans": {
+      "title": "Where Life Is\nWe Are There.",
+      "description": "Located in the heart of Ankara, in Yenimahalle Orman Çiftliği Neighborhood, Mega 1453 offers a unique living experience that redefines the rhythm of the city...",
+      "hotspots": {
+        "0": { "info": "Mega 1454 Block A" },
+        "1": { "info": "Mega 1454 Block B" },
+        "2": { "info": "Mega 1454 Block C" },
+        "3": { "info": "Mega 1454 Block D" },
+        "4": { "info": "Mega 1454 Block E" },
+        "5": { "info": "Mega 1454 Block F" },
+        "6": { "info": "Mega 1454 Block G" },
+        "7": { "info": "Mega 1454 Block H" },
+        "8": { "info": "Mega 1454 Block I" },
+        "9": { "info": "Mega 1454 Block J" },
+        "10": { "info": "Mega 1454 Block K" },
+        "11": { "info": "Mega 1454 Block L" },
+        "12": { "info": "Mega 1454 Block M" },
+        "13": { "info": "Mega 1454 Block N" },
+        "14": { "info": "Mega 1454 Block O" },
+        "15": { "info": "Mega 1454 Block P" },
+        "16": { "info": "Mega 1454 Block Q" },
+        "17": { "info": "Mega 1454 Block R" },
+        "18": { "info": "Mega 1454 Block S" },
+        "19": { "info": "Mega 1454 Block T" }
+      }
+    },
+    "nearby": {
+      "switchInfrastructure": "Infrastructure",
+      "switchLocation": "Location",
+      "sectionTitle": "Popular places nearby",
+      "projectName": "Mega 1453",
+      "projectDescription": "Mega 1453 Project",
+      "infrastructureAlt": "Infrastructure visual",
+      "categories": {
+        "all": "All",
+        "malls": "Malls",
+        "schools": "Schools",
+        "hospitals": "Hospitals",
+        "markets": "Markets"
+      }
+    },
+    "unitTypes": {
+      "tabAria": "Unit Type {id}",
+      "selectorAria": "Apartment type selector",
+      "selectorLabel": "Apartment",
+      "selectorSubLabel": "Types",
+      "previousPlan": "Previous Plan",
+      "nextPlan": "Next Plan",
+      "lightboxClose": "Close",
+      "lightboxAlt": "Enlarged unit plan {id}",
+      "mainAlt": "Unit plan {id}",
+      "openLightbox": "Enlarge floor plan",
+      "detailLabels": {
+        "netArea": "Net area"
+      }
+    },
+    "life": {
+      "title": "MEGA 1453\nIn the heart of ANKARA",
+      "description": "Rising on a total land area of 70,000 m², this prestigious project brings a nature-integrated breath to the fabric of the capital. Redefining modern life with its unique architecture and 36,000 m² of landscaped areas, MEGA 1453 consists of 715 residences and commercial units, each designed to high living standards.",
+      "slides": {
+        "1": {
+          "title": "Prestigious Living at Mega 1453",
+          "popupTitle": "Where Modern Architecture, Comfort and Valuable Investment Meet",
+          "popupText": "Mega 1453 brings together comfort, aesthetics and prestige in the center of the city, offering both an exclusive lifestyle and a profitable investment opportunity."
+        },
+        "2": {
+          "title": "Architecture in Harmony with Nature",
+          "popupTitle": "The peace of greenery meets modern life.",
+          "popupText": "With its nature‑integrated design, Mega 1453 invites you to a calm and spacious lifestyle in the city, offering the privilege of spending every moment surrounded by green."
+        },
+        "3": {
+          "title": "The New Center of Modern Living",
+          "popupTitle": "An innovative and comfortable life in the heart of the city.",
+          "popupText": "With its modern architecture and central location, Mega 1453 brings together all the privileges of contemporary living. Both a social and comfortable lifestyle await you."
+        },
+        "4": {
+          "title": "A Peaceful Living Space in the City",
+          "popupTitle": "A calm and comfortable life in the city center.",
+          "popupText": "Amid the dynamism of city life, Mega 1453 offers you a tranquil lifestyle. It makes a difference with its modern, spacious living spaces that are intertwined with nature."
+        },
+        "5": {
+          "title": "Smart security and controlled access",
+          "popupTitle": "A technological solution for a safe and peaceful life.",
+          "popupText": "With entrances and exits equipped with smart systems, every moment of your life is under protection. With technology‑supported security, you can live peacefully both at home and at work."
+        },
+        "6": {
+          "title": "Rich Infrastructure",
+          "popupTitle": "Powerful infrastructure solutions for modern life.",
+          "popupText": "The infrastructure, equipped with uninterrupted energy, high‑speed internet and advanced technology, provides comfort and continuity both in daily life and in the city."
+        },
+        "7": {
+          "title": "Efficient space planning",
+          "popupTitle": "Maximum comfort and functionality in space usage.",
+          "popupText": "With living and working spaces designed to meet different needs, every square meter is used wisely. Functional solutions offer comfort and efficiency together."
+        },
+        "8": {
+          "title": "Safe and Comfortable Open & Closed Parking",
+          "popupTitle": "Safe, dedicated spaces for your vehicles.",
+          "popupText": "With a large, modern underground parking garage, your vehicle is always secure. Easy access and comfortable parking areas help you escape the stress of city life."
+        }
+      },
+      "buttons": {
+        "goToPresentation": "Go to Presentation",
+        "details": "Detailed Information",
+        "previousShort": "Previous",
+        "nextShort": "Next",
+        "back": "← Back",
+        "forward": "Forward →",
+        "close": "Close"
+      }
+    },
+    "navigator": {
+      "closeMenu": "Close Menu",
+      "openMenu": "Open Menu",
+      "tagline": "Mega 1453, the most prestigious project of Ankara",
+      "sections": {
+        "hero": "About Project",
+        "life": "Living",
+        "nearLocations": "Location",
+        "sitePlans": "Site Plans",
+        "unitTypes": "Unit Types",
+        "design": "Design",
+        "contact": "Contact",
+        "office": "Office",
+        "boxes": "More"
+      }
+    }
+  },
+  "tempoint": {
+    "hero": {
+      "breadcrumbHome": "NATA Living",
+      "breadcrumbCompletedProjects": "Completed Projects",
+      "breadcrumbProject": "Tempoint Residences",
+      "tagMetroDistance": "10 min to metro",
+      "tagLocation": "Sultangazi / Istanbul",
+      "tagUnits": "468 Residences & 444 Serviced Apartments & 270 Stores",
+      "tagImmediateDelivery": "Immediate Delivery",
+      "tagPremiumLocation": "Prime Location"
+    },
+    "design": {
+      "title": "Tempoint Residences",
+      "description": "With its green areas and ease of access, Tempoint Residences offers a comfortable lifestyle.",
+      "openGallery": "View Project Gallery"
+    },
+    "sitePlans": {
+      "title": "The New\nAttraction Point of the City",
+      "description": "Located on a 75,000 m² land in Sultangazi, Istanbul, TEM Point is a large mixed-use project consisting of 686 residences, 444 serviced apartments and a shopping center with 270 stores. Standing out with its proximity to transportation networks, the project offers a prestigious experience at the heart of social life.",
+      "hotspots": {
+        "0": {
+          "label": "Block A",
+          "info": "Tempoint Block A"
+        },
+        "1": {
+          "label": "Block B",
+          "info": "Tempoint Block B"
+        },
+        "2": {
+          "label": "Block C",
+          "info": "Tempoint Block C"
+        },
+        "3": {
+          "label": "Block D",
+          "info": "Tempoint Block D"
+        },
+        "4": {
+          "label": "Block E",
+          "info": "Tempoint Block E"
+        }
+      }
+    },
+    "nearby": {
+      "switchInfrastructure": "Infrastructure",
+      "switchLocation": "Location",
+      "sectionTitle": "Popular places nearby",
+      "projectName": "Tempoint Residences",
+      "projectDescription": "Heart of TEM",
+      "infrastructureAlt": "Infrastructure visual",
+      "categories": {
+        "all": "All",
+        "malls": "Malls",
+        "schools": "Schools",
+        "hospitals": "Hospitals",
+        "markets": "Markets",
+        "hotels": "Hotels",
+        "mosques": "Mosques",
+        "ministries": "Ministries / Institutions",
+        "business": "Business Centers",
+        "parks": "Parks"
+      }
+    },
+    "unitTypes": {
+      "tabAria": "Unit Type {id}",
+      "selectorAria": "Apartment type selector",
+      "selectorLabel": "Apartment",
+      "selectorSubLabel": "Types",
+      "previousPlan": "Previous Plan",
+      "nextPlan": "Next Plan",
+      "lightboxClose": "Close",
+      "lightboxAlt": "Enlarged unit plan {id}",
+      "mainAlt": "Unit plan {id}",
+      "openLightbox": "Enlarge floor plan",
+      "detailLabels": {
+        "planId": "Plan ID"
+      }
+    },
+    "life": {
+      "title": "TEMPOINT RESIDENCES\nLifestyle Hub",
+      "description": "Located on the TEM Highway in Sultangazi, Istanbul, Tempoint Residences is in a prime location with an outdoor and indoor pool, jogging tracks, Playstation room, lush green areas, children's playgrounds and the adjacent VEGA Istanbul Shopping and Lifestyle Center.",
+      "slides": {
+        "1": {
+          "title": "The New Name of Modern Living: Tempoint Residences",
+          "popupTitle": "Big fun for little ones.",
+          "popupText": "Specially designed playgrounds for children and digital entertainment areas for teenagers add value to family life."
+        },
+        "2": {
+          "title": "Mall with 270 Stores",
+          "popupTitle": "Shopping and living together.",
+          "popupText": "The integrated shopping mall offers a wide range of options from daily needs to luxury brands."
+        },
+        "3": {
+          "title": "Indoor and Outdoor Swimming Pools",
+          "popupTitle": "Enjoy swimming all year round.",
+          "popupText": "With indoor and outdoor pool options, you can enjoy swimming in all seasons and unwind from daily stress."
+        },
+        "4": {
+          "title": "Children's Playgrounds and Playstation Room",
+          "popupTitle": "Big fun for little ones.",
+          "popupText": "Specially designed playgrounds for children and digital entertainment areas for teenagers add value to family life."
+        },
+        "5": {
+          "title": "Fitness Center and Sports Areas",
+          "popupTitle": "An energetic life awaits you.",
+          "popupText": "With basketball and volleyball courts and a fully equipped fitness center, it offers an indispensable area for those who love sports."
+        },
+        "6": {
+          "title": "Walking and Running Tracks",
+          "popupTitle": "Steps intertwined with nature.",
+          "popupText": "Walking and running paths stretching through lush green areas are ideal for both morning exercise and evening walks."
+        }
+      },
+      "buttons": {
+        "goToPresentation": "Go to Presentation",
+        "details": "Detailed Information",
+        "previousShort": "Previous",
+        "nextShort": "Next",
+        "back": "← Back",
+        "forward": "Forward →",
+        "close": "Close"
+      }
+    },
+    "navigator": {
+      "closeMenu": "Close Menu",
+      "openMenu": "Open Menu",
+      "tagline": "TEMPOINT, the new lifestyle hub on the TEM Highway.",
+      "sections": {
+        "hero": "About Project",
+        "life": "Living",
+        "nearLocations": "Location",
+        "sitePlans": "Site Plans",
+        "unitTypes": "Unit Types",
+        "design": "Design",
+        "contact": "Contact",
+        "office": "Office",
+        "boxes": "More"
+      }
+    }
+  },
+  "megaSasmaz": {
+    "hero": {
+      "breadcrumbHome": "NATA Living",
+      "breadcrumbProjects": "New Projects",
+      "breadcrumbProject": "Mega Şaşmaz",
+      "tagIndustry": "In the auto industrial zone",
+      "tagLocation": "Ankara — Şaşmaz",
+      "tagUnits": "700 Units",
+      "tagImmediateDelivery": "Immediate Delivery and Title Deed",
+      "tagPremiumLife": "Premium Life"
+    },
+    "design": {
+      "title": "Meet\nMEGA ŞAŞMAZ",
+      "description": "Standing out with its impressive architecture and modern design, Mega Şaşmaz is designed to meet the needs of the business world. Consisting of 700 independent units, the project offers large storage capacities with 2 basement floors, a lower ground floor, an upper ground floor and 7 office floors.",
+      "openGallery": "View Project Gallery"
+    },
+    "life": {
+      "title": "YOUR RHYTHM OF LIFE\nIS AT MEGA ŞAŞMAZ",
+      "description": "Located in Ankara Şaşmaz, MEGA Şaşmaz consists of 700 independent units with functional shops, stores, offices and large storage areas, offering a total of 200,000 m² of usable space.",
+      "slides": {
+        "1": {
+          "title": "Discover the Brochure",
+          "popupTitle": "Easy Access for Your Customers",
+          "popupText": "Located at one of Ankara's busiest points, Mega Şaşmaz offers great advantages for both businesses and visitors with its easy access and large parking areas."
+        },
+        "2": {
+          "title": "A New-Generation Auto Industry Experience",
+          "popupTitle": "An Industrial Culture Renewed with Modern Infrastructure",
+          "popupText": "Mega Şaşmaz leaves behind the traditional auto industrial approach and offers a new-generation experience with its technological infrastructure and orderly layout, providing a comfortable and efficient environment for both businesses and customers."
+        },
+        "3": {
+          "title": "The New Address of Shopping and Social Life",
+          "popupTitle": "Catch Social Life While You Work",
+          "popupText": "More than just a commercial area, Mega Şaşmaz also offers a living space. With its shopping and social areas, it allows visitors to spend enjoyable time. A modern environment filled with cafés, restaurants and stores awaits you."
+        },
+        "4": {
+          "title": "Modern Architecture and Functional Design",
+          "popupTitle": "Aesthetics and Functionality Together",
+          "popupText": "With wide façades, spacious interiors and contemporary architectural details, Mega Şaşmaz adds prestige to your business. Its design focuses on functionality so you can use every square meter efficiently."
+        },
+        "5": {
+          "title": "Easy Access and Large Parking Facilities",
+          "popupTitle": "Easy Access for Your Customers",
+          "popupText": "Located at one of Ankara's busiest points, Mega Şaşmaz offers great advantages for both businesses and visitors with its easy access and large parking areas."
+        },
+        "6": {
+          "title": "Large Vehicle and Loading Areas",
+          "popupTitle": "Maximum Efficiency in Logistics",
+          "popupText": "With its large vehicle and loading areas, Mega Şaşmaz makes your logistics processes faster, more organized and more efficient, increasing the operational strength of your business."
+        },
+        "7": {
+          "title": "High-Ceiling Warehouse and Store Areas",
+          "popupTitle": "Flexible Solutions for Storage and Display",
+          "popupText": "Thanks to high-ceiling warehouse and store areas, you can both increase your storage capacity and display your products in a stylish way. Mega Şaşmaz offers your business a strong spatial advantage."
+        }
+      },
+      "buttons": {
+        "goToPresentation": "Go to Presentation",
+        "details": "Detailed Information",
+        "previousShort": "Previous",
+        "nextShort": "Next",
+        "back": "← Back",
+        "forward": "Forward →",
+        "close": "Close"
+      }
+    },
+    "sitePlans": {
+      "title": "Where Life Is\nWe Are There.",
+      "description": "Mega Şaşmaz is a project that offers all the opportunities of modern life. It stands out with its large open areas, aesthetic architecture and comfortable living spaces. Carefully designed in every detail, Mega Şaşmaz offers a peaceful and enjoyable life for you and your family.",
+      "hotspots": {
+        "1": {
+          "label": "MEGA ŞAŞMAZ",
+          "info": "The Center of Life MEGA ŞAŞMAZ"
+        }
+      }
+    },
+    "nearby": {
+      "sectionTitle": "Popular places nearby",
+      "projectName": "MEGA ŞAŞMAZ",
+      "projectDescription": "Ankara's business hub",
+      "infrastructureAlt": "Infrastructure visual",
+      "categories": {
+        "all": "All",
+        "malls": "Malls",
+        "schools": "Schools",
+        "hospitals": "Hospitals",
+        "markets": "Markets"
+      }
+    },
+    "unitTypes": {
+      "tabAria": "Unit Type {id}",
+      "selectorAria": "Apartment type selector",
+      "selectorLabel": "Apartment",
+      "selectorSubLabel": "Types",
+      "previousPlan": "Previous Plan",
+      "nextPlan": "Next Plan",
+      "lightboxClose": "Close",
+      "lightboxAlt": "Enlarged unit plan {id}",
+      "mainAlt": "Unit plan {id}",
+      "openLightbox": "Enlarge floor plan",
+      "detailLabels": {
+        "floor": "Floor"
+      }
+    }
+  },
+  "vegaKonutKuleleri": {
+    "hero": {
+      "breadcrumbHome": "NATA Living",
+      "breadcrumbCompletedProjects": "Completed Projects",
+      "breadcrumbProject": "NATA Vega Residential Towers",
+      "tagBusStop": "2 min to bus stop",
+      "tagLocation": "Mamak / Ankara",
+      "tagUnits": "377 Residences",
+      "tagComfort": "Flawless Architecture and Comfortable Living",
+      "tagImmediateDelivery": "Immediate Delivery"
+    },
+    "design": {
+      "title": "Nata Vega Residential Towers",
+      "description": "Rising in the heart of the city, Nata Vega offers a privileged living space.",
+      "openGallery": "View Project Gallery"
+    },
+    "life": {
+      "title": "NATA VEGA\nRESIDENTIAL TOWERS",
+      "description": "NATA VEGA Residential Towers are designed with everyone in mind, together with the adjacent NATA VEGA Outlet and the massive AQUAVEGA Aquarium. With its central location advantage, flawless architecture and comfortable living spaces, NATA VEGA Residential Towers bring you an elevated lifestyle.",
+      "slides": {
+        "1": {
+          "title": "Luxury and Comfort: Nata Vega Residential Towers",
+          "popupTitle": "Everything you need for a healthy life is within reach.",
+          "popupText": "With a fully equipped gym, staying in shape is now much easier. Spaces equipped with modern equipment allow you to enjoy your workouts."
+        },
+        "2": {
+          "title": "24/7 Security and Camera System",
+          "popupTitle": "Always safe, always at peace.",
+          "popupText": "The project offers a living space protected by 24/7 security staff and camera systems. Security is at the highest level for your family and loved ones."
+        },
+        "3": {
+          "title": "Children's Play Areas",
+          "popupTitle": "Safe and fun spaces for little ones.",
+          "popupText": "Playgrounds specially designed for children provide a social environment that is both fun and safe. Parents can relax while children’s hearts are filled with joy."
+        },
+        "4": {
+          "title": "Fitness Center",
+          "popupTitle": "Everything you need for a healthy life is within reach.",
+          "popupText": "With a fully equipped gym, staying in shape is now much easier. Spaces equipped with modern equipment allow you to enjoy your workouts."
+        },
+        "5": {
+          "title": "Indoor Parking",
+          "popupTitle": "Your car is as valuable as you are.",
+          "popupText": "VEGA RESIDENTIAL TOWERS combine comfort, aesthetics and prestige in the heart of the city, offering both a privileged lifestyle and a profitable investment opportunity."
+        },
+        "6": {
+          "title": "Indoor Swimming Pool and Sauna",
+          "popupTitle": "The center of relaxation and refreshment.",
+          "popupText": "The indoor swimming pool and sauna area offer a comfortable relaxation and renewal experience in every season. It creates a calm living space for those who want to get away from the chaos of the city."
+        }
+      },
+      "buttons": {
+        "goToPresentation": "Go to Presentation",
+        "details": "Detailed Information",
+        "previousShort": "Previous",
+        "nextShort": "Next",
+        "back": "← Back",
+        "forward": "Forward →",
+        "close": "Close"
+      }
+    },
+    "sitePlans": {
+      "title": "The High Point of\nModern Living",
+      "description": "Nata Vega Residential Towers is a landmark project in Ankara’s Mamak district, consisting of a total of 300 residences in two 33‑storey towers that redefine the city’s skyline. Located right next to Nata Vega Mall, the project opens the doors to a comfortable life with easy access and rich social amenities.",
+      "hotspots": {
+        "0": {
+          "label": "Block A",
+          "info": "Residential Tower 1"
+        },
+        "1": {
+          "label": "Block B",
+          "info": "Residential Tower 2"
+        }
+      }
+    },
+    "nearby": {
+      "sectionTitle": "Popular places nearby",
+      "projectName": "Nata Vega Residential Towers",
+      "projectDescription": "Life at new heights",
+      "infrastructureAlt": "Infrastructure visual",
+      "categories": {
+        "all": "All",
+        "malls": "Malls",
+        "schools": "Schools",
+        "hospitals": "Hospitals",
+        "markets": "Markets",
+        "hotels": "Hotels",
+        "mosques": "Mosques",
+        "ministries": "Ministries / Institutions",
+        "business": "Business Centers",
+        "parks": "Parks"
+      }
+    },
+    "unitTypes": {
+      "tabAria": "Unit Type {id}",
+      "selectorAria": "Apartment type selector",
+      "selectorLabel": "Apartment",
+      "selectorSubLabel": "Types",
+      "previousPlan": "Previous Plan",
+      "nextPlan": "Next Plan",
+      "lightboxClose": "Close",
+      "lightboxAlt": "Enlarged unit plan {id}",
+      "mainAlt": "Unit plan {id}",
+      "openLightbox": "Enlarge floor plan",
+      "detailLabels": {
+        "planIndex": "Floor Plan"
+      }
+    }
+  },
+  "hityenibati": {
+    "hero": {
+      "breadcrumbHome": "NATA Living",
+      "breadcrumbProjects": "New Projects",
+      "breadcrumbProject": "HITYENIBATI",
+      "tagMetroDistance": "3 min to metro",
+      "tagLocation": "Ankara — Yeni Batı Neighborhood",
+      "tagUnits": "190 Residences",
+      "tagImmediateDelivery": "Immediate Delivery",
+      "tagPremiumLife": "Premium Life"
+    },
+    "design": {
+      "title": "Meet\nHITYENIBATI",
+      "description": "Designed by carefully considering the needs of modern life down to the smallest detail, HITYENIBATI is not just a housing project but a living space that brings together many features that will make your life easier. Thanks to its proximity to the metro, public transportation and highway access points, you can enjoy convenient transportation and spend your time with your loved ones instead of in traffic.",
+      "openGallery": "View Project Gallery"
+    },
+    "sitePlans": {
+      "title": "Where Life Is\nWe Are There.",
+      "description": "Hit Yeni Batı is a project that offers all the opportunities of modern life. Consisting of a single block, it stands out with its wide open areas, aesthetic architecture and comfortable living spaces. Every detail of Hit Yeni Batı has been carefully considered to offer a peaceful and enjoyable life with your family.",
+      "hotspots": {
+        "1": {
+          "label": "Hit Yeni Batı",
+          "info": "Striking Views, Quality Living"
+        }
+      }
+    },
+    "nearby": {
+      "switchInfrastructure": "Infrastructure",
+      "switchLocation": "Location",
+      "sectionTitle": "Popular places nearby",
+      "projectName": "HITYENIBATI",
+      "projectDescription": "An extraordinary and prestigious residential project in Yeni Batı Neighborhood",
+      "infrastructureAlt": "Infrastructure visual",
+      "categories": {
+        "all": "All",
+        "malls": "Malls",
+        "schools": "Schools",
+        "hospitals": "Hospitals",
+        "markets": "Markets"
+      }
+    },
+    "unitTypes": {
+      "tabAria": "Unit Type {id}",
+      "selectorAria": "Apartment type selector",
+      "selectorLabel": "Apartment",
+      "selectorSubLabel": "Types",
+      "previousPlan": "Previous Plan",
+      "nextPlan": "Next Plan",
+      "lightboxClose": "Close",
+      "lightboxAlt": "Enlarged unit plan {id}",
+      "mainAlt": "Unit plan {id}",
+      "openLightbox": "Enlarge floor plan",
+      "detailLabels": {
+        "netArea": "Net area"
+      }
+    },
+    "life": {
+      "title": "HITYENIBATI\nAnkara's rising value",
+      "description": "Yeni Batı Neighborhood, one of the most popular residential and investment areas of recent times, gains a new breath with HITYENIBATI, an extraordinary and prestigious residential project. With its unique architecture, this project offers a new living space in the heart of the city where you can truly breathe.",
+      "slides": {
+        "1": {
+          "title": "Hityenibati Brochure",
+          "popupTitle": "Where Aesthetics and Functionality Meet",
+          "popupText": "NATA Living, designed with unconventional architectural details, stands out with its modern lines and innovative structure. You will feel elegance and ease of use in every square meter."
+        },
+        "2": {
+          "title": "The Rising Star of Yeni Batı",
+          "popupTitle": "A New Beginning in Ankara's Most Desirable Location",
+          "popupText": "NATA Living, as one of the most prestigious projects in the Yeni Batı area, adds value to both its investors and residents. With its modern infrastructure and central location, it elevates your quality of life to the highest level."
+        },
+        "3": {
+          "title": "Extraordinary Architecture, Modern Design",
+          "popupTitle": "Where Aesthetics and Functionality Meet",
+          "popupText": "NATA Living, designed with unconventional architectural details, stands out with its modern lines and innovative structure. You will feel elegance and ease of use in every square meter."
+        },
+        "4": {
+          "title": "1+1 and 2.5+1 Apartment Options",
+          "popupTitle": "Living Spaces for Every Need",
+          "popupText": "With 1+1 and 2.5+1 apartment options appealing to different lifestyles, NATA Living offers ideal solutions both for investment and for comfortable living. Spacious interiors and functional layouts await you."
+        },
+        "5": {
+          "title": "Safe and Comfortable Living Spaces",
+          "popupTitle": "Peace and Comfort Together",
+          "popupText": "With 24/7 security services and modern site management, live safely with your family at NATA Living. Comfortable social areas and wide landscaping make your daily life more enjoyable."
+        }
+      },
+      "buttons": {
+        "goToPresentation": "Go to Presentation",
+        "details": "Detailed Information",
+        "previousShort": "Previous",
+        "nextShort": "Next",
+        "back": "← Back",
+        "forward": "Forward →",
+        "close": "Close"
+      }
+    }
+  },
+  "hityenibatiplus": {
+    "design": {
+      "title": "Meet\nHITYENIBATI PLUS",
+      "description": "Designed by carefully considering the needs of modern life down to the smallest detail, HITYENIBATI PLUS is not just a housing project but also brings together many features that will make your life easier. Thanks to its proximity to the metro, public transport and highway access points, you can enjoy convenient transportation and spend your time with your loved ones instead of in traffic.",
+      "openGallery": "View Project Gallery"
+    },
+    "hero": {
+      "breadcrumbHome": "NATA Living",
+      "breadcrumbProjects": "New Projects",
+      "breadcrumbProject": "Yeni Batı Plus",
+      "tagMetroDistance": "14 min to metro",
+      "tagLocation": "Ankara — Yeni Batı",
+      "tagUnits": "405 Residences + 5 Commercial Units",
+      "tagImmediateDelivery": "Immediate Delivery",
+      "tagPremiumLife": "Premium Life"
+    },
+    "life": {
+      "title": "YENI BATI PLUS\nAnkara's rising value",
+      "description": "Yeni Batı Neighborhood, one of the most popular residential and investment areas of recent times, gains a new breath with the extraordinary and prestigious residential project Yeni Batı Plus. With its unique architecture, this distinctive project offers you a new living space in the heart of the city where you can truly breathe.",
+      "slides": {
+        "1": {
+          "title": "Yeni Batı Plus Brochure",
+          "popupTitle": "A privileged area for sports enthusiasts",
+          "popupText": "Yeni Batı Plus supports a healthy lifestyle by offering a specially designed basketball court where sports lovers can both have fun and exercise."
+        },
+        "2": {
+          "title": "24/7 Security",
+          "popupTitle": "Year-round protection and safety",
+          "popupText": "With its modern security infrastructure and continuous monitoring systems, we provide a safe living environment for you and your loved ones in every season."
+        },
+        "3": {
+          "title": "Open Parking",
+          "popupTitle": "Easy and fast parking comfort",
+          "popupText": "The wide open parking areas within the project offer a practical parking experience that saves time for vehicle owners."
+        },
+        "4": {
+          "title": "Basketball Court",
+          "popupTitle": "A privileged area for sports enthusiasts",
+          "popupText": "Yeni Batı Plus supports a healthy lifestyle by offering a specially designed basketball court where sports lovers can both have fun and exercise."
+        },
+        "5": {
+          "title": "Closed Parking",
+          "popupTitle": "Safe parking in all seasons",
+          "popupText": "With the closed parking garage, your vehicle is protected against weather conditions in every season; and with the 24/7 active security system, you can park with peace of mind."
+        },
+        "6": {
+          "title": "Playground",
+          "popupTitle": "Where children's imagination grows",
+          "popupText": "With safe and modern playgrounds specially designed for children, Yeni Batı Plus offers a colorful environment where they can spend their energy with joy and build new friendships."
+        }
+      },
+      "buttons": {
+        "goToPresentation": "Go to Presentation",
+        "details": "Detailed Information",
+        "previousShort": "Previous",
+        "nextShort": "Next",
+        "back": "← Back",
+        "forward": "Forward →",
+        "close": "Close"
+      }
+    },
+    "nearby": {
+      "sectionTitle": "Popular places nearby",
+      "projectName": "Yeni Batı Plus",
+      "projectDescription": "An extraordinary and prestigious residential project in Yeni Batı Neighborhood",
+      "infrastructureAlt": "Infrastructure visual",
+      "categories": {
+        "all": "All",
+        "malls": "Malls",
+        "schools": "Schools",
+        "hospitals": "Hospitals",
+        "markets": "Markets"
+      }
     }
   },
   "anteres": {
@@ -627,7 +1669,43 @@
       "lightboxClose": "Close",
       "lightboxAlt": "Enlarged unit plan {id}",
       "mainAlt": "Unit plan {id}",
-      "openLightbox": "Enlarge floor plan"
+      "openLightbox": "Enlarge floor plan",
+      "details": {
+        "apartmentType": "Apartment Type",
+        "livingRoom": "Living Room",
+        "kitchen": "Kitchen",
+        "entryway": "Entrance Hall",
+        "corridor": "Corridor",
+        "bedroom": "Bedroom",
+        "bedroom1": "Bedroom 1",
+        "bedroom2": "Bedroom 2",
+        "bedroom3": "Bedroom 3",
+        "masterBedroom": "Master Bedroom",
+        "masterDressingRoom": "Master Dressing Room",
+        "masterBathroom": "Master Bathroom",
+        "sharedBathroom": "Shared Bathroom",
+        "wc": "WC",
+        "laundryCabinet": "Laundry Cabinet",
+        "pantry": "Pantry",
+        "balcony": "Balcony",
+        "balcony1": "Balcony 1",
+        "balcony2": "Balcony 2",
+        "livingRoomKitchen": "Living Room + Kitchen",
+        "totalNetArea": "Total Net Area",
+        "sharedArea": "Shared Area",
+        "approxStorageNetArea": "Approx. Storage Net Area",
+        "totalGrossArea": "Total Gross Area",
+        "approxStorageArea": "Approx. Storage Area",
+        "bedroomBathroom": "Bedroom Bathroom",
+        "closetRoom": "Closet Room",
+        "sofaArea": "Sitting Area",
+        "bedroom2Bathroom": "Bedroom 2 Bathroom",
+        "apartmentNetArea": "Total Apartment Net Area",
+        "parkingCommonArea": "Parking / Common Area",
+        "apartmentGrossArea": "Total Apartment Gross Area",
+        "storage": "Storage",
+        "bedroom1Bathroom": "Bedroom 1 Bathroom"
+      }
     },
     "boxes": {
       "cards": {
@@ -650,5 +1728,11 @@
         }
       }
     }
+  },
+  "campaigns": {
+    "sectionTitle": "Campaigns",
+    "imageAltVegaOtonomi": "Vega Otonomi",
+    "imageAltVegaCenter": "Vega Center",
+    "imageAltMega1453": "Mega 1453"
   }
 }

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useTranslations } from "next-intl";
 
 const slides = [
   {
@@ -67,6 +68,7 @@ const slides = [
 ];
 
 export default function ProjectLifeRhythmSection() {
+  const tLife = useTranslations("ramsGarden.life");
   const [index, setIndex] = useState(0);
   const [popupIndex, setPopupIndex] = useState<number | null>(null);
   const totalSlides = slides.length;
@@ -108,16 +110,15 @@ const handlePointerUp = () => {
 
 
       
-      <h2 className="text-3xl font-light text-gray-800 uppercase leading-tight">
-      RAMS GARDEN BAHÇELİEVLER
-
-  <br />İstanbul'un kalbi
+      <h2 className="text-3xl font-light text-gray-800 uppercase leading-tight whitespace-pre-line">
+        {tLife("title")}
       </h2>
       <p className="mt-4 text-sm text-gray-600 max-w-xl mx-auto">
-İstanbul'un kalbi Bahçelievler'de 2+1'den 5+1 seçeneğine kadar 796 daire bulunmakta olup, yanı başında nitelikli yeşil alan ve peyzaj alanları ile prestijli mağazaların olduğu özel proje NATA Holding ve Rams Türkiye güvencesiyle sizlerle buluşuyor.      </p>
+        {tLife("description")}
+      </p>
 
       <div className="relative mt-12 w-full max-w-7xl mx-auto h-[500px]">
-      <div className="relative flex items-center justify-center h-full">
+        <div className="relative flex items-center justify-center h-full">
 
           {slides.map((slide, i) => {
             const offset = (i - index + totalSlides) % totalSlides;
@@ -178,28 +179,26 @@ const handlePointerUp = () => {
                     {slide.title}
                   </div>
                   {index === i && (
-  <>
-    {i === 0 ? (
-      // If it's the first slide, render a link
-      <a
-             href="https://brosur.ramsgarden.com/"
-    target="_blank"
-    rel="noopener noreferrer"  // <-- Change this URL to your target link
-        className="z-100 absolute    left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-black text-sm text-white  px-5 py-2 rounded-full shadow"
-      >
-        Sunuma Git
-      </a>
-    ) : (
-      // For other slides, open popup
-      <button
-        onClick={() => setPopupIndex(i)}
-        className="z-100 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-sm text-gray-700 px-5 py-2 rounded-full shadow"
-      >
-        Ayrıntılı Bilgi
-      </button>
-    )}
-  </>
-)}
+                    <>
+                      {i === 0 ? (
+                        <a
+                          href="https://brosur.ramsgarden.com/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="z-100 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-black text-sm text-white px-5 py-2 rounded-full shadow"
+                        >
+                          {tLife("buttons.goToPresentation")}
+                        </a>
+                      ) : (
+                        <button
+                          onClick={() => setPopupIndex(i)}
+                          className="z-100 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-sm text-gray-700 px-5 py-2 rounded-full shadow"
+                        >
+                          {tLife("buttons.details")}
+                        </button>
+                      )}
+                    </>
+                  )}
                 </div>
               </div>
             );
@@ -207,16 +206,16 @@ const handlePointerUp = () => {
 
           <button
             onClick={() => setIndex((prev) => (prev - 1 + totalSlides) % totalSlides)}
-            aria-label="Önceki"
-            title="Önceki"
+            aria-label={tLife("buttons.previousShort")}
+            title={tLife("buttons.previousShort")}
             className="absolute left-0 top-1/2 -translate-y-1/2 bg-white text-black p-3 rounded-full shadow z-40"
           >
             <FaChevronLeft />
           </button>
           <button
             onClick={() => setIndex((prev) => (prev + 1) % totalSlides)}
-            aria-label="Sonraki"
-            title="Sonraki"
+            aria-label={tLife("buttons.nextShort")}
+            title={tLife("buttons.nextShort")}
             className="absolute right-0 top-1/2 -translate-y-1/2 bg-white text-black p-3 rounded-full shadow z-40"
           >
             <FaChevronRight />
@@ -230,8 +229,8 @@ const handlePointerUp = () => {
             <button
               onClick={() => setPopupIndex(null)}
               className="absolute top-3 right-4 text-gray-500 hover:text-gray-800 text-xl"
-              aria-label="Kapat"
-              title="Kapat"
+              aria-label={tLife("buttons.close")}
+              title={tLife("buttons.close")}
             >
               ✕
             </button>
@@ -260,7 +259,7 @@ const handlePointerUp = () => {
                 }
                 className="text-sm text-gray-700 hover:underline"
               >
-                ← Geri
+                {tLife("buttons.back")}
               </button>
               <button
                 onClick={() =>
@@ -268,7 +267,7 @@ const handlePointerUp = () => {
                 }
                 className="text-sm text-gray-700 hover:underline"
               >
-                İleri →
+                {tLife("buttons.forward")}
               </button>
             </div>
           </div>

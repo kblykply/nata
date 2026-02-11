@@ -3,67 +3,61 @@
 import Image from "next/image";
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useTranslations } from "next-intl";
 
 const slides = [
   {
-    title: "Lüks ve Yaşamın Yeni Adı: Vega Cadde",
+    id: 1,
     image: "/vega-cadde/I╠çs╠º ve Yas╠ºam─▒n Yeni Ad─▒ Vega Cadde.jpg",
-    popup: {
-      title: "Profesyonel buluşmalara şık bir ortam.",
-      text: "İş hayatına değer katan, teknolojiyle donatılmış toplantı salonları sayesinde prestijli görüşmeler elinizin altında.",
-      images: ["/vega-cadde-popup/Genis╠º Toplant─▒ Salonlar─▒ (2).jpg", "/vega-cadde-popup/Genis╠º Toplant─▒ Salonlar─▒.jpg"]
-    }
+    popupImages: [
+      "/vega-cadde-popup/Genis╠º Toplant─▒ Salonlar─▒ (2).jpg",
+      "/vega-cadde-popup/Genis╠º Toplant─▒ Salonlar─▒.jpg",
+    ],
   },
-    {
-    title: "24 Saat Güvenlik ve Kameralı Sistem",
+  {
+    id: 2,
     image: "/vega-cadde/24 Saat Gu╠êvenlik ve Kameral─▒ Sistem.jpg",
-    popup: {
-      title: "Ticaretin ve yaşamın güvencesi.",
-      text: "Her alanı kapsayan güvenlik sistemleri sayesinde ofisler ve konutlar gece gündüz koruma altında.",
-      images: ["/vega-cadde-popup/24 Saat Gu╠êvenlik ve Kameral─▒ Sistem (2).jpg", "/vega-cadde-popup/24 Saat Gu╠êvenlik ve Kameral─▒ Sistem.jpg"]
-    }
+    popupImages: [
+      "/vega-cadde-popup/24 Saat Gu╠êvenlik ve Kameral─▒ Sistem (2).jpg",
+      "/vega-cadde-popup/24 Saat Gu╠êvenlik ve Kameral─▒ Sistem.jpg",
+    ],
   },
   {
-    title: "Açık ve Kapalı Otopark Alanları",
+    id: 3,
     image: "/vega-cadde/Ac╠º─▒k ve Kapal─▒ Otopark Alanlar─▒.jpg",
-    popup: {
-      title: "Park sorunu değil, park konforu.",
-      text: "Toplam 1.030 araçlık kapasiteyle konut ve ofis sahiplerine rahat ulaşım ve güvenli park imkanı sunar.",
-      images: ["/vega-cadde-popup/Ac╠º─▒k ve Kapal─▒ Otopark Alanlar─▒ (2).jpg", "/vega-cadde-popup/Ac╠º─▒k ve Kapal─▒ Otopark Alanlar─▒.jpg"]
-    }
+    popupImages: [
+      "/vega-cadde-popup/Ac╠º─▒k ve Kapal─▒ Otopark Alanlar─▒ (2).jpg",
+      "/vega-cadde-popup/Ac╠º─▒k ve Kapal─▒ Otopark Alanlar─▒.jpg",
+    ],
   },
   {
-    title: "Geniş Toplantı Salonları",
+    id: 4,
     image: "/vega-cadde/Genis╠º Toplant─▒ Salonlar─▒.jpg",
-    popup: {
-      title: "Profesyonel buluşmalara şık bir ortam.",
-      text: "İş hayatına değer katan, teknolojiyle donatılmış toplantı salonları sayesinde prestijli görüşmeler elinizin altında.",
-      images: ["/vega-cadde-popup/Genis╠º Toplant─▒ Salonlar─▒ (2).jpg", "/vega-cadde-popup/Genis╠º Toplant─▒ Salonlar─▒.jpg"]
-    }
+    popupImages: [
+      "/vega-cadde-popup/Genis╠º Toplant─▒ Salonlar─▒ (2).jpg",
+      "/vega-cadde-popup/Genis╠º Toplant─▒ Salonlar─▒.jpg",
+    ],
   },
   {
-    title: "Yüksek Lobi Girişleri",
+    id: 5,
     image: "/vega-cadde/Lu╠êks Lobi Giris╠ºleri.jpg",
-    popup: {
-      title: "İlk izlenim için kusursuz karşılama.",
-      text: "Modern mimarisiyle tasarlanan lobi alanları, hem şık hem de işlevsel bir karşılama sunar.",
-      images: ["/vega-cadde-popup/Lu╠êks Lobi Giris╠ºleri (2).jpg", "/vega-cadde-popup/Lu╠êks Lobi Giris╠ºleri.jpg"]
-    }
+    popupImages: [
+      "/vega-cadde-popup/Lu╠êks Lobi Giris╠ºleri (2).jpg",
+      "/vega-cadde-popup/Lu╠êks Lobi Giris╠ºleri.jpg",
+    ],
   },
-   {
-    title: "Metroya Yakın Konum",
+  {
+    id: 6,
     image: "/vega-cadde/Metroya Yak─▒n Konum.jpg",
-    popup: {
-      title: "Zaman kazandıran ulaşım avantajı.",
-      text: "Ankara metrosuna sadece birkaç dakika uzaklıkta, ulaşımda maksimum kolaylık sağlar.",
-      images: ["/vega-cadde-popup/Metroya Yak─▒n Konum (2).jpg", "/vega-cadde-popup/Metroya Yak─▒n Konum.jpg"]
-    }
+    popupImages: [
+      "/vega-cadde-popup/Metroya Yak─▒n Konum (2).jpg",
+      "/vega-cadde-popup/Metroya Yak─▒n Konum.jpg",
+    ],
   },
-  
-  
 ];
 
 export default function ProjectLifeRhythmSection() {
+  const tLife = useTranslations("vegaCadde.life");
   const [index, setIndex] = useState(0);
   const [popupIndex, setPopupIndex] = useState<number | null>(null);
   const totalSlides = slides.length;
@@ -105,13 +99,12 @@ const handlePointerUp = () => {
 
 
       
-      <h2 className="text-3xl font-light text-gray-800 uppercase leading-tight">
-      VEGA CADDE
-
-  <br />Yaşamın kalbinde
+      <h2 className="text-3xl font-light text-gray-800 uppercase leading-tight whitespace-pre-line">
+        {tLife("title")}
       </h2>
       <p className="mt-4 text-sm text-gray-600 max-w-xl mx-auto">
-Yaşamın kalbinden kurumsal dünyaya açılan, boyutlandırılabilir 161 adet OFİS kompleksi, 1+1 ve 2+1 seçenekleri ile şıklığı ve konforu bir araya getiren AVM & OFİS & KONUT konsepti ile VEGA CADDE'de tek bir noktada toplanıyor, başkente yeni bir soluk kazandırıyor.      </p>
+        {tLife("description")}
+      </p>
 
       <div className="relative mt-12 w-full max-w-7xl mx-auto h-[500px]">
       <div className="relative flex items-center justify-center h-full">
@@ -167,12 +160,12 @@ Yaşamın kalbinden kurumsal dünyaya açılan, boyutlandırılabilir 161 adet O
   
                   <Image
                     src={slide.image}
-                    alt={slide.title}
+                    alt={tLife(`slides.${slide.id}.title`)}
                     fill
                     className="object-cover rounded-xl"
                   />
                   <div className="absolute top-4 left-4 bg-black/50 text-white text-xs px-3 py-1 rounded">
-                    {slide.title}
+                    {tLife(`slides.${slide.id}.title`)}
                   </div>
                   {index === i && (
   <>
@@ -184,7 +177,7 @@ Yaşamın kalbinden kurumsal dünyaya açılan, boyutlandırılabilir 161 adet O
     rel="noopener noreferrer" // <-- Change this URL to your target link
         className="z-100 absolute    left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-black text-sm text-white  px-5 py-2 rounded-full shadow"
       >
-        Sunuma Git
+        {tLife("buttons.goToPresentation")}
       </a>
     ) : (
       // For other slides, open popup
@@ -192,7 +185,7 @@ Yaşamın kalbinden kurumsal dünyaya açılan, boyutlandırılabilir 161 adet O
         onClick={() => setPopupIndex(i)}
         className="z-100 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-sm text-gray-700 px-5 py-2 rounded-full shadow"
       >
-        Ayrıntılı Bilgi
+        {tLife("buttons.details")}
       </button>
     )}
   </>
@@ -225,21 +218,21 @@ Yaşamın kalbinden kurumsal dünyaya açılan, boyutlandırılabilir 161 adet O
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
           <div className="bg-white max-w-4xl w-full p-6 rounded-xl relative text-left">
             <button
-              onClick={() => setPopupIndex(null)}
-              className="absolute top-3 right-4 text-gray-500 hover:text-gray-800 text-xl"
-              aria-label="Kapat"
-              title="Kapat"
+                onClick={() => setPopupIndex(null)}
+                className="absolute top-3 right-4 text-gray-500 hover:text-gray-800 text-xl"
+                aria-label={tLife("buttons.close")}
+                title={tLife("buttons.close")}
             >
               ✕
             </button>
             <h3 className="text-xl font-semibold text-gray-900 mb-3">
-              {slides[popupIndex].popup.title}
+              {tLife(`slides.${slides[popupIndex].id}.popupTitle`)}
             </h3>
             <p className="text-sm text-gray-700 mb-4">
-              {slides[popupIndex].popup.text}
+              {tLife(`slides.${slides[popupIndex].id}.popupText`)}
             </p>
             <div className="grid grid-cols-2 gap-4">
-              {slides[popupIndex].popup.images.map((img, i) => (
+              {slides[popupIndex].popupImages.map((img, i) => (
                 <Image
                   key={i}
                   src={img}
@@ -257,7 +250,7 @@ Yaşamın kalbinden kurumsal dünyaya açılan, boyutlandırılabilir 161 adet O
                 }
                 className="text-sm text-gray-700 hover:underline"
               >
-                ← Geri
+                {tLife("buttons.back")}
               </button>
               <button
                 onClick={() =>
@@ -265,7 +258,7 @@ Yaşamın kalbinden kurumsal dünyaya açılan, boyutlandırılabilir 161 adet O
                 }
                 className="text-sm text-gray-700 hover:underline"
               >
-                İleri →
+                {tLife("buttons.forward")}
               </button>
             </div>
           </div>

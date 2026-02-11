@@ -2,36 +2,28 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 const hotspots = [
   {
     id: 1,
-    label: "TİP 1",
-    text: "Göz Alıcı Manzara, Kaliteli Yaşam",
     image: "/goat-tip1.png",
-    info: "TİP 1 villalar, 4 katlı olarak tasarlanmış olup, toplamda 750 m² brüt alana sahiptir. Bu villa tipinde, yaşam alanlarını tamamlayan 250 ile 400 m² arasında değişen açık peyzaj alanı bulunur, böylece geniş ve esnek bir bahçe kullanım imkanı sunar.",
     position: { top: "25%", left: "50%" },
   },
   {
     id: 2,
-    label: "TİP 2",
-    text: "Modern Tasarım, Konforlu Yaşam",
     image: "/goat-tip2.png",
-    info: "TİP 2 villalar da 4 kat olarak planlanmış ve yine 750 m² brüt alan ile geniş bir yaşam alanı sağlamaktadır. Tip 2’nin farkı, daha büyük bir 300 - 350 m² açık peyzaj alanına sahip olmasıdır, bu da daha fazla yeşil alan tercih edenler için ideal bir seçenek sunar.",
     position: { top: "60%", left: "40%" },
   },
   {
     id: 3,
-    label: "TİP 3",
-    text: "Zamansız Tasarım, Ferah Yaşam",
     image: "/goat-tip3.png",
-    info: "TİP 3 villalar, 4 katlı yapısıyla fonksiyonel bir kullanım alanı sağlarken, 680 m² brüt alanıyla daha kompakt bir yaşam alanı sunar. Bu villa tipinde ise sabit olarak 395 m² açık peyzaj alanı bulunmakta olup, geniş bahçe alanı ile doğayla iç içe bir yaşam imkanı sağlar.",
     position: { top: "60%", left: "70%" },
   },
-
-  
 ];
+
 export default function SidePlans() {
+  const t = useTranslations("goatVillas.sitePlans");
   const [hoveredId, setHoveredId] = useState<number | null>(null);
   const hoveredImage = hotspots.find((h) => h.id === hoveredId)?.image || null;
 
@@ -39,11 +31,11 @@ export default function SidePlans() {
     <section className="relative w-full bg-white">
       {/* Top Text */}
       <div className="text-center max-w-4xl mx-auto py-12 md:py-16 px-4">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-wide text-gray-900">
-          Yaşam Nerede <br /> Biz Orada.
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-wide text-gray-900 whitespace-pre-line">
+          {t("title")}
         </h2>
         <p className="mt-4 text-sm md:text-base text-gray-700 leading-relaxed">
-          Goat Villas, modern mimarisi ve geniş açık alanlarıyla konforlu bir yaşam sunuyor. Her blok, doğayla iç içe bir yaşam alanı sağlarken, estetik tasarımıyla da göz dolduruyor. Villalarımız, ferah iç mekanları ve geniş bahçe alanları ile ailenizle birlikte keyifli anlar geçirmenizi sağlıyor.
+          {t("description")}
         </p>
       </div>
 
@@ -78,12 +70,12 @@ export default function SidePlans() {
               onMouseLeave={() => setHoveredId(null)}
             >
               <div className="bg-white px-3 py-1 sm:px-4 sm:py-2 rounded-full shadow text-xs sm:text-sm font-medium text-gray-800 border border-gray-200 whitespace-nowrap cursor-pointer hover:bg-gray-50 transition">
-                {spot.label}
+                {t(`hotspots.${spot.id}.label`)}
               </div>
 
-                     {hoveredId === spot.id && (
+{hoveredId === spot.id && (
   <div className="absolute left-1/2 bottom-full mb-2 transform -translate-x-1/2 w-40 sm:w-48 bg-white border border-gray-200 shadow-lg rounded-lg p-2 sm:p-3 text-[10px] sm:text-xs text-gray-700 z-30">
-    {spot.info.split("\n").map((line, i) => (
+    {t(`hotspots.${spot.id}.info`).split("\n").map((line, i) => (
       <p key={i} className="mb-1">{line}</p>
     ))}
   </div>

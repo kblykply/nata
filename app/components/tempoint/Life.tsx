@@ -3,67 +3,61 @@
 import Image from "next/image";
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-
-const slides = [
-  {
-    title: "Modern Yaşamın Yeni Adı: Tempoint Konutlar",
-    image: "/tempoint/Modern Yas╠ºam─▒n Yeni Ad─▒_ Nata I╠çncek Konutlar─▒.jpg",
-     popup: {
-      title: "Küçükler için büyük eğlenceler.",
-      text: "Çocuklara özel tasarlanmış parklar ve gençler için dijital eğlence alanları ile aile yaşamına değer katıyor.",
-      images: ["/tempoint-popup/C╠ºocuk Oyun Alanlar─▒ ve Playstation Odas─▒ (2).jpg", "/tempoint-popup/C╠ºocuk Oyun Alanlar─▒ ve Playstation Odas─▒.jpg"]
-    }
-  },
-  {
-    title: "270 Mağazalı AVM",
-    image: "/tempoint/270 Mag╠åazal─▒k AVM.jpg",
-    popup: {
-      title: "Alışveriş ve yaşam bir arada.",
-      text: "Projeye entegre alışveriş merkezi, günlük ihtiyaçlardan lüks markalara kadar geniş bir seçenek sunar.",
-      images: ["/tempoint-popup/270 Mag╠åazal─▒k AVM (2).jpg", "/tempoint-popup/270 Mag╠åazal─▒k AVM.jpg"]
-    }
-  },
-  {
-    title: "Açık ve Kapalı Yüzme Havuzları",
-    image: "/tempoint/Ac╠º─▒k ve Kapal─▒ Yu╠êzme Havuzlar─▒.jpg",
-    popup: {
-      title: "Tüm yıl boyunca yüzme keyfi.",
-      text: "Açık ve kapalı havuz seçenekleri ile yaz-kış fark etmeksizin yüzmenin tadını çıkarabilir, günün stresinden arınabilirsiniz..",
-      images: ["/tempoint-popup/Ac╠º─▒k ve Kapal─▒ Yu╠êzme Havuzlar─▒ (2).jpg", "/tempoint-popup/Ac╠º─▒k ve Kapal─▒ Yu╠êzme Havuzlar─▒.jpg"]
-    }
-  },
-    {
-    title: "Çocuk Oyun Alanları ve Playstation Odası",
-    image: "/tempoint/C╠ºocuk Oyun Alanlar─▒ ve Playstation Odas─▒.jpg",
-    popup: {
-      title: "Küçükler için büyük eğlenceler.",
-      text: "Çocuklara özel tasarlanmış parklar ve gençler için dijital eğlence alanları ile aile yaşamına değer katıyor.",
-      images: ["/tempoint-popup/C╠ºocuk Oyun Alanlar─▒ ve Playstation Odas─▒ (2).jpg", "/tempoint-popup/C╠ºocuk Oyun Alanlar─▒ ve Playstation Odas─▒.jpg"]
-    }
-  },
-  {
-    title: "Fitness Salonu ve Spor Alanları",
-    image: "/tempoint/Fitness Salonu ve Spor Alanlar─▒.jpg",
-    popup: {
-      title: "Enerji dolu bir hayat sizi bekliyor.",
-      text: "Basketbol ve voleybol sahalarıyla birlikte tam donanımlı fitness salonu, spor yapmayı sevenler için vazgeçilmez bir alan sunuyor.",
-      images: ["/tempoint-popup/Fitness Salonu ve Spor Alanlar─▒ (2).jpg", "/tempoint-popup/Fitness Salonu ve Spor Alanlar─▒.jpg"]
-    }
-  },
-  
-     {
-    title: "Yürüyüş ve Koşu Parkurları",
-    image: "/tempoint/Yu╠êru╠êyu╠ês╠º ve Kos╠ºu Parkurlar─▒.jpg",
-    popup: {
-      title: "Doğayla iç içe adımlar.",
-      text: "Yemyeşil alanlar arasında uzanan yürüyüş ve koşu yolları, hem sabah sporları hem de akşam yürüyüşleri için birebir.",
-      images: ["/tempoint-popup/Yu╠êru╠êyu╠ês╠º ve Kos╠ºu Parkurlar─▒ (2).jpg", "/tempoint-popup/Yu╠êru╠êyu╠ês╠º ve Kos╠ºu Parkurlar─▒.jpg"]
-    }
-  },
- 
-];
+import { useTranslations } from "next-intl";
 
 export default function ProjectLifeRhythmSection() {
+  const tLife = useTranslations("tempoint.life");
+
+  const slides = [
+    {
+      id: 1,
+      image: "/tempoint/Modern Yas╠ºam─▒n Yeni Ad─▒_ Nata I╠çncek Konutlar─▒.jpg",
+      images: [
+        "/tempoint-popup/C╠ºocuk Oyun Alanlar─▒ ve Playstation Odas─▒ (2).jpg",
+        "/tempoint-popup/C╠ºocuk Oyun Alanlar─▒ ve Playstation Odas─▒.jpg",
+      ],
+    },
+    {
+      id: 2,
+      image: "/tempoint/270 Mag╠åazal─▒k AVM.jpg",
+      images: [
+        "/tempoint-popup/270 Mag╠åazal─▒k AVM (2).jpg",
+        "/tempoint-popup/270 Mag╠åazal─▒k AVM.jpg",
+      ],
+    },
+    {
+      id: 3,
+      image: "/tempoint/Ac╠º─▒k ve Kapal─▒ Yu╠êzme Havuzlar─▒.jpg",
+      images: [
+        "/tempoint-popup/Ac╠º─▒k ve Kapal─▒ Yu╠êzme Havuzlar─▒ (2).jpg",
+        "/tempoint-popup/Ac╠º─▒k ve Kapal─▒ Yu╠êzme Havuzlar─▒.jpg",
+      ],
+    },
+    {
+      id: 4,
+      image: "/tempoint/C╠ºocuk Oyun Alanlar─▒ ve Playstation Odas─▒.jpg",
+      images: [
+        "/tempoint-popup/C╠ºocuk Oyun Alanlar─▒ ve Playstation Odas─▒ (2).jpg",
+        "/tempoint-popup/C╠ºocuk Oyun Alanlar─▒ ve Playstation Odas─▒.jpg",
+      ],
+    },
+    {
+      id: 5,
+      image: "/tempoint/Fitness Salonu ve Spor Alanlar─▒.jpg",
+      images: [
+        "/tempoint-popup/Fitness Salonu ve Spor Alanlar─▒ (2).jpg",
+        "/tempoint-popup/Fitness Salonu ve Spor Alanlar─▒.jpg",
+      ],
+    },
+    {
+      id: 6,
+      image: "/tempoint/Yu╠êru╠êyu╠ês╠º ve Kos╠ºu Parkurlar─▒.jpg",
+      images: [
+        "/tempoint-popup/Yu╠êru╠êyu╠ês╠º ve Kos╠ºu Parkurlar─▒ (2).jpg",
+        "/tempoint-popup/Yu╠êru╠êyu╠ês╠º ve Kos╠ºu Parkurlar─▒.jpg",
+      ],
+    },
+  ];
   const [index, setIndex] = useState(0);
   const [popupIndex, setPopupIndex] = useState<number | null>(null);
   const totalSlides = slides.length;
@@ -105,12 +99,11 @@ const handlePointerUp = () => {
 
 
       
-      <h2 className="text-3xl font-light text-gray-800 uppercase leading-tight">
-     TEMPOINT KONUTLARI  <br />Yaşam Merkezi
+      <h2 className="text-3xl font-light text-gray-800 uppercase leading-tight whitespace-pre-line">
+        {tLife("title")}
       </h2>
       <p className="mt-4 text-sm text-gray-600 max-w-xl mx-auto">
-Sultangazi, İstanbul'da TEM Otoyolu üzerinde bulunan Tempoint Konutları açık ve yetişkin çocuk havuzu, koşu parkurları, Playstation odası, yemyeşil alanları, çocuk parkları ve hemen yanı başında yer alan VEGA İstanbul Alışveriş ve Yaşam Merkezi ile can alıcı bir lokasyonda yer almaktadır.
-
+        {tLife("description")}
       </p>
 
       <div className="relative mt-12 w-full max-w-7xl mx-auto h-[500px]">
@@ -167,22 +160,21 @@ Sultangazi, İstanbul'da TEM Otoyolu üzerinde bulunan Tempoint Konutları açı
   
                   <Image
                     src={slide.image}
-                    alt={slide.title}
+                    alt={tLife(`slides.${slide.id}.title` as const)}
                     fill
                     className="object-cover rounded-xl"
                   />
                   <div className="absolute top-4 left-4 bg-black/50 text-white text-xs px-3 py-1 rounded">
-                    {slide.title}
+                    {tLife(`slides.${slide.id}.title` as const)}
                   </div>
                   {index === i && (
   <>
     {i === 0 ? (
       // If it's the first slide, render a link
       <a
-           // <-- Change this URL to your target link
         className="z-100 absolute    left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-black text-sm text-white  px-5 py-2 rounded-full shadow"
       >
-        Sunuma Git
+        {tLife("buttons.goToPresentation")}
       </a>
     ) : (
       // For other slides, open popup
@@ -190,7 +182,7 @@ Sultangazi, İstanbul'da TEM Otoyolu üzerinde bulunan Tempoint Konutları açı
         onClick={() => setPopupIndex(i)}
         className="z-100 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-sm text-gray-700 px-5 py-2 rounded-full shadow"
       >
-        Ayrıntılı Bilgi
+        {tLife("buttons.details")}
       </button>
     )}
   </>
@@ -202,16 +194,16 @@ Sultangazi, İstanbul'da TEM Otoyolu üzerinde bulunan Tempoint Konutları açı
 
           <button
             onClick={() => setIndex((prev) => (prev - 1 + totalSlides) % totalSlides)}
-            aria-label="Önceki"
-            title="Önceki"
+            aria-label={tLife("buttons.previousShort")}
+            title={tLife("buttons.previousShort")}
             className="absolute left-0 top-1/2 -translate-y-1/2 bg-white text-black p-3 rounded-full shadow z-40"
           >
             <FaChevronLeft />
           </button>
           <button
             onClick={() => setIndex((prev) => (prev + 1) % totalSlides)}
-            aria-label="Sonraki"
-            title="Sonraki"
+            aria-label={tLife("buttons.nextShort")}
+            title={tLife("buttons.nextShort")}
             className="absolute right-0 top-1/2 -translate-y-1/2 bg-white text-black p-3 rounded-full shadow z-40"
           >
             <FaChevronRight />
@@ -225,19 +217,19 @@ Sultangazi, İstanbul'da TEM Otoyolu üzerinde bulunan Tempoint Konutları açı
             <button
               onClick={() => setPopupIndex(null)}
               className="absolute top-3 right-4 text-gray-500 hover:text-gray-800 text-xl"
-              aria-label="Kapat"
-              title="Kapat"
+              aria-label={tLife("buttons.close")}
+              title={tLife("buttons.close")}
             >
               ✕
             </button>
             <h3 className="text-xl font-semibold text-gray-900 mb-3">
-              {slides[popupIndex].popup.title}
+              {tLife(`slides.${slides[popupIndex].id}.popupTitle` as const)}
             </h3>
             <p className="text-sm text-gray-700 mb-4">
-              {slides[popupIndex].popup.text}
+              {tLife(`slides.${slides[popupIndex].id}.popupText` as const)}
             </p>
             <div className="grid grid-cols-2 gap-4">
-              {slides[popupIndex].popup.images.map((img, i) => (
+              {slides[popupIndex].images.map((img, i) => (
                 <Image
                   key={i}
                   src={img}
@@ -255,7 +247,7 @@ Sultangazi, İstanbul'da TEM Otoyolu üzerinde bulunan Tempoint Konutları açı
                 }
                 className="text-sm text-gray-700 hover:underline"
               >
-                ← Geri
+                {tLife("buttons.back")}
               </button>
               <button
                 onClick={() =>
@@ -263,7 +255,7 @@ Sultangazi, İstanbul'da TEM Otoyolu üzerinde bulunan Tempoint Konutları açı
                 }
                 className="text-sm text-gray-700 hover:underline"
               >
-                İleri →
+                {tLife("buttons.forward")}
               </button>
             </div>
           </div>

@@ -2,7 +2,8 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
- import { OverlayView } from "@react-google-maps/api";
+import { useLocale, useTranslations } from "next-intl";
+import { OverlayView } from "@react-google-maps/api";
 import {
   GoogleMap,
   Marker,
@@ -233,14 +234,17 @@ const places  = [
 ];
 
 const categories = [
-  { id: "all", name: "Tümü", pin: "/pin.png" },
-  { id: "malls", name: "AVM'ler", pin: "/mall.png" },
-  { id: "schools", name: "Okullar", pin: "/scool.png" },
-  { id: "hospitals", name: "Hastaneler", pin: "/hospital.png" },
-  { id: "markets", name: "Marketler", pin: "/shop.png" },
+  { id: "all", pin: "/pin.png" },
+  { id: "malls", pin: "/mall.png" },
+  { id: "schools", pin: "/scool.png" },
+  { id: "hospitals", pin: "/hospital.png" },
+  { id: "markets", pin: "/shop.png" },
 ].map((cat) => ({
   ...cat,
-  count: cat.id === "all" ? places.length : places.filter(p => p.category === cat.id).length,
+  count:
+    cat.id === "all"
+      ? places.length
+      : places.filter((p) => p.category === cat.id).length,
 }));
 
 const projectLocation = {
@@ -262,6 +266,8 @@ const center = {
 };
 
 export default function NearbyMap() {
+  const locale = useLocale();
+  const tNearby = useTranslations("vegaOtonomi.nearby");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedSwitch, setSelectedSwitch] = useState("altyapi");
 
@@ -276,6 +282,7 @@ if (typeof window !== 'undefined') {
 
 const { isLoaded } = useJsApiLoader({
   googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
+  language: locale,
 });
 
 
@@ -298,7 +305,7 @@ const getCategoryPinUrl = (categoryId: string): string =>
               selectedSwitch === "altyapi" ? "bg-[#4B3B4E] text-white" : "text-gray-700"
             }`}
           >
-            Altyapı
+            {tNearby("switchInfrastructure")}
           </button>
           <button
             onClick={() => setSelectedSwitch("konum")}
@@ -306,7 +313,7 @@ const getCategoryPinUrl = (categoryId: string): string =>
               selectedSwitch === "konum" ? "bg-[#4B3B4E] text-white" : "text-gray-700"
             }`}
           >
-            Konum
+            {tNearby("switchLocation")}
           </button>
         </div>
       </div>
@@ -323,7 +330,7 @@ const getCategoryPinUrl = (categoryId: string): string =>
           >
             <aside className="fixed md:static w-[250px] bg-white shadow-md p-4 h-full overflow-y-auto z-10">
               <h3 className="font-semibold text-gray-800 mb-4 text-sm">
-                Yakındaki popüler yerler
+                {tNearby("sectionTitle")}
               </h3>
               <ul className="space-y-2">
                 {categories.map((cat) => (
@@ -336,9 +343,15 @@ const getCategoryPinUrl = (categoryId: string): string =>
                   >
                     <div className="flex items-center gap-2">
                       <div className="bg-white rounded-full p-1 shadow">
-                        <img src={cat.pin} alt={cat.name} className="w-5 h-5" />
+                        <img
+                          src={cat.pin}
+                          alt={tNearby(`categories.${cat.id}`)}
+                          className="w-5 h-5"
+                        />
                       </div>
-                      <span className="text-sm text-gray-800">{cat.name}</span>
+                      <span className="text-sm text-gray-800">
+                        {tNearby(`categories.${cat.id}`)}
+                      </span>
                     </div>
                     <span className="text-xs text-gray-500">{cat.count}</span>
                   </li>
@@ -442,15 +455,15 @@ const getCategoryPinUrl = (categoryId: string): string =>
                     <div className="bg-white rounded-xl shadow-xl p-3 w-72 flex items-center gap-4">
                       <img
                         src={projectLocation.image}
-                        alt={projectLocation.name}
+                        alt={tNearby("projectName")}
                         className="w-16 h-16 object-cover rounded-lg border"
                       />
                       <div className="flex flex-col">
                         <h4 className="text-base font-bold text-gray-900">
-                          {projectLocation.name}
+                          {tNearby("projectName")}
                         </h4>
                         <p className="text-sm text-gray-600">
-                          {projectLocation.description}
+                          {tNearby("projectDescription")}
                         </p>
                       </div>
                     </div>
@@ -566,10 +579,11 @@ const getCategoryPinUrl = (categoryId: string): string =>
           className="flex items-center justify-center flex-1 bg-white text-center p-0"
         >
           <div className="overflow-x-auto md:overflow-visible">
-            <div className="w-[200%] md:w-auto"> {/* Zoomed width for mobile */}
+            <div className="w-[200%] md:w-auto">
+              {/* Zoomed width for mobile */}
               <img
                 src="/mel/vegaotonomi.jpg"
-                alt="Altyapı Görseli"
+                alt={tNearby("infrastructureAlt")}
                 className="mx-auto rounded w-full"
               />
             </div>

@@ -1,21 +1,21 @@
 "use client";
 import { useTranslations } from "next-intl";
-"use client";
 
 import { useState } from "react";
 import { FiMenu, FiSend, FiX } from "react-icons/fi";
 
 const sections = [
-  { id: "proje-hakkinda", label: "Proje hakkında" },
-  { id: "ozellikler", label: "Özellikler" },
-  { id: "konum", label: "Konum" },
-  { id: "genel-plan", label: "Genel Plan" },
-  { id: "mimarlik", label: "Mimarlık" },
-  { id: "iyilestirme", label: "İyileştirme" },
-  { id: "daha-fazlasi", label: "Daha fazlası" },
-];
+  { id: "proje-hakkinda", key: "aboutProject" },
+  { id: "ozellikler", key: "features" },
+  { id: "konum", key: "location" },
+  { id: "genel-plan", key: "masterPlan" },
+  { id: "mimarlik", key: "architecture" },
+  { id: "iyilestirme", key: "improvement" },
+  { id: "daha-fazlasi", key: "more" },
+] as const;
 
 export default function ExpandableNavigator() {
+  const tNav = useTranslations("ramsGarden.navigator");
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -41,7 +41,7 @@ export default function ExpandableNavigator() {
                     href={`#${section.id}`}
                     className="hover:underline"
                   >
-                    {section.label}
+                    {tNav(`sections.${section.key}`)}
                   </a>
                 ))}
               </div>
@@ -77,7 +77,7 @@ export default function ExpandableNavigator() {
             isOpen ? "max-w-md" : "max-w-[100px]"
           } ml-4`}
         >
-          Ankaranın en gözde projesi Vega Center 2025 yılında tamamlanıyor.
+          {tNav("pillText")}
         </div>
 
         {/* Right Action Button */}

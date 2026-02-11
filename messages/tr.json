@@ -27,7 +27,19 @@
     "residenceProject": "Rezidans Projesi",
     "transportAccess": "Ulaşım Imkanları",
     "workAndLife": "İş & Yaşam",
-    "industrialZone": "Sanayi Bölgesi"
+    "industrialZone": "Sanayi Bölgesi",
+    "boxesNewsTitle": "Haberleri öğrenin",
+    "boxesNewsHighlight": "Proje Hakkında Tüm Bilgiler",
+    "boxesDownloadTitle": "Belgeleri İndirin",
+    "boxesDownloadHighlight": "NATA Yaşam Projeleri",
+    "boxesVisitTitle": "Ziyaret Edin",
+    "boxesVisitHighlight": "Projenin Lokasyonunu Görün",
+    "boxesQuestionsTitle": "Sorularınızı Cevaplıyoruz",
+    "boxesQuestionsHighlight": "5 dakika içinde",
+    "boxesQuestionsSubtitle": "Projesyonel Ekibimizle",
+    "whatsAppGenericMessage": "Merhaba, projeleriniz hakkında detaylı bilgi almak istiyorum.",
+    "nearbyInfrastructure": "Altyapı",
+    "nearbyLocation": "Konum"
   },
   "metadata": {
     "title": "NATA Yaşam",
@@ -160,13 +172,18 @@
   },
   "navigator": {
     "aboutProject": "Proje Hakkında",
+    "features": "Özellikler",
     "life": "Yaşam",
     "location": "Konum",
+    "masterPlan": "Genel Plan",
+    "architecture": "Mimarlık",
+    "improvement": "İyileştirme",
     "gallery": "Galeri",
     "contact": "İletişim",
     "more": "Daha Fazla",
     "closeMenu": "Menüyü Kapat",
     "openMenu": "Menüyü Aç",
+    "sendMessage": "Mesaj Gönder",
     "tagline": "NATA Yaşam, yaşamın kalbinde, konforun zirvesinde."
   },
   "bulletin": {
@@ -385,12 +402,199 @@
       "dBlockLabel": "D Blok",
       "dBlockText": "Vega Merkez",
       "dBlockInfo": "87 Ticari Alan"
+    },
+    "nearby": {
+      "sectionTitle": "Yakındaki popüler yerler",
+      "projectName": "VEGA CENTER",
+      "projectDescription": "İş dünyasının yeni merkezi VEGA Center",
+      "infrastructureAlt": "Altyapı Görseli",
+      "categories": {
+        "all": "Tümü",
+        "malls": "AVM'ler",
+        "schools": "Okullar",
+        "hospitals": "Hastaneler",
+        "markets": "Marketler",
+        "hotels": "Oteller",
+        "mosques": "Camii",
+        "ministries": "Bakanlıklar / Kurumlar",
+        "business": "İş Merkezleri",
+        "parks": "Parklar"
+      }
+    }
+  },
+  "vegaOtonomi": {
+    "hero": {
+      "breadcrumbHome": "NATA Yaşam",
+      "breadcrumbProjects": "Yeni Projeler",
+      "breadcrumbProject": "Vega Otonomi",
+      "tagLocation": "Ankara – Sincan",
+      "tagParking": "Geniş Otopark ve Kolay Erişim İmkanı",
+      "tagUnits": "207 Ticari Alan ve Modern Ofis",
+      "tagSpecialDesign": "Araç Alım-Satımına Uygun Özel Tasarım",
+      "tagInvestment": "Kazandıran Ticari Proje"
+    },
+    "design": {
+      "title": "VEGA Otonomi\nile Tanışın",
+      "description": "İz bırakan dokunuşlarla mutluluğa açılan kapı VEGA Otonomi, zevkinize ve ihtiyaçlarınıza göre tasarlandı.",
+      "openGallery": "Proje Galerisini Gör"
+    },
+    "sitePlans": {
+      "title": "Yaşam Nerede\nBiz Orada.",
+      "description": "Vega Otonomi sanayinin en yeni ve en gelişmiş teknolojileri ile donatılmış, yatay mimarisi ile şehrin silüetine estetik bir değer katan, iş ve premium alışveriş deneyimini en yüksek seviyeye çıkaran bir yaşam merkezidir. Ferah ofisleri ve verimli iş alanları ile yüksek potansiyele sahip olan Vega Otonomi'nin her noktası hayatı kolaylaştırmak için tasarlandı.",
+      "hotspots": {
+        "1": {
+          "label": "A Blok",
+          "info": "Vega Otonomi A Blok"
+        },
+        "2": {
+          "label": "B Blok",
+          "info": "Vega Otonomi B Blok"
+        },
+        "3": {
+          "label": "C Blok",
+          "info": "Vega Otonomi C Blok"
+        },
+        "4": {
+          "label": "D Blok",
+          "info": "Vega Otonomi D Blok"
+        },
+        "5": {
+          "label": "E Blok",
+          "info": "Vega Otonomi E Blok"
+        },
+        "6": {
+          "label": "F Blok",
+          "info": "Vega Otonomi F Blok"
+        },
+        "7": {
+          "label": "G Blok",
+          "info": "Vega Otonomi G Blok"
+        },
+        "8": {
+          "label": "H Blok",
+          "info": "Vega Otonomi H Blok"
+        }
+      }
+    },
+    "nearby": {
+      "switchInfrastructure": "Altyapı",
+      "switchLocation": "Konum",
+      "sectionTitle": "Yakındaki popüler yerler",
+      "projectName": "VEGA OTONOMİ",
+      "projectDescription": "İş dünyasının yeni merkezi VEGA OTONOMİ",
+      "infrastructureAlt": "Altyapı Görseli",
+      "categories": {
+        "all": "Tümü",
+        "malls": "AVM'ler",
+        "schools": "Okullar",
+        "hospitals": "Hastaneler",
+        "markets": "Marketler"
+      }
+    },
+    "life": {
+      "title": "VEGA OTONOMİ\nOfis & Galeri seçenekleri ile",
+      "description": "Vega Otonomi, geniş ulaşım imkanı, merkezi konumu ve 490m²’ye kadar 207 adet Oto Galeri ve Ofis avantajları ile şehrin otonomi kültürüne yeni bir soluk kazandırıyor. VEGA Otonomi Ofis & Galeri seçenekleri ile sizlerle buluşuyor.",
+      "slides": {
+        "1": {
+          "title": "Kurumsal pencerenin yeni adresi",
+          "popupTitle": "Modern Altyapı ile Kurumsal Kimliğinizi Güçlendirin",
+          "popupText": "Vega Otonomi'nin sunduğu profesyonel iş alanları sayesinde müşterilerinize güven veren bir ortamda hizmet sunun. Modern tasarımı ve kurumsal altyapısıyla işinize prestij kazandırın."
+        },
+        "2": {
+          "title": "Otomotiv Ticaretinin Yeni Merkezi",
+          "popupTitle": "Sektörün Kalbi Artık Vega Otonomi’de",
+          "popupText": "Vega Otonomi, otomotiv dünyasının tüm ihtiyaçlarını tek çatı altında toplayarak, modern ve yenilikçi yapısıyla ticaretin yeni buluşma noktası oluyor. Araç alım-satımında prestijli bir merkezde yerinizi alın."
+        },
+        "3": {
+          "title": "Stratejik Konum, Yüksek Erişilebilirlik",
+          "popupTitle": "Her Yerden Kolay Ulaşım Avantajı",
+          "popupText": "Ankara'nın en değerli lokasyonlarından birinde konumlanan Vega Otonomi, hem şehir içi hem de şehirlerarası ulaşım kolaylığı ile işinizi hızlandırıyor. Müşterileriniz ve iş ortaklarınız için ulaşımı sorun olmaktan çıkarın."
+        },
+        "4": {
+          "title": "İşinize Güven Katın",
+          "popupTitle": "Modern Altyapı ile Kurumsal Kimliğinizi Güçlendirin",
+          "popupText": "Vega Otonomi'nin sunduğu profesyonel iş alanları sayesinde müşterilerinize güven veren bir ortamda hizmet sunun. Modern tasarımı ve kurumsal altyapısıyla işinize prestij kazandırın."
+        },
+        "5": {
+          "title": "Sektöre Değer Katan Yeni Nesil İş Alanları",
+          "popupTitle": "Sadece Bir Galeri Değil, Çok Daha Fazlası",
+          "popupText": "Vega Otonomi, klasik ticaret anlayışını geride bırakıyor. Yeni nesil iş alanlarıyla, showroomlardan toplantı odalarına kadar her detay, sektöre değer katacak şekilde tasarlandı."
+        },
+        "6": {
+          "title": "Türkiye’nin İlk Otomotiv AVM Konsepti",
+          "popupTitle": "Yenilikçi Yaklaşımıyla İlk ve Tek",
+          "popupText": "Vega Otonomi, Türkiye’nin otomotiv sektöründe AVM konseptiyle hizmet veren ilk yapısı olma özelliğini taşıyor. Araç alım-satımı, servis, aksesuar ve finansal hizmetleri tek noktadan sunan bu konsept ile fark yaratın."
+        }
+      },
+      "buttons": {
+        "goToPresentation": "Sunuma Git",
+        "details": "Ayrıntılı Bilgi",
+        "previousShort": "Önceki",
+        "nextShort": "Sonraki",
+        "back": "← Geri",
+        "forward": "İleri →",
+        "close": "Kapat"
+      }
     }
   },
   "ramsGarden": {
-    "breadcrumbHome": "NATA Yaşam",
-    "breadcrumbProjects": "Yeni Projeler",
-    "breadcrumbProject": "RAMS Garden"
+    "hero": {
+      "breadcrumbHome": "NATA Yaşam",
+      "breadcrumbProjects": "Yeni Projeler",
+      "breadcrumbProject": "RAMS Garden Bahçelievler",
+      "tagMetroDistance": "Metro çıkışında, E5’e 2 dk",
+      "tagLocation": "İstanbul – Bahçelievler",
+      "tagUnits": "796 Daire + 49 Ticari Dükkan",
+      "tagImmediateDelivery": "Hemen Teslim",
+      "tagPremiumLife": "Premium Hayat"
+    },
+    "design": {
+      "title": "RAMS GARDEN BAHÇELİEVLER\nile Tanışın",
+      "description": "RAMS Garden Bahçelievler, şehir merkezine yakınlığı ve 42.300 metrekarelik koru ile çevrili benzersiz bir konumda yaşamanın tüm avantajlarını bir arada sunmaktadır. Burada şehrin koşuşturmacasından uzaklaşabilir, ailenizle birlikte 33.000 metrekarelik peyzaj içerisinde doğanın tadını çıkarabilirsiniz.",
+      "openGallery": "Proje Galerisini Gör"
+    },
+    "sitePlans": {
+      "title": "Yaşam Nerede\nBiz Orada.",
+      "description": "RAMS GARDEN, İstanbul’un kalbinde, Yenimahalle Orman Çiftliği Mahallesi’nde şehrin ritmini yeniden tanımlayan eşsiz bir yaşam deneyimi sunuyor..."
+    },
+    "nearby": {
+      "sectionTitle": "Yakındaki popüler yerler",
+      "projectName": "RAMS GARDEN",
+      "projectDescription": "İstanbul'un kalbi Bahçelievler'de ayrıcalıklı bir yaşam",
+      "infrastructureAlt": "Altyapı Görseli",
+      "categories": {
+        "all": "Tümü",
+        "malls": "AVM'ler",
+        "schools": "Okullar",
+        "hospitals": "Hastaneler",
+        "markets": "Marketler"
+      }
+    },
+    "life": {
+      "title": "RAMS GARDEN BAHÇELİEVLER\nİstanbul'un kalbi",
+      "description": "İstanbul'un kalbi Bahçelievler'de 2+1'den 5+1 seçeneğine kadar 796 daire bulunmakta olup, yanı başında nitelikli yeşil alan ve peyzaj alanları ile prestijli mağazaların olduğu özel proje NATA Holding ve Rams Türkiye güvencesiyle sizlerle buluşuyor.",
+      "buttons": {
+        "goToPresentation": "Sunuma Git",
+        "details": "Ayrıntılı Bilgi",
+        "previousShort": "Önceki",
+        "nextShort": "Sonraki",
+        "back": "← Geri",
+        "forward": "İleri →",
+        "close": "Kapat"
+      }
+    },
+    "navigator": {
+      "pillText": "Ankaranın en gözde projesi Vega Center 2025 yılında tamamlanıyor.",
+      "sections": {
+        "aboutProject": "Proje hakkında",
+        "features": "Özellikler",
+        "location": "Konum",
+        "masterPlan": "Genel Plan",
+        "architecture": "Mimarlık",
+        "improvement": "İyileştirme",
+        "more": "Daha fazlası"
+      }
+    }
   },
   "incek": {
     "breadcrumbHome": "NATA Yaşam",
@@ -477,7 +681,21 @@
     "unitTypesNextPlan": "Sonraki Plan",
     "unitTypesLightboxClose": "Kapat",
     "unitTypesLightboxAlt": "Büyütülmüş Ünite Planı {id}",
-    "unitTypesMainAlt": "Ünite Planı {id}"
+    "unitTypesMainAlt": "Ünite Planı {id}",
+    "navigator": {
+      "pillText": "Nata İncek Konutları ile doğayla iç içe yaşam başlıyor.",
+      "sections": {
+        "hero": "Proje Hakkında",
+        "life": "Yaşam",
+        "near-locations": "Konum",
+        "site-plans": "Site Planları",
+        "unit-types": "Daire Tipleri",
+        "design": "Tasarım",
+        "contact": "İletişim",
+        "office": "Ofis",
+        "boxes": "Daha Fazla"
+      }
+    }
   },
   "goatVillas": {
     "lifeTitle": "GOAT VILLAS",
@@ -509,6 +727,830 @@
       "slide6Title": "Kişiye Özel İç Mekan Tasarımı, Açık ve Kapalı Otopark",
       "slide6PopupTitle": "Hayallerinize Uygun Yaşam Alanları",
       "slide6PopupText": "Tarzınızı yansıtan iç mekanlar için kişiselleştirme seçenekleri sunuluyor. Renk paletinden dolap yerleşimlerine kadar tüm detaylar sizin seçiminizle şekilleniyor. Kendinize özel bir yaşam alanı inşa edin."
+    },
+    "hero": {
+      "breadcrumbHome": "NATA Yaşam",
+      "breadcrumbProjects": "Yeni Projeler",
+      "breadcrumbProject": "GOAT Villas",
+      "tagCityCenter": "Şehir merkezine 10 dk",
+      "tagLocation": "Ankara – Bilkent",
+      "tagUnits": "9 Villa",
+      "tagDelivery": "2026 3. Çeyrek Teslim",
+      "tagPremiumLife": "Premium Hayat"
+    },
+    "design": {
+      "title": "GREATEST OF\nANKARA TIME",
+      "description": "Ankara’nın merkezinde, Bilkent 3’te, tüm şehri gören muhteşem bir noktada yer alan proje, üniversitelere, hastanelere, okullara, alışveriş merkezlerine, ormanlara ve parklara kolay ulaşımıyla fark yaratıyor. “GREATEST OF ANKARA TIME” sloganıyla şehir villası konseptini ortaya koyan bu proje, lüks hizmet ve kaliteyi arayanlar için ideal bir yaşam alanı sunuyor.",
+      "openGallery": "Proje Galerisini Gör"
+    },
+    "sitePlans": {
+      "title": "Yaşam Nerede\nBiz Orada.",
+      "description": "Goat Villas, modern mimarisi ve geniş açık alanlarıyla konforlu bir yaşam sunuyor. Her blok, doğayla iç içe bir yaşam alanı sağlarken, estetik tasarımıyla da göz dolduruyor. Villalarımız, ferah iç mekanları ve geniş bahçe alanları ile ailenizle birlikte keyifli anlar geçirmenizi sağlıyor.",
+      "hotspots": {
+        "1": {
+          "label": "TİP 1",
+          "info": "Göz Alıcı Manzara, Kaliteli Yaşam"
+        },
+        "2": {
+          "label": "TİP 2",
+          "info": "Modern Tasarım, Konforlu Yaşam"
+        },
+        "3": {
+          "label": "TİP 3",
+          "info": "Zamansız Tasarım, Ferah Yaşam"
+        }
+      }
+    },
+    "nearby": {
+      "switchInfrastructure": "Altyapı",
+      "switchLocation": "Konum",
+      "sectionTitle": "Yakındaki popüler yerler",
+      "projectName": "GOAT VILLAS BİLKENT",
+      "projectDescription": "Ankara’nın merkezi Bilkent",
+      "infrastructureAlt": "Altyapı Görseli",
+      "categories": {
+        "all": "Tümü",
+        "malls": "AVM'ler",
+        "schools": "Okullar",
+        "hospitals": "Hastaneler",
+        "markets": "Marketler"
+      }
+    }
+  },
+  "vegaCadde": {
+    "hero": {
+      "breadcrumbHome": "NATA Yaşam",
+      "breadcrumbCompletedProjects": "Tamamlanmış Projeler",
+      "breadcrumbProject": "Vega Cadde",
+      "tagMetroDistance": "Metroya 8 dk uzaklıkta",
+      "tagLocation": "Ankara — Yenimahalle",
+      "tagUnits": "161 Konut & Ofis ve AVM Konsepti",
+      "tagImmediateDelivery": "Hemen Teslim",
+      "tagPremiumLife": "Cazip Yatırım Fırsatı"
+    },
+    "design": {
+      "title": "Vega Cadde",
+      "description": "Modern mimarisi ve alışveriş imkanlarıyla Vega Cadde, şehri yaşamanız için sizi bekliyor.",
+      "openGallery": "Proje Galerisini Gör"
+    },
+    "sitePlans": {
+      "title": "İş ve Yaşamın\nKesiştiği Nokta",
+      "description": "Ankara Yenimahalle’de yer alan Vega Cadde, 3 blokta toplam 161 adet bağımsız birimden oluşur. Hem konut hem ofis kullanımına uygun yapısıyla, şehrin iş ve sosyal hayatını birleştiren çok yönlü bir yaşam alanı sunar. Metroya olan yakınlığıyla ulaşımda büyük kolaylık sağlar.",
+      "hotspots": {
+        "1": {
+          "label": "VEGA CADDE",
+          "info": "Cadde A Blok"
+        }
+      }
+    },
+    "nearby": {
+      "switchInfrastructure": "Altyapı",
+      "switchLocation": "Konum",
+      "sectionTitle": "Yakındaki popüler yerler",
+      "projectName": "VEGA CADDE",
+      "projectDescription": "Ankara Yenimahalle’de 161 bağımsız birimden oluşan karma proje",
+      "infrastructureAlt": "Altyapı Görseli",
+      "categories": {
+        "all": "Tümü",
+        "malls": "AVM'ler",
+        "schools": "Okullar",
+        "hospitals": "Hastaneler",
+        "markets": "Marketler",
+        "hotels": "Oteller",
+        "mosques": "Camii",
+        "ministries": "Bakanlıklar / Kurumlar",
+        "business": "İş Merkezleri",
+        "parks": "Parklar"
+      }
+    },
+    "unitTypes": {
+      "tabAria": "Ünite Tipi {id}",
+      "selectorAria": "Daire tipi seçici",
+      "selectorLabel": "Daire",
+      "selectorSubLabel": "Tipleri",
+      "previousPlan": "Önceki Plan",
+      "nextPlan": "Sonraki Plan",
+      "lightboxClose": "Kapat",
+      "lightboxAlt": "Büyütülmüş Ünite Planı {id}",
+      "mainAlt": "Ünite Planı {id}",
+      "openLightbox": "Kat planını büyüt",
+      "detailLabels": {
+        "floorPlan": "Kat Planı"
+      }
+    },
+    "life": {
+      "title": "VEGA CADDE\nYaşamın kalbinde",
+      "description": "Yaşamın kalbinden kurumsal dünyaya açılan, boyutlandırılabilir 161 adet OFİS kompleksi, 1+1 ve 2+1 seçenekleri ile şıklığı ve konforu bir araya getiren AVM & OFİS & KONUT konsepti ile VEGA CADDE'de tek bir noktada toplanıyor, başkente yeni bir soluk kazandırıyor.",
+      "slides": {
+        "1": {
+          "title": "Lüks ve Yaşamın Yeni Adı: Vega Cadde",
+          "popupTitle": "Profesyonel buluşmalara şık bir ortam.",
+          "popupText": "İş hayatına değer katan, teknolojiyle donatılmış toplantı salonları sayesinde prestijli görüşmeler elinizin altında."
+        },
+        "2": {
+          "title": "24 Saat Güvenlik ve Kameralı Sistem",
+          "popupTitle": "Ticaretin ve yaşamın güvencesi.",
+          "popupText": "Her alanı kapsayan güvenlik sistemleri sayesinde ofisler ve konutlar gece gündüz koruma altında."
+        },
+        "3": {
+          "title": "Açık ve Kapalı Otopark Alanları",
+          "popupTitle": "Park sorunu değil, park konforu.",
+          "popupText": "Toplam 1.030 araçlık kapasiteyle konut ve ofis sahiplerine rahat ulaşım ve güvenli park imkanı sunar."
+        },
+        "4": {
+          "title": "Geniş Toplantı Salonları",
+          "popupTitle": "Profesyonel buluşmalara şık bir ortam.",
+          "popupText": "İş hayatına değer katan, teknolojiyle donatılmış toplantı salonları sayesinde prestijli görüşmeler elinizin altında."
+        },
+        "5": {
+          "title": "Yüksek Lobi Girişleri",
+          "popupTitle": "İlk izlenim için kusursuz karşılama.",
+          "popupText": "Modern mimarisiyle tasarlanan lobi alanları, hem şık hem de işlevsel bir karşılama sunar."
+        },
+        "6": {
+          "title": "Metroya Yakın Konum",
+          "popupTitle": "Zaman kazandıran ulaşım avantajı.",
+          "popupText": "Ankara metrosuna sadece birkaç dakika uzaklıkta, ulaşımda maksimum kolaylık sağlar."
+        }
+      },
+      "buttons": {
+        "goToPresentation": "Sunuma Git",
+        "details": "Ayrıntılı Bilgi",
+        "previousShort": "Önceki",
+        "nextShort": "Sonraki",
+        "back": "← Geri",
+        "forward": "İleri →",
+        "close": "Kapat"
+      }
+    }
+  },
+  "mega1453": {
+    "hero": {
+      "breadcrumbHome": "NATA Yaşam",
+      "breadcrumbProjects": "Yeni Projeler",
+      "breadcrumbProject": "Mega 1453",
+      "tagJunction": "Anadolu Bulvarı ve İstanbul Yolu Kesişiminde",
+      "tagLocation": "Ankara – Yenimahalle",
+      "tagUnits": "715 Konut",
+      "tagDelivery": "2027 1. Çeyrek Teslim",
+      "tagPremiumLife": "Premium Hayat"
+    },
+    "design": {
+      "title": "Mega 1453\nKarma Yaşam Projesi",
+      "description": "Özgün mimarisi ve eşsiz konumuyla Mega 1453, hayalinizdeki yaşam alanını sunuyor.",
+      "openGallery": "Proje Galerisini Gör"
+    },
+    "sitePlans": {
+      "title": "Yaşam Nerede\nBiz Orada.",
+      "description": "Mega 1453, Ankara’nın kalbinde, Yenimahalle Orman Çiftliği Mahallesi’nde şehrin ritmini yeniden tanımlayan eşsiz bir yaşam deneyimi sunuyor...",
+      "hotspots": {
+        "0": { "info": "Mega 1454 A Blok" },
+        "1": { "info": "Mega 1454 B Blok" },
+        "2": { "info": "Mega 1454 C Blok" },
+        "3": { "info": "Mega 1454 D Blok" },
+        "4": { "info": "Mega 1454 E Blok" },
+        "5": { "info": "Mega 1454 F Blok" },
+        "6": { "info": "Mega 1454 G Blok" },
+        "7": { "info": "Mega 1454 H Blok" },
+        "8": { "info": "Mega 1454 I Blok" },
+        "9": { "info": "Mega 1454 J Blok" },
+        "10": { "info": "Mega 1454 K Blok" },
+        "11": { "info": "Mega 1454 L Blok" },
+        "12": { "info": "Mega 1454 M Blok" },
+        "13": { "info": "Mega 1454 N Blok" },
+        "14": { "info": "Mega 1454 O Blok" },
+        "15": { "info": "Mega 1454 P Blok" },
+        "16": { "info": "Mega 1454 Q Blok" },
+        "17": { "info": "Mega 1454 R Blok" },
+        "18": { "info": "Mega 1454 S Blok" },
+        "19": { "info": "Mega 1454 T Blok" }
+      }
+    },
+    "nearby": {
+      "switchInfrastructure": "Altyapı",
+      "switchLocation": "Konum",
+      "sectionTitle": "Yakındaki popüler yerler",
+      "projectName": "Mega 1453",
+      "projectDescription": "Mega 1453 Projesi",
+      "infrastructureAlt": "Altyapı Görseli",
+      "categories": {
+        "all": "Tümü",
+        "malls": "AVM'ler",
+        "schools": "Okullar",
+        "hospitals": "Hastaneler",
+        "markets": "Marketler"
+      }
+    },
+    "unitTypes": {
+      "tabAria": "Ünite Tipi {id}",
+      "selectorAria": "Daire tipi seçici",
+      "selectorLabel": "Daire",
+      "selectorSubLabel": "Tipleri",
+      "previousPlan": "Önceki Plan",
+      "nextPlan": "Sonraki Plan",
+      "lightboxClose": "Kapat",
+      "lightboxAlt": "Büyütülmüş Ünite Planı {id}",
+      "mainAlt": "Ünite Planı {id}",
+      "openLightbox": "Kat planını büyüt",
+      "detailLabels": {
+        "netArea": "Net alan"
+      }
+    },
+    "life": {
+      "title": "MEGA 1453\nANKARA'nın kalbinde",
+      "description": "Toplamda 70.000 m²’lik geniş arsa alanında yükselen bu prestijli proje, başkentin dokusuna doğa ile harmanlanmış bir soluk getiriyor. Özgün mimarisi ve 36.000 m² peyzaj alanıyla modern yaşamı yeniden tasarlayan MEGA 1453, her biri yüksek yaşam standartlarına sahip toplam 715 konut ve ticari alanları ile oluşuyor.",
+      "slides": {
+        "1": {
+          "title": "Prestijli Yaşam için Mega 1453",
+          "popupTitle": "Modern Mimarinin, Konforun ve Değerli Yatırımın Buluşma Noktası",
+          "popupText": "Mega 1453, şehrin merkezinde konfor, estetik ve prestiji bir araya getiriyor. Hem ayrıcalıklı bir yaşam hem de kazançlı bir yatırım fırsatı sunuyor."
+        },
+        "2": {
+          "title": "Doğa ile İç İçe Mimari",
+          "popupTitle": "Yeşilin huzuru, modern yaşamla buluşuyor.",
+          "popupText": "Mega 1453, doğayla uyumlu tasarımıyla sizi şehirde sakin ve ferah bir yaşama davet ediyor. Her anınızı yeşilin içinde geçirmenin ayrıcalığını sunuyor."
+        },
+        "3": {
+          "title": "Modern Yaşamın Yeni Merkezi",
+          "popupTitle": "Şehrin kalbinde yenilikçi ve konforlu yaşam.",
+          "popupText": "Mega 1453, modern mimarisi ve merkezi konumuyla çağdaş yaşamın tüm ayrıcalıklarını bir araya getiriyor. Hem sosyal hem de konforlu bir yaşam sizi bekliyor."
+        },
+        "4": {
+          "title": "Şehrin İçinde Huzurlu Yaşam Alanı",
+          "popupTitle": "Şehir merkezinde sakin ve konforlu bir hayat.",
+          "popupText": "Mega 1453, şehir yaşamının dinamizmi içinde size huzur dolu bir yaşam sunuyor. Doğayla iç içe, modern ve ferah yaşam alanlarıyla fark yaratıyor."
+        },
+        "5": {
+          "title": "Akıllı güvenlik ile kontrollü giriş",
+          "popupTitle": "Güvenli ve huzurlu yaşamın teknolojik çözümü.",
+          "popupText": "Akıllı sistemlerle donatılmış giriş-çıkışlar sayesinde, her anınız güven altında. Teknoloji destekli güvenlik ile hem evinizde hem iş yerinizde huzurla yaşayın."
+        },
+        "6": {
+          "title": "Zengin Altyapı",
+          "popupTitle": "Modern yaşam için güçlü altyapı çözümleri.",
+          "popupText": "Kesintisiz enerji, hızlı internet ve ileri teknoloji olanaklarıyla donatılmış altyapı, hem yaşam hem de şehir hayatında konfor ve süreklilik sağlar."
+        },
+        "7": {
+          "title": "Verimli planlamalar",
+          "popupTitle": "Alan kullanımında maksimum konfor ve işlevsellik.",
+          "popupText": "İhtiyaca uygun tasarlanmış yaşam ve çalışma alanlarıyla, her metrekare akıllıca değerlendiriliyor. Fonksiyonel çözümlerle konfor ve verimlilik bir arada sunuluyor."
+        },
+        "8": {
+          "title": "Güvenli ve Konforlu Açık - Kapalı Otopark",
+          "popupTitle": "Araçlarınız için güvenli, size özel alanlar.",
+          "popupText": "Geniş ve modern tasarlanmış kapalı otopark ile aracınız her zaman güvende. Kolay erişim ve konforlu park alanlarıyla şehir yaşamının stresinden uzaklaşın."
+        }
+      },
+      "buttons": {
+        "goToPresentation": "Sunuma Git",
+        "details": "Ayrıntılı Bilgi",
+        "previousShort": "Önceki",
+        "nextShort": "Sonraki",
+        "back": "← Geri",
+        "forward": "İleri →",
+        "close": "Kapat"
+      }
+    },
+    "navigator": {
+      "closeMenu": "Menüyü Kapat",
+      "openMenu": "Menüyü Aç",
+      "tagline": "Ankaranın en gözde projesi Mega 1453",
+      "sections": {
+        "hero": "Proje Hakkında",
+        "life": "Yaşam",
+        "nearLocations": "Konum",
+        "sitePlans": "Site Planları",
+        "unitTypes": "Daire Tipleri",
+        "design": "Tasarım",
+        "contact": "İletişim",
+        "office": "Ofis",
+        "boxes": "Daha Fazla"
+      }
+    }
+  },
+  "tempoint": {
+    "hero": {
+      "breadcrumbHome": "NATA Yaşam",
+      "breadcrumbCompletedProjects": "Tamamlanmış Projeler",
+      "breadcrumbProject": "Tempoint Konutları",
+      "tagMetroDistance": "Metroya 10 dk uzaklıkta",
+      "tagLocation": "Sultangazi / İstanbul",
+      "tagUnits": "468 Konut  & 444 Rezidans & 270 Mağaza",
+      "tagImmediateDelivery": "Hemen Teslim",
+      "tagPremiumLocation": "Can Alıcı Lokasyon"
+    },
+    "design": {
+      "title": "Tempoint Konutları",
+      "description": "Yeşil alanları ve ulaşım kolaylığıyla Tempoint Konutları, konforlu bir yaşam sunuyor.",
+      "openGallery": "Proje Galerisini Gör"
+    },
+    "sitePlans": {
+      "title": "Şehrin Yeni\nCazibe Noktası",
+      "description": "TEM Point, İstanbul Sultangazi’de 75.000 m² arsa üzerinde konumlanan; 686 konut, 444 rezidans ve 270 mağazalık alışveriş merkezinden oluşan dev bir karma yaşam projesidir. Konumu itibarıyla ulaşım ağlarına yakınlığıyla öne çıkan proje, sosyal yaşamın merkezinde prestijli bir deneyim sunuyor.",
+      "hotspots": {
+        "0": {
+          "label": "A Blok",
+          "info": "Tempoint A Blok"
+        },
+        "1": {
+          "label": "B Blok",
+          "info": "Tempoint B Blok"
+        },
+        "2": {
+          "label": "C Blok",
+          "info": "Tempoint C Blok"
+        },
+        "3": {
+          "label": "D Blok",
+          "info": "Tempoint D Blok"
+        },
+        "4": {
+          "label": "E Blok",
+          "info": "Tempoint E Blok"
+        }
+      }
+    },
+    "nearby": {
+      "switchInfrastructure": "Altyapı",
+      "switchLocation": "Konum",
+      "sectionTitle": "Yakındaki popüler yerler",
+      "projectName": "Tempoint Konutları",
+      "projectDescription": "Tem'in Kalbi",
+      "infrastructureAlt": "Altyapı Görseli",
+      "categories": {
+        "all": "Tümü",
+        "malls": "AVM'ler",
+        "schools": "Okullar",
+        "hospitals": "Hastaneler",
+        "markets": "Marketler",
+        "hotels": "Oteller",
+        "mosques": "Camii",
+        "ministries": "Bakanlıklar / Kurumlar",
+        "business": "İş Merkezleri",
+        "parks": "Parklar"
+      }
+    },
+    "unitTypes": {
+      "tabAria": "Ünite Tipi {id}",
+      "selectorAria": "Daire tipi seçici",
+      "selectorLabel": "Daire",
+      "selectorSubLabel": "Tipleri",
+      "previousPlan": "Önceki Plan",
+      "nextPlan": "Sonraki Plan",
+      "lightboxClose": "Kapat",
+      "lightboxAlt": "Büyütülmüş Ünite Planı {id}",
+      "mainAlt": "Ünite Planı {id}",
+      "openLightbox": "Kat planını büyüt",
+      "detailLabels": {
+        "planId": "Kat Planı"
+      }
+    },
+    "life": {
+      "title": "TEMPOINT KONUTLARI\nYaşam Merkezi",
+      "description": "Sultangazi, İstanbul'da TEM Otoyolu üzerinde bulunan Tempoint Konutları; açık ve yetişkin çocuk havuzu, koşu parkurları, Playstation odası, yemyeşil alanları, çocuk parkları ve hemen yanı başında yer alan VEGA İstanbul Alışveriş ve Yaşam Merkezi ile can alıcı bir lokasyonda yer almaktadır.",
+      "slides": {
+        "1": {
+          "title": "Modern Yaşamın Yeni Adı: Tempoint Konutları",
+          "popupTitle": "Küçükler için büyük eğlenceler.",
+          "popupText": "Çocuklara özel tasarlanmış parklar ve gençler için dijital eğlence alanları ile aile yaşamına değer katıyor."
+        },
+        "2": {
+          "title": "270 Mağazalı AVM",
+          "popupTitle": "Alışveriş ve yaşam bir arada.",
+          "popupText": "Projeye entegre alışveriş merkezi, günlük ihtiyaçlardan lüks markalara kadar geniş bir seçenek sunar."
+        },
+        "3": {
+          "title": "Açık ve Kapalı Yüzme Havuzları",
+          "popupTitle": "Tüm yıl boyunca yüzme keyfi.",
+          "popupText": "Açık ve kapalı havuz seçenekleri ile yaz-kış fark etmeksizin yüzmenin tadını çıkarabilir, günün stresinden arınabilirsiniz."
+        },
+        "4": {
+          "title": "Çocuk Oyun Alanları ve Playstation Odası",
+          "popupTitle": "Küçükler için büyük eğlenceler.",
+          "popupText": "Çocuklara özel tasarlanmış parklar ve gençler için dijital eğlence alanları ile aile yaşamına değer katıyor."
+        },
+        "5": {
+          "title": "Fitness Salonu ve Spor Alanları",
+          "popupTitle": "Enerji dolu bir hayat sizi bekliyor.",
+          "popupText": "Basketbol ve voleybol sahalarıyla birlikte tam donanımlı fitness salonu, spor yapmayı sevenler için vazgeçilmez bir alan sunuyor."
+        },
+        "6": {
+          "title": "Yürüyüş ve Koşu Parkurları",
+          "popupTitle": "Doğayla iç içe adımlar.",
+          "popupText": "Yemyeşil alanlar arasında uzanan yürüyüş ve koşu yolları, hem sabah sporları hem de akşam yürüyüşleri için birebir."
+        }
+      },
+      "buttons": {
+        "goToPresentation": "Sunuma Git",
+        "details": "Ayrıntılı Bilgi",
+        "previousShort": "Önceki",
+        "nextShort": "Sonraki",
+        "back": "← Geri",
+        "forward": "İleri →",
+        "close": "Kapat"
+      }
+    },
+    "navigator": {
+      "closeMenu": "Menüyü Kapat",
+      "openMenu": "Menüyü Aç",
+      "tagline": "TEMPOINT, TEM Otoyolu üzerinde yeni yaşam merkezi.",
+      "sections": {
+        "hero": "Proje Hakkında",
+        "life": "Yaşam",
+        "nearLocations": "Konum",
+        "sitePlans": "Site Planları",
+        "unitTypes": "Daire Tipleri",
+        "design": "Tasarım",
+        "contact": "İletişim",
+        "office": "Ofis",
+        "boxes": "Daha Fazla"
+      }
+    }
+  },
+  "megaSasmaz": {
+    "hero": {
+      "breadcrumbHome": "NATA Yaşam",
+      "breadcrumbProjects": "Yeni Projeler",
+      "breadcrumbProject": "Mega Şaşmaz",
+      "tagIndustry": "Oto sanayi bölgesinde",
+      "tagLocation": "Ankara — Şaşmaz",
+      "tagUnits": "700 Bağımsız",
+      "tagImmediateDelivery": "Hemen Teslim ve Tapu",
+      "tagPremiumLife": "Premium Hayat"
+    },
+    "design": {
+      "title": "MEGA ŞAŞMAZ\nile Tanışın",
+      "description": "Etkileyici mimarisi ve modern tasarımıyla dikkat çeken Mega ŞAŞMAZ, iş dünyasının ihtiyaçlarına cevap verecek şekilde tasarlanmıştır. 700 bağımsız bölümden oluşan bu proje, 2 bodrum katı, alt zemin kat, üst zemin kat ve 7 ofis katı ile geniş depolama hacimlerine sahiptir.",
+      "openGallery": "Proje Galerisini Gör"
+    },
+    "life": {
+      "title": "YAŞAM RİTİMİNİZ\nMEGA ŞAŞMAZ'DA",
+      "description": "Ankara Şaşmaz'da 700 bağımsız bölümden oluşan, fonksiyonel dükkanlar, mağazalar, ofisler ile geniş depolama alanlarına sahip MEGA Şaşmaz, toplam 200.000 m² kullanım alanına sahiptir.",
+      "slides": {
+        "1": {
+          "title": "Dergiyi Keşfedin",
+          "popupTitle": "Müşterileriniz İçin Erişim Kolaylığı",
+          "popupText": "Ankara'nın en işlek noktalarından birinde konumlanan Mega Şaşmaz, ulaşım kolaylığı ve geniş otopark alanlarıyla hem işletmelere hem de ziyaretçilere büyük avantaj sağlıyor."
+        },
+        "2": {
+          "title": "Yeni Nesil Oto Sanayi Deneyimi",
+          "popupTitle": "Modern Altyapıyla Yenilenen Sanayi Kültürü",
+          "popupText": "Mega Şaşmaz, klasik oto sanayi anlayışını geride bırakarak, teknolojik altyapısı ve düzenli yapısıyla yeni nesil bir sanayi deneyimi sunuyor. Hem işletmeler hem de müşteriler için konforlu ve verimli bir ortam sağlıyor."
+        },
+        "3": {
+          "title": "Alışveriş ve Sosyal Yaşamın Yeni Adresi",
+          "popupTitle": "İşinizi Yaparken Sosyal Hayatı Yakalayın",
+          "popupText": "Sadece ticaret değil, aynı zamanda yaşam alanı sunan Mega Şaşmaz, alışveriş ve sosyal alanlarıyla ziyaretçilerine keyifli vakit geçirme imkanı sağlıyor. Kafeler, restoranlar ve mağazalarla dolu modern bir ortam sizi bekliyor."
+        },
+        "4": {
+          "title": "Modern Mimari ve Fonksiyonel Tasarım",
+          "popupTitle": "Estetik ve Kullanışlılık Bir Arada",
+          "popupText": "Geniş cepheler, ferah iç alanlar ve çağdaş mimari detaylarla Mega Şaşmaz, iş yerlerinize prestij katıyor. Fonksiyonelliği ön planda tutan tasarımıyla her metrekareyi verimli kullanın."
+        },
+        "5": {
+          "title": "Kolay Ulaşım ve Geniş Otopark İmkanları",
+          "popupTitle": "Müşterileriniz İçin Erişim Kolaylığı",
+          "popupText": "Ankara'nın en işlek noktalarından birinde konumlanan Mega Şaşmaz, ulaşım kolaylığı ve geniş otopark alanlarıyla hem işletmelere hem de ziyaretçilere büyük avantaj sağlıyor."
+        },
+        "6": {
+          "title": "Geniş Araç ve Yükleme Alanları",
+          "popupTitle": "Lojistikte Maksimum Verimlilik",
+          "popupText": "Geniş araç ve yükleme alanları sayesinde lojistik süreçlerinizi daha hızlı, düzenli ve verimli hale getiren Mega Şaşmaz, işletmenizin operasyonel gücünü artırır."
+        },
+        "7": {
+          "title": "Yüksek Tavanlı Depo ve Mağaza Alanları",
+          "popupTitle": "Depolama ve Teşhirde Esnek Çözümler",
+          "popupText": "Yüksek tavanlı depo ve mağaza alanları sayesinde hem depolama kapasitenizi artırın hem de ürünlerinizi şık bir şekilde sergileyin. Mega Şaşmaz, işletmenize alan avantajı sunuyor."
+        }
+      },
+      "buttons": {
+        "goToPresentation": "Sunuma Git",
+        "details": "Ayrıntılı Bilgi",
+        "previousShort": "Önceki",
+        "nextShort": "Sonraki",
+        "back": "← Geri",
+        "forward": "İleri →",
+        "close": "Kapat"
+      }
+    },
+    "sitePlans": {
+      "title": "Yaşam Nerede\nBiz Orada.",
+      "description": "Mega Şaşmaz, modern yaşamın tüm olanaklarını sunan bir proje. Geniş açık alanları, estetik mimarisi ve konforlu yaşam alanlarıyla dikkat çekiyor. Her detayın özenle düşünüldüğü Mega Şaşmaz, ailenizle birlikte huzurlu ve keyifli bir yaşam sunuyor.",
+      "hotspots": {
+        "1": {
+          "label": "MEGA ŞAŞMAZ",
+          "info": "Yaşamın Merkezi MEGA ŞAŞMAZ"
+        }
+      }
+    },
+    "nearby": {
+      "sectionTitle": "Yakındaki popüler yerler",
+      "projectName": "MEGA ŞAŞMAZ",
+      "projectDescription": "Ankaranın iş merkezi",
+      "infrastructureAlt": "Altyapı görseli",
+      "categories": {
+        "all": "Tümü",
+        "malls": "AVM'ler",
+        "schools": "Okullar",
+        "hospitals": "Hastaneler",
+        "markets": "Marketler"
+      }
+    },
+    "unitTypes": {
+      "tabAria": "Ünite Tipi {id}",
+      "selectorAria": "Daire tipi seçici",
+      "selectorLabel": "Daire",
+      "selectorSubLabel": "Tipleri",
+      "previousPlan": "Önceki Plan",
+      "nextPlan": "Sonraki Plan",
+      "lightboxClose": "Kapat",
+      "lightboxAlt": "Büyütülmüş Ünite Planı {id}",
+      "mainAlt": "Ünite Planı {id}",
+      "openLightbox": "Kat planını büyüt",
+      "detailLabels": {
+        "floor": "Kat"
+      }
+    }
+  },
+  "vegaKonutKuleleri": {
+    "hero": {
+      "breadcrumbHome": "NATA Yaşam",
+      "breadcrumbCompletedProjects": "Tamamlanmış Projeler",
+      "breadcrumbProject": "NATA Vega Konut Kuleleri",
+      "tagBusStop": "Otobüs Durağına 2 dk",
+      "tagLocation": "Mamak / Ankara",
+      "tagUnits": "377 Konut",
+      "tagComfort": "Kusursuz Mimari ve Konforlu Yaşam",
+      "tagImmediateDelivery": "Hemen Teslim"
+    },
+    "design": {
+      "title": "Nata Vega Konut Kuleleri",
+      "description": "Şehrin merkezinde yükselen Nata Vega, ayrıcalıklı bir yaşam alanı sunuyor.",
+      "openGallery": "Proje Galerisini Gör"
+    },
+    "life": {
+      "title": "NATA VEGA\nKONUT KULELERİ",
+      "description": "NATA VEGA Konut Kuleleri, yanbaşında bulunan NATA VEGA Outlet ve devasa AQUAVEGA Akvaryum ile herkesi düşünerek tasarlandı. Merkezi lokasyon avantajı, kusursuz mimarisi ve konforlu yaşam alanları NATA VEGA Konut Kuleleri'nde sizlerle buluşuyor.",
+      "slides": {
+        "1": {
+          "title": "Lüks ve Konfor: Nata Vega Konut Kuleleri",
+          "popupTitle": "Sağlıklı bir yaşam için her şey elinizin altında.",
+          "popupText": "Tam donanımlı spor salonu ile formda kalmak artık çok daha kolay. Modern ekipmanlarla donatılmış alanlar, sporunuzu keyifle yapmanıza olanak tanır."
+        },
+        "2": {
+          "title": "24 Saat Güvenlik ve Kameralı Sistem",
+          "popupTitle": "Her zaman güvende, her zaman huzurla.",
+          "popupText": "Projede 7/24 güvenlik personeli ve kamera sistemleriyle korunan bir yaşam alanı sunuluyor. Aileniz ve sevdikleriniz için güvenlik en üst seviyede."
+        },
+        "3": {
+          "title": "Çocuk Oyun Alanları",
+          "popupTitle": "Minikler için güvenli ve eğlenceli alanlar.",
+          "popupText": "Çocuklara özel tasarlanmış oyun parkurları, hem eğlenceli hem de güvenli bir sosyal ortam sağlar. Ailelerin içi rahat, çocukların kalbi neşeyle dolu."
+        },
+        "4": {
+          "title": "Fitness Merkezi",
+          "popupTitle": "Sağlıklı bir yaşam için her şey elinizin altında.",
+          "popupText": "Tam donanımlı spor salonu ile formda kalmak artık çok daha kolay. Modern ekipmanlarla donatılmış alanlar, sporunuzu keyifle yapmanıza olanak tanır."
+        },
+        "5": {
+          "title": "Kapalı Otopark",
+          "popupTitle": "Aracınız da sizin kadar değerli.",
+          "popupText": "VEGA KONUT KULELERİ, şehrin merkezinde konfor, estetik ve prestiji bir araya getiriyor. Hem ayrıcalıklı bir yaşam hem de kazançlı bir yatırım fırsatı sunuyor."
+        },
+        "6": {
+          "title": "Kapalı Yüzme Havuzu ve Sauna",
+          "popupTitle": "Dinlenmenin ve ferahlığın merkezi.",
+          "popupText": "Kapalı yüzme havuzu ve sauna alanı, yılın her döneminde konforlu bir dinlenme ve yenilenme deneyimi sunar. Şehrin karmaşasından uzaklaşmak isteyenler için sakin bir yaşam alanı oluşturur."
+        }
+      },
+      "buttons": {
+        "goToPresentation": "Sunuma Git",
+        "details": "Ayrıntılı Bilgi",
+        "previousShort": "Önceki",
+        "nextShort": "Sonraki",
+        "back": "← Geri",
+        "forward": "İleri →",
+        "close": "Kapat"
+      }
+    },
+    "sitePlans": {
+      "title": "Modern Yaşamın\nYüksek Noktası",
+      "description": "Nata Vega Konut Kuleleri, Ankara Mamak’ta yükselen 33 katlı iki kulede toplam 300 konuttan oluşan, şehrin siluetine imza atan bir projedir. Nata Vega AVM’nin hemen yanında konumlanan proje, ulaşım kolaylığı ve sunduğu sosyal olanaklarla konforlu bir yaşamın kapılarını aralıyor.",
+      "hotspots": {
+        "0": {
+          "label": "A Blok",
+          "info": "Konutkule 1"
+        },
+        "1": {
+          "label": "B Blok",
+          "info": "Konutkule 2"
+        }
+      }
+    },
+    "nearby": {
+      "sectionTitle": "Yakındaki popüler yerler",
+      "projectName": "Nata Vega Konut Kuleleri",
+      "projectDescription": "Yükseklerde bir yaşam",
+      "infrastructureAlt": "Altyapı görseli",
+      "categories": {
+        "all": "Tümü",
+        "malls": "AVM'ler",
+        "schools": "Okullar",
+        "hospitals": "Hastaneler",
+        "markets": "Marketler",
+        "hotels": "Oteller",
+        "mosques": "Camii",
+        "ministries": "Bakanlıklar / Kurumlar",
+        "business": "İş Merkezleri",
+        "parks": "Parklar"
+      }
+    },
+    "unitTypes": {
+      "tabAria": "Ünite Tipi {id}",
+      "selectorAria": "Daire tipi seçici",
+      "selectorLabel": "Daire",
+      "selectorSubLabel": "Tipleri",
+      "previousPlan": "Önceki Plan",
+      "nextPlan": "Sonraki Plan",
+      "lightboxClose": "Kapat",
+      "lightboxAlt": "Büyütülmüş Ünite Planı {id}",
+      "mainAlt": "Ünite Planı {id}",
+      "openLightbox": "Kat planını büyüt",
+      "detailLabels": {
+        "planIndex": "Kat Planı"
+      }
+    }
+  },
+  "hityenibati": {
+    "hero": {
+      "breadcrumbHome": "NATA Yaşam",
+      "breadcrumbProjects": "Yeni Projeler",
+      "breadcrumbProject": "HİTYENİBATI",
+      "tagMetroDistance": "Metroya 3 dk uzaklıkta",
+      "tagLocation": "Ankara — Yeni Batı Mah.",
+      "tagUnits": "190 Daire",
+      "tagImmediateDelivery": "Hemen Teslim",
+      "tagPremiumLife": "Premium Hayat"
+    },
+    "design": {
+      "title": "HİTYENİBATI\nile Tanışın",
+      "description": "Modern yaşamın ihtiyaçlarını en ince detayına kadar düşünerek tasarlanmış olan HİTYENİBATI, sadece bir konut projesi değil, aynı zamanda hayatınızı kolaylaştıracak birçok özelliği bünyesinde barındırıyor. Metro, toplu taşıma ve otoyol erişim noktalarına olan yakınlığı sayesinde ulaşımın keyfini çıkarırken, trafikte değil sevdiklerinizle geçireceğiniz zamanın tadını çıkaracaksınız.",
+      "openGallery": "Proje Galerisini Gör"
+    },
+    "sitePlans": {
+      "title": "Yaşam Nerede\nBiz Orada.",
+      "description": "Hit Yeni Batı, modern yaşamın tüm olanaklarını sunan bir proje. Tek Bloktan oluşan bu proje, geniş açık alanları, estetik mimarisi ve konforlu yaşam alanlarıyla dikkat çekiyor. Her detayın özenle düşünüldüğü Hit Yeni Batı, ailenizle birlikte huzurlu ve keyifli bir yaşam sunuyor.",
+      "hotspots": {
+        "1": {
+          "label": "Hit Yeni Batı",
+          "info": "Göz Alıcı Manzara, Kaliteli Yaşam"
+        }
+      }
+    },
+    "nearby": {
+      "switchInfrastructure": "Altyapı",
+      "switchLocation": "Konum",
+      "sectionTitle": "Yakındaki popüler yerler",
+      "projectName": "HITYENIBATI",
+      "projectDescription": "Yeni Batı Mahallesi, sıradışı ve prestijli konut projesi",
+      "infrastructureAlt": "Altyapı Görseli",
+      "categories": {
+        "all": "Tümü",
+        "malls": "AVM'ler",
+        "schools": "Okullar",
+        "hospitals": "Hastaneler",
+        "markets": "Marketler"
+      }
+    },
+    "unitTypes": {
+      "tabAria": "Ünite Tipi {id}",
+      "selectorAria": "Daire tipi seçici",
+      "selectorLabel": "Daire",
+      "selectorSubLabel": "Tipleri",
+      "previousPlan": "Önceki Plan",
+      "nextPlan": "Sonraki Plan",
+      "lightboxClose": "Kapat",
+      "lightboxAlt": "Büyütülmüş Ünite Planı {id}",
+      "mainAlt": "Ünite Planı {id}",
+      "openLightbox": "Kat planını büyüt",
+      "detailLabels": {
+        "netArea": "Net alan"
+      }
+    },
+    "life": {
+      "title": "HİTYENİBATI\nAnkara'nın yükselen değeri",
+      "description": "Ankara'nın yükselen değeri, son zamanların en gözde konut ve yatırım bölgesi olan Yeni Batı Mahallesi, sıradışı ve prestijli konut projesi HİTYENİBATI ile yeni bir soluk kazanıyor. Bu eşsiz proje, sıradışı mimarisiyle şehrin kalbinde sizlere nefes alacak yeni bir yaşam alanı sunuyor.",
+      "slides": {
+        "1": {
+          "title": "Hityenibati Broşürü",
+          "popupTitle": "Estetik ve Fonksiyonelliğin Buluşma Noktası",
+          "popupText": "Alışılmışın dışında mimari detaylar ile tasarlanan NATA Yaşam, modern çizgileri ve yenilikçi yapısıyla fark yaratıyor. Her metrekaresinde şıklığı ve kullanım kolaylığını hissedeceksiniz."
+        },
+        "2": {
+          "title": "Yeni Batı'nın Yükselen Yıldızı",
+          "popupTitle": "Ankara'nın Gözde Lokasyonunda Yeni Bir Başlangıç",
+          "popupText": "NATA Yaşam, Yeni Batı bölgesinin en prestijli projelerinden biri olarak yatırımcılarına ve sakinlerine değer kazandırıyor. Modern altyapısı ve merkezi konumuyla yaşam kalitesini zirveye taşıyor."
+        },
+        "3": {
+          "title": "Sıradışı Mimari, Modern Tasarım",
+          "popupTitle": "Estetik ve Fonksiyonelliğin Buluşma Noktası",
+          "popupText": "Alışılmışın dışında mimari detaylar ile tasarlanan NATA Yaşam, modern çizgileri ve yenilikçi yapısıyla fark yaratıyor. Her metrekaresinde şıklığı ve kullanım kolaylığını hissedeceksiniz."
+        },
+        "4": {
+          "title": "1+1 ve 2,5+1 Daire Seçenekleri",
+          "popupTitle": "Her İhtiyaca Uygun Yaşam Alanları",
+          "popupText": "Farklı yaşam tarzlarına hitap eden 1+1 ve 2,5+1 daire seçenekleriyle NATA Yaşam, hem yatırım hem de konforlu yaşam için ideal çözümler sunuyor. Ferah iç mekanlar ve fonksiyonel planlamalar sizi bekliyor."
+        },
+        "5": {
+          "title": "Güvenli ve Konforlu Yaşam Alanları",
+          "popupTitle": "Huzur ve Rahatlık Bir Arada",
+          "popupText": "7/24 güvenlik hizmetleri ve modern site yönetimi ile NATA Yaşam’da ailenizle birlikte güven içinde yaşayın. Konforlu sosyal alanlar ve geniş peyzaj düzenlemesiyle günlük yaşamınız daha keyifli hale geliyor."
+        }
+      },
+      "buttons": {
+        "goToPresentation": "Sunuma Git",
+        "details": "Ayrıntılı Bilgi",
+        "previousShort": "Önceki",
+        "nextShort": "Sonraki",
+        "back": "← Geri",
+        "forward": "İleri →",
+        "close": "Kapat"
+      }
+    }
+  },
+  "hityenibatiplus": {
+    "design": {
+      "title": "Yeni Batı Plus\nile Tanışın",
+      "description": "Modern yaşamın ihtiyaçlarını en ince detayına kadar düşünerek tasarlanmış olan Yeni Batı Plus, sadece bir konut projesi değil, aynı zamanda hayatınızı kolaylaştıracak birçok özelliği bünyesinde barındırıyor. Metro, toplu taşıma ve otoyol erişim noktalarına olan yakınlığı sayesinde ulaşımın keyfini çıkarırken, trafikte değil sevdiklerinizle geçireceğiniz zamanın tadını çıkaracaksınız.",
+      "openGallery": "Proje Galerisini Gör"
+    },
+    "hero": {
+      "breadcrumbHome": "NATA Yaşam",
+      "breadcrumbProjects": "Yeni Projeler",
+      "breadcrumbProject": "Yeni Batı Plus",
+      "tagMetroDistance": "Metroya 14 dk uzaklıkta",
+      "tagLocation": "Ankara – Yeni Batı",
+      "tagUnits": "405 Konut + 5 Ticari Alan",
+      "tagImmediateDelivery": "Hemen Teslim",
+      "tagPremiumLife": "Premium Hayat"
+    },
+    "life": {
+      "title": "YENİ BATI PLUS\nAnkara'nın yükselen değeri",
+      "description": "Ankara'nın yükselen değeri, son zamanların en gözde konut ve yatırım bölgesi olan Yeni Batı Mahallesi, sıradışı ve prestijli konut projesi Yeni Batı Plus ile yeni bir soluk kazanıyor. Bu eşsiz proje, sıradışı mimarisiyle şehrin kalbinde sizlere nefes alacak yeni bir yaşam alanı sunuyor.",
+      "slides": {
+        "1": {
+          "title": "Yeni Batı Plus Broşürü",
+          "popupTitle": "Spor tutkunları için ayrıcalıklı alan",
+          "popupText": "Yeni Batı Plus, basketbol severlere özel tasarlanmış saha ile hem eğlenme hem de spor yapma imkanı sunarak sağlıklı bir yaşam tarzını destekler."
+        },
+        "2": {
+          "title": "7/24 Güvenlik",
+          "popupTitle": "Dört mevsim koruma ve güvenlik",
+          "popupText": "Modern güvenlik altyapısı ve sürekli izleme sistemleriyle siz ve sevdikleriniz için güvenli bir yaşam alanı sunuyoruz."
+        },
+        "3": {
+          "title": "Açık Otopark",
+          "popupTitle": "Kolay ve hızlı park konforu",
+          "popupText": "Proje bünyesindeki geniş açık otopark alanları, araç sahipleri için zamandan tasarruf sağlayan pratik bir park deneyimi sunar."
+        },
+        "4": {
+          "title": "Basketbol Sahası",
+          "popupTitle": "Spor tutkunları için ayrıcalıklı alan",
+          "popupText": "Yeni Batı Plus, basketbol severlere özel tasarlanmış saha ile hem eğlenme hem de spor yapma imkanı sunarak sağlıklı bir yaşam tarzını destekler."
+        },
+        "5": {
+          "title": "Kapalı Otopark",
+          "popupTitle": "Dört mevsim güvenli park imkanı",
+          "popupText": "Kapalı otopark ile aracınız her mevsim hava koşullarına karşı koruma altında; 7/24 aktif güvenlik sistemiyle de güvenle park edebilirsiniz."
+        },
+        "6": {
+          "title": "Oyun Alanı",
+          "popupTitle": "Çocukların hayal dünyası burada genişliyor",
+          "popupText": "Yeni Batı Plus, çocuklara özel güvenli ve modern oyun alanlarıyla onların enerjilerini keyifle atabilecekleri, yeni arkadaşlıklar kurabilecekleri renkli bir ortam sunar."
+        }
+      },
+      "buttons": {
+        "goToPresentation": "Sunuma Git",
+        "details": "Ayrıntılı Bilgi",
+        "previousShort": "Önceki",
+        "nextShort": "Sonraki",
+        "back": "← Geri",
+        "forward": "İleri →",
+        "close": "Kapat"
+      }
+    },
+    "nearby": {
+      "sectionTitle": "Yakındaki popüler yerler",
+      "projectName": "Yeni Batı Plus",
+      "projectDescription": "Yeni Batı Mahallesi, sıradışı ve prestijli konut projesi",
+      "infrastructureAlt": "Altyapı Görseli",
+      "categories": {
+        "all": "Tümü",
+        "malls": "AVM'ler",
+        "schools": "Okullar",
+        "hospitals": "Hastaneler",
+        "markets": "Marketler"
+      }
     }
   },
   "anteres": {
@@ -627,7 +1669,43 @@
       "lightboxClose": "Kapat",
       "lightboxAlt": "Büyütülmüş Ünite Planı {id}",
       "mainAlt": "Ünite Planı {id}",
-      "openLightbox": "Kat planını büyüt"
+      "openLightbox": "Kat planını büyüt",
+      "details": {
+        "apartmentType": "Daire Tipi",
+        "livingRoom": "Salon",
+        "kitchen": "Mutfak",
+        "entryway": "Antre",
+        "corridor": "Koridor",
+        "bedroom": "Yatak Odası",
+        "bedroom1": "Yatak Odası 1",
+        "bedroom2": "Yatak Odası 2",
+        "bedroom3": "Yatak Odası 3",
+        "masterBedroom": "Ebeveyn Yatak Odası",
+        "masterDressingRoom": "Ebeveyn Soyunma Odası",
+        "masterBathroom": "Ebeveyn Banyo",
+        "sharedBathroom": "Genel Banyo",
+        "wc": "WC",
+        "laundryCabinet": "Çamaşır Dolabı",
+        "pantry": "Kiler",
+        "balcony": "Balkon",
+        "balcony1": "Balkon 1",
+        "balcony2": "Balkon 2",
+        "livingRoomKitchen": "Salon + Mutfak",
+        "totalNetArea": "Toplam Net Alan",
+        "sharedArea": "Ortak Hisse",
+        "approxStorageNetArea": "Yaklaşık Depo Net Alanı",
+        "totalGrossArea": "Toplam Brüt Alan",
+        "approxStorageArea": "Yaklaşık Depo Alanı",
+        "bedroomBathroom": "Yatak Odası Banyo",
+        "closetRoom": "Dolap Odası",
+        "sofaArea": "Sofa",
+        "bedroom2Bathroom": "Yatak Odası 2 Banyo",
+        "apartmentNetArea": "Toplam Daire Net Alan",
+        "parkingCommonArea": "Otopark / Ortak Alan",
+        "apartmentGrossArea": "Toplam Daire Brüt Alan",
+        "storage": "Depo",
+        "bedroom1Bathroom": "Yatak Odası 1 Banyo"
+      }
     },
     "boxes": {
       "cards": {
@@ -650,5 +1728,11 @@
         }
       }
     }
+  },
+  "campaigns": {
+    "sectionTitle": "Kampanyalar",
+    "imageAltVegaOtonomi": "Vega Otonomi",
+    "imageAltVegaCenter": "Vega Center",
+    "imageAltMega1453": "Mega 1453"
   }
 }

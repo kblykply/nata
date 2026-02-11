@@ -4,8 +4,10 @@ import Image from "next/image";
 import { useState, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Dialog } from "@headlessui/react";
+import { useTranslations } from "next-intl";
 
 export default function DesignSection() {
+  const tDesign = useTranslations("hityenibati.design");
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], [0, -200]);
@@ -27,11 +29,11 @@ export default function DesignSection() {
       <div className="max-w-screen-xl mx-auto w-full flex flex-col lg:flex-row items-center justify-between gap-10 relative z-10">
         {/* Left Text Content */}
         <div className="w-full max-w-xl z-25">
-          <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 leading-tight">
-            HİTYENİBATI <br /> ile Tanışın
+          <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 leading-tight whitespace-pre-line">
+            {tDesign("title")}
           </h2>
           <p className="mt-6 text-sm text-gray-700 leading-relaxed">
-            Modern yaşamın ihtiyaçlarını en ince detayına kadar düşünerek tasarlanmış olan HİTYENİBATI, sadece bir konut projesi değil, aynı zamanda hayatınızı kolaylaştıracak birçok özelliği bünyesinde barındırıyor. Metro, toplu taşıma ve otoyol erişim noktalarına olan yakınlığı sayesinde ulaşımın keyfini çıkarırken, trafikte değil sevdiklerinizle geçireceğiniz zamanın tadını çıkaracaksınız.
+            {tDesign("description")}
           </p>
           <button
             onClick={() => {
@@ -40,7 +42,7 @@ export default function DesignSection() {
             }}
             className="mt-6 bg-gray-800 text-white text-sm px-5 py-2 rounded-full"
           >
-            Proje Galerisini Gör
+            {tDesign("openGallery")}
           </button>
         </div>
 
