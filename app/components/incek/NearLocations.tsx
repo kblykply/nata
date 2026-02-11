@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import { OverlayView } from "@react-google-maps/api";
 import {
   GoogleMap,
@@ -304,7 +304,6 @@ const center = {
 };
 
 export default function NearbyMap() {
-  const locale = useLocale();
   const t = useTranslations("incek");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedSwitch, setSelectedSwitch] = useState("altyapi");
@@ -320,7 +319,6 @@ export default function NearbyMap() {
   }
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
-    language: locale,
   });
 
   const filteredPlaces =

@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import { OverlayView } from "@react-google-maps/api";
 import {
   GoogleMap,
@@ -981,17 +981,17 @@ const places  = [
   
 ];
 
-const categoriesBase = [
-  { id: "all", pin: "/pin.png" },
-  { id: "malls", pin: "/mall.png" },
-  { id: "schools", pin: "/scool.png" },
-  { id: "hospitals", pin: "/hospital.png" },
-  { id: "markets", pin: "/shop.png" },
-  { id: "hotels", pin: "/ikonlar-lokasyon/otel.png" },
-  { id: "mosques", pin: "/ikonlar-lokasyon/cami.png" },
-  { id: "ministries", pin: "/ikonlar-lokasyon/kurumlar.png" },
-  { id: "business", pin: "/ikonlar-lokasyon/ismerkezi.png" },
-  { id: "parks", pin: "/ikonlar-lokasyon/park.png" },
+const categoryDefs = [
+  { id: "all", nameKey: "categoryAll", pin: "/pin.png" },
+  { id: "malls", nameKey: "categoryMalls", pin: "/mall.png" },
+  { id: "schools", nameKey: "categorySchools", pin: "/scool.png" },
+  { id: "hospitals", nameKey: "categoryHospitals", pin: "/hospital.png" },
+  { id: "markets", nameKey: "categoryMarkets", pin: "/shop.png" },
+  { id: "hotels", nameKey: "categoryHotels", pin: "/ikonlar-lokasyon/otel.png" },
+  { id: "mosques", nameKey: "categoryMosques", pin: "/ikonlar-lokasyon/cami.png" },
+  { id: "ministries", nameKey: "categoryMinistries", pin: "/ikonlar-lokasyon/kurumlar.png" },
+  { id: "business", nameKey: "categoryBusiness", pin: "/ikonlar-lokasyon/ismerkezi.png" },
+  { id: "parks", nameKey: "categoryParks", pin: "/ikonlar-lokasyon/park.png" },
 ];
 
 
@@ -999,12 +999,9 @@ const categoriesBase = [
 
 
 
-const projectLocation = {
-  coords: [39.913899, 32.767134],
-  nameKey: "projectName" as const,
-  descriptionKey: "projectDescription" as const,
-  image: "/vega-center-03.jpg",
-};
+const projectCoords = [39.913899, 32.767134];
+const projectImage = "/vega-center-03.jpg";
+const projectName = "VEGA CENTER";
 
 const containerStyle = {
   width: "100%",
@@ -1012,17 +1009,33 @@ const containerStyle = {
 };
 
 const center = {
-  lat: projectLocation.coords[0],
-  lng: projectLocation.coords[1],
+  lat: projectCoords[0],
+  lng: projectCoords[1],
 };
 
 export default function NearbyMap() {
-  const locale = useLocale();
   const tCommon = useTranslations("common");
-  const tNearby = useTranslations("vegaCenter.nearby");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedSwitch, setSelectedSwitch] = useState("altyapi");
 
+  const categories = categoryDefs.map((cat) => ({
+    ...cat,
+    name: tCommon(cat.nameKey as any),
+    count: cat.id === "all" ? places.length : places.filter(p => p.category === cat.id).length,
+  }));
+
+  const projectLocation = {
+    coords: projectCoords,
+    name: projectName,
+    description: tCommon("vegaCenterProjectDesc"),
+    image: projectImage,
+  };
+
+  const localizeDescription = (desc: string) => {
+    return desc
+      .replace(/ dk/g, ` ${tCommon("minuteAbbr")}`)
+      .replace(/ metre/g, ` ${tCommon("meterUnit")}`);
+  };
 
 const [activeMarker, setActiveMarker] = useState<string | number | null>(null as string | number | null);
 
@@ -1035,14 +1048,9 @@ const [activeMarker, setActiveMarker] = useState<string | number | null>(null as
 
 const { isLoaded } = useJsApiLoader({
   googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
-  language: locale,
 });
 
-const categories = categoriesBase.map((cat) => ({
-  ...cat,
-  name: tNearby(`categories.${cat.id}`),
-  count: cat.id === "all" ? places.length : places.filter((p) => p.category === cat.id).length,
-}));
+
 
   const filteredPlaces =
     selectedCategory === "all"
@@ -1050,7 +1058,7 @@ const categories = categoriesBase.map((cat) => ({
       : places.filter((p) => p.category === selectedCategory);
 
 const getCategoryPinUrl = (categoryId: string): string =>
-  categories.find((cat) => cat.id === categoryId)?.pin ?? "/icons/default.png";
+  categoryDefs.find((cat) => cat.id === categoryId)?.pin ?? "/icons/default.png";
 
   return (
     <div className="w-full h-screen flex bg-white flex-col relative">
@@ -1087,7 +1095,7 @@ const getCategoryPinUrl = (categoryId: string): string =>
           >
             <aside className="fixed md:static w-[250px] bg-white shadow-md p-4 h-full overflow-y-auto z-10">
               <h3 className="font-semibold text-gray-800 mb-4 text-sm">
-                {tNearby("sectionTitle")}
+                {tCommon("nearbyPopularPlaces")}
               </h3>
               <ul className="space-y-2">
                 {categories.map((cat) => (
@@ -1206,15 +1214,15 @@ const getCategoryPinUrl = (categoryId: string): string =>
                     <div className="bg-white rounded-xl shadow-xl p-3 w-72 flex items-center gap-4">
                       <img
                         src={projectLocation.image}
-                        alt={tNearby(projectLocation.nameKey)}
+                        alt={projectLocation.name}
                         className="w-16 h-16 object-cover rounded-lg border"
                       />
                       <div className="flex flex-col">
                         <h4 className="text-base font-bold text-gray-900">
-                          {tNearby(projectLocation.nameKey)}
+                          {projectLocation.name}
                         </h4>
                         <p className="text-sm text-gray-600">
-                          {tNearby(projectLocation.descriptionKey)}
+                          {projectLocation.description}
                         </p>
                       </div>
                     </div>
@@ -1307,7 +1315,7 @@ const getCategoryPinUrl = (categoryId: string): string =>
                       >
                         <div className="text-sm">
                           <h4 className="font-semibold">{place.name}</h4>
-                          <p>{place.description}</p>
+                          <p>{localizeDescription(place.description)}</p>
                         </div>
                       </InfoWindow>
                     )
@@ -1333,7 +1341,7 @@ const getCategoryPinUrl = (categoryId: string): string =>
             <div className="w-[200%] md:w-auto"> {/* Zoomed width for mobile */}
               <img
                 src="/vegacenterrevizealtyapi.jpg"
-                alt={tNearby("infrastructureAlt")}
+                alt={tCommon("infrastructureImageAlt")}
                 className="mx-auto rounded w-full"
               />
             </div>

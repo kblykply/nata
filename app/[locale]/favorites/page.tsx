@@ -255,6 +255,29 @@ export default function FavoritesPage() {
   const [showAltImage, setShowAltImage] = useState(false);
   const [popupIndex, setPopupIndex] = useState<number | null>(null);
   const t = useTranslations("favorites");
+  const tCommon = useTranslations("common");
+
+  const translateTag = (text: string) => {
+    if (!text) return text;
+    switch (text) {
+      case "Hemen Teslim":
+        return tCommon("immediateDelivery");
+      case "Hemen Teslim ve Tapu":
+        return tCommon("immediateDeliveryAndDeed");
+      case "Hemen Teslim Hemen Tapu":
+        return tCommon("immediateDeliveryDeed");
+      case "2025 Teslim":
+        return tCommon("delivery2025");
+      case "2026 Teslim":
+        return tCommon("delivery2026");
+      case "2026 3. Çeyrek Teslim":
+        return tCommon("delivery2026Q3");
+      case "2027 1. Çeyrek Teslim":
+        return tCommon("delivery2027Q1");
+      default:
+        return text;
+    }
+  };
 
   const filteredFavorites = allListings.filter((item) => {
     const isInTab =
@@ -462,7 +485,7 @@ export default function FavoritesPage() {
 
                     {item.label && (
                       <span className="text-xs bg-[#ab1e3b] text-white px-3 py-1 rounded-full inline-block mt-2 w-30">
-                        {item.label}
+                        {translateTag(item.label)}
                       </span>
                     )}
 
@@ -492,7 +515,7 @@ export default function FavoritesPage() {
                         {item.highlight && (
                           <div className="bg-[#ab1e3b] text-white text-sm px-3 py-1 rounded-full flex items-center gap-1">
                             <FaFire className="text-xs" />
-                            {item.highlight}
+                            {translateTag(item.highlight)}
                           </div>
                         )}
                         <div

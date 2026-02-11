@@ -3,43 +3,7 @@
 import { useEffect, useState } from "react";
 import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
 import Image from "next/image";
-
-const items = [
-  {
-    id: "road",
-    src: "/natura-adana ankara.png",
-    label: "Adana-Ankara Otoyolu Üzerinde",
-  },
-  {
-    id: "bus",
-    src: "/natura-otobus durak.png",
-    label: "Otobüs Duraklarına 5 dk",
-  },
-  {
-    id: "villa",
-    src: "/natura-3 blok-408 konut.png",
-    label: "3 Blok 408 Konut",
-  },
-  {
-    id: "keys",
-    src: "/natura-2025y─▒lsonuteslim.png",
-    label: "2025 Yıl Sonu Teslim",
-  },
-  {
-    id: "city",
-    src: "/naturaincek-doga yes─▒ll─▒k.png",
-    label: "Doğa-Yeşillik Manzaralı",
-  },
-  {
-    id: "map",
-    label: "",
-  },
-  {
-    id: "garden",
-    src: "/natura-yat─▒r─▒m.png",
-    label: "Yatırım Fırsatı",
-  },
-];
+import { useTranslations } from "next-intl";
 
 const containerStyle = {
   width: "100%",
@@ -95,6 +59,45 @@ const mapStyles = [
 ];
 
 export default function Gallery() {
+  const tCommon = useTranslations("common");
+
+  const items = [
+    {
+      id: "road",
+      src: "/natura-adana ankara.png",
+      label: "Adana-Ankara Otoyolu Üzerinde",
+    },
+    {
+      id: "bus",
+      src: "/natura-otobus durak.png",
+      label: "Otobüs Duraklarına 5 dk",
+    },
+    {
+      id: "villa",
+      src: "/natura-3 blok-408 konut.png",
+      label: "3 Blok 408 Konut",
+    },
+    {
+      id: "keys",
+      src: "/natura-2025y─▒lsonuteslim.png",
+      label: tCommon("delivery2025YearEnd"),
+    },
+    {
+      id: "city",
+      src: "/naturaincek-doga yes─▒ll─▒k.png",
+      label: "Doğa-Yeşillik Manzaralı",
+    },
+    {
+      id: "map",
+      label: "",
+    },
+    {
+      id: "garden",
+      src: "/natura-yat─▒r─▒m.png",
+      label: "Yatırım Fırsatı",
+    },
+  ];
+
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
   });

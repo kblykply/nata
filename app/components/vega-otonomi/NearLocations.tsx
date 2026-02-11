@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import { OverlayView } from "@react-google-maps/api";
 import {
   GoogleMap,
@@ -266,7 +266,6 @@ const center = {
 };
 
 export default function NearbyMap() {
-  const locale = useLocale();
   const tNearby = useTranslations("vegaOtonomi.nearby");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedSwitch, setSelectedSwitch] = useState("altyapi");
@@ -282,7 +281,6 @@ if (typeof window !== 'undefined') {
 
 const { isLoaded } = useJsApiLoader({
   googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
-  language: locale,
 });
 
 

@@ -1,23 +1,24 @@
 "use client";
 import { useTranslations } from "next-intl";
-"use client";
 
 import { useState, useEffect } from "react";
 import { FiMenu, FiSend, FiX } from "react-icons/fi";
 
 const sections = [
-  { id: "hero", label: "Proje Hakkında" },
-  { id: "life", label: "Yaşam" },
-  { id: "near-locations", label: "Konum" },
-  { id: "site-plans", label: "Site Planları" },
-  { id: "unit-types", label: "Daire Tipleri" },
-  { id: "design", label: "Tasarım" },
-  { id: "contact", label: "İletişim" },
-  { id: "office", label: "Ofis" },
-  { id: "boxes", label: "Daha Fazla" },
-];
+  { id: "hero", key: "aboutProject" },
+  { id: "life", key: "life" },
+  { id: "near-locations", key: "location" },
+  { id: "site-plans", key: "masterPlan" },
+  { id: "unit-types", key: "unitTypes" },
+  { id: "design", key: "design" },
+  { id: "contact", key: "contact" },
+  { id: "office", key: "office" },
+  { id: "boxes", key: "more" },
+] as const;
 
 export default function ExpandableNavigator() {
+  const tNavProject = useTranslations("vegaCadde.navigator");
+  const tGlobalNav = useTranslations("navigator");
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("");
 
@@ -56,7 +57,9 @@ export default function ExpandableNavigator() {
         {/* Left Side */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          aria-label={isOpen ? "Menüyü Kapat" : "Menüyü Aç"}
+          aria-label={
+            isOpen ? tGlobalNav("closeMenu") : tGlobalNav("openMenu")
+          }
           className="w-9 h-9 flex items-center justify-center rounded-full border border-white text-white"
         >
           {isOpen ? <FiX size={18} /> : <FiMenu size={18} />}
@@ -76,23 +79,23 @@ export default function ExpandableNavigator() {
                       : "hover:bg-white hover:text-black hover:font-semibold"
                   }`}
               >
-                {section.label}
+                {tNavProject(`sections.${section.key}` as any)}
               </a>
             ))}
           </div>
         )}
 
         {/* Center Text Pill */}
-        <div
-          className={`bg-[#5D4B5E] text-white text-sm px-4 py-2 rounded-full whitespace-nowrap overflow-hidden text-ellipsis ml-4 max-w-[140px]`}
-        >
-          Ankaranın en gözde projesi Vega Center 2025 yılında tamamlanıyor.
-        </div>
+          <div
+            className={`bg-[#5D4B5E] text-white text-sm px-4 py-2 rounded-full whitespace-nowrap overflow-hidden text-ellipsis ml-4 max-w-[140px]`}
+          >
+            {tNavProject("pillText")}
+          </div>
 
         {/* Right Action Button */}
         <div className="relative ml-4">
           <button
-            aria-label="Mesaj Gönder"
+            aria-label={tGlobalNav("sendMessage")}
             className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-600 text-white shadow-md"
           >
             <FiSend size={18} />

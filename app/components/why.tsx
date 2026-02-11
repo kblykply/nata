@@ -1,31 +1,34 @@
 "use client";
 
 import { FaHandshake, FaKey, FaMapMarkerAlt, FaShieldAlt } from "react-icons/fa";
-
-const features = [
-  {
-    icon: FaHandshake,
-    title: "Güvenilir İş Ortaklığı",
-    description: "Sektörde yıllara dayanan deneyim ve şeffaflık ilkesiyle hareket ediyoruz.",
-  },
-  {
-    icon: FaKey,
-    title: "Anahtar Teslim Projeler",
-    description: "Satın alma sürecinden anahtar teslimine kadar tüm süreç bizde.",
-  },
-  {
-    icon: FaMapMarkerAlt,
-    title: "Merkezi Lokasyonlar",
-    description: "Toplu taşıma ve sosyal olanaklara yakın konumda projeler sunuyoruz.",
-  },
-  {
-    icon: FaShieldAlt,
-    title: "Güvence ve Garanti",
-    description: "Tüm projelerimiz sigortalı ve yasal güvencelidir.",
-  },
-];
+import { useTranslations } from "next-intl";
 
 export default function WhyChooseUsSection() {
+  const tCommon = useTranslations("common");
+
+  const features = [
+    {
+      icon: FaHandshake,
+      title: "Güvenilir İş Ortaklığı",
+      description: "Sektörde yıllara dayanan deneyim ve şeffaflık ilkesiyle hareket ediyoruz.",
+    },
+    {
+      icon: FaKey,
+      title: tCommon("turnkeyProjects"),
+      description: tCommon("turnkeyProjectsDesc"),
+    },
+    {
+      icon: FaMapMarkerAlt,
+      title: "Merkezi Lokasyonlar",
+      description: "Toplu taşıma ve sosyal olanaklara yakın konumda projeler sunuyoruz.",
+    },
+    {
+      icon: FaShieldAlt,
+      title: "Güvence ve Garanti",
+      description: "Tüm projelerimiz sigortalı ve yasal güvencelidir.",
+    },
+  ];
+
   return (
     <section className="bg-white py-24 px-6 relative overflow-hidden">
       {/* Top-Right Filigran */}

@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import { OverlayView } from "@react-google-maps/api";
 import {
   GoogleMap,
@@ -149,7 +149,6 @@ const center = {
 };
 
 export default function NearbyMap() {
-  const locale = useLocale();
   const tCommon = useTranslations("common");
   const tNearby = useTranslations("megaSasmaz.nearby");
   const [selectedCategory, setSelectedCategory] = useState("all");

@@ -157,7 +157,7 @@
                           <h3 className="text-xl font-semibold leading-snug text-gray-800">{item.price}</h3>
                           {item.label && (
                             <span className="text-xs bg-[#ab1e3b] text-white px-3 py-1 rounded-full inline-block">
-                              {item.label}
+                              {item.label === "Hemen Teslim" ? t("immediateDelivery") : item.label}
                             </span>
                           )}
                           <p className="text-sm flex items-center gap-2 text-gray-700">

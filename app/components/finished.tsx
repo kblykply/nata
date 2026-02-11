@@ -67,7 +67,7 @@ const listings: Listing[] = [
     type: "featured",
     price: "ANTARES KONUTLARI 1. ETAP",
     highlight : "Tamamlandı",
-    metro: "Otobüs Durağına ",
+    metro: "toBusStop",
     time: "2",
     stats: ["Merkezi Lokasyon", "Açık Avm Konsepti"],
     footer: "Çankaya",
@@ -88,7 +88,7 @@ const listings: Listing[] = [
     type: "featured",
     price: "VEGA CADDE",
     highlight : "Tamamlandı",
-    metro: "Metro Durağına ",
+    metro: "toMetroStation",
     time: "8",
     stats: ["Merkezi Lokasyon", "Açık Avm Konsepti"],
     footer: "Çankaya",
@@ -109,7 +109,7 @@ const listings: Listing[] = [
     type: "featured",
     price: "TEMPOINT KONUTLARI",
     highlight : "Tamamlandı",
-    metro: "Metro Durağına ",
+    metro: "toMetroStation",
     time: "10",
     stats: ["Merkezi Lokasyon", "Açık Avm Konsepti"],
     footer: "Çankaya",
@@ -130,7 +130,7 @@ const listings: Listing[] = [
     type: "featured",
     price: "NATA İNCEK KONUTLARI",
     highlight : "Tamamlandı",
-    metro: "Otobüs Durağına ",
+    metro: "toBusStop",
     time: "1",
     stats: ["Merkezi Lokasyon", "Açık Avm Konsepti"],
     footer: "Çankaya",
@@ -151,7 +151,7 @@ const listings: Listing[] = [
     type: "featured",
     price: "NATA VEGA KONUT KULELERİ",
     highlight : "Tamamlandı",
-    metro: "Otobüs Durağına ",
+    metro: "toBusStop",
     time: "2",
     stats: ["Merkezi Lokasyon", "Açık Avm Konsepti"],
     footer: "Çankaya",
@@ -197,6 +197,21 @@ export default function ProjectListingSection() {
         return t("deliveryCompleted");
       default:
         return label;
+    }
+  };
+
+  const translateProductType = (type: string) => {
+    switch (type) {
+      case "Konut":
+        return t("typeKonut");
+      case "Ofis":
+        return t("typeOfis");
+      case "Ticari":
+        return t("typeTicari");
+      case "Villa":
+        return t("typeVilla");
+      default:
+        return type;
     }
   };
 
@@ -305,7 +320,7 @@ export default function ProjectListingSection() {
             </option>
             {productTypeOptions.map((item) => (
               <option key={item} value={item}>
-                {item}
+                {translateProductType(item)}
               </option>
             ))}
           </select>
@@ -379,7 +394,7 @@ export default function ProjectListingSection() {
                   >
                     {productTypeOptions.map((type) => (
                       <option key={type} value={type}>
-                        {type}
+                        {translateProductType(type)}
                       </option>
                     ))}
                   </select>
@@ -464,7 +479,7 @@ export default function ProjectListingSection() {
                       ))}
                       <p className="flex items-center gap-1 mt-2 text-sm">
                         <span className="bg-green-500 px-2 py-0.5 rounded-full">M</span>
-                        {item.metro} · {formatTime(item.time)}
+                        {tMap(item.metro)} · {formatTime(item.time)}
                       </p>
                     </div>
                   ) : (

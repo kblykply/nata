@@ -2,9 +2,12 @@
 
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { buildWhatsAppUrl } from "@/utils/whatsapp";
 
 export default function InfoCardsSection() {
   const tCommon = useTranslations("common");
+
+  const whatsappLink = buildWhatsAppUrl(tCommon("whatsAppGenericMessage"));
 
   const cards = [
     {
@@ -39,7 +42,7 @@ export default function InfoCardsSection() {
       highlight: tCommon("boxesQuestionsHighlight"),
       icon: "/vegacenter-canli-destek.png",
       subtitle: tCommon("boxesQuestionsSubtitle"),
-      link: "https://api.whatsapp.com/send/?phone=905017111818&text=Merhaba%2C+projeleriniz+hakk%C4%B1nda+detayl%C4%B1+bilgi+almak+istiyorum.&type=phone_number&app_absent=0",
+      link: whatsappLink,
     },
   ];
 

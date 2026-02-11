@@ -312,11 +312,21 @@ export default function ProjectListingSection() {
     const text = label.trim();
     if (!text) return text;
 
-    if (text.includes("Hemen Teslim")) {
-      return tCommon("immediateDelivery");
-    }
-
     switch (text) {
+      case "Hemen Teslim Hemen Tapu":
+        return tCommon("immediateDeliveryDeed");
+      case "Hemen Teslim ve Tapu":
+        return tCommon("immediateDeliveryAndDeed");
+      case "Hemen Teslim":
+        return tCommon("immediateDelivery");
+      case "2026 3. Çeyrek Teslim":
+        return tCommon("delivery2026Q3");
+      case "2027 1. Çeyrek Teslim":
+        return tCommon("delivery2027Q1");
+      case "2025 Teslim":
+        return tCommon("delivery2025");
+      case "2026 Teslim":
+        return tCommon("delivery2026");
       case "Merkezi Lokasyon":
         return tCommon("centralLocation");
       case "Açık Avm Konsepti":
@@ -333,7 +343,23 @@ export default function ProjectListingSection() {
       case "Sanayi Bölgesi":
         return tCommon("industrialZone");
       default:
+        if (text.includes("Hemen Teslim")) return tCommon("immediateDelivery");
         return text;
+    }
+  };
+
+  const translateProductType = (type: string) => {
+    switch (type) {
+      case "Konut":
+        return t("typeKonut");
+      case "Ofis":
+        return t("typeOfis");
+      case "Ticari":
+        return t("typeTicari");
+      case "Villa":
+        return t("typeVilla");
+      default:
+        return type;
     }
   };
 
@@ -542,7 +568,7 @@ export default function ProjectListingSection() {
             </option>
             {productTypeOptions.map((item) => (
               <option key={item} value={item}>
-                {item}
+                {translateProductType(item)}
               </option>
             ))}
           </select>
@@ -640,7 +666,7 @@ export default function ProjectListingSection() {
                   >
                     {productTypeOptions.map((type) => (
                       <option key={type} value={type}>
-                        {type}
+                        {translateProductType(type)}
                       </option>
                     ))}
                   </select>

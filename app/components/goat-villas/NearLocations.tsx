@@ -10,7 +10,7 @@ import {
   useJsApiLoader,
   MarkerClusterer,
 } from "@react-google-maps/api";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 
 
  const vegaAvms = [
@@ -229,7 +229,6 @@ const center = {
 };
 
 export default function NearbyMap() {
-  const locale = useLocale();
   const tNearby = useTranslations("goatVillas.nearby");
   const tCommon = useTranslations("common");
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -246,7 +245,6 @@ if (typeof window !== 'undefined') {
 }
 const { isLoaded } = useJsApiLoader({
   googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
-  language: locale,
 });
 
 

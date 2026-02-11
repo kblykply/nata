@@ -18,6 +18,7 @@ const sections = [
 
 export default function ExpandableNavigator() {
   const tNav = useTranslations("incek.navigator");
+  const tGlobalNav = useTranslations("navigator");
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("");
 
@@ -56,7 +57,9 @@ export default function ExpandableNavigator() {
         {/* Left Side */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          aria-label={isOpen ? "Menüyü Kapat" : "Menüyü Aç"}
+          aria-label={
+            isOpen ? tGlobalNav("closeMenu") : tGlobalNav("openMenu")
+          }
           className="w-9 h-9 flex items-center justify-center rounded-full border border-white text-white"
         >
           {isOpen ? <FiX size={18} /> : <FiMenu size={18} />}
@@ -92,7 +95,7 @@ export default function ExpandableNavigator() {
         {/* Right Action Button */}
         <div className="relative ml-4">
           <button
-            aria-label="Mesaj Gönder"
+            aria-label={tGlobalNav("sendMessage")}
             className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-600 text-white shadow-md"
           >
             <FiSend size={18} />

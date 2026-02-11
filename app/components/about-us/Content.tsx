@@ -61,7 +61,7 @@ const AboutContentSection = () => {
     {/* Icon 4 */}
     <div className="flex flex-col items-center text-center">
       <div className="bg-gray-100 p-6 rounded-2xl flex items-center justify-center w-[100px] h-[100px]">
-        <Image src="/teslimedilenproje.png" alt="Teslim Edilen" width={40} height={40} />
+        <Image src="/teslimedilenproje.png" alt={t('stat4Alt')} width={40} height={40} />
       </div>
       <p className="text-sm mt-3 w-36">{t('stat4')}</p>
     </div>

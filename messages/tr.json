@@ -16,9 +16,16 @@
     "viewOnMap": "Haritada Gör",
     "location": "Lokasyon:",
     "immediateDelivery": "Hemen Teslim",
+    "immediateDeliveryAndDeed": "Hemen Teslim ve Tapu",
+    "immediateDeliveryDeed": "Hemen Teslim Hemen Tapu",
     "delivery2025": "2025 Teslim",
+    "delivery2025YearEnd": "2025 Yıl Sonu Teslim",
     "delivery2026": "2026 Teslim",
+    "delivery2026Q3": "2026 3. Çeyrek Teslim",
+    "delivery2027Q1": "2027 1. Çeyrek Teslim",
     "quarter3_2025": "3. Çeyrek 2025",
+    "turnkeyProjects": "Anahtar Teslim Projeler",
+    "turnkeyProjectsDesc": "Satın alma sürecinden anahtar teslimine kadar tüm süreç bizde.",
     "villaProject": "Villa Projesi",
     "centralLocation": "Merkezi Lokasyon",
     "openMallConcept": "Açık Avm Konsepti",
@@ -39,7 +46,39 @@
     "boxesQuestionsSubtitle": "Projesyonel Ekibimizle",
     "whatsAppGenericMessage": "Merhaba, projeleriniz hakkında detaylı bilgi almak istiyorum.",
     "nearbyInfrastructure": "Altyapı",
-    "nearbyLocation": "Konum"
+    "nearbyLocation": "Konum",
+    "nearbyPopularPlaces": "Yakındaki popüler yerler",
+    "categoryAll": "Tümü",
+    "categoryMalls": "AVM'ler",
+    "categorySchools": "Okullar",
+    "categoryHospitals": "Hastaneler",
+    "categoryMarkets": "Marketler",
+    "categoryHotels": "Oteller",
+    "categoryMosques": "Camii",
+    "categoryMinistries": "Bakanlıklar / Kurumlar",
+    "categoryBusiness": "İş Merkezleri",
+    "categoryParks": "Parklar",
+    "minuteAbbr": "dk",
+    "meterUnit": "metre",
+    "infrastructureImageAlt": "Altyapı Görseli",
+    "anteresProjectDesc": "Etlik'in kalbinde",
+    "hityenibatiplusProjectDesc": "Yeni Batı Mahallesi, sıradışı ve prestijli konut projesi",
+    "vegaCenterProjectDesc": "İş dünyasının yeni merkezi VEGA Center",
+    "previous": "Önceki",
+    "next": "Sonraki",
+    "back": "← Geri",
+    "forward": "İleri →"
+  },
+  "unitTypes": {
+    "tabAria": "Ünite Tipi {id}",
+    "selectorAria": "Daire tipi seçici",
+    "selectorLabel": "Daire",
+    "selectorSubLabel": "Tipleri",
+    "previousPlan": "Önceki Plan",
+    "nextPlan": "Sonraki Plan",
+    "lightboxAlt": "Büyütülmüş Ünite Planı {id}",
+    "mainAlt": "Ünite Planı {id}",
+    "openFloorplan": "Kat planını büyüt"
   },
   "metadata": {
     "title": "NATA Yaşam",
@@ -213,6 +252,8 @@
     "seeDetails": "Detayları Gör",
     "goBack": "← Geri dön",
     "minutesAway": "dakika mesafede",
+    "toMetroStation": "Metro Durağına",
+    "toBusStop": "Otobüs Durağına",
     "minutesAwayIn": "dakikada mesafede",
     "apartments": "daire",
     "units": "bölüm",
@@ -278,7 +319,11 @@
     "areaLabel": "m² Alanı",
     "addToFavorites": "Favorilere ekle",
     "all": "Tümü",
-    "deliveryCompleted": "Tamamlandı"
+    "deliveryCompleted": "Tamamlandı",
+    "typeKonut": "Konut",
+    "typeOfis": "Ofis",
+    "typeTicari": "Ticari",
+    "typeVilla": "Villa"
   },
   "popups": {
     "searchPlaceholder": "Lokasyon, teslim yılı veya segment seçin",
@@ -307,6 +352,7 @@
     "stat2": "277 Tamamlanan Proje",
     "stat3": "24 Devam Eden Proje",
     "stat4": "10.000+ Teslim Edilen Ticari Alan",
+    "stat4Alt": "Teslim Edilen",
     "qualityTitle": "Her Projede Kalite ve Güven",
     "qualityDescription": "NATA Yaşam olarak önceliğimiz, estetik ve fonksiyonelliği bir arada sunarken, sakinlerimize yüksek yaşam standartları sağlamaktır. Projelerimizde kullandığımız kaliteli malzemeler, yenilikçi mimari yaklaşımlar ve çevre dostu çözümler ile sektörde fark yaratıyoruz.",
     "point1Title": "Stratejik Lokasyonlarda Prestijli Projeler",
@@ -402,24 +448,6 @@
       "dBlockLabel": "D Blok",
       "dBlockText": "Vega Merkez",
       "dBlockInfo": "87 Ticari Alan"
-    },
-    "nearby": {
-      "sectionTitle": "Yakındaki popüler yerler",
-      "projectName": "VEGA CENTER",
-      "projectDescription": "İş dünyasının yeni merkezi VEGA Center",
-      "infrastructureAlt": "Altyapı Görseli",
-      "categories": {
-        "all": "Tümü",
-        "malls": "AVM'ler",
-        "schools": "Okullar",
-        "hospitals": "Hastaneler",
-        "markets": "Marketler",
-        "hotels": "Oteller",
-        "mosques": "Camii",
-        "ministries": "Bakanlıklar / Kurumlar",
-        "business": "İş Merkezleri",
-        "parks": "Parklar"
-      }
     }
   },
   "vegaOtonomi": {
@@ -1537,19 +1565,6 @@
         "back": "← Geri",
         "forward": "İleri →",
         "close": "Kapat"
-      }
-    },
-    "nearby": {
-      "sectionTitle": "Yakındaki popüler yerler",
-      "projectName": "Yeni Batı Plus",
-      "projectDescription": "Yeni Batı Mahallesi, sıradışı ve prestijli konut projesi",
-      "infrastructureAlt": "Altyapı Görseli",
-      "categories": {
-        "all": "Tümü",
-        "malls": "AVM'ler",
-        "schools": "Okullar",
-        "hospitals": "Hastaneler",
-        "markets": "Marketler"
       }
     }
   },
