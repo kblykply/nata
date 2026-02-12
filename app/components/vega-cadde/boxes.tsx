@@ -31,15 +31,6 @@ const cards = [
     link: "https://maps.app.goo.gl/iNZygMahRAdCPgqu9",
 
   },
-  {
-    id: 4,
-    type: "icon",
-    title: "Sorularınızı Cevaplıyoruz",
-    highlight: "5 dakika içinde",
-    icon: "/vegacenter-canli-destek.png",
-    subtitle: "Projesyonel Ekibimizle",
-    link: "https://api.whatsapp.com/send/?phone=905017111818&text=Merhaba%2C+projeleriniz+hakk%C4%B1nda+detayl%C4%B1+bilgi+almak+istiyorum.&type=phone_number&app_absent=0",
-  },
 ];
 
 export default function InfoCardsSection() {
@@ -65,14 +56,6 @@ export default function InfoCardsSection() {
         ...card,
         title: tCommon("boxesVisitTitle"),
         highlight: tCommon("boxesVisitHighlight"),
-      };
-    }
-    if (card.id === 4) {
-      return {
-        ...card,
-        title: tCommon("boxesQuestionsTitle"),
-        highlight: tCommon("boxesQuestionsHighlight"),
-        subtitle: tCommon("boxesQuestionsSubtitle"),
       };
     }
     return card;

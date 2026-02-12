@@ -32,15 +32,6 @@ export default function InfoCardsSection() {
     background: "/vega-center-02.jpg",
     link: "https://maps.app.goo.gl/jP8rWRVC7bCDYWch7",
   },
-  {
-    id: 4,
-    type: "icon",
-    title: t("boxesAnswerQuestions"),
-    highlight: t("boxes5Minutes"),
-    icon: "/vegacenter-canli-destek.png",
-    subtitle: t("boxesProfessionalTeam"),
-    link: "https://api.whatsapp.com/send/?phone=905017111818&text=Merhaba%2C+projeleriniz+hakk%C4%B1nda+detayl%C4%B1+bilgi+almak+istiyorum.&type=phone_number&app_absent=0",
-  },
 ];
   return (
     <section className="w-full bg-white py-12 px-4">
