@@ -3,10 +3,22 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
+type Card = {
+  id: number;
+  type: string;
+  title: string;
+  highlight: string;
+  icon?: string;
+  link: string;
+  background?: string;
+  wide?: boolean;
+  subtitle?: string;
+};
+
 export default function InfoCardsSection() {
   const t = useTranslations("vegaCenter");
-  
-  const cards = [
+
+  const cards: Card[] = [
   {
     id: 1,
     type: "image",
