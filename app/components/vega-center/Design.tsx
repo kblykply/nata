@@ -18,46 +18,26 @@ export default function DesignSection() {
   const [isOpen, setIsOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
   const gallery = [
-    "/vegacentergörsel.jpg",
-
-    "/vega-site.jpg",
-    "/vega-center-02.jpg",
-    "/vega-center-03.jpg",
-    "/vega-center-07.jpg",
-        "/vega-revize/1.png",
-        "/vega-revize/2.png",
-        "/vega-revize/3.png",
-        "/vega-revize/4.png",
-"/vegacentergörseller/1.jpeg",
-"/vegacentergörseller/2.jpeg",
-
-"/vegacentergörseller/3.jpeg",
-
-"/vegacentergörseller/4.jpeg",
-
-"/vegacentergörseller/5.jpeg",
-
-"/vegacentergörseller/6.jpeg",
-"/vegacentergörseller/7.jpeg",
-
-"/vegacentergörseller/8.jpeg",
-
-"/vegacentergörseller/9.jpeg",
-
-"/vegacentergörseller/10.jpeg",
-
-"/vegacentergörseller/11.jpeg",
-
-"/vegacentergörseller/12.jpeg",
-
-"/vegacentergörseller/13.jpeg",
-
-"/vegacentergörseller/14.jpeg",
-
-
-
-
-
+    "/new-images/VEGA CENTER/vega center - 2.webp",
+    "/new-images/VEGA CENTER/vega center - 3.webp",
+    "/new-images/VEGA CENTER/vega center - 4.webp",
+    "/new-images/VEGA CENTER/vega center - 5.webp",
+    "/new-images/VEGA CENTER/vega center - 6.webp",
+    "/new-images/VEGA CENTER/vega center - 7.webp",
+    "/new-images/VEGA CENTER/vega center - 8.webp",
+    "/new-images/VEGA CENTER/vega center - 9.webp",
+    "/new-images/VEGA CENTER/vega center - 10.webp",
+    "/new-images/VEGA CENTER/vega center - 11.webp",
+    "/new-images/VEGA CENTER/vega center - 13.webp",
+    "/new-images/VEGA CENTER/vega center - 14.webp",
+    "/new-images/VEGA CENTER/vega center - 16.webp",
+    "/new-images/VEGA CENTER/vega center - 17.jpg.webp",
+    "/new-images/VEGA CENTER/vega center - 17.png.webp",
+    "/new-images/VEGA CENTER/vega center - 18.webp",
+    "/new-images/VEGA CENTER/vega center - 19.webp",
+    "/new-images/VEGA CENTER/vega center - 20.webp",
+    "/new-images/VEGA CENTER/vega center - 21.webp",
+    "/new-images/VEGA CENTER/vega center - 22.webp",
   ];
 
   return (
@@ -89,7 +69,7 @@ export default function DesignSection() {
         {/* Right Image */}
         <div className="relative w-full lg:w-1/2 h-[300px] sm:h-[400px] lg:h-[600px]">
           <Image
-            src="/vega-center-03.jpg"
+            src="/new-images/VEGA CENTER/vega center - 14.webp"
             alt="Design"
             fill
             className="object-cover object-center rounded-lg"

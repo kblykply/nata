@@ -18,12 +18,13 @@ export default function DesignSection() {
   const [isOpen, setIsOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
   const gallery = [
-    "/rams-garden-bahcelievler-1.jpg",
-    "/rams-garden-bahcelievler-2.jpg",
-    "/rams-garden-bahcelievler-3.jpg",
-    "/rams-garden-bahcelievler-4.jpg",
-    "/rams-garden-bahcelievler-5.jpg",
-    "/rams-garden-bahcelievler-6.jpg",
+    "/new-images/RAMS GARDEN BAHÇELİEVLER/rams-garden-bahcelievler01.webp",
+    "/new-images/RAMS GARDEN BAHÇELİEVLER/rams-garden-bahcelievler-2.webp",
+    "/new-images/RAMS GARDEN BAHÇELİEVLER/rams-garden-bahcelievler03 (1).webp",
+    "/new-images/RAMS GARDEN BAHÇELİEVLER/Resim2.webp",
+    "/new-images/RAMS GARDEN BAHÇELİEVLER/Resim3.webp",
+    "/new-images/RAMS GARDEN BAHÇELİEVLER/Resim4.webp",
+    "/new-images/RAMS GARDEN BAHÇELİEVLER/Resim5.webp",
   ];
 
   return (
@@ -54,7 +55,7 @@ export default function DesignSection() {
         {/* Right Image */}
         <div className="relative w-full lg:w-1/2 h-[300px] sm:h-[400px] lg:h-[600px]">
           <Image
-            src="/rams-garden-bahcelievler-4.jpg"
+            src="/new-images/RAMS GARDEN BAHÇELİEVLER/Resim3.webp"
             alt="Design"
             fill
             className="object-cover object-center rounded-lg"
