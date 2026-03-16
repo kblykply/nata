@@ -15,10 +15,11 @@ export default function DesignSection() {
   const [isOpen, setIsOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
   const gallery = [
-    "/hityenibati-5.jpg",
-    "/hityenibati-6.jpg",
-    "/hityenibati-7.jpg",
-    "/hityenibati-8.jpg",
+    "/new-images/HİT YENİ BATI/_DSC2371.webp",
+    "/new-images/HİT YENİ BATI/_DSC2372.webp",
+    "/new-images/HİT YENİ BATI/_DSC2375.webp",
+    "/new-images/HİT YENİ BATI/_DSC2377.webp",
+    "/new-images/HİT YENİ BATI/_DSC2379.webp",
   ];
 
   return (
@@ -49,7 +50,7 @@ export default function DesignSection() {
         {/* Right Image */}
         <div className="relative w-full lg:w-1/2 h-[300px] sm:h-[400px] lg:h-[600px]">
           <Image
-            src="/hityenibati-vaziyet.jpeg"
+            src="/new-images/HİT YENİ BATI/_DSC2379.webp"
             alt="Design"
             fill
             className="object-cover object-center rounded-lg"

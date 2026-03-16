@@ -15,11 +15,10 @@ export default function DesignSection() {
   const [isOpen, setIsOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
   const gallery = [
-    "/goat-villas-bilkent-2.jpg",
-    "/goat-villas-bilkent-3.jpg",
-    "/goat-villas-bilkent-4.jpg",
-    "/goat-villas-bilkent-5.jpg",
-    "/goat-villas-bilkent-6.jpg",
+    "/new-images/GOAT VİLLAS/goat-gallery-05.webp",
+    "/new-images/GOAT VİLLAS/goat-gallery-06.webp",
+    "/new-images/GOAT VİLLAS/goat-gallery-9.webp",
+    "/new-images/GOAT VİLLAS/goat-gallery-23.webp",
   ];
 
   return (
@@ -50,7 +49,7 @@ export default function DesignSection() {
         {/* Right Image */}
         <div className="relative w-full lg:w-1/2 h-[300px] sm:h-[400px] lg:h-[600px]">
           <Image
-            src="/goat-villas-bilkent-6.jpg"
+            src="/new-images/GOAT VİLLAS/goat-gallery-05.webp"
             alt="Design"
             fill
             className="object-cover object-center rounded-lg"

@@ -10,210 +10,162 @@ import 'swiper/css/pagination';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 
-  interface SlideData {
-    id: number;
-    background: string;
-    textColor: 'white' | 'black';
-    logoImage?: string;
-    logoPosition?: string;
-    titleImage?: string;
-    titlePosition?: string;
+interface SlideData {
+  id: number;
+  background: string;
+  textColor: 'white' | 'black';
+  logoImage?: string;
+  logoPosition?: string;
+  titleImage?: string;
+  titlePosition?: string;
+}
+
+const slides: SlideData[] = [
+
+  {
+    id: 7,
+    background: '/revize/vegacenterslider.jpeg',
+    textColor: 'black',
+    logoImage: '/outstandinglondon-logo.png',
+    logoPosition: 'top-26 right-6',
+    titleImage: '/yaşam/vegacentertext.png',
+    titlePosition: 'top-30 left-6',
+  },
+
+  {
+    id: 9,
+    background: '/sliderson/image4.jpg',
+    textColor: 'black',
+    logoImage: '/sliderson/logo.png',
+    logoPosition: 'top-30 left-6',
+    titleImage: '/sliderson/title4.png',
+    titlePosition: 'bottom-15 left-1/2 -translate-x-1/2',
+  },
+  {
+    id: 10,
+    background: '/sliderplus/ramsgarden/ramsgardenimage.jpg',
+    textColor: 'black',
+    logoImage: '/sliderson/logo.png',
+    logoPosition: 'top-30 left-6',
+    titleImage: '/revize/ramsgardenslider-text.png',
+    titlePosition: 'bottom-5 left-1/2 -translate-x-1/2 -translate-y-1/2',
+  },
+  {
+    id: 11,
+    background: '/sliderplus/vegaotonomi/vegaotonomiimage.jpg',
+    textColor: 'black',
+    logoImage: '/sliderson/logo.png',
+    logoPosition: 'bottom-6 left-6',
+    titleImage: '/yaşam/vegaotonomitext.png',
+    titlePosition: 'top-30 left-6',
+  },
+  {
+    id: 12,
+    background: '/sliderplus/mega1453/mega1453image.jpg',
+    textColor: 'black',
+    logoImage: '/sliderson/logo.png',
+    logoPosition: 'bottom-6 left-6',
+    titleImage: '/yaşam/mega1453text.png',
+    titlePosition: 'top-30 left-6',
+  },
+  {
+    id: 14,
+    background: '/sliderplus/goat/goatimage.jpg',
+    textColor: 'black',
+    logoImage: '/sliderson/logo.png',
+    logoPosition: 'bottom-6 left-6',
+    titleImage: '/yaşam/goatvillastext.png',
+    titlePosition: 'top-30 left-6',
   }
 
-  const slides: SlideData[] = [
+];
 
-    {
-      id: 7,
-      background: '/revize/vegacenterslider.jpeg',
-      textColor: 'black',
-      logoImage: '/outstandinglondon-logo.png',
-      logoPosition: 'top-26 right-6',
-      titleImage: '/yaşam/vegacentertext.png',
-      titlePosition: 'top-30 left-6',
-    },
-   
-    {
-      id: 9,
-      background: '/sliderson/image4.jpg',
-      textColor: 'black',
-      logoImage: '/sliderson/logo.png',
-      logoPosition: 'top-30 left-6',
-      titleImage: '/sliderson/title4.png',
-      titlePosition: 'bottom-15 left-1/2 -translate-x-1/2',
-    },
-    {
-      id: 10,
-      background: '/sliderplus/ramsgarden/ramsgardenimage.jpg',
-      textColor: 'black',
-      logoImage: '/sliderson/logo.png',
-      logoPosition: 'top-30 left-6',
-      titleImage: '/revize/ramsgardenslider-text.png',
-      titlePosition: 'bottom-5 left-1/2 -translate-x-1/2 -translate-y-1/2',
-    },
-    {
-      id: 11,
-      background: '/sliderplus/vegaotonomi/vegaotonomiimage.jpg',
-      textColor: 'black',
-      logoImage: '/sliderson/logo.png',
-      logoPosition: 'bottom-6 left-6',
-      titleImage: '/yaşam/vegaotonomitext.png',
-      titlePosition: 'top-30 left-6',
-    },
-    {
-      id: 12,
-      background: '/sliderplus/mega1453/mega1453image.jpg',
-      textColor: 'black',
-      logoImage: '/sliderson/logo.png',
-      logoPosition: 'bottom-6 left-6',
-      titleImage: '/yaşam/mega1453text.png',
-      titlePosition: 'top-30 left-6',
-    },
-    {
-      id: 14,
-      background: '/sliderplus/goat/goatimage.jpg',
-      textColor: 'black',
-      logoImage: '/sliderson/logo.png',
-      logoPosition: 'bottom-6 left-6',
-      titleImage: '/yaşam/goatvillastext.png',
-      titlePosition: 'top-30 left-6',
-    }
+export default function HeroSlider() {
+  const t = useTranslations('home');
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const swiperRef = useRef<SwiperType | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
 
-  ];
+  useEffect(() => {
+    const updateIsMobile = () => setIsMobile(window.innerWidth < 768);
+    updateIsMobile();
+    window.addEventListener('resize', updateIsMobile);
+    return () => window.removeEventListener('resize', updateIsMobile);
+  }, []);
 
-  export default function HeroSlider() {
-    const t = useTranslations('home');
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const swiperRef = useRef<SwiperType | null>(null);
-    const [isMobile, setIsMobile] = useState(false);
+  return (
+    <div className="relative w-full h-[70vh]">
+      <Swiper
+        modules={[Pagination, Autoplay]}
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
+        onSwiper={(swiper) => (swiperRef.current = swiper)}
+        onSlideChange={(swiper) => setCurrentIndex(swiper.activeIndex)}
+        className="w-full h-full"
+      >
+        {slides.map((slide) => (
+          <SwiperSlide key={slide.id}>
+            <div className="relative w-full h-full">
+              <Image
+                src={slide.background}
+                alt={`Slide ${slide.id}`}
+                fill
+                className="object-cover object-center pointer-events-none"
+                priority
+              />
 
-    useEffect(() => {
-      const updateIsMobile = () => setIsMobile(window.innerWidth < 768);
-      updateIsMobile();
-      window.addEventListener('resize', updateIsMobile);
-      return () => window.removeEventListener('resize', updateIsMobile);
-    }, []);
-
-    return (
-      <div className="relative w-full h-[90vh]">
-        <Swiper
-          modules={[Pagination, Autoplay]}
-          autoplay={{ delay: 5000, disableOnInteraction: false }}
-          onSwiper={(swiper) => (swiperRef.current = swiper)}
-          onSlideChange={(swiper) => setCurrentIndex(swiper.activeIndex)}
-          className="w-full h-full"
-        >
-          {slides.map((slide) => (
-            <SwiperSlide key={slide.id}>
-              <div className="relative w-full h-full">
-                <Image
-                  src={slide.background}
-                  alt={`Slide ${slide.id}`}
-                  fill
-                  className="object-cover object-center pointer-events-none"
-                  priority
-                />
-
-                {/* Overlay */}
-                <div className="absolute inset-0 z-10 w-full h-full pointer-events-none">
-                  {slide.logoImage && (
-                    <div
-                      className={`absolute pointer-events-auto ${
-                        slide.logoPosition || 'top-4 left-4 sm:top-6 sm:left-6'
+              {/* Overlay */}
+              <div className="absolute inset-0 z-10 w-full h-full pointer-events-none">
+                {slide.logoImage && (
+                  <div
+                    className={`absolute pointer-events-auto ${slide.logoPosition || 'top-4 left-4 sm:top-6 sm:left-6'
                       }`}
-                    >
-                      <Image
-                        src={slide.logoImage}
-                        alt="Logo"
-                        width={160}
-                        height={80}
-                        className="w-auto h-20 sm:h-22 md:h-26"
-                      />
-                    </div>
-                  )}
-                  {slide.titleImage && (
-                    <div
-                      className={`absolute pointer-events-auto ${
-                        slide.titlePosition ||
-                        'top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'
+                  >
+                    <Image
+                      src={slide.logoImage}
+                      alt="Logo"
+                      width={160}
+                      height={80}
+                      className="w-auto h-20 sm:h-22 md:h-26"
+                    />
+                  </div>
+                )}
+                {slide.titleImage && (
+                  <div
+                    className={`absolute pointer-events-auto ${slide.titlePosition ||
+                      'top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'
                       }`}
-                    >
-                      <Image
-                        src={slide.titleImage}
-                        alt="Title"
-                        width={1000}
-                        height={400}
-  className="w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] h-auto"
-                      />
-                    </div>
-                  )}
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-
-        {/* Pagination Dots */}
-        <div className="absolute bottom-4 left-4 flex items-center gap-2 z-30">
-          {slides.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => swiperRef.current?.slideTo(i)}
-              className={`transition-all duration-300 rounded-full ${
-                i === currentIndex ? 'w-8 h-2 bg-gray-700' : 'w-2 h-2 bg-gray-300'
-              }`}
-              aria-label={`Go to slide ${i + 1}`}
-              title={`Slide ${i + 1}`}
-            />
-          ))}
-        </div>
-
-        {/* Right Floating Card (Desktop Only) */}
-        {!isMobile && (
-          <div className="absolute top-0 right-0 h-full w-[320px] p-4 flex flex-col justify-end bg-white/0 z-20 rounded-bl-2xl ">
-            <Swiper
-              modules={[Autoplay]}
-              autoplay={{ delay: 4000, disableOnInteraction: false }}
-              loop
-              className="rounded-xl overflow-hidden w-full flex items-center justify-center"
-            >
-                 <SwiperSlide>
-                <Image
-                  src="/slider/slider/sagkutu2.png"
-                  alt="Mega 1453 Slide 2"
-                  width={300}
-                  height={500}
-                  className="w-full h-auto object-contain"
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Image
-                  src="/slider/slider/sagkutu.png"
-                  alt="Mega 1453"
-                  width={300}
-                  height={500}
-                  className="w-full h-auto object-contain"
-                />
-              </SwiperSlide>
-           
-            </Swiper>
-
-            <div
-              className="rounded-xl bg-no-repeat bg-cover bg-center shadow-md h-[120px] mt-4 px-6 py-4 flex items-start w-full"
-              style={{ backgroundImage: "url('/chartsredone.png')" }}
-            >
-              <div className="text-sm leading-tight">
-                <p className="text-black font-medium">{t('sharingTitle1')}</p>
-                <p className="text-red-600 font-semibold">{t('sharingTitle2')}</p>
+                  >
+                    <Image
+                      src={slide.titleImage}
+                      alt="Title"
+                      width={1000}
+                      height={400}
+                      className="w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] h-auto"
+                    />
+                  </div>
+                )}
               </div>
             </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
 
-            <Link href="/kampanya" className="w-full">
-              <button className="mt-4 bg-gradient-to-r from-red-600 to-orange-400 text-white py-4 px-4 rounded shadow-md text-sm font-medium w-full">
-                {t('moreCampaigns')}
-              </button>
-            </Link>
-          </div>
-        )}
+      {/* Pagination Dots */}
+      <div className="absolute bottom-4 left-4 flex items-center gap-2 z-30">
+        {slides.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => swiperRef.current?.slideTo(i)}
+            className={`transition-all duration-300 rounded-full ${i === currentIndex ? 'w-8 h-2 bg-gray-700' : 'w-2 h-2 bg-gray-300'
+              }`}
+            aria-label={`Go to slide ${i + 1}`}
+            title={`Slide ${i + 1}`}
+          />
+        ))}
       </div>
-    );
-  }
+
+      {/* Right Floating Card (Desktop Only) */}
+
+    </div>
+  );
+}

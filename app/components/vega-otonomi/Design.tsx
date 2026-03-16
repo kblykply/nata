@@ -18,19 +18,26 @@ export default function DesignSection() {
   const [isOpen, setIsOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
   const gallery = [
-    "/otonomi-1.jpg",
-    "/otonomi-2.jpg",
-    "/otonomi-3.jpg",
-    "/otonomi-4.jpg",
-    "/otonomi/2.jpeg",
-    "/otonomi/3.jpeg",
-    "/otonomi/4.jpeg",
-    "/otonomi/5.jpeg",
-    "/otonomi/6.jpeg",
-    "/otonomi/7.jpeg",
-    "/otonomi/8.jpeg",
-    "/otonomi/9.jpeg",
-    "/otonomi/10.jpeg"
+    "/new-images/VEGA OTONOMİ/Vega Otonomi (1).webp",
+    "/new-images/VEGA OTONOMİ/Vega Otonomi (2).webp",
+    "/new-images/VEGA OTONOMİ/Vega Otonomi (3).webp",
+    "/new-images/VEGA OTONOMİ/Vega Otonomi (4).webp",
+    "/new-images/VEGA OTONOMİ/Vega Otonomi (5).webp",
+    "/new-images/VEGA OTONOMİ/Vega Otonomi (6).webp",
+    "/new-images/VEGA OTONOMİ/Vega Otonomi (7).webp",
+    "/new-images/VEGA OTONOMİ/Vega Otonomi (8).webp",
+    "/new-images/VEGA OTONOMİ/Vega Otonomi (9).webp",
+    "/new-images/VEGA OTONOMİ/Vega Otonomi (10).webp",
+    "/new-images/VEGA OTONOMİ/Vega Otonomi (11).webp",
+    "/new-images/VEGA OTONOMİ/Vega Otonomi (12).webp",
+    "/new-images/VEGA OTONOMİ/Vega Otonomi (13).webp",
+    "/new-images/VEGA OTONOMİ/Vega Otonomi (14).webp",
+    "/new-images/VEGA OTONOMİ/Vega Otonomi (15).webp",
+    "/new-images/VEGA OTONOMİ/Vega Otonomi (16).webp",
+    "/new-images/VEGA OTONOMİ/Vega Otonomi (17).webp",
+    "/new-images/VEGA OTONOMİ/Vega Otonomi (18).webp",
+    "/new-images/VEGA OTONOMİ/Vega Otonomi (19).webp",
+    "/new-images/VEGA OTONOMİ/Vega Otonomi (20).webp",
   ];
 
   return (
@@ -61,7 +68,7 @@ export default function DesignSection() {
         {/* Right Image */}
         <div className="relative w-full lg:w-1/2 h-[300px] sm:h-[400px] lg:h-[600px]">
           <Image
-            src="/otonomi-3.jpg"
+            src="/new-images/VEGA OTONOMİ/Vega Otonomi (17).webp"
             alt="Design"
             fill
             className="object-cover object-center rounded-lg"

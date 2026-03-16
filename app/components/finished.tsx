@@ -92,8 +92,8 @@ const listings: Listing[] = [
     time: "8",
     stats: ["Merkezi Lokasyon", "Açık Avm Konsepti"],
     footer: "Çankaya",
-    image: "/vega-cadde.jpg",
-    imageAlt: "/vega-cadde.jpg",
+    image: "/new-images/VEGA CADDE/Vega Cadde Görsel 1.webp",
+    imageAlt: "/new-images/VEGA CADDE/Vega Cadde Görsel 1.webp",
     extra: [
       { icon: "", label: "161 Adet Konut&Ofis" },
       { icon: "", label: "Vega AVM" },

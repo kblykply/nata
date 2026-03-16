@@ -18,10 +18,10 @@ export default function DesignSection() {
   const [isOpen, setIsOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
   const gallery = [
-    "/mega-sasmaz-2.jpg",
-    "/mega-sasmaz-3.jpg",
-    "/mega-sasmaz-4.jpg",
-    "/mega-sasmaz-5.jpg",
+    "/new-images/MEGA ŞAŞMAZ/trinvest-megasasmaz-1.webp",
+    "/new-images/MEGA ŞAŞMAZ/trinvest-megasasmaz-3.webp",
+    "/new-images/MEGA ŞAŞMAZ/trinvest-megasasmaz-4.webp",
+    "/new-images/MEGA ŞAŞMAZ/01_12-Foto-scaled-1.webp",
   ];
 
   return (
@@ -52,7 +52,7 @@ export default function DesignSection() {
         {/* Right Image */}
         <div className="relative w-full lg:w-1/2 h-[300px] sm:h-[400px] lg:h-[600px]">
           <Image
-            src="/mega-sasmaz-4.jpg"
+            src="/new-images/MEGA ŞAŞMAZ/trinvest-megasasmaz-3.webp"
             alt="Design"
             fill
             className="object-cover object-center rounded-lg"

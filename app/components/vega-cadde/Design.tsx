@@ -18,8 +18,21 @@ export default function DesignSection() {
   const [isOpen, setIsOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
   const gallery = [
-    "/vegacentergaleri/vegacentergaleri-4.jpg",
-    "/vegacentergaleri/vegacentergaleri-5.jpg",
+    "/new-images/VEGA CADDE/Vega Cadde Görsel 1.webp",
+    "/new-images/VEGA CADDE/Vega Cadde Görsel 2.webp",
+    "/new-images/VEGA CADDE/VegaCadde_dis (1).webp",
+    "/new-images/VEGA CADDE/VegaCadde_dis (4).webp",
+    "/new-images/VEGA CADDE/DSC_0495.webp",
+    "/new-images/VEGA CADDE/DSC_0507.webp",
+    "/new-images/VEGA CADDE/DSC_0520.webp",
+    "/new-images/VEGA CADDE/DSC_0523.webp",
+    "/new-images/VEGA CADDE/DSC_0524.webp",
+    "/new-images/VEGA CADDE/DSC_0536.webp",
+    "/new-images/VEGA CADDE/DSC_0542.webp",
+    "/new-images/VEGA CADDE/DSC_0543.webp",
+    "/new-images/VEGA CADDE/DSC_0546.webp",
+    "/new-images/VEGA CADDE/DSC_0549.webp",
+    "/new-images/VEGA CADDE/DSC_0608.webp",
   ];
 
   return (
@@ -50,7 +63,7 @@ export default function DesignSection() {
         {/* Right Image */}
         <div className="relative w-full lg:w-1/2 h-[300px] sm:h-[400px] lg:h-[600px]">
           <Image
-            src="/cadde-galeri/vegacadde2.png"
+            src="/new-images/VEGA CADDE/Vega Cadde Görsel 1.webp"
             alt="Design"
             fill
             className="object-cover object-center rounded-lg"

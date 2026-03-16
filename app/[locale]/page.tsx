@@ -1,6 +1,5 @@
 import PostModernSlider from "../components/slider";
 import Projects from "../components/projects";
-import Boxes from "../components/5box";
 import FeaturedProjects from "../components/featured";
 import FinishedProjects from "../components/finished";
 import ProjectFilters from "../components/ProjectFilters";
@@ -53,7 +52,6 @@ export default async function Page({
   return (
     <main className="min-h-screen bg-whitetext-white">
       <PostModernSlider />
-      <Boxes />
       <ProjectFilters />
       <FeaturedProjects />
       <FinishedProjects />

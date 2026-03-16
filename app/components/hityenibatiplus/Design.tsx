@@ -15,16 +15,12 @@ export default function DesignSection() {
   const [isOpen, setIsOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
   const gallery = [
-    "/yenibatıplus/1.jpeg",
-    "/yenibatıplus/2.jpeg",
-    "/yenibatıplus/3.jpeg",
-    "/yenibatıplus/4.jpeg",
-        "/yenibatıplus/5.jpeg",
-
-            "/yenibatıplus/6.jpeg",
-
-
-    
+    "/new-images/YENİ BATI PLUS/YENİ BATI PLUS (1).webp",
+    "/new-images/YENİ BATI PLUS/YENİ BATI PLUS (2).webp",
+    "/new-images/YENİ BATI PLUS/YENİ BATI PLUS (3).webp",
+    "/new-images/YENİ BATI PLUS/YENİ BATI PLUS (4).webp",
+    "/new-images/YENİ BATI PLUS/YENİ BATI PLUS (5).webp",
+    "/new-images/YENİ BATI PLUS/YENİ BATI PLUS (6).webp",
   ];
 
   return (
@@ -55,7 +51,7 @@ export default function DesignSection() {
         {/* Right Image */}
         <div className="relative w-full lg:w-1/2 h-[300px] sm:h-[400px] lg:h-[600px]">
           <Image
-            src="/yenibatıplusdikeygörsel.jpg"
+            src="/new-images/YENİ BATI PLUS/YENİ BATI PLUS (5).webp"
             alt="Design"
             fill
             className="object-cover object-center rounded-lg"

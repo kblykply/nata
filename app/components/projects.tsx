@@ -10,8 +10,8 @@ import { SlidersHorizontal, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 interface Listing {
-  id: string; 
-    title?: string;
+  id: string;
+  title?: string;
   price: string;
   currency?: string;
   location?: string;
@@ -57,17 +57,17 @@ const getProductTypeFromListing = (listing: Omit<Listing, 'productType' | 'city'
 
 const normalizeDeliveryStatus = (label?: string, highlight?: string): string => {
   const text = (label || highlight || "").toLowerCase();
-  
+
   if (text.includes("hemen teslim")) {
     return "Hemen Teslim";
   }
-  
+
   // Extract year from patterns like "2026 3. Çeyrek Teslim", "2027 1. Çeyrek Teslim", "3. Çeyrek 2025"
   const yearMatch = text.match(/(20\d{2})/);
   if (yearMatch) {
     return yearMatch[1];
   }
-  
+
   return "Hemen Teslim"; // Default
 };
 
@@ -82,7 +82,7 @@ const getDistrictsByCity = (city: string, listings: Listing[]): string[] => {
 };
 
 const allListings: Listing[] = [
-    
+
   {
     id: "10",
     link: "/vega-center",
@@ -93,43 +93,43 @@ const allListings: Listing[] = [
     time: "5 dakika mesafede",
     stats: ["Merkezi Lokasyon", "Açık Avm ve Ofis Konsepti"],
     footer: "Çankaya",
-    image: "/vega-center/DJI_0380.webp",
-    imageAlt: "/vega-center/DJI_0380.webp",
+    image: "/new-images/VEGA CENTER/vega center - 14.webp",
+    imageAlt: "/new-images/VEGA CENTER/vega center - 14.webp",
     progress: 100,
     city: "Ankara",
     district: "Mustafa Kemal Mahallesi",
     productType: ["Ofis"],
     deliveryStatus: "Hemen Teslim"
   },
-  
+
   {
-       id: "22",
+    id: "22",
 
     link: "/rams-garden",
-    type: "featured",
-price: "RAMS GARDEN\nBAHÇELİEVLER",
-    highlight: "Hemen Teslim ve Tapu",
+    type: "standard",
+    price: "RAMS GARDEN\nBAHÇELİEVLER",
+    label: "Hemen Teslim ve Tapu",
     metro: "Haznedar Metro",
     time: "9 dakika mesafede",
     stats: ["8.815 m²", "796 daire"],
     footer: "Bahçelievler",
-    image: "/RamsPArkBAhcelievler.webp",
-    imageAlt: "/RamsPArkBAhcelievler.webp",
+    image: "/new-images/RAMS GARDEN BAHÇELİEVLER/Resim5.webp",
+    imageAlt: "/new-images/RAMS GARDEN BAHÇELİEVLER/Resim5.webp",
 
-     extra: [
+    extra: [
       { icon: "", label: "Merkezi Lokasyon" },
       { icon: "", label: "Ticari Alanlar" },
       { icon: "", label: "Premium Hayat " },
     ],
-        progress: 100,
+    progress: 100,
     city: "İstanbul",
     district: "Bahçelievler",
     productType: ["Konut"],
     deliveryStatus: "Hemen Teslim"
 
   },
-  
-  
+
+
   {
     id: "11",
     link: "/goat-villas",
@@ -137,11 +137,11 @@ price: "RAMS GARDEN\nBAHÇELİEVLER",
     price: "GOAT VILLAS\nBilkent",
     metro: "Bilkent Metro",
     time: "9 dakikada mesafede",
-    image: "/GOAT VILLAS BİLKENT-ON.jpg",
-    imageAlt: "/GOAT VILLAS BİLKENT-ON.jpg",
+    image: "/new-images/GOAT VİLLAS/goat-gallery-05.webp",
+    imageAlt: "/new-images/GOAT VİLLAS/goat-gallery-05.webp",
     label: "2026 3. Çeyrek Teslim",
     footer: "Bilkent",
-    stats: [ "Villa Projesi"],
+    stats: ["Villa Projesi"],
     progress: 95,
     city: "Ankara",
     district: "Bilkent",
@@ -158,8 +158,8 @@ price: "RAMS GARDEN\nBAHÇELİEVLER",
     time: "4 dakika mesafede",
     stats: ["490m² ye kadar", "207 bölüm"],
     footer: "Plevne",
-    image: "/otonomiMainRender2.jpg",
-    imageAlt: "/otonomiMainRender2.jpg",
+    image: "/new-images/VEGA OTONOMİ/Vega Otonomi (17).webp",
+    imageAlt: "/new-images/VEGA OTONOMİ/Vega Otonomi (17).webp",
     progress: 100,
     city: "Ankara",
     district: "Sincan",
@@ -169,15 +169,15 @@ price: "RAMS GARDEN\nBAHÇELİEVLER",
   {
     id: "13",
     link: "/mega-1453",
-    type: "featured",
+    type: "standard",
     price: "MEGA 1453",
     metro: "Hastane Metro",
     time: "11 dakika mesafede",
     stats: ["70.000 m²", "715 konut"],
     footer: "Yenimahalle",
-    image: "/MEGA 1453 - ON.jpg",
-    imageAlt: "/MEGA 1453 - ON.jpg",
-    highlight: "2027 1. Çeyrek Teslim",
+    image: "/new-images/MEGA 1453/Ç_09.webp",
+    imageAlt: "/new-images/MEGA 1453/Ç_09.webp",
+    label: "2027 1. Çeyrek Teslim",
     extra: [
       { icon: "", label: "Merkezi Lokasyon" },
       { icon: "", label: "Rezidans Projesi" },
@@ -200,9 +200,9 @@ price: "RAMS GARDEN\nBAHÇELİEVLER",
     time: "10 dakika mesafede",
     stats: ["43.500 m²", "405 konut + 5 Ticari Alan "],
     footer: "Yeni Batı Mahallesi",
-    image: "/yenibatıplusdikeygörsel.jpg",
-    imageAlt: "/yenibatıplusdikeygörsel.jpg",
-     progress: 100,
+    image: "/new-images/YENİ BATI PLUS/YENİ BATI PLUS (5).webp",
+    imageAlt: "/new-images/YENİ BATI PLUS/YENİ BATI PLUS (5).webp",
+    progress: 100,
     city: "Ankara",
     district: "Yeni Batı Mahallesi",
     productType: ["Konut"],
@@ -215,8 +215,8 @@ price: "RAMS GARDEN\nBAHÇELİEVLER",
     price: "HİTYENİBATI",
     metro: "İstanbul Yolu Metro",
     time: "8 dakika mesafede",
-    image: "/HİTYENİBATI-ON.jpg",
-    imageAlt: "/HİTYENİBATI-ON.jpg",
+    image: "/new-images/HİT YENİ BATI/_DSC2379.webp",
+    imageAlt: "/new-images/HİT YENİ BATI/_DSC2379.webp",
     footer: "Yeni Batı Mahallesi",
     stats: ["1+1 ve 2,5+1 daireler", "190 adet konut"],
     label: "Hemen Teslim ve Tapu",
@@ -229,15 +229,15 @@ price: "RAMS GARDEN\nBAHÇELİEVLER",
   {
     id: "16",
     link: "/mega-sasmaz",
-    type: "featured",
+    type: "standard",
     price: "MEGA ŞAŞMAZ",
     label: "Hemen Teslim ve Tapu",
     metro: "Ümitköy Metro",
     time: "8 dakika mesafede",
     stats: ["160.000 m²", "700 bölüm"],
     footer: "Şaşmaz",
-    image: "/MEGA SASMAZ - ON.jpg",
-    imageAlt: "/MEGA SASMAZ - ON.jpg",
+    image: "/new-images/MEGA ŞAŞMAZ/trinvest-megasasmaz-3.webp",
+    imageAlt: "/new-images/MEGA ŞAŞMAZ/trinvest-megasasmaz-3.webp",
     highlight: "Hemen Teslim ve Tapu",
     extra: [
       { icon: "", label: "Merkezi Lokasyon" },
@@ -250,7 +250,7 @@ price: "RAMS GARDEN\nBAHÇELİEVLER",
     district: "Şaşmaz",
     productType: ["Ticari", "Ofis"],
     deliveryStatus: "Hemen Teslim"
-  },  {
+  }, {
     id: "14",
     link: "/anteres",
     type: "standard",
@@ -276,10 +276,10 @@ price: "RAMS GARDEN\nBAHÇELİEVLER",
     productType: ["Konut"],
     deliveryStatus: "2025"
   },
-    
-    
-    
-  ];
+
+
+
+];
 
 export default function ProjectListingSection() {
   const t = useTranslations("projectList");
@@ -398,7 +398,7 @@ export default function ProjectListingSection() {
     const districtMatch =
       selectedCity === "Tümü" || selectedCity === "İstanbul" || selectedDistrict === "Tümü" || item.district === selectedDistrict;
     const productTypeMatch =
-      selectedProductType === "Tümü" || 
+      selectedProductType === "Tümü" ||
       (item.productType && Array.isArray(item.productType) && item.productType.includes(selectedProductType as "Konut" | "Ofis" | "Ticari" | "Villa"));
     const deliveryStatusMatch =
       selectedDeliveryStatus === "Tümü" || item.deliveryStatus === selectedDeliveryStatus;
@@ -424,53 +424,53 @@ export default function ProjectListingSection() {
   const comparisonRows =
     compareLeft && compareRight
       ? [
-          {
-            label: t("project"),
-            left: formatLine(compareLeft.price),
-            right: formatLine(compareRight.price),
-          },
-          {
-            label: t("delivery"),
-            left: translateTag(formatLine(compareLeft.label || compareLeft.highlight)),
-            right: translateTag(formatLine(compareRight.label || compareRight.highlight)),
-          },
-          {
-            label: t("metro"),
-            left: formatLine(compareLeft.metro),
-            right: formatLine(compareRight.metro),
-          },
-          {
-            label: t("distance"),
-            left: formatTime(compareLeft.time),
-            right: formatTime(compareRight.time),
-          },
-          {
-            label: t("features"),
-            left: formatArray(compareLeft.stats?.map(translateTag)),
-            right: formatArray(compareRight.stats?.map(translateTag)),
-          },
-          {
-            label: t("location"),
-            left: formatLine(compareLeft.footer),
-            right: formatLine(compareRight.footer),
-          },
-          {
-            label: t("progress"),
-            left:
-              compareLeft.progress !== undefined
-                ? `%${compareLeft.progress}`
-                : "-",
-            right:
-              compareRight.progress !== undefined
-                ? `%${compareRight.progress}`
-                : "-",
-          },
-          {
-            label: t("extra"),
-            left: formatExtra(compareLeft.extra?.map((e) => ({ label: translateTag(e.label) }))),
-            right: formatExtra(compareRight.extra?.map((e) => ({ label: translateTag(e.label) }))),
-          },
-        ]
+        {
+          label: t("project"),
+          left: formatLine(compareLeft.price),
+          right: formatLine(compareRight.price),
+        },
+        {
+          label: t("delivery"),
+          left: translateTag(formatLine(compareLeft.label || compareLeft.highlight)),
+          right: translateTag(formatLine(compareRight.label || compareRight.highlight)),
+        },
+        {
+          label: t("metro"),
+          left: formatLine(compareLeft.metro),
+          right: formatLine(compareRight.metro),
+        },
+        {
+          label: t("distance"),
+          left: formatTime(compareLeft.time),
+          right: formatTime(compareRight.time),
+        },
+        {
+          label: t("features"),
+          left: formatArray(compareLeft.stats?.map(translateTag)),
+          right: formatArray(compareRight.stats?.map(translateTag)),
+        },
+        {
+          label: t("location"),
+          left: formatLine(compareLeft.footer),
+          right: formatLine(compareRight.footer),
+        },
+        {
+          label: t("progress"),
+          left:
+            compareLeft.progress !== undefined
+              ? `%${compareLeft.progress}`
+              : "-",
+          right:
+            compareRight.progress !== undefined
+              ? `%${compareRight.progress}`
+              : "-",
+        },
+        {
+          label: t("extra"),
+          left: formatExtra(compareLeft.extra?.map((e) => ({ label: translateTag(e.label) }))),
+          right: formatExtra(compareRight.extra?.map((e) => ({ label: translateTag(e.label) }))),
+        },
+      ]
       : [];
 
   const handleMouseMove = (e: React.MouseEvent, index: number) => {
@@ -734,35 +734,33 @@ export default function ProjectListingSection() {
               )}
               <div
                 key={item.id}
-              role="link"
-              tabIndex={0}
-              onClick={() => router.push(item.link)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  e.preventDefault();
-                  router.push(item.link);
-                }
-              }}
-              onMouseMove={(e) => handleMouseMove(e, index)}
-              onMouseLeave={() => {
-                setHoveredIndex(null);
-                setPopupIndex(null);
-              }}
-              className={`block h-full relative rounded-md overflow-hidden shadow-sm transition cursor-pointer flex flex-col ${
-                item.type === "featured"
-                  ? "bg-black text-white min-h-[540px]"
-                  : "bg-white"
-              }`}
-            >
+                role="link"
+                tabIndex={0}
+                onClick={() => router.push(item.link)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    router.push(item.link);
+                  }
+                }}
+                onMouseMove={(e) => handleMouseMove(e, index)}
+                onMouseLeave={() => {
+                  setHoveredIndex(null);
+                  setPopupIndex(null);
+                }}
+                className={`block h-full relative rounded-md overflow-hidden shadow-sm transition cursor-pointer flex flex-col ${item.type === "featured"
+                    ? "bg-black text-white min-h-[540px]"
+                    : "bg-white"
+                  }`}
+              >
                 {/* Action Buttons */}
                 <div className="absolute top-4 right-4 z-30">
                   <button
                     onClick={(e) => handleCompareToggle(e, item)}
-                    className={`px-3 py-1 rounded-full text-[10px] font-medium transition ${
-                      compared
+                    className={`px-3 py-1 rounded-full text-[10px] font-medium transition ${compared
                         ? "bg-black text-white"
                         : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                    }`}
+                      }`}
                   >
                     {compared ? t("selected") : t("compare")}
                   </button>
@@ -801,18 +799,16 @@ export default function ProjectListingSection() {
                       src={item.image}
                       alt="Main Project"
                       fill
-                      className={`object-cover object-center z-0 transition-opacity duration-500 ${
-                        isHovered ? "opacity-0" : "opacity-100"
-                      }`}
+                      className={`object-cover object-center z-0 transition-opacity duration-500 ${isHovered ? "opacity-0" : "opacity-100"
+                        }`}
                     />
                     {item.imageAlt && (
                       <Image
                         src={item.imageAlt}
                         alt="Alt Project"
                         fill
-                        className={`object-cover object-center absolute inset-0 transition-opacity duration-500 ${
-                          isHovered ? "opacity-100" : "opacity-0"
-                        }`}
+                        className={`object-cover object-center absolute inset-0 transition-opacity duration-500 ${isHovered ? "opacity-100" : "opacity-0"
+                          }`}
                       />
                     )}
                     <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/70 to-transparent z-10" />
@@ -823,27 +819,24 @@ export default function ProjectListingSection() {
                       src={item.image}
                       alt="Main Project"
                       fill
-                      className={`object-cover object-center transition-opacity duration-500 ${
-                        isHovered ? "opacity-0" : "opacity-100"
-                      }`}
+                      className={`object-cover object-center transition-opacity duration-500 ${isHovered ? "opacity-0" : "opacity-100"
+                        }`}
                     />
                     {item.imageAlt && (
                       <Image
                         src={item.imageAlt}
                         alt="Alt Project"
                         fill
-                        className={`object-cover object-center absolute inset-0 transition-opacity duration-500 ${
-                          isHovered ? "opacity-100" : "opacity-0"
-                        }`}
+                        className={`object-cover object-center absolute inset-0 transition-opacity duration-500 ${isHovered ? "opacity-100" : "opacity-0"
+                          }`}
                       />
                     )}
                   </div>
                 )}
 
                 {/* Content */}
-                <div className={`relative z-20 p-4 flex flex-col justify-between flex-grow ${
-                  item.type === "featured" ? "" : "p-0"
-                }`}>
+                <div className={`relative z-20 p-4 flex flex-col justify-between flex-grow ${item.type === "featured" ? "" : "p-0"
+                  }`}>
                   {item.type === "featured" ? (
                     <div>
                       {item.price.split("\n").map((line, idx) => (
@@ -856,24 +849,24 @@ export default function ProjectListingSection() {
                         {item.metro} · {formatTime(item.time)}
                       </p>
 
-                    {item.progress !== undefined && (
-                      <div className="mt-3 px-2 py-2 rounded-md bg-white/40 backdrop-blur-sm w-fit">
-                        <div className="flex flex-col items-start">
-                          <p className="text-[10px] text-gray-800 mb-1">
-                            {t("constructionProgress")}
-                          </p>
-                          <div className="w-45 h-1.5 bg-gray-300 rounded-full overflow-hidden">
-                            <div
-                              className="bg-green-600 h-full transition-all"
-                              style={{ width: `${item.progress}%` }}
-                            />
+                      {item.progress !== undefined && (
+                        <div className="mt-3 px-2 py-2 rounded-md bg-white/40 backdrop-blur-sm w-fit">
+                          <div className="flex flex-col items-start">
+                            <p className="text-[10px] text-gray-800 mb-1">
+                              {t("constructionProgress")}
+                            </p>
+                            <div className="w-45 h-1.5 bg-gray-300 rounded-full overflow-hidden">
+                              <div
+                                className="bg-green-600 h-full transition-all"
+                                style={{ width: `${item.progress}%` }}
+                              />
+                            </div>
+                            <p className="text-[10px] mt-1 text-gray-800">
+                              {item.progress}%
+                            </p>
                           </div>
-                          <p className="text-[10px] mt-1 text-gray-800">
-                            {item.progress}%
-                          </p>
                         </div>
-                      </div>
-                    )}
+                      )}
 
 
                     </div>
@@ -903,22 +896,22 @@ export default function ProjectListingSection() {
                       )}
 
 
-                    {item.progress !== undefined && (
-                      <div className="mt-2 flex flex-col items-start">
-                        <p className="text-[10px] text-gray-500 mb-1">
-                          {t("constructionProgress")}
-                        </p>
-                        <div className="w-1/2 h-1.5 bg-gray-200 rounded-full overflow-hidden">
-                          <div
-                            className="bg-green-600 h-full transition-all"
-                            style={{ width: `${item.progress}%` }}
-                          />
+                      {item.progress !== undefined && (
+                        <div className="mt-2 flex flex-col items-start">
+                          <p className="text-[10px] text-gray-500 mb-1">
+                            {t("constructionProgress")}
+                          </p>
+                          <div className="w-1/2 h-1.5 bg-gray-200 rounded-full overflow-hidden">
+                            <div
+                              className="bg-green-600 h-full transition-all"
+                              style={{ width: `${item.progress}%` }}
+                            />
+                          </div>
+                          <p className="text-[10px] mt-1 text-gray-500">
+                            {item.progress}%
+                          </p>
                         </div>
-                        <p className="text-[10px] mt-1 text-gray-500">
-                          {item.progress}%
-                        </p>
-                      </div>
-                    )}
+                      )}
 
 
 
@@ -949,7 +942,7 @@ export default function ProjectListingSection() {
                     </div>
                   )}
 
-                  
+
 
                   {item.type === "featured" && popupIndex === index && (
                     <div className="absolute right-4 bottom-12 w-64 bg-[#4A4A4A] text-white rounded-2xl shadow-xl p-4 z-30 space-y-2">

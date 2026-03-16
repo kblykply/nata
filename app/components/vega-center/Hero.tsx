@@ -12,7 +12,7 @@ export default function ProjectHeroCloudSection() {
   const tHeader = useTranslations("header");
   
   return (
-    <section  className="relative w-full h-[90vh] md:h-[150vh] overflow-hidden bg-gradient-to-b from-[#006d9d] to-[#e6f3fd]">
+    <section  className="relative w-full h-[100svh] overflow-hidden bg-gradient-to-b from-[#006d9d] to-[#e6f3fd]">
   
 <div
   className="absolute z-30
@@ -54,7 +54,7 @@ export default function ProjectHeroCloudSection() {
 
 
       {/* Looping clouds (seamless illusion) */}
-      <div className="absolute top-60 left-0 w-full h-full z-10 overflow-hidden pointer-events-none">
+      <div className="absolute top-0 left-0 w-full h-full z-10 overflow-hidden pointer-events-none">
         <motion.div
           className="flex h-full w-[200%]"
           animate={{ x: ["0%", "-50%"] }}
@@ -80,7 +80,7 @@ export default function ProjectHeroCloudSection() {
       </div>
 
       {/* Building image */}
-      <div className="absolute bottom-0 left-0 w-full h-[140vh] z-20 pointer-events-none">
+      <div className="absolute bottom-0 left-0 w-full h-full z-20 pointer-events-none">
         <Image
           src="/vegacenterbuild.png"
           alt="Building"
