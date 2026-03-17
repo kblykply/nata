@@ -1,16 +1,17 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
-import { OverlayView } from "@react-google-maps/api";
 import {
   GoogleMap,
   Marker,
   InfoWindow,
   useJsApiLoader,
   MarkerClusterer,
-} from "@react-google-maps/api"; const vegaAvms = [
+} from "@react-google-maps/api";
+
+const vegaAvms = [
   {
     id: "aquavega",
     name: "AquaVega Aquarium",
@@ -70,7 +71,7 @@ import {
   {
     id: "vegacenter",
     name: "Vega Center",
-    coords: [39.91747353620304, 32.78111696961037], // central Ankara approximate :contentReference[oaicite:3]{index=3}
+    coords: [39.913899, 32.767134], // align with project marker location
     icon: "/icons/vegacenter.png",
     url: "https://vegacenter.com.tr/", // fallback IG
     size: [70, 70],
@@ -131,7 +132,7 @@ const places  = [
   },
   {
     id: 6,
-    category: "markets",
+    category: "ministries",
     coords: [39.9157398, 32.7647352],
     name: "Anahtar Parti Ankara İl Başkanlığı",
     description: "1 dk, 180 metre"
@@ -1013,15 +1014,262 @@ const center = {
   lng: projectCoords[1],
 };
 
+type Place = (typeof places)[number];
+type PlaceWithDisplayCoords = Place & { displayCoords: [number, number] };
+
+const OVERLAP_BUCKET_DECIMALS = 5;
+const OVERLAP_OFFSET_METERS = 16;
+const NO_CLUSTER_AROUND_AVM_METERS = 220;
+const DEDUPE_DISTANCE_METERS = 120;
+const DEDUPE_STRICT_DISTANCE_METERS = 40;
+const EARTH_RADIUS_METERS = 6378137;
+const MAX_MARKERS_PER_RING = 8;
+
+const CATEGORY_PRIORITY: Record<string, number> = {
+  ministries: 100,
+  business: 90,
+  schools: 85,
+  hospitals: 80,
+  malls: 75,
+  hotels: 70,
+  mosques: 65,
+  parks: 60,
+  markets: 10,
+};
+
+const NAME_STOP_WORDS = new Set([
+  "tc",
+  "genel",
+  "merkez",
+  "merkezi",
+  "mudurlugu",
+  "mudurluk",
+  "baskanligi",
+  "bakanligi",
+  "bakanlik",
+  "kurumu",
+  "kurum",
+  "subesi",
+  "sube",
+  "avm",
+  "otel",
+  "hotel",
+  "hastanesi",
+  "hastane",
+  "universitesi",
+  "universite",
+  "okullari",
+  "okulu",
+  "ortaokulu",
+  "anadolu",
+  "lisesi",
+  "lise",
+  "ozel",
+  "ogretim",
+  "kursu",
+  "a",
+  "s",
+  "as",
+  "ve",
+  "ile",
+  "partisi",
+  "turkiye",
+  "turk",
+]);
+
+const normalizeTurkish = (value: string): string =>
+  value
+    .replace(/ç/g, "c")
+    .replace(/ğ/g, "g")
+    .replace(/ı/g, "i")
+    .replace(/ö/g, "o")
+    .replace(/ş/g, "s")
+    .replace(/ü/g, "u");
+
+const normalizePlaceName = (name: string): string =>
+  normalizeTurkish(name.toLocaleLowerCase("tr"))
+    .replace(/\bt\.?\s*c\.?\b/g, " ")
+    .replace(/\bbbp\b/g, "buyuk birlik partisi")
+    .replace(/\bchp\b/g, "cumhuriyet halk partisi")
+    .replace(/\ba\.?\s*s\.?\b/g, " ")
+    .replace(/[^a-z0-9\s]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+
+const getNameTokens = (name: string): string[] => {
+  const tokens = normalizePlaceName(name)
+    .split(" ")
+    .filter((token) => token.length > 1 && !NAME_STOP_WORDS.has(token));
+  return [...new Set(tokens)];
+};
+
+const getTokenSimilarity = (leftTokens: string[], rightTokens: string[]): number => {
+  if (!leftTokens.length || !rightTokens.length) {
+    return 0;
+  }
+
+  const leftSet = new Set(leftTokens);
+  const rightSet = new Set(rightTokens);
+  let intersectionCount = 0;
+
+  leftSet.forEach((token) => {
+    if (rightSet.has(token)) {
+      intersectionCount += 1;
+    }
+  });
+
+  return intersectionCount / Math.min(leftSet.size, rightSet.size);
+};
+
+const getDistanceMeters = (firstCoords: number[], secondCoords: number[]): number => {
+  const lat1 = (firstCoords[0] * Math.PI) / 180;
+  const lng1 = (firstCoords[1] * Math.PI) / 180;
+  const lat2 = (secondCoords[0] * Math.PI) / 180;
+  const lng2 = (secondCoords[1] * Math.PI) / 180;
+  const dLat = lat2 - lat1;
+  const dLng = lng2 - lng1;
+  const a =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLng / 2) ** 2;
+
+  return 2 * EARTH_RADIUS_METERS * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+};
+
+const isDuplicatePlace = (existingPlace: Place, candidatePlace: Place): boolean => {
+  const distanceMeters = getDistanceMeters(existingPlace.coords, candidatePlace.coords);
+
+  if (distanceMeters > DEDUPE_DISTANCE_METERS) {
+    return false;
+  }
+
+  const existingTokens = getNameTokens(existingPlace.name);
+  const candidateTokens = getNameTokens(candidatePlace.name);
+  const similarity = getTokenSimilarity(existingTokens, candidateTokens);
+
+  if (existingTokens.length && candidateTokens.length && similarity >= 0.9) {
+    return true;
+  }
+
+  if (distanceMeters <= DEDUPE_STRICT_DISTANCE_METERS && similarity >= 0.6) {
+    return true;
+  }
+
+  return normalizePlaceName(existingPlace.name) === normalizePlaceName(candidatePlace.name);
+};
+
+const getPlaceScore = (place: Place): number => {
+  const categoryScore = CATEGORY_PRIORITY[place.category] ?? 50;
+  const nameScore = getNameTokens(place.name).length;
+  return categoryScore * 100 + nameScore;
+};
+
+const deduplicatePlaces = (items: Place[]): Place[] => {
+  const uniquePlaces: Place[] = [];
+
+  items.forEach((place) => {
+    const [lat, lng] = place.coords;
+    const hasValidCoords =
+      Number.isFinite(lat) && Number.isFinite(lng) && !(lat === 0 && lng === 0);
+
+    if (!hasValidCoords) {
+      return;
+    }
+
+    const duplicateIndex = uniquePlaces.findIndex((existingPlace) =>
+      isDuplicatePlace(existingPlace, place)
+    );
+
+    if (duplicateIndex === -1) {
+      uniquePlaces.push(place);
+      return;
+    }
+
+    if (getPlaceScore(place) > getPlaceScore(uniquePlaces[duplicateIndex])) {
+      uniquePlaces[duplicateIndex] = place;
+    }
+  });
+
+  return uniquePlaces;
+};
+
+const getCoordinateBucketKey = (coords: number[]): string =>
+  `${coords[0].toFixed(OVERLAP_BUCKET_DECIMALS)}:${coords[1].toFixed(OVERLAP_BUCKET_DECIMALS)}`;
+
+const getOffsetCoordinates = (
+  coords: number[],
+  distanceMeters: number,
+  angleRadians: number
+): [number, number] => {
+  const lat = coords[0];
+  const lng = coords[1];
+  const latOffsetDegrees = (distanceMeters / EARTH_RADIUS_METERS) * (180 / Math.PI);
+  const lngOffsetDegrees =
+    latOffsetDegrees / Math.max(Math.cos((lat * Math.PI) / 180), 0.01);
+
+  return [
+    lat + latOffsetDegrees * Math.sin(angleRadians),
+    lng + lngOffsetDegrees * Math.cos(angleRadians),
+  ];
+};
+
+const distributeOverlappingPlaces = (items: Place[]): PlaceWithDisplayCoords[] => {
+  const groups = new Map<string, Place[]>();
+
+  items.forEach((place) => {
+    const key = getCoordinateBucketKey(place.coords);
+    const group = groups.get(key);
+
+    if (group) {
+      group.push(place);
+      return;
+    }
+
+    groups.set(key, [place]);
+  });
+
+  return items.map((place) => {
+    const key = getCoordinateBucketKey(place.coords);
+    const group = groups.get(key);
+
+    if (!group || group.length === 1) {
+      return {
+        ...place,
+        displayCoords: [place.coords[0], place.coords[1]],
+      };
+    }
+
+    const index = group.findIndex((candidate) => candidate.id === place.id);
+    const ring = Math.floor(index / MAX_MARKERS_PER_RING);
+    const indexInRing = index % MAX_MARKERS_PER_RING;
+    const markersInRing = Math.min(
+      group.length - ring * MAX_MARKERS_PER_RING,
+      MAX_MARKERS_PER_RING
+    );
+    const angle = (indexInRing / markersInRing) * Math.PI * 2;
+    const distanceMeters = OVERLAP_OFFSET_METERS * (ring + 1);
+
+    return {
+      ...place,
+      displayCoords: getOffsetCoordinates(place.coords, distanceMeters, angle),
+    };
+  });
+};
+
 export default function NearbyMap() {
   const tCommon = useTranslations("common");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedSwitch, setSelectedSwitch] = useState("altyapi");
+  const [mapInstance, setMapInstance] = useState<google.maps.Map | null>(null);
+  const [avmMarkerIcons, setAvmMarkerIcons] = useState<Record<string, string>>({});
+  const uniquePlaces = useMemo(() => deduplicatePlaces(places), []);
 
   const categories = categoryDefs.map((cat) => ({
     ...cat,
     name: tCommon(cat.nameKey as any),
-    count: cat.id === "all" ? places.length : places.filter(p => p.category === cat.id).length,
+    count:
+      cat.id === "all"
+        ? uniquePlaces.length
+        : uniquePlaces.filter((p) => p.category === cat.id).length,
   }));
 
   const projectLocation = {
@@ -1050,12 +1298,151 @@ const { isLoaded } = useJsApiLoader({
   googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
 });
 
+useEffect(() => {
+  let cancelled = false;
+
+  const createCircularMarkerIcon = async (
+    iconUrl: string,
+    size: number
+  ): Promise<string> =>
+    new Promise((resolve) => {
+      const pixelRatio =
+        typeof window !== "undefined" ? window.devicePixelRatio || 1 : 1;
+      const renderScale = Math.max(2, Math.ceil(pixelRatio));
+      const renderSize = Math.round(size * renderScale);
+      const canvas = document.createElement("canvas");
+      canvas.width = renderSize;
+      canvas.height = renderSize;
+
+      const context = canvas.getContext("2d");
+      if (!context) {
+        resolve(iconUrl);
+        return;
+      }
+
+      context.imageSmoothingEnabled = true;
+      context.imageSmoothingQuality = "high";
+
+      const center = renderSize / 2;
+      const radius = center - renderScale;
+      context.fillStyle = "#ffffff";
+      context.strokeStyle = "#e5e7eb";
+      context.lineWidth = renderScale;
+      context.beginPath();
+      context.arc(center, center, radius, 0, Math.PI * 2);
+      context.fill();
+      context.stroke();
+
+      const logoImage = new Image();
+      logoImage.decoding = "async";
+      logoImage.onload = () => {
+        const padding = Math.round(renderSize * 0.14);
+        const maxWidth = renderSize - padding * 2;
+        const maxHeight = renderSize - padding * 2;
+        const scale = Math.min(maxWidth / logoImage.width, maxHeight / logoImage.height);
+        const drawWidth = logoImage.width * scale;
+        const drawHeight = logoImage.height * scale;
+        const drawX = (renderSize - drawWidth) / 2;
+        const drawY = (renderSize - drawHeight) / 2;
+        context.drawImage(logoImage, drawX, drawY, drawWidth, drawHeight);
+        resolve(canvas.toDataURL("image/png"));
+      };
+      logoImage.onerror = () => resolve(iconUrl);
+      logoImage.src = iconUrl;
+    });
+
+  Promise.all(
+    vegaAvms.map(async (avm) => [
+      avm.id,
+      await createCircularMarkerIcon(avm.icon, avm.size[0]),
+    ])
+  ).then((entries) => {
+    if (cancelled) {
+      return;
+    }
+
+    setAvmMarkerIcons(Object.fromEntries(entries));
+  });
+
+  return () => {
+    cancelled = true;
+  };
+}, []);
+
+useEffect(() => {
+  if (!mapInstance || typeof window === "undefined" || !window.google?.maps) {
+    return;
+  }
+
+  class PaneOrderOverlay extends window.google.maps.OverlayView {
+    private applyPaneOrder() {
+      const panes = this.getPanes();
+
+      if (!panes) {
+        return;
+      }
+
+      const overlayMouseTarget = panes.overlayMouseTarget as HTMLElement | undefined;
+      const markerLayer = panes.markerLayer as HTMLElement | undefined;
+
+      if (overlayMouseTarget) {
+        overlayMouseTarget.style.setProperty("z-index", "150", "important");
+      }
+
+      if (markerLayer) {
+        markerLayer.style.setProperty("z-index", "200", "important");
+      }
+    }
+
+    onAdd() {
+      this.applyPaneOrder();
+    }
+
+    draw() {
+      this.applyPaneOrder();
+    }
+
+    onRemove() {}
+  }
+
+  const paneOrderOverlay = new PaneOrderOverlay();
+  paneOrderOverlay.setMap(mapInstance);
+
+  return () => {
+    paneOrderOverlay.setMap(null);
+  };
+}, [mapInstance]);
+
 
 
   const filteredPlaces =
     selectedCategory === "all"
-      ? places
-      : places.filter((p) => p.category === selectedCategory);
+      ? uniquePlaces
+      : uniquePlaces.filter((p) => p.category === selectedCategory);
+  const displayedPlaces = useMemo(
+    () => distributeOverlappingPlaces(filteredPlaces),
+    [filteredPlaces]
+  );
+  const [clusterablePlaces, noClusterPlaces] = useMemo(() => {
+    const clustered: PlaceWithDisplayCoords[] = [];
+    const nonClustered: PlaceWithDisplayCoords[] = [];
+
+    displayedPlaces.forEach((place) => {
+      const isNearAvm = vegaAvms.some(
+        (avm) =>
+          getDistanceMeters(place.coords, avm.coords) <= NO_CLUSTER_AROUND_AVM_METERS
+      );
+
+      if (isNearAvm) {
+        nonClustered.push(place);
+        return;
+      }
+
+      clustered.push(place);
+    });
+
+    return [clustered, nonClustered] as const;
+  }, [displayedPlaces]);
 
 const getCategoryPinUrl = (categoryId: string): string =>
   categoryDefs.find((cat) => cat.id === categoryId)?.pin ?? "/icons/default.png";
@@ -1123,6 +1510,8 @@ const getCategoryPinUrl = (categoryId: string): string =>
   mapContainerStyle={containerStyle}
   center={center}
   zoom={14}
+  onLoad={(map) => setMapInstance(map)}
+  onUnmount={() => setMapInstance(null)}
   options={{
     styles: [
       {
@@ -1232,6 +1621,8 @@ const getCategoryPinUrl = (categoryId: string): string =>
                 <MarkerClusterer
  options={{
   imagePath: "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
+  maxZoom: 18,
+  minimumClusterSize: 3,
   styles: [
     {
       url: "/clusters/red.png",
@@ -1260,10 +1651,10 @@ const getCategoryPinUrl = (categoryId: string): string =>
 >
                   {(clusterer) => (
                     <>
-                      {filteredPlaces.map((place) => (
+                      {clusterablePlaces.map((place) => (
                         <Marker
                           key={place.id}
-                          position={{ lat: place.coords[0], lng: place.coords[1] }}
+                          position={{ lat: place.displayCoords[0], lng: place.displayCoords[1] }}
                           icon={{
                             url: getCategoryPinUrl(place.category),
                             scaledSize: new window.google.maps.Size(42, 42),
@@ -1275,42 +1666,38 @@ const getCategoryPinUrl = (categoryId: string): string =>
                     </>
                   )}
                 </MarkerClusterer>
-{vegaAvms.map((avm) => (
-  <OverlayView
-    key={avm.id}
-    position={{ lat: avm.coords[0], lng: avm.coords[1] }}
-    mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
-  >
-    <div
-      onClick={() => window.open(avm.url, "_blank")}
-      className="bg-white rounded-full p-1 shadow-lg border border-gray-200 cursor-pointer transition-transform hover:scale-105"
-      style={{
-        width: `${avm.size[0]}px`,
-        height: `${avm.size[1]}px`,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        boxSizing: "border-box",
-      }}
-    >
-      <img
-        src={avm.icon}
-        alt={avm.name}
-        style={{
-          maxWidth: "100%",
-          maxHeight: "100%",
-          objectFit: "contain",
-        }}
-      />
-    </div>
-  </OverlayView>
+{noClusterPlaces.map((place) => (
+  <Marker
+    key={`no-cluster-${place.id}`}
+    position={{ lat: place.displayCoords[0], lng: place.displayCoords[1] }}
+    icon={{
+      url: getCategoryPinUrl(place.category),
+      scaledSize: new window.google.maps.Size(42, 42),
+    }}
+    zIndex={500}
+    onClick={() => setActiveMarker(place.id)}
+  />
 ))}
-                {filteredPlaces.map(
+{vegaAvms.map((avm) => (
+  <Marker
+    key={`avm-${avm.id}`}
+    position={{ lat: avm.coords[0], lng: avm.coords[1] }}
+    icon={{
+      url: avmMarkerIcons[avm.id] ?? avm.icon,
+      scaledSize: new window.google.maps.Size(avm.size[0], avm.size[1]),
+      anchor: new window.google.maps.Point(avm.size[0] / 2, avm.size[1]),
+    }}
+    options={{ optimized: false, zIndex: 100000 }}
+    zIndex={100000}
+    onClick={() => window.open(avm.url, "_blank", "noopener,noreferrer")}
+  />
+))}
+                {displayedPlaces.map(
                   (place) =>
                     activeMarker === place.id && (
                       <InfoWindow
                         key={`info-${place.id}`}
-                        position={{ lat: place.coords[0], lng: place.coords[1] }}
+                        position={{ lat: place.displayCoords[0], lng: place.displayCoords[1] }}
                         onCloseClick={() => setActiveMarker(null)}
                       >
                         <div className="text-sm">
