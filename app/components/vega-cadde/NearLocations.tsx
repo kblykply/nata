@@ -1,9 +1,8 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
-import { OverlayView } from "@react-google-maps/api";
 import {
   GoogleMap,
   Marker,
@@ -11,7 +10,6 @@ import {
   useJsApiLoader,
   MarkerClusterer,
 } from "@react-google-maps/api";
-
 const vegaAvms = [
   {
     id: "aquavega",
@@ -72,7 +70,7 @@ const vegaAvms = [
   {
     id: "vegacenter",
     name: "Vega Center",
-    coords: [39.91747353620304, 32.78111696961037], // central Ankara approximate :contentReference[oaicite:3]{index=3}
+    coords: [39.913899, 32.767134], // align with project marker location
     icon: "/icons/vegacenter.png",
     url: "https://vegacenter.com.tr/", // fallback IG
     size: [70, 70],
@@ -93,7 +91,6 @@ const vegaAvms = [
     url: "https://www.vegaavmyalova.com/", // fallback IG
     size: [70, 70],
   },
-  
 ];
 
 const places = [
@@ -291,11 +288,30 @@ const center = {
 const getCategoryPinUrl = (categoryId: string): string =>
   categoriesBase.find((cat) => cat.id === categoryId)?.pin ?? "/icons/default.png";
 
+
+const NO_CLUSTER_AROUND_AVM_METERS = 220;
+const EARTH_RADIUS_METERS = 6378137;
+
+const getDistanceMeters = (firstCoords: number[], secondCoords: number[]): number => {
+  const lat1 = (firstCoords[0] * Math.PI) / 180;
+  const lng1 = (firstCoords[1] * Math.PI) / 180;
+  const lat2 = (secondCoords[0] * Math.PI) / 180;
+  const lng2 = (secondCoords[1] * Math.PI) / 180;
+  const dLat = lat2 - lat1;
+  const dLng = lng2 - lng1;
+  const a =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLng / 2) ** 2;
+
+  return 2 * EARTH_RADIUS_METERS * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+};
+
 export default function NearbyMap() {
   const tCommon = useTranslations("common");
   const tNearby = useTranslations("vegaCadde.nearby");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedSwitch, setSelectedSwitch] = useState("altyapi");
+  const [avmMarkerIcons, setAvmMarkerIcons] = useState<Record<string, string>>({});
 
 
   const [activeMarker, setActiveMarker] = useState<string | number | null>(
@@ -312,10 +328,105 @@ export default function NearbyMap() {
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
   });
 
+
+useEffect(() => {
+  let cancelled = false;
+
+  const createCircularMarkerIcon = async (
+    iconUrl: string,
+    size: number
+  ): Promise<string> =>
+    new Promise((resolve) => {
+      const pixelRatio =
+        typeof window !== "undefined" ? window.devicePixelRatio || 1 : 1;
+      const renderScale = Math.max(2, Math.ceil(pixelRatio));
+      const renderSize = Math.round(size * renderScale);
+      const canvas = document.createElement("canvas");
+      canvas.width = renderSize;
+      canvas.height = renderSize;
+
+      const context = canvas.getContext("2d");
+      if (!context) {
+        resolve(iconUrl);
+        return;
+      }
+
+      context.imageSmoothingEnabled = true;
+      context.imageSmoothingQuality = "high";
+
+      const center = renderSize / 2;
+      const radius = center - renderScale;
+      context.fillStyle = "#ffffff";
+      context.strokeStyle = "#e5e7eb";
+      context.lineWidth = renderScale;
+      context.beginPath();
+      context.arc(center, center, radius, 0, Math.PI * 2);
+      context.fill();
+      context.stroke();
+
+      const logoImage = new Image();
+      logoImage.decoding = "async";
+      logoImage.onload = () => {
+        const padding = Math.round(renderSize * 0.14);
+        const maxWidth = renderSize - padding * 2;
+        const maxHeight = renderSize - padding * 2;
+        const scale = Math.min(maxWidth / logoImage.width, maxHeight / logoImage.height);
+        const drawWidth = logoImage.width * scale;
+        const drawHeight = logoImage.height * scale;
+        const drawX = (renderSize - drawWidth) / 2;
+        const drawY = (renderSize - drawHeight) / 2;
+        context.drawImage(logoImage, drawX, drawY, drawWidth, drawHeight);
+        resolve(canvas.toDataURL("image/png"));
+      };
+      logoImage.onerror = () => resolve(iconUrl);
+      logoImage.src = iconUrl;
+    });
+
+  Promise.all(
+    vegaAvms.map(async (avm) => [
+      avm.id,
+      await createCircularMarkerIcon(avm.icon, avm.size[0]),
+    ])
+  ).then((entries) => {
+    if (cancelled) {
+      return;
+    }
+
+    setAvmMarkerIcons(Object.fromEntries(entries));
+  });
+
+  return () => {
+    cancelled = true;
+  };
+}, []);
+
+
   const filteredPlaces =
     selectedCategory === "all"
       ? places
       : places.filter((p) => p.category === selectedCategory);
+
+
+  const [clusterablePlaces, noClusterPlaces] = useMemo(() => {
+    const clustered: typeof filteredPlaces = [];
+    const nonClustered: typeof filteredPlaces = [];
+
+    filteredPlaces.forEach((place) => {
+      const isNearAvm = vegaAvms.some(
+        (avm) =>
+          getDistanceMeters(place.coords, avm.coords) <= NO_CLUSTER_AROUND_AVM_METERS
+      );
+
+      if (isNearAvm) {
+        nonClustered.push(place);
+        return;
+      }
+
+      clustered.push(place);
+    });
+
+    return [clustered, nonClustered] as const;
+  }, [filteredPlaces]);
 
   const categories = categoriesBase.map((cat) => ({
     ...cat,
@@ -498,6 +609,7 @@ export default function NearbyMap() {
                 <MarkerClusterer
  options={{
   imagePath: "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
+  minimumClusterSize: 3,
   styles: [
     {
       url: "/clusters/red.png",
@@ -526,7 +638,7 @@ export default function NearbyMap() {
 >
                   {(clusterer) => (
                     <>
-                      {filteredPlaces.map((place) => (
+                      {clusterablePlaces.map((place) => (
                         <Marker
                           key={place.id}
                           position={{ lat: place.coords[0], lng: place.coords[1] }}
@@ -541,35 +653,31 @@ export default function NearbyMap() {
                     </>
                   )}
                 </MarkerClusterer>
+{noClusterPlaces.map((place) => (
+  <Marker
+    key={`no-cluster-${place.id}`}
+    position={{ lat: place.coords[0], lng: place.coords[1] }}
+    icon={{
+      url: getCategoryPinUrl(place.category),
+      scaledSize: new window.google.maps.Size(42, 42),
+    }}
+    zIndex={500}
+    onClick={() => setActiveMarker(place.id)}
+  />
+))}
 {vegaAvms.map((avm) => (
-  <OverlayView
-    key={avm.id}
+  <Marker
+    key={`avm-${avm.id}`}
     position={{ lat: avm.coords[0], lng: avm.coords[1] }}
-    mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
-  >
-    <div
-      onClick={() => window.open(avm.url, "_blank")}
-      className="bg-white rounded-full p-1 shadow-lg border border-gray-200 cursor-pointer transition-transform hover:scale-105"
-      style={{
-        width: `${avm.size[0]}px`,
-        height: `${avm.size[1]}px`,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        boxSizing: "border-box",
-      }}
-    >
-      <img
-        src={avm.icon}
-        alt={avm.name}
-        style={{
-          maxWidth: "100%",
-          maxHeight: "100%",
-          objectFit: "contain",
-        }}
-      />
-    </div>
-  </OverlayView>
+    icon={{
+      url: avmMarkerIcons[avm.id] ?? avm.icon,
+      scaledSize: new window.google.maps.Size(avm.size[0], avm.size[1]),
+      anchor: new window.google.maps.Point(avm.size[0] / 2, avm.size[1]),
+    }}
+    options={{ optimized: false, zIndex: 100000 }}
+    zIndex={100000}
+    onClick={() => window.open(avm.url, "_blank", "noopener,noreferrer")}
+  />
 ))}
                 {filteredPlaces.map(
                   (place) =>

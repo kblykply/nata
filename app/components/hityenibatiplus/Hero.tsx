@@ -43,7 +43,7 @@ export default function ProjectHeroCloudSection() {
           src="/yenibatıplusbuild2.png"
           alt="Building"
           fill
-          className="object-contain object-bottom"
+          className="object-contain object-bottom translate-y-12 md:translate-y-20"
         />
       </div>
 
