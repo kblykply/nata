@@ -20,6 +20,14 @@ export default function DesignSection() {
     "/new-images/HİT YENİ BATI/_DSC2375.webp",
     "/new-images/HİT YENİ BATI/_DSC2377.webp",
     "/new-images/HİT YENİ BATI/_DSC2379.webp",
+    "/new-images/Hit Yapı/DJI_20260221172412_0038_D.webp",
+    "/new-images/Hit Yapı/DJI_20260221172421_0039_D.webp",
+    "/new-images/Hit Yapı/DJI_20260221172429_0041_D.webp",
+    "/new-images/Hit Yapı/DJI_20260221172444_0043_D.webp",
+    "/new-images/Hit Yapı/DJI_20260221172450_0044_D.webp",
+    "/new-images/Hit Yapı/DJI_20260221172511_0046_D.webp",
+    "/new-images/Hit Yapı/DJI_20260221172536_0047_D.webp",
+    "/new-images/Hit Yapı/DJI_20260221172715_0048_D.webp",
   ];
 
   return (

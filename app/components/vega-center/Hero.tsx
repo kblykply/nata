@@ -9,7 +9,6 @@ import { useTranslations } from "next-intl";
 
 export default function ProjectHeroCloudSection() {
   const t = useTranslations("vegaCenter");
-  const tHeader = useTranslations("header");
   
   return (
     <section  className="relative w-full h-[100svh] overflow-hidden bg-gradient-to-b from-[#006d9d] to-[#e6f3fd]">
@@ -80,7 +79,7 @@ export default function ProjectHeroCloudSection() {
       </div>
 
       {/* Building image */}
-      <div className="absolute bottom-0 left-0 w-full h-full z-20 pointer-events-none">
+      <div className="absolute -bottom-6 md:-bottom-8 left-0 w-full h-full z-20 pointer-events-none">
         <Image
           src="/vegacenterbuild.png"
           alt="Building"
@@ -126,36 +125,40 @@ export default function ProjectHeroCloudSection() {
 
 
 
-<div className="flex flex-wrap justify-center gap-3 max-w-xl mx-auto mt-6 font-semibold">
-  <Link href="#near-locations">
-    <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm cursor-pointer">
-    {t("metroDistance")} <GiFootsteps /> {t("metroWalk")}
+<div className="relative z-30 mx-auto mt-12 px-4 font-semibold">
+  <div className="flex items-start justify-center gap-3">
+    <Link href="#near-locations">
+      <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm cursor-pointer">
+        {t("metroDistance")} <GiFootsteps /> {t("metroWalk")}
+      </div>
+    </Link>
+
+    <Link href="#near-locations">
+      <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm cursor-pointer">
+        <FaMapMarkerAlt /> {t("location")}
+      </div>
+    </Link>
+
+    <Link href="#contact">
+      <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
+        {t("units")}
+      </div>
+    </Link>
   </div>
-  </Link>
 
-  <Link href="#near-locations">
-    <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm cursor-pointer">
-      <FaMapMarkerAlt /> {t("location")}
-    </div>
-  </Link>
+  <div className="mt-3 flex justify-center gap-3">
+    <Link href="#contact">
+      <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
+        {t("delivery")}
+      </div>
+    </Link>
 
-  <Link href="#contact">
-    <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
-      {t("units")}
-    </div>
-  </Link>
-
-  <Link href="#contact">
-    <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
-      {t("delivery")}
-     </div>
-  </Link>
-
-  <Link href="#life">
-    <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
-      {t("investment")}
-    </div>
-  </Link>
+    <Link href="#life">
+      <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
+        {t("investment")}
+      </div>
+    </Link>
+  </div>
 </div>
     </section>
   );

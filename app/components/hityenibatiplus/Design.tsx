@@ -21,6 +21,15 @@ export default function DesignSection() {
     "/new-images/YENİ BATI PLUS/YENİ BATI PLUS (4).webp",
     "/new-images/YENİ BATI PLUS/YENİ BATI PLUS (5).webp",
     "/new-images/YENİ BATI PLUS/YENİ BATI PLUS (6).webp",
+    "/new-images/Yeni Batı Plus/DJI_20260221165109_0037_D.webp",
+    "/new-images/Yeni Batı Plus/DJI_20260221170121_0020_D.webp",
+    "/new-images/Yeni Batı Plus/DJI_20260221170130_0021_D.webp",
+    "/new-images/Yeni Batı Plus/DJI_20260221170135_0022_D.webp",
+    "/new-images/Yeni Batı Plus/DJI_20260221170140_0023_D.webp",
+    "/new-images/Yeni Batı Plus/DJI_20260221170143_0024_D.webp",
+    "/new-images/Yeni Batı Plus/DJI_20260221170153_0025_D.webp",
+    "/new-images/Yeni Batı Plus/DJI_20260221170158_0026_D.webp",
+    "/new-images/Yeni Batı Plus/DJI_20260221170217_0027_D.webp",
   ];
 
   return (
