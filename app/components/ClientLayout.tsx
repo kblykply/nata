@@ -7,7 +7,8 @@ import Footer from "../components/footer";
 import NewProjects from "../components/New-Projects-Popup";
 import ContactPopup from "../components/ContactPopup";
 import KampanyalarPopup from "../components/KampanyalarPopup";
-import { FavoritesProvider } from "@/app/contexts/FavoritesContext"; // ✅ Import
+import SingleImagePopup from "../components/SingleImagePopup";
+import { FavoritesProvider } from "@/app/contexts/FavoritesContext";
 
 declare global {
   interface Window {
@@ -104,7 +105,11 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
 
       <Footer />
 
-      {/* Other Popups */}
+      {/* Homepage Popup */}
+      <SingleImagePopup
+        src="/8seckin_popup.png"
+        alt="8 Seçkin Projede - Senin Vaden, Senin Geleceğin"
+      />
     </>
   );
 }
