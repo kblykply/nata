@@ -14,7 +14,7 @@ interface KampanyalarPopupProps {
 
 export default function KampanyalarPopup({ onClose }: KampanyalarPopupProps) {
   const t = useTranslations("popups");
-  const images = ["/kampanya1.png", "/kampanya2.png", "/kampanya3.png"];
+  const images = ["/8seckin_popup_yt2.png", "/kampanya1.png", "/kampanya2.png", "/kampanya3.png"];
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState<"left" | "right">("left");
 
