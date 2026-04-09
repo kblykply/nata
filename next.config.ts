@@ -35,6 +35,23 @@ const nextConfig: NextConfig = {
             value: 'public, max-age=31536000, immutable'
           }
         ]
+      },
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'Content-Security-Policy',
+            value: [
+              "default-src 'self'",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' *.googletagmanager.com *.google-analytics.com *.googleadservices.com connect.facebook.net *.facebook.com",
+              "img-src 'self' data: blob: *.googletagmanager.com *.google-analytics.com *.googleadservices.com *.facebook.com res.cloudinary.com www.salihkaankoc.net",
+              "connect-src 'self' *.googletagmanager.com *.google-analytics.com *.googleadservices.com connect.facebook.net *.facebook.com",
+              "frame-src *.googletagmanager.com *.facebook.com",
+              "style-src 'self' 'unsafe-inline'",
+              "font-src 'self' data:",
+            ].join('; ')
+          }
+        ]
       }
     ];
   }
