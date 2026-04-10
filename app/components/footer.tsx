@@ -28,7 +28,9 @@ export default function Footer() {
             <Image src="/navbarLogo.png" alt="Logo" width={150} height={50} />
           </div>
 
-          <h3 className="text-2xl font-bold text-gray-900">444 80 18</h3>
+          <a href="tel:44480018" className="inline-block text-2xl font-bold text-gray-900">
+            444 80 18
+          </a>
           <div className="flex flex-wrap gap-3">
 <a href="/rezervation">
   <button className="px-4 py-2 bg-[#ab1e3b] text-white rounded-full">

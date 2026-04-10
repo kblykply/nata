@@ -6,6 +6,12 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 
+function pushFormSubmitToDataLayer() {
+  const w = window as Window & { dataLayer?: object[] };
+  w.dataLayer = w.dataLayer || [];
+  w.dataLayer.push({ event: "form_submit" });
+}
+
 export default function ContactMapPopup() {
   const t = useTranslations("contact");
   const tc = useTranslations("common");
@@ -112,7 +118,9 @@ export default function ContactMapPopup() {
           <p className="text-xs text-gray-500 mb-6">{t("centralOffice")}</p>
           <div className="flex items-center gap-3 mb-4">
             <Image src="/contact-phone.png" alt="Phone" width={20} height={20} />
-            <p className="text-sm font-medium">444 8 018</p>
+            <a href="tel:44480018" className="text-sm font-medium">
+              444 80 18
+            </a>
           </div>
           <div className="flex items-start gap-3">
             <Image src="/contact-pin.png" alt="Location" width={20} height={20} />
@@ -233,7 +241,10 @@ export default function ContactMapPopup() {
           />
 
           <button
-            onClick={handleSubmit}
+            onClick={() => {
+              pushFormSubmitToDataLayer();
+              void handleSubmit();
+            }}
             disabled={loading}
             className="w-full bg-gray-100 text-sm font-semibold py-2 rounded-sm hover:bg-gray-200 transition disabled:opacity-50"
           >

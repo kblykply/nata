@@ -43,10 +43,10 @@ const nextConfig: NextConfig = {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' *.googletagmanager.com *.google-analytics.com *.googleadservices.com connect.facebook.net *.facebook.com *.facebook.net",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' *.google.com www.gstatic.com *.googletagmanager.com *.google-analytics.com *.googleadservices.com connect.facebook.net *.facebook.com *.facebook.net",
               "img-src 'self' data: blob: *.googletagmanager.com *.google-analytics.com *.googleadservices.com *.facebook.com res.cloudinary.com www.salihkaankoc.net",
-              "connect-src 'self' *.googletagmanager.com *.google-analytics.com *.analytics.google.com *.googleadservices.com www.google.com connect.facebook.net *.facebook.com",
-              "frame-src *.googletagmanager.com *.facebook.com",
+              "connect-src 'self' https://www.google.com https://www.clarity.ms *.googletagmanager.com *.google-analytics.com *.analytics.google.com *.googleadservices.com www.google.com connect.facebook.net *.facebook.com",
+              "frame-src *.google.com www.gstatic.com *.googletagmanager.com *.facebook.com",
               "style-src 'self' 'unsafe-inline'",
               "font-src 'self' data:",
             ].join('; ')
