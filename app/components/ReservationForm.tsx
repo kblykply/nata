@@ -116,7 +116,9 @@ export default function MeetingReservationForm() {
           <p className="text-xs text-gray-500 mb-6">{t("nataYasamCentralPresentationOffice")}</p>
           <div className="flex items-center gap-3 mb-4">
             <Image src="/contact-phone.png" alt="Phone" width={20} height={20} />
-            <p className="text-sm font-medium">444 8 018</p>
+            <a href="tel:44480018" className="text-sm font-medium">
+              444 80 18
+            </a>
           </div>
           <div className="flex items-start gap-3">
             <Image src="/contact-pin.png" alt="Location" width={20} height={20} />
