@@ -28,7 +28,7 @@ export default function Footer() {
             <Image src="/navbarLogo.png" alt="Logo" width={150} height={50} />
           </div>
 
-          <a href="tel:44480018" className="inline-block text-2xl font-bold text-gray-900">
+          <a href="tel:4448018" className="inline-block text-2xl font-bold text-gray-900">
             444 80 18
           </a>
           <div className="flex flex-wrap gap-3">

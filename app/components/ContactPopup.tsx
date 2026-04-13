@@ -268,7 +268,7 @@
                 <Image src="/iletisim-gorsel.png" alt="Building" fill className="object-cover" />
               </div>
               <p className="font-medium">Mustafa Kemal Mah. 2127 Cad. No:21, Çankaya - ANKARA</p>
-              <a href="tel:44480018" className="font-semibold text-black">
+              <a href="tel:4448018" className="font-semibold text-black">
                 444 80 18
               </a>
               <p className="text-gray-500">9:30 AM - 18:30 PM All Week</p>
