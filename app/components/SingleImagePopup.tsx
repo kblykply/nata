@@ -57,7 +57,7 @@ export default function SingleImagePopup({
       aria-label={alt}
     >
       <div
-        className="relative bg-white rounded-xl overflow-hidden shadow-2xl w-[min(90vw,560px)] select-none"
+        className="relative bg-white rounded-xl overflow-hidden shadow-2xl w-fit max-w-[min(90vw,560px)] max-h-[90vh] select-none"
         onClick={(e) => e.stopPropagation()}
         onContextMenu={(e) => e.preventDefault()}
       >
@@ -74,7 +74,8 @@ export default function SingleImagePopup({
           alt={alt}
           width={width}
           height={height}
-          className="w-full h-auto object-contain"
+          sizes="(max-width: 560px) 90vw, 560px"
+          className="block max-h-[90vh] max-w-full w-auto h-auto object-contain"
           priority
           draggable={false}
           onDragStart={(e) => e.preventDefault()}
