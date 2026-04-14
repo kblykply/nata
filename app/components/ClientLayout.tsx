@@ -107,10 +107,8 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
 
       {/* Homepage Popup */}
       <SingleImagePopup
-        src="/popupimage.jpg"
-        alt="NATA Holding"
-        width={3307}
-        height={5315}
+        src="/8seckin_popup.png"
+        alt="8 Seçkin Projede - Senin Vaden, Senin Geleceğin"
       />
     </>
   );
