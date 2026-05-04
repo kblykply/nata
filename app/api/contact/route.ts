@@ -6,8 +6,8 @@ export async function POST(req: Request) {
   
       // If email is included, send to /second endpoint
       const endpoint = body.email
-        ? "https://www.salihkaankoc.net/nata-core/form-data/second"
-        : "https://www.salihkaankoc.net/nata-core/form-data";
+        ? "https://api.configgo.com/nata-core/form-data/second"
+        : "https://api.configgo.com/nata-core/form-data";
   
       const res = await fetch(endpoint, {
         method: "POST",

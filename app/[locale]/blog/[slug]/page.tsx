@@ -31,7 +31,7 @@ export async function generateMetadata({
       post = { title: found.title, excerpt: found.excerpt };
     }
   } else {
-    const res = await fetch("https://www.salihkaankoc.net/nata-core/blog");
+    const res = await fetch("https://api.configgo.com/nata-core/blog");
     const json = await res.json();
     const found = json.data.find((p: BlogPost) => p.slug === slug);
     if (found) {
@@ -80,7 +80,7 @@ export default async function BlogPostPage({
       };
     }
   } else {
-    const res = await fetch("https://www.salihkaankoc.net/nata-core/blog");
+    const res = await fetch("https://api.configgo.com/nata-core/blog");
     const json = await res.json();
     post = json.data.find((p: BlogPost) => p.slug === slug);
   }

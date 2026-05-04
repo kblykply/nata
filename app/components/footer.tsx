@@ -172,10 +172,13 @@ Mustafa Kemal, 2127. Cd No:21, 06530 Çankaya/Ankara
      
     ].map((item, i) => (
    <li key={i}>
-  <Link href={item.url} passHref legacyBehavior>
-    <a target="_blank" rel="noopener noreferrer" className="text-sm hover:text-red-600 transition-colors">
-      {item.name}
-    </a>
+  <Link
+    href={item.url}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-sm hover:text-red-600 transition-colors"
+  >
+    {item.name}
   </Link>
 </li>
     ))}

@@ -33,7 +33,7 @@ export default async function Page({
       date: item.date,
     }));
   } else {
-    const res = await fetch("https://www.salihkaankoc.net/nata-core/blog", {
+    const res = await fetch("https://api.configgo.com/nata-core/blog", {
       next: { revalidate: 60 },
     });
     const json = await res.json();

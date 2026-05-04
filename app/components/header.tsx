@@ -68,9 +68,7 @@ export default function Header({
   useEffect(() => {
     const fetchNotifications = async () => {
       try {
-        const res = await fetch("https://www.salihkaankoc.net/nata-core/web-notifications", {
-          next: { revalidate: 60 },
-        } as RequestInit);
+        const res = await fetch("/api/web-notifications");
         const json = await res.json();
         if (Array.isArray(json.data)) {
           const mapped: Notification[] = json.data.map((item: any, index: number) => ({

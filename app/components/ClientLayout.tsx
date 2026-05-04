@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -24,11 +23,11 @@ if (typeof window !== "undefined" && window.kampanyaTimeout === undefined) {
   window.iletisimTimeout = null;
 }
 
-
-
-
-
-export default function ClientLayout({ children }: { children: React.ReactNode }) {
+export default function ClientLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const [isNewProjectsOpen, setIsNewProjectsOpen] = useState(false);
   const [isContactPopupOpen, setIsContactPopupOpen] = useState(false);
   const [isKampanyalarOpen, setIsKampanyalarOpen] = useState(false);
@@ -44,70 +43,61 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
 
       {/* Kampanyalar Popup (positioned absolutely) */}
       {isKampanyalarOpen && (
-  <div
-    className="absolute left-[170px] top-[80px] z-[95]"
-    onMouseEnter={() => {
-      clearTimeout(window.kampanyaTimeout ?? undefined);
+        <div
+          className="absolute left-[170px] top-[80px] z-[95]"
+          onMouseEnter={() => {
+            clearTimeout(window.kampanyaTimeout ?? undefined);
             setIsKampanyalarOpen(true);
-    }}
-    onMouseLeave={() => {
-      window.kampanyaTimeout = setTimeout(() => {
-        setIsKampanyalarOpen(false);
-      }, 200);
-    }}
-  >
-    <KampanyalarPopup onClose={() => setIsKampanyalarOpen(false)} />
-  </div>
-)}
+          }}
+          onMouseLeave={() => {
+            window.kampanyaTimeout = setTimeout(() => {
+              setIsKampanyalarOpen(false);
+            }, 200);
+          }}
+        >
+          <KampanyalarPopup onClose={() => setIsKampanyalarOpen(false)} />
+        </div>
+      )}
 
+      {isNewProjectsOpen && (
+        <div
+          className="absolute left-[150px] top-[80px] z-[95]"
+          onMouseEnter={() => {
+            clearTimeout(window.yeniProjeTimeout ?? undefined);
+            setIsNewProjectsOpen(true);
+          }}
+          onMouseLeave={() => {
+            window.yeniProjeTimeout = setTimeout(() => {
+              setIsNewProjectsOpen(false);
+            }, 200);
+          }}
+        >
+          <NewProjects onClose={() => setIsNewProjectsOpen(false)} />
+        </div>
+      )}
 
-
-
-{isNewProjectsOpen && (
-  <div
-    className="absolute left-[150px] top-[80px] z-[95]"
-    onMouseEnter={() => {
-      clearTimeout(window.yeniProjeTimeout ?? undefined);
-      setIsNewProjectsOpen(true);
-    }}
-    onMouseLeave={() => {
-      window.yeniProjeTimeout = setTimeout(() => {
-        setIsNewProjectsOpen(false);
-      }, 200);
-    }}
-  >
-    <NewProjects onClose={() => setIsNewProjectsOpen(false)} />
-  </div>
-)}
-
-
-
-
-{isContactPopupOpen && (
-  <div
-    className="absolute right-[50px] top-[80px] z-[95]"
-    onMouseEnter={() => {
-      clearTimeout(window.iletisimTimeout ?? undefined);
-      setIsContactPopupOpen(true);
-    }}
-
-  >
-    <ContactPopup onClose={() => setIsContactPopupOpen(false)} />
-  </div>
-)}
-
-
+      {isContactPopupOpen && (
+        <div
+          className="absolute right-[50px] top-[80px] z-[95]"
+          onMouseEnter={() => {
+            clearTimeout(window.iletisimTimeout ?? undefined);
+            setIsContactPopupOpen(true);
+          }}
+        >
+          <ContactPopup onClose={() => setIsContactPopupOpen(false)} />
+        </div>
+      )}
 
       {/* Main Content */}
-            <FavoritesProvider>
-      <main className="min-h-screen pt-0">{children}</main>
+      <FavoritesProvider>
+        <main className="min-h-screen pt-0">{children}</main>
       </FavoritesProvider>
 
       <Footer />
 
       {/* Homepage Popup */}
       <SingleImagePopup
-        src="/8seckin_popup.png"
+        src="/8seckin_popup.jpg"
         alt="8 Seçkin Projede - Senin Vaden, Senin Geleceğin"
       />
     </>

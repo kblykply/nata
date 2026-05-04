@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -42,10 +41,8 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className="scroll-smooth">
       <head>
-        {/* Google Tag Manager */}
-        <Script
-          id="gtm-script"
-          strategy="afterInteractive"
+        {/* Google Tag Manager — tek container (GTM-N25G9GNS); eski GTM-N5ZZT3 sitede kullanılmamalı */}
+        <script
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

@@ -15,14 +15,14 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'www.salihkaankoc.net',
+        hostname: 'api.configgo.com',
         pathname: '/nata-core/**',
       },
       {
         protocol: 'http',
-        hostname: 'www.salihkaankoc.net',
+        hostname: 'api.configgo.com',
         pathname: '/nata-core/**',
-      }
+      },
     ],
   },
   headers: async () => {
@@ -44,8 +44,8 @@ const nextConfig: NextConfig = {
             value: [
               "default-src 'self'",
               "script-src 'self' 'unsafe-inline' 'unsafe-eval' *.google.com www.gstatic.com *.googletagmanager.com *.google-analytics.com *.googleadservices.com connect.facebook.net *.facebook.com *.facebook.net *.clarity.ms",
-              "img-src 'self' data: blob: *.googletagmanager.com *.google-analytics.com *.googleadservices.com *.facebook.com res.cloudinary.com www.salihkaankoc.net",
-              "connect-src 'self' https://www.google.com https://www.clarity.ms *.googletagmanager.com *.google-analytics.com *.analytics.google.com *.googleadservices.com www.google.com connect.facebook.net *.facebook.com",
+              "img-src 'self' data: blob: *.googletagmanager.com *.google-analytics.com *.googleadservices.com *.facebook.com res.cloudinary.com api.configgo.com",
+              "connect-src 'self' https://api.configgo.com https://www.google.com https://www.clarity.ms *.googletagmanager.com *.google-analytics.com *.analytics.google.com *.googleadservices.com www.google.com connect.facebook.net *.facebook.com",
               "frame-src *.google.com www.gstatic.com *.googletagmanager.com *.facebook.com",
               "style-src 'self' 'unsafe-inline'",
               "font-src 'self' data:",

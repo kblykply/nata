@@ -50,13 +50,13 @@ export default function ProjectHeroCloudSection() {
 
       <div className="py-4">
         <div className="text-white text-sm md:text-base flex flex-wrap justify-center items-center gap-2 text-center px-4">
-          <Link href="/" passHref>
+          <Link href="/">
             <span className="cursor-pointer hover:underline whitespace-nowrap">
               {tHero("breadcrumbHome")}
             </span>
           </Link>
           <span>/</span>
-          <Link href="/#aktif-projeler" passHref>
+          <Link href="/#aktif-projeler">
             <span className="cursor-pointer hover:underline whitespace-nowrap">
               {tHero("breadcrumbProjects")}
             </span>
