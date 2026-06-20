@@ -24,7 +24,7 @@ export default function InfoCardsSection() {
     type: "image",
     title: t("boxesLearnNews"),
     highlight: t("boxesAllInfo"),
-    background: "/vega-center-03.jpg",
+    background: "/vega-center-web3.jpeg",
     wide: true,
     link: "https://vegacenter.com.tr/",
   },
@@ -41,7 +41,7 @@ export default function InfoCardsSection() {
     type: "image",
     title: t("boxesVisit"),
     highlight: t("boxesViewLocation"),
-    background: "/vega-center-02.jpg",
+    background: "/vega-center-web2.jpeg",
     link: "https://maps.app.goo.gl/jP8rWRVC7bCDYWch7",
   },
 ];
