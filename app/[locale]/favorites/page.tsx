@@ -274,6 +274,28 @@ export default function FavoritesPage() {
         return tCommon("delivery2026Q3");
       case "2027 1. Çeyrek Teslim":
         return tCommon("delivery2027Q1");
+      case "Merkezi Lokasyon":
+        return tCommon("centralLocation");
+      case "Açık Avm Konsepti":
+        return tCommon("openMallConcept");
+      case "Villa Projesi":
+        return tCommon("villaProject");
+      case "796 daire":
+        return tCommon("statApartments796");
+      case "490m² ye kadar":
+        return tCommon("statUpTo490");
+      case "207 bölüm":
+        return tCommon("statSections207");
+      case "715 konut":
+        return tCommon("statResidences715");
+      case "1+1 ve 2,5+1 daireler":
+        return tCommon("statApartments1plus1");
+      case "190 adet konut":
+        return tCommon("statResidences190");
+      case "700 bölüm":
+        return tCommon("statSections700");
+      case "3. Çeyrek 2025":
+        return tCommon("statQ32025");
       default:
         return text;
     }
@@ -363,7 +385,7 @@ export default function FavoritesPage() {
                         key={i}
                         className="text-xs bg-gray-100 border px-3 py-1 rounded-full text-gray-800"
                       >
-                        {spec}
+                        {translateTag(spec)}
                       </span>
                     ))}
                   </div>

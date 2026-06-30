@@ -48,7 +48,7 @@ export default function ProjectHeroCloudSection() {
       </div>
 
 
-      <div className="py-4 ">
+      <div className="py-4 relative z-30">
         <div className="text-white text-sm md:text-base flex justify-center gap-2 top-10">
           <Link href="/">
             <span className="cursor-pointer hover:underline">
@@ -69,7 +69,7 @@ export default function ProjectHeroCloudSection() {
 
 
       {/* Content goes here */}
-      <div className="flex justify-center my-10">
+      <div className="flex justify-center my-10 relative z-30">
       <div className="w-90 md:w-150">
         <Image
           src="/vegaotonomilogo.png"
@@ -85,33 +85,33 @@ export default function ProjectHeroCloudSection() {
 
 
 
-      <div className="flex flex-wrap justify-center gap-3 max-w-xl mx-auto mt-6 font-semibold">
+      <div className="flex flex-wrap justify-center gap-3 max-w-xl mx-auto mt-6 font-semibold relative z-30">
         <Link href="#near-locations">
-          <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm cursor-pointer">
+          <div className="bg-black/20 backdrop-blur-md text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm cursor-pointer">
             <FaMapMarkerAlt /> {tHero("tagLocation")}
           </div>
         </Link>
 
         <Link href="#contact">
-          <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
+          <div className="bg-black/20 backdrop-blur-md text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
             {tHero("tagParking")}
           </div>
         </Link>
 
         <Link href="#contact">
-          <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
+          <div className="bg-black/20 backdrop-blur-md text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
             {tHero("tagUnits")}
           </div>
         </Link>
 
         <Link href="#design">
-          <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
+          <div className="bg-black/20 backdrop-blur-md text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
             {tHero("tagSpecialDesign")}
           </div>
         </Link>
 
         <Link href="#contact">
-          <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
+          <div className="bg-black/20 backdrop-blur-md text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
             {tHero("tagInvestment")}
           </div>
         </Link>

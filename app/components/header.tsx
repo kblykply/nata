@@ -147,7 +147,7 @@ export default function Header({
 
             {/* Center: Navigation */}
             <nav
-              className="hidden md:flex flex-1 justify-center items-center gap-6 text-xs leading-none"
+              className="hidden lg:flex flex-1 justify-center items-center gap-6 text-xs leading-none"
               style={{ fontFamily: "Unbounded, system-ui, sans-serif" }}
             >
               <div
@@ -276,7 +276,7 @@ export default function Header({
 
               {/* Mobile Menu */}
               <button
-                className="md:hidden w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full"
+                className="lg:hidden w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full"
                 onClick={() => setMenuOpen((o) => !o)}
                 aria-label={t("toggleMenu")}
               >
@@ -288,7 +288,7 @@ export default function Header({
 
         {/* Mobile Menu */}
         {menuOpen && (
-          <div className="backdrop-blur bg-white/97 md:hidden absolute top-full left-0 w-full shadow-xl z-50 px-6 py-6 space-y-4 rounded-b-2xl animate-slide-down">
+          <div className="backdrop-blur bg-white/97 lg:hidden absolute top-full left-0 w-full shadow-xl z-50 px-6 py-6 space-y-4 rounded-b-2xl animate-slide-down">
             <Link href="/" className="block font-medium" onClick={() => setMenuOpen(false)}>{t("home")}</Link>
             <Link href="/#aktif-projeler" className="block font-medium" onClick={() => setMenuOpen(false)}>{t("projects")}</Link>
             <Link href="/about-us" className="block font-medium" onClick={() => setMenuOpen(false)}>{t("aboutUs")}</Link>

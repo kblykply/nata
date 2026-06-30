@@ -50,6 +50,14 @@
 
   export default function ProjectListingSection() {
     const t = useTranslations("common");
+    const translateStat = (text: string) => {
+      switch (text) {
+        case "796 daire":
+          return t("statApartments796");
+        default:
+          return text;
+      }
+    };
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
     const [showAltImage, setShowAltImage] = useState(false);
     const [popupIndex, setPopupIndex] = useState<number | null>(null);
@@ -169,7 +177,7 @@
                           <div className="flex gap-2 text-xs text-gray-600">
                             {item.stats?.map((stat, idx) => (
                               <span key={idx} className="px-2 py-0.5 border rounded-full">
-                                {stat}
+                                {translateStat(stat)}
                               </span>
                             ))}
                           </div>

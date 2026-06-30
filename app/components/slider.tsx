@@ -113,6 +113,9 @@ export default function HeroSlider() {
                 priority
               />
 
+              {/* Okunabilirlik için hafif karartma (foto ile yazı arası) */}
+              <div className="absolute inset-0 z-5 pointer-events-none bg-gradient-to-t from-black/45 via-transparent to-black/25" />
+
               {/* Overlay */}
               <div className="absolute inset-0 z-10 w-full h-full pointer-events-none">
                 {slide.logoImage && (

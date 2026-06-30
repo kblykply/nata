@@ -266,7 +266,7 @@ export default function ContactMapPopup() {
       </div>
 
       {/* Decorative Phone Image */}
-      <div className="absolute bottom-0 right-0 z-0">
+      <div className="hidden md:block absolute bottom-0 right-0 z-0">
         <Image src="/telefon.png" alt="Phone Decor" width={400} height={400} />
       </div>
     </div>

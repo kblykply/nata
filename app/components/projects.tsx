@@ -342,6 +342,28 @@ export default function ProjectListingSection() {
         return tCommon("workAndLife");
       case "Sanayi Bölgesi":
         return tCommon("industrialZone");
+      case "Villa Projesi":
+        return tCommon("villaProject");
+      case "796 daire":
+        return tCommon("statApartments796");
+      case "490m² ye kadar":
+        return tCommon("statUpTo490");
+      case "207 bölüm":
+        return tCommon("statSections207");
+      case "715 konut":
+        return tCommon("statResidences715");
+      case "405 konut + 5 Ticari Alan":
+        return tCommon("statResidences405Commercial");
+      case "1+1 ve 2,5+1 daireler":
+        return tCommon("statApartments1plus1");
+      case "190 adet konut":
+        return tCommon("statResidences190");
+      case "700 bölüm":
+        return tCommon("statSections700");
+      case "3. Çeyrek 2025":
+        return tCommon("statQ32025");
+      case "Konut ve Ticari Alan":
+        return tCommon("statResidentialCommercial");
       default:
         if (text.includes("Hemen Teslim")) return tCommon("immediateDelivery");
         return text;

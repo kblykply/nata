@@ -33,7 +33,7 @@ export default function ProjectHeroCloudSection() {
   href="https://vegacenter360.vercel.app/" // ← Replace with your actual link
   target="_blank"
   rel="noopener noreferrer"
-  className="absolute z-30 text-white text-sm font-semibold bg-white/20 px-4 py-2 rounded-xl inline-flex items-center gap-2 backdrop-blur-sm shadow-sm w-fit h-auto max-h-[40px]
+  className="absolute z-30 text-white text-sm font-semibold bg-black/20 px-4 py-2 rounded-xl inline-flex items-center gap-2 backdrop-blur-sm shadow-sm w-fit h-auto max-h-[40px]
              right-6 top-auto bottom-6 left-6 
              md:top-6 md:bottom-auto md:left-auto"
 >
@@ -89,7 +89,7 @@ export default function ProjectHeroCloudSection() {
       </div>
 
 
-      <div className="py-4">
+      <div className="py-4 relative z-30">
   <div className="text-white text-sm md:text-base flex justify-center gap-2">
        <Link href="/">
     <span className="cursor-pointer hover:underline">{t("breadcrumbHome")}</span>
@@ -106,7 +106,7 @@ export default function ProjectHeroCloudSection() {
 
 
       {/* Content goes here */}
-      <div className="flex justify-center my-10">
+      <div className="flex justify-center my-10 relative z-30">
       <div className="w-72 md:w-96">
         <Image
           src="/vegaCenterLogo.png"
@@ -128,19 +128,19 @@ export default function ProjectHeroCloudSection() {
 <div className="relative z-30 mx-auto mt-12 px-4 font-semibold">
   <div className="flex items-start justify-center gap-3">
     <Link href="#near-locations">
-      <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm cursor-pointer">
+      <div className="bg-black/20 backdrop-blur-md text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm cursor-pointer">
         {t("metroDistance")} <GiFootsteps /> {t("metroWalk")}
       </div>
     </Link>
 
     <Link href="#near-locations">
-      <div className="bg-white/20 text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm cursor-pointer">
+      <div className="bg-black/20 backdrop-blur-md text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm cursor-pointer">
         <FaMapMarkerAlt /> {t("location")}
       </div>
     </Link>
 
     <Link href="#contact">
-      <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
+      <div className="bg-black/20 backdrop-blur-md text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
         {t("units")}
       </div>
     </Link>
@@ -148,13 +148,13 @@ export default function ProjectHeroCloudSection() {
 
   <div className="mt-3 flex justify-center gap-3">
     <Link href="#contact">
-      <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
+      <div className="bg-black/20 backdrop-blur-md text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
         {t("delivery")}
       </div>
     </Link>
 
     <Link href="#life">
-      <div className="bg-white/20 text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
+      <div className="bg-black/20 backdrop-blur-md text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
         {t("investment")}
       </div>
     </Link>
