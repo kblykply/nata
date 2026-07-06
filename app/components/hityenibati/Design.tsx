@@ -15,19 +15,10 @@ export default function DesignSection() {
   const [isOpen, setIsOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
   const gallery = [
-    "/new-images/HİT YENİ BATI/_DSC2371.webp",
-    "/new-images/HİT YENİ BATI/_DSC2372.webp",
-    "/new-images/HİT YENİ BATI/_DSC2375.webp",
-    "/new-images/HİT YENİ BATI/_DSC2377.webp",
-    "/new-images/HİT YENİ BATI/_DSC2379.webp",
-    "/new-images/Hit Yapı/DJI_20260221172412_0038_D.webp",
-    "/new-images/Hit Yapı/DJI_20260221172421_0039_D.webp",
-    "/new-images/Hit Yapı/DJI_20260221172429_0041_D.webp",
-    "/new-images/Hit Yapı/DJI_20260221172444_0043_D.webp",
-    "/new-images/Hit Yapı/DJI_20260221172450_0044_D.webp",
-    "/new-images/Hit Yapı/DJI_20260221172511_0046_D.webp",
-    "/new-images/Hit Yapı/DJI_20260221172536_0047_D.webp",
-    "/new-images/Hit Yapı/DJI_20260221172715_0048_D.webp",
+    "/new-images/HİT YENİ BATI/Hit Yeni Batı1.jpg",
+    "/new-images/HİT YENİ BATI/Hit Yeni Batı2.jpg",
+    "/new-images/HİT YENİ BATI/Hit Yeni Batı3.jpg",
+    "/new-images/HİT YENİ BATI/Hit Yeni Batı4.jpg",
   ];
 
   return (

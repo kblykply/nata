@@ -15,21 +15,10 @@ export default function DesignSection() {
   const [isOpen, setIsOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
   const gallery = [
-    "/new-images/YENİ BATI PLUS/YENİ BATI PLUS (1).webp",
-    "/new-images/YENİ BATI PLUS/YENİ BATI PLUS (2).webp",
-    "/new-images/YENİ BATI PLUS/YENİ BATI PLUS (3).webp",
-    "/new-images/YENİ BATI PLUS/YENİ BATI PLUS (4).webp",
-    "/new-images/YENİ BATI PLUS/YENİ BATI PLUS (5).webp",
-    "/new-images/YENİ BATI PLUS/YENİ BATI PLUS (6).webp",
-    "/new-images/Yeni Batı Plus/DJI_20260221165109_0037_D.webp",
-    "/new-images/Yeni Batı Plus/DJI_20260221170121_0020_D.webp",
-    "/new-images/Yeni Batı Plus/DJI_20260221170130_0021_D.webp",
-    "/new-images/Yeni Batı Plus/DJI_20260221170135_0022_D.webp",
-    "/new-images/Yeni Batı Plus/DJI_20260221170140_0023_D.webp",
-    "/new-images/Yeni Batı Plus/DJI_20260221170143_0024_D.webp",
-    "/new-images/Yeni Batı Plus/DJI_20260221170153_0025_D.webp",
-    "/new-images/Yeni Batı Plus/DJI_20260221170158_0026_D.webp",
-    "/new-images/Yeni Batı Plus/DJI_20260221170217_0027_D.webp",
+    "/new-images/YENİ BATI PLUS/Yeni Batı Plus1.jpg",
+    "/new-images/YENİ BATI PLUS/Yeni Batı Plus2.jpg",
+    "/new-images/YENİ BATI PLUS/Yeni Batı Plus3.jpg",
+    "/new-images/YENİ BATI PLUS/Yeni Batı Plus4.jpg",
   ];
 
   return (

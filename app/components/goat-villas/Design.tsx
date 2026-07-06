@@ -15,10 +15,10 @@ export default function DesignSection() {
   const [isOpen, setIsOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
   const gallery = [
-    "/new-images/GOAT VİLLAS/goat-gallery-05.webp",
-    "/new-images/GOAT VİLLAS/goat-gallery-06.webp",
-    "/new-images/GOAT VİLLAS/goat-gallery-9.webp",
-    "/new-images/GOAT VİLLAS/goat-gallery-23.webp",
+    "/new-images/GOAT VİLLAS/Goat1.jpg",
+    "/new-images/GOAT VİLLAS/Goat2.jpg",
+    "/new-images/GOAT VİLLAS/Goat3.jpg",
+    "/new-images/GOAT VİLLAS/Goat4.jpg",
   ];
 
   return (

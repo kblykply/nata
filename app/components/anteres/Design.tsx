@@ -16,7 +16,12 @@ export default function DesignSection() {
 
   const [isOpen, setIsOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
-  const gallery = ["/antares-1.jpg", "/antares-2.jpg", "/antares-3.jpg", "/antares-4.jpg"];
+  const gallery = [
+    "/new-images/ANTARES/Antares Konutları1.jpg",
+    "/new-images/ANTARES/Antares Konutları2.jpg",
+    "/new-images/ANTARES/Antares Konutları3.jpg",
+    "/new-images/ANTARES/Antares Konutları4.jpg",
+  ];
 
   const tDesign = useTranslations("anteres.design");
 

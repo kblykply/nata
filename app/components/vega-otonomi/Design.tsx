@@ -18,26 +18,10 @@ export default function DesignSection() {
   const [isOpen, setIsOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
   const gallery = [
-    "/new-images/VEGA OTONOMİ/Vega Otonomi (1).webp",
-    "/new-images/VEGA OTONOMİ/Vega Otonomi (2).webp",
-    "/new-images/VEGA OTONOMİ/Vega Otonomi (3).webp",
-    "/new-images/VEGA OTONOMİ/Vega Otonomi (4).webp",
-    "/new-images/VEGA OTONOMİ/Vega Otonomi (5).webp",
-    "/new-images/VEGA OTONOMİ/Vega Otonomi (6).webp",
-    "/new-images/VEGA OTONOMİ/Vega Otonomi (7).webp",
-    "/new-images/VEGA OTONOMİ/Vega Otonomi (8).webp",
-    "/new-images/VEGA OTONOMİ/Vega Otonomi (9).webp",
-    "/new-images/VEGA OTONOMİ/Vega Otonomi (10).webp",
-    "/new-images/VEGA OTONOMİ/Vega Otonomi (11).webp",
-    "/new-images/VEGA OTONOMİ/Vega Otonomi (12).webp",
-    "/new-images/VEGA OTONOMİ/Vega Otonomi (13).webp",
-    "/new-images/VEGA OTONOMİ/Vega Otonomi (14).webp",
-    "/new-images/VEGA OTONOMİ/Vega Otonomi (15).webp",
-    "/new-images/VEGA OTONOMİ/Vega Otonomi (16).webp",
-    "/new-images/VEGA OTONOMİ/Vega Otonomi (17).webp",
-    "/new-images/VEGA OTONOMİ/Vega Otonomi (18).webp",
-    "/new-images/VEGA OTONOMİ/Vega Otonomi (19).webp",
-    "/new-images/VEGA OTONOMİ/Vega Otonomi (20).webp",
+    "/new-images/VEGA OTONOMİ/Otonomi1.jpg",
+    "/new-images/VEGA OTONOMİ/Otonomi2.jpg",
+    "/new-images/VEGA OTONOMİ/Otonomi3.jpg",
+    "/new-images/VEGA OTONOMİ/Otonomi4.jpg",
   ];
 
   return (

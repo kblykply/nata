@@ -18,19 +18,10 @@ export default function DesignSection() {
   const [isOpen, setIsOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
   const gallery = [
-    "/new-images/MEGA 1453/new-mega1453-4.webp",
-    "/new-images/MEGA 1453/new-mega1453-6.webp",
-    "/new-images/MEGA 1453/new-mega1453-7.webp",
-    "/new-images/MEGA 1453/new-mega1453-10.webp",
-    "/new-images/MEGA 1453/mega1453-trinvest-insaat-m01.webp",
-    "/new-images/MEGA 1453/mega1453-trinvest-insaat-m02 (2).webp",
-    "/new-images/MEGA 1453/mega1453-trinvest-insaat-m03.webp",
-    "/new-images/MEGA 1453/mega1453-trinvest-insaat-m05.webp",
-    "/new-images/MEGA 1453/mega-1453-trinvest-t01.webp",
-    "/new-images/MEGA 1453/Mega1453-Proje-11-Rev1_03.webp",
-    "/new-images/MEGA 1453/Mega1453-Proje-21-Rev_01.webp",
-    "/new-images/MEGA 1453/YK16_18 - Foto.webp",
-    "/new-images/MEGA 1453/Ç_09.webp",
+    "/new-images/MEGA 1453/Mega1453-1.jpg",
+    "/new-images/MEGA 1453/Mega1453-2.jpg",
+    "/new-images/MEGA 1453/Mega1453-3.jpg",
+    "/new-images/MEGA 1453/Mega1453-4.jpg",
   ];
 
   return (

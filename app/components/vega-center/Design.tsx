@@ -18,26 +18,11 @@ export default function DesignSection() {
   const [isOpen, setIsOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
   const gallery = [
-    "/new-images/VEGA CENTER/vega center - 2.webp",
-    "/new-images/VEGA CENTER/vega center - 3.webp",
-    "/new-images/VEGA CENTER/vega center - 4.webp",
-    "/new-images/VEGA CENTER/vega center - 5.webp",
-    "/new-images/VEGA CENTER/vega center - 6.webp",
-    "/new-images/VEGA CENTER/vega center - 7.webp",
-    "/new-images/VEGA CENTER/vega center - 8.webp",
-    "/new-images/VEGA CENTER/vega center - 9.webp",
-    "/new-images/VEGA CENTER/vega center - 10.webp",
-    "/new-images/VEGA CENTER/vega center - 11.webp",
-    "/new-images/VEGA CENTER/vega center - 13.webp",
-    "/new-images/VEGA CENTER/vega center - 14.webp",
-    "/new-images/VEGA CENTER/vega center - 16.webp",
-    "/new-images/VEGA CENTER/vega center - 17.jpg.webp",
-    "/new-images/VEGA CENTER/vega center - 17.png.webp",
-    "/new-images/VEGA CENTER/vega center - 18.webp",
-    "/new-images/VEGA CENTER/vega center - 19.webp",
-    "/new-images/VEGA CENTER/vega center - 20.webp",
-    "/new-images/VEGA CENTER/vega center - 21.webp",
-    "/new-images/VEGA CENTER/vega center - 22.webp",
+    "/new-images/VEGA CENTER/Vega Center1.jpg",
+    "/new-images/VEGA CENTER/Vega Center2.jpg",
+    "/new-images/VEGA CENTER/Vega Center3.jpg",
+    "/new-images/VEGA CENTER/Vega Center4.jpg",
+    "/new-images/VEGA CENTER/Vega Center5.jpg",
   ];
 
   return (

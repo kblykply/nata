@@ -18,10 +18,10 @@ export default function DesignSection() {
   const [isOpen, setIsOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
   const gallery = [
-    "/new-images/MEGA ŞAŞMAZ/trinvest-megasasmaz-1.webp",
-    "/new-images/MEGA ŞAŞMAZ/trinvest-megasasmaz-3.webp",
-    "/new-images/MEGA ŞAŞMAZ/trinvest-megasasmaz-4.webp",
-    "/new-images/MEGA ŞAŞMAZ/01_12-Foto-scaled-1.webp",
+    "/new-images/MEGA ŞAŞMAZ/Mega Şaşmaz1.jpg",
+    "/new-images/MEGA ŞAŞMAZ/Mega Şaşmaz2.jpg",
+    "/new-images/MEGA ŞAŞMAZ/Mega Şaşmaz3.jpg",
+    "/new-images/MEGA ŞAŞMAZ/Mega Şaşmaz4.jpg",
   ];
 
   return (

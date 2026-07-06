@@ -18,13 +18,11 @@ export default function DesignSection() {
   const [isOpen, setIsOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
   const gallery = [
-    "/new-images/RAMS GARDEN BAHÇELİEVLER/rams-garden-bahcelievler01.webp",
-    "/new-images/RAMS GARDEN BAHÇELİEVLER/rams-garden-bahcelievler-2.webp",
-    "/new-images/RAMS GARDEN BAHÇELİEVLER/rams-garden-bahcelievler03 (1).webp",
-    "/new-images/RAMS GARDEN BAHÇELİEVLER/Resim2.webp",
-    "/new-images/RAMS GARDEN BAHÇELİEVLER/Resim3.webp",
-    "/new-images/RAMS GARDEN BAHÇELİEVLER/Resim4.webp",
-    "/new-images/RAMS GARDEN BAHÇELİEVLER/Resim5.webp",
+    "/new-images/RAMS GARDEN BAHÇELİEVLER/Rams Garden1.jpg",
+    "/new-images/RAMS GARDEN BAHÇELİEVLER/Rams Garden2.jpg",
+    "/new-images/RAMS GARDEN BAHÇELİEVLER/Rams Garden3.jpg",
+    "/new-images/RAMS GARDEN BAHÇELİEVLER/Rams Garden4.jpg",
+    "/new-images/RAMS GARDEN BAHÇELİEVLER/Rams Garden5.jpg",
   ];
 
   return (
