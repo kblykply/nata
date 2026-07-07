@@ -12,7 +12,7 @@ export async function POST(req: Request) {
       );
     }
 
-    const upstream = await fetch("https://api.configgo.com/nata-core/form-data/business", {
+    const upstream = await fetch("https://api.configgo.com/nata_core/form-data/business", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
