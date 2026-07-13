@@ -320,7 +320,7 @@ export default function NearbyMap() {
 
   if (typeof window !== "undefined") {
     if (!process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY) {
-      throw new Error("Google Maps API key is missing in environment variables");
+      console.warn("Google Maps API key is missing in environment variables");
     }
   }
 
