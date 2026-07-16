@@ -97,8 +97,8 @@ export default function ClientLayout({
 
       {/* Homepage Popup */}
       <SingleImagePopup
-        src="/8seckin_popup.jpg"
-        alt="8 Seçkin Projede - Senin Vaden, Senin Geleceğin"
+        src="/9seckin_popup.jpg"
+        alt="9 Seçkin Projede - Aylık Taksidini Sen Belirle"
       />
     </>
   );

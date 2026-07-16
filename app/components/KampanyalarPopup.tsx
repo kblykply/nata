@@ -14,7 +14,7 @@ interface KampanyalarPopupProps {
 
 export default function KampanyalarPopup({ onClose }: KampanyalarPopupProps) {
   const t = useTranslations("popups");
-  const images = ["/8seckin_popup_yt2.jpg", "/kampanya1.png", "/kampanya2.png", "/kampanya3.png"];
+  const images = ["/9seckin_popup_yt2.jpg", "/kampanya1.png", "/kampanya2.png", "/kampanya3.png"];
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState<"left" | "right">("left");
 
@@ -76,7 +76,7 @@ export default function KampanyalarPopup({ onClose }: KampanyalarPopupProps) {
         {/* Swipeable Image Slider */}
         <div
           {...swipeHandlers}
-          className="relative w-full h-[400px] touch-pan-y select-none cursor-grab active:cursor-grabbing overflow-hidden"
+          className="relative w-full aspect-[8/3] touch-pan-y select-none cursor-grab active:cursor-grabbing overflow-hidden"
         >
           <AnimatePresence custom={direction} mode="wait">
             <motion.div
