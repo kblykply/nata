@@ -1,6 +1,7 @@
 "use client";
 import React, { useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
+import ConsentVerifyModal from "./ConsentVerifyModal";
 
 interface DemandPopupProps {
   onClose: () => void;
@@ -28,6 +29,15 @@ export default function DemandPopup({
     message: "",
     email: "",
   });
+
+  // Ticari elektronik ileti izni (İYS'ye iletilir); isteğe bağlıdır.
+  const [commercialConsent, setCommercialConsent] = useState(false);
+
+  // Double opt-in: form gönderildikten sonra SMS koduyla doğrulama adımı
+  const [pendingConsent, setPendingConsent] = useState<{
+    dataId: string;
+    phone: string;
+  } | null>(null);
 
   const [submitting, setSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
@@ -80,6 +90,7 @@ export default function DemandPopup({
       project_name: formData.project,
       message: formData.message.trim(),
       email: formData.email.trim(),
+      kvkk_consent: commercialConsent ? 1 : 0,
     };
 
     try {
@@ -96,6 +107,13 @@ export default function DemandPopup({
           data?.body ||
           `Form gönderilemedi (status: ${res.status}).`
         );
+      }
+
+      // Double opt-in gerekiyorsa kod ekranı açılır, aksi halde form kapanır.
+      const consent = data?.data ?? data;
+      if (consent?.verificationRequired && consent?.dataId) {
+        setPendingConsent({ dataId: consent.dataId, phone: payload.phone });
+        return;
       }
 
       alert(t("submitSuccess"));
@@ -188,6 +206,23 @@ export default function DemandPopup({
             />
           </div>
 
+          {/* Ticari elektronik ileti izni: isteğe bağlıdır, form gönderimini engellemez. */}
+          <div className="flex items-start gap-2">
+            <input
+              type="checkbox"
+              className="mt-1"
+              id="demandCommercialConsent"
+              checked={commercialConsent}
+              onChange={() => setCommercialConsent(!commercialConsent)}
+            />
+            <label
+              htmlFor="demandCommercialConsent"
+              className="text-xs leading-snug text-gray-700"
+            >
+              {t("commercialConsent")}
+            </label>
+          </div>
+
           {errorMsg && (
             <p className="text-sm text-red-600">{errorMsg}</p>
           )}
@@ -201,6 +236,23 @@ export default function DemandPopup({
           </button>
         </form>
       </div>
+
+      {pendingConsent && (
+        <ConsentVerifyModal
+          dataId={pendingConsent.dataId}
+          phone={pendingConsent.phone}
+          onVerified={() => {
+            setPendingConsent(null);
+            alert(t("submitSuccess"));
+            onClose();
+          }}
+          onClose={() => {
+            // Kod girilmeden kapatılırsa talep kaydı yine oluşmuştur.
+            setPendingConsent(null);
+            onClose();
+          }}
+        />
+      )}
     </div>
   );
 }

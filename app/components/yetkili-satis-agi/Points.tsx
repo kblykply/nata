@@ -5,6 +5,7 @@ import { useState, useRef } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
+import ConsentVerifyModal from '../ConsentVerifyModal';
 
 const Points = () => {
   const t = useTranslations('salesNetwork');
@@ -16,6 +17,13 @@ const Points = () => {
   const [business, setBusiness] = useState("");
   const [message, setMessage] = useState("");
   const [accepted, setAccepted] = useState(false);
+  // Ticari elektronik ileti izni (İYS'ye iletilir); aydınlatma onayından ayrıdır.
+  const [commercialConsent, setCommercialConsent] = useState(false);
+  // Double opt-in: form sonrası SMS koduyla izin doğrulama adımı
+  const [pendingConsent, setPendingConsent] = useState<{
+    dataId: string;
+    phone: string;
+  } | null>(null);
   const [recaptchaToken, setRecaptchaToken] = useState("");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -80,12 +88,18 @@ const Points = () => {
           message: message || "Yetkili Satış Ağı Portalı form mesajı",
           project_name: "Yetkili Satış Ağı",
           business_info: business,
+          kvkk_consent: commercialConsent ? 1 : 0,
         }),
       });
 
       const data = await res.json();
 
       if (data.ok) {
+        // İzin verildiyse doğrulama kodu ekranı açılır.
+        const consent = data?.data ?? data;
+        if (consent?.verificationRequired && consent?.dataId) {
+          setPendingConsent({ dataId: consent.dataId, phone });
+        }
         setSuccess(true);
         setName("");
         setEmail("");
@@ -93,6 +107,7 @@ const Points = () => {
         setBusiness("");
         setMessage("");
         setAccepted(false);
+        setCommercialConsent(false);
         setRecaptchaToken("");
         setErrors({ name: false, email: false, phone: false, business: false });
         setErrorMessages({ name: "", email: "", phone: "", business: "" });
@@ -234,6 +249,23 @@ const Points = () => {
             </label>
           </div>
 
+          {/* Ticari elektronik ileti izni: aydınlatma onayından ayrı ve isteğe bağlıdır. */}
+          <div className="flex items-start gap-2 text-sm">
+            <input
+              type="checkbox"
+              className="mt-1"
+              id="commercialConsentCheckbox"
+              checked={commercialConsent}
+              onChange={() => setCommercialConsent(!commercialConsent)}
+            />
+            <label
+              htmlFor="commercialConsentCheckbox"
+              className="text-xs text-gray-800 leading-snug"
+            >
+              {tContact('commercialConsent')}
+            </label>
+          </div>
+
           <ReCAPTCHA
             ref={recaptchaRef}
             sitekey="6LeDBj8rAAAAAITpieFy0OTWktxwblgStiQHc9iv"
@@ -253,6 +285,15 @@ const Points = () => {
           {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
         </div>
       </div>
+
+      {pendingConsent && (
+        <ConsentVerifyModal
+          dataId={pendingConsent.dataId}
+          phone={pendingConsent.phone}
+          onVerified={() => setPendingConsent(null)}
+          onClose={() => setPendingConsent(null)}
+        />
+      )}
     </div>
   );
 };

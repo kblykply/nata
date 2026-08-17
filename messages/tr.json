@@ -142,7 +142,8 @@
     "kvkkLabel": "Kişisel Verilerin Korunması",
     "kvkkInfoText": "hakkında bilgilendirildim ve",
     "kvkkLinkText": "KVKK Aydınlatma Metni",
-    "kvkkAccept": "'ni okudum. Koşulları kabul ediyorum."
+    "kvkkAccept": "'ni okudum. Koşulları kabul ediyorum.",
+    "commercialConsent": "Tarafıma ticari elektronik ileti (SMS, e-posta, arama) gönderilmesine izin veriyorum."
   },
   "demand": {
     "title": "Ön Talep Formu",
@@ -152,7 +153,8 @@
     "messageOptional": "Mesaj (Opsiyonel)",
     "submitSuccess": "Talebiniz başarıyla gönderildi. Teşekkürler!",
     "submitError": "Form gönderilirken bir hata oluştu.",
-    "submitErrorRetry": "Form gönderilirken bir hata oluştu. Lütfen tekrar deneyin."
+    "submitErrorRetry": "Form gönderilirken bir hata oluştu. Lütfen tekrar deneyin.",
+    "commercialConsent": "Tarafıma ticari elektronik ileti (SMS, e-posta, arama) gönderilmesine izin veriyorum."
   },
   "reservation": {
     "title": "Toplantı Rezervasyonu",
@@ -942,26 +944,66 @@
       "title": "Yaşam Nerede\nBiz Orada.",
       "description": "Mega 1453, Ankara’nın kalbinde, Yenimahalle Orman Çiftliği Mahallesi’nde şehrin ritmini yeniden tanımlayan eşsiz bir yaşam deneyimi sunuyor...",
       "hotspots": {
-        "0": { "info": "Mega 1454 A Blok" },
-        "1": { "info": "Mega 1454 B Blok" },
-        "2": { "info": "Mega 1454 C Blok" },
-        "3": { "info": "Mega 1454 D Blok" },
-        "4": { "info": "Mega 1454 E Blok" },
-        "5": { "info": "Mega 1454 F Blok" },
-        "6": { "info": "Mega 1454 G Blok" },
-        "7": { "info": "Mega 1454 H Blok" },
-        "8": { "info": "Mega 1454 I Blok" },
-        "9": { "info": "Mega 1454 J Blok" },
-        "10": { "info": "Mega 1454 K Blok" },
-        "11": { "info": "Mega 1454 L Blok" },
-        "12": { "info": "Mega 1454 M Blok" },
-        "13": { "info": "Mega 1454 N Blok" },
-        "14": { "info": "Mega 1454 O Blok" },
-        "15": { "info": "Mega 1454 P Blok" },
-        "16": { "info": "Mega 1454 Q Blok" },
-        "17": { "info": "Mega 1454 R Blok" },
-        "18": { "info": "Mega 1454 S Blok" },
-        "19": { "info": "Mega 1454 T Blok" }
+        "0": {
+          "info": "Mega 1454 A Blok"
+        },
+        "1": {
+          "info": "Mega 1454 B Blok"
+        },
+        "2": {
+          "info": "Mega 1454 C Blok"
+        },
+        "3": {
+          "info": "Mega 1454 D Blok"
+        },
+        "4": {
+          "info": "Mega 1454 E Blok"
+        },
+        "5": {
+          "info": "Mega 1454 F Blok"
+        },
+        "6": {
+          "info": "Mega 1454 G Blok"
+        },
+        "7": {
+          "info": "Mega 1454 H Blok"
+        },
+        "8": {
+          "info": "Mega 1454 I Blok"
+        },
+        "9": {
+          "info": "Mega 1454 J Blok"
+        },
+        "10": {
+          "info": "Mega 1454 K Blok"
+        },
+        "11": {
+          "info": "Mega 1454 L Blok"
+        },
+        "12": {
+          "info": "Mega 1454 M Blok"
+        },
+        "13": {
+          "info": "Mega 1454 N Blok"
+        },
+        "14": {
+          "info": "Mega 1454 O Blok"
+        },
+        "15": {
+          "info": "Mega 1454 P Blok"
+        },
+        "16": {
+          "info": "Mega 1454 Q Blok"
+        },
+        "17": {
+          "info": "Mega 1454 R Blok"
+        },
+        "18": {
+          "info": "Mega 1454 S Blok"
+        },
+        "19": {
+          "info": "Mega 1454 T Blok"
+        }
       }
     },
     "nearby": {
@@ -1759,5 +1801,17 @@
     "imageAltVegaOtonomi": "Vega Otonomi",
     "imageAltVegaCenter": "Vega Center",
     "imageAltMega1453": "Mega 1453"
+  },
+  "consentVerify": {
+    "title": "Doğrulama Kodu",
+    "description": "Telefonunuza gönderilen doğrulama kodunu giriniz.",
+    "descriptionWithPhone": "{phone} numarasına gönderilen doğrulama kodunu giriniz.",
+    "codeLabel": "Doğrulama Kodu",
+    "codePlaceholder": "Kodu giriniz",
+    "verify": "Doğrula",
+    "verifying": "Doğrulanıyor...",
+    "verifyFailed": "Doğrulama başarısız. Lütfen kodu kontrol edip tekrar deneyiniz.",
+    "codeRequired": "Lütfen doğrulama kodunu giriniz.",
+    "close": "Kapat"
   }
 }

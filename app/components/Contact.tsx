@@ -10,6 +10,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
+import ConsentVerifyModal from "./ConsentVerifyModal";
   
 
 export default function ContactQrSection() {
@@ -32,6 +33,13 @@ export default function ContactQrSection() {
     phone: "",
   });
   const [recaptchaToken, setRecaptchaToken] = useState("");
+  // Ticari elektronik ileti izni (İYS'ye iletilir); isteğe bağlıdır.
+  const [commercialConsent, setCommercialConsent] = useState(false);
+  // Double opt-in: form sonrası SMS koduyla izin doğrulama adımı
+  const [pendingConsent, setPendingConsent] = useState<{
+    dataId: string;
+    phone: string;
+  } | null>(null);
   const recaptchaRef = useRef<ReCAPTCHA>(null);
   const swiperRef = useRef<SwiperCore | null>(null); // ✅ Fix: provide initial value
 
@@ -89,17 +97,23 @@ export default function ContactQrSection() {
           phone,
           message: message || "Web form mesajı",
           recaptchaToken,
+          kvkk_consent: commercialConsent ? 1 : 0,
         }),
       });
 
       const data = await res.json();
 
       if (data.success) {
+        // İzin verildiyse doğrulama kodu ekranı açılır.
+        if (data?.verificationRequired && data?.dataId) {
+          setPendingConsent({ dataId: data.dataId, phone });
+        }
         setSuccess(true);
         setName("");
         setPhone("");
         setMessage("");
         setRecaptchaToken("");
+        setCommercialConsent(false);
         setErrors({ name: false, phone: false });
         setErrorMessages({ name: "", phone: "" });
         recaptchaRef.current?.reset();
@@ -260,6 +274,23 @@ export default function ContactQrSection() {
   </span>
 </p>
 
+{/* Ticari elektronik ileti izni: isteğe bağlıdır, form gönderimini engellemez. */}
+<div className="mb-6 flex items-start justify-center gap-2 max-w-md mx-auto">
+  <input
+    type="checkbox"
+    className="mt-0.5"
+    id="contactCommercialConsent"
+    checked={commercialConsent}
+    onChange={() => setCommercialConsent(!commercialConsent)}
+  />
+  <label
+    htmlFor="contactCommercialConsent"
+    className="text-[11px] text-gray-600 leading-snug"
+  >
+    {tContact("commercialConsent")}
+  </label>
+</div>
+
 
           <div className="flex justify-center">
             <button
@@ -283,6 +314,15 @@ export default function ContactQrSection() {
           )}
         </div>
       </div>
+
+      {pendingConsent && (
+        <ConsentVerifyModal
+          dataId={pendingConsent.dataId}
+          phone={pendingConsent.phone}
+          onVerified={() => setPendingConsent(null)}
+          onClose={() => setPendingConsent(null)}
+        />
+      )}
     </section>
   );
 }

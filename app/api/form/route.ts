@@ -4,7 +4,8 @@ export async function POST(req: Request) {
   try {
     const body = await req.json();
 
-    const { name, phone, project_name, message, email } = body || {};
+    const { name, phone, project_name, message, email, kvkk_consent } =
+      body || {};
     if (!name || !phone || !project_name || !email) {
       return NextResponse.json(
         { ok: false, error: "Eksik alanlar var." },
@@ -18,7 +19,14 @@ export async function POST(req: Request) {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: JSON.stringify({ name, phone, project_name, message, email }),
+      body: JSON.stringify({
+        name,
+        phone,
+        project_name,
+        message,
+        email,
+        kvkk_consent,
+      }),
     });
 
     const text = await upstream.text(); // JSON değilse de görebilelim

@@ -142,7 +142,8 @@
     "kvkkLabel": "Personal Data Protection",
     "kvkkInfoText": "I have been informed about",
     "kvkkLinkText": "KVKK Privacy Notice",
-    "kvkkAccept": "I have read and accept the terms."
+    "kvkkAccept": "I have read and accept the terms.",
+    "commercialConsent": "I consent to receiving commercial electronic messages (SMS, e-mail, calls)."
   },
   "demand": {
     "title": "Pre-Demand Form",
@@ -152,7 +153,8 @@
     "messageOptional": "Message (Optional)",
     "submitSuccess": "Your request has been submitted successfully. Thank you!",
     "submitError": "An error occurred while submitting the form.",
-    "submitErrorRetry": "An error occurred while submitting the form. Please try again."
+    "submitErrorRetry": "An error occurred while submitting the form. Please try again.",
+    "commercialConsent": "I consent to receiving commercial electronic messages (SMS, e-mail, calls)."
   },
   "reservation": {
     "title": "Meeting Reservation",
@@ -942,26 +944,66 @@
       "title": "Where Life Is\nWe Are There.",
       "description": "Located in the heart of Ankara, in Yenimahalle Orman Çiftliği Neighborhood, Mega 1453 offers a unique living experience that redefines the rhythm of the city...",
       "hotspots": {
-        "0": { "info": "Mega 1454 Block A" },
-        "1": { "info": "Mega 1454 Block B" },
-        "2": { "info": "Mega 1454 Block C" },
-        "3": { "info": "Mega 1454 Block D" },
-        "4": { "info": "Mega 1454 Block E" },
-        "5": { "info": "Mega 1454 Block F" },
-        "6": { "info": "Mega 1454 Block G" },
-        "7": { "info": "Mega 1454 Block H" },
-        "8": { "info": "Mega 1454 Block I" },
-        "9": { "info": "Mega 1454 Block J" },
-        "10": { "info": "Mega 1454 Block K" },
-        "11": { "info": "Mega 1454 Block L" },
-        "12": { "info": "Mega 1454 Block M" },
-        "13": { "info": "Mega 1454 Block N" },
-        "14": { "info": "Mega 1454 Block O" },
-        "15": { "info": "Mega 1454 Block P" },
-        "16": { "info": "Mega 1454 Block Q" },
-        "17": { "info": "Mega 1454 Block R" },
-        "18": { "info": "Mega 1454 Block S" },
-        "19": { "info": "Mega 1454 Block T" }
+        "0": {
+          "info": "Mega 1454 Block A"
+        },
+        "1": {
+          "info": "Mega 1454 Block B"
+        },
+        "2": {
+          "info": "Mega 1454 Block C"
+        },
+        "3": {
+          "info": "Mega 1454 Block D"
+        },
+        "4": {
+          "info": "Mega 1454 Block E"
+        },
+        "5": {
+          "info": "Mega 1454 Block F"
+        },
+        "6": {
+          "info": "Mega 1454 Block G"
+        },
+        "7": {
+          "info": "Mega 1454 Block H"
+        },
+        "8": {
+          "info": "Mega 1454 Block I"
+        },
+        "9": {
+          "info": "Mega 1454 Block J"
+        },
+        "10": {
+          "info": "Mega 1454 Block K"
+        },
+        "11": {
+          "info": "Mega 1454 Block L"
+        },
+        "12": {
+          "info": "Mega 1454 Block M"
+        },
+        "13": {
+          "info": "Mega 1454 Block N"
+        },
+        "14": {
+          "info": "Mega 1454 Block O"
+        },
+        "15": {
+          "info": "Mega 1454 Block P"
+        },
+        "16": {
+          "info": "Mega 1454 Block Q"
+        },
+        "17": {
+          "info": "Mega 1454 Block R"
+        },
+        "18": {
+          "info": "Mega 1454 Block S"
+        },
+        "19": {
+          "info": "Mega 1454 Block T"
+        }
       }
     },
     "nearby": {
@@ -1759,5 +1801,17 @@
     "imageAltVegaOtonomi": "Vega Otonomi",
     "imageAltVegaCenter": "Vega Center",
     "imageAltMega1453": "Mega 1453"
+  },
+  "consentVerify": {
+    "title": "Verification Code",
+    "description": "Enter the verification code sent to your phone.",
+    "descriptionWithPhone": "Enter the verification code sent to {phone}.",
+    "codeLabel": "Verification Code",
+    "codePlaceholder": "Enter code",
+    "verify": "Verify",
+    "verifying": "Verifying...",
+    "verifyFailed": "Verification failed. Please check the code and try again.",
+    "codeRequired": "Please enter the verification code.",
+    "close": "Close"
   }
 }

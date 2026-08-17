@@ -4,7 +4,15 @@ export async function POST(req: Request) {
   try {
     const body = await req.json();
 
-    const { name, phone, message, email, project_name, business_info } = body || {};
+    const {
+      name,
+      phone,
+      message,
+      email,
+      project_name,
+      business_info,
+      kvkk_consent,
+    } = body || {};
     if (!name || !phone || !email || !business_info) {
       return NextResponse.json(
         { ok: false, error: "Eksik alanlar var." },
@@ -18,7 +26,15 @@ export async function POST(req: Request) {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: JSON.stringify({ name, phone, message, email, project_name, business_info }),
+      body: JSON.stringify({
+        name,
+        phone,
+        message,
+        email,
+        project_name,
+        business_info,
+        kvkk_consent,
+      }),
     });
 
     const text = await upstream.text();
