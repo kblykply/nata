@@ -1812,6 +1812,8 @@
     "verifying": "Verifying...",
     "verifyFailed": "Verification failed. Please check the code and try again.",
     "codeRequired": "Please enter the verification code.",
-    "close": "Close"
+    "close": "Close",
+    "remaining": "Time remaining: {time}",
+    "expired": "The verification code has expired. Please submit the form again."
   }
 }

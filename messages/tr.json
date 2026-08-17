@@ -1812,6 +1812,8 @@
     "verifying": "Doğrulanıyor...",
     "verifyFailed": "Doğrulama başarısız. Lütfen kodu kontrol edip tekrar deneyiniz.",
     "codeRequired": "Lütfen doğrulama kodunu giriniz.",
-    "close": "Kapat"
+    "close": "Kapat",
+    "remaining": "Kalan süre: {time}",
+    "expired": "Doğrulama kodunun süresi doldu. Lütfen formu tekrar gönderiniz."
   }
 }
