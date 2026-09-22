@@ -17,7 +17,7 @@ export async function POST(req: Request) {
     }
 
     const upstream = await fetch(
-      "https://api.configgo.com/nata_core/api/mobildev/ivt/webhook/verify",
+      "https://api.configgo.com/nata_core/mobildev/ivt/webhook/verify",
       {
         method: "POST",
         headers: {
