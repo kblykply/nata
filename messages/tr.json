@@ -931,9 +931,13 @@
       "breadcrumbProject": "Mega 1453",
       "tagJunction": "Anadolu Bulvarı ve İstanbul Yolu Kesişiminde",
       "tagLocation": "Ankara – Yenimahalle",
-      "tagUnits": "715 Konut",
-      "tagDelivery": "2027 1. Çeyrek Teslim",
-      "tagPremiumLife": "Premium Hayat"
+      "tagUnits": "1513 Konut + 39 Ofis/Ticari",
+      "tagDelivery": "2028 4. Çeyrek Teslim",
+      "tagPremiumLife": "Premium Hayat",
+      "phase2Label": "2. ETAP",
+      "phase1Label": "1. ETAP",
+      "phase1Units": "715 Konut",
+      "phase1Delivery": "2027 1. Çeyrek Teslim"
     },
     "design": {
       "title": "Mega 1453\nKarma Yaşam Projesi",

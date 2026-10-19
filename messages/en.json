@@ -931,9 +931,13 @@
       "breadcrumbProject": "Mega 1453",
       "tagJunction": "At the intersection of Anadolu Boulevard and Istanbul Road",
       "tagLocation": "Ankara – Yenimahalle",
-      "tagUnits": "715 Residences",
-      "tagDelivery": "Q1 2027 Delivery",
-      "tagPremiumLife": "Premium Life"
+      "tagUnits": "1513 Residences + 39 Office/Commercial",
+      "tagDelivery": "Q4 2028 Delivery",
+      "tagPremiumLife": "Premium Life",
+      "phase2Label": "PHASE 2",
+      "phase1Label": "PHASE 1",
+      "phase1Units": "715 Residences",
+      "phase1Delivery": "Q1 2027 Delivery"
     },
     "design": {
       "title": "Mega 1453\nMixed-Use Living Project",

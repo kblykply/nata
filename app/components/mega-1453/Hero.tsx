@@ -91,7 +91,13 @@ export default function ProjectHeroCloudSection() {
 
 
 
-<div className="flex flex-wrap justify-center gap-3 max-w-xl mx-auto mt-6 font-semibold relative z-30">
+<div className="flex justify-center mt-6 relative z-30">
+  <span className="bg-white/90 text-gray-900 px-3 py-1 rounded-full text-xs font-bold tracking-wide">
+    {tHero("phase2Label")}
+  </span>
+</div>
+
+<div className="flex flex-wrap justify-center gap-3 max-w-xl mx-auto mt-3 font-semibold relative z-30">
   <Link href="#near-locations">
     <div className="bg-black/20 backdrop-blur-md text-white px-4 py-2 rounded-xl flex items-center gap-2 text-sm cursor-pointer">
   {tHero("tagJunction")}
@@ -119,6 +125,23 @@ export default function ProjectHeroCloudSection() {
   <Link href="#life">
     <div className="bg-black/20 backdrop-blur-md text-white px-4 py-2 rounded-xl text-sm text-center cursor-pointer">
       {tHero("tagPremiumLife")}
+    </div>
+  </Link>
+</div>
+
+{/* 1. Etap bilgileri — 2. Etap'in altinda */}
+<div className="flex flex-wrap justify-center items-center gap-2 max-w-xl mx-auto mt-4 relative z-30">
+  <span className="bg-white/15 text-white/90 px-3 py-1 rounded-full text-[11px] font-bold tracking-wide">
+    {tHero("phase1Label")}
+  </span>
+  <Link href="#contact">
+    <div className="bg-black/20 backdrop-blur-md text-white/90 px-3 py-1.5 rounded-xl text-xs text-center cursor-pointer">
+      {tHero("phase1Units")}
+    </div>
+  </Link>
+  <Link href="#contact">
+    <div className="bg-black/20 backdrop-blur-md text-white/90 px-3 py-1.5 rounded-xl text-xs text-center cursor-pointer">
+      {tHero("phase1Delivery")}
     </div>
   </Link>
 </div>

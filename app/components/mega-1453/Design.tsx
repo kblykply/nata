@@ -18,6 +18,18 @@ export default function DesignSection() {
   const [isOpen, setIsOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
   const gallery = [
+    // 2. Etap gorselleri
+    "/new-images/MEGA 1453/2-etap/mega1453-2etap-12.jpg",
+    "/new-images/MEGA 1453/2-etap/mega1453-2etap-13.jpg",
+    "/new-images/MEGA 1453/2-etap/mega1453-2etap-14.jpg",
+    "/new-images/MEGA 1453/2-etap/mega1453-2etap-15.jpg",
+    "/new-images/MEGA 1453/2-etap/mega1453-2etap-16.jpg",
+    "/new-images/MEGA 1453/2-etap/mega1453-2etap-17.jpg",
+    "/new-images/MEGA 1453/2-etap/mega1453-2etap-18.jpg",
+    "/new-images/MEGA 1453/2-etap/mega1453-2etap-19.jpg",
+    "/new-images/MEGA 1453/2-etap/mega1453-2etap-20.jpg",
+    "/new-images/MEGA 1453/2-etap/mega1453-2etap-21.jpg",
+    // 1. Etap gorselleri
     "/new-images/MEGA 1453/Mega1453-1.jpg",
     "/new-images/MEGA 1453/Mega1453-2.jpg",
     "/new-images/MEGA 1453/Mega1453-3.jpg",
